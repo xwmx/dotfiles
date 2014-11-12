@@ -1,0 +1,114 @@
+" Janus-related vimrc.
+"
+" Runs after Janus is loaded.
+
+" " Vundle
+" set nocompatible
+" filetype off  " required!
+
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
+
+"colorscheme eclips3remix
+"colorscheme darkburn
+"colorscheme deepblue
+"colorscheme hybrid
+colorscheme vwilight
+"colorscheme Tomorrow-Night-Blue
+"colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night
+"set guifont=Menlo\ Regular:h11
+set guifont=Menlo\ for\ Powerline:h11
+autocmd FileType ruby,eruby set noballooneval
+" autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+
+" disable left scrollbar
+set guioptions-=L
+
+
+" highlight the 80th column
+"
+" In Vim >= 7.3, also highlight columns 120+
+
+" Better grey ColorColumn for some themes
+hi ColorColumn guifg=#f8f8f8 guibg=#161616 gui=NONE
+
+if exists('+colorcolumn')
+  " (I picked 120-320 because you have to provide an upper bound and 320 just
+  "  covers a 1080p GVim window in Ubuntu Mono 11 font.)
+  let &colorcolumn="80,".join(range(120,320),",")
+else
+  " fallback for Vim < v7.3
+  autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+filetype plugin indent on     " required!
+
+
+" Don't include cursor position in selections (useful for line break
+" avoidance w/ command+shift+right arrow)
+"set selection=exclusive
+
+if has("gui_macvim")
+    let macvim_hig_shift_movement_alt = 1
+endif
+
+
+" Extra split navigation shortcuts
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+" More natural split behavior by placing cursor in the bottom or right split
+set splitbelow
+set splitright
+
+" Switch to alternate file
+map <C-Tab> :bnext<cr>
+map <C-S-Tab> :bprevious<cr>
+
+
+" This is so that the HIG shift movement related settings can be enabled by
+" adding the line
+"   let macvim_hig_shift_movement = 1
+" to ~/.vimrc.
+if exists("macvim_hig_shift_movement_alt")
+  " Shift + special movement key (<S-Left>, etc.) and mouse starts insert mode
+  set selectmode=mouse,key
+  set keymodel=startsel,stopsel
+
+  " HIG related shift + special movement key mappings
+  nn   <S-D-Left>     <S-Home>
+  vn   <S-D-Left>     <S-Home>
+  ino  <S-D-Left>     <S-Home>
+  nn   <S-M-Left>     <S-C-Left>
+  vn   <S-M-Left>     <S-C-Left>
+  ino  <S-M-Left>     <S-C-Left>
+
+  nn   <S-D-Right>    <S-End>
+  vn   <S-D-Right>    <S-End>
+  ino  <S-D-Right>    <S-End>
+  nn   <S-M-Right>    <S-C-Right>
+  vn   <S-M-Right>    <S-C-Right>
+  ino  <S-M-Right>    <S-C-Right>
+
+  nn   <S-D-Up>       <S-C-Home>
+  vn   <S-D-Up>       <S-C-Home>
+  ino  <S-D-Up>       <S-C-Home>
+
+  nn   <S-D-Down>     <S-C-End>
+  vn   <S-D-Down>     <S-C-End>
+  ino  <S-D-Down>     <S-C-End>
+endif " exists("macvim_hig_shift_movement")
+
+" Use abbreviation for CtrlP/Command-T cache refresh
+:ca rc ClearCtrlPCache
+
+" Toggle tagbar shortcut
+nmap <leader>ttb :TagbarToggle<CR>
+
+" Show NERDTree hidden files
+let NERDTreeShowHidden = 1
+
+

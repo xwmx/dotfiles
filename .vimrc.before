@@ -1,0 +1,27 @@
+" Janus-related vimrc.
+"
+" Runs before Janus is loaded.
+
+" Disable golang plugin since now using vim-go
+call janus#disable_plugin('golang')
+
+" ------------------------------------------
+" vim-airline settings
+"
+" Must be in .vimrc.before or tabline doesn't display.
+
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+
+" Use powerline styling
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
