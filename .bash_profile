@@ -37,7 +37,7 @@ export LDFLAGS='-arch x86_64'
 # # The orginal version is saved in .bash_profile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 # export PATH
-# 
+#
 # # Setting PATH for MacPython 2.6
 # # The orginal version is saved in .bash_profile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
@@ -84,29 +84,26 @@ function parse_git_branch {
 function prompt_command () {
     #   How many characters of the $PWD should be kept
     local pwd_length=23
-    	if [ $(echo -n $PWD | wc -c | tr -d " ") -gt $pwd_length ]; then
-			if [ $(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ") -gt 0 ]; then
-				local user_length=$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ");
-				local total_length=$(echo -n $PWD | wc -c | tr -d " ");
-				let "newPwd_length=$total_length-$user_length";
-				
-				# when in home and path minus users/username is longer than char limit
-				if [ $newPwd_length -gt $pwd_length ]; then
-					newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
-					
-				# when in home and path minus users/username is less than limit
-				else
-					newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$newPwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~/$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
-				fi
-				
-			# when not in home and path is longer than char limit
-			else 
-				newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
-			fi
-			
-		# when not in home and path is shorter than char limit
-		else export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]\w $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
-	fi
+      if [ $(echo -n $PWD | wc -c | tr -d " ") -gt $pwd_length ]; then
+      if [ $(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ") -gt 0 ]; then
+        local user_length=$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ");
+        local total_length=$(echo -n $PWD | wc -c | tr -d " ");
+        let "newPwd_length=$total_length-$user_length";
+
+        if [ $newPwd_length -gt $pwd_length ]; then
+          # when in home and path minus users/username is longer than char limit
+          newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+        else
+          # when in home and path minus users/username is less than limit
+          newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$newPwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~/$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+        fi
+      else
+        # when not in home and path is longer than char limit
+        newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+      fi
+    # when not in home and path is shorter than char limit
+    else export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]\w $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+  fi
 }
 PROMPT_COMMAND=prompt_command
 export PROMPT_COMMAND
@@ -230,7 +227,7 @@ alias l='ls -la'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 #==========================================================================
-# gcaldeamon 
+# gcaldeamon
 #==========================================================================
 
 alias gcaldeamon_start='/Applications/Network/GCALDaemon/bin/standalone-start.sh'
@@ -353,7 +350,7 @@ alias mondod_start="mongod run --config /usr/local/Cellar/mongodb/1.4.0-x86_64/m
 alias emacs='open -a Emacs "$@"'
 
 #==========================================================================
-# j2 
+# j2
 #==========================================================================
 
 export JPY=$HOME/bin/j.py # tells j.sh where the python script is
