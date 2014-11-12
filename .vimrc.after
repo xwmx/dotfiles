@@ -64,9 +64,15 @@ nmap <C-l> <C-w>l
 set splitbelow
 set splitright
 
-" Switch to alternate file
+" Adding buffer cycling mapping
+"
+" Use ctrl-tab and ctrl-shift-tab to cycle buffers
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
+" Use ctrl-[ and ctrl-] to cycle buffers
+map <C-[> :bprevious<cr>
+map <C-]> :bnext<cr>
+
 
 
 " This is so that the HIG shift movement related settings can be enabled by
