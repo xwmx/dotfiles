@@ -37,3 +37,6 @@
 [submodule ".janus/vim-jst"]
 	path = .janus/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule ".janus/vim-vwilight"]
+	path = .janus/vim-vwilight
+	url = git@github.com:alphabetum/vim-vwilight.git
