@@ -100,3 +100,6 @@ hi cssClassName  guifg=#9b703f guibg=NONE gui=NONE
 hi cssValueLength  guifg=#cf6a4c guibg=NONE gui=NONE
 hi cssCommonAttr  guifg=#cf6a4c guibg=NONE gui=NONE
 hi cssBraces  guifg=NONE guibg=NONE gui=NONE
+
+" customization for gitgutter
+hi SignColumn term=standout ctermfg=11 ctermbg=8 guifg=Cyan guibg=#141414
