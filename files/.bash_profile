@@ -206,13 +206,6 @@ alias l='ls -la'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 #==========================================================================
-# gcaldeamon
-#==========================================================================
-
-alias gcaldeamon_start='/Applications/Network/GCALDaemon/bin/standalone-start.sh'
-alias gcaldeamon_sync='/Applications/Network/GCALDaemon/bin/sync-now.sh'
-
-#==========================================================================
 # Here are a variety of aliases for OS X specific stuff
 #==========================================================================
 
