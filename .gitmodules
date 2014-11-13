@@ -40,3 +40,18 @@
 [submodule ".janus/vim-vwilight"]
 	path = files/.janus/vim-vwilight
 	url = git@github.com:alphabetum/vim-vwilight.git
+[submodule "vendor/holman/dotfiles"]
+	path = vendor/holman/dotfiles
+	url = https://github.com/holman/dotfiles.git
+[submodule "vendor/thoughtbot/dotfiles"]
+	path = vendor/thoughtbot/dotfiles
+	url = https://github.com/thoughtbot/dotfiles.git
+[submodule "vendor/mathiasbynens/dotfiles"]
+	path = vendor/mathiasbynens/dotfiles
+	url = https://github.com/mathiasbynens/dotfiles.git
+[submodule "vendor/ryanb/dotfiles"]
+	path = vendor/ryanb/dotfiles
+	url = https://github.com/ryanb/dotfiles.git
+[submodule "vendor/rtomayko/dotfiles"]
+	path = vendor/rtomayko/dotfiles
+	url = https://github.com/rtomayko/dotfiles.git
