@@ -55,3 +55,6 @@
 [submodule "vendor/rtomayko/dotfiles"]
 	path = vendor/rtomayko/dotfiles
 	url = https://github.com/rtomayko/dotfiles.git
+[submodule "vendor/cowboy/dotfiles"]
+	path = vendor/cowboy/dotfiles
+	url = https://github.com/cowboy/dotfiles.git
