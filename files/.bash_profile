@@ -8,8 +8,6 @@ export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
 # Add texbin to PATH
 export PATH=/usr/texbin:$PATH
 
-# man path for macports
-export MANPATH=/opt/local/share/man:$MANPATH
 
 
 
