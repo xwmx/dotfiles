@@ -1,5 +1,11 @@
 source ~/.profile
 
+# Where the magic happens.
+export DOTFILES=~/.dot
+
+# Add binaries into the path
+PATH=$DOTFILES/bin:$PATH
+export PATH
 
 # export DYLD_FALLBACK_LIBRARY_PATH=/usr/lib:/usr/local/lib
 export PATH=/usr/local/share/python:/usr/local/mysql/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:$HOME/.gem/ruby/1.8/bin:$HOME/.cabal/bin:$PATH
