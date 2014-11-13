@@ -305,9 +305,6 @@ alias ruby="ruby_or_irb"
 
 alias shoes="open -a Shoes.app"
 
-
-alias mondod_start="mongod run --config /usr/local/Cellar/mongodb/1.4.0-x86_64/mongod.conf"
-
 #==========================================================================
 # emacs
 #==========================================================================
