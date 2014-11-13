@@ -58,3 +58,9 @@
 [submodule "vendor/cowboy/dotfiles"]
 	path = vendor/cowboy/dotfiles
 	url = https://github.com/cowboy/dotfiles.git
+[submodule "vendor/tvon/dotfiles"]
+	path = vendor/tvon/dotfiles
+	url = https://github.com/tvon/dotfiles.git
+[submodule "files/.janus/bufkill.vim"]
+	path = files/.janus/bufkill.vim
+	url = https://github.com/mattdbridges/bufkill.vim.git
