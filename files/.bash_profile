@@ -126,12 +126,6 @@ export PROMPT_COMMAND
 export PS1=$newPWD
 COMMENT
 
-#==========================================================================
-# MacPorts paths
-#==========================================================================
-
-# Git man path
-export MANPATH=/opt/local/share/man:$MANPATH
 
 #==========================================================================
 # For textmate bundle checkouts
