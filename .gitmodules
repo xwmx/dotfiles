@@ -1,42 +1,42 @@
 [submodule ".janus/Dockerfile.vim"]
-	path = .janus/Dockerfile.vim
+	path = files/.janus/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule ".janus/delimitMate"]
-	path = .janus/delimitMate
+	path = files/.janus/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
 [submodule ".janus/nerdcommenter"]
-	path = .janus/nerdcommenter
+	path = files/.janus/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule ".janus/vim-airline"]
-	path = .janus/vim-airline
+	path = files/.janus/vim-airline
 	url = https://github.com/bling/vim-airline
 [submodule ".janus/vim-gitgutter"]
-	path = .janus/vim-gitgutter
+	path = files/.janus/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
 [submodule ".janus/vim-go"]
-	path = .janus/vim-go
+	path = files/.janus/vim-go
 	url = https://github.com/fatih/vim-go.git
 [submodule ".janus/vim-hybrid"]
-	path = .janus/vim-hybrid
+	path = files/.janus/vim-hybrid
 	url = https://github.com/w0ng/vim-hybrid.git
 [submodule ".janus/vim-jade"]
-	path = .janus/vim-jade
+	path = files/.janus/vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
 [submodule ".janus/vim-javascript"]
-	path = .janus/vim-javascript
+	path = files/.janus/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule ".janus/vim-mustache-handlebars"]
-	path = .janus/vim-mustache-handlebars
+	path = files/.janus/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
 [submodule ".janus/vim-stylus"]
-	path = .janus/vim-stylus
+	path = files/.janus/vim-stylus
 	url = https://github.com/wavded/vim-stylus
 [submodule ".janus/vim-tomorrow-theme"]
-	path = .janus/vim-tomorrow-theme
+	path = files/.janus/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
 [submodule ".janus/vim-jst"]
-	path = .janus/vim-jst
+	path = files/.janus/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
 [submodule ".janus/vim-vwilight"]
-	path = .janus/vim-vwilight
+	path = files/.janus/vim-vwilight
 	url = git@github.com:alphabetum/vim-vwilight.git
