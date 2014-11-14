@@ -274,7 +274,6 @@ spotlightcontent() {
 # Git
 #==========================================================================
 
-alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gstat='git status'
