@@ -404,9 +404,7 @@ export MYSQL_CONNECTOR_JAR="/Library/Java/Extensions/mysql-connector.jar"
 #==========================================================================
 
 
-# Memcached
 
-EVENT_NOKQUEUE=yes
 
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 
