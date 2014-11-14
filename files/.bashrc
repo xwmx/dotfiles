@@ -19,10 +19,6 @@ export PATH=/usr/texbin:$PATH
 
 
 
-
-# not all rubies support this
-# export RUBYOPT="rubygems"
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
