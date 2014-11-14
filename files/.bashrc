@@ -286,7 +286,9 @@ alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(magenta)%d
 
 # Alias the `git` command to the `hub` command.
 # http://github.com/defunkt/hub
-alias git=hub
+if program_exists hub; then
+  alias git=hub
+fi
 
 #==========================================================================
 # Rails aliases
