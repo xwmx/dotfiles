@@ -51,8 +51,6 @@ test_program_exists() {
 export PATH=/usr/local/share/python:/usr/local/mysql/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:$HOME/.gem/ruby/1.8/bin:$HOME/.cabal/bin:$PATH
 # Add Postgres.app binaries to PATH
 export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
-# Add texbin to PATH
-export PATH=/usr/texbin:$PATH
 
 #==========================================================================
 # Build / Configure Environment Variables
@@ -386,6 +384,13 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+
+#==========================================================================
+# TeX
+#==========================================================================
+
+# Add texbin to PATH
+export PATH=/usr/texbin:$PATH
 
 #==========================================================================
 # misc
