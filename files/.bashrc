@@ -46,11 +46,17 @@ export LDFLAGS='-arch x86_64'
 # export PATH
 
 #==========================================================================
-# History controls. export HISTSIZE=500 is default.
+# History controls
 #==========================================================================
 
-export HISTSIZE=100
-export HISTCONTROL=ignoreboth
+# Entries beginning with space aren't added into history, and duplicate
+# entries will be erased (leaving the most recent entry).
+export HISTCONTROL="ignoreboth"
+# Give history timestamps.
+export HISTTIMEFORMAT="[%F %T] "
+# Lots o' history.
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 
 #==========================================================================
 # Use mvim as default editor
