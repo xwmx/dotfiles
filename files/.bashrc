@@ -318,6 +318,8 @@ alias ruby="ruby_or_irb"
 
 #==========================================================================
 # j2
+#
+# https://github.com/rupa/j2
 #==========================================================================
 
 export JPY=$HOME/bin/j.py # tells j.sh where the python script is
