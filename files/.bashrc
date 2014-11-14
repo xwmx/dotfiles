@@ -53,7 +53,6 @@ test_program_exists() {
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 
 
