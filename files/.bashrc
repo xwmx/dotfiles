@@ -52,8 +52,6 @@ test_program_exists() {
 #==========================================================================
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
-
 
 #==========================================================================
 # Build / Configure Environment Variables
