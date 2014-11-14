@@ -1,0 +1,24 @@
+#! /bin/bash
+URL=$1    
+DIR=~/websites/$2    
+
+if [ ! -d $DIR ] 
+then
+  echo mkdir -p $DIR
+  mkdir -p $DIR
+fi
+
+cd $DIR
+wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait $URL
+
+# -r                      recursive
+# -l inf                  all sub directories
+# -np                     do NOT crawl parent directories
+# -nH                     do NOT create host directories locally
+# -k                      convert links (to refer to local directories)
+# -c                      continue (script is restartable)
+# -N                      only retrieve files when newer than local file
+# -w1                     wait interval is 1 second
+# --random-wait           random wait between 0..2 seconds (2 * wait interval)
+# --e robots=off          ignore robots.txt (naughty)
+# --no-check-certificate  live dangerously
