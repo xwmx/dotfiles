@@ -47,7 +47,6 @@ test_program_exists() {
 
 
 
-# export DYLD_FALLBACK_LIBRARY_PATH=/usr/lib:/usr/local/lib
 export PATH=/usr/local/share/python:/usr/local/mysql/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:$HOME/.gem/ruby/1.8/bin:$HOME/.cabal/bin:$PATH
 
 #==========================================================================
