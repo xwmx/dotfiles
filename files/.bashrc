@@ -197,10 +197,6 @@ fi
 #==========================================================================
 
 
-alias ls="ls -GF"
-alias la='ls -laGFh'
-alias lal='ls -laGFh | less -R'
-alias ll='ls -alF'
 
 
 #==========================================================================
@@ -226,8 +222,20 @@ fi
 # Aliases
 #==========================================================================
 
+# ls
+# --
+
+alias ls="ls -GF"
+alias la='ls -laGFh'
+alias lal='ls -laGFh | less -R'
+alias ll='ls -alF'
+
+# mkdir
+# -----
+
 # Create intermediate directories as required
 alias mkdir='mkdir -p'
+
 
 #==========================================================================
 # locate
