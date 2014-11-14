@@ -1,3 +1,8 @@
+# .bashrc
+#
+# More info about OS X shell startup:
+# http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
+
 # Where the magic happens.
 export DOTFILES=~/.dot
 
