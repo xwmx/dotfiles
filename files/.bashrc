@@ -54,27 +54,6 @@ export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
 # Add texbin to PATH
 export PATH=/usr/texbin:$PATH
 
-
-#export LD_LIBRARY_PATH=/opt/local/lib:/usr/local/lib
-
-
-
-
-
-# To avoid issues with Lion and llvm
-
-# export CC=/usr/bin/gcc-4.2
-
-# # Setting PATH for MacPython 2.5
-# # The orginal version is saved in .bash_profile.pysave
-# PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-# export PATH
-#
-# # Setting PATH for MacPython 2.6
-# # The orginal version is saved in .bash_profile.pysave
-# PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
-# export PATH
-
 #==========================================================================
 # Build / Configure Environment Variables
 #==========================================================================
