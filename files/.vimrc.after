@@ -49,10 +49,6 @@ filetype plugin indent on     " required!
 " avoidance w/ command+shift+right arrow)
 "set selection=exclusive
 
-if has("gui_macvim")
-    let macvim_hig_shift_movement_alt = 1
-endif
-
 
 " Extra split navigation shortcuts
 nmap <C-j> <C-w>j
@@ -64,7 +60,7 @@ nmap <C-l> <C-w>l
 set splitbelow
 set splitright
 
-" Adding buffer cycling mapping
+" Buffer cycling mapping
 "
 " Use ctrl-tab and ctrl-shift-tab to cycle buffers
 map <C-Tab> :bnext<cr>
@@ -79,6 +75,10 @@ map <C-]> :bnext<cr>
 " adding the line
 "   let macvim_hig_shift_movement = 1
 " to ~/.vimrc.
+if has("gui_macvim")
+    let macvim_hig_shift_movement_alt = 1
+endif
+
 if exists("macvim_hig_shift_movement_alt")
   " Shift + special movement key (<S-Left>, etc.) and mouse starts insert mode
   set selectmode=mouse,key
