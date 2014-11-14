@@ -411,14 +411,6 @@ cmdfu(){
   curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext";
 }
 
-# Open the default web browser and search google
-#
-# Usage:
-# $ google search these terms
-google() {
-  python -c "import sys, webbrowser, urllib;   webbrowser.open('http://www.google.com/search?' + urllib.urlencode({'q': ' '.join(sys.argv[1:]) }))" $@
-}
-
 # Prints the top 10 subdirectories by disk uage.
 #
 # http://oreilly.com/pub/h/15
