@@ -223,13 +223,8 @@ if echo hello|grep --color=auto l >/dev/null 2>&1; then
 fi
 
 #==========================================================================
-# Other aliases
+# Aliases
 #==========================================================================
-
-# Prevent accidentally killing files
-#alias rm='rm -i'
-#alias cp='cp -i'
-#alias mv='mv -i'
 
 # Create intermediate directories as required
 alias mkdir='mkdir -p'
