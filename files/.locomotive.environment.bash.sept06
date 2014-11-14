@@ -1,9 +1,0 @@
-export CPPFLAGS=-I/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/include
-export LOCOMOTIVE_VERSION=2.0.8
-export CFLAGS=-I/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/include
-export RUBYLIB=/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/lib/ruby/site_ruby/1.8:/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/lib/ruby/site_ruby/1.8/i686-darwin8.7.1:/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/lib/ruby/1.8:/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/lib/ruby/1.8/i686-darwin8.7.1
-export CXXFLAGS=-I/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/include
-export HOME=~/
-export DYLD_FALLBACK_LIBRARY_PATH=/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/lib:/usr/lib
-export LDFLAGS="-L/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/lib -headerpad_max_install_names"
-export PATH=/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/bin:/Applications/Locomotive2/Bundles/standardRailsSept2006.locobundle/i386/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/MAMP/db/mysql
