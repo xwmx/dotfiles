@@ -393,9 +393,24 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH//://bin:}/bin
 
 #==========================================================================
-# misc
+# RVM
 #==========================================================================
 
+if [[ -s /Users/automat/.rvm/scripts/rvm ]] ; then
+  source /Users/automat/.rvm/scripts/rvm ;
+fi
+
+#==========================================================================
+# Heroku
+#==========================================================================
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+
+#==========================================================================
+# misc
+#==========================================================================
 
 
 
@@ -425,12 +440,3 @@ alias ducks='du -cks * |sort -rn |head -11'
 alias utc_timestamp='date -u "+%Y%m%d%H%M%S"'
 alias utcts='utc_timestamp'
 
-
-## from original .bashrc -------
-
-# rvm-install added line:
-if [[ -s /Users/automat/.rvm/scripts/rvm ]] ; then source /Users/automat/.rvm/scripts/rvm ; fi
-
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
