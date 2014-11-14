@@ -40,10 +40,10 @@ program_exists() {
 }
 
 test_program_exists() {
-  if ! program_exists not_a_real_program; then
+  if program_exists not_a_real_program; then
     echo "test_program_exists Failed"
   fi
-  if program_exists bash; then
+  if ! program_exists bash; then
     echo "test_program_exists Failed"
   fi
 
