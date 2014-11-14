@@ -1,0 +1,4 @@
+#!/bin/bash
+
+zip -q0X  BookTitle.epub mimetype
+zip -qXr9D  BookTitle.epub *
