@@ -47,6 +47,8 @@ test_program_exists() {
 
 #==========================================================================
 # PATH
+#
+# Additional PATH initialization in /etc/paths and /etc/paths.d
 #==========================================================================
 
 export PATH=/usr/local/share/python:$PATH
