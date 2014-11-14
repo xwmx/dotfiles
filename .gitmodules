@@ -67,3 +67,6 @@
 [submodule "vendor/ebeigarts/dotfiles"]
 	path = vendor/ebeigarts/dotfiles
 	url = https://github.com/ebeigarts/dotfiles.git
+[submodule "vendor/mislav/dotfiles"]
+	path = vendor/mislav/dotfiles
+	url = https://github.com/mislav/dotfiles.git
