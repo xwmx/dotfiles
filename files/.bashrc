@@ -376,7 +376,7 @@ alias ruby="ruby_or_irb"
 # Expects installation via homebrew
 #==========================================================================
 
-if hash brew 2>/dev/null; then
+if program_exists brew; then
   if [[ -f `brew --prefix`/etc/profile.d/z.sh ]]; then
     . `brew --prefix`/etc/profile.d/z.sh;
   fi
