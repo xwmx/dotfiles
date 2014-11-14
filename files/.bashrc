@@ -2,6 +2,10 @@
 #
 # More info about OS X shell startup:
 # http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
+#
+# PATH --------------------------------------------------------------------
+# Note: Additional PATH initialization in /etc/paths and /etc/paths.d
+
 
 # Where the magic happens.
 export DOTFILES=~/.dot
@@ -44,14 +48,6 @@ test_program_exists() {
   fi
 
 }
-
-#==========================================================================
-# PATH
-#
-# Additional PATH initialization in /etc/paths and /etc/paths.d
-#==========================================================================
-
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
 #==========================================================================
 # Build / Configure Environment Variables
