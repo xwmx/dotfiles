@@ -62,7 +62,7 @@ export HISTFILESIZE=10000
 # Use mvim as default editor
 #==========================================================================
 
-export EDITOR=$HOME/bin/mvim
+export EDITOR=mvim
 
 #==========================================================================
 # Shell prompt settings.
