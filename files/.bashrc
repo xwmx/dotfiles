@@ -51,7 +51,6 @@ test_program_exists() {
 # Additional PATH initialization in /etc/paths and /etc/paths.d
 #==========================================================================
 
-export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
