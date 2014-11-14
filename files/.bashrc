@@ -390,9 +390,18 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
 
 #==========================================================================
-# misc
+# Java / JVM
 #==========================================================================
 
+export JAVA_HOME=$(/usr/libexec/java_home)
+export SCALA_HOME="/usr/local/Cellar/scala/2.7.7"
+export JAVA="$JAVA_HOME/bin/java"
+export SCALA="$SCALA_HOME/bin/scala"
+export MYSQL_CONNECTOR_JAR="/Library/Java/Extensions/mysql-connector.jar"
+
+#==========================================================================
+# misc
+#==========================================================================
 
 
 # Memcached
@@ -400,14 +409,6 @@ export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
 EVENT_NOKQUEUE=yes
 
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
-
-# Java
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export SCALA_HOME="/usr/local/Cellar/scala/2.7.7"
-export JAVA="$JAVA_HOME/bin/java"
-export SCALA="$SCALA_HOME/bin/scala"
-export MYSQL_CONNECTOR_JAR="/Library/Java/Extensions/mysql-connector.jar"
 
 google() {
   python -c "import sys, webbrowser, urllib;   webbrowser.open('http://www.google.com/search?' + urllib.urlencode({'q': ' '.join(sys.argv[1:]) }))" $@
