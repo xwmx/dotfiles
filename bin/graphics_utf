@@ -1,0 +1,157 @@
+#!/bin/sh -
+#
+# graphics_utf [options] character_set
+# graphics_utf [options] start_utf_hex  [end_utf_hex]
+#
+# Print UTF characters tables to standard output...
+#
+# Options:   -n   no formating around charcaters
+#            -N   no formating, and no linefeeds either
+#
+# Character-Sets Known by this script include:
+#       ascii, ascii+meta, meta, latin, latin_ext, tolkan, punct, indices,
+#       numbers, factions, roman, arrows, math, mathsup,
+#       technical, graphics, dingbats, braile, and asian (big)
+#
+# For example
+#    graphics_utf numbers
+#    graphics_utf 0000 0200
+#
+# Or use ImageMagick to display in a specific font
+#
+#   graphics_utf -N dingbats |\
+#     convert -font Mincho -pointsize 48 label:@- x:
+#
+####
+#
+# For a GUI version (yuck) use  "gucharmap"
+#
+# WARNING: Input arguments are NOT tested for correctness.
+# This script represents a security risk if used ONLINE.
+# I accept no responsiblity for misuse. Use at own risk.
+#
+# Anthony Thyssen    30 August 2005
+#
+PROGNAME=`type $0 | awk '{print $3}'`  # search for executable on path
+PROGDIR=`dirname $PROGNAME`            # extract directory of program
+PROGNAME=`basename $PROGNAME`          # base name of program
+Usage() {                              # output the script comments as docs
+  echo >&2 "$PROGNAME:" "$@"
+  sed >&2 -n '/^###/q; /^#/!q; s/^#//; s/^ //; 3s/^/Usage: /; 2,$ p' \
+          "$PROGDIR/$PROGNAME"
+  exit 10;
+}
+
+FORMAT=normal
+
+while [  $# -gt 0 ]; do
+  case "$1" in
+  --help|--doc*)      Usage ;;
+  -n|--noheaders)     FORMAT=nohead ;;
+  -N|--nolinefeeds)   FORMAT= ;;
+
+  --) shift; break ;;    # end of user options
+  -*) Usage "Unknown option \"$1\"" ;;
+  *)  break ;;           # end of user options
+
+  esac
+  shift   # next option
+done
+
+case `echo "$1" | tr 'A-Z' 'a-z'` in
+ascii)        start=`printf '%d' 0x0020` end=`printf '%d' 0x0080` ;;
+ascii+meta)   start=`printf '%d' 0x0020` end=`printf '%d' 0x0100` ;;
+latin)        start=`printf '%d' 0x0000` end=`printf '%d' 0x0250` ;;
+meta)         start=`printf '%d' 0x00A0` end=`printf '%d' 0x0100` ;;
+latin_ext)    start=`printf '%d' 0x1E00` end=`printf '%d' 0x1F00` ;;
+runic|tolkan) start=`printf '%d' 0x16A0` end=`printf '%d' 0x1700` ;;
+punctuation|\
+  punct)      start=`printf '%d' 0x2000` end=`printf '%d' 0x2070` ;;
+indices)      start=`printf '%d' 0x2070` end=`printf '%d' 0x20A0` ;;
+numbers)      start=`printf '%d' 0x2150` end=`printf '%d' 0x2180` ;;
+factions)     start=`printf '%d' 0x2150` end=`printf '%d' 0x2160` ;;
+roman)        start=`printf '%d' 0x2160` end=`printf '%d' 0x2190` ;;
+arrows)       start=`printf '%d' 0x2190` end=`printf '%d' 0x2200` ;;
+arrows-a)     start=`printf '%d' 0x27F0` end=`printf '%d' 0x2800` ;;
+arrows-b)     start=`printf '%d' 0x2900` end=`printf '%d' 0x2980` ;;
+math)         start=`printf '%d' 0x2200` end=`printf '%d' 0x2300` ;;
+technical)    start=`printf '%d' 0x2300` end=`printf '%d' 0x2400` ;;
+graphics)     start=`printf '%d' 0x2500` end=`printf '%d' 0x2600` ;;
+miscellaneous|\
+  misc)       start=`printf '%d' 0x2600` end=`printf '%d' 0x2700` ;;
+dingbats)     start=`printf '%d' 0x2700` end=`printf '%d' 0x2800` ;;
+braile)       start=`printf '%d' 0x2800` end=`printf '%d' 0x2900` ;;
+mathsup)      start=`printf '%d' 0x2A00` end=`printf '%d' 0x2B00` ;;
+asian)        start=`printf '%d' 0x4E00` end=`printf '%d' 0xA000` ;;
+
+[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F])
+  start=`printf '%d' 0x${1:-2000}`
+  if [ "x$2" = 'x' ]; then
+    case "$FORMAT" in
+    normal) end=`expr $start + 16 \* 16` ;;
+    nohead) end=`expr $start + 16` ;;
+    *)      end=`expr $start + 1` ;;
+    esac
+  else
+    end=`printf '%d' 0x$2`
+  fi
+  ;;
+
+'') # no argument -- standard charcaters
+  start=`printf '%d' 0x0020` end=`printf '%d' 0x0080`
+  ;;
+*)
+  Usage
+  echo >&2 "Usage: $0 character_set"
+  echo >&2 "       $0 start_utf_hex  [end_utf_hex]"
+  echo >&2 "Continuing with the 'latin' character_set..."
+  echo >&2 ""
+  start=`printf '%d' 0x0020` end=`printf '%d' 0x0080`
+  ;;
+esac
+
+# ------------------------------------------------------------------------
+
+i=$start
+
+[ "$FORMAT" = 'normal' ] &&
+   printf '             UTF-8 Characters  %04X to %04X\n'  $start  $end
+
+while [ $i -lt $end ]; do
+
+  if [ "$FORMAT" = 'normal' ]; then
+    [  `expr $i % 256` -eq 0 -o $i -eq $start ] &&
+      printf "      _0__1__2__3__4__5__6__7__8__9__a__b__c__d__e__f_\n"
+    printf "%04X " $i
+    #[ $i -lt 32 -o $i -eq 128 -o $i -eq 144 ] &&
+  fi
+  if [ $i -lt 32 ]; then
+    if [ "$FORMAT" = 'normal' ]; then
+      printf "       Skipping  Control  Character  Range\n"
+    fi
+  else
+    for j in  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+      c=`expr $i + $j`
+      if [ "$FORMAT" = 'normal' ]; then
+        printf "  "
+      elif [ $c -ge $end ]; then
+        break
+      fi
+      if [ $i -ge 160 ]; then    # full unicode character
+        c=`printf "%04X" $c`
+        #env LC_CTYPE=en_AU.utf8 printf "\u$c"
+        env LC_CTYPE=en_AU.utf8 \
+           perl -e "binmode(STDOUT, ':utf8'); print chr(0x$c)"
+      elif [ $i -ge 128 ]; then  # meta-control character
+        printf "\xc2\x`printf "%02X" $c`"
+      else                       # normal character
+        printf "\x`printf "%02X" $c`"
+      fi
+    done
+    [ "$FORMAT" ] && printf "\n"
+  fi
+  i=`expr $i + 16`
+
+done
+
+# ------------------------------------------------------------------------
