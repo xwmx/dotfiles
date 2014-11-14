@@ -317,18 +317,26 @@ ruby_or_irb () {
 alias ruby="ruby_or_irb"
 
 #==========================================================================
-# j2
+# Z
 #
-# https://github.com/rupa/j2
+# Tracks your most used directories, based on 'frecency'.
+#
+# After  a  short  learning  phase, z will take you to the most 'frecent'
+# directory that matches ALL of the regexes given on the command line, in
+# order.
+#
+# For example, z foo bar would match /foo/bar but not /bar/foo.
+#
+# https://github.com/rupa/z/
+#
+# Expects installation via homebrew
 #==========================================================================
 
-export JPY=$HOME/bin/j.py # tells j.sh where the python script is
-. $HOME/bin/j.sh          # provides the j() function
-source j.sh
-
-alias jl='j -l'
-alias jt='j -t recent'
-alias jr='j -t rank'
+if hash brew 2>/dev/null; then
+  if [[ -f `brew --prefix`/etc/profile.d/z.sh ]]; then
+    . `brew --prefix`/etc/profile.d/z.sh;
+  fi
+fi
 
 #==========================================================================
 # Go
