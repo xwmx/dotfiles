@@ -20,11 +20,8 @@ export PATH=/usr/texbin:$PATH
 
 #export LD_LIBRARY_PATH=/opt/local/lib:/usr/local/lib
 
-export ARCHFLAGS='-arch x86_64'
-export CFLAGS='-arch x86_64'
-export LDFLAGS='-arch x86_64'
 
-# export OS='darwin'
+
 
 
 # To avoid issues with Lion and llvm
@@ -40,6 +37,14 @@ export LDFLAGS='-arch x86_64'
 # # The orginal version is saved in .bash_profile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
 # export PATH
+
+#==========================================================================
+# Build / Configure Environment Variables
+#==========================================================================
+
+export ARCHFLAGS='-arch x86_64'
+export CFLAGS='-arch x86_64'
+export LDFLAGS='-arch x86_64'
 
 #==========================================================================
 # Locale
