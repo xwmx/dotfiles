@@ -18,10 +18,6 @@ export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
 export PATH=/usr/texbin:$PATH
 
 
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 #export LD_LIBRARY_PATH=/opt/local/lib:/usr/local/lib
 
 export ARCHFLAGS='-arch x86_64'
@@ -44,6 +40,22 @@ export LDFLAGS='-arch x86_64'
 # # The orginal version is saved in .bash_profile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
 # export PATH
+
+#==========================================================================
+# Locale
+#
+# These are also mostly set in Terminal.app preferences, at:
+# Profiles > Advanced > Set locale environment variables on startup
+#==========================================================================
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_COLLATE=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_MESSAGES=en_US.UTF-8
+export LC_MONETARY=en_US.UTF-8
+export LC_NUMERIC=en_US.UTF-8
+export LC_TIME=en_US.UTF-8
 
 #==========================================================================
 # History controls
@@ -137,12 +149,6 @@ export PROMPT_COMMAND
 export PS1=$newPWD
 COMMENT
 
-
-#==========================================================================
-# For textmate bundle checkouts
-#==========================================================================
-
-export LC_CTYPE=en_US.UTF-8
 
 #==========================================================================
 # Find Directory containing MacVim.app
