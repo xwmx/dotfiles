@@ -45,9 +45,17 @@ test_program_exists() {
 
 }
 
+#==========================================================================
+# PATH
+#==========================================================================
 
+export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
 
-export PATH=/usr/local/share/python:/usr/local/mysql/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:$HOME/.gem/ruby/1.8/bin:$HOME/.cabal/bin:$PATH
 
 #==========================================================================
 # Build / Configure Environment Variables
