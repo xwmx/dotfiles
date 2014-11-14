@@ -64,3 +64,6 @@
 [submodule "files/.janus/bufkill.vim"]
 	path = files/.janus/bufkill.vim
 	url = https://github.com/mattdbridges/bufkill.vim.git
+[submodule "vendor/ebeigarts/dotfiles"]
+	path = vendor/ebeigarts/dotfiles
+	url = https://github.com/ebeigarts/dotfiles.git
