@@ -10,6 +10,25 @@ export DOTFILES=~/.dot
 PATH=$DOTFILES/bin:$PATH
 export PATH
 
+#==========================================================================
+# Utility Functions
+#==========================================================================
+
+# OS detection
+function is_osx() {
+  [[ "$OSTYPE" =~ ^darwin ]] || return 1
+}
+function is_ubuntu() {
+  [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
+}
+function get_os() {
+  for os in osx ubuntu; do
+    is_$os; [[ $? == ${1:-0} ]] && echo $os
+  done
+}
+
+
+
 # export DYLD_FALLBACK_LIBRARY_PATH=/usr/lib:/usr/local/lib
 export PATH=/usr/local/share/python:/usr/local/mysql/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:$HOME/.gem/ruby/1.8/bin:$HOME/.cabal/bin:$PATH
 # Add Postgres.app binaries to PATH
@@ -42,9 +61,11 @@ export PATH=/usr/texbin:$PATH
 # Build / Configure Environment Variables
 #==========================================================================
 
-export ARCHFLAGS='-arch x86_64'
-export CFLAGS='-arch x86_64'
-export LDFLAGS='-arch x86_64'
+if is_osx; then
+  export ARCHFLAGS='-arch x86_64'
+  export CFLAGS='-arch x86_64'
+  export LDFLAGS='-arch x86_64'
+fi
 
 #==========================================================================
 # Locale
