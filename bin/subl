@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# This is required in order to launch sublime text from the command line with
-# the python executable that it apparently expects,
-# specifically /usr/bin/python
-PATH=/usr/bin:$PATH
-vendor-subl $1
