@@ -50,6 +50,13 @@ test_program_exists() {
 }
 
 #==========================================================================
+# PATH
+#==========================================================================
+
+# Path to homebrew-installed GNU core utilities, the 'coreutils' package
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
+#==========================================================================
 # Build / Configure Environment Variables
 #==========================================================================
 
