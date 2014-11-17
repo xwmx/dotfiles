@@ -5,13 +5,7 @@
 # Add iOS Simulator to Launchpad and Spotlight
 # Notes: spotlight apparently doesn't index symlinks properly, so an alias is
 # required in order to get it picked up properly.
-osascript <<END
-  set ios_sim to POSIX file "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app"
-  set applications_folder to POSIX file "/Applications"
-  tell application "Finder"
-    make alias file to ios_sim at applications_folder
-  end tell
-END
+make_alias "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications"
 
 ###############################################################################
 # Disk Utility
