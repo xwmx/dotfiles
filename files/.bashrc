@@ -162,25 +162,6 @@ if echo hello|grep --color=auto l >/dev/null 2>&1; then
 fi
 
 #==========================================================================
-# Aliases
-#==========================================================================
-
-# ls
-# --
-
-alias ls="ls -GF"
-alias la='ls -laGFh'
-alias lal='ls -laGFh | less -R'
-alias ll='ls -alF'
-
-# mkdir
-# -----
-
-# Create intermediate directories as required
-alias mkdir='mkdir -p'
-
-
-#==========================================================================
 # locate
 #==========================================================================
 
