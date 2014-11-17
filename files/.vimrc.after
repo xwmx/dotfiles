@@ -62,9 +62,8 @@ set splitright
 
 " Buffer cycling mapping
 "
-" Use ctrl-tab and ctrl-shift-tab to cycle buffers
-map <C-Tab> :bnext<cr>
-map <C-S-Tab> :bprevious<cr>
+" Use ctrl-tab to close the current buffer without closing the split / window
+map <C-Tab> :Kwbd<cr>
 " Use ctrl-[ and ctrl-] to cycle buffers
 map <C-[> :bprevious<cr>
 map <C-]> :bnext<cr>
