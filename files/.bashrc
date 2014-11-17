@@ -7,33 +7,10 @@
 # Note: Additional PATH initialization in /etc/paths and /etc/paths.d
 
 #==========================================================================
-# Init
-#==========================================================================
-
-# Set DOTFILES directory
-export DOTFILES=~/.dot
-
-# Add binaries into the path
-PATH=$DOTFILES/bin:$PATH
-export PATH
-
-# Source all files in ".bashrc.d"
-function src() {
-  local file
-  if [[ "$1" ]]; then
-    source "$HOME/.bashrc.d/$1"
-  else
-    for file in $HOME/.bashrc.d/*; do
-      source "$file"
-    done
-  fi
-}
-
-src
-
-
-#==========================================================================
 # Utility Functions
+#
+# Note: these functions must be included prior to the .bashrc.d files that
+# use them.
 #==========================================================================
 
 # OS detection
@@ -66,6 +43,31 @@ test_program_exists() {
   fi
 
 }
+
+#==========================================================================
+# Init
+#==========================================================================
+
+# Set DOTFILES directory
+export DOTFILES=~/.dot
+
+# Add binaries into the path
+PATH=$DOTFILES/bin:$PATH
+export PATH
+
+# Source all files in ".bashrc.d"
+function src() {
+  local file
+  if [[ "$1" ]]; then
+    source "$HOME/.bashrc.d/$1"
+  else
+    for file in $HOME/.bashrc.d/*; do
+      source "$file"
+    done
+  fi
+}
+
+src
 
 #==========================================================================
 # PATH
@@ -160,69 +162,6 @@ export TERM='xterm-color'
 if echo hello|grep --color=auto l >/dev/null 2>&1; then
   export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 fi
-
-#==========================================================================
-# locate
-#==========================================================================
-
-# update locate database
-alias updatedb='sudo /usr/libexec/locate.updatedb'
-
-#==========================================================================
-# Here are a variety of aliases for OS X specific stuff
-#==========================================================================
-
-alias trash="cd ~/.trash"
-alias home="cd ~/"
-alias desktop="cd ~/desktop"
-alias textedit="open /applications/textedit.app"
-alias sysprefs="open /applications/utilities/systempreferences.app"
-alias actmon="open /applications/utilities/activity\ monitor.app"
-alias x11="open /applications/utilities/x11.app"
-
-# eject a volume
-alias eject='hdiutil eject'
-# copy the working dir to the clipboard
-alias cpwd='pwd|xargs echo -n|pbcopy'
-# current airport status
-alias apinfo='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
-# use spotlight to search for a file
-spotlightfile() {
-    mdfind "kMDItemDisplayName == '$@'wc";
-}
-#use spotlight to search file contents:
-spotlightcontent() {
-  mdfind -interpret "$@";
-}
-
-#==========================================================================
-# Git
-#==========================================================================
-
-alias gb='git branch'
-alias gba='git branch -a'
-alias gstat='git status'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gd='git diff | mate'
-alias gl='git pull'
-alias gp='git push'
-alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-
-# Alias the `git` command to the `hub` command.
-# http://github.com/defunkt/hub
-if program_exists hub; then
-  alias git=hub
-fi
-
-#==========================================================================
-# Rails aliases
-#==========================================================================
-alias sc='script/console'
-alias ss='script/server'
-alias ss80='sudo script/server -p 80'
-alias remigrate='rake db:remigrate && rake db:test:clone'
-alias atst='autotest'
 
 #==========================================================================
 # Mategem
@@ -324,31 +263,3 @@ export SCALA_HOME="/usr/local/Cellar/scala/2.7.7"
 export JAVA="$JAVA_HOME/bin/java"
 export SCALA="$SCALA_HOME/bin/scala"
 export MYSQL_CONNECTOR_JAR="/Library/Java/Extensions/mysql-connector.jar"
-
-#==========================================================================
-# misc
-#==========================================================================
-
-# Search commandline fu for snippits matching the input.
-#
-# Usage:
-# $ cmdfu du
-cmdfu(){
-  curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext";
-}
-
-# Prints the top 10 subdirectories by disk uage.
-#
-# http://oreilly.com/pub/h/15
-#
-# Usage:
-# $ ducks
-alias ducks='du -cks * |sort -rn |head -11'
-
-# Print a UTC timestamp
-#
-# Usage:
-# $ utc_timestamp
-alias utc_timestamp='date -u "+%Y%m%d%H%M%S"'
-alias utcts='utc_timestamp'
-
