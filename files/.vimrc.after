@@ -127,3 +127,11 @@ nmap <leader>ttb :TagbarToggle<CR>
 
 " Show NERDTree hidden files
 let NERDTreeShowHidden = 1
+
+" Conque-Shell
+" ============
+
+" command for launching shell
+command Sh execute "ConqueTerm bash"
+
+
