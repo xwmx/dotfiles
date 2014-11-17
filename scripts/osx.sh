@@ -1,4 +1,11 @@
 ###############################################################################
+# Developer Applications
+###############################################################################
+
+# Add iOS Simulator to Launchpad and Spotlight
+ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications/iOS Simulator.app"
+
+###############################################################################
 # Disk Utility
 ###############################################################################
 
