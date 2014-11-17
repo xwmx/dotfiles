@@ -21,9 +21,9 @@ export PATH
 function src() {
   local file
   if [[ "$1" ]]; then
-    source "$DOTFILES/files/.bashrc.d/$1"
+    source "$HOME/.bashrc.d/$1"
   else
-    for file in $DOTFILES/files/.bashrc.d/*; do
+    for file in $HOME/.bashrc.d/*; do
       source "$file"
     done
   fi
