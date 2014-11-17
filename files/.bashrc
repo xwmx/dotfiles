@@ -6,13 +6,31 @@
 # PATH --------------------------------------------------------------------
 # Note: Additional PATH initialization in /etc/paths and /etc/paths.d
 
+#==========================================================================
+# Init
+#==========================================================================
 
-# Where the magic happens.
+# Set DOTFILES directory
 export DOTFILES=~/.dot
 
 # Add binaries into the path
 PATH=$DOTFILES/bin:$PATH
 export PATH
+
+# Source all files in ".bashrc.d"
+function src() {
+  local file
+  if [[ "$1" ]]; then
+    source "$DOTFILES/files/.bashrc.d/$1"
+  else
+    for file in $DOTFILES/files/.bashrc.d/*; do
+      source "$file"
+    done
+  fi
+}
+
+src
+
 
 #==========================================================================
 # Utility Functions
