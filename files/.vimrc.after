@@ -129,4 +129,9 @@ nmap <leader>ttb :TagbarToggle<CR>
 " Show NERDTree hidden files
 let NERDTreeShowHidden = 1
 
+" Shell
+" =====
+
+" Set shell to use bash with configuration files loaded
+set shell=/bin/bash\ -i
 
