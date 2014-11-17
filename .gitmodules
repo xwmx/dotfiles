@@ -72,4 +72,5 @@
 	url = https://github.com/mislav/dotfiles.git
 [submodule "files/.janus/Conque-Shell"]
 	path = files/.janus/Conque-Shell
-	url = https://github.com/oplatek/Conque-Shell.git
+  url = https://github.com/oplatek/Conque-Shell.git
+  ignore = dirty
