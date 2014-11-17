@@ -2,8 +2,9 @@
 # Disk Utility
 ###############################################################################
 
-# Enable the debug menu. Revert command:
-# $ defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool false
+# Enable the debug menu.
+# Revert command:
+# defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool false
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 
 # Enable advanced options
@@ -15,8 +16,9 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Finder
 ###############################################################################
 
-# Finder: allow text selection in Quick Look. Revert command:
-# $ defaults delete com.apple.finder QLEnableTextSelection
+# Finder: allow text selection in Quick Look.
+# Revert command:
+# defaults delete com.apple.finder QLEnableTextSelection
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 ###############################################################################
