@@ -44,3 +44,11 @@ configuration.
 
 Other dotfile repos, submoduled. Nothing in this directory is
 automatically loaded.
+
+## Local Files
+
+The following files are expected and should be added to ~/ with any
+local settings as contents.
+
+- .gitconfig.local
+- .hgrc.local
