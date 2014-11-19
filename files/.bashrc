@@ -232,20 +232,11 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH//://bin:}/bin
 
 #==========================================================================
-# RVM
-#==========================================================================
-
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then
-  source $HOME/.rvm/scripts/rvm ;
-fi
-
-#==========================================================================
 # Heroku
 #==========================================================================
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
 
 #==========================================================================
 # Postgres
@@ -263,3 +254,11 @@ export SCALA_HOME="/usr/local/Cellar/scala/2.7.7"
 export JAVA="$JAVA_HOME/bin/java"
 export SCALA="$SCALA_HOME/bin/scala"
 export MYSQL_CONNECTOR_JAR="/Library/Java/Extensions/mysql-connector.jar"
+
+#==========================================================================
+# RVM
+#==========================================================================
+
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then
+  source $HOME/.rvm/scripts/rvm ;
+fi
