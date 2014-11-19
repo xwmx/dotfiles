@@ -101,6 +101,24 @@ brew install zopfli
 # installation method.
 brew install node
 
+brew install elixir
+brew install hub
+brew install leiningen
+brew install lua
+brew install lynx
+brew install macvim
+brew install memcached
+brew install mercurial
+brew install mit-scheme
+brew install pandoc
+brew install redis
+brew install riak
+brew install scala
+brew install siege
+brew install sphinx
+brew install stow
+brew install the_silver_searcher
+
 # install brew cask
 brew install caskroom/cask/brew-cask
 
