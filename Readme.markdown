@@ -2,8 +2,9 @@
 
 ## Instructions for use
 
-Clone the repository to `~/.dot` and symlink all of the files that are
-in the `~/.dot/files` directory.
+Clone the repository to `~/.dot` and run `rake link` to symlink all of
+the dotfiles into the `$HOME` directory. See additional tasks in
+`Rakefile` (`rake tasks`) for backup and troubleshooting tasks.
 
 Run `$ git submodule init` and `$ git submodule update`
 
