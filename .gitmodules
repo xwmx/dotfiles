@@ -39,44 +39,44 @@
 	url = https://github.com/briancollins/vim-jst.git
 [submodule ".janus/vim-vwilight"]
 	path = files/.janus/vim-vwilight
-	url = git@github.com:alphabetum/vim-vwilight.git
-[submodule "vendor/holman/dotfiles"]
-	path = vendor/holman/dotfiles
-	url = https://github.com/holman/dotfiles.git
-[submodule "vendor/thoughtbot/dotfiles"]
-	path = vendor/thoughtbot/dotfiles
-	url = https://github.com/thoughtbot/dotfiles.git
-[submodule "vendor/mathiasbynens/dotfiles"]
-	path = vendor/mathiasbynens/dotfiles
-	url = https://github.com/mathiasbynens/dotfiles.git
-[submodule "vendor/ryanb/dotfiles"]
-	path = vendor/ryanb/dotfiles
-	url = https://github.com/ryanb/dotfiles.git
-[submodule "vendor/rtomayko/dotfiles"]
-	path = vendor/rtomayko/dotfiles
-	url = https://github.com/rtomayko/dotfiles.git
-[submodule "vendor/cowboy/dotfiles"]
-	path = vendor/cowboy/dotfiles
-	url = https://github.com/cowboy/dotfiles.git
-[submodule "vendor/tvon/dotfiles"]
-	path = vendor/tvon/dotfiles
-	url = https://github.com/tvon/dotfiles.git
+  url = git@github.com:alphabetum/vim-vwilight.git
 [submodule "files/.janus/bufkill.vim"]
 	path = files/.janus/bufkill.vim
 	url = https://github.com/mattdbridges/bufkill.vim.git
-[submodule "vendor/ebeigarts/dotfiles"]
-	path = vendor/ebeigarts/dotfiles
-	url = https://github.com/ebeigarts/dotfiles.git
-[submodule "vendor/mislav/dotfiles"]
-	path = vendor/mislav/dotfiles
-	url = https://github.com/mislav/dotfiles.git
 [submodule "files/.janus/Conque-Shell"]
 	path = files/.janus/Conque-Shell
   url = https://github.com/oplatek/Conque-Shell.git
   ignore = dirty
-[submodule "vendor/cldwalker/irbfiles"]
-	path = vendor/cldwalker/irbfiles
-	url = https://github.com/cldwalker/irbfiles.git
 [submodule "files/.janus/eclm_wombat.vim"]
 	path = files/.janus/eclm_wombat.vim
-	url = https://github.com/vim-scripts/eclm_wombat.vim.git
+  url = https://github.com/vim-scripts/eclm_wombat.vim.git
+[submodule "resources/holman/dotfiles"]
+	path = resources/holman/dotfiles
+	url = https://github.com/holman/dotfiles.git
+[submodule "resources/thoughtbot/dotfiles"]
+	path = resources/thoughtbot/dotfiles
+	url = https://github.com/thoughtbot/dotfiles.git
+[submodule "resources/mathiasbynens/dotfiles"]
+	path = resources/mathiasbynens/dotfiles
+	url = https://github.com/mathiasbynens/dotfiles.git
+[submodule "resources/ryanb/dotfiles"]
+	path = resources/ryanb/dotfiles
+	url = https://github.com/ryanb/dotfiles.git
+[submodule "resources/rtomayko/dotfiles"]
+	path = resources/rtomayko/dotfiles
+	url = https://github.com/rtomayko/dotfiles.git
+[submodule "resources/cowboy/dotfiles"]
+	path = resources/cowboy/dotfiles
+	url = https://github.com/cowboy/dotfiles.git
+[submodule "resources/tvon/dotfiles"]
+	path = resources/tvon/dotfiles
+	url = https://github.com/tvon/dotfiles.git
+[submodule "resources/ebeigarts/dotfiles"]
+	path = resources/ebeigarts/dotfiles
+	url = https://github.com/ebeigarts/dotfiles.git
+[submodule "resources/mislav/dotfiles"]
+	path = resources/mislav/dotfiles
+	url = https://github.com/mislav/dotfiles.git
+[submodule "resources/cldwalker/irbfiles"]
+	path = resources/cldwalker/irbfiles
+	url = https://github.com/cldwalker/irbfiles.git
