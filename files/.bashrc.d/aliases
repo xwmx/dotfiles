@@ -225,13 +225,4 @@ if program_exists hub; then
   alias git=hub
 fi
 
-#==========================================================================
-# Rails aliases
-#==========================================================================
-alias sc='script/console'
-alias ss='script/server'
-alias ss80='sudo script/server -p 80'
-alias remigrate='rake db:remigrate && rake db:test:clone'
-alias atst='autotest'
-
 
