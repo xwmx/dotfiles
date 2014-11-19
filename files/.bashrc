@@ -235,8 +235,8 @@ export PATH=$PATH:${GOPATH//://bin:}/bin
 # RVM
 #==========================================================================
 
-if [[ -s /Users/automat/.rvm/scripts/rvm ]] ; then
-  source /Users/automat/.rvm/scripts/rvm ;
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then
+  source $HOME/.rvm/scripts/rvm ;
 fi
 
 #==========================================================================
