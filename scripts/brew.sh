@@ -101,5 +101,10 @@ brew install zopfli
 # installation method.
 brew install node
 
+# install brew cask
+brew install caskroom/cask/brew-cask
+
+brew cask install android-studio
+
 # Remove outdated versions from the cellar.
 brew cleanup
