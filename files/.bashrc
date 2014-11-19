@@ -7,6 +7,13 @@
 # Note: Additional PATH initialization in /etc/paths and /etc/paths.d
 
 #==========================================================================
+# PATH
+#==========================================================================
+
+# Add homebrew-managed /usr/local/sbin to PATH
+export PATH=/usr/local/sbin:$PATH
+
+#==========================================================================
 # Utility Functions
 #
 # Note: these functions must be included prior to the .bashrc.d files that
