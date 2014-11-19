@@ -22,6 +22,8 @@ colorscheme vwilight
 " Font
 " ============================================================================
 
+" Note - fonts must be installed from here:
+" https://github.com/abertsch/Menlo-for-Powerline
 set guifont=Menlo\ for\ Powerline:h11
 
 " ============================================================================
