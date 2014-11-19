@@ -126,6 +126,7 @@ brew install the_silver_searcher
 # install brew cask
 brew install caskroom/cask/brew-cask
 
+brew cask install cakebrew
 brew cask install virtualbox
 brew cask install android-studio
 brew cask install mactex
