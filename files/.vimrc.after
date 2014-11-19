@@ -2,13 +2,6 @@
 "
 " Runs after Janus is loaded.
 
-" " Vundle
-" set nocompatible
-" filetype off  " required!
-
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
-
 "colorscheme eclips3remix
 "colorscheme darkburn
 "colorscheme deepblue
