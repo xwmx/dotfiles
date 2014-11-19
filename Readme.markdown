@@ -41,7 +41,7 @@ included in the .janus directory as submodules.
 These are scripts intended to be run once on new machines for initial
 configuration.
 
-### ./vendor
+### ./resources
 
 Other dotfile repos, submoduled. Nothing in this directory is
 automatically loaded.
