@@ -105,6 +105,8 @@ brew install node
 brew install caskroom/cask/brew-cask
 
 brew cask install android-studio
+brew cask install mactex
+brew cask install vagrant
 
 # Remove outdated versions from the cellar.
 brew cleanup
