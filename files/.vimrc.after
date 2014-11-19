@@ -2,7 +2,11 @@
 "
 " Runs after Janus is loaded.
 
-
+" ============================================================================
+" colorschemes
+"
+" Leaving favorites commented out for easy switching
+" ============================================================================
 
 "colorscheme eclips3remix
 "colorscheme darkburn
@@ -12,14 +16,32 @@ colorscheme vwilight
 "colorscheme Tomorrow-Night-Blue
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night
-"set guifont=Menlo\ Regular:h11
+
+" ============================================================================
+" Font
+" ============================================================================
+
 set guifont=Menlo\ for\ Powerline:h11
-autocmd FileType ruby,eruby set noballooneval
-" autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+
+" ============================================================================
+" GUI options
+" ============================================================================
 
 " disable left scrollbar
 set guioptions-=L
 
+
+" ============================================================================
+" FileType settings
+" ============================================================================
+
+autocmd FileType ruby,eruby set noballooneval
+" autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+
+
+" ============================================================================
+" Line length highlighting
+" ============================================================================
 
 " highlight the 80th column
 "
@@ -40,9 +62,11 @@ endif
 filetype plugin indent on     " required!
 
 
-" Don't include cursor position in selections (useful for line break
-" avoidance w/ command+shift+right arrow)
-"set selection=exclusive
+
+
+" ============================================================================
+" Splits, Tabs, and Buffers
+" ============================================================================
 
 
 " Extra split navigation shortcuts
@@ -63,7 +87,13 @@ map <C-Tab> :Kwbd<cr>
 map <C-[> :bprevious<cr>
 map <C-]> :bnext<cr>
 
+" ============================================================================
+" Navigation and Selection
+" ============================================================================
 
+" Don't include cursor position in selections (useful for line break
+" avoidance w/ command+shift+right arrow)
+"set selection=exclusive
 
 " This is so that the HIG shift movement related settings can be enabled by
 " adding the line
