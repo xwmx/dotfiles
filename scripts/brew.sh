@@ -110,6 +110,8 @@ brew install macvim
 brew install memcached
 brew install mercurial
 brew install mit-scheme
+brew install ocaml
+brew install opam
 brew install pandoc
 brew install redis
 brew install riak
