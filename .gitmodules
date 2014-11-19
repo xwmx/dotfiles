@@ -77,3 +77,6 @@
 [submodule "vendor/cldwalker/irbfiles"]
 	path = vendor/cldwalker/irbfiles
 	url = https://github.com/cldwalker/irbfiles.git
+[submodule "files/.janus/eclm_wombat.vim"]
+	path = files/.janus/eclm_wombat.vim
+	url = https://github.com/vim-scripts/eclm_wombat.vim.git
