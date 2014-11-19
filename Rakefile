@@ -16,7 +16,7 @@ task :status do |t|
       status = "  x"
     end
     symlink_status = "@" if File.symlink?(target)
-    puts "#{status} .#{file}#{symlink_status}"
+    puts "#{status} #{file}#{symlink_status}"
   end
 end
 
@@ -38,7 +38,7 @@ task :bak_status do |t|
       status = "  x"
     end
 
-    puts "#{status} .#{file}"
+    puts "#{status} #{file}"
   end
 end
 
