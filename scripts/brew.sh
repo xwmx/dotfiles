@@ -120,6 +120,14 @@ brew install stow
 brew install the_silver_searcher
 
 
+# install brew cask
+brew install caskroom/cask/brew-cask
+
+brew cask install virtualbox
+brew cask install android-studio
+brew cask install mactex
+brew cask install vagrant
+
 # docker
 brew install boot2docker
 # To have launchd start boot2docker at login:
@@ -130,12 +138,6 @@ ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
 brew install docker
 
-# install brew cask
-brew install caskroom/cask/brew-cask
-
-brew cask install android-studio
-brew cask install mactex
-brew cask install vagrant
 
 # Remove outdated versions from the cellar.
 brew cleanup
