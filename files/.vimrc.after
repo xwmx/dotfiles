@@ -2,6 +2,8 @@
 "
 " Runs after Janus is loaded.
 
+
+
 "colorscheme eclips3remix
 "colorscheme darkburn
 "colorscheme deepblue
@@ -100,29 +102,32 @@ if exists("macvim_hig_shift_movement_alt")
   ino  <S-D-Down>     <S-C-End>
 endif " exists("macvim_hig_shift_movement")
 
+" ============================================================================
 " CtrlP
-" =====
+" ============================================================================
 
 " Use abbreviation for CtrlP/Command-T cache refresh
 :ca rc ClearCtrlPCache
 " Include hidden files
 let g:ctrlp_show_hidden = 1
 
-
+" ============================================================================
 " tagbar
-" ======
+" ============================================================================
 
 " Toggle tagbar shortcut
 nmap <leader>ttb :TagbarToggle<CR>
 
+" ============================================================================
 " NERDTree
-" ========
+" ============================================================================
 
 " Show NERDTree hidden files
 let NERDTreeShowHidden = 1
 
+" ============================================================================
 " Conque-Shell
-" ============
+" ============================================================================
 
 " command for launching shell
 command Sh execute "ConqueTerm bash"

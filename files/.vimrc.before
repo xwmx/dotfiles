@@ -5,10 +5,11 @@
 " Disable golang plugin since now using vim-go
 call janus#disable_plugin('golang')
 
-" ------------------------------------------
-" vim-airline settings
+" ============================================================================
+" vim-airline
 "
 " Must be in .vimrc.before or tabline doesn't display.
+" ============================================================================
 
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
