@@ -102,6 +102,7 @@ brew install zopfli
 brew install node
 
 brew install elixir
+brew install flow
 brew install hub
 brew install leiningen
 brew install lua
