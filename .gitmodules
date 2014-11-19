@@ -74,3 +74,6 @@
 	path = files/.janus/Conque-Shell
   url = https://github.com/oplatek/Conque-Shell.git
   ignore = dirty
+[submodule "vendor/cldwalker/irbfiles"]
+	path = vendor/cldwalker/irbfiles
+	url = https://github.com/cldwalker/irbfiles.git
