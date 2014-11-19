@@ -121,6 +121,8 @@ brew install siege
 brew install sphinx
 brew install stow
 brew install the_silver_searcher
+brew install wine
+brew install winetricks
 
 
 # install brew cask
