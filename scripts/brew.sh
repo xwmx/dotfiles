@@ -119,6 +119,17 @@ brew install sphinx
 brew install stow
 brew install the_silver_searcher
 
+
+# docker
+brew install boot2docker
+# To have launchd start boot2docker at login:
+#     ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
+# Then to load boot2docker now:
+#     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
+ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
+brew install docker
+
 # install brew cask
 brew install caskroom/cask/brew-cask
 
