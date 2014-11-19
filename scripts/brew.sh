@@ -127,6 +127,7 @@ brew cask install virtualbox
 brew cask install android-studio
 brew cask install mactex
 brew cask install vagrant
+brew cask install lighttable
 
 # docker
 brew install boot2docker
