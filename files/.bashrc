@@ -73,8 +73,10 @@ src
 # PATH
 #==========================================================================
 
-# Path to homebrew-installed GNU core utilities, the 'coreutils' package
+# PATH for homebrew-installed GNU core utilities, the 'coreutils' package
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+# MANPATH for homebrew-installed GNU core utilities, the 'coreutils' package
+MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
 
 #==========================================================================
 # Build / Configure Environment Variables
