@@ -24,27 +24,31 @@ function parse_git_branch {
 ##################################
 
 function prompt_command () {
-    #   How many characters of the $PWD should be kept
-    local pwd_length=23
-      if [ $(echo -n $PWD | wc -c | tr -d " ") -gt $pwd_length ]; then
-      if [ $(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ") -gt 0 ]; then
-        local user_length=$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ");
-        local total_length=$(echo -n $PWD | wc -c | tr -d " ");
-        let "newPwd_length=$total_length-$user_length";
+  #   How many characters of the $PWD should be kept
+  local pwd_length=23
+  if [ $(echo -n $PWD | wc -c | tr -d " ") -gt $pwd_length ]; then
+    if [ $(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ") -gt 0 ]; then
+      local user_length=$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ");
+      local total_length=$(echo -n $PWD | wc -c | tr -d " ");
+      let "newPwd_length=$total_length-$user_length";
 
-        if [ $newPwd_length -gt $pwd_length ]; then
-          # when in home and path minus users/username is longer than char limit
-          newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
-        else
-          # when in home and path minus users/username is less than limit
-          newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$newPwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~/$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
-        fi
+      if [ $newPwd_length -gt $pwd_length ]; then
+        # when in home and path minus users/username is longer than char limit
+        newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";
+        export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
       else
-        # when not in home and path is longer than char limit
-        newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+        # when in home and path minus users/username is less than limit
+        newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$newPwd_length\}\)/\1/")"
+        export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]~/$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
       fi
-    # when not in home and path is shorter than char limit
-    else export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]\w $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+    else
+      # when not in home and path is longer than char limit
+      newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")"
+      export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;4;31m\]...\[\033[0;0;37m\]$newPWD $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
+    fi
+  else
+  # when not in home and path is shorter than char limit
+    export PS1='\[\033[45;30m\] \[\033[0;7;34m\]\u\[\033[0;0;32m\]@\[\033[0;0;34m\][\h]:\[\033[0;0;37m\]\w $(vcprompt)\[\033[0;0;32m\]$\[\033[0m\] '
   fi
 }
 PROMPT_COMMAND=prompt_command
