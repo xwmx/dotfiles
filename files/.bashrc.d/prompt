@@ -46,11 +46,11 @@ function prompt_command () {
 
   # color sequences
   local BG_PURPLE_FG_BLACK="\[\033[$BG_PURPLE;$FG_BLACK%m\]"  # \[\033[45;30m\]
-  local BG_FG_BLUE_FG_BLACK="\[\033[0;7;$FG_BLUE%m\]"         # \[\033[0;7;34m\]
-  local BG_BLACK_FG_GREEN="\[\033[0;0;$FG_GREEN%m\]"          # \[\033[0;0;32m\]
-  local BG_BLACK_FG_BLUE="\[\033[0;0;$FG_BLUE%m\]"            # \[\033[0;0;34m\]
-  local BG_BLACK_FG_WHITE="\[\033[0;0;$FG_WHITE%m\]"          # \[\033[0;0;37m\]
-  local BG_BLACK_FG_RED_UNDERLINE="\[\033[0;4;$FG_RED%m\]"    # \[\033[0;4;31m\]
+  local BG_FG_BLUE_FG_BLACK="\[\033[$BG_BLUE%m\]"             # \[\033[0;7;34m\]
+  local BG_BLACK_FG_GREEN="\[\033[0;$FG_GREEN%m\]"            # \[\033[0;0;32m\]
+  local BG_BLACK_FG_BLUE="\[\033[0;$FG_BLUE%m\]"              # \[\033[0;0;34m\]
+  local BG_BLACK_FG_WHITE="\[\033[0;$FG_WHITE%m\]"            # \[\033[0;0;37m\]
+  local BG_BLACK_FG_RED_UNDERLINE="\[\033[4;$FG_RED%m\]"      # \[\033[0;4;31m\]
   local RESET_COLORS="\[\033[0m\]"
 
   # position colors
