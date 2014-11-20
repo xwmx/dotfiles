@@ -26,81 +26,88 @@ function parse_git_branch {
 function prompt_command () {
 
   # colors
-  local FG_BLACK="30"
-  local FG_RED="31"
-  local FG_GREEN="32"
-  local FG_YELLOW="33"
-  local FG_BLUE="34"
-  local FG_PURPLE="35"
-  local FG_CYAN="36"
-  local FG_WHITE="37"
+  local fg_black="30"
+  local fg_red="31"
+  local fg_green="32"
+  local fg_yellow="33"
+  local fg_blue="34"
+  local fg_purple="35"
+  local fg_cyan="36"
+  local fg_white="37"
 
-  local BG_BLACK="40"
-  local BG_RED="41"
-  local BG_GREEN="42"
-  local BG_YELLOW="43"
-  local BG_BLUE="44"
-  local BG_PURPLE="45"
-  local BG_CYAN="46"
-  local BG_WHITE="47"
+  local bg_black="40"
+  local bg_red="41"
+  local bg_green="42"
+  local bg_yellow="43"
+  local bg_blue="44"
+  local bg_purple="45"
+  local bg_cyan="46"
+  local bg_white="47"
 
   # color sequences
-  local BG_PURPLE_FG_BLACK="\[\033[$BG_PURPLE;$FG_BLACK%m\]"  # \[\033[45;30m\]
-  local BG_FG_BLUE_FG_BLACK="\[\033[$BG_BLUE%m\]"             # \[\033[0;7;34m\]
-  local BG_BLACK_FG_GREEN="\[\033[0;$FG_GREEN%m\]"            # \[\033[0;0;32m\]
-  local BG_BLACK_FG_BLUE="\[\033[0;$FG_BLUE%m\]"              # \[\033[0;0;34m\]
-  local BG_BLACK_FG_WHITE="\[\033[0;$FG_WHITE%m\]"            # \[\033[0;0;37m\]
-  local BG_BLACK_FG_RED_UNDERLINE="\[\033[4;$FG_RED%m\]"      # \[\033[0;4;31m\]
-  local RESET_COLORS="\[\033[0m\]"
+  local bg_purple_fg_black="\[\033[$bg_purple;$fg_black%m\]"  # \[\033[45;30m\]
+  local bg_fg_blue_fg_black="\[\033[$bg_blue%m\]"             # \[\033[0;7;34m\]
+  local bg_black_fg_green="\[\033[0;$fg_green%m\]"            # \[\033[0;0;32m\]
+  local bg_black_fg_blue="\[\033[0;$fg_blue%m\]"              # \[\033[0;0;34m\]
+  local bg_black_fg_white="\[\033[0;$fg_white%m\]"            # \[\033[0;0;37m\]
+  local bg_black_fg_red_underline="\[\033[4;$fg_red%m\]"      # \[\033[0;4;31m\]
+  local reset_colors="\[\033[0m\]"
 
   # position colors
-  local PREFIX_COLORS=$BG_PURPLE_FG_BLACK
-  local USER_COLORS=$BG_FG_BLUE_FG_BLACK
-  local AT_COLORS=$BG_BLACK_FG_GREEN
-  local HOST_COLORS=$BG_BLACK_FG_BLUE
-  local PATH_COLORS=$BG_BLACK_FG_WHITE
-  local TRUNCATION_COLORS=$BG_BLACK_FG_RED_UNDERLINE
-  local PROMPT_COLORS=$BG_BLACK_FG_GREEN
-  local END_COLORS=$RESET_COLORS
+  local prefix_colors=$bg_purple_fg_black
+  local user_colors=$bg_fg_blue_fg_black
+  local at_colors=$bg_black_fg_green
+  local host_colors=$bg_black_fg_blue
+  local path_colors=$bg_black_fg_white
+  local truncation_colors=$bg_black_fg_red_underline
+  local prompt_colors=$bg_black_fg_green
+  local suffix_colors=$reset_colors
 
   # position sequences
-  local PS1_PREFIX="$PREFIX_COLORS "
-  local PS1_USER="$USER_COLORS\u"
-  local PS1_AT="$AT_COLORS@"
-  local PS1_HOST="$HOST_COLORS[\h]:"
-  local PS1_PATH="$PATH_COLORS"
-  local PS1_TRUNCATION="$TRUNCATION_COLORS..."
-  local PS1_PROMPT="$PROMPT_COLORS\$"
-  local PS1_END="$END_COLORS "
+  local ps1_prefix="$prefix_colors "
+  local ps1_user="$user_colors\u"
+  local ps1_at="$at_colors@"
+  local ps1_host="$host_colors[\h]:"
+  local ps1_path="$path_colors"
+  local ps1_truncation="$truncation_colors..."
+  local ps1_prompt="$prompt_colors\$"
+  local ps1_suffix="$suffix_colors "
 
+  local ps1_start="$ps1_prefix$ps1_user$ps1_at$ps1_host"
+  local ps1_pwd_path=""
+  local ps1_end="$(vcprompt)$ps1_prompt$ps1_suffix"
 
-  #   How many characters of the $PWD should be kept
+  # How many characters of the $PWD should be kept
   local pwd_length=23
   if [ $(echo -n $PWD | wc -c | tr -d " ") -gt $pwd_length ]; then
     if [ $(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ") -gt 0 ]; then
       local user_length=$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ");
       local total_length=$(echo -n $PWD | wc -c | tr -d " ");
-      let newPwd_length=$total_length-$user_length;
+      let new_pwd_length=$total_length-$user_length;
 
-      if [ $newPwd_length -gt $pwd_length ]; then
+      if [ $new_pwd_length -gt $pwd_length ]; then
         # when in home and path minus users/username is longer than char limit
-        newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";
-        export PS1="$PS1_PREFIX$PS1_USER$PS1_AT$PS1_HOST$PS1_PATH~$PS1_TRUNCATION$PS1_PATH$newPWD $(vcprompt)$PS1_PROMPT$PS1_END"
+        new_pwd="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")";
+        ps1_pwd_path="$ps1_path~$ps1_truncation$ps1_path$new_pwd "
       else
         # when in home and path minus users/username is less than limit
-        newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$newPwd_length\}\)/\1/")"
-        export PS1="$PS1_PREFIX$PS1_USER$PS1_AT$PS1_HOST$PS1_PATH~/$newPWD $(vcprompt)$PS1_PROMPT$PS1_END"
+        new_pwd="$(echo -n $PWD | sed -e "s/.*\(.\{$new_pwd_length\}\)/\1/")"
+        ps1_pwd_path="$ps1_path~/$new_pwd "
       fi
     else
       # when not in home and path is longer than char limit
-      newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")"
-      export PS1="$PS1_PREFIX$PS1_USER$PS1_AT$PS1_HOST$PS1_TRUNCATION$PS1_PATH$newPWD $(vcprompt)$PS1_PROMPT$PS1_END"
+      new_pwd="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")"
+      ps1_pwd_path="$ps1_truncation$ps1_path$new_pwd "
     fi
   else
-  # when not in home and path is shorter than char limit
-    export PS1="$PS1_PREFIX$PS1_USER$PS1_AT$PS1_HOST$PS1_PATH\w $(vcprompt)$PS1_PROMPT$PS1_END"
+    # when not in home and path is shorter than char limit
+    ps1_pwd_path="$ps1_path\w "
   fi
+
+  export PS1="$ps1_start$ps1_pwd_path$ps1_end"
 }
+
+
 PROMPT_COMMAND=prompt_command
 export PROMPT_COMMAND
 
