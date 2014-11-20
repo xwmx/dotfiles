@@ -83,3 +83,6 @@
 [submodule "resources/square/maximum-awesome"]
 	path = resources/square/maximum-awesome
 	url = https://github.com/square/maximum-awesome.git
+[submodule "resources/paulmillr/dotfiles"]
+	path = resources/paulmillr/dotfiles
+	url = https://github.com/paulmillr/dotfiles.git
