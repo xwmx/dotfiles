@@ -1,18 +1,6 @@
 #==========================================================================
 # Shell prompt settings.
-# default: host:~ user$
-# colors denoted with \[\033[Xm\] where X is the color's number
 #==========================================================================
-
-##################################
-# a function to get a git branch for display in the prompt
-# http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/
-##################################
-
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 
 ##################################
 # Display the working directory in the prompt, truncated with a leading "..."
