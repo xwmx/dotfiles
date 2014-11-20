@@ -80,3 +80,6 @@
 [submodule "resources/cldwalker/irbfiles"]
 	path = resources/cldwalker/irbfiles
 	url = https://github.com/cldwalker/irbfiles.git
+[submodule "resources/square/maximum-awesome"]
+	path = resources/square/maximum-awesome
+	url = https://github.com/square/maximum-awesome.git
