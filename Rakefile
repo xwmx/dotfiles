@@ -94,7 +94,7 @@ end
 module Dotfile
   module Directory
     def self.source
-      File.join(File.dirname(__FILE__), 'files')
+      File.join(File.dirname(__FILE__), 'home')
     end
 
     def self.target
