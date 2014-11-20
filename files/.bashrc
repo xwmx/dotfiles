@@ -56,7 +56,7 @@ test_program_exists() {
 #==========================================================================
 
 # Set DOTFILES directory
-export DOTFILES=~/.dot
+export DOTFILES=~/.dotfiles
 
 # Add binaries into the path
 PATH=$DOTFILES/bin:$PATH
