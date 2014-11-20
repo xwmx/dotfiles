@@ -9,7 +9,7 @@
 # http://tldp.org/HOWTO/Bash-Prompt-HOWTO/
 ###############################################################################
 
-function trunctated_prompt_path () {
+function trim_prompt_path () {
   echo "$(echo -n $PWD | sed -e "s/.*\(.\{$1\}\)/\1/")"
 }
 
@@ -29,35 +29,45 @@ function build_prompt_path () {
 
   local total_path_length=$(pwd_path_length)
   local user_path_length=$(pwd_user_path_length)
-  let new_pwd_length=$total_path_length-$user_path_length;
+  let home_pwd_length=$total_path_length-$user_path_length;
 
-  # How many characters of the $PWD should be kept
+  # Maximum number of characters from the $PWD that should be kept.
   local max_pwd_length=23
 
-  if [ $total_path_length -gt $max_pwd_length ]; then
-    if [ $user_path_length -gt 0 ]; then
-      if [ $new_pwd_length -gt $max_pwd_length ]; then
-        # when in home and path minus users/username is longer than char limit
-        new_pwd=$(trunctated_prompt_path $max_pwd_length)
-        ps1_pwd_path="$path_colors~$ps1_truncation$path_colors$new_pwd "
-      else
-        # when in home and path minus users/username is less than limit
-        new_pwd=$(trunctated_prompt_path $new_pwd_length)
-        ps1_pwd_path="$path_colors~/$new_pwd "
-      fi
-    else
-      # when not in home and path is longer than char limit
-      new_pwd=$(trunctated_prompt_path $pwd_length)
-      ps1_pwd_path="$ps1_truncation$path_colors$new_pwd "
-    fi
-  else
-    # when not in home and path is shorter than char limit
+  if [ $total_path_length -lt $max_pwd_length ]; then
+    # Path is shorter than max.
+    # Example:
+    # - /bin/
     ps1_pwd_path="$path_colors\w "
+  elif [[ $user_path_length -gt 0 && $home_pwd_length -gt $max_pwd_length ]]; then
+    # In home, $PWD minus $HOME is longer than max.
+    # Example:
+    # - /Users/name/Library/Application Support
+    # Becomes:
+    # - ~...brary/Application Support
+    new_pwd=$(trim_prompt_path $max_pwd_length)
+    ps1_pwd_path="$path_colors~$ps1_truncation$path_colors$new_pwd "
+  elif [ $user_path_length -gt 0 ]; then
+    # in home, $PWD minus $HOME is less than max, but $PWD is longer than max.
+    # Example:
+    # - /Users/name/Library
+    # Becomes:
+    # - ~/Library
+    new_pwd=$(trim_prompt_path $home_pwd_length)
+    ps1_pwd_path="$path_colors~/$new_pwd "
+  else
+    # Not in home and $PWD is longer than max.
+    # Example:
+    # - /usr/local/lib/ocaml/ocamldoc
+    # Becomes:
+    # - ...ocal/lib/ocaml/ocamldoc
+    new_pwd=$(trim_prompt_path $max_pwd_length)
+    ps1_pwd_path="$ps1_truncation$path_colors$new_pwd "
   fi
 
   echo "$ps1_pwd_path"
-
 }
+
 
 function prompt_command () {
 
@@ -89,7 +99,7 @@ function prompt_command () {
   local bg_black_fg_red_underline="\[\033[4;$fg_red%m\]"      # \[\033[0;4;31m\]
   local reset_colors="\[\033[0m\]"
 
-  # position colors
+  # Section colors
   local prefix_colors=$bg_purple_fg_black
   local user_colors=$bg_fg_blue_fg_black
   local at_colors=$bg_black_fg_green
@@ -99,7 +109,7 @@ function prompt_command () {
   local prompt_colors=$bg_black_fg_green
   local suffix_colors=$reset_colors
 
-  # position sequences
+  # Section sequences
   local ps1_prefix="$prefix_colors "
   local ps1_user="$user_colors\u"
   local ps1_at="$at_colors@"
@@ -108,10 +118,12 @@ function prompt_command () {
   local ps1_prompt="$prompt_colors\$"
   local ps1_suffix="$suffix_colors "
 
+  # Primary sections
   local ps1_start=$ps1_prefix$ps1_user$ps1_at$ps1_host
   local ps1_pwd_path=$(build_prompt_path $path_colors $ps1_truncation)
   local ps1_end=$(vcprompt)$ps1_prompt$ps1_suffix
 
+  # Combined primary sections
   export PS1=$ps1_start$ps1_pwd_path$ps1_end
 }
 
