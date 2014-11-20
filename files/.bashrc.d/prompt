@@ -1,15 +1,13 @@
-#==========================================================================
+#==============================================================================
 # Shell prompt settings.
-#==========================================================================
-
-##################################
+#
 # Display the working directory in the prompt, truncated with a leading "..."
 # when it reaches the character limit. Preseve ~ when in home directory.
 # host:~/dirname user$ if ab_path_minus_Users/username < char limit
 # host:up_to_23_chars_of_ab_path_minus_Users/username user$ if > char limit
 # without color: '\h:\w \u$ '
 # http://tldp.org/HOWTO/Bash-Prompt-HOWTO/
-##################################
+###############################################################################
 
 function trunctated_prompt_path () {
   echo "$(echo -n $PWD | sed -e "s/.*\(.\{$1\}\)/\1/")"
@@ -121,23 +119,3 @@ function prompt_command () {
 PROMPT_COMMAND=prompt_command
 export PROMPT_COMMAND
 
-##################################
-# UNUSED - above is derived from this
-# host:absolute_path user$ if < 23 chars
-# host:23_chars_of_absolute_path user$ if > 23 chars
-##################################
-
-<<\COMMENT
-function prompt_command {
-     #   How many characters of the $PWD should be kept
-     local pwd_length=23
-     if [ $(echo -n $PWD | wc -c | tr -d " ") -gt $pwd_length ]
-         then newPWD="$(echo -n $PWD | sed -e "s/.*\(.\{$pwd_length\}\)/\1/")"
-         else newPWD="echo -n $PWD"
-     fi
-}
-PROMPT_COMMAND=prompt_command
-export PROMPT_COMMAND
-#export PS1='\h:$newPWD \u$ '
-export PS1=$newPWD
-COMMENT
