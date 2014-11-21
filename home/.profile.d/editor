@@ -8,4 +8,9 @@ else
   export EDITOR='mvim'
 fi
 
+#==========================================================================
+# Vim
+#==========================================================================
 
+# Directory containing MacVim.app
+export VIM_APP_DIR="/Applications"
