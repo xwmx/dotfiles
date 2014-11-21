@@ -67,7 +67,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/automat/.rvm/gems/ruby-2.1.0/bin:/Users/automat/.rvm/gems/ruby-2.1.0@global/bin:/Users/automat/.rvm/rubies/ruby-2.1.0/bin:/Applications/Developer/Postgres.app/Contents/MacOS/bin:/usr/local/heroku/bin:/Users/automat/.dot/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/texbin:/Users/automat/.go/bin:/Users/automat/.rvm/bin"
+source $HOME/.profile
+
+export PATH="/Users/automat/.rvm/gems/ruby-2.1.0/bin:/Users/automat/.rvm/gems/ruby-2.1.0@global/bin:/Users/automat/.rvm/rubies/ruby-2.1.0/bin:/Applications/Developer/Postgres.app/Contents/MacOS/bin:/usr/local/heroku/bin:/Users/automat/.dot/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/texbin:/Users/automat/.go/bin:/Users/automat/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
