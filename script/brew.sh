@@ -116,6 +116,7 @@ brew install macvim
 brew install memcached
 brew install mercurial
 brew install mit-scheme
+brew install nvm
 brew install ocaml
 brew install opam
 brew install pandoc
