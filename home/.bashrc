@@ -21,23 +21,7 @@ PATH=$DOTFILES/bin:$PATH
 export PATH
 
 # Source all files in ".bashrc.d"
-function src() {
-  local file
-  if [[ "$2" ]]; then
-    source "$HOME/$1/$2"
-  elif [[ "$1" ]]; then
-    for file in $HOME/$1/*; do
-      source "$file"
-    done
-  else
-    for file in $HOME/.bashrc.d/*; do
-      source "$file"
-    done
-  fi
-}
-
-src .bashrc.d
-src .profile.d
+init_src .bashrc.d
 
 #==========================================================================
 # Build / Configure Environment Variables
