@@ -1,3 +1,12 @@
+# .zshrc
+#
+# PATH --------------------------------------------------------------------
+# Note: Additional PATH initialization in /etc/paths and /etc/paths.d
+
+
+
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
