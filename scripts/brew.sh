@@ -101,6 +101,7 @@ brew install zopfli
 # installation method.
 brew install node
 
+brew install elinks
 brew install elixir
 brew install flow
 brew install hub
