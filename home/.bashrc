@@ -86,16 +86,6 @@ if program_exists brew; then
 fi
 
 #==========================================================================
-# Java / JVM
-#==========================================================================
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export SCALA_HOME="/usr/local/Cellar/scala/2.7.7"
-export JAVA="$JAVA_HOME/bin/java"
-export SCALA="$SCALA_HOME/bin/scala"
-export MYSQL_CONNECTOR_JAR="/Library/Java/Extensions/mysql-connector.jar"
-
-#==========================================================================
 # RVM
 #==========================================================================
 
