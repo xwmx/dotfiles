@@ -107,6 +107,7 @@ brew tap homebrew/completions
 brew install elinks
 brew install elixir
 brew install flow
+brew install htop
 brew install hub
 brew install leiningen
 brew install lesspipe
