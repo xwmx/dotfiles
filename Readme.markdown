@@ -2,7 +2,7 @@
 
 ## Instructions for use
 
-Clone the repository to `~/.dot` and run `rake link` to symlink all of
+Clone the repository to `~/.dotfiles` and run `rake link` to symlink all of
 the dotfiles into the `$HOME` directory. See additional tasks in
 `Rakefile` (`rake tasks`) for backup and troubleshooting tasks.
 
