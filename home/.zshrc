@@ -58,7 +58,6 @@ plugins=(
   docker
   emoji-clock
   git
-  git-prompt
   golang
   tmux
   tmuxinator
