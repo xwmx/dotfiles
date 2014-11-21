@@ -46,7 +46,22 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh.custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  battery
+  colored-man
+  colorize
+  docker
+  emoji-clock
+  git
+  git-prompt
+  golang
+  tmux
+  tmuxinator
+  vi-mode
+  wd
+  web-search
+  z
+ )
 
 source $ZSH/oh-my-zsh.sh
 
