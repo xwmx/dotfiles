@@ -1,2 +1,5 @@
 # Used by some scripts in ./bin, such as manh and manp
 /caches/
+
+# Ignore any file with LOCAL in the name (good for per-machine vars/functions)
+*LOCAL*
