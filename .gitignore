@@ -1,5 +1,10 @@
 # Used by some scripts in ./bin, such as manh and manp
 /caches/
 
+# Don't commit rbenv temp files.
+/home/.rbenv/shims/
+/home/.rbenv/versions/
+/home/.rbenv/version
+
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*

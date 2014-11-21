@@ -120,6 +120,7 @@ brew install nvm
 brew install ocaml
 brew install opam
 brew install pandoc
+brew install rbenv
 brew install redis
 brew install riak
 brew install scala
