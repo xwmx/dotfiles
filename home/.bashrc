@@ -13,13 +13,6 @@ source $HOME/.profile
 # Init
 #==========================================================================
 
-# Set DOTFILES directory
-export DOTFILES=~/.dotfiles
-
-# Add binaries into the path
-PATH=$DOTFILES/bin:$PATH
-export PATH
-
 # Source all files in ".bashrc.d"
 init_src .bashrc.d
 
