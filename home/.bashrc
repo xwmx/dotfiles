@@ -6,12 +6,6 @@
 # PATH --------------------------------------------------------------------
 # Note: Additional PATH initialization in /etc/paths and /etc/paths.d
 
-#==========================================================================
-# PATH
-#==========================================================================
-
-# Add homebrew-managed /usr/local/sbin to PATH
-export PATH=/usr/local/sbin:$PATH
 
 #==========================================================================
 # Utility Functions
@@ -65,8 +59,12 @@ export PATH
 # Source all files in ".bashrc.d"
 function src() {
   local file
-  if [[ "$1" ]]; then
-    source "$HOME/.bashrc.d/$1"
+  if [[ "$2" ]]; then
+    source "$HOME/$1/$2"
+  elif [[ "$1" ]]; then
+    for file in $HOME/$1/*; do
+      source "$file"
+    done
   else
     for file in $HOME/.bashrc.d/*; do
       source "$file"
@@ -74,7 +72,8 @@ function src() {
   fi
 }
 
-src
+src .bashrc.d
+src .profile.d
 
 #==========================================================================
 # Build / Configure Environment Variables
