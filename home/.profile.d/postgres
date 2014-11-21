@@ -1,0 +1,6 @@
+#==========================================================================
+# Postgres
+#==========================================================================
+
+# Add postgres binaries to PATH
+export PATH=/Applications/Developer/Postgres.app/Contents/MacOS/bin:$PATH
