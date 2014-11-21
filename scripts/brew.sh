@@ -106,6 +106,7 @@ brew install elixir
 brew install flow
 brew install hub
 brew install leiningen
+brew install lesspipe
 brew install lua
 brew install lynx
 brew install macvim
