@@ -36,7 +36,7 @@ should help avoid confusion.
 This configuration assumes the use of janus for base config. Plugins are
 included in the `./home/.janus` directory as submodules.
 
-### ./scripts
+### ./script
 
 These are scripts intended to be run once on new machines for initial
 configuration.
