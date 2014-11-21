@@ -86,3 +86,6 @@
 [submodule "home/.janus/eclm_wombat.vim"]
 	path = home/.janus/eclm_wombat.vim
 	url = https://github.com/vim-scripts/eclm_wombat.vim.git
+[submodule "home/.oh-my-zsh"]
+	path = home/.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
