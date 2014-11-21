@@ -101,6 +101,9 @@ brew install zopfli
 # installation method.
 brew install node
 
+
+brew tap homebrew/completions
+
 brew install elinks
 brew install elixir
 brew install flow
@@ -122,6 +125,8 @@ brew install scala
 brew install siege
 brew install sphinx
 brew install stow
+brew install tmux
+brew install tmuxinator-completion
 brew install the_silver_searcher
 brew install wine
 brew install winetricks
