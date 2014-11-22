@@ -71,52 +71,56 @@ function build_prompt_path () {
 
 function prompt_command () {
 
-  # colors
-  local fg_black="30"
-  local fg_red="31"
-  local fg_green="32"
-  local fg_yellow="33"
-  local fg_blue="34"
-  local fg_purple="35"
-  local fg_cyan="36"
-  local fg_white="37"
+  # tput reference
+  #
+  # tput colors:
+  #
+  # 0 - black
+  # 1 - red
+  # 2 - green
+  # 3 - yello
+  # 4 - blue
+  # 5 - magenta
+  # 6 - cyan
+  # 7 - white
+  #
+  # tput text modes:
+  #
+  # bold  – Set bold mode
+  # dim   – turn on half-bright mode
+  # smul  – begin underline mode
+  # rmul  – exit underline mode
+  # rev   – Turn on reverse mode
+  # smso  – Enter standout mode (bold on rxvt)
+  # rmso  – Exit standout mode
+  # sgr0  – Turn off all attributes
+  #
+  # tput color settings
+  #
+  # setab [1-7]   – Set a background color using ANSI escape
+  # setb [1-7]    – Set a background color
+  # setaf [1-7]   – Set a foreground color using ANSI escape
+  # setf [1-7]    – Set a foreground color
+  #
+  # Example:
+  # export PS1="\[$(tput bold)$(tput setb 4)$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]“
 
-  local bg_black="40"
-  local bg_red="41"
-  local bg_green="42"
-  local bg_yellow="43"
-  local bg_blue="44"
-  local bg_purple="45"
-  local bg_cyan="46"
-  local bg_white="47"
-
-  # color sequences
-  local bg_purple_fg_black="\[\033[$bg_purple;$fg_black%m\]"  # \[\033[45;30m\]
-  local bg_fg_blue_fg_black="\[\033[$bg_blue%m\]"             # \[\033[0;7;34m\]
-  local bg_black_fg_green="\[\033[0;$fg_green%m\]"            # \[\033[0;0;32m\]
-  local bg_black_fg_blue="\[\033[0;$fg_blue%m\]"              # \[\033[0;0;34m\]
-  local bg_black_fg_white="\[\033[0;$fg_white%m\]"            # \[\033[0;0;37m\]
-  local bg_black_fg_red_underline="\[\033[4;$fg_red%m\]"      # \[\033[0;4;31m\]
-  local reset_colors="\[\033[0m\]"
-
-  # Section colors
-  local prefix_colors=$bg_purple_fg_black
-  local user_colors=$bg_fg_blue_fg_black
-  local at_colors=$bg_black_fg_green
-  local host_colors=$bg_black_fg_blue
-  local path_colors=$bg_black_fg_white
-  local truncation_colors=$bg_black_fg_red_underline
-  local prompt_colors=$bg_black_fg_green
-  local suffix_colors=$reset_colors
-
-  # Section sequences
-  local ps1_prefix="$prefix_colors "
-  local ps1_user="$user_colors\u"
-  local ps1_at="$at_colors@"
-  local ps1_host="$host_colors[\h]:"
-  local ps1_truncation="$truncation_colors..."
-  local ps1_prompt="$prompt_colors\$"
-  local ps1_suffix="$suffix_colors "
+  # magenta bg, black fg
+  local ps1_prefix="\[$(tput setab 5)$(tput setaf 0)\] "
+  # blue bg, black fg
+  local ps1_user="$(tput setab 4)$(tput setaf 0)\u"
+  # black bg, green fg
+  local ps1_at="$(tput setab 0)$(tput setaf 2)@"
+  # black bg, blue fg
+  local ps1_host="$(tput setab 0)$(tput setaf 4)[\h]:"
+  # black bg, red fg, underline
+  local ps1_truncation="$(tput setab 0)$(tput setaf 1)$(tput smul)...$(tput rmul)"
+  # black bg, green fg
+  local ps1_prompt="$(tput setab 0)$(tput setaf 2)\$"
+  # black bg, white fg
+  local ps1_suffix="$(tput setab 0)$(tput setaf 7) "
+  # black bg, white fg
+  local path_colors="$(tput setab 0)$(tput setaf 7)"
 
   # Primary sections
   local ps1_start=$ps1_prefix$ps1_user$ps1_at$ps1_host
