@@ -28,8 +28,10 @@ should be symlinked into `$HOME`.
 Most settings work with both bash and zsh, though zsh is assumed to be
 the default.
 
-This configuration assumes the use of janus for base config. Plugins are
-included in the `./home/.janus` directory as submodules.
+The vim configuration assumes the use of macvim and janus. Plugins are
+included in the `./home/.janus` directory as submodules. oh-my-zsh is
+used for zsh configuration, and and uses .oh-my-zsh.custom for the
+custom directory.
 
 ### resources
 
@@ -47,3 +49,6 @@ local settings.
 
 - .gitconfig.local
 - .hgrc.local
+
+.local files can also be used to modify other tracked files, including
+.zshrc and .bashrc.
