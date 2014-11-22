@@ -13,10 +13,16 @@
 "colorscheme darkburn
 "colorscheme deepblue
 "colorscheme hybrid
-colorscheme vwilight
+"colorscheme vwilight
 "colorscheme Tomorrow-Night-Blue
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night
+
+if has("gui_macvim")
+  colorscheme vwilight
+else
+  colorscheme hybrid
+endif
 
 " ============================================================================
 " Font
