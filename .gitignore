@@ -6,6 +6,7 @@
 /home/.rbenv/versions/
 /home/.rbenv/version
 
+# Only track .ssh/config. Everything else in .ssh is private
 /home/.ssh/*
 !/home/.ssh/config
 
