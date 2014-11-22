@@ -97,11 +97,6 @@ brew install tree
 brew install webkit2png
 brew install zopfli
 
-# Install Node.js. Note: this installs `npm` too, using the recommended
-# installation method.
-brew install node
-
-
 brew tap homebrew/completions
 
 brew install elinks
@@ -117,6 +112,7 @@ brew install macvim
 brew install memcached
 brew install mercurial
 brew install mit-scheme
+brew install node # also installs npm
 brew install nvm
 brew install ocaml
 brew install opam
