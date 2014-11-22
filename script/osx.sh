@@ -1,4 +1,18 @@
 ###############################################################################
+# UX
+###############################################################################
+
+# Reduce Transparency.
+# UI location:
+#   System Preferences -> Accessibility -> Display -> Reduce Transparency
+# Description: Reportedly minimizes performances issues like lagging animations due to
+# windowserver getting bloated.
+# Note: Requires restart.
+# Revert command:
+# defaults write com.apple.universalaccess reduceTransparency 0
+defaults write com.apple.universalaccess reduceTransparency 1
+
+###############################################################################
 # Developer Applications
 ###############################################################################
 
