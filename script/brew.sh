@@ -144,6 +144,7 @@ brew cask install android-studio
 brew cask install mactex
 brew cask install vagrant
 brew cask install lighttable
+brew cask install secrets
 
 # docker
 brew install boot2docker
