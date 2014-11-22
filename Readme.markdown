@@ -4,7 +4,8 @@
 
 - clone to `~/.dotfiles`,
 - run `rake link` to symlink all of the dotfiles into the `$HOME` directory,
-- run `$ git submodule init` and `$ git submodule update`.
+- run `$ git submodule init` and `$ git submodule update --init
+  --recursive`
 
 See additional tasks in `Rakefile` (`rake tasks`) for backup and troubleshooting.
 

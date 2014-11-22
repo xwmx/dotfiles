@@ -110,3 +110,7 @@
 [submodule "home/.rbenv/plugins/ruby-build"]
 	path = home/.rbenv/plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "home/.vim"]
+	path = home/.vim
+  url = https://github.com/carlhuda/janus.git
+  ignore = dirty
