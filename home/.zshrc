@@ -104,3 +104,10 @@ source $HOME/.profile
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#==========================================================================
+# Local config
+#==========================================================================
+
+# Load local config if present
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

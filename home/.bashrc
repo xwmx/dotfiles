@@ -82,3 +82,9 @@ if program_exists brew; then
   fi
 fi
 
+#==========================================================================
+# Local config
+#==========================================================================
+
+# Load local config if present
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
