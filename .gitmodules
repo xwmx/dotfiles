@@ -114,3 +114,6 @@
 	path = home/.vim
   url = https://github.com/carlhuda/janus.git
   ignore = dirty
+[submodule "resources/aspiers/shell-env"]
+	path = resources/aspiers/shell-env
+	url = https://github.com/aspiers/shell-env.git
