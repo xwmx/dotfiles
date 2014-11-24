@@ -72,6 +72,3 @@ init_src .shared_env.d
 
 SHARED_ENV_LOADED=true
 
-if [[ ! $SHARED_ENV_LOADED == true ]]; then
-  echo "FAIL"
-fi
