@@ -1,8 +1,7 @@
-# .profile
+# .zshenv
 #
-# More info about OS X shell startup:
-# http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
-
+# config for non-interactive and interactive instances. Zsh loads this before
+# loading .zshrc
 
 #==========================================================================
 # Init
@@ -12,7 +11,3 @@
 if [[ ! $SHARED_ENV_LOADED == true ]]; then
   source "$HOME/.shared_env"
 fi
-
-
-# Source all files in ".profile.d"
-init_src .profile.d

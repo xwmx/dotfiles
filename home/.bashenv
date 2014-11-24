@@ -1,8 +1,11 @@
-# .profile
+# .bashenv
 #
-# More info about OS X shell startup:
-# http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
-
+# config for non-interactive and interactive instances.
+#
+# Though not used directly by bash, this is configured in order to provide a
+# structure that mirrors zsh.
+#
+# .bashrc loads this before loading anything else
 
 #==========================================================================
 # Init
@@ -12,7 +15,3 @@
 if [[ ! $SHARED_ENV_LOADED == true ]]; then
   source "$HOME/.shared_env"
 fi
-
-
-# Source all files in ".profile.d"
-init_src .profile.d
