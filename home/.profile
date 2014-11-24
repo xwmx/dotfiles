@@ -1,5 +1,8 @@
 # .profile
 #
+# This file is sourced by both .zshrc and .bashrc and is used to set common
+# rc and profile settings for both shells.
+#
 # More info about OS X shell startup:
 # http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
 
