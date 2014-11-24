@@ -47,8 +47,8 @@ OS X-specific scripts for configuring or updating environments.
 The following files are expected and should be added to `$HOME` with any
 local settings.
 
-- .gitconfig.local
-- .hgrc.local
+- `.gitconfig.local`
+- `.hgrc.local`
 
-.local files can also be used to modify other tracked files, including
-.zshrc and .bashrc.
+`*.local` files can also be used to modify other tracked files, including
+`.zshrc` and `.bashrc`.
