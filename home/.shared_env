@@ -67,7 +67,7 @@ export DOTFILES=~/.dotfiles
 PATH=$DOTFILES/bin:$PATH
 export PATH
 
-# Source all files in ".profile.d"
+# Source all files in ".shared_env.d"
 init_src .shared_env.d
 
 # load shared_env.local if it exists
