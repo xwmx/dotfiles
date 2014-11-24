@@ -70,5 +70,11 @@ export PATH
 # Source all files in ".profile.d"
 init_src .shared_env.d
 
+# load shared_env.local if it exists
+if [ -f $HOME/.shared_env.local ]; then
+  source $HOME/.shared_env.local
+fi
+
+
 SHARED_ENV_LOADED=true
 
