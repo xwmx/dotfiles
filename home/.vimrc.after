@@ -55,6 +55,8 @@ set guioptions-=L
 autocmd FileType ruby,eruby set noballooneval
 " autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 
+" Ensure indent is on
+filetype plugin indent on
 
 " ============================================================================
 " Line length highlighting
@@ -75,10 +77,6 @@ else
   " fallback for Vim < v7.3
   autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
-
-filetype plugin indent on     " required!
-
-
 
 
 " ============================================================================
