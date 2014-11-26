@@ -1,6 +1,14 @@
 # Used by some scripts in ./bin, such as manh and manp
 /caches/
 
+# Only track specific atom config files
+/home/.atom/*
+!/home/.atom/config.cson
+!/home/.atom/init.coffee
+!/home/.atom/keymap.cson
+!/home/.atom/snippets.cson
+!/home/.atom/styles.less
+
 # Don't commit rbenv temp files.
 /home/.rbenv/shims/
 /home/.rbenv/versions/
