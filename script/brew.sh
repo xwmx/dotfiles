@@ -145,10 +145,10 @@ brew cask install gnucash
 brew cask install kindlegen
 brew cask install lighttable
 brew cask install mactex
-brew cask install vimr
 brew cask install secrets
 brew cask install vagrant
 brew cask install vico
+brew cask install vimr
 
 # docker
 brew install boot2docker
