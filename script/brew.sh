@@ -116,6 +116,7 @@ brew install node # also installs npm
 brew install nvm
 brew install ocaml
 brew install opam
+brew install osxutils
 brew install pandoc
 brew install rbenv
 brew install redis
