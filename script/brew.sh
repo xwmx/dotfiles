@@ -140,8 +140,10 @@ brew cask install android-studio
 brew cask install cakebrew
 brew cask install lighttable
 brew cask install mactex
+brew cask install vimr
 brew cask install secrets
 brew cask install vagrant
+brew cask install vico
 
 # docker
 brew install boot2docker
