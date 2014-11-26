@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Simple command link script for brackets.
+#
+# As of 2014-11-25, there is no official command line tool. Existing options include this approach and those noted here:
+# - https://trello.com/c/dRNqhd2L/349-s-open-file-folder-from-command-line-on-mac
+# - https://github.com/maxogden/bkts
+
+open -a "Brackets" $*
