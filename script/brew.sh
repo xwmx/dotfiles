@@ -137,6 +137,8 @@ brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 
 brew cask install android-studio
+brew cask install brackets
+brew cask install breach
 brew cask install cakebrew
 brew cask install lighttable
 brew cask install mactex
