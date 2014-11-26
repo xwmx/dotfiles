@@ -137,6 +137,7 @@ brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 
 brew cask install android-studio
+brew cask install atom
 brew cask install brackets
 brew cask install breach
 brew cask install cakebrew
