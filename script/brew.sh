@@ -134,13 +134,14 @@ brew install winetricks
 # install brew cask
 brew install caskroom/cask/brew-cask
 
-brew cask install cakebrew
 brew cask install virtualbox
+
 brew cask install android-studio
-brew cask install mactex
-brew cask install vagrant
+brew cask install cakebrew
 brew cask install lighttable
+brew cask install mactex
 brew cask install secrets
+brew cask install vagrant
 
 # docker
 brew install boot2docker
