@@ -137,14 +137,6 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 # A variety of aliases for OS X specific stuff
 #==========================================================================
 
-alias trash="cd ~/.trash"
-alias home="cd ~/"
-alias desktop="cd ~/desktop"
-alias textedit="open /applications/textedit.app"
-alias sysprefs="open /applications/utilities/systempreferences.app"
-alias actmon="open /applications/utilities/activity\ monitor.app"
-alias x11="open /applications/utilities/x11.app"
-
 # eject a volume
 alias eject='hdiutil eject'
 # copy the working dir to the clipboard
