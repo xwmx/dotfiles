@@ -120,3 +120,6 @@
 [submodule "resources/morgant/tools-osx"]
 	path = resources/morgant/tools-osx
 	url = https://github.com/morgant/tools-osx.git
+[submodule "resources/vasi/osxutils"]
+	path = resources/vasi/osxutils
+	url = https://github.com/vasi/osxutils.git
