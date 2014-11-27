@@ -117,3 +117,6 @@
 [submodule "resources/aspiers/shell-env"]
 	path = resources/aspiers/shell-env
 	url = https://github.com/aspiers/shell-env.git
+[submodule "resources/morgant/tools-osx"]
+	path = resources/morgant/tools-osx
+	url = https://github.com/morgant/tools-osx.git
