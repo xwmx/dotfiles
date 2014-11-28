@@ -145,6 +145,7 @@ brew cask install cakebrew
 brew cask install codebox
 brew cask install consul
 brew cask install gnucash
+brew cask install iterm2
 brew cask install kindlegen
 brew cask install lighttable
 brew cask install mactex
