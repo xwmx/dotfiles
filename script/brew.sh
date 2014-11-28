@@ -142,6 +142,7 @@ brew cask install atom
 brew cask install brackets
 brew cask install breach
 brew cask install cakebrew
+brew cask install codebox
 brew cask install consul
 brew cask install gnucash
 brew cask install kindlegen
