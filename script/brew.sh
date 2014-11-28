@@ -153,6 +153,7 @@ brew cask install secrets
 brew cask install vagrant
 brew cask install vico
 brew cask install vimr
+brew cask install zed
 
 # docker
 brew install boot2docker
