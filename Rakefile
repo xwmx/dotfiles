@@ -91,6 +91,26 @@ task :link do |t|
   end
 end
 
+desc "Configure OS X Preferences"
+task :osx do |t|
+  %x[./script/osx.sh]
+end
+
+desc "Update Homebrew and Homebrew Cask"
+task :brew do |t|
+  %x[./script/brew.sh]
+end
+
+desc "Update npm global modules"
+task :npm do |t|
+  %x[./script/npm.sh]
+end
+
+desc "Update Homebrew custom icons"
+task :customize_icons do |t|
+  %x[./script/customizations/customize_icons.rb]
+end
+
 module Dotfile
   module Directory
     def self.source
