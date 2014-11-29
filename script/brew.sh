@@ -135,7 +135,11 @@ brew install winetricks
 # linkapps
 #
 # link apps installed with homebrew. Pass the `--local` flag in order to
-# symlink apps from ~/Applications
+# symlink apps from ~/Applications.
+#
+# NOTE: first unlinking apps to cleanup old links that apparently sometimes
+# stick around.
+brew unlinkapps --local
 brew linkapps --local
 
 # install brew cask
