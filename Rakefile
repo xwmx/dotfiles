@@ -1,7 +1,5 @@
-desc <<-desc
-  List dotfile status (i = identical, e = a file exists, x = no file eixsts)
-  '@' suffixes denote existing symlinks.
-desc
+desc "List dotfile status (i = identical, e = a file exists, x = no file eixsts). " +
+     "'@' suffixes denote existing symlinks."
 task :status do |t|
   Dotfile.all.each do |file|
 
@@ -20,10 +18,8 @@ task :status do |t|
   end
 end
 
-desc <<-desc
-  List dotfile.bak status (i = identical, e = a file exists, x = no file eixsts)
-  '@' suffixes denote existing symlinks.
-desc
+desc "List dotfile.bak status (i = identical, e = a file exists, x = no file eixsts). " +
+     "'@' suffixes denote existing symlinks."
 task :bak_status do |t|
   Dotfile.all.each do |file|
 
