@@ -126,3 +126,6 @@
 [submodule "vendor/alphabetum/aliasapp"]
 	path = vendor/alphabetum/aliasapp
 	url = https://github.com/alphabetum/aliasapp.git
+[submodule "vendor/alphabetum/shellapp"]
+	path = vendor/alphabetum/shellapp
+	url = https://github.com/alphabetum/shellapp.git
