@@ -180,26 +180,6 @@ brew install docker
 # Remove outdated versions from the cellar.
 brew cleanup
 
-
-# Alias apps
-
-# Set aliases directory to ~/Applications/HomebrewAliases, which should OS X
-# already recognizes.
-aliases_directory=$HOME/Applications/HomebrewAliases
-
-# If the aliases directory exists, trash it and its contents, then recreate it.
-if [ -d $aliases_directory ]; then
-  trash $aliases_directory
-fi
-mkdir $aliases_directory
-
-# Find symlinks in $HOME/Applications and use aliaseapp to create app aliases
-# to them in $aliases_directory.
-for file in $HOME/Applications/*
-do
-  if [ -h "$file" ]; then
-    filename="$(basename "$file")"
-    aliasapp "$file" "$aliases_directory/$filename"
-    echo "Aliasing: $file -> $aliases_directory/$filename"
-  fi
-done
+# Call custom brew aliasapps and brew cask aliasapps commands
+brew aliasapps
+brew cask aliasapps
