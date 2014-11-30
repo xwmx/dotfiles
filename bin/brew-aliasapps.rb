@@ -13,7 +13,7 @@ if File.exist? target_dir
   system "trash", target_dir
 end
 # Homebrew overrides FileUtils.mkdir, so calling system command directly.
-system "mkdir", target_dir
+system "mkdir", "-p", target_dir
 
 
 HOMEBREW_CELLAR.subdirs.each do |rack|

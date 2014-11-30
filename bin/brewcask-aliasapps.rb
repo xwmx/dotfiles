@@ -16,7 +16,7 @@ if File.exist? target_dir
   system "trash", target_dir
 end
 # Homebrew Cask overrides FileUtils.mkdir, so calling system command directly.
-system "mkdir", target_dir
+system "mkdir", "-p", target_dir
 
 # Get all filenames from the ~/Applications directory
 files_in_apps = Dir["#{apps_directory}/*"]
