@@ -135,7 +135,7 @@ brew install winetricks
 # linkapps
 #
 # link apps installed with homebrew. Pass the `--local` flag in order to
-# symlink apps from ~/Applications.
+# symlink apps to ~/Applications.
 #
 # NOTE: first unlinking apps to cleanup old links that apparently sometimes
 # stick around.
