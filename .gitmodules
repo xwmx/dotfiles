@@ -123,3 +123,6 @@
 [submodule "resources/vasi/osxutils"]
 	path = resources/vasi/osxutils
 	url = https://github.com/vasi/osxutils.git
+[submodule "vendor/alphabetum/aliasapp"]
+	path = vendor/alphabetum/aliasapp
+	url = https://github.com/alphabetum/aliasapp.git
