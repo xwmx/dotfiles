@@ -5,6 +5,10 @@
 #
 # Adapted from brew linkapps
 # https://github.com/Homebrew/homebrew/blob/master/Library/Homebrew/cmd/linkapps.rb
+#
+# Depends on:
+# - https://github.com/Homebrew/homebrew/blob/master/Library/Formula/trash.rb
+# - https://github.com/alphabetum/aliasapp/
 require 'keg'
 
 target_dir = File.join(ENV['HOME'], "/Applications/HomebrewAliases")

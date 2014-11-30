@@ -5,6 +5,10 @@
 # /opt/homebrew-cask/Caskroom. Homebrew Cask automatically creates and deletes
 # these symlinks as applications are installed and deleted, so they are a
 # good indication of which applications are currently installed.
+#
+# Depends on:
+# - https://github.com/Homebrew/homebrew/blob/master/Library/Formula/trash.rb
+# - https://github.com/alphabetum/aliasapp/
 
 require 'fileutils'
 require 'pathname'
