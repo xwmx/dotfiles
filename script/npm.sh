@@ -14,6 +14,9 @@ npm install -g docco
 # http://gruntjs.com/
 npm install -g grunt-cli
 
+# https://github.com/rvagg/learnyounode
+npm install -g learnyounode
+
 # https://github.com/slap-editor/slap
 # slap is a Sublime-like terminal-based text editor that strives to make editing from the terminal easier
 npm install -g slap
