@@ -129,6 +129,3 @@
 [submodule "vendor/alphabetum/shellapp"]
 	path = vendor/alphabetum/shellapp
 	url = https://github.com/alphabetum/shellapp.git
-[submodule "home/.janus/vim-swift"]
-	path = home/.janus/vim-swift
-	url = https://github.com/toyamarinyon/vim-swift.git
