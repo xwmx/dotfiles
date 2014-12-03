@@ -2,6 +2,9 @@
 #
 # Install various global node modules
 
+# https://github.com/broccolijs/broccoli
+npm install -g broccoli-cli
+
 # http://bower.io/
 npm install -g bower
 
