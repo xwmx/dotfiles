@@ -20,6 +20,9 @@ npm install -g ember-cli
 # http://gruntjs.com/
 npm install -g grunt-cli
 
+# http://gulpjs.com/
+npm install --g gulp
+
 # https://github.com/rvagg/learnyounode
 npm install -g learnyounode
 
