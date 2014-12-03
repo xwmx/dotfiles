@@ -8,6 +8,15 @@
 " Leaving favorites commented out for easy switching
 " ============================================================================
 
+"colorscheme base16-chalk
+"colorscheme base16-default
+"colorscheme base16-flat
+"colorscheme base16-google
+"colorscheme base16-grayscale
+"colorscheme base16-greenscreen
+"colorscheme base16-ocean
+"colorscheme base16-solarized
+"colorscheme tomorrow
 "colorscheme eclips3remix
 "colorscheme eclm_wombat
 "colorscheme darkburn
