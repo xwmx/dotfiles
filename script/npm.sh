@@ -11,6 +11,9 @@ npm install -g coffee-script
 # http://jashkenas.github.io/docco/
 npm install -g docco
 
+# http://www.ember-cli.com/
+npm install -g ember-cli
+
 # http://gruntjs.com/
 npm install -g grunt-cli
 
