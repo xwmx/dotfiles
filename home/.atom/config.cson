@@ -1,24 +1,27 @@
 'global':
   'exception-reporting':
-    # NOTE - considered sharable, see:
-    # https://github.com/atom/exception-reporting/issues/7
     'userId': '1e725750-c66d-33e4-9fce-f627ac32bde5'
   'release-notes':
     'viewedVersion': '0.94.0'
   'welcome':
     'showOnStartup': false
   'metrics':
-    # NOTE - considered sharable, see:
-    # https://github.com/atom/metrics/issues/18
     'userId': 'c2f08243ecb4a9bc44bd9e46d4f067086d9357e3'
   'editor':
     'fontSize': 11
     'showInvisibles': true
     'showIndentGuide': true
-    'invisibles': {}
   'core':
     'disabledPackages': [
       'metrics'
       'select-rectangle'
     ]
     'useReactEditor': true
+    'themes': [
+      'atom-dark-ui-slim'
+      'atom-dark-syntax'
+    ]
+  'linter':
+    'showErrorInline': true
+  'go-plus':
+    'goPath': '~/.go'
