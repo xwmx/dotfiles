@@ -165,6 +165,22 @@ if exists("macvim_hig_shift_movement_alt")
   ino  <S-D-Down>     <S-C-End>
 endif " exists("macvim_hig_shift_movement")
 
+" Fix arrow keys in normal and visual modes in terminal vim.
+"
+" More information:
+" http://vim.wikia.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell
+nmap <ESC>oA <ESC>ki
+nmap <ESC>oB <ESC>ji
+nmap <ESC>oC <ESC>li
+nmap <ESC>oD <ESC>hi
+
+vmap <ESC>oA <ESC>ki
+vmap <ESC>oB <ESC>ji
+vmap <ESC>oC <ESC>li
+vmap <ESC>oD <ESC>hi
+
+
+
 " ============================================================================
 " CtrlP
 " ============================================================================
