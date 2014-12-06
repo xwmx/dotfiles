@@ -56,6 +56,10 @@ automatically loaded.
 
 OS X-specific scripts for configuring or updating environments.
 
+### vendor
+
+Files and resources that are actively being linked or used by scripts.
+
 ## Local Configuration
 
 The following files are expected and should be added to `$HOME` with any
