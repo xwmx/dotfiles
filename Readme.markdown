@@ -14,6 +14,8 @@
 
 🅓🅞🅣🅢
 
+An OS X environment with configuration scripts.
+
 ## Setup
 
 Note: be careful when following these steps over an existing
