@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # npm.sh
 #
 # Install various global node modules

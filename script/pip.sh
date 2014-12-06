@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Install script for pip-installed Python packages
 #
 # http://www.pip-installer.org/
