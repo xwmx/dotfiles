@@ -27,6 +27,12 @@
 /home/.rbenv/versions/
 /home/.rbenv/version
 
+# Only track specific rvm config files
+/home/.rvm/*
+!/home/.rvm/user
+/home/.rvm/user/*
+!/home/.rvm/user/db
+
 # Only track .ssh/config. Everything else in .ssh is private
 /home/.ssh/*
 !/home/.ssh/config
