@@ -72,6 +72,9 @@ endif " !exists("macvim_skip_cmd_opt_movement")
 " adding the line
 "   let macvim_hig_shift_movement = 1
 " to ~/.vimrc.
+if has("gui_macvim")
+  let macvim_hig_shift_movement = 1
+endif
 if exists("macvim_hig_shift_movement")
   " Shift + special movement key (<S-Left>, etc.) and mouse starts insert mode
   set selectmode=mouse,key

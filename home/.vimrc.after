@@ -132,42 +132,6 @@ vmap <d-cr> <Esc>:set invfu<cr>gv
 " avoidance w/ command+shift+right arrow)
 "set selection=exclusive
 
-" This is so that the HIG shift movement related settings can be enabled by
-" adding the line
-"   let macvim_hig_shift_movement = 1
-" to ~/.vimrc.
-if has("gui_macvim")
-    let macvim_hig_shift_movement_alt = 1
-endif
-
-if exists("macvim_hig_shift_movement_alt")
-  " Shift + special movement key (<S-Left>, etc.) and mouse starts insert mode
-  set selectmode=mouse,key
-  set keymodel=startsel,stopsel
-
-  " HIG related shift + special movement key mappings
-  nn   <S-D-Left>     <S-Home>
-  vn   <S-D-Left>     <S-Home>
-  ino  <S-D-Left>     <S-Home>
-  nn   <S-M-Left>     <S-C-Left>
-  vn   <S-M-Left>     <S-C-Left>
-  ino  <S-M-Left>     <S-C-Left>
-
-  nn   <S-D-Right>    <S-End>
-  vn   <S-D-Right>    <S-End>
-  ino  <S-D-Right>    <S-End>
-  nn   <S-M-Right>    <S-C-Right>
-  vn   <S-M-Right>    <S-C-Right>
-  ino  <S-M-Right>    <S-C-Right>
-
-  nn   <S-D-Up>       <S-C-Home>
-  vn   <S-D-Up>       <S-C-Home>
-  ino  <S-D-Up>       <S-C-Home>
-
-  nn   <S-D-Down>     <S-C-End>
-  vn   <S-D-Down>     <S-C-End>
-  ino  <S-D-Down>     <S-C-End>
-endif " exists("macvim_hig_shift_movement")
 
 " Fix arrow keys in normal and visual modes in terminal vim.
 "
