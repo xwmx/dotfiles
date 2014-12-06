@@ -61,7 +61,11 @@ set guioptions-=L
 " FileType settings
 " ============================================================================
 
-autocmd FileType ruby,eruby set noballooneval
+ " Turn off balloons in ruby.  See http://stackoverflow.com/a/1111363
+if has("gui_running")
+  autocmd FileType ruby,eruby set noballooneval
+endif
+
 " autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 
 " Ensure indent is on
