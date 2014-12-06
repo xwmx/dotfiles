@@ -12,9 +12,13 @@
 
 # Dotfiles
 
-My 🅓🅞🅣🅢
+🅓🅞🅣🅢
 
 ## Setup
+
+Note: be careful when following these steps over an existing
+configuration, and make sure you have backups in case anything gets
+overwritten.
 
 - clone to `~/.dotfiles`,
 - run `rake link` to symlink all of the dotfiles into the `$HOME` directory,
