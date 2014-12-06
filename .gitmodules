@@ -132,3 +132,6 @@
 [submodule "home/.janus/swift.vim"]
 	path = home/.janus/swift.vim
 	url = https://github.com/Keithbsmiley/swift.vim.git
+[submodule "resources/awood/dotfiles"]
+	path = resources/awood/dotfiles
+	url = https://github.com/awood/dotfiles.git
