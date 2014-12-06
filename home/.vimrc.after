@@ -2,6 +2,8 @@
 "
 " Runs after Janus is loaded.
 
+set nocompatible
+
 " ============================================================================
 " colorschemes
 "
@@ -147,7 +149,9 @@ vmap <ESC>oB <ESC>ji
 vmap <ESC>oC <ESC>li
 vmap <ESC>oD <ESC>hi
 
-
+" The default for 'backspace' is very confusing to new users, so change it to a
+" more sensible value.  Add "set backspace&" to your ~/.vimrc to reset it.
+set backspace+=indent,eol,start
 
 " ============================================================================
 " CtrlP
@@ -190,4 +194,12 @@ endif
 " command for launching shell
 command Sh execute "ConqueTerm bash"
 
+" ============================================================================
+" langmenu
+" ============================================================================
+
+" Disable localized menus for now since only some items are translated (e.g.
+" the entire MacVim menu is set up in a nib file which currently only is
+" translated to English).
+set langmenu=none
 
