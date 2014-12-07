@@ -138,3 +138,6 @@
 [submodule "vendor/alphabetum/swiftly"]
 	path = vendor/alphabetum/swiftly
 	url = https://github.com/alphabetum/swiftly.git
+[submodule "vendor/alphabetum/dict"]
+	path = vendor/alphabetum/dict
+	url = https://github.com/alphabetum/dict.git
