@@ -135,3 +135,6 @@
 [submodule "resources/awood/dotfiles"]
 	path = resources/awood/dotfiles
 	url = https://github.com/awood/dotfiles.git
+[submodule "vendor/alphabetum/swiftly"]
+	path = vendor/alphabetum/swiftly
+	url = https://github.com/alphabetum/swiftly.git
