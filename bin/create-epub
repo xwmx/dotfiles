@@ -5,10 +5,76 @@
 # When in a directory containing source files for an epub book, run to create
 # a properly-zipped epub file.
 #
+# Usage:
+#   create-epub /path/to/output-file.epub /path/to/source/directory/
+#
 # Some background information:
 #   http://www.snee.com/bobdc.blog/2008/03/creating-epub-files.html
 #
 # William Melody, 2010. http://williammelody.com
 
-zip -q0X  BookTitle.epub mimetype
-zip -qXr9D  BookTitle.epub *
+
+#==========================================================================
+# Help / Usage
+#==========================================================================
+
+usage="Usage:
+  create-epub /path/to/output-file.epub  /path/to/source/directory"
+
+if [ "$1" == "-h" ]; then
+  echo "$usage"
+  exit 1
+fi
+
+if [ "$1" == "-h" ]; then
+  echo "$usage"
+  exit 1
+fi
+
+
+#==========================================================================
+# paths
+#==========================================================================
+
+source_path=${2%/} # source path, minus any trailing slash
+destination_path="$1"
+mimetype_path="${source_path}/mimetype"
+
+#==========================================================================
+# Error checking
+#==========================================================================
+
+# check for presence of first argument
+if [ -z $destination_path ]; then
+  echo "Error: destination file not specified."
+  exit 1
+elif [ -f $destination_path ]; then
+  echo "Error: file already exists at destination path."
+  exit 1
+fi
+# check for presence of second argument
+if [ -z $source_path ]; then
+  echo "Error: source directory not specified."
+  exit 1
+elif [ ! -d $source_path ]; then
+  echo "Error: no source directory found at specified path."
+  exit 1
+fi
+
+#==========================================================================
+# mimetype
+#==========================================================================
+
+# Create mimetype if it doesn't exist
+if [ ! -f $mimetype_path ]; then
+  echo application/epub+zip >> $mimetype_path
+fi
+
+#==========================================================================
+# compile
+#==========================================================================
+
+# Zip everything up.
+zip -q0X "$destination_path" $mimetype_path
+zip -qXr9D "$destination_path" $source_path/*
+
