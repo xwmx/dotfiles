@@ -1,4 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# create-epub
+#
+# When in a directory containing source files for an epub book, run to create
+# a properly-zipped epub file.
+#
+# Some background information:
+#   http://www.snee.com/bobdc.blog/2008/03/creating-epub-files.html
+#
+# William Melody, 2010. http://williammelody.com
 
 zip -q0X  BookTitle.epub mimetype
 zip -qXr9D  BookTitle.epub *
