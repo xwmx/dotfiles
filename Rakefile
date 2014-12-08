@@ -107,6 +107,13 @@ task :customize_icons do |t|
   %x[./script/customizations/customize_icons.rb]
 end
 
+desc "Update submodules"
+task :update_submodules do |t|
+  git_command = "git submodule foreach git pull"
+  puts git_command
+  %x[#{git_command}]
+end
+
 module Dotfile
   module Directory
     def self.source
