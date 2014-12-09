@@ -89,7 +89,7 @@ end
 
 desc "Configure OS X Preferences"
 task :osx do |t|
-  puts %x[./script/packages/osx.sh]
+  puts %x[./script/config/osx.sh]
 end
 
 desc "Update Homebrew and Homebrew Cask"
