@@ -89,17 +89,17 @@ end
 
 desc "Configure OS X Preferences"
 task :osx do |t|
-  %x[./script/osx.sh]
+  %x[./script/packages/osx.sh]
 end
 
 desc "Update Homebrew and Homebrew Cask"
 task :brew do |t|
-  %x[./script/brew.sh]
+  %x[./script/packages/brew.sh]
 end
 
 desc "Update npm global modules"
 task :npm do |t|
-  %x[./script/npm.sh]
+  %x[./script/packages/npm.sh]
 end
 
 desc "Update Homebrew custom icons"
