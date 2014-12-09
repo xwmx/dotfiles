@@ -102,6 +102,11 @@ task :npm do |t|
   puts %x[./script/packages/npm.sh]
 end
 
+desc "Update pip global packages"
+task :pip do |t|
+  puts %x[./script/packages/pip.sh]
+end
+
 desc "Update Homebrew custom icons"
 task :customize_icons do |t|
   puts %x[./script/customizations/customize_icons.rb]
