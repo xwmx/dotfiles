@@ -89,29 +89,29 @@ end
 
 desc "Configure OS X Preferences"
 task :osx do |t|
-  %x[./script/packages/osx.sh]
+  puts %x[./script/packages/osx.sh]
 end
 
 desc "Update Homebrew and Homebrew Cask"
 task :brew do |t|
-  %x[./script/packages/brew.sh]
+  puts %x[./script/packages/brew.sh]
 end
 
 desc "Update npm global modules"
 task :npm do |t|
-  %x[./script/packages/npm.sh]
+  puts %x[./script/packages/npm.sh]
 end
 
 desc "Update Homebrew custom icons"
 task :customize_icons do |t|
-  %x[./script/customizations/customize_icons.rb]
+  puts %x[./script/customizations/customize_icons.rb]
 end
 
 desc "Update submodules"
 task :update_submodules do |t|
   git_command = "git submodule foreach git pull"
   puts git_command
-  %x[#{git_command}]
+  puts %x[#{git_command}]
 end
 
 module Dotfile
