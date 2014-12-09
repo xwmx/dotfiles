@@ -180,6 +180,7 @@ brew install docker
 
 # Remove outdated versions from the cellar.
 brew cleanup
+brew cask cleanup
 
 # Call custom brew aliasapps and brew cask aliasapps commands
 brew aliasapps
