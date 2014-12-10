@@ -93,18 +93,8 @@ task :osx do |t|
 end
 
 desc "Update Homebrew and Homebrew Cask"
-task :brew do |t|
-  puts %x[./script/packages/brew.sh]
-end
-
-desc "Update npm global modules"
-task :npm do |t|
-  puts %x[./script/packages/npm.sh]
-end
-
-desc "Update pip global packages"
-task :pip do |t|
-  puts %x[./script/packages/pip.sh]
+task :update_packages do |t|
+  puts %x[manuel update-packages]
 end
 
 desc "Update Homebrew custom icons"

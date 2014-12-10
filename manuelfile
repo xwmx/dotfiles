@@ -5,6 +5,23 @@ function hello {
   echo ">> Hello from manuel!"
 }
 
-function brew-install {
+function update-homebrew {
+  echo ">> Updating Homebrew formulas and casks..."
   $DOTFILES/script/packages/brew.sh
+}
+
+function update-npm {
+  echo ">> Updating global npm modules..."
+  $DOTFILES/script/packages/npm.sh
+}
+
+function update-pip {
+  echo ">> Updating pip packages..."
+  $DOTFILES/script/packages/pip.sh
+}
+
+function update-packages {
+  update-homebrew
+  update-npm
+  update-pip
 }
