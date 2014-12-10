@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
 # run this task with: $ manuel hello
-hello() {
-  echo ">> Hello from manuel!"
-}
+# hello() {
+#  echo ">> Hello from manuel!"
+# }
 
 update-submodules() {
   git submodule foreach git pull
