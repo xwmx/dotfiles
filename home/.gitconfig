@@ -44,3 +44,5 @@
   smudge = git-media-smudge %f
 [include]
   path = ~/.gitconfig.local
+[credential]
+	helper = osxkeychain
