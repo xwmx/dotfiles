@@ -141,3 +141,6 @@
 [submodule "vendor/alphabetum/alias-app"]
 	path = vendor/alphabetum/alias-app
 	url = git@github.com:alphabetum/alias-app.git
+[submodule "vendor/manuel"]
+	path = vendor/manuel
+	url = https://github.com/ShaneKilkelly/manuel.git
