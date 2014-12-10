@@ -9,19 +9,19 @@
 # http://tldp.org/HOWTO/Bash-Prompt-HOWTO/
 ###############################################################################
 
-function trim_prompt_path () {
+trim_prompt_path() {
   echo "$(echo -n $PWD | sed -e "s/.*\(.\{$1\}\)/\1/")"
 }
 
-function pwd_path_length () {
+pwd_path_length() {
   echo "$(echo -n $PWD | wc -c | tr -d " ")"
 }
 
-function pwd_user_path_length () {
+pwd_user_path_length() {
   echo "$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ")"
 }
 
-function build_prompt_path () {
+build_prompt_path() {
 
   local path_colors=$1
   local ps1_truncation=$2
@@ -69,7 +69,7 @@ function build_prompt_path () {
 }
 
 
-function prompt_command () {
+prompt_command() {
 
   # tput reference
   #

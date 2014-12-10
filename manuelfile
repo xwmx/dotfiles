@@ -1,26 +1,26 @@
 #! /usr/bin/env bash
 
 # run this task with: $ manuel hello
-function hello {
+hello() {
   echo ">> Hello from manuel!"
 }
 
-function update-homebrew {
+update-homebrew() {
   echo ">> Updating Homebrew formulas and casks..."
   $DOTFILES/script/packages/brew.sh
 }
 
-function update-npm {
+update-npm() {
   echo ">> Updating global npm modules..."
   $DOTFILES/script/packages/npm.sh
 }
 
-function update-pip {
+update-pip() {
   echo ">> Updating pip packages..."
   $DOTFILES/script/packages/pip.sh
 }
 
-function update-packages {
+update-packages() {
   update-homebrew
   update-npm
   update-pip

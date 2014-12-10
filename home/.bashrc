@@ -33,7 +33,7 @@ export HISTFILESIZE=10000
 #==========================================================================
 
 # Extend mategem to add tab-completion
-_mategem ()
+_mategem()
 {
     local cur prev
     COMPREPLY=()

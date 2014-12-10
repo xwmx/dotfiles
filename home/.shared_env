@@ -10,13 +10,13 @@
 #==========================================================================
 
 # OS detection
-function is_osx() {
+is_osx() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
 }
-function is_ubuntu() {
+is_ubuntu() {
   [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
 }
-function get_os() {
+get_os() {
   for os in osx ubuntu; do
     is_$os; [[ $? == ${1:-0} ]] && echo $os
   done
@@ -42,7 +42,7 @@ test_program_exists() {
 
 # source all files in a directory, or optionally source one file from a
 # specified directory.
-function init_src() {
+init_src() {
   local file
   if [ -n "$2" ]; then
     source "$HOME/$1/$2"
