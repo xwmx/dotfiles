@@ -5,3 +5,6 @@ function hello {
   echo ">> Hello from manuel!"
 }
 
+function brew-install {
+  $DOTFILES/script/packages/brew.sh
+}
