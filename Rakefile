@@ -87,28 +87,6 @@ task :link do |t|
   end
 end
 
-desc "Configure OS X Preferences"
-task :osx do |t|
-  puts %x[./script/config/osx.sh]
-end
-
-desc "Update Homebrew and Homebrew Cask"
-task :update_packages do |t|
-  puts %x[manuel update-packages]
-end
-
-desc "Update Homebrew custom icons"
-task :customize_icons do |t|
-  puts %x[./script/customizations/customize_icons.rb]
-end
-
-desc "Update submodules"
-task :update_submodules do |t|
-  git_command = "git submodule foreach git pull"
-  puts git_command
-  puts %x[#{git_command}]
-end
-
 module Dotfile
   module Directory
     def self.source

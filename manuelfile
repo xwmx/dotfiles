@@ -5,6 +5,10 @@ hello() {
   echo ">> Hello from manuel!"
 }
 
+update-submodules() {
+  git submodule foreach git pull
+}
+
 update-homebrew() {
   echo ">> Updating Homebrew formulas and casks..."
   $DOTFILES/script/packages/brew.sh
@@ -25,3 +29,16 @@ update-packages() {
   update-npm
   update-pip
 }
+
+customize-icons() {
+  echo ">> Customizing icons of Homebrew-installed applications..."
+  $DOTFILES/script/customizations/customize_icons.rb
+}
+
+configure-osx() {
+  echo ">> Configuring OS X preferences..."
+  $DOTFILES/script/config/osx.sh
+}
+
+
+
