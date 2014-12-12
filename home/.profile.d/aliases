@@ -151,3 +151,9 @@ spotlightfile() {
 spotlightcontent() {
   mdfind -interpret "$@";
 }
+
+# Open with Quicklook
+ql () {
+  qlmanage -p $* 2>/dev/null
+}
+
