@@ -99,6 +99,7 @@ brew install zopfli
 
 brew tap homebrew/completions
 
+brew install djvu2pdf
 brew install elinks
 brew install elixir
 brew install flow
