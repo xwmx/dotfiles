@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
+# Install programs and applications using Homebrew and Homebrew Cask.
 
 # Make sure we’re using the latest Homebrew.
 brew update
