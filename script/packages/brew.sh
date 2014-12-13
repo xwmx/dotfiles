@@ -121,6 +121,7 @@ brew install pandoc
 brew install rbenv
 brew install redis
 brew install riak
+brew install rust
 brew install scala
 brew install siege
 brew install sphinx
