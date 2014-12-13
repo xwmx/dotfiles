@@ -1,5 +1,13 @@
 #! /usr/bin/env bash
 
+# manuelfile
+#
+# Tasks for manuel, a task runner for bash.
+#
+# https://github.com/ShaneKilkelly/manuel
+#
+# Example:
+#
 # run this task with: $ manuel hello
 # hello() {
 #  echo ">> Hello from manuel!"
