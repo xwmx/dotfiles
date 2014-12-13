@@ -144,3 +144,6 @@
 [submodule "vendor/manuel"]
 	path = vendor/manuel
 	url = https://github.com/ShaneKilkelly/manuel.git
+[submodule "home/.emacs.d"]
+	path = home/.emacs.d
+	url = https://github.com/alphabetum/prelude.git
