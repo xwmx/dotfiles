@@ -102,6 +102,7 @@ brew tap homebrew/completions
 brew install djvu2pdf
 brew install elinks
 brew install elixir
+brew install ffmpeg
 brew install flow
 brew install htop
 brew install hub
