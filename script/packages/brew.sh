@@ -1,19 +1,6 @@
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
-#
-# SUDO note: original script includes sudo commands. Currently disabling since
-# homebrew is better without sudo. For information about which commands have
-# been disabled or called again without sudo, see commented lines starding with
-# SUDO
-
-## Ask for the administrator password upfront.
-# SUDO - DISABLE SUDO
-#sudo -v
-
-## Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
-# SUDO - DISABLE SUDO
-#while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -24,9 +11,6 @@ brew upgrade
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-# SUDO - DISABLE SUDO
-#sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
-# SUDO - ENABLE WITHOUT SUDO
 ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
 # Install some other useful utilities like `sponge`.
