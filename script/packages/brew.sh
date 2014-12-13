@@ -2,11 +2,19 @@
 
 # Install programs and applications using Homebrew and Homebrew Cask.
 
+###############################################################################
+# Homebrew - Update
+###############################################################################
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
 brew upgrade
+
+###############################################################################
+# Homebrew - Formula
+###############################################################################
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -119,6 +127,10 @@ brew install wine
 brew install winetricks
 
 
+###############################################################################
+# Homebrew - Linking
+###############################################################################
+
 # linkapps
 #
 # link apps installed with homebrew. Pass the `--local` flag in order to
@@ -128,6 +140,10 @@ brew install winetricks
 # stick around.
 brew unlinkapps --local
 brew linkapps --local
+
+###############################################################################
+# Homebrew Cask
+###############################################################################
 
 # install brew cask
 brew install caskroom/cask/brew-cask
@@ -164,10 +180,17 @@ ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
 brew install docker
 
+###############################################################################
+# Cleanup
+###############################################################################
 
 # Remove outdated versions from the cellar.
 brew cleanup
 brew cask cleanup
+
+###############################################################################
+# Application Aliasing
+###############################################################################
 
 # Call custom brew aliasapps and brew cask aliasapps commands
 brew aliasapps
