@@ -15,8 +15,8 @@
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
-  lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %nl %Cgreen(%cr) %C(bold blue)<%an - %ae>%Creset' --abbrev-commit --date=relative
-  lgac = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %nl %Cgreen(%cr) %C(bold blue)<%an - %ae>%Creset' --abbrev-commit --date=relative --all
+  lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative
+  lgac = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative --all
   merge-branch = !git checkout master && git merge @{-1}
   msg = commit --allow-empty -m
   pr = !gh pull-request
