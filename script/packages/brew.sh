@@ -16,6 +16,21 @@ brew update
 brew upgrade
 
 ###############################################################################
+# Homebrew - Taps
+#
+# `brew tap` allows you to add more Github repos to the list of formulae that
+# brew tracks, updates and installs from.
+#
+###############################################################################
+
+# homebrew-completions
+#
+# Shell completion formulae for the Homebrew package manager
+#
+# https://github.com/Homebrew/homebrew-completions
+brew tap homebrew/completions
+
+###############################################################################
 # Homebrew - Formula
 ###############################################################################
 
@@ -282,13 +297,6 @@ brew install xz
 # ----------------------------------------------------------------------------
 # Programs
 # ----------------------------------------------------------------------------
-
-# homebrew-completions
-#
-# Shell completion formulae for the Homebrew package manager
-#
-# https://github.com/Homebrew/homebrew-completions
-brew tap homebrew/completions
 
 # Ack
 #
@@ -712,8 +720,25 @@ brew linkapps --local
 
 # install brew cask
 brew install caskroom/cask/brew-cask
-# tap caskroom/versions for alternative versions
+
+
+###############################################################################
+# Homebrew Cask - Taps
+#
+# `brew tap` allows you to add more Github repos to the list of formulae that
+# brew tracks, updates and installs from.
+###############################################################################
+
+# homebrew-cask-versions
+#
+# Alternate versions of Casks for homebrew-cask
+#
+# https://github.com/caskroom/homebrew-versions
 brew tap caskroom/versions
+
+###############################################################################
+# Homebrew Cask - Applications
+###############################################################################
 
 # VirtualBox
 #
