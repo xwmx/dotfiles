@@ -106,6 +106,7 @@ brew install macvim
 brew install memcached
 brew install mercurial
 brew install mit-scheme
+brew install most
 brew install node # also installs npm
 brew install nvm
 brew install ocaml
