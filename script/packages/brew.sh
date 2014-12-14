@@ -283,139 +283,19 @@ brew install xz
 # Programs
 # ----------------------------------------------------------------------------
 
-# Ack
-#
-# Ack is a tool like grep, optimized for programmers
-#
-# http://beyondgrep.com/
-brew install ack
-
-# Exiv2
-#
-# Image metadata library and tools
-#
-# http://www.exiv2.org
-#brew install exiv2
-
-# git
-#
-# Git is a free and open source distributed version control system designed to
-# handle everything from small to very large projects with speed and efficiency
-#
-# http://git-scm.com
-brew install git
-
-# ImageMagick
-#
-# ImageMagick® is a software suite to create, edit, compose, or convert bitmap
-# images. It can read and write images in a variety of formats (over 100)
-# including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and
-# TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and
-# transform images, adjust image colors, apply various special effects, or draw
-# text, lines, polygons, ellipses and Bézier curves.
-#
-# http://www.imagemagick.org
-#
-# Build notes:
-#
-# --with-webp - build with support for the webp image format:
-#
-# https://developers.google.com/speed/webp/?csw=1
-brew install imagemagick --with-webp
-
-# Lua
-#
-# Lua is a powerful, fast, lightweight, embeddable scripting language.
-#
-# http://www.lua.org/
-brew install lua
-
-# Lynx
-#
-# Lynx is a fully-featured World Wide Web (WWW) client for users running
-# cursor-addressable, character-cell display devices such as vt100 terminals
-#
-# http://lynx.isc.org/release/
-brew install lynx
-
-# ngrep - network grep
-#
-# ngrep strives to provide most of GNU grep's common features, applying them to
-# the network layer. ngrep is a pcap-aware tool that will allow you to specify
-# extended regular or hexadecimal expressions to match against data payloads of packets.
-#
-# http://ngrep.sourceforge.net/
-brew install ngrep
-
-# p7zip
-#
-# A file archiver with a high compression ratio. p7zip is a port of 7za.exe for
-#POSIX systems like Unix.
-#
-# http://p7zip.sourceforge.net/
-brew install p7zip
-
-# pigz
-#
-# A parallel implementation of gzip for modern multi-processor, multi-core
-# machines
-#
-# http://www.zlib.net/pigz/
-brew install pigz
-
-# pv - Pipe Viewer
-#
-# A terminal-based tool for monitoring the progress of data through a pipeline.
-#
-# http://www.ivarch.com/programs/pv.shtml
-brew install pv
-
-# rename
-#
-# renames files according to modification rules specified on the command line.
-#
-# http://plasmasturm.org/code/rename
-brew install rename
-
-# Rhino
-#
-# Rhino is an open-source implementation of JavaScript written entirely in Java.
-#
-# http://www.mozilla.org/rhino/
-brew install rhino
-
-# tree
-#
-# Tree is a recursive directory listing command that produces a depth indented
-# listing of files.
-#
-# http://mama.indstate.edu/users/ice/tree/
-brew install tree
-
-# webkit2png
-#
-# webkit2png is a command line tool that creates screenshots of webpages
-#
-# http://www.paulhammond.org/webkit2png/
-brew install webkit2png
-
-# Zopfli
-#
-# Zopfli Compression Algorithm is a new zlib (gzip, deflate) compatible
-# compressor. This compressor takes more time (~100x slower), but compresses
-# around 5% better than zlib and better than any other zlib-compatible
-# compressor.
-#
-# https://code.google.com/p/zopfli/
-brew install zopfli
-
-
 # homebrew-completions
 #
 # Shell completion formulae for the Homebrew package manager
 #
 # https://github.com/Homebrew/homebrew-completions
 brew tap homebrew/completions
+
+# Ack
+#
+# Ack is a tool like grep, optimized for programmers
+#
+# http://beyondgrep.com/
+brew install ack
 
 # djvu2pdf
 #
@@ -444,6 +324,13 @@ brew install elinks
 # http://elixir-lang.org/
 brew install elixir
 
+# Exiv2
+#
+# Image metadata library and tools
+#
+# http://www.exiv2.org
+#brew install exiv2
+
 # FFmpeg
 #
 # A complete, cross-platform solution to record, convert and stream audio and
@@ -460,6 +347,14 @@ brew install ffmpeg
 # http://flowtype.org/
 brew install flow
 
+# git
+#
+# Git is a free and open source distributed version control system designed to
+# handle everything from small to very large projects with speed and efficiency
+#
+# http://git-scm.com
+brew install git
+
 # htop (htop-osx)
 #
 # htop, an interactive process viewer.
@@ -473,6 +368,24 @@ brew install htop
 #
 # http://hub.github.com/
 brew install hub
+
+# ImageMagick
+#
+# ImageMagick® is a software suite to create, edit, compose, or convert bitmap
+# images. It can read and write images in a variety of formats (over 100)
+# including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and
+# TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and
+# transform images, adjust image colors, apply various special effects, or draw
+# text, lines, polygons, ellipses and Bézier curves.
+#
+# http://www.imagemagick.org
+#
+# Build notes:
+#
+# --with-webp - build with support for the webp image format:
+#
+# https://developers.google.com/speed/webp/?csw=1
+brew install imagemagick --with-webp
 
 # Leiningen
 #
@@ -545,6 +458,15 @@ brew install mit-scheme
 # http://www.jedsoft.org/most/
 brew install most
 
+# ngrep - network grep
+#
+# ngrep strives to provide most of GNU grep's common features, applying them to
+# the network layer. ngrep is a pcap-aware tool that will allow you to specify
+# extended regular or hexadecimal expressions to match against data payloads of packets.
+#
+# http://ngrep.sourceforge.net/
+brew install ngrep
+
 # node.js
 #
 # Node.js® is a platform built on Chrome's JavaScript runtime. Node.js uses an
@@ -588,6 +510,14 @@ brew install opam
 # https://github.com/vasi/osxutils
 brew install osxutils
 
+# p7zip
+#
+# A file archiver with a high compression ratio. p7zip is a port of 7za.exe for
+#POSIX systems like Unix.
+#
+# http://p7zip.sourceforge.net/
+brew install p7zip
+
 # Pandoc
 #
 # Pandoc converts files from one markup format into another
@@ -595,12 +525,34 @@ brew install osxutils
 #http://johnmacfarlane.net/pandoc/
 brew install pandoc
 
+# pigz
+#
+# A parallel implementation of gzip for modern multi-processor, multi-core
+# machines
+#
+# http://www.zlib.net/pigz/
+brew install pigz
+
+# pv - Pipe Viewer
+#
+# A terminal-based tool for monitoring the progress of data through a pipeline.
+#
+# http://www.ivarch.com/programs/pv.shtml
+brew install pv
+
 # rbenv
 #
 # Groom your app’s Ruby environment
 #
 # https://github.com/sstephenson/rbenv
 brew install rbenv
+
+# rename
+#
+# renames files according to modification rules specified on the command line.
+#
+# http://plasmasturm.org/code/rename
+brew install rename
 
 # Redis
 #
@@ -610,6 +562,13 @@ brew install rbenv
 #
 # http://redis.io/
 brew install redis
+
+# Rhino
+#
+# Rhino is an open-source implementation of JavaScript written entirely in Java.
+#
+# http://www.mozilla.org/rhino/
+brew install rhino
 
 # Riak
 #
@@ -658,6 +617,14 @@ brew install sphinx
 # http://www.gnu.org/software/stow/
 brew install stow
 
+# tree
+#
+# Tree is a recursive directory listing command that produces a depth indented
+# listing of files.
+#
+# http://mama.indstate.edu/users/ice/tree/
+brew install tree
+
 # Tig - text-mode interface for Git
 #
 # Tig is an ncurses-based text-mode interface for git. It functions mainly as a
@@ -693,6 +660,13 @@ brew install tmuxinator-completion
 # NOTE: command name is `ag`
 brew install the_silver_searcher
 
+# webkit2png
+#
+# webkit2png is a command line tool that creates screenshots of webpages
+#
+# http://www.paulhammond.org/webkit2png/
+brew install webkit2png
+
 # Wine
 #
 # Run Windows applications on Linux, BSD, Solaris and Mac OS X.
@@ -706,6 +680,16 @@ brew install wine
 #
 # http://code.google.com/p/winetricks/
 brew install winetricks
+
+# Zopfli
+#
+# Zopfli Compression Algorithm is a new zlib (gzip, deflate) compatible
+# compressor. This compressor takes more time (~100x slower), but compresses
+# around 5% better than zlib and better than any other zlib-compatible
+# compressor.
+#
+# https://code.google.com/p/zopfli/
+brew install zopfli
 
 
 ###############################################################################
