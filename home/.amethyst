@@ -2,11 +2,9 @@
   "layouts": [
     "floating",
     "widescreen-tall",
+    "column",
     "tall",
     "fullscreen",
-    "wide",
-    "column",
-    "row",
   ],
   "floating": [
     "com.adiumX.adiumX",
