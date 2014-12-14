@@ -1,0 +1,7 @@
+# Configuration file for tig
+#
+# http://jonas.nitro.dk/tig/
+# https://github.com/jonas/tig
+
+# enable mouse support
+set mouse = true

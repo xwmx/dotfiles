@@ -120,6 +120,7 @@ brew install scala
 brew install siege
 brew install sphinx
 brew install stow
+brew install tig
 brew install tmux
 brew install tmuxinator-completion
 brew install the_silver_searcher
