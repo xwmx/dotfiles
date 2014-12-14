@@ -46,15 +46,15 @@ if [ ! -d $destPath ]; then
 fi
 
 case $srcPath in
-  /*) fullSrcPath=$srcPath ;;
-  ~*) fullSrcPath=$srcPath ;;
-  *) fullSrcPath=`pwd`/$srcPath ;;
+/*) fullSrcPath=$srcPath ;;
+~*) fullSrcPath=$srcPath ;;
+*) fullSrcPath=`pwd`/$srcPath ;;
 esac
 
 case $destPath in
-  /*) fullDestPath=$destPath ;;
-  ~*) fullDestPath=$destPath ;;
-  *) fullDestPath=`pwd`/$destPath ;;
+/*) fullDestPath=$destPath ;;
+~*) fullDestPath=$destPath ;;
+*) fullDestPath=`pwd`/$destPath ;;
 esac
 
 /usr/bin/osascript > /dev/null <<EOT
