@@ -790,6 +790,15 @@ brew cask install breach
 # http://www.cakebrew.com
 brew cask install cakebrew
 
+
+# Cargo
+#
+# Cargo is a tool that allows Rust projects to declare their various
+# dependencies, and ensure that you'll always get a repeatable build.
+#
+# https://crates.io/
+brew cask install cargo
+
 # Codebox
 #
 # Open source cloud & desktop IDE.
