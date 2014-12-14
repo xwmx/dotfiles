@@ -920,6 +920,8 @@ brew cask cleanup
 ###############################################################################
 # Application Aliasing
 #
+# Custom brew commands for creating spotlight-recognizable application aliases.
+#
 # Uses the alias-app command line tool: https://github.com/alphabetum/alias-app
 ###############################################################################
 
