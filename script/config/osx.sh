@@ -2,7 +2,7 @@
 
 # osx.sh
 #
-# Configure and set various preferences for OS X.
+# Configure and set various preferences for OS X and default Apple applications
 
 ###############################################################################
 # UX
@@ -17,15 +17,6 @@
 # Revert command:
 # defaults write com.apple.universalaccess reduceTransparency 0
 defaults write com.apple.universalaccess reduceTransparency 1
-
-###############################################################################
-# Developer Applications
-###############################################################################
-
-# Add iOS Simulator to Launchpad and Spotlight
-# Notes: spotlight apparently doesn't index symlinks properly, so an alias is
-# required in order to get it picked up properly.
-make_alias "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications"
 
 ###############################################################################
 # Disk Utility

@@ -48,5 +48,10 @@ configure-osx() {
   $DOTFILES/script/config/osx.sh
 }
 
+configure-osx-apps() {
+  echo ">> Configuring OS X application preferences..."
+  $DOTFILES/script/config/osx_apps.sh
+}
+
 
 
