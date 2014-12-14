@@ -18,7 +18,7 @@ icons = [
   {
     :source => File.join(source_icon_dir, 'iTerm2.icns'),
     :destination => File.join(
-      local_app_dir, "/iTerm.app/Contents/Resources/iTerm.icns"
+      local_app_dir, "/iTerm.app/Contents/Resources/iTerm2.icns"
     )
   },{
     :source => File.join(source_icon_dir, 'MacVim.icns'),
@@ -35,7 +35,6 @@ icons = [
 
 
 icons.each do |icon|
-
   next unless File.exists?(icon[:source])
   next unless File.exists?(icon[:destination])
   next if File.exists?("#{icon[:destination]}.bak")
@@ -46,5 +45,9 @@ icons.each do |icon|
 
   FileUtils.mv(icon[:destination], "#{icon[:destination]}.bak")
   FileUtils.cp(icon[:source], icon[:destination])
+
+  # Touch .app directory to refresh icons
+  FileUtils.touch(File.join(File.dirname(icon[:destination]), '..', '..'))
+
   puts "Updated icon: \n #{icon[:source]} -> #{icon[:destination]}"
 end
