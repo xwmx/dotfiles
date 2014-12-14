@@ -919,8 +919,9 @@ brew cask cleanup
 
 ###############################################################################
 # Application Aliasing
+#
+# Uses the alias-app command line tool: https://github.com/alphabetum/alias-app
 ###############################################################################
 
-# Call custom brew aliasapps and brew cask aliasapps commands
 brew aliasapps
 brew cask aliasapps
