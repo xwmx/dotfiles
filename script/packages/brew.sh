@@ -149,6 +149,8 @@ brew linkapps --local
 
 # install brew cask
 brew install caskroom/cask/brew-cask
+# tap caskroom/versions for alternative versions
+brew tap caskroom/versions
 
 brew cask install virtualbox
 
@@ -161,7 +163,7 @@ brew cask install codebox
 brew cask install consul
 brew cask install gnucash
 brew cask install haskell-platform
-brew cask install iterm2
+brew cask install iterm2-nightly
 brew cask install kindlegen
 brew cask install lighttable
 brew cask install mactex
