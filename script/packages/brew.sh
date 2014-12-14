@@ -337,7 +337,7 @@ brew install elixir
 # Image metadata library and tools
 #
 # http://www.exiv2.org
-#brew install exiv2
+brew install exiv2
 
 # FFmpeg
 #
