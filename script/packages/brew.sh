@@ -749,6 +749,14 @@ brew tap caskroom/versions
 # NOTE: Installing first since it's important and other casks use it.
 brew cask install virtualbox
 
+# Amethyst
+#
+# Tiling window manager for OS X similar to xmonad, written in pure
+# Objective-C.
+#
+# http://ianyh.com/amethyst/
+brew cask install amethyst
+
 # Android Studio
 #
 # https://developer.android.com/sdk/index.html

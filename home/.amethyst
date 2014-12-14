@@ -1,0 +1,18 @@
+{
+  "layouts": [
+    "floating",
+    "widescreen-tall",
+    "tall",
+    "fullscreen",
+    "wide",
+    "column",
+    "row",
+  ],
+  "floating": [
+    "com.adiumX.adiumX",
+    "com.agilebits.onepassword4",
+    "com.apple.systempreferences",
+  ],
+  "enables-layout-hud-on-space-change": false
+}
+
