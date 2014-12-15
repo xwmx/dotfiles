@@ -23,7 +23,7 @@ configuration, and make sure you have backups in case anything gets
 overwritten.
 
 - clone to `~/.dotfiles`,
-- run `rake link` to symlink all of the dotfiles into the `$HOME` directory,
+- run `./bin/dotfiles link` to symlink all of the dotfiles into the `$HOME` directory,
 - run `$ git submodule init` and `$ git submodule update --init
   --recursive`
 
