@@ -27,7 +27,8 @@ overwritten.
 - run `$ git submodule init` and `$ git submodule update --init
   --recursive`
 
-See additional tasks in `Rakefile` (`rake tasks`) for backup and troubleshooting.
+See additional tasks available by running `./bin/dotfiles tasks`, including
+tasks for for backup and troubleshooting.
 
 ## Components
 
