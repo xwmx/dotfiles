@@ -1,17 +1,8 @@
-#! /usr/bin/env bash
-
-# manuelfile
+#!/usr/bin/env bash
 #
-# Tasks for manuel, a task runner for bash.
+# DOTFILES
 #
-# https://github.com/ShaneKilkelly/manuel
-#
-# Example:
-#
-# run this task with: $ manuel hello
-# hello() {
-#  echo ">> Hello from manuel!"
-# }
+# Tasks for managing dotfiles.
 
 update-submodules() {
   git submodule foreach git pull
@@ -54,4 +45,36 @@ configure-osx-apps() {
 }
 
 
+help() {
+  if [[ $# = 0 ]]; then
+    echo "Usage: dotfiles [task]"
+  else
+    echo $(help-$1)
+  fi
+}
+
+tasks() {
+  task_list=($(declare -F))
+  for t in ${task_list[@]}
+  do
+    if !( [[ $t == "declare" ]] || \
+          [[ $t == "-f" ]] || \
+          [[ "$t" =~ ^_(.*) ]]
+    ); then
+      echo "$t"
+    fi
+  done
+}
+
+_dotfiles_main() {
+  if ( [[ $# = 0 ]] || [[ $1 == "-h" ]] ); then
+    help
+  else
+    eval $@
+    exit 0
+  fi
+}
+
+# dotfiles main function
+_dotfiles_main $@
 
