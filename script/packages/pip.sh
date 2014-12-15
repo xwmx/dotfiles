@@ -24,3 +24,9 @@ pip install ipython[all]
 
 pip3 install --upgrade pip
 
+# Mochi
+#
+# Dynamically typed functional programming language.
+#
+# https://github.com/i2y/mochi
+pip3 install mochi
