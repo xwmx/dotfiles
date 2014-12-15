@@ -548,6 +548,20 @@ brew install pigz
 # http://www.ivarch.com/programs/pv.shtml
 brew install pv
 
+# python
+#
+# Python 2
+#
+# https://www.python.org
+brew install python
+
+# python3
+#
+# Python 3
+#
+# https://www.python.org
+brew install python3
+
 # rbenv
 #
 # Groom your app’s Ruby environment
