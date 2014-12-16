@@ -79,10 +79,6 @@
 [submodule "home/.janus/bufkill.vim"]
 	path = home/.janus/bufkill.vim
 	url = https://github.com/mattdbridges/bufkill.vim.git
-[submodule "home/.janus/Conque-Shell"]
-	path = home/.janus/Conque-Shell
-  url = https://github.com/oplatek/Conque-Shell.git
-  ignore = dirty
 [submodule "home/.janus/eclm_wombat.vim"]
 	path = home/.janus/eclm_wombat.vim
 	url = https://github.com/vim-scripts/eclm_wombat.vim.git

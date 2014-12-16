@@ -185,11 +185,3 @@ if !has("gui_macvim")
   augroup end
 endif
 
-
-" ============================================================================
-" Conque-Shell
-" ============================================================================
-
-" command for launching shell
-command Sh execute "ConqueTerm bash"
-
