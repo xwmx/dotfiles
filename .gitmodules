@@ -147,3 +147,6 @@
 [submodule "home/.emacs.d"]
 	path = home/.emacs.d
 	url = https://github.com/alphabetum/prelude.git
+[submodule "vendor/alphabetum/dots"]
+	path = vendor/alphabetum/dots
+	url = https://github.com/alphabetum/dots.git

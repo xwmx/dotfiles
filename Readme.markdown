@@ -22,12 +22,13 @@ Note: be careful when following these steps over an existing
 configuration, and make sure you have backups in case anything gets
 overwritten.
 
-- clone to `~/.dotfiles`,
-- run `./bin/dotfiles link` to symlink all of the dotfiles into the `$HOME` directory,
+- clone to `~/.dotfiles`
 - run `$ git submodule init` and `$ git submodule update --init
   --recursive`
+- run `./bin/dots link` to symlink all of the dotfiles into the `$HOME` directory
 
-See additional tasks available by running `./bin/dotfiles tasks`, including
+
+See additional tasks available by running `./bin/dots tasks`, including
 tasks for for backup and troubleshooting.
 
 ## Components
