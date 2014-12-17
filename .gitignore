@@ -1,6 +1,10 @@
 # Used by some scripts in ./bin, such as manh and manp
 /caches/
 
+# Ignore the local directory, but track .gitkeep so it's included in the repo.
+/local/*
+!/local/.gitkeep
+
 # Only track specific atom config files
 /home/.atom/*
 !/home/.atom/config.cson
