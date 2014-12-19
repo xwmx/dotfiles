@@ -907,6 +907,14 @@ brew cask install mactex
 # http://www.packer.io/
 brew cask install packer
 
+# pgAdmin
+#
+# pgAdmin is the most popular and feature rich Open Source administration and
+# development platform for PostgreSQL
+#
+# http://pgadmin.org
+brew cask install pgadmin3
+
 # Secrets
 #
 # A database of hidden settings for Mac OS X
