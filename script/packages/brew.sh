@@ -30,6 +30,13 @@ brew upgrade
 # https://github.com/Homebrew/homebrew-completions
 brew tap homebrew/completions
 
+# homebrew-games
+#
+# Game formulae for the Homebrew package manager
+#
+# https://github.com/Homebrew/homebrew-games
+brew tap homebrew/games
+
 ###############################################################################
 # Homebrew - Formula
 ###############################################################################
@@ -174,6 +181,14 @@ brew install dex2jar
 #
 # http://www.hsc.fr/ressources/outils/dns2tcp/index.html.en
 brew install dns2tcp
+
+# Dwarf Fortress
+#
+# Dwarf Fortress is a part construction and management simulation, part
+# roguelike, freeware indie video game.
+#
+# http://www.bay12games.com/dwarves/
+brew install dwarf-fortress
 
 # FCrackZip
 #
