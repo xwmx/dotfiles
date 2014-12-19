@@ -432,6 +432,16 @@ brew install lesspipe
 # http://www.lua.org/
 brew install lua
 
+# LuaRocks
+#
+# Package management for Lua modules. LuaRocks is a deployment and management
+# system for Lua modules and allows you to install Lua modules as
+# self-contained packages called "rocks", which also contain version dependency
+# information.
+#
+# http://luarocks.org
+brew install luarocks
+
 # Lynx
 #
 # Lynx is a fully-featured World Wide Web (WWW) client for users running
