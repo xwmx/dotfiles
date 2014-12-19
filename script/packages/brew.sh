@@ -904,6 +904,14 @@ brew cask install packer
 # http://secrets.blacktree.com
 brew cask install secrets
 
+# Spectacle
+#
+# Move and resize windows with ease. Window control with simple, customizable
+# keyboard shortcuts.
+#
+# http://spectacleapp.com
+brew cask install spectacle
+
 # Vagrant
 #
 # Create and configure lightweight, reproducible, and portable development
