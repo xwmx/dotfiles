@@ -640,6 +640,13 @@ brew install rust
 # http://www.scala-lang.org/
 brew install scala
 
+# ShellCheck
+#
+# Automatically detects problems with sh/bash scripts and commands
+#
+# http://www.shellcheck.net/
+brew install shellcheck
+
 # Siege
 #
 # Siege is an http load testing and benchmarking utility.
