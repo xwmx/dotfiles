@@ -18,6 +18,9 @@ pip install --upgrade pip
 # http://ipython.org/
 pip install ipython[all]
 
+# http://mitmproxy.org/
+pip install mitmproxy
+
 ###############################################################################
 # Python 3
 ###############################################################################
