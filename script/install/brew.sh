@@ -671,6 +671,14 @@ brew install sphinx
 # http://www.gnu.org/software/stow/
 brew install stow
 
+# tag
+#
+# A command line tool to manipulate tags on Mavericks files, and to query for
+# files with those tags.
+#
+# https://github.com/jdberry/tag
+brew install tag
+
 # tree
 #
 # Tree is a recursive directory listing command that produces a depth indented
