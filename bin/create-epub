@@ -39,18 +39,18 @@ mimetype_path="${source_path}/mimetype"
 #==========================================================================
 
 # check for presence of first argument
-if [ -z $destination_path ]; then
+if [ -z "$destination_path" ]; then
   echo "Error: destination file not specified."
   exit 1
-elif [ -f $destination_path ]; then
+elif [ -f "$destination_path" ]; then
   echo "Error: file already exists at destination path."
   exit 1
 fi
 # check for presence of second argument
-if [ -z $source_path ]; then
+if [ -z "$source_path" ]; then
   echo "Error: source directory not specified."
   exit 1
-elif [ ! -d $source_path ]; then
+elif [ ! -d "$source_path" ]; then
   echo "Error: no source directory found at specified path."
   exit 1
 fi
@@ -60,8 +60,8 @@ fi
 #==========================================================================
 
 # Create mimetype if it doesn't exist
-if [ ! -f $mimetype_path ]; then
-  echo application/epub+zip >> $mimetype_path
+if [ ! -f "$mimetype_path" ]; then
+  echo application/epub+zip >> "$mimetype_path"
 fi
 
 #==========================================================================
@@ -69,6 +69,6 @@ fi
 #==========================================================================
 
 # Zip everything up.
-zip -q0X "$destination_path" $mimetype_path
-zip -qXr9D "$destination_path" $source_path/*
+zip -q0X "$destination_path" "$mimetype_path"
+zip -qXr9D "$destination_path" "$source_path/*"
 
