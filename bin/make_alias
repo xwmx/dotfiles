@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # make_alias
 # This script takes two command-line arguments:
@@ -12,7 +12,9 @@
 # to allow either file or folder as source
 # Mofified to work with ".app" files, January 2007
 
-scriptname=`basename $0`
+scriptname=$(basename "$0")
+
+# Ensure that the currect number of arguments are passed.
 if [ $# -lt 2 ]; then
   echo "Usage: $scriptname srcPath destPath"
   exit
@@ -21,7 +23,7 @@ fi
 srcPath=$1
 destPath=$2
 
-if [[ ! -e $srcPath ]]; then
+if [[ ! -e "$srcPath" ]]; then
   echo "$scriptname: $srcPath: No such file or directory"
   exit
 fi
@@ -40,23 +42,38 @@ else
   srcType="file"
 fi
 
-if [ ! -d $destPath ]; then
+if [ ! -d "$destPath" ]; then
   echo "$scriptname: $destPath: No such directory"
   exit
 fi
 
+# Get full source path if argument is a relative path.
 case $srcPath in
-/*) fullSrcPath=$srcPath ;;
-~*) fullSrcPath=$srcPath ;;
-*) fullSrcPath=`pwd`/$srcPath ;;
+  /*)
+    fullSrcPath=$srcPath
+    ;;
+  ~*)
+    fullSrcPath=$srcPath
+    ;;
+  *)
+    fullSrcPath=$(pwd)/$srcPath
+    ;;
 esac
 
+# Get full destination path if argument is a relative path.
 case $destPath in
-/*) fullDestPath=$destPath ;;
-~*) fullDestPath=$destPath ;;
-*) fullDestPath=`pwd`/$destPath ;;
+  /*)
+    fullDestPath=$destPath
+    ;;
+  ~*)
+    fullDestPath=$destPath
+    ;;
+  *)
+    fullDestPath=$(pwd)/$destPath
+    ;;
 esac
 
+# Create the alias using AppleScript.
 /usr/bin/osascript > /dev/null <<EOT
   tell application "Finder"
     set macSrcPath to POSIX file "$fullSrcPath" as text
