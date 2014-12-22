@@ -867,6 +867,15 @@ brew cask install codebox
 # http://www.consul.io/
 brew cask install consul
 
+# Gimp
+#
+# GIMP is the GNU Image Manipulation Program. It is a freely distributed piece
+# of software for such tasks as photo retouching, image composition and image
+# authoring.
+#
+# http://www.gimp.org
+brew cask install gimp
+
 # GnuCash
 #
 # GnuCash is open source personal and small-business financial-accounting
