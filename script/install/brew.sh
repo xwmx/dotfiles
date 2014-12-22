@@ -889,6 +889,15 @@ brew cask install gnucash
 # http://www.haskell.org/platform/
 brew cask install haskell-platform
 
+# Inkscape
+#
+# Inkscape is an open-source vector graphics editor similar to Adobe
+# Illustrator, Corel Draw, Freehand, or Xara X that used Scalable Vector
+# Graphics (SVG), an open XML-based W3C standard, as the native format.
+#
+# https://inkscape.org/en/
+brew cask install inkscape
+
 # iTerm2
 #
 # iTerm2 is a replacement for Terminal and the successor to iTerm.
