@@ -185,3 +185,11 @@ if !has("gui_macvim")
   augroup end
 endif
 
+" ============================================================================
+" search
+" ============================================================================
+
+" Remap esc in normal mode to clear search highlights.
+"
+" note: this overrides previous mapping of esc to buffer swapping.
+nnoremap <esc> :noh<return><esc>
