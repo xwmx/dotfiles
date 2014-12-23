@@ -320,6 +320,16 @@ brew install xz
 # http://beyondgrep.com/
 brew install ack
 
+# dash
+#
+# DASH is a POSIX-compliant implementation of /bin/sh that aims to be as small
+# as possible. It does this without sacrificing speed where possible. In fact,
+# it is significantly faster than bash (the GNU Bourne-Again SHell) for most
+# tasks.
+#
+# http://gondor.apana.org.au/~herbert/dash/
+brew install dash
+
 # djvu2pdf
 #
 # A small tool to convert Djvu files to PDF files.
