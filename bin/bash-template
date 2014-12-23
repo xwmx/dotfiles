@@ -84,15 +84,15 @@ _me=$(basename "$0")
 # desc()
 #
 # Usage:
-#   desc subcommand "description"
+#   desc command "description"
 #
-# Create a description for a specified subcommand name. The subcommand
-# description text can be passed as the second argument or as standard input.
+# Create a description for a specified command name. The command description
+# text can be passed as the second argument or as standard input.
 #
 # To make the description text available to other functions, desc() assigns the
 # text to a variable with the format $_desc_function_name
 desc() {
-  [[ -z $1 ]] && printf "desc: No subcommand name specified.\n" && exit 1
+  [[ -z $1 ]] && printf "desc: No command name specified.\n" && exit 1
   if [[ -n $2 ]]; then
     read -d '' "_desc_$1" <<EOM
 $2
@@ -193,7 +193,7 @@ EOM
   fi
 }
 
-# Subcommand List #############################################################
+# Command List ################################################################
 
 desc list <<EOM
 Usage: $_me list [--raw]
