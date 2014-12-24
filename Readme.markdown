@@ -55,6 +55,11 @@ included in the `./home/.janus` directory as submodules. oh-my-zsh is
 used for zsh configuration, and and uses .oh-my-zsh.custom for the
 custom directory.
 
+### local
+
+A directory that isn't tracked by git, and can therefore be used for
+anything non-public.
+
 ### script
 
 OS X-specific scripts for configuring or updating environments.
