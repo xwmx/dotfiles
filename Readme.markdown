@@ -55,11 +55,6 @@ included in the `./home/.janus` directory as submodules. oh-my-zsh is
 used for zsh configuration, and and uses .oh-my-zsh.custom for the
 custom directory.
 
-### resources
-
-Other dotfile repos, submoduled. Nothing in this directory is
-automatically loaded.
-
 ### script
 
 OS X-specific scripts for configuring or updating environments.

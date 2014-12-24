@@ -1,39 +1,3 @@
-[submodule "resources/holman/dotfiles"]
-	path = resources/holman/dotfiles
-	url = https://github.com/holman/dotfiles.git
-[submodule "resources/thoughtbot/dotfiles"]
-	path = resources/thoughtbot/dotfiles
-	url = https://github.com/thoughtbot/dotfiles.git
-[submodule "resources/mathiasbynens/dotfiles"]
-	path = resources/mathiasbynens/dotfiles
-	url = https://github.com/mathiasbynens/dotfiles.git
-[submodule "resources/ryanb/dotfiles"]
-	path = resources/ryanb/dotfiles
-	url = https://github.com/ryanb/dotfiles.git
-[submodule "resources/rtomayko/dotfiles"]
-	path = resources/rtomayko/dotfiles
-	url = https://github.com/rtomayko/dotfiles.git
-[submodule "resources/cowboy/dotfiles"]
-	path = resources/cowboy/dotfiles
-	url = https://github.com/cowboy/dotfiles.git
-[submodule "resources/tvon/dotfiles"]
-	path = resources/tvon/dotfiles
-	url = https://github.com/tvon/dotfiles.git
-[submodule "resources/ebeigarts/dotfiles"]
-	path = resources/ebeigarts/dotfiles
-	url = https://github.com/ebeigarts/dotfiles.git
-[submodule "resources/mislav/dotfiles"]
-	path = resources/mislav/dotfiles
-	url = https://github.com/mislav/dotfiles.git
-[submodule "resources/cldwalker/irbfiles"]
-	path = resources/cldwalker/irbfiles
-	url = https://github.com/cldwalker/irbfiles.git
-[submodule "resources/square/maximum-awesome"]
-	path = resources/square/maximum-awesome
-	url = https://github.com/square/maximum-awesome.git
-[submodule "resources/paulmillr/dotfiles"]
-	path = resources/paulmillr/dotfiles
-	url = https://github.com/paulmillr/dotfiles.git
 [submodule "home/.janus/Dockerfile.vim"]
 	path = home/.janus/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -110,21 +74,9 @@
 	path = home/.vim
   url = https://github.com/carlhuda/janus.git
   ignore = dirty
-[submodule "resources/aspiers/shell-env"]
-	path = resources/aspiers/shell-env
-	url = https://github.com/aspiers/shell-env.git
-[submodule "resources/morgant/tools-osx"]
-	path = resources/morgant/tools-osx
-	url = https://github.com/morgant/tools-osx.git
-[submodule "resources/vasi/osxutils"]
-	path = resources/vasi/osxutils
-	url = https://github.com/vasi/osxutils.git
 [submodule "home/.janus/swift.vim"]
 	path = home/.janus/swift.vim
 	url = https://github.com/Keithbsmiley/swift.vim.git
-[submodule "resources/awood/dotfiles"]
-	path = resources/awood/dotfiles
-	url = https://github.com/awood/dotfiles.git
 [submodule "vendor/alphabetum/swiftly"]
 	path = vendor/alphabetum/swiftly
 	url = https://github.com/alphabetum/swiftly.git
