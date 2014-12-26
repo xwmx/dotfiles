@@ -435,6 +435,13 @@ brew install leiningen
 # http://www-zeuthen.desy.de/~friebel/unix/lesspipe.html
 brew install lesspipe
 
+# libcello
+#
+# Higher level programming in C
+#
+# http://libcello.org/
+brew install libcello
+
 # Lua
 #
 # Lua is a powerful, fast, lightweight, embeddable scripting language.
