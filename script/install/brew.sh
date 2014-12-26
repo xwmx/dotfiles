@@ -900,6 +900,13 @@ brew cask install codebox
 # http://www.consul.io/
 brew cask install consul
 
+# Elm
+#
+# A functional reactive language for interactive applications
+#
+# http://www.elm-lang.org
+brew cask install elm-platform
+
 # Gimp
 #
 # GIMP is the GNU Image Manipulation Program. It is a freely distributed piece
