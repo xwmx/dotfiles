@@ -800,6 +800,29 @@ brew install caskroom/cask/brew-cask
 # https://github.com/caskroom/homebrew-versions
 brew tap caskroom/versions
 
+# Caskroom-fonts
+#
+# Caskroom-fonts is a Homebrew Tap which allows you to use the same friendly
+# Homebrew-style CLI workflow for the administration of binary font files on
+# your Mac.
+#
+# https://github.com/caskroom/homebrew-fonts
+brew tap caskroom/fonts
+
+###############################################################################
+# Homebrew Cask - Fonts
+###############################################################################
+
+# Sauce Code Powerline
+#
+# Source Code Pro is a set of monospaced OpenType fonts that have been designed
+# to work well in coding environments. This family of fonts is a complementary
+# design to the Source Sans family. Sauce Code Powerline is derived from Source
+# Code Pro for Powerline users.
+#
+# https://github.com/powerline/fonts/tree/master/SourceCodePro
+brew cask install font-sauce-code-powerline
+
 ###############################################################################
 # Homebrew Cask - Applications
 ###############################################################################
