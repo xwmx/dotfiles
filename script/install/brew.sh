@@ -987,6 +987,16 @@ brew cask install mactex
 # http://www.packer.io/
 brew cask install packer
 
+# pd-extended - PureData
+#
+# Pure Data (aka Pd) is an open source visual programming language. Pd enables
+# musicians, visual artists, performers, researchers, and developers to create
+# software graphically, without writing lines of code.
+#
+# http://puredata.info/
+# http://puredata.info/downloads/pd-extended
+brew cask install pd-extended
+
 # pgAdmin
 #
 # pgAdmin is the most popular and feature rich Open Source administration and
