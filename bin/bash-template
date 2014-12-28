@@ -23,6 +23,19 @@
 # }
 
 ###############################################################################
+# debug shortcut
+###############################################################################
+
+# _debug()
+#
+# Shortcut for testing against the existence of a $debug variable. Primarily
+# intended to be used before a printf statement.
+#
+# Usage:
+#   _debug && printf "Debug info"
+_debug() { [[ -n "$debug" ]]; }
+
+###############################################################################
 # Options
 ###############################################################################
 
@@ -61,10 +74,10 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-[[ -n "$debug" ]] && printf "\$command: %s\n" "$command"
-[[ -n "$debug" ]] && printf "\$raw_options: %s\n" "$raw_options"
-[[ -n "$debug" ]] && printf "\$command_options: %s\n" "${command_options[*]}"
-[[ -n "$debug" ]] && printf "\$command_arguments: %s\n" "${command_arguments[*]}"
+_debug && printf "\$command: %s\n" "$command"
+_debug && printf "\$raw_options: %s\n" "$raw_options"
+_debug && printf "\$command_options: %s\n" "${command_options[*]}"
+_debug && printf "\$command_arguments: %s\n" "${command_arguments[*]}"
 
 ###############################################################################
 # Environment
@@ -75,7 +88,7 @@ done
 # Set to the program's basename.
 _me=$(basename "$0")
 
-[[ -n "$debug" ]] && printf "\$_me: %s\n" "$_me"
+_debug && printf "\$_me: %s\n" "$_me"
 
 ###############################################################################
 # Utility functions
@@ -144,8 +157,8 @@ example() {
   fi
   name="${command_arguments[0]}"
 
-  [[ -n "$debug" ]] && printf "example() \$greeting: %s\n" "$greeting"
-  [[ -n "$debug" ]] && printf "example() \$name: %s\n" "$name"
+  _debug && printf "example() \$greeting: %s\n" "$greeting"
+  _debug && printf "example() \$name: %s\n" "$name"
 
   if [[ "$name" == "Bill" ]]; then
     printf "%s, William!\n" "$greeting"
