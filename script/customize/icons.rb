@@ -8,6 +8,7 @@ require 'fileutils'
 source_icon_dir = File.join(
   ENV['DOTFILES'],
   'vendor',
+  'local',
   'customizations',
   'icons'
 )

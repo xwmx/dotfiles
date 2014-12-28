@@ -1,1 +1,1 @@
-../vendor/alphabetum/alias-app/homebrew/brewcask-aliasapps.rb
+../vendor/com/github/alphabetum/alias-app/homebrew/brewcask-aliasapps.rb

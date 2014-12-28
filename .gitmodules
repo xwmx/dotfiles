@@ -77,27 +77,27 @@
 [submodule "home/.janus/swift.vim"]
 	path = home/.janus/swift.vim
 	url = https://github.com/Keithbsmiley/swift.vim.git
-[submodule "vendor/alphabetum/swiftly"]
-	path = vendor/alphabetum/swiftly
-	url = https://github.com/alphabetum/swiftly.git
-[submodule "vendor/alphabetum/dict"]
-	path = vendor/alphabetum/dict
-	url = https://github.com/alphabetum/dict.git
-[submodule "vendor/alphabetum/shell-app"]
-	path = vendor/alphabetum/shell-app
-	url = https://github.com/alphabetum/shell-app.git
-[submodule "vendor/alphabetum/alias-app"]
-	path = vendor/alphabetum/alias-app
-	url = git@github.com:alphabetum/alias-app.git
-[submodule "vendor/manuel"]
-	path = vendor/manuel
-	url = https://github.com/ShaneKilkelly/manuel.git
 [submodule "home/.emacs.d"]
 	path = home/.emacs.d
 	url = https://github.com/alphabetum/prelude.git
-[submodule "vendor/alphabetum/dots"]
-	path = vendor/alphabetum/dots
-	url = https://github.com/alphabetum/dots.git
 [submodule "vendor/com/github/iam-TJ/git-submodule-move"]
 	path = vendor/com/github/iam-TJ/git-submodule-move
 	url = https://github.com/iam-TJ/git-submodule-move.git
+[submodule "vendor/com/github/alphabetum/dots"]
+	path = vendor/com/github/alphabetum/dots
+	url = https://github.com/alphabetum/dots.git
+[submodule "vendor/com/github/alphabetum/alias-app"]
+	path = vendor/com/github/alphabetum/alias-app
+	url = https://github.com/alphabetum/alias-app.git
+[submodule "vendor/com/github/alphabetum/shell-app"]
+	path = vendor/com/github/alphabetum/shell-app
+	url = https://github.com/alphabetum/shell-app.git
+[submodule "vendor/com/github/alphabetum/dict"]
+	path = vendor/com/github/alphabetum/dict
+	url = https://github.com/alphabetum/dict.git
+[submodule "vendor/com/github/alphabetum/swiftly"]
+	path = vendor/com/github/alphabetum/swiftly
+	url = https://github.com/alphabetum/swiftly.git
+[submodule "vendor/com/github/ShaneKilkelly/manuel"]
+	path = vendor/com/github/ShaneKilkelly/manuel
+	url = https://github.com/ShaneKilkelly/manuel.git
