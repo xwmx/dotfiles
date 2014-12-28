@@ -8,19 +8,6 @@
 #                          |_|
 #
 # A template for creating a bash program with commands.
-#
-# Example command group:
-#
-# desc example ""   - Optional. A short description for the command.
-# example() { : }   - The command called by the use.
-#
-#
-# desc example <<EOM
-#   Example help text. Options specified with http://docopt.org/
-# EOM
-# example() {
-#   echo "Hello, World!"
-# }
 
 ###############################################################################
 # debug shortcut
@@ -138,6 +125,21 @@ _contains() {
 
 ###############################################################################
 # Command Functions
+# =================............................................................
+#
+# Example command group structure:
+#
+# desc example ""   - Optional. A short description for the command.
+# example() { : }   - The command called by the use.
+#
+#
+# desc example <<EOM
+#   Example help text. Options specified with http://docopt.org/
+# EOM
+# example() {
+#   echo "Hello, World!"
+# }
+#
 ###############################################################################
 
 # Example Section #############################################################
