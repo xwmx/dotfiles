@@ -98,3 +98,6 @@
 [submodule "vendor/alphabetum/dots"]
 	path = vendor/alphabetum/dots
 	url = https://github.com/alphabetum/dots.git
+[submodule "vendor/com/github/iam-TJ/git-submodule-move"]
+	path = vendor/com/github/iam-TJ/git-submodule-move
+	url = https://github.com/iam-TJ/git-submodule-move.git
