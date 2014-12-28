@@ -192,4 +192,4 @@ endif
 " Remap esc in normal mode to clear search highlights.
 "
 " note: this overrides previous mapping of esc to buffer swapping.
-nnoremap <esc> :noh<return><esc>
+nnoremap <C-esc> :noh<return><esc>
