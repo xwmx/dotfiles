@@ -1,0 +1,48 @@
+#!/usr/bin/env sh
+#
+#         .__  __             __
+#    ____ |__|/  |_    _____ |  | _________   ____ ______   ____
+#   / ___\|  \   __\  /     \|  |/ /\_  __ \_/ __ \\____ \ /  _ \
+#  / /_/  >  ||  |   |  Y Y  \    <  |  | \/\  ___/|  |_> >  <_> )
+#  \___  /|__||__|   |__|_|  /__|_ \ |__|    \___  >   __/ \____/
+# /_____/                  \/     \/             \/|__|
+#
+# git-mkrepo
+#
+# git mkrepo aka git make repository - create a git repository.
+#
+# Create a repository initialized with a .gitignore file. Creates a new
+# directory if it doesn't yet exist or, when passed an existing directory that
+# isn't yet a git repository, turns it into an initialized repository with
+# only the .gitignore file committed.
+#
+# William Melody - hi@williammelody.com
+
+if [ -z "$1" -o "$1" = "-h" ]; then
+  printf "Usage: git mkrepo <directory>\n"
+  exit 1
+fi
+
+_initialize_repo() {
+  cd "$1" && \
+    touch .gitignore && \
+    git init && \
+    git add .gitignore && \
+    git commit -a -m "Initializing repository with .gitignore"
+}
+
+if [ -e "$1" ]; then
+  if [ -d "$1" ]; then
+    if [ -e "$1/.git" ]; then
+      printf "Target is already a git repository.\n"
+      exit 1
+    fi
+    _initialize_repo "$1"
+  else
+    printf "Target already exists.\n"
+    exit 1
+  fi
+else
+  mkdir -p "$1"
+  _initialize_repo "$1"
+fi
