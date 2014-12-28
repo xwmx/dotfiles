@@ -101,3 +101,6 @@
 [submodule "vendor/com/github/ShaneKilkelly/manuel"]
 	path = vendor/com/github/ShaneKilkelly/manuel
 	url = https://github.com/ShaneKilkelly/manuel.git
+[submodule "vendor/com/github/alphabetum/git-mkrepo"]
+	path = vendor/com/github/alphabetum/git-mkrepo
+	url = https://github.com/alphabetum/git-mkrepo.git
