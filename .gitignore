@@ -5,6 +5,19 @@
 /local/*
 !/local/.gitkeep
 
+# Ignore known possible .local versions of dotfiles
+#
+# These ideally wouldn't be added to the repository, but gitignoring in case
+# they ever are.
+.bashenv.local
+.bashrc.local
+.gitconfig.local
+.hgrc.local
+.psqlrc.local
+.shared_env.local
+.zshenv.local
+.zshrc.local
+
 # Only track specific atom config files
 /home/.atom/*
 !/home/.atom/config.cson

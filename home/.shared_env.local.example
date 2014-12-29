@@ -1,0 +1,8 @@
+#==============================================================================
+# .shared_env.local
+#
+# Local, untracked .shared_env settings.
+#
+# Copy this file to the $HOME directory, but without the '.example' extension.
+#==============================================================================
+

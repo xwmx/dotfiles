@@ -1,0 +1,14 @@
+#==============================================================================
+# .gitconfig.local
+#
+# Local, untracked .gitconfig settings.
+#
+# Copy this file to the $HOME directory, but without the '.example' extension.
+#==============================================================================
+
+# [user]
+#   name = Firstname Lastname
+#   email = firstname.lastname@example.com
+# [github]
+#   user = github_username
+#   token = auth_token
