@@ -420,6 +420,17 @@ brew install hub
 # https://developers.google.com/speed/webp/?csw=1
 brew install imagemagick --with-webp
 
+# io
+#
+# Io is a prototype-based programming language inspired by Smalltalk (all
+# values are objects, all messages are dynamic), Self (prototype-based),
+# NewtonScript (differential inheritance), Act1 (actors and futures for
+# concurrency), LISP (code is a runtime inspectable/modifiable tree) and Lua
+# (small, embeddable).
+#
+# http://iolanguage.org/
+brew install io
+
 # Leiningen
 #
 # Automate Clojure projects without setting your hair on fire.
