@@ -104,3 +104,6 @@
 [submodule "vendor/com/github/alphabetum/git-mkrepo"]
 	path = vendor/com/github/alphabetum/git-mkrepo
 	url = https://github.com/alphabetum/git-mkrepo.git
+[submodule "vendor/com/github/alphabetum/git-nest"]
+	path = vendor/com/github/alphabetum/git-nest
+	url = https://github.com/alphabetum/git-nest.git
