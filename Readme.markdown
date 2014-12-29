@@ -80,5 +80,7 @@ local settings.
 - `.gitconfig.local`
 - `.hgrc.local`
 
-`*.local` files can also be used to modify other tracked files, including
-`.zshrc` and `.bashrc`.
+Other `.local` files can also be used to modify other tracked files. All
+of the available `.local` files can be created by copying the
+corresponding `.local.example` files into `$HOME` with the `.example`
+extension removed.
