@@ -14,9 +14,14 @@
 
 🅓🅞🅣🅢
 
-An OS X environment with configuration scripts.
+An OS X environment with configuration scripts. Uses the [`dots`
+configuration management tool](https://github.com/alphabetum/dots).
 
 ## Setup
+
+Add the [`dots` tool](https://github.com/alphabetum/dots) to your `$PATH`.
+
+Create a `$HOME/bin` directory if one doesn't already exist.
 
 Note: be careful when following these steps over an existing
 configuration, and make sure you have backups in case anything gets
@@ -35,8 +40,8 @@ tasks for for backup and troubleshooting.
 
 ### bin
 
-This is automatically added to `$PATH`, but can also be symlinked from
-within `$HOME`.
+All of the tracked scripts and binaries, and everything at the first level of
+this directory should be symlinked into `$HOME/bin`.
 
 ### config
 
@@ -44,8 +49,8 @@ Configuration files for applications.
 
 ### home
 
-All of the dotfiles, and everything at the first level of this directory
-should be symlinked into `$HOME`.
+All of the tracked dotfiles, and everything at the first level of this
+directory should be symlinked into `$HOME`.
 
 Most settings work with both bash and zsh, though zsh is assumed to be
 the default.
@@ -57,8 +62,7 @@ custom directory.
 
 ### local
 
-A directory that isn't tracked by git, and can therefore be used for
-anything non-public.
+A directory that isn't tracked by git. Can be used for anything non-public.
 
 ### script
 
