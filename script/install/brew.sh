@@ -436,8 +436,10 @@ brew install imagemagick --with-webp
 # concurrency), LISP (code is a runtime inspectable/modifiable tree) and Lua
 # (small, embeddable).
 #
+# NOTE: including --without-addons to avoid installation errors.
+#
 # http://iolanguage.org/
-brew install io
+brew install io --without-addons
 
 # Leiningen
 #
