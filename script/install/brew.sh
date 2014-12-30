@@ -37,6 +37,14 @@ brew tap homebrew/completions
 # https://github.com/Homebrew/homebrew-games
 brew tap homebrew/games
 
+
+# brew-desc.rb
+#
+# Searchable descriptions for Homebrew formulas
+#
+# https://github.com/telemachus/homebrew-desc
+brew tap telemachus/homebrew-desc
+
 ###############################################################################
 # Homebrew - Formula
 ###############################################################################
