@@ -45,6 +45,14 @@ brew tap homebrew/games
 # https://github.com/telemachus/homebrew-desc
 brew tap telemachus/homebrew-desc
 
+
+# alphabetum-taps
+#
+# My custom taps.
+#
+# https://github.com/alphabetum/homebrew-taps
+brew tap alphabetum/taps
+
 ###############################################################################
 # Homebrew - Formula
 ###############################################################################
