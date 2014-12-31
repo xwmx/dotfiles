@@ -223,7 +223,8 @@ brew install foremost
 
 # HashPump
 #
-# A tool to exploit the hash length extension attack in various hashing algorithms
+# A tool to exploit the hash length extension attack in various hashing
+# algorithms.
 #
 # https://github.com/bwall/HashPump
 brew install hashpump
@@ -541,7 +542,8 @@ brew install most
 #
 # ngrep strives to provide most of GNU grep's common features, applying them to
 # the network layer. ngrep is a pcap-aware tool that will allow you to specify
-# extended regular or hexadecimal expressions to match against data payloads of packets.
+# extended regular or hexadecimal expressions to match against data payloads of
+# packets.
 #
 # http://ngrep.sourceforge.net/
 brew install ngrep
@@ -658,7 +660,8 @@ brew install redis
 
 # Rhino
 #
-# Rhino is an open-source implementation of JavaScript written entirely in Java.
+# Rhino is an open-source implementation of JavaScript written entirely in
+# Java.
 #
 # http://www.mozilla.org/rhino/
 brew install rhino
