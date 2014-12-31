@@ -1072,6 +1072,15 @@ brew cask install vico
 # http://vimr.org/
 brew cask install vimr
 
+# VLC - vlc-nightly
+#
+# VLC is a free and open source cross-platform multimedia player and framework
+# that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and
+# various streaming protocols.
+#
+# http://www.videolan.org/vlc/
+brew cask install vlc-nightly
+
 # Zed
 #
 # Zed is a fully offline-capable, open source, keyboard-focused, text and code
