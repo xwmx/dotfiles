@@ -44,6 +44,14 @@ brew tap homebrew/completions
 # https://github.com/Homebrew/homebrew-games
 brew tap homebrew/games
 
+# homebrew/head-only
+#
+# These formulae are unversioned (they have no stable release) so are only
+# available as the latest version from e.g. a version control system.
+#
+# https://github.com/Homebrew/homebrew-head-only
+
+brew tap homebrew/head-only
 
 # brew-desc.rb
 #
