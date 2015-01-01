@@ -358,6 +358,13 @@ brew install dash
 # https://en.wikipedia.org/wiki/DjVu
 brew install djvu2pdf
 
+# dots
+#
+# A configuration tool and framework for your laptop or desktop
+#
+# https://github.com/alphabetum/dots
+brew install dots
+
 # ELinks - Full-Featured Text WWW Browser
 #
 # ELinks is an advanced and well-established feature-rich text mode web
