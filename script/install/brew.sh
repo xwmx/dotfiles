@@ -579,6 +579,16 @@ brew install most
 # http://ngrep.sourceforge.net/
 brew install ngrep
 
+# nim / nimrod
+#
+# Nim (formerly known as "Nimrod") is a statically typed, imperative
+# programming language that tries to give the programmer ultimate power without
+# compromises on runtime efficiency. This means it focuses on compile-time
+# mechanisms in all their various forms.
+#
+# http://nim-lang.org/
+brew install nimrod --HEAD
+
 # node.js
 #
 # Node.js® is a platform built on Chrome's JavaScript runtime. Node.js uses an
