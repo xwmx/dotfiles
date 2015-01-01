@@ -53,6 +53,15 @@ brew tap homebrew/games
 
 brew tap homebrew/head-only
 
+# homebrew-science
+#
+# These formulae provide software tailored to scientific endeavours. Need to
+# store large amounts of data in a sparse matrix, solve a huge optimization
+# problem or process the images from your space telescope? Maybe we can help!
+#
+# https://github.com/Homebrew/homebrew-science
+brew tap homebrew/science
+
 # brew-desc.rb
 #
 # Searchable descriptions for Homebrew formulas
