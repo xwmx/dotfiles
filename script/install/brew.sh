@@ -37,6 +37,14 @@ brew tap alphabetum/taps
 # https://github.com/Homebrew/homebrew-completions
 brew tap homebrew/completions
 
+# homebrew-dupes
+#
+# These formulae duplicate software provided by OS X, though may provide more
+# recent or bugfix versions.
+#
+# https://github.com/Homebrew/homebrew-dupes
+brew tap homebrew/dupes
+
 # homebrew-games
 #
 # Game formulae for the Homebrew package manager
