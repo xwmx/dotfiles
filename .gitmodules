@@ -113,3 +113,6 @@
 [submodule "home/.manuel.d/plugins/manuel-contrib-concurrent"]
 	path = home/.manuel.d/plugins/manuel-contrib-concurrent
 	url = https://github.com/ShaneKilkelly/manuel-contrib-concurrent.git
+[submodule "vendor/com/github/ddollar/git-utils"]
+	path = vendor/com/github/ddollar/git-utils
+	url = https://github.com/ddollar/git-utils.git
