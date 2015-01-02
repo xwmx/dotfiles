@@ -7,6 +7,18 @@
 # https://golang.org/
 #==============================================================================
 
-export GOROOT=/usr/local/go
+# homebrew-install GOROOT
+export GOROOT=/usr/local/opt/go/libexec
+
+# Go dot directory in home.
 export GOPATH=$HOME/.go
-export PATH=$PATH:${GOPATH//://bin:}/bin
+export GOBIN=$GOPATH/bin
+
+# Add GOROOT bin to path
+PATH=$PATH:$GOROOT/bin
+# Add all $GOPATH/bin directories.
+#
+# Snippet via: https://code.google.com/p/go-wiki/wiki/GOPATH
+PATH=$PATH:${GOPATH//://bin:}/bin
+
+export PATH
