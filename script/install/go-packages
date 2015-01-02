@@ -4,7 +4,14 @@
 #
 # Download and install go / golang packages
 
-# Command vet
+# godoc
+#
+# Godoc extracts and generates documentation for Go programs.
+#
+# https://godoc.org/golang.org/x/tools/cmd/godoc
+go get -u golang.org/x/tools/cmd/godoc
+
+# vet
 #
 # Vet examines Go source code and reports suspicious constructs, such as Printf
 # calls whose arguments do not align with the format string. Vet uses
@@ -12,11 +19,5 @@
 # find errors not caught by the compilers.
 #
 # https://godoc.org/golang.org/x/tools/cmd/vet
-go get golang.org/x/tools/cmd/vet
+go get -u golang.org/x/tools/cmd/vet
 
-# Command godoc
-#
-# Godoc extracts and generates documentation for Go programs.
-#
-# https://godoc.org/golang.org/x/tools/cmd/godoc
-go get golang.org/x/tools/cmd/godoc
