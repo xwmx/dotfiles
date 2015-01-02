@@ -107,7 +107,9 @@ brew install htop
 # hub is a command-line wrapper for git that makes you better at GitHub.
 #
 # http://hub.github.com/
-brew install hub
+#
+# NOTE: installing HEAD in order to get the golang rewrite 2.0.0 pre-release.
+brew install --HEAD hub
 
 # ImageMagick
 #
