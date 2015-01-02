@@ -188,10 +188,12 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
 brew install docker
 
 ###############################################################################
-# brew.d
+# brew-formulae.d
+#
+# Install lists for homebrew forumlae.
 ###############################################################################
 
-# Load all files in brew.d if it exists.
+# Load all files in brew-formulae.d if it exists.
 brewformulaed="$DOTFILES/script/install/brew-formulae.d"
 if [ -e "$brewformulaed" ]; then
   for f in "$brewformulaed"/*
