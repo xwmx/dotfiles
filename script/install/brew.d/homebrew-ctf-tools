@@ -1,0 +1,180 @@
+#!/usr/bin/env bash
+#
+# ----------------------------------------------------------------------------
+# CTF tools
+# https://github.com/ctfs/write-ups
+# ----------------------------------------------------------------------------
+
+# bfg repo-cleaner
+#
+# Removes large or troublesome blobs like git-filter-branch does, but faster.
+# And written in Scala
+#
+# http://rtyley.github.io/bfg-repo-cleaner/
+brew install bfg
+
+# GNU binutils
+#
+# http://www.gnu.org/software/binutils/binutils.html
+brew install binutils
+
+# binwalk
+#
+# Firmware Analysis Tool
+# Binwalk is a fast, easy to use tool for analyzing and extracting firmware
+# images.
+#
+# http://binwalk.org/
+brew install binwalk
+
+# cifer
+#
+# Work on automating classical cipher cracking in C.
+#
+# http://code.google.com/p/cifer/
+brew install cifer
+
+# dex2jar
+#
+# Tools to work with android .dex and java .class files
+#
+# https://code.google.com/p/dex2jar/
+brew install dex2jar
+
+# Dns2tcp
+#
+# Dns2tcp is a network tool designed to relay TCP connections through DNS
+# traffic. Encapsulation is done on the TCP level, thus no specific driver is
+# needed (i.e: TUN/TAP). Dns2tcp client doesn't need to be run with specific
+# privileges.
+#
+# http://www.hsc.fr/ressources/outils/dns2tcp/index.html.en
+brew install dns2tcp
+
+# Dwarf Fortress
+#
+# Dwarf Fortress is a part construction and management simulation, part
+# roguelike, freeware indie video game.
+#
+# http://www.bay12games.com/dwarves/
+brew install dwarf-fortress
+
+# FCrackZip
+#
+# fcrackzip is a zip password cracker, similar to fzc, zipcrack and others.
+#
+# http://oldhome.schmorp.de/marc/fcrackzip.html
+brew install fcrackzip
+
+# Foremost
+#
+# Foremost is a console program to recover files based on their headers,
+# footers, and internal data structures.
+#
+# http://foremost.sourceforge.net/
+brew install foremost
+
+# HashPump
+#
+# A tool to exploit the hash length extension attack in various hashing
+# algorithms.
+#
+# https://github.com/bwall/HashPump
+brew install hashpump
+
+# THC-Hydra
+#
+# A very fast network logon cracker which support many different services.
+#
+# https://www.thc.org/thc-hydra/
+brew install hydra
+
+# John the Ripper
+#
+# John the Ripper is a fast password cracker, currently available for many
+# flavors of Unix, Windows, DOS, BeOS, and OpenVMS.
+#
+# http://www.openwall.com/john/
+brew install john
+
+# knockd
+#
+# a port-knocking server
+#
+# http://www.zeroflux.org/projects/knock
+brew install knock
+
+# Nmap
+#
+# Nmap ("Network Mapper") is a free and open source (license) utility for
+# network discovery and security auditing.
+#
+# http://nmap.org/
+brew install nmap
+
+# pngcheck
+#
+# pngcheck verifies the integrity of PNG, JNG and MNG files
+#
+# http://www.libpng.org/pub/png/apps/pngcheck.html
+brew install pngcheck
+
+# socat - Multipurpose relay
+#
+# socat is a relay for bidirectional data transfer between two independent data
+# channels.
+#
+# http://www.dest-unreach.org/socat/
+brew install socat
+
+# sqlmap
+#
+# Automatic SQL injection and database takeover tool
+#
+# http://sqlmap.org
+brew install sqlmap
+
+# tcpflow
+#
+# TCP/IP packet demultiplexer
+#
+# https://github.com/simsong/tcpflow
+brew install tcpflow
+
+# Tcpreplay - Pcap editing and replaying utilities
+#
+# Tcpreplay is a suite of free Open Source utilities for editing and replaying
+# previously captured network traffic.
+#
+# http://tcpreplay.appneta.com
+brew install tcpreplay
+
+# tcptrace
+#
+# tcptrace is a tool for analysis of TCP dump files.
+#
+# http://www.tcptrace.org/
+brew install tcptrace
+
+# ucspi-tcp
+#
+# tcpserver and tcpclient are easy-to-use command-line tools for building TCP
+# client-server applications.
+#
+# http://cr.yp.to/ucspi-tcp.html
+brew install ucspi-tcp
+
+# Xpdf
+#
+# Xpdf is an open source viewer for Portable Document Format (PDF) files.
+#
+# http://www.foolabs.com/xpdf/
+brew install xpdf
+
+# XZ Utils
+#
+# XZ Utils is free general-purpose data compression software with high
+# compression ratio.
+#
+# http://tukaani.org/xz/
+brew install xz
