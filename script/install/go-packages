@@ -4,12 +4,71 @@
 #
 # Download and install go / golang packages
 
+# errcheck
+#
+# errcheck is a program for checking for unchecked errors in go programs.
+#
+# https://github.com/kisielk/errcheck
+go get -u github.com/kisielk/errcheck
+
+# gocode
+#
+# An autocompletion daemon for the Go programming language.
+#
+# https://github.com/nsf/gocode
+go get -u github.com/nsf/gocode
+
+# godef
+#
+# Godef prints the source location of definitions in Go programs.
+#
+# http://godoc.org/code.google.com/p/rog-go/exp/cmd/godef
+# https://code.google.com/p/rog-go/source/browse/exp/cmd/godef/
+go get -u code.google.com/p/rog-go/exp/cmd/godef
+
 # godoc
 #
 # Godoc extracts and generates documentation for Go programs.
 #
 # https://godoc.org/golang.org/x/tools/cmd/godoc
 go get -u golang.org/x/tools/cmd/godoc
+
+# goimports
+#
+# Command goimports updates your Go import lines, adding missing ones and
+# removing unreferenced ones.
+#
+# https://godoc.org/golang.org/x/tools/cmd/goimports
+go get -u golang.org/x/tools/cmd/goimports
+
+# golint
+#
+# Golint is a linter for Go source code.
+#
+# https://github.com/golang/lint/
+go get -u github.com/golang/lint/golint
+
+# gorename
+#
+# The gorename command performs precise type-safe renaming of identifiers in
+# Go source code.
+#
+# https://godoc.org/golang.org/x/tools/cmd/gorename
+go get -u golang.org/x/tools/cmd/gorename
+
+# gotags
+#
+# ctags-compatible tag generator for Go.
+#
+# https://github.com/jstemmer/gotags
+go get -u github.com/jstemmer/gotags
+
+# oracle
+#
+# a tool for answering questions about Go source code.
+#
+# https://godoc.org/golang.org/x/tools/cmd/oracle
+go get -u golang.org/x/tools/cmd/oracle
 
 # vet
 #
