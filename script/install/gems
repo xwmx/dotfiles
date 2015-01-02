@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gem.sh
+# rubygems
 #
 # Install various global ruby gems modules
 
