@@ -1,0 +1,335 @@
+#!/usr/bin/env bash
+#
+# brew-casks
+#
+# Install programs and applications using Homebrew and Homebrew Cask.
+#
+# http://brew.sh/
+# http://caskroom.io/
+
+###############################################################################
+# Homebrew - Update
+###############################################################################
+
+# Make sure we’re using the latest Homebrew.
+brew update
+
+# Upgrade any already-installed formulae.
+brew upgrade
+
+###############################################################################
+# Homebrew Cask
+###############################################################################
+
+# install brew cask
+brew install caskroom/cask/brew-cask
+
+
+###############################################################################
+# Homebrew Cask - Taps
+#
+# `brew tap` allows you to add more Github repos to the list of formulae that
+# brew tracks, updates and installs from.
+###############################################################################
+
+# homebrew-cask-versions
+#
+# Alternate versions of Casks for homebrew-cask
+#
+# https://github.com/caskroom/homebrew-versions
+brew tap caskroom/versions
+
+# Caskroom-fonts
+#
+# Caskroom-fonts is a Homebrew Tap which allows you to use the same friendly
+# Homebrew-style CLI workflow for the administration of binary font files on
+# your Mac.
+#
+# https://github.com/caskroom/homebrew-fonts
+brew tap caskroom/fonts
+
+###############################################################################
+# Homebrew Cask - Fonts
+###############################################################################
+
+# Sauce Code Powerline
+#
+# Source Code Pro is a set of monospaced OpenType fonts that have been designed
+# to work well in coding environments. This family of fonts is a complementary
+# design to the Source Sans family. Sauce Code Powerline is derived from Source
+# Code Pro for Powerline users.
+#
+# https://github.com/powerline/fonts/tree/master/SourceCodePro
+brew cask install font-sauce-code-powerline
+
+###############################################################################
+# Homebrew Cask - Applications
+###############################################################################
+
+# VirtualBox
+#
+# VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product.
+#
+# http://www.virtualbox.org
+#
+# NOTE: Installing first since it's important and other casks use it.
+brew cask install virtualbox
+
+# Amethyst
+#
+# Tiling window manager for OS X similar to xmonad, written in pure
+# Objective-C.
+#
+# http://ianyh.com/amethyst/
+brew cask install amethyst
+
+# Android Studio
+#
+# https://developer.android.com/sdk/index.html
+brew cask install android-studio
+
+# Atom
+#
+# A hackable text editor for the 21st Century.
+#
+# http://atom.io
+brew cask install atom
+
+# Audacity
+#
+# Audacity® is free, open source, cross-platform software for recording and
+# editing sounds.
+#
+# http://audacity.sourceforge.net/
+brew cask install audacity
+
+# Brackets
+#
+# Adobe's open source text editor built with and focused on web technologies.
+#
+# http://brackets.io
+brew cask install brackets
+
+# Breach
+#
+# A new modular browser. Entirely written in Javascript. Free. Hackable.
+#
+# http://breach.cc
+brew cask install breach
+
+# Cakebrew
+#
+# The Mac App for Homebrew.
+#
+# http://www.cakebrew.com
+brew cask install cakebrew
+
+
+# Cargo
+#
+# Cargo is a tool that allows Rust projects to declare their various
+# dependencies, and ensure that you'll always get a repeatable build.
+#
+# https://crates.io/
+brew cask install cargo
+
+# Codebox
+#
+# Open source cloud & desktop IDE.
+#
+# https://www.codebox.io
+brew cask install codebox
+
+# Consul
+#
+# Consul is a tool for service discovery, monitoring and configuration.
+#
+# http://www.consul.io/
+brew cask install consul
+
+# Elm
+#
+# A functional reactive language for interactive applications
+#
+# http://www.elm-lang.org
+brew cask install elm-platform
+
+# Gimp
+#
+# GIMP is the GNU Image Manipulation Program. It is a freely distributed piece
+# of software for such tasks as photo retouching, image composition and image
+# authoring.
+#
+# http://www.gimp.org
+brew cask install gimp
+
+# GnuCash
+#
+# GnuCash is open source personal and small-business financial-accounting
+# software.
+#
+# http://www.gnucash.org
+brew cask install gnucash
+
+# The Haskell Platform
+#
+# http://www.haskell.org/platform/
+brew cask install haskell-platform
+
+# Inkscape
+#
+# Inkscape is an open-source vector graphics editor similar to Adobe
+# Illustrator, Corel Draw, Freehand, or Xara X that used Scalable Vector
+# Graphics (SVG), an open XML-based W3C standard, as the native format.
+#
+# https://inkscape.org/en/
+brew cask install inkscape
+
+# iTerm2
+#
+# iTerm2 is a replacement for Terminal and the successor to iTerm.
+#
+# http://www.iterm2.com/
+brew cask install iterm2-nightly
+
+# KindleGen
+#
+# KindleGen is a command line tool which enables publishers to work in an
+# automated environment with a variety of source content including HTML, XHTML
+# or EPUB. KindleGen converts this source content to a single file which
+# supports both KF8 and Mobi formats enabling publishers to create
+# great-looking books that work on all Kindle devices and apps.
+#
+# http://www.amazon.com/gp/feature.html?docId=1000765211
+brew cask install kindlegen
+
+# Light Table
+#
+# A text editor and IDE build with JavaScript.
+#
+# http://www.lighttable.com/
+# https://github.com/LightTable/LightTable
+brew cask install lighttable
+
+# MacTex
+#
+# MacTeX is an OS X-specific redistribution of TeX Live, a typesetting
+# environment.
+#
+# http://www.tug.org/mactex/
+brew cask install mactex
+
+# Packer
+#
+# Packer is a tool for creating identical machine images for multiple platforms
+# from a single source configuration.
+#
+# http://www.packer.io/
+brew cask install packer
+
+# pd-extended - PureData
+#
+# Pure Data (aka Pd) is an open source visual programming language. Pd enables
+# musicians, visual artists, performers, researchers, and developers to create
+# software graphically, without writing lines of code.
+#
+# http://puredata.info/
+# http://puredata.info/downloads/pd-extended
+brew cask install pd-extended
+
+# pgAdmin
+#
+# pgAdmin is the most popular and feature rich Open Source administration and
+# development platform for PostgreSQL
+#
+# http://pgadmin.org
+brew cask install pgadmin3
+
+# Secrets
+#
+# A database of hidden settings for Mac OS X
+#
+# http://secrets.blacktree.com
+brew cask install secrets
+
+# Sonic Pi
+#
+# Audible Computing. A free sound synthesiser for live coding designed to
+# support computing and music lessons within schools. Make Music Using Ruby.
+#
+# http://sonic-pi.net/
+brew cask install sonic-pi
+
+# Sonic Visualiser
+#
+# Sonic Visualiser is an application for viewing and analysing the contents of
+# music audio files.
+#
+# http://www.sonicvisualiser.org/
+brew cask install sonic-visualiser
+
+# Spectacle
+#
+# Move and resize windows with ease. Window control with simple, customizable
+# keyboard shortcuts.
+#
+# http://spectacleapp.com
+brew cask install spectacle
+
+# Vagrant
+#
+# Create and configure lightweight, reproducible, and portable development
+# environments.
+#
+# http://www.vagrantup.com
+brew cask install vagrant
+
+# Vico
+#
+# Vico is a programmers text editor with a strong focus on keyboard control and
+# uses vi key bindings.
+#
+# http://www.vicoapp.com
+brew cask install vico
+
+# VimR
+#
+# A Vim GUI for OS X
+#
+# http://vimr.org/
+brew cask install vimr
+
+# VLC - vlc-nightly
+#
+# VLC is a free and open source cross-platform multimedia player and framework
+# that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and
+# various streaming protocols.
+#
+# http://www.videolan.org/vlc/
+brew cask install vlc-nightly
+
+# Zed
+#
+# Zed is a fully offline-capable, open source, keyboard-focused, text and code
+# editor for power users.
+#
+# http://zedapp.org
+brew cask install zed
+
+###############################################################################
+# Cleanup
+###############################################################################
+
+# Remove outdated versions.
+brew cask cleanup
+
+###############################################################################
+# Application Aliasing
+#
+# Custom brew commands for creating spotlight-recognizable application aliases.
+#
+# Uses the alias-app command line tool: https://github.com/alphabetum/alias-app
+###############################################################################
+
+brew cask aliasapps
+
