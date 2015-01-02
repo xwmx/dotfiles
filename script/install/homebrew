@@ -276,6 +276,14 @@ brew cask install android-studio
 # http://atom.io
 brew cask install atom
 
+# Audacity
+#
+# Audacity® is free, open source, cross-platform software for recording and
+# editing sounds.
+#
+# http://audacity.sourceforge.net/
+brew cask install audacity
+
 # Brackets
 #
 # Adobe's open source text editor built with and focused on web technologies.
