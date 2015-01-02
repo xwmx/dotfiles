@@ -425,6 +425,14 @@ brew cask install pgadmin3
 # http://secrets.blacktree.com
 brew cask install secrets
 
+# Sonic Pi
+#
+# Audible Computing. A free sound synthesiser for live coding designed to
+# support computing and music lessons within schools. Make Music Using Ruby.
+#
+# http://sonic-pi.net/
+brew cask install sonic-pi
+
 # Sonic Visualiser
 #
 # Sonic Visualiser is an application for viewing and analysing the contents of
