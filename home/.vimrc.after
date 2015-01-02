@@ -189,7 +189,5 @@ endif
 " search
 " ============================================================================
 
-" Remap esc in normal mode to clear search highlights.
-"
-" note: this overrides previous mapping of esc to buffer swapping.
+" Remap control-esc in normal mode to clear search highlights.
 nnoremap <C-esc> :noh<return><esc>
