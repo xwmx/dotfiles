@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# luarocks.sh
+# luarocks
 #
 # Install various global lua rocks.
 
