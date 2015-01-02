@@ -425,6 +425,14 @@ brew cask install pgadmin3
 # http://secrets.blacktree.com
 brew cask install secrets
 
+# Sonic Visualiser
+#
+# Sonic Visualiser is an application for viewing and analysing the contents of
+# music audio files.
+#
+# http://www.sonicvisualiser.org/
+brew cask install sonic-visualiser
+
 # Spectacle
 #
 # Move and resize windows with ease. Window control with simple, customizable
