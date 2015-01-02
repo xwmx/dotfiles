@@ -176,9 +176,9 @@ brew install homebrew/php/php55 --with-gmp
 ###############################################################################
 
 # Load all files in brew.d if it exists.
-homebrewd="$DOTFILES/script/install/homebrew.d"
-if [ -e "$homebrewd" ]; then
-  for f in "$homebrewd"/*
+brewformulaed="$DOTFILES/script/install/brew-formulae.d"
+if [ -e "$brewformulaed" ]; then
+  for f in "$brewformulaed"/*
     do
       source "$f"
   done
