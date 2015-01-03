@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# pip3-packages
+#
+# Install script for pip3-install Python 3 packages.
+#
+# http://www.pip-installer.org/
+# https://pip.pypa.io
+
+pip3 install --upgrade pip
+
+# Mochi
+#
+# Dynamically typed functional programming language.
+#
+# https://github.com/i2y/mochi
+pip3 install mochi
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# pip-packages
+#
+# Install script for pip-install Python 2 packages.
+#
+# http://www.pip-installer.org/
+# https://pip.pypa.io
+
+pip install --upgrade setuptools
+pip install --upgrade pip
+
+# IPython
+#
+# A rich architecture for interactive computing.
+#
+# http://ipython.org/
+pip install "ipython[all]"
+
+# mitmproxy
+#
+# An interactive console program that allows traffic flows to be intercepted,
+# inspected, modified and replayed.
+#
+# http://mitmproxy.org/
+pip install mitmproxy
+
