@@ -1,3 +1,9 @@
+# .gitconfig
+#
+# Configuration for git
+#
+# http://git-scm.com/docs/git-config
+
 [push]
   default = current
 [color]
