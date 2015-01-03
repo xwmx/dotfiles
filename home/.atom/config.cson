@@ -11,7 +11,6 @@
     'fontSize': 11
     'showInvisibles': true
     'showIndentGuide': true
-    'invisibles': {}
   'core':
     'disabledPackages': [
       'metrics'
