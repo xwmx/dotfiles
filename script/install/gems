@@ -4,6 +4,13 @@
 #
 # Install various global ruby gems modules
 
+# hijack
+#
+# Provides an irb session to a running ruby process.
+#
+# https://github.com/ileitch/hijack
+gem install hijack
+
 # ruby-lint
 #
 # Static code analysis for Ruby.
