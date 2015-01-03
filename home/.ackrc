@@ -1,0 +1,25 @@
+# ackrc
+#
+# ack is a tool like grep, optimized for programmers
+#
+# http://beyondgrep.com/
+#
+# Docs:
+# http://beyondgrep.com/documentation/
+# http://beyondgrep.com/documentation/ack-2.12-man.html#ackrc_location_semantics
+
+# Always color, even if piping to a another program
+--color
+
+# Ignore IntelliJ IDEA project directories.
+--ignore-directory=is:.idea
+
+# Ignore rvm / Ruby Version Manager .rvm directory.
+#
+# Reason: contains Rubies and Ruby environments and is very large.
+--ignore-directory=is:.rvm
+
+# Ignore rbenv .rbenv directory.
+#
+# Reason: contains Rubies and Ruby environments and is very large.
+--ignore-directory=is:.rbenv
