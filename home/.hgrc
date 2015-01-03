@@ -1,3 +1,9 @@
+# .hgrc
+#
+# Configuration for Mercurial / hg
+#
+# http://www.selenic.com/mercurial/hgrc.5.html
+
 [amp]
 workflow = hg
 [ui]
