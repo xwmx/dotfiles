@@ -1,0 +1,9 @@
+# .dotsrc
+#
+# Configuration file for dots
+#
+# https://github.com/alphabetum/dots
+
+# Set dots directory to ~/.dotfiles
+export DOTSPATH="$HOME/.dotfiles"
+

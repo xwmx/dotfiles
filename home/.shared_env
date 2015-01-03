@@ -61,7 +61,11 @@ init_src() {
 #==========================================================================
 
 # Set DOTFILES directory
-export DOTFILES=~/.dotfiles
+if program_exists dots ; then
+  DOTFILES=$(dots dir)
+else
+  DOTFILES="$HOME/.dotfiles"
+fi
 
 # Source all files in ".shared_env.d"
 init_src .shared_env.d
