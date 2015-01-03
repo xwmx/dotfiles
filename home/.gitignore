@@ -1,3 +1,11 @@
+# .gitignore
+#
+# Global ignore configuration for git
+#
+# http://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files/
+# https://gist.github.com/octocat/9257657
+
 # Compiled Python files
 *.pyc
 
