@@ -4,33 +4,80 @@
 #
 # Install various global node modules
 
+# Broccoli
+#
+# Browser compilation library – a build tool for applications that run in the
+# browser.
+#
 # https://github.com/broccolijs/broccoli
 npm install -g broccoli-cli
 
+# Bower
+#
+# A package manager for the web.
+#
 # http://bower.io/
 npm install -g bower
 
+# CoffeeScript
+#
+# A little language that compiles into JavaScript.
+#
 # http://coffeescript.org/
 npm install -g coffee-script
 
+# Docco
+#
+# A quick-and-dirty documentation generator, written in Literate
+# CoffeeScript.
+#
 # http://jashkenas.github.io/docco/
 npm install -g docco
 
+# Ember CLI
+#
+# The command line interface for ambitious web applications.
+#
 # http://www.ember-cli.com/
 npm install -g ember-cli
 
+# Grunt
+#
+# The JavaScript task runner.
+#
 # http://gruntjs.com/
 npm install -g grunt-cli
 
+# gulp
+#
+# The streaming build system.
+#
 # http://gulpjs.com/
 npm install --g gulp
 
+# Learn You The Node.js
+#
+# An intro to Node.js via a set of self-guided workshops.
+#
+# NOTE: this is a good demonstration of a program built with workshopper:
+# https://github.com/rvagg/workshopper
+#
 # https://github.com/rvagg/learnyounode
 npm install -g learnyounode
 
+# slap
+#
+# A Sublime-like terminal-based text editor that strives to make
+# editing from the terminal easier
+#
 # https://github.com/slap-editor/slap
-# slap is a Sublime-like terminal-based text editor that strives to make editing from the terminal easier
 npm install -g slap
 
+# Yeoman
+#
+# A robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful,
+# compelling web apps.
+#
 # http://yeoman.io/
 npm install -g yo
+
