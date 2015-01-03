@@ -1,0 +1,4 @@
+-- .ghci
+
+-- Set prompt to green lambda
+:set prompt "\ESC[32mλ> \ESC[m"
