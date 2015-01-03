@@ -1,3 +1,10 @@
+# .hgignore_global
+#
+# Global ignore configuration for Mercurial / hg.
+#
+# http://www.selenic.com/mercurial/hgignore.5.html
+
+# Set syntax of this file to Shell-style glob.
 syntax: glob
 
 *~
