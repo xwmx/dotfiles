@@ -1,4 +1,5 @@
 -- .ghci
 
--- Set prompt to green lambda
-:set prompt "\ESC[32mλ> \ESC[m"
+-- Set prompt to green lambda, with modules in bold green on line above.
+:set prompt "\ESC[1;32m%s\ESC[0m\n\ESC[0;32mλ> \ESC[0m"
+
