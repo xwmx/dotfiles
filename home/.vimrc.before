@@ -2,8 +2,8 @@
 "
 " Runs before Janus is loaded.
 
-" Disable golang plugin since now using vim-go
-call janus#disable_plugin('golang')
+" Disable Janus plugins:
+" call janus#disable_plugin('<plugin_name>')
 
 " ============================================================================
 " vim-airline
