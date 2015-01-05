@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# brew-all
+#
+# Install programs and applications using Homebrew and Homebrew Cask.
+
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+. "$DIR/brew-formulae"
+. "$DIR/brew-casks"
+
