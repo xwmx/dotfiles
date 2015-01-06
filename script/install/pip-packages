@@ -32,3 +32,10 @@ pip install mitmproxy
 # https://github.com/amjith/pgcli
 pip install pgcli
 
+# pythonpy
+#
+# python -c, with shorthand and tab completion
+#
+# https://github.com/Russell91/pythonpy
+# https://github.com/Russell91/pythonpy/wiki/Python3
+pip3 install -I pythonpy
