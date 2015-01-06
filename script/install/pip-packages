@@ -25,3 +25,10 @@ pip install "ipython[all]"
 # http://mitmproxy.org/
 pip install mitmproxy
 
+# pgcli
+#
+# Postgres CLI with autocompletion and syntax highlighting
+#
+# https://github.com/amjith/pgcli
+pip install pgcli
+
