@@ -11,6 +11,14 @@
 # https://github.com/ileitch/hijack
 gem install hijack
 
+# Powify
+#
+# Powify is a management tool for Pow by 37 signals. It allows you to easily
+# install, update, and manage pow and pow applications seamlessly.
+#
+# https://github.com/sethvargo/powify
+gem install powify
+
 # ruby-lint
 #
 # Static code analysis for Ruby.
