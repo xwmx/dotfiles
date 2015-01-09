@@ -23,3 +23,6 @@
 #
 # Reason: contains Rubies and Ruby environments and is very large.
 --ignore-directory=is:.rbenv
+
+# Ignore sass-cache directories
+--ignore-directory=is:sass-cache
