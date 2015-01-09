@@ -11,6 +11,13 @@
 # http://beyondgrep.com/
 brew install ack
 
+# GNU Aspell
+#
+# A Free and Open Source spell checker
+#
+# http://aspell.net/
+brew install aspell --with-lang-en
+
 # dash
 #
 # DASH is a POSIX-compliant implementation of /bin/sh that aims to be as small
