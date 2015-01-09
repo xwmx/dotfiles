@@ -487,6 +487,13 @@ brew install the_silver_searcher
 # http://www.paulhammond.org/webkit2png/
 brew install webkit2png
 
+# WeeChat
+#
+# WeeChat is a fast, light and extensible chat client.
+#
+# https://weechat.org/
+brew install weechat
+
 # Wine
 #
 # Run Windows applications on Linux, BSD, Solaris and Mac OS X.
