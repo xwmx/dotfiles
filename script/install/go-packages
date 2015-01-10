@@ -16,7 +16,7 @@ go get -u github.com/kisielk/errcheck
 # An autocompletion daemon for the Go programming language.
 #
 # https://github.com/nsf/gocode
-go get -u github.com/nsf/gocode
+go get -u -v github.com/nsf/gocode
 
 # godef
 #
@@ -24,21 +24,21 @@ go get -u github.com/nsf/gocode
 #
 # http://godoc.org/code.google.com/p/rog-go/exp/cmd/godef
 # https://code.google.com/p/rog-go/source/browse/exp/cmd/godef/
-go get -u code.google.com/p/rog-go/exp/cmd/godef
+go get -u -v code.google.com/p/rog-go/exp/cmd/godef
 
 # godep
 #
 # Command godep helps build packages reproducibly by fixing their dependencies.
 #
 # https://github.com/tools/godep
-go get -u github.com/tools/godep
+go get -u -v github.com/tools/godep
 
 # godoc
 #
 # Godoc extracts and generates documentation for Go programs.
 #
 # https://godoc.org/golang.org/x/tools/cmd/godoc
-go get -u golang.org/x/tools/cmd/godoc
+go get -u -v golang.org/x/tools/cmd/godoc
 
 # goimports
 #
@@ -46,14 +46,14 @@ go get -u golang.org/x/tools/cmd/godoc
 # removing unreferenced ones.
 #
 # https://godoc.org/golang.org/x/tools/cmd/goimports
-go get -u golang.org/x/tools/cmd/goimports
+go get -u -v golang.org/x/tools/cmd/goimports
 
 # golint
 #
 # Golint is a linter for Go source code.
 #
 # https://github.com/golang/lint/
-go get -u github.com/golang/lint/golint
+go get -u -v github.com/golang/lint/golint
 
 # gorename
 #
@@ -61,14 +61,14 @@ go get -u github.com/golang/lint/golint
 # Go source code.
 #
 # https://godoc.org/golang.org/x/tools/cmd/gorename
-go get -u golang.org/x/tools/cmd/gorename
+go get -u -v golang.org/x/tools/cmd/gorename
 
 # gotags
 #
 # ctags-compatible tag generator for Go.
 #
 # https://github.com/jstemmer/gotags
-go get -u github.com/jstemmer/gotags
+go get -u -v github.com/jstemmer/gotags
 
 # go-ipfs / ipfs
 #
@@ -82,14 +82,14 @@ go get -u github.com/jstemmer/gotags
 #
 # https://github.com/jbenet/ipfs
 # https://github.com/jbenet/go-ipfs
-go get -u github.com/jbenet/go-ipfs/cmd/ipfs
+go get -u -v github.com/jbenet/go-ipfs/cmd/ipfs
 
 # oracle
 #
 # a tool for answering questions about Go source code.
 #
 # https://godoc.org/golang.org/x/tools/cmd/oracle
-go get -u golang.org/x/tools/cmd/oracle
+go get -u -v golang.org/x/tools/cmd/oracle
 
 # vet
 #
@@ -99,5 +99,5 @@ go get -u golang.org/x/tools/cmd/oracle
 # find errors not caught by the compilers.
 #
 # https://godoc.org/golang.org/x/tools/cmd/vet
-go get -u golang.org/x/tools/cmd/vet
+go get -u -v golang.org/x/tools/cmd/vet
 
