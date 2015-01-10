@@ -382,14 +382,6 @@ brew install rhino
 # http://basho.com/riak/
 brew install riak
 
-# Rust
-#
-# Rust is a systems programming language that runs blazingly fast, prevents
-# almost all crashes, and eliminates data races.
-#
-# http://www.rust-lang.org/
-brew install rust
-
 # Scala
 #
 # Scala is an object-functional programming language for general software
