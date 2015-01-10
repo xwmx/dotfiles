@@ -1,12 +1,18 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+#
+#                      _                              _
+#   ___ _ __ ___  __ _| |_ ___        ___ _ __  _   _| |__
+#  / __| '__/ _ \/ _` | __/ _ \_____ / _ \ '_ \| | | | '_ \
+# | (__| | |  __/ (_| | ||  __/_____|  __/ |_) | |_| | |_) |
+#  \___|_|  \___|\__,_|\__\___|      \___| .__/ \__,_|_.__/
+#                                        |_|
 #
 # create-epub
 #
-# When in a directory containing source files for an epub book, run to create
-# a properly-zipped epub file.
+# Generate a properly-zipped epub file from a directory of source files.
 #
 # Usage:
-#   create-epub /path/to/output-file.epub /path/to/source/directory/
+#   create-epub /path/to/source/directory/ /path/to/output-file.epub
 #
 # Some background information:
 #   http://www.snee.com/bobdc.blog/2008/03/creating-epub-files.html
@@ -14,59 +20,69 @@
 # William Melody, 2010. http://williammelody.com
 
 
-#==========================================================================
+###############################################################################
 # Help / Usage
-#==========================================================================
+###############################################################################
 
-usage="Usage:
-  create-epub /path/to/output-file.epub  /path/to/source/directory"
+usage="\
+                      _                              _
+   ___ _ __ ___  __ _| |_ ___        ___ _ __  _   _| |__
+  / __| '__/ _ \/ _\` | __/ _ \_____ / _ \ '_ \| | | | '_ \\
+ | (__| | |  __/ (_| | ||  __/_____|  __/ |_) | |_| | |_) |
+  \___|_|  \___|\__,_|\__\___|      \___| .__/ \__,_|_.__/
+                                        |_|
 
-if [ "$1" == "-h" ]; then
-  echo "$usage"
+Generate a properly-zipped epub file from a directory of source files.
+
+Usage:
+  create-epub /path/to/source/directory /path/to/output-file.epub
+"
+if [ -z "$1" -o "$1" = "-h" ]; then
+  printf "%s\n" "$usage"
   exit 1
 fi
 
-#==========================================================================
+###############################################################################
 # paths
-#==========================================================================
+###############################################################################
 
-source_path=${2%/} # source path, minus any trailing slash
-destination_path="$1"
+source_path=${1%/} # source path, minus any trailing slash
+destination_path="$2"
 mimetype_path="${source_path}/mimetype"
 
-#==========================================================================
+###############################################################################
 # Error checking
-#==========================================================================
+###############################################################################
 
 # check for presence of first argument
 if [ -z "$destination_path" ]; then
-  echo "Error: destination file not specified."
+  printf "Error: destination file not specified."
   exit 1
 elif [ -f "$destination_path" ]; then
-  echo "Error: file already exists at destination path."
+  printf "Error: file already exists at destination path."
   exit 1
 fi
 # check for presence of second argument
 if [ -z "$source_path" ]; then
-  echo "Error: source directory not specified."
+  printf "Error: source directory not specified."
   exit 1
 elif [ ! -d "$source_path" ]; then
-  echo "Error: no source directory found at specified path."
+  printf "Error: no source directory found at specified path."
   exit 1
 fi
 
-#==========================================================================
+###############################################################################
 # mimetype
-#==========================================================================
+###############################################################################
 
 # Create mimetype if it doesn't exist
 if [ ! -f "$mimetype_path" ]; then
-  echo application/epub+zip >> "$mimetype_path"
+  printf "application/epub+zip\n" >> "$mimetype_path"
 fi
 
-#==========================================================================
+###############################################################################
 # compile
-#==========================================================================
+###############################################################################
 
 # Zip everything up.
 zip -q0X "$destination_path" "$mimetype_path"
