@@ -63,6 +63,20 @@ go get -u golang.org/x/tools/cmd/gorename
 # https://github.com/jstemmer/gotags
 go get -u github.com/jstemmer/gotags
 
+# go-ipfs / ipfs
+#
+# ipfs implementation in go
+#
+# IPFS - The Permanent Web
+# IPFS is a distributed file system that seeks to connect all computing devices
+# with the same system of files. In some ways, this is similar to the original
+# aims of the Web, but IPFS is actually more similar to a single bittorrent
+# swarm exchanging git objects.
+#
+# https://github.com/jbenet/ipfs
+# https://github.com/jbenet/go-ipfs
+go get -u github.com/jbenet/go-ipfs/cmd/ipfs
+
 # oracle
 #
 # a tool for answering questions about Go source code.
