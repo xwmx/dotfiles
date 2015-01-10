@@ -1,15 +1,20 @@
-#! /bin/bash
-URL=$1    
-DIR=~/websites/$2    
+#!/usr/bin/env sh
+#
+# wmirror
+#
+# Mirror a website.
 
-if [ ! -d $DIR ] 
+URL=$1
+DIR=~/websites/$2
+
+if [ ! -d "$DIR" ]
 then
-  echo mkdir -p $DIR
-  mkdir -p $DIR
+  echo mkdir -p "$DIR"
+  mkdir -p "$DIR"
 fi
 
-cd $DIR
-wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait $URL
+cd "$DIR"
+wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait "$URL"
 
 # -r                      recursive
 # -l inf                  all sub directories
