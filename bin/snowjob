@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+#
+#  _____  _____  _____  __  __   ____  _____  _____
+# /  ___>/  _  \/  _  \/   /  \  \_  \/  _  \/  _  \
+# |___  ||  |  ||  |  ||  /\  |---|  ||  |  ||  _  <
+# <_____/\__|__/\_____/\__/\__/\_____/\_____/\_____/
+#
+# snowjob
+#
+# Display a falling snow / snowing animation in the command link / terminal.
+#
+# Source: unknown.
 
 LINES=$(tput lines)
 COLUMNS=$(tput cols)
