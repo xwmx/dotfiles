@@ -1,12 +1,45 @@
-#! /bin/sh
+#!/usr/bin/env sh
+#
+#                    __
+#   ______________ _/ /
+#  / ___/ ___/ __ `/ /
+# / /__/ /__/ /_/ / /
+# \___/\___/\__,_/_/
+#
+#
 # ccal.sh - (C) Luke Th. Bullock Fri Jun 25 13:33:30 CEST 2004
-# Hilight current day in cal - alot smaller than gcal ;)
+# Highlight current day in cal - alot smaller than gcal ;)
 #
 # Mon Jun 28 11:24:55 CEST 2004:
 # bugfix: replaced _TODAY string (was: date|awk '{print $3}') due to LOCALE
 #
-_TODAY=`date +%e`
-_B=`tput smso`
-_N=`tput rmso`
-echo
-cal |sed s/$_TODAY/$_B$_TODAY$_N/
+# Fri Jan 9 2015:
+# Refactor/bugfix: quote variables, using $(..) instead of deprecated `..`,
+# replacing echo with more portable printf, using more portable shebang,
+# adding mini-help.
+
+_ccal() {
+  _TODAY=$(date +%e)
+  _B=$(tput smso)
+  _N=$(tput rmso)
+  printf "\n"
+  cal | sed s/"$_TODAY"/"$_B""$_TODAY""$_N"/
+}
+
+usage="\
+                     __
+    ______________ _/ /
+   / ___/ ___/ __ \`/ /
+  / /__/ /__/ /_/ / /
+  \\___/\\___/\\__,_/_/
+
+Highlight current day in cal - alot smaller than gcal ;)
+$(_ccal)
+"
+if [ "$1" = "-h" ]; then
+  printf "%s\n" "$usage"
+  exit 1
+fi
+
+_ccal
+
