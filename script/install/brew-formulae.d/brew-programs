@@ -291,6 +291,18 @@ brew install ocaml
 # https://opam.ocaml.org
 brew install opam
 
+# ori - A Secure Distributed File System
+#
+# Ori is a distributed file system built for offline operation and empowers the
+# user with control over synchronization operations and conflict resolution.
+# We provide history through light weight snapshots and allow users to verify
+# the history has not been tampered with. Through the use of replication
+# instances can be resilient and recover damaged data from other nodes.
+#
+# http://ori.scs.stanford.edu/
+# https://bitbucket.org/orifs/ori/wiki/Home
+brew install ori
+
 # osxutils
 #
 # osxutils is a bundle of Mac OS X command line utilities that bring power over
