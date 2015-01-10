@@ -219,6 +219,15 @@ brew cask install lighttable
 # http://www.tug.org/mactex/
 brew cask install mactex
 
+# osxfuse - FUSE for OS X
+#
+# The easiest and fastest way to create filesystems for OS X. FUSE for OS X
+# allows you to extend OS X's native file handling capabilities via third-party
+# file systems. OSXFUSE is a successor to MacFUSE.
+#
+# https://osxfuse.github.io/
+brew cask install osxfuse
+
 # Packer
 #
 # Packer is a tool for creating identical machine images for multiple platforms
