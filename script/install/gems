@@ -4,6 +4,14 @@
 #
 # Install various global ruby gems modules
 
+# faker
+#
+# A library for generating fake data such as names, addresses, and phone
+# numbers.
+#
+# https://github.com/stympy/faker
+gem install faker
+
 # hijack
 #
 # Provides an irb session to a running ruby process.
