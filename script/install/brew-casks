@@ -103,6 +103,13 @@ brew cask install atom
 # http://audacity.sourceforge.net/
 brew cask install audacity
 
+# Blender
+#
+# Blender is a free and open source 3D animation suite.
+#
+# http://www.blender.org/
+brew cask install blender
+
 # Brackets
 #
 # Adobe's open source text editor built with and focused on web technologies.
