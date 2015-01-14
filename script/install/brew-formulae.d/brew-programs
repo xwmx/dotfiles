@@ -410,6 +410,17 @@ brew install rust
 # http://www.scala-lang.org/
 brew install scala
 
+# scsh
+#
+# Scsh is a POSIX API layered on top of the Scheme programming language in a
+# manner to make the most of Scheme's capability for scripting. It is limited
+# to 32-bit platforms but there is a development version against the latest
+# scheme48 that works in 64-bit mode.
+#
+# https://en.wikipedia.org/wiki/Scsh
+# http://scsh.net/docu/html/man.html
+brew install scsh
+
 # ShellCheck
 #
 # Automatically detects problems with sh/bash scripts and commands
