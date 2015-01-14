@@ -6,8 +6,12 @@
 _app_path="/opt/homebrew-cask/Caskroom/disk-inventory-x/1.0/Disk Inventory X.app"
 _bin_path="$_app_path/Contents/MacOS/Disk Inventory X"
 
-# NOTE: parens run the program in subshell, making it possible to kill the
-# current session without quitting the app.
+# NOTES:
+# - Parens run the program in subshell, making it possible to kill the
+#   current session without quitting the app.
+# - Application must be opened as root via the binary in the app bundle. `sudo`
+#   doesn't open the application as root, neither does `open`, even after
+#   switchin to root.
 if [ "$1" = "--root" ]; then
   echo "(\"$_bin_path\" &)" | sudo su root
 else
