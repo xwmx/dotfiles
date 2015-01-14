@@ -154,6 +154,15 @@ brew cask install codebox
 # http://www.consul.io/
 brew cask install consul
 
+# Disk Inventory X
+#
+# Disk Inventory X is a disk usage utility for Mac OS X 10.3 (and later). It
+# shows the sizes of files and folders in a special graphical way called
+# "treemaps".
+#
+# http://www.derlien.com/
+brew cask install disk-inventory-x
+
 # Elm
 #
 # A functional reactive language for interactive applications
