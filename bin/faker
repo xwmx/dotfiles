@@ -400,6 +400,7 @@ EOM
 main() {
   # Avoiding getops (or pattern equivalent) to avoid complexity.
   if ( \
+    [[ -z "$1"          ]] ||
     [[ "$1" == "-h"     ]] ||
     [[ "$1" == "--help" ]] ||
     [[ "$1" == "help"   ]]
