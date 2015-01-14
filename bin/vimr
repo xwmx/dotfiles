@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
+#
+# Simple command line script for VimR
+#
+# http://vimr.org/
+# https://github.com/qvacua/vimr
 
-open -a VimR
+open -a "VimR" "$*"
