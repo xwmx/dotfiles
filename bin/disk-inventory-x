@@ -9,9 +9,7 @@ _bin_path="$_app_path/Contents/MacOS/Disk Inventory X"
 # NOTE: parens run the program in subshell, making it possible to kill the
 # current session without quitting the app.
 if [ "$1" = "--root" ]; then
-  sudo su root <<'EOF'
-("$__bin_path" &)
-EOF
+  echo "(\"$_bin_path\" &)" | sudo su root
 else
   ("$_bin_path" &)
 fi
