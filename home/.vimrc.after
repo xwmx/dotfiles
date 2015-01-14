@@ -112,9 +112,15 @@ set splitright
 " Use ctrl-tab to close the current buffer without closing the split / window
 "map <C-Tab> :Kwbd<cr>
 map <C-Tab> :BD<cr>
-" Use ctrl-[ and ctrl-] to cycle buffers
-map <C-[> :bprevious<cr>
-map <C-]> :bnext<cr>
+
+" Use ctrl-[[ and ctrl-]] to cycle buffers
+"
+" NOTE: because C-[ is the same as escape, this mapping also results in
+" <Esc><Esc> inheriting the same behavior. This is also why a single C-[
+" doesn't work properly, since it maps a single Esc to buffer cycling, which
+" is less desirable.
+map <C-[><C-[> :bprevious<cr>
+map <C-]><C-]> :bnext<cr>
 
 " ============================================================================
 " Fullscreen
