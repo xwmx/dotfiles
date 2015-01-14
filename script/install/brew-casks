@@ -270,17 +270,6 @@ brew cask install pd-extended
 # http://pgadmin.org
 brew cask install pgadmin3
 
-# Rust
-#
-# Rust is a systems programming language that runs blazingly fast, prevents
-# almost all crashes, and eliminates data races.
-#
-# NOTE: installing the cask version rather than the regular formula because
-# the formula takes a very long time to build and is not up to date.
-#
-# http://www.rust-lang.org/
-brew cask install rust
-
 # Secrets
 #
 # A database of hidden settings for Mac OS X
