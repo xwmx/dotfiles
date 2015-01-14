@@ -191,3 +191,14 @@ endif
 
 " Remap control-esc in normal mode to clear search highlights.
 nnoremap <C-esc> :noh<return><esc>
+
+" ============================================================================
+" ESC / Ctrl-C / Ctrl-[
+" ============================================================================
+
+" Make C-c trigger the InsertLeave autocommand and otherwise behave
+" identically to C-[ and Esc
+"
+" http://stackoverflow.com/a/80761
+" http://vimdoc.sourceforge.net/htmldoc/insert.html#i_CTRL-C
+inoremap <C-c> <Esc><Esc>
