@@ -1,6 +1,13 @@
 # .shared_env
 #
-# source this first.
+# Settings for both .zshenv and .bashenv
+#
+# Used by both non-interactive and interactive instances.
+#
+# In order to keep both shells as similar as possible, all env settings are
+# included in this shared_env.
+#
+# NOTE: source this first when using.
 
 #==========================================================================
 # Utility Functions
