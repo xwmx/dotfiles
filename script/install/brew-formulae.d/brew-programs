@@ -503,6 +503,17 @@ brew install tmuxinator-completion
 # NOTE: command name is `ag`
 brew install the_silver_searcher
 
+# Valgrind
+#
+# Valgrind is an instrumentation framework for building dynamic analysis tools.
+# There are Valgrind tools that can automatically detect many memory management
+# and threading bugs, and profile your programs in detail.
+#
+# http://valgrind.org/
+#
+# NOTE: installing head version for yosemite support.
+brew install --HEAD valgrind
+
 # webkit2png
 #
 # webkit2png is a command line tool that creates screenshots of webpages
