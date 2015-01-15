@@ -102,6 +102,14 @@ brew install git
 # https://github.com/golang/go
 brew install go
 
+# heroku
+#
+# Heroku client - CLI tool for creating and managing Heroku apps
+#
+# https://toolbelt.heroku.com/standalone
+# https://github.com/heroku/heroku
+brew install heroku
+
 # htop (htop-osx)
 #
 # htop, an interactive process viewer.
