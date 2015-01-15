@@ -12,6 +12,15 @@
 # https://github.com/stympy/faker
 gem install faker
 
+# foreman - manage Procfile-based applications
+#
+# Foreman is a manager for Procfile-based applications. Its aim is to abstract
+# away the details of the Procfile format, and allow you to either run your
+# application directly or export it to some other process management format.
+#
+# https://github.com/ddollar/foreman
+gem install foreman
+
 # hijack
 #
 # Provides an irb session to a running ruby process.
