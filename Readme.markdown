@@ -20,8 +20,6 @@ configuration management tool](https://github.com/alphabetum/dots).
 
 ## Setup
 
-Add the [`dots` tool](https://github.com/alphabetum/dots) to your `$PATH`.
-
 Create a `$HOME/bin` directory if one doesn't already exist.
 
 _Note_: be careful when following these steps over an existing
