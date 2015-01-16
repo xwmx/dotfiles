@@ -30,9 +30,9 @@ If you are ready to live on the edge and go wild, copy the following and paste
 it into your terminal:
 
     git clone https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
-    cd ~/.dotfiles && \
-    git submodule init && git submodule update --init --recursive && \
     export DOTSPATH="$HOME/.dotfiles" && \
+    cd "$DOTSPATH" && \
+    git submodule init && git submodule update --init --recursive && \
     ./bin/dots link && ./bin/dots bin link
 
 This will take some time to run and should clone the repository to your home
