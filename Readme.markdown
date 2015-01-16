@@ -41,10 +41,8 @@ and `~/bin` that have the same name as any of the files in the repository.
 
 Use the [`dots`](https://github.com/alphabetum/dots) tool (which should
 be available at `~/bin/dots` after the above steps) to handle the
-additional files and experiment with everything.
-
-See additional tasks available by running `~/bin/dots commands`, including
-commands for for backup and troubleshooting.
+additional files and experiment with everything. `dots` commands can be
+discovered by running `~/bin/dots help`.
 
 ## Components
 
