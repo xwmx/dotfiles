@@ -219,6 +219,13 @@ brew cask install iterm2-nightly
 # http://www.amazon.com/gp/feature.html?docId=1000765211
 brew cask install kindlegen
 
+# Krita
+#
+# Krita is a digital painting and illustration application.
+#
+# https://krita.org/
+brew cask install krita
+
 # Light Table
 #
 # A text editor and IDE build with JavaScript.
