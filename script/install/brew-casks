@@ -235,6 +235,13 @@ brew cask install lighttable
 # http://www.tug.org/mactex/
 brew cask install mactex
 
+# Natron
+#
+# Natron is an open-source • crossplatform nodal • compositing software
+#
+# https://natron.inria.fr/
+brew cask install natron
+
 # osxfuse - FUSE for OS X
 #
 # The easiest and fastest way to create filesystems for OS X. FUSE for OS X
