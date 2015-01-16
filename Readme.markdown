@@ -23,17 +23,28 @@ Add the [`dots` tool](https://github.com/alphabetum/dots) to your `$PATH`.
 
 Create a `$HOME/bin` directory if one doesn't already exist.
 
-Note: be careful when following these steps over an existing
+_Note_: be careful when following these steps over an existing
 configuration, and make sure you have backups in case anything gets
-overwritten.
+overwritten. It might be better to take each step individually.
 
-- clone to `~/.dotfiles`
-- run `$ git submodule init && git submodule update --init --recursive`
-- run `./bin/dots link` to symlink all of the dotfiles into the `$HOME` directory
+If you are ready to live on the edge and go wild, copy the following and paste
+it into your terminal:
 
+    git clone https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
+    cd ~/.dotfiles && \
+    git submodule init && git submodule update --init --recursive && \
+    ./bin/dots link && ./bin/dots bin link
 
-See additional tasks available by running `./bin/dots tasks`, including
-tasks for for backup and troubleshooting.
+This should clone the repository to your home directory and link all
+files, excluding any that you already have in `$HOME` and `~/bin` that have the
+same name as any of the files in the repository.
+
+Use the [`dots`]((https://github.com/alphabetum/dots) tool (which should
+be available at `~/bin/dots` after the above steps) to handle the
+additional files and experiment with everything.
+
+See additional tasks available by running `~/bin/dots commands`, including
+commands for for backup and troubleshooting.
 
 ## Components
 
