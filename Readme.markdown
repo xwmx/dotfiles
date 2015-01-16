@@ -28,8 +28,7 @@ configuration, and make sure you have backups in case anything gets
 overwritten.
 
 - clone to `~/.dotfiles`
-- run `$ git submodule init && git submodule update --init`
-  --recursive`
+- run `$ git submodule init && git submodule update --init --recursive`
 - run `./bin/dots link` to symlink all of the dotfiles into the `$HOME` directory
 
 
