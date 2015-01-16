@@ -36,11 +36,11 @@ it into your terminal:
     git submodule init && git submodule update --init --recursive && \
     ./bin/dots link && ./bin/dots bin link
 
-This should clone the repository to your home directory and link all
-files, excluding any that you already have in `$HOME` and `~/bin` that have the
-same name as any of the files in the repository.
+This will take some time to run and should clone the repository to your home
+directory and link all files, excluding any that you already have in `$HOME`
+and `~/bin` that have the same name as any of the files in the repository.
 
-Use the [`dots`]((https://github.com/alphabetum/dots) tool (which should
+Use the [`dots`](https://github.com/alphabetum/dots) tool (which should
 be available at `~/bin/dots` after the above steps) to handle the
 additional files and experiment with everything.
 
