@@ -131,7 +131,6 @@ brew cask install breach
 # http://www.cakebrew.com
 brew cask install cakebrew
 
-
 # Cargo
 #
 # Cargo is a tool that allows Rust projects to declare their various
