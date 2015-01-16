@@ -32,6 +32,7 @@ it into your terminal:
     git clone https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
     cd ~/.dotfiles && \
     git submodule init && git submodule update --init --recursive && \
+    export DOTSPATH="$HOME/.dotfiles" && \
     ./bin/dots link && ./bin/dots bin link
 
 This will take some time to run and should clone the repository to your home
