@@ -153,6 +153,16 @@ brew cask install cargo
 # https://www.codebox.io
 brew cask install codebox
 
+# Colors
+#
+# Colors is a color picker that takes Apple's basic color chooser (complete
+# with "magnifying glass" to pull colors from other applications), and combines
+# it with an easy way to copy common formats of color values (eg., #rrggbb,
+# rgba(r, g, b, a), etc.) to the clipboard.
+#
+# http://mattpatenaude.com/
+brew cask install colors
+
 # Consul
 #
 # Consul is a tool for service discovery, monitoring and configuration.
