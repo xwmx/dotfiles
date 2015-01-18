@@ -24,7 +24,6 @@ brew upgrade
 # install brew cask
 brew install caskroom/cask/brew-cask
 
-
 ###############################################################################
 # Homebrew Cask - Taps
 #
