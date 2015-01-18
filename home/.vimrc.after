@@ -147,30 +147,57 @@ if has("gui_macvim")
   " MacVim right arrow movement seems to deviate from expected default OS X
   " cursor movement.
   "
+  " NOTE - select mode is the default for MacVim, but including visual mode
+  " versions for reference where applicable.
+  "
+  " #########################
   " Command-Shift-Right Arrow
+  " #########################
   "
   " These mappings:
-  "   Enter visual mode and select rest of line without newline.
+  "   Enter elect mode and select rest of line without newline.
   "
   " Overrides MacVim Default mappings:
   "   Enter select mode and select to end of line with newline.
-  nn   <S-D-Right>    vg_
-  vn   <S-D-Right>    g_
-  ino  <S-D-Right>    <C-O>vg_
   "
+  " select mode version:
+  nn   <S-D-Right>    gh<S-D-Right>
+  " visual mode version:
+  " nn   <S-D-Right>    vg_
+  "
+  vn   <S-D-Right>    g_
+  "
+  " select mode version:
+  ino  <S-D-Right>    <C-O>gh<S-D-Right>
+  " visual mode version:
+  " ino  <S-D-Right>    <C-O>vg_
+  "
+  " ########################
   " Option-Shift-Right Arrow
+  " ########################
   "
   " These mappings:
-  "   Enter visual mode and select to end of current word.
+  "   Enter select mode and select to end of current word.
   "
   " Overrides MacVim Default mappings:
   "   Enter select mode and select to beginning of next word.
-  nn   <S-M-Right>    ve
+  "
+  " select mode version:
+  nn   <S-M-Right>    gh<S-M-Right>
+  " visual mode version:
+  " nn   <S-M-Right>    ve
+  "
   vn   <S-M-Right>    e
-  ino  <S-M-Right>    <C-O>ve
+  "
+  " select mode version:
+  ino  <S-M-Right>    <C-O>gh<S-M-Right>
+  " visual mode version:
+  " ino  <S-M-Right>    <C-O>ve
   "
   if !exists("macvim_skip_cmd_opt_movement")
+    " ##################
     " Option-Right Arrow
+    " ##################
     "
     " These mappings:
     "   Move to end of current word.
