@@ -186,6 +186,20 @@ brew cask install disk-inventory-x
 # http://www.elm-lang.org
 brew cask install elm-platform
 
+# Firefox
+#
+# A free and open-source web browser.
+#
+# https://www.mozilla.org/en-US/firefox/
+brew cask install firefox
+
+# Firefox Developer Edition
+#
+# A distribution of the Firefox web browser designed for developers.
+#
+# https://www.mozilla.org/en-US/firefox/developer/
+brew cask install firefoxdeveloperedition
+
 # Gimp
 #
 # GIMP is the GNU Image Manipulation Program. It is a freely distributed piece
