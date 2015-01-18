@@ -4,6 +4,17 @@
 #
 # Download and install go / golang packages
 
+# bolt
+#
+# Bolt is a pure Go key/value store inspired by Howard Chu's and the LMDB
+# project. The goal of the project is to provide a simple, fast, and reliable
+# database for projects that don't require a full database server such as
+# Postgres or MySQL.
+#
+# https://github.com/boltdb/bolt
+# https://news.ycombinator.com/item?id=8735684
+go get -u -v github.com/boltdb/bolt/...
+
 # errcheck
 #
 # errcheck is a program for checking for unchecked errors in go programs.
