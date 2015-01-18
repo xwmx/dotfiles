@@ -75,6 +75,13 @@ brew cask install font-sauce-code-powerline
 # NOTE: Installing first since it's important and other casks use it.
 brew cask install virtualbox
 
+# 1Password
+#
+# Password manager and secure wallet
+#
+# https://agilebits.com/onepassword
+brew cask install 1password
+
 # Amethyst
 #
 # Tiling window manager for OS X similar to xmonad, written in pure
