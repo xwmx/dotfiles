@@ -134,13 +134,53 @@ vmap <d-cr> <Esc>:set invfu<cr>gv
 " Navigation and Selection
 " ============================================================================
 
-" Don't include cursor position in selections (useful for line break
-" avoidance w/ command+shift+right arrow)
-"set selection=exclusive
-
 " Enable HIG shift movement related settings when running MacVim
+"
+" MacVim default mappings can be found in the default gvimrc:
+"
+" https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
 if has("gui_macvim")
   let macvim_hig_shift_movement = 1
+
+  " Override MacVim right arrow movement
+  "
+  " MacVim right arrow movement seems to deviate from expected default OS X
+  " cursor movement.
+  "
+  " Command-Shift-Right Arrow
+  "
+  " These mappings:
+  "   Enter visual mode and select rest of line without newline.
+  "
+  " Overrides MacVim Default mappings:
+  "   Enter select mode and select to end of line with newline.
+  nn   <S-D-Right>    vg_
+  vn   <S-D-Right>    g_
+  ino  <S-D-Right>    <C-O>vg_
+  "
+  " Option-Shift-Right Arrow
+  "
+  " These mappings:
+  "   Enter visual mode and select to end of current word.
+  "
+  " Overrides MacVim Default mappings:
+  "   Enter select mode and select to beginning of next word.
+  nn   <S-M-Right>    ve
+  vn   <S-M-Right>    e
+  ino  <S-M-Right>    <C-O>ve
+  "
+  if !exists("macvim_skip_cmd_opt_movement")
+    " Option-Right Arrow
+    "
+    " These mappings:
+    "   Move to end of current word.
+    "
+    " Overrides MacVim default mappings:
+    "   Move to beginning of next word.
+    no   <M-Right>      e
+    no!  <M-Right>      e
+    ino  <M-Right>      <C-O>e<Right>
+  endif
 endif
 
 " Fix arrow keys in normal and visual modes in terminal vim.
