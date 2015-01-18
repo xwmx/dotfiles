@@ -138,10 +138,10 @@ vmap <d-cr> <Esc>:set invfu<cr>gv
 " avoidance w/ command+shift+right arrow)
 "set selection=exclusive
 
-
-" This is so that the HIG shift movement related settings can be enabled by
-" adding the line
-let macvim_hig_shift_movement = 1
+" Enable HIG shift movement related settings when running MacVim
+if has("gui_macvim")
+  let macvim_hig_shift_movement = 1
+endif
 
 " Fix arrow keys in normal and visual modes in terminal vim.
 "
