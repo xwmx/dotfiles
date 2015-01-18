@@ -217,6 +217,13 @@ brew cask install gimp
 # http://www.gnucash.org
 brew cask install gnucash
 
+# Google Chrome
+#
+# A freeware web browser developed by Google.
+#
+# https://www.google.com/chrome/
+brew cask install google-chrome
+
 # The Haskell Platform
 #
 # http://www.haskell.org/platform/
