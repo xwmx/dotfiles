@@ -1,0 +1,99 @@
+" Janus-related gvimrc.
+"
+" Runs after the regular gvimrc, now controlled by Janus, is loaded.
+
+" Custom MacVim HIG Shift Movement Mappings
+"
+" MacVim default mappings can be found in the default gvimrc:
+"
+" https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
+if exists("custom_macvim_hig_shift_movement")
+
+  " Use Visual mode rather than Select mode for MacVim HIG shift mappings
+  "
+  " NOTE - Right arrow movement has additional overrides set below.
+  "
+  " #########################
+  " Command-Shift-Left Arrow
+  " #########################
+  "
+  nn   <S-D-Left>     v0
+  vn   <S-D-Left>     0
+  ino  <S-D-Left>     <C-O>v0
+  "
+  " #########################
+  " Option-Shift-Left Arrow
+  " #########################
+  "
+  nn   <S-M-Left>     vb
+  vn   <S-M-Left>     b
+  ino  <S-M-Left>     <C-O>vb
+  "
+  " #########################
+  " Command-Shift-Up Arrow
+  " #########################
+  "
+  nn   <S-D-Up>       vgg
+  vn   <S-D-Up>       gg
+  ino  <S-D-Up>       <C-O>vgg
+  "
+  " #########################
+  " Command-Shift-Down Arrow
+  " #########################
+  "
+  nn   <S-D-Down>     vG
+  vn   <S-D-Down>     G
+  ino  <S-D-Down>     <C-O>vG
+  "
+  " ------------------------------------
+  " Override MacVim right arrow movement
+  " ------------------------------------
+  "
+  " MacVim right arrow movement seems to deviate from expected default OS X
+  " cursor movement.
+  "
+  " Also using visual mode as above.
+  "
+  " #########################
+  " Command-Shift-Right Arrow
+  " #########################
+  "
+  " These mappings:
+  "   Enter visual mode and select rest of line without newline.
+  "
+  " Overrides MacVim Default mappings:
+  "   Enter select mode and select to end of line with newline.
+  "
+  nn   <S-D-Right>    vg_
+  vn   <S-D-Right>    g_
+  ino  <S-D-Right>    <C-O>vg_
+  "
+  " ########################
+  " Option-Shift-Right Arrow
+  " ########################
+  "
+  " These mappings:
+  "   Enter visual mode and select to end of current word.
+  "
+  " Overrides MacVim Default mappings:
+  "   Enter select mode and select to beginning of next word.
+  "
+  nn   <S-M-Right>    ve
+  vn   <S-M-Right>    e
+  ino  <S-M-Right>    <C-O>ve
+  "
+  if !exists("macvim_skip_cmd_opt_movement")
+    " ##################
+    " Option-Right Arrow
+    " ##################
+    "
+    " These mappings:
+    "   Move to end of current word.
+    "
+    " Overrides MacVim default mappings:
+    "   Move to beginning of next word.
+    no   <M-Right>      e
+    no!  <M-Right>      e
+    ino  <M-Right>      <C-O>e<Right>
+  endif
+endif " exists("custom_macvim_hig_shift_movement")
