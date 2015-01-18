@@ -20,7 +20,7 @@ go get -u -v github.com/boltdb/bolt/...
 # errcheck is a program for checking for unchecked errors in go programs.
 #
 # https://github.com/kisielk/errcheck
-go get -u github.com/kisielk/errcheck
+go get -u -v github.com/kisielk/errcheck
 
 # gocode
 #
