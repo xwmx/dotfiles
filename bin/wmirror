@@ -5,7 +5,7 @@
 # Mirror a website.
 
 URL=$1
-DIR=~/websites/$2
+DIR=~/Downloads/_websites/
 
 if [ ! -d "$DIR" ]
 then
@@ -13,13 +13,46 @@ then
   mkdir -p "$DIR"
 fi
 
+_domain=$(printf "%s\n" "$URL" | awk -F/ '{print $3}')
+
+if [ -z "$_domain" ]; then
+  printf "Domain not found.\n"
+  exit 1
+fi
+
+# allow S3 in order to include assets.
+#
+# TODO: make this possible to set with options.
+_allowed_hosts="$_domain,s3.amazonaws.com"
+
 cd "$DIR"
-wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait "$URL"
+
+# Build Command:
+_cmd="wget \
+  -r \
+  -H -D$_allowed_hosts \
+  -l inf \
+  -np \
+  -k \
+  -c \
+  -N \
+  -w1 \
+  --random-wait \
+  -e robots=off \
+  --no-check-certificate \
+  $URL"
+
+# Debug Command:
+# printf "%s\n" "$_cmd"
+
+# Call Command:
+$_cmd
 
 # -r                      recursive
+# -H                      follow links to other hosts
+# -D                      limit to the specified host list
 # -l inf                  all sub directories
 # -np                     do NOT crawl parent directories
-# -nH                     do NOT create host directories locally
 # -k                      convert links (to refer to local directories)
 # -c                      continue (script is restartable)
 # -N                      only retrieve files when newer than local file
