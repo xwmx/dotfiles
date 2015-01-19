@@ -134,16 +134,25 @@ vmap <d-cr> <Esc>:set invfu<cr>gv
 " Navigation and Selection
 " ============================================================================
 
-" Enable HIG shift movement related settings when running MacVim
+" Enable custom HIG movement and selection related settings when running MacVim
 "
-" HIG shift movement settings are heavily customized in .gvimrc.after
-" See .gvimrc.after for these mappings.
+" Custom mapping location:
+"   .gvimrc.after
+" Original system mappings:
+"   https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
+"
 if has("gui_macvim")
-  let custom_macvim_hig_shift_movement = 1
+  " Disable MacVim system default mappings
+  let macvim_skip_cmd_opt_movement = 1
 
-  " If the above custom settings are disabled, fall back to the MacVim
+  " Enable custom MacVim HIG movement mappings.
+  let custom_macvim_hig_movement = 1
+
+  " If the above custom setting disabled, fall back to the MacVim
   " defaults.
-  if !exists("custom_macvim_hig_shift_movement")
+  if !exists("custom_macvim_hig_movement")
+    " Reenable MacVim system default mappings
+    unlet macvim_skip_cmd_opt_movement
     let macvim_hig_shift_movement = 1
   endif
 endif

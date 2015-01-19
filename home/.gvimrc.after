@@ -7,15 +7,111 @@
 " MacVim default mappings can be found in the default gvimrc:
 "
 " https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
-if exists("custom_macvim_hig_shift_movement")
+if exists("custom_macvim_hig_movement")
 
+  " Notable changes from defaults:
+  "
+  " ------------------------------------
+  " Use Visual mode rather than Select
+  " ------------------------------------
+  "
+  " Visual mode has more predictable behavior than select mode and is
+  " generally eaiser to work with.
+  "
+  " ------------------------------------
+  " Override MacVim right arrow movement
+  " ------------------------------------
+  "
+  " MacVim right arrow movement seems to deviate from expected default OS X
+  " cursor movement. These mappings make it behave more closely to other OS X
+  " applications.
+
+  " ###########################################################################
+  " Command / Option Movement Mappings
+  " ###########################################################################
+  "
+  " ##################
+  " Command-Left Arrow
+  " ##################
+  "
+  no   <D-Left>       <Home>
+  no!  <D-Left>       <Home>
+  "
+  " ##################
+  " Option-Left Arrow
+  " ##################
+  "
+  no   <M-Left>       <C-Left>
+  no!  <M-Left>       <C-Left>
+  "
+  " ##################
+  " Command-Right Arrow
+  " ##################
+  "
+  no   <D-Right>      <End>
+  no!  <D-Right>      <End>
+  "
+  " ##################
+  " Option-Right Arrow
+  " ##################
+  "
+  " These mappings:
+  "   Move to end of current word.
+  "
+  " Overrides MacVim default mappings:
+  "   Move to beginning of next word.
+  no   <M-Right>      e
+  no!  <M-Right>      e
+  ino  <M-Right>      <C-O>e<Right>
+  "
+  " ##################
+  " Command-Up Arrow
+  " ##################
+  "
+  no   <D-Up>         <C-Home>
+  ino  <D-Up>         <C-Home>
+  "
+  " ##################
+  " Option-Up Arrow
+  " ##################
+  "
+  no   <M-Up>         {
+  ino  <M-Up>         <C-o>{
+  "
+  " ##################
+  " Command-Down Arrow
+  " ##################
+  "
+  no   <D-Down>       <C-End>
+  ino  <D-Down>       <C-End>
+  "
+  " ##################
+  " Option-Down Arrow
+  " ##################
+  "
+  no   <M-Down>       }
+  ino  <M-Down>       <C-o>}
+  "
+  " ##################
+  " Option-Backspace
+  " ##################
+  "
+  ino  <M-BS>         <C-w>
+  "
+  " ##################
+  " Command-Backspace
+  " ##################
+  "
+  ino  <D-BS>         <C-u>
+
+
+  " ###########################################################################
+  " Shift Movement and Selection Mappings
+  " ###########################################################################
+  "
   " Note - selectmode and keymodel settings from original MacVim settings are
   " not used here since they enable select mode and this configuration prefers
   " visual mode for everything.
-
-  " Use Visual mode rather than Select mode for MacVim HIG shift mappings
-  "
-  " NOTE - Right arrow movement has additional overrides set below.
   "
   " #########################
   " Command-Shift-Left Arrow
@@ -49,16 +145,6 @@ if exists("custom_macvim_hig_shift_movement")
   vn   <S-D-Down>     G
   ino  <S-D-Down>     <C-O>vG
   "
-  " ------------------------------------
-  " Override MacVim right arrow movement
-  " ------------------------------------
-  "
-  " MacVim right arrow movement seems to deviate from expected default OS X
-  " cursor movement. These mappings make it behave more closely to other OS X
-  " applications.
-  "
-  " Also using visual mode as above.
-  "
   " #########################
   " Command-Shift-Right Arrow
   " #########################
@@ -86,82 +172,5 @@ if exists("custom_macvim_hig_shift_movement")
   nn   <S-M-Right>    ve
   vn   <S-M-Right>    e
   ino  <S-M-Right>    <C-O>ve
-  "
-  if !exists("macvim_skip_cmd_opt_movement")
-    "
-    " ##################
-    " Command-Left Arrow
-    " ##################
-    "
-    no   <D-Left>       <Home>
-    no!  <D-Left>       <Home>
-    "
-    " ##################
-    " Option-Left Arrow
-    " ##################
-    "
-    no   <M-Left>       <C-Left>
-    no!  <M-Left>       <C-Left>
-    "
-    " ##################
-    " Command-Right Arrow
-    " ##################
-    "
-    no   <D-Right>      <End>
-    no!  <D-Right>      <End>
-    "
-    " ##################
-    " Option-Right Arrow
-    " ##################
-    "
-    " These mappings:
-    "   Move to end of current word.
-    "
-    " Overrides MacVim default mappings:
-    "   Move to beginning of next word.
-    no   <M-Right>      e
-    no!  <M-Right>      e
-    ino  <M-Right>      <C-O>e<Right>
-    "
-    " ##################
-    " Command-Up Arrow
-    " ##################
-    "
-    no   <D-Up>         <C-Home>
-    ino  <D-Up>         <C-Home>
-    "
-    " ##################
-    " Option-Up Arrow
-    " ##################
-    "
-    no   <M-Up>         {
-    ino  <M-Up>         <C-o>{
-    "
-    " ##################
-    " Command-Down Arrow
-    " ##################
-    "
-    no   <D-Down>       <C-End>
-    ino  <D-Down>       <C-End>
-    "
-    " ##################
-    " Option-Down Arrow
-    " ##################
-    "
-    no   <M-Down>       }
-    ino  <M-Down>       <C-o>}
-    "
-    " ##################
-    " Option-Backspace
-    " ##################
-    "
-    ino  <M-BS>         <C-w>
-    "
-    " ##################
-    " Command-Backspace
-    " ##################
-    "
-    ino  <D-BS>         <C-u>
 
-  endif
-endif " exists("custom_macvim_hig_shift_movement")
+endif " exists("custom_macvim_hig_movement")
