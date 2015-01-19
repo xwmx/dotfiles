@@ -5,6 +5,16 @@
 # https://github.com/ctfs/write-ups
 # ----------------------------------------------------------------------------
 
+###############################################################################
+# Platform Check
+###############################################################################
+
+# Exit unless OS X
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  printf "brew is only supported on OS X\nExiting...\n"
+  exit 1
+fi
+
 # bfg repo-cleaner
 #
 # Removes large or troublesome blobs like git-filter-branch does, but faster.

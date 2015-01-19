@@ -4,6 +4,16 @@
 #
 # Install programs and applications using Homebrew and Homebrew Cask.
 
+###############################################################################
+# Platform Check
+###############################################################################
+
+# Exit unless OS X
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  printf "brew is only supported on OS X\nExiting...\n"
+  exit 1
+fi
+
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 . "$DIR/brew-formulae"

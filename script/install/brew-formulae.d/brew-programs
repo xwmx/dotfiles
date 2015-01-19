@@ -4,6 +4,16 @@
 # Programs
 # ----------------------------------------------------------------------------
 
+###############################################################################
+# Platform Check
+###############################################################################
+
+# Exit unless OS X
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  printf "brew is only supported on OS X\nExiting...\n"
+  exit 1
+fi
+
 # Ack
 #
 # Ack is a tool like grep, optimized for programmers
