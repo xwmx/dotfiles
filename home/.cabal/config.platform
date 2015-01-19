@@ -1,0 +1,164 @@
+-- This is the configuration file for the 'cabal' command line tool.
+
+-- The available configuration options are listed below.
+-- Some of them have default values listed.
+
+-- Lines (like this one) beginning with '--' are comments.
+-- Be careful with spaces and indentation because they are
+-- used to indicate layout for nested sections.
+
+-- This configuration follows the layout of Haskell Platform on Mac OS X,
+-- placing all installed package parts in the directories
+--   /Library/Haskell for packages installed --global
+--   ~/Library/Haskell for packages installed --user (the default)
+
+-- === Built executables will be installed in:
+--     ~/Library/Haskell/bin
+--
+-- You may wish to place this on your PATH by adding the following
+-- line to your ~/.bash_profile:
+--     export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+-- === When documentation is built, a master index to all documentation
+-- will be placed in:
+--     ~/Library/Haskell/doc/index.html
+--
+-- You may wish to bookmark that file
+
+
+remote-repo: hackage.haskell.org:http://hackage.haskell.org/packages/archive
+remote-repo-cache: /Users/Shared/Library/Haskell/repo-cache
+-- local-repo:
+-- logs-dir:
+world-file: /Users/Shared/Library/Haskell/logs/world
+-- verbose: 1
+-- compiler: ghc
+-- with-compiler:
+-- with-hc-pkg:
+-- scratchdir:
+-- program-prefix:
+-- program-suffix:
+-- library-vanilla: True
+library-profiling: True
+-- shared:
+-- executable-dynamic: False
+-- executable-profiling: False
+-- optimization: True
+-- library-for-ghci: False
+-- split-objs: False
+-- executable-stripping: True
+-- user-install: True
+-- package-db:
+-- flags:
+-- extra-include-dirs:
+-- extra-lib-dirs:
+extra-prog-path: /Users/Shared/Library/Haskell/bin
+-- tests: False
+-- library-coverage: False
+-- benchmarks: False
+-- cabal-lib-version:
+-- constraint:
+-- preference:
+-- solver: choose
+documentation: True
+-- doc-index-file: $datadir/doc/index.html
+-- max-backjumps: 2000
+-- reorder-goals: False
+-- shadow-installed-packages: False
+-- strong-flags: False
+-- reinstall: False
+-- avoid-reinstalls: False
+-- force-reinstalls: False
+-- upgrade-dependencies: False
+root-cmd: sudo
+-- symlink-bindir:
+build-summary: /Users/Shared/Library/Haskell/logs/build.log
+-- build-log:
+remote-build-reporting: anonymous
+-- one-shot: False
+jobs: $ncpus
+-- username:
+-- password:
+
+install-dirs user
+  prefix: /Users/Shared/Library/Haskell
+  -- bindir: $prefix/bin
+  libdir: $prefix/$compiler-$arch/lib
+  libsubdir: $pkgid
+  -- libexecdir: $prefix/libexec
+  -- datadir: $prefix/share
+  datasubdir: $compiler-$arch/$pkgid
+  docdir: $prefix/$compiler-$arch/lib/$pkgid/doc
+  -- htmldir: $docdir/html
+  -- haddockdir: $htmldir
+  -- sysconfdir: $prefix/etc
+
+install-dirs global
+  prefix: /Library/Haskell
+  -- bindir: $prefix/bin
+  libdir: $prefix/$compiler-$arch/lib
+  libsubdir: $pkgid
+  -- libexecdir: $prefix/libexec
+  -- datadir: $prefix/share
+  datasubdir: $compiler-$arch/$pkgid
+  docdir: $prefix/$compiler-$arch/lib/$pkgid/doc
+  -- htmldir: $docdir/html
+  -- haddockdir: $htmldir
+  -- sysconfdir: $prefix/etc
+
+program-locations
+  -- alex-location:
+  -- ar-location:
+  -- c2hs-location:
+  -- cpphs-location:
+  -- ffihugs-location:
+  -- gcc-location:
+  -- ghc-location:
+  -- ghc-pkg-location:
+  -- greencard-location:
+  -- haddock-location:
+  -- happy-location:
+  -- hmake-location:
+  -- hpc-location:
+  -- hsc2hs-location:
+  -- hscolour-location:
+  -- hugs-location:
+  -- jhc-location:
+  -- ld-location:
+  -- lhc-location:
+  -- lhc-pkg-location:
+  -- nhc98-location:
+  -- pkg-config-location:
+  -- ranlib-location:
+  -- strip-location:
+  -- tar-location:
+  -- uhc-location:
+
+program-default-options
+  -- alex-options:
+  -- ar-options:
+  -- c2hs-options:
+  -- cpphs-options:
+  -- ffihugs-options:
+  -- gcc-options:
+  -- ghc-options:
+  -- ghc-pkg-options:
+  -- greencard-options:
+  -- haddock-options:
+  -- happy-options:
+  -- hmake-options:
+  -- hpc-options:
+  -- hsc2hs-options:
+  -- hscolour-options:
+  -- hugs-options:
+  -- jhc-options:
+  -- ld-options:
+  -- lhc-options:
+  -- lhc-pkg-options:
+  -- nhc98-options:
+  -- pkg-config-options:
+  -- ranlib-options:
+  -- strip-options:
+  -- tar-options:
+  -- uhc-options:
+
