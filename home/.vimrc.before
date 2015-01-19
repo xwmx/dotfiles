@@ -34,6 +34,9 @@ let g:pathogen_disabled = []
 "
 " call add(g:pathogen_disabled, '<plugin_name>')
 
+call add(g:pathogen_disabled, 'vim-gitgutter')
+"call add(g:pathogen_disabled, 'vim-signify')
+
 " ============================================================================
 " vim-airline
 "
