@@ -81,6 +81,14 @@ brew cask install virtualbox
 # https://agilebits.com/onepassword
 brew cask install 1password
 
+# Adium
+#
+# Adium is a free instant messaging application for Mac OS X that can connect
+# to AIM, MSN, XMPP (Jabber), Yahoo, and more.
+#
+# https://adium.im/
+brew cask install adium
+
 # Amethyst
 #
 # Tiling window manager for OS X similar to xmonad, written in pure
