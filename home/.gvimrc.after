@@ -54,7 +54,8 @@ if exists("custom_macvim_hig_shift_movement")
   " ------------------------------------
   "
   " MacVim right arrow movement seems to deviate from expected default OS X
-  " cursor movement.
+  " cursor movement. These mappings make it behave more closely to other OS X
+  " applications.
   "
   " Also using visual mode as above.
   "
