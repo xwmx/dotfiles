@@ -181,6 +181,11 @@ vmap <ESC>oD <ESC>hi
 " Include hidden files
 let g:ctrlp_show_hidden = 1
 
+" Ignore local glyph directory in project since it slows down cache building.
+"
+" TODO: remove when this directory no longer exists locally.
+set wildignore+=*system/development/glyphs*
+
 " ============================================================================
 " tagbar
 " ============================================================================
