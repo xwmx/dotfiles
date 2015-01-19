@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# cabal-packages
+#
+# Download and install cabal / haskell packages.
+
+# Download the latest package list from hackage.haskell.org
+cabal update
+
+# record
+#
+# An API of just two quasi-quoters, providing a full-scale solution to the
+# notorious records problem of Haskell.
+#
+# http://hackage.haskell.org/package/record
+# https://github.com/nikita-volkov/record
+# http://nikita-volkov.github.io/record/
+cabal install record
