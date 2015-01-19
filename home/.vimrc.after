@@ -136,18 +136,16 @@ vmap <d-cr> <Esc>:set invfu<cr>gv
 
 " Enable HIG shift movement related settings when running MacVim
 "
-" MacVim default mappings can be found in the default gvimrc:
-"
-" https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
+" HIG shift movement settings are heavily customized in .gvimrc.after
+" See .gvimrc.after for these mappings.
 if has("gui_macvim")
-  " HIG shift movement settings are heavily customized in .gvimrc.after
-  "
-  " In order to avoid any unexpected initialization behavior, loading the
-  " default settings as expected, then initializing the custom settings with
-  " a parallel initialization process.
-  let macvim_hig_shift_movement = 1
-  " See .gvimrc.after for these mappings.
   let custom_macvim_hig_shift_movement = 1
+
+  " If the above custom settings are disabled, fall back to the MacVim
+  " defaults.
+  if !exists("custom_macvim_hig_shift_movement")
+    let macvim_hig_shift_movement = 1
+  endif
 endif
 
 " Fix arrow keys in normal and visual modes in terminal vim.

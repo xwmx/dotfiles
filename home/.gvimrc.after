@@ -9,6 +9,10 @@
 " https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
 if exists("custom_macvim_hig_shift_movement")
 
+  " Note - selectmode and keymodel settings from original MacVim settings are
+  " not used here since they enable select mode and this configuration prefers
+  " visual mode for everything.
+
   " Use Visual mode rather than Select mode for MacVim HIG shift mappings
   "
   " NOTE - Right arrow movement has additional overrides set below.
