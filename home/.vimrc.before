@@ -58,3 +58,16 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" ============================================================================
+" vim-signify
+" ============================================================================
+
+" Only use signify for git and hg.
+"
+" This reduces the number of calls and improves performance.
+let g:signify_vcs_list = [ 'git', 'hg' ]
+
+" Display all changes since last commit, even those that are staged to index.
+let g:signify_diffoptions = { 'git': 'HEAD' }
+
