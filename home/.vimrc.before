@@ -27,7 +27,7 @@
 " Disable Pathogen plugins
 " ============================================================================
 
-" To disable a plugin, add it's bundle name to the following list
+" To disable a plugin, add its bundle name to the following list
 let g:pathogen_disabled = []
 
 " Example disable call:
