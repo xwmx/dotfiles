@@ -71,3 +71,6 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 " Display all changes since last commit, even those that are staged to index.
 let g:signify_diffoptions = { 'git': 'HEAD' }
 
+" Update signify (ie, run :SignifyRefresh) when vim regains focus.
+let g:signify_update_on_focusgained = 1
+
