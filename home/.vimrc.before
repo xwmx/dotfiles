@@ -2,8 +2,37 @@
 "
 " Runs before Janus is loaded.
 
-" Disable Janus plugins:
+" ============================================================================
+" Disable Janus plugins
+" ============================================================================
+
+" Example disable call:
+"
 " call janus#disable_plugin('<plugin_name>')
+
+" Candidates for disabling
+"
+" These are currently not being used and can be disabled without problems:
+"
+"call janus#disable_plugin('buffergator')
+"call janus#disable_plugin('dispatch')
+"call janus#disable_plugin('fugitive')
+"call janus#disable_plugin('gist')
+"call janus#disable_plugin('gundo')
+"call janus#disable_plugin('narrowregion')
+"call janus#disable_plugin('vimwiki')
+"call janus#disable_plugin('vroom')
+
+" ============================================================================
+" Disable Pathogen plugins
+" ============================================================================
+
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+
+" Example disable call:
+"
+" call add(g:pathogen_disabled, '<plugin_name>')
 
 " ============================================================================
 " vim-airline
