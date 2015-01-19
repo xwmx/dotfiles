@@ -16,6 +16,7 @@
     disabledPackages: [
       "metrics"
       "select-rectangle"
+      "vim-mode"
     ]
     themes: [
       "atom-dark-ui-slim"
