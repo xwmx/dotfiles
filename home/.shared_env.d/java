@@ -2,4 +2,6 @@
 # Java
 #==============================================================================
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+if is_osx; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
