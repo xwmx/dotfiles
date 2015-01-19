@@ -193,6 +193,19 @@ set wildignore+=*system/development/glyphs*
 " Toggle tagbar shortcut
 nmap <leader>ttb :TagbarToggle<CR>
 
+" Set default tagbar width
+"
+" With a 1680 px width screen, tagbar fits better with NERDTree and two splits
+" when it's narrower.
+"
+" Default = 40
+let g:tagbar_width = 30
+
+" When running MacVim, open tagbar automatically.
+if has("gui_macvim")
+  TagbarOpen
+endif
+
 " ============================================================================
 " NERDTree
 " ============================================================================
