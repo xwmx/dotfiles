@@ -2,9 +2,28 @@
 #
 # Bootstrap dotfiles on a fresh ubuntu install
 
+sudo apt-get install -y \
+  ack-grep \
+  build-essential \
+  curl \
+  dnsutils \
+  finger \
+  less \
+  libssl-dev \
+  screen \
+  unzip \
+  vim \
+  wget \
+  zsh
+
+adduser -shell "$(which zsh)" --disabled-password --gecos "" shared
+
 mkdir ~/bin &&
 export DOTSPATH="$HOME/.dotfiles" && \
+cp ~/.ssh/* ~/.dotfiles/.ssh/ && \
 cd "$DOTSPATH" && \
 git submodule init && git submodule update --init --recursive && \
 ./bin/dots link --overwrite --with-backup &&
 ./bin/dots bin link
+
+$(which zsh) --login
