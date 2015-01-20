@@ -2,19 +2,9 @@
 #
 # Bootstrap dotfiles on a fresh ubuntu install
 
-sudo apt-get install -y \
-  ack-grep \
-  build-essential \
-  curl \
-  dnsutils \
-  finger \
-  less \
-  libssl-dev \
-  screen \
-  unzip \
-  vim \
-  wget \
-  zsh
+export DOTSPATH="$HOME/.dotfiles"
+
+"$DOTSPATH"/script/install/apt-packages
 
 adduser --shell "$(which zsh)" --disabled-password --gecos "" shared
 
@@ -25,7 +15,6 @@ sudo /bin/bash -c \
   "cat $HOME/.ssh/authorized_keys >> /home/shared/.ssh/authorized_keys
 "
 mkdir ~/bin &&
-export DOTSPATH="$HOME/.dotfiles" && \
 cp ~/.ssh/* ~/.dotfiles/.ssh/ && \
 cd "$DOTSPATH" && \
 git submodule init && git submodule update --init --recursive && \
