@@ -10,7 +10,7 @@
 
 # Exit unless OS X
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  printf "brew is only supported on OS X\nExiting...\n"
+  printf "brew-programs is only supported on OS X\nSkipping...\n"
   exit 1
 fi
 

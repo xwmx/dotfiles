@@ -11,8 +11,8 @@
 
 # Exit unless OS X
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  printf "Unsupported platform.\nExiting...\n"
-  exit 1
+  printf "osx_apps.sh is only supported on OS X.\nSkipping...\n"
+  exit 0
 fi
 
 ###############################################################################
