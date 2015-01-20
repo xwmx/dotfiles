@@ -2,7 +2,6 @@
 #
 # Bootstrap dotfiles on a fresh ubuntu install
 
-git clone https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
 mkdir ~/bin &&
 export DOTSPATH="$HOME/.dotfiles" && \
 cd "$DOTSPATH" && \
