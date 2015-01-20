@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+#
+# apt-packages
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+# Skip unless ubuntu
+if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
+  printf "apt-packages is only supported on Ubuntu.\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Packages
+###############################################################################
+
+# ack-grep (ack)
+#
+# grep-like program specifically for large source trees
+#
+# http://beyondgrep.com/
+# http://packages.ubuntu.com/trusty/ack-grep
+sudo apt-get install -y ack-grep
+
+# curl
+#
+# command line tool for transferring data with URL syntax
+#
+# http://packages.ubuntu.com/trusty/curl
+# http://curl.haxx.se/
+sudo apt-get install -y curl
+
+# dnsutils
+#
+# Clients provided with BIND
+#
+# http://packages.ubuntu.com/trusty/dnsutils
+sudo apt-get install -y dnsutils
+
+# finger
+#
+# user information lookup program
+#
+# http://packages.ubuntu.com/trusty/finger
+sudo apt-get install -y finger
+
+# less
+#
+# pager program similar to more
+#
+# http://packages.ubuntu.com/trusty/less
+sudo apt-get install -y less
+
+# libssl-dev
+#
+# Secure Sockets Layer toolkit - development files
+#
+# http://packages.ubuntu.com/trusty/libssl-dev
+sudo apt-get install -y libssl-dev
+
+# screen
+#
+# terminal multiplexer with VT100/ANSI terminal emulation
+#
+# http://packages.ubuntu.com/trusty/screen
+sudo apt-get install -y screen
+
+# unzip
+#
+# De-archiver for .zip files
+#
+# http://packages.ubuntu.com/trusty/unzip
+sudo apt-get install -y unzip
+
+# vim
+#
+# Vi IMproved - enhanced vi editor
+#
+# http://packages.ubuntu.com/trusty/vim
+sudo apt-get install -y vim
+
+# wget
+#
+# retrieves files from the web
+#
+# http://packages.ubuntu.com/trusty/wget
+sudo apt-get install -y wget
+
+# zsh
+#
+# shell with lots of features
+#
+# http://packages.ubuntu.com/trusty/zsh
+sudo apt-get install -y zsh
