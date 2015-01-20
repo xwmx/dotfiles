@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# vagrant-plugins
+#
+# https://docs.vagrantup.com/v2/plugins/
+# https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins
+
+# sahara
+#
+# plugin for vagrant that allows you manage a sandbox state
+#
+# https://github.com/jedi4ever/sahara
+vagrant plugin install sahara
