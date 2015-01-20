@@ -234,6 +234,14 @@ brew cask install gimp
 # http://www.gnucash.org
 brew cask install gnucash
 
+# gridwars
+#
+# GridWars or GridWars 2 is a computer game inspired by Bizarre Creations'
+# Geometry Wars developed by Marco Incitti.
+#
+# http://gridwars.marune.de/
+brew cask install gridwars
+
 # Google Chrome
 #
 # A freeware web browser developed by Google.
