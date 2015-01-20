@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Bootstrap dotfiles on a fresh ubuntu install
+
+git clone https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
+mkdir ~/bin &&
+export DOTSPATH="$HOME/.dotfiles" && \
+cd "$DOTSPATH" && \
+git submodule init && git submodule update --init --recursive && \
+./bin/dots link --overwrite --with-backup &&
+./bin/dots bin link
