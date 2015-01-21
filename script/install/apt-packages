@@ -129,6 +129,13 @@ sudo apt-get install -y npm
 # http://packages.ubuntu.com/trusty/poppler-utils
 sudo apt-get install -y poppler-utils
 
+# recoll
+#
+# Personal full text search package with a Qt GUI
+#
+# http://packages.ubuntu.com/trusty/recoll
+sudo apt-get install -y recoll
+
 # ruby-full
 #
 # Ruby full installation (default version)
