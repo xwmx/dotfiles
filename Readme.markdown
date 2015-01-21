@@ -67,7 +67,7 @@ A directory that isn't tracked by git. Can be used for anything non-public.
 
 ### script
 
-OS X-specific scripts for configuring or updating environments.
+Scripts for configuring or updating environments.
 
 ### vendor
 
