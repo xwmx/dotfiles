@@ -108,6 +108,20 @@ sudo apt-get install -y libssl-dev
 # http://mercurial.selenic.com/
 sudo apt-get install -y mercurial
 
+# nodejs
+#
+# evented I/O for V8 javascript
+#
+# http://packages.ubuntu.com/trusty/nodejs
+sudo apt-get install -y nodejs
+
+# npm
+#
+# package manager for Node.js
+#
+# http://packages.ubuntu.com/trusty/npm
+sudo apt-get install -y npm
+
 # poppler-utils
 #
 # PDF utilities (based on Poppler)
