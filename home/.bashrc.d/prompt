@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#
 #==============================================================================
 # Shell prompt settings.
 #
@@ -10,15 +12,15 @@
 ###############################################################################
 
 trim_prompt_path() {
-  echo "$(echo -n $PWD | sed -e "s/.*\(.\{$1\}\)/\1/")"
+  echo -n "$PWD" | sed -e "s/.*\(.\{$1\}\)/\1/"
 }
 
 pwd_path_length() {
-  echo "$(echo -n $PWD | wc -c | tr -d " ")"
+  echo -n "$PWD" | wc -c | tr -d " "
 }
 
 pwd_user_path_length() {
-  echo "$(echo -n $PWD | egrep -o /Users/$(id -un) | wc -c | tr -d " ")"
+  echo -n "$PWD" | egrep -o /Users/"$(id -un)" | wc -c | tr -d " "
 }
 
 build_prompt_path() {
@@ -34,7 +36,7 @@ build_prompt_path() {
   # Maximum number of characters from the $PWD that should be kept.
   local max_pwd_length=23
 
-  if [ $total_path_length -lt $max_pwd_length ]; then
+  if [ "$total_path_length" -lt "$max_pwd_length" ]; then
     # Path is shorter than max.
     # Example:
     # - /bin/
@@ -47,7 +49,7 @@ build_prompt_path() {
     # - ~...brary/Application Support
     new_pwd=$(trim_prompt_path $max_pwd_length)
     ps1_pwd_path="$path_colors~$ps1_truncation$path_colors$new_pwd "
-  elif [ $user_path_length -gt 0 ]; then
+  elif [ "$user_path_length" -gt 0 ]; then
     # in home, $PWD minus $HOME is less than max, but $PWD is longer than max.
     # Example:
     # - /Users/name/Library
@@ -108,24 +110,24 @@ prompt_command() {
   # magenta bg, black fg
   local ps1_prefix="\[$(tput setab 5)$(tput setaf 0)\] "
   # blue bg, black fg
-  local ps1_user="$(tput setab 4)$(tput setaf 0)\u"
+  local ps1_user="\[$(tput setab 4)$(tput setaf 0)\]\u"
   # black bg, green fg
-  local ps1_at="$(tput setab 0)$(tput setaf 2)@"
+  local ps1_at="\[$(tput setab 0)$(tput setaf 2)\]@"
   # black bg, blue fg
-  local ps1_host="$(tput setab 0)$(tput setaf 4)[\h]:"
+  local ps1_host="\[$(tput setab 0)$(tput setaf 4)\][\h]:"
   # black bg, red fg, underline
-  local ps1_truncation="$(tput setab 0)$(tput setaf 1)$(tput smul)...$(tput rmul)"
+  local ps1_truncation="\[$(tput setab 0)$(tput setaf 1)$(tput smul)\]...\[$(tput rmul)\]"
   # black bg, green fg
-  local ps1_prompt="$(tput setab 0)$(tput setaf 2)\$"
+  local ps1_prompt="\[$(tput setab 0)$(tput setaf 2)\]$"
   # black bg, white fg
-  local ps1_suffix="$(tput setab 0)$(tput setaf 7) "
+  local ps1_suffix="\[$(tput setab 0)$(tput setaf 7)\] "
   # black bg, white fg
-  local path_colors="$(tput setab 0)$(tput setaf 7)"
+  local path_colors="\[$(tput setab 0)$(tput setaf 7)\]"
 
   # Primary sections
-  local ps1_start=$ps1_prefix$ps1_user$ps1_at$ps1_host
-  local ps1_pwd_path=$(build_prompt_path $path_colors $ps1_truncation)
-  local ps1_end=$(vcprompt)$ps1_prompt$ps1_suffix
+  local ps1_start="$ps1_prefix""$ps1_user""$ps1_at""$ps1_host"
+  local ps1_pwd_path=$(build_prompt_path "$path_colors" "$ps1_truncation")
+  local ps1_end=$(vcprompt)"$ps1_prompt""$ps1_suffix"
 
   # Combined primary sections
   export PS1=$ps1_start$ps1_pwd_path$ps1_end
