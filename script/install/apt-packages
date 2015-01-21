@@ -23,6 +23,13 @@ fi
 # http://packages.ubuntu.com/trusty/ack-grep
 sudo apt-get install -y ack-grep
 
+# build-essential
+#
+# Informational list of build-essential packages
+#
+# http://packages.ubuntu.com/trusty/build-essential
+sudo apt-get install -y build-essential
+
 # curl
 #
 # command line tool for transferring data with URL syntax
