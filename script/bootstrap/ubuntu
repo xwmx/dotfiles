@@ -7,7 +7,7 @@ export DOTSPATH="$HOME/.dotfiles"
 "$DOTSPATH"/script/install/apt-packages
 
 [ ! -e "$HOME/bin" ] && mkdir "$HOME/bin" && \
-cp "$HOME/.ssh/*" "$HOME/.dotfiles/.ssh/" && \
+cp "$HOME/.ssh/*" "$HOME/.dotfiles/home/.ssh/" && \
 cd "$DOTSPATH" && \
 git submodule init && git submodule update --init --recursive && \
 ./bin/dots link --overwrite --with-backup &&
