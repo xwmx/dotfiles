@@ -15,10 +15,12 @@
 
 🅓🅞🅣🅢
 
-An OS X environment with configuration scripts. Uses the [`dots`
+An OS X and Ubuntu environment with configuration scripts. Uses the [`dots`
 configuration management tool](https://github.com/alphabetum/dots).
 
 ## Setup
+
+### OS X
 
 Assuming you have [Homebrew](http://brew.sh/) installed, copy the
 following and paste it into your terminal:
@@ -36,6 +38,14 @@ This will take some time to run and should
 
 Use the [`dots`](https://github.com/alphabetum/dots) tool to experiment with linking files into your environment and experimenting. `dots` commands can be
 discovered by running `dots help`.
+
+### Ubuntu
+
+_Warning: The current Ubuntu bootstrapping overwrites existing configuration
+files, installs various packages, and changes the shell to zsh._
+
+1. Clone this repository to `~/.dotfiles`
+2. Run the `ubuntu` in `~/.dotfiles/script/bootstrap/ubuntu`
 
 ## Components
 
