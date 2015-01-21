@@ -138,6 +138,18 @@ sudo apt-get install -y finger
 # Homepage: http://www.gnutls.org/
 sudo apt-get install -y gnutls-bin
 
+# htop
+#
+# Description-en: interactive processes viewer
+#  Htop is an ncursed-based process viewer similar to top, but it
+#  allows one to scroll the list vertically and horizontally to see
+#  all processes and their full command lines.
+#  .
+#  Tasks related to processes (killing, renicing) can be done without
+#  entering their PIDs.
+# Homepage: http://htop.sourceforge.net
+sudo apt-get install -y htop
+
 # ispell
 #
 # Description-en: International Ispell (an interactive spelling corrector)
