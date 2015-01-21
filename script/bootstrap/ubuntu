@@ -6,14 +6,6 @@ export DOTSPATH="$HOME/.dotfiles"
 
 "$DOTSPATH"/script/install/apt-packages
 
-adduser --shell "$(which zsh)" --disabled-password --gecos "" shared
-
-sudo mkdir /home/shared/.ssh && \
-sudo touch /home/shared/.ssh/authorized_keys && \
-sudo chown -R shared:shared /home/shared/.ssh
-sudo /bin/bash -c \
-  "cat $HOME/.ssh/authorized_keys >> /home/shared/.ssh/authorized_keys
-"
 mkdir ~/bin &&
 cp ~/.ssh/* ~/.dotfiles/.ssh/ && \
 cd "$DOTSPATH" && \
