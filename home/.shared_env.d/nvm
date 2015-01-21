@@ -13,6 +13,4 @@
 # the source line to move install location and prevent this:
 export NVM_DIR=~/.nvm
 
-if is_osx; then
-  source $(brew --prefix nvm)/nvm.sh
-fi
+. "$HOME"/.nvm/nvm.sh

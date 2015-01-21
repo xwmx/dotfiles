@@ -308,13 +308,6 @@ brew install nimrod --HEAD
 # NOTE: also install npm
 brew install node
 
-# nvm - Node Version Manager
-#
-# Simple bash script to manage multiple active node.js versions
-#
-# https://github.com/creationix/nvm
-brew install nvm
-
 # OCaml
 #
 # OCaml, originally known as Objective Caml, is the main implementation of the

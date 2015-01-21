@@ -130,3 +130,6 @@
 [submodule "home/.janus/vim-signify"]
 	path = home/.janus/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "home/.nvm"]
+	path = home/.nvm
+	url = https://github.com/creationix/nvm.git
