@@ -111,6 +111,13 @@ sudo apt-get install -y screen
 # https://en.wikipedia.org/wiki/Tmux
 sudo apt-get install -y tmux
 
+# tree
+#
+# displays directory tree, in color
+#
+# http://packages.ubuntu.com/trusty/tree
+sudo apt-get install -y tree
+
 # unzip
 #
 # De-archiver for .zip files
