@@ -67,6 +67,15 @@ sudo apt-get install -y libssl-dev
 # http://packages.ubuntu.com/trusty/screen
 sudo apt-get install -y screen
 
+# tmux
+#
+# terminal multiplexer
+#
+# http://packages.ubuntu.com/trusty/tmux
+# http://tmux.sourceforge.net/
+# https://en.wikipedia.org/wiki/Tmux
+sudo apt-get install -y tmux
+
 # unzip
 #
 # De-archiver for .zip files
