@@ -66,6 +66,13 @@ sudo apt-get install -y finger
 # http://packages.ubuntu.com/trusty/gnutls-bin
 sudo apt-get install -y gnutls-bin
 
+# ispell
+#
+# International Ispell (an interactive spelling corrector)
+#
+# http://packages.ubuntu.com/trusty/ispell
+sudo apt-get install -y ispell
+
 # less
 #
 # pager program similar to more
