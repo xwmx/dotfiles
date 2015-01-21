@@ -102,6 +102,13 @@ sudo apt-get install -y libssl-dev
 # http://mercurial.selenic.com/
 sudo apt-get install -y mercurial
 
+# poppler-utils
+#
+# PDF utilities (based on Poppler)
+#
+# http://packages.ubuntu.com/trusty/poppler-utils
+sudo apt-get install -y poppler-utils
+
 # screen
 #
 # terminal multiplexer with VT100/ANSI terminal emulation
