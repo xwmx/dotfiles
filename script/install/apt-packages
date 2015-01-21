@@ -256,33 +256,6 @@ sudo apt-get install -y npm
 # Homepage: http://poppler.freedesktop.org/
 sudo apt-get install -y poppler-utils
 
-# recoll
-#
-# Description-en: Personal full text search package with a Qt GUI
-#  This package is a personal full text search package is based on a very strong
-#  backend (Xapian), for which it provides an easy to use and feature-rich
-#  interface.
-#  .
-#  Features:
-#   * Qt-based GUI
-#   * Supports the following document types (and their compressed versions)
-#    - Natively: text, html, OpenOffice files, maildir and mailbox (Mozilla and
-#      IceDove mail) with attachments, pidgin log files
-#    - With external helpers:  pdf (pdftotext), postscript (ghostscript), msword
-#      (antiword), excel, ppt (catdoc), rtf (unrtf)
-#   * Powerful query facilities, with boolean searches, phrases, filter on file
-#     types and directory tree
-#   * Support for multiple charsets, Internal processing and storage uses Unicode
-#     UTF-8
-#   * Stemming performed at query time (can switch stemming language after
-#     indexing)
-#   * Easy installation. No database daemon, web server or exotic language
-#     necessary
-#   * An indexer which runs either as a thread inside the GUI or as an external,
-#     cron'able program
-# Homepage: http://www.lesbonscomptes.com/recoll
-sudo apt-get install -y recoll
-
 # ruby-full
 #
 # Description-en: Ruby full installation (default version)
