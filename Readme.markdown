@@ -45,7 +45,7 @@ _Warning: The current Ubuntu bootstrapping overwrites existing configuration
 files, installs various packages, and changes the shell to zsh._
 
 1. Clone this repository to `~/.dotfiles`
-2. Run the `ubuntu` in `~/.dotfiles/script/bootstrap/ubuntu`
+2. Run the `~/.dotfiles/script/bootstrap/ubuntu` script
 
 ## Components
 
