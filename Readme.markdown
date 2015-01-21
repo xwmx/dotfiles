@@ -20,10 +20,8 @@ configuration management tool](https://github.com/alphabetum/dots).
 
 ## Setup
 
-Create a `$HOME/bin` directory if one doesn't already exist.
-
-If you are ready to live on the edge and go wild, copy the following and paste
-it into your terminal:
+Assuming you have [Homebrew](http://brew.sh/) installed, copy the
+following and paste it into your terminal:
 
     brew install alphabetum/taps/dots && \
     dots init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
