@@ -38,6 +38,13 @@ sudo apt-get install -y curl
 # http://packages.ubuntu.com/trusty/dnsutils
 sudo apt-get install -y dnsutils
 
+# emacs
+#
+# GNU Emacs editor (metapackage)
+#
+# http://packages.ubuntu.com/trusty/emacs
+sudo apt-get install -y emacs
+
 # finger
 #
 # user information lookup program
