@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Bootstrap dotfiles on a fresh OS X install
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+# Skip unless OS X
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  printf "OS X bootstrapping is only supported on OS X\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Bootstrap
+###############################################################################
+
+export DOTSPATH="$HOME/.dotfiles" && \
+cd "$DOTSPATH" && \
+git submodule init && git submodule update --init --recursive
