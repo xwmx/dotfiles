@@ -13,4 +13,6 @@ git submodule init && git submodule update --init --recursive && \
 ./bin/dots link --overwrite --with-backup &&
 ./bin/dots bin link
 
+#chsh -s $(which zsh)
+
 $(which zsh) --login
