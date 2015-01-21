@@ -16,6 +16,7 @@ fi
 # Bootstrap
 ###############################################################################
 
+[ ! -e "$HOME"/bin ] && mkdir "$HOME"/bin && \
 export DOTSPATH="$HOME/.dotfiles" && \
 cd "$DOTSPATH" && \
 git submodule init && git submodule update --init --recursive
