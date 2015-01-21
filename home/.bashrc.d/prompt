@@ -127,7 +127,7 @@ prompt_command() {
   # Primary sections
   local ps1_start="$ps1_prefix""$ps1_user""$ps1_at""$ps1_host"
   local ps1_pwd_path=$(build_prompt_path "$path_colors" "$ps1_truncation")
-  local ps1_end=$(__git_ps1)\ "$ps1_prompt""$ps1_suffix"
+  local ps1_end=$(__git_ps1 " [git:%s]")\ "$ps1_prompt""$ps1_suffix"
 
   # Combined primary sections
   export PS1=$ps1_start$ps1_pwd_path$ps1_end
