@@ -34,6 +34,11 @@
 !/home/.cabal/config.platform
 !/home/.cabal/where-is-my-stuff.txt
 
+# Only track specific .config files
+/home/.config/*
+!/home/.config/htop
+!/home/.config/htop/htoprc
+
 # Only track specific ipython config files
 #
 # Note: the exclude/include flip-flopping is required because using a wildcard
