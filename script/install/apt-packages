@@ -23,180 +23,391 @@ sudo apt-get update
 
 # ack-grep (ack)
 #
-# grep-like program specifically for large source trees
-#
-# http://beyondgrep.com/
-# http://packages.ubuntu.com/trusty/ack-grep
+# Description-en: grep-like program specifically for large source trees
+#  Ack is designed as a replacement for 99% of the uses of grep. ack is
+#  intelligent about the files it searches. It knows about certain file
+#  types, based on both the extension on the file and, in some cases, the
+#  contents of the file.
+#  .
+#  Ack ignores backup files and files under CVS and .svn directories. It
+#  also highlights matches to help you see where the match was. Ack uses
+#  perl regular expressions.
+# Homepage: http://beyondgrep.com/
 sudo apt-get install -y ack-grep
 
 # antiword
 #
-# Converts MS Word files to text, PS and PDF
-#
-# http://packages.ubuntu.com/trusty/antiword
+# Description-en: Converts MS Word files to text, PS and PDF
+#  Antiword is a free MS Word reader.
+#  .
+#  It converts the binary files from MS Word 6, 7, 97 and 2000 to text,
+#  Postscript and PDF.
+# Homepage: http://www.winfield.demon.nl/
 sudo apt-get install -y antiword
 
 # build-essential
 #
-# Informational list of build-essential packages
-#
-# http://packages.ubuntu.com/trusty/build-essential
+# Description-en: Informational list of build-essential packages
+#  If you do not plan to build Debian packages, you don't need this
+#  package.  Starting with dpkg (>= 1.14.18) this package is required
+#  for building Debian packages.
+#  .
+#  This package contains an informational list of packages which are
+#  considered essential for building Debian packages.  This package also
+#  depends on the packages on that list, to make it easy to have the
+#  build-essential packages installed.
+#  .
+#  If you have this package installed, you only need to install whatever
+#  a package specifies as its build-time dependencies to build the
+#  package.  Conversely, if you are determining what your package needs
+#  to build-depend on, you can always leave out the packages this
+#  package depends on.
+#  .
+#  This package is NOT the definition of what packages are
+#  build-essential; the real definition is in the Debian Policy Manual.
+#  This package contains merely an informational list, which is all
+#  most people need.   However, if this package and the manual disagree,
+#  the manual is correct.
 sudo apt-get install -y build-essential
 
 # curl
 #
-# command line tool for transferring data with URL syntax
-#
-# http://packages.ubuntu.com/trusty/curl
-# http://curl.haxx.se/
+# Description-en: command line tool for transferring data with URL syntax
+#  curl is a command line tool for transferring data with URL syntax, supporting
+#  DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3,
+#  POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+#  .
+#  curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form
+#  based upload, proxies, cookies, user+password authentication (Basic, Digest,
+#  NTLM, Negotiate, kerberos...), file transfer resume, proxy tunneling and a
+#  busload of other useful tricks.
+# Multi-Arch: foreign
+# Homepage: http://curl.haxx.se
 sudo apt-get install -y curl
 
 # dnsutils
 #
-# Clients provided with BIND
-#
-# http://packages.ubuntu.com/trusty/dnsutils
+# Description-en: Clients provided with BIND
+#  The Berkeley Internet Name Domain (BIND) implements an Internet domain
+#  name server.  BIND is the most widely-used name server software on the
+#  Internet, and is supported by the Internet Software Consortium, www.isc.org.
+#  .
+#  This package delivers various client programs related to DNS that are
+#  derived from the BIND source tree.
+#  .
+#   - dig - query the DNS in various ways
+#   - nslookup - the older way to do it
+#   - nsupdate - perform dynamic updates (See RFC2136)
 sudo apt-get install -y dnsutils
 
 # emacs
 #
-# GNU Emacs editor (metapackage)
-#
-# http://packages.ubuntu.com/trusty/emacs
+# Description-en: GNU Emacs editor (metapackage)
+#  GNU Emacs is the extensible self-documenting text editor.
+#  This is a metapackage that will always depend on the latest
+#  recommended Emacs release.
 sudo apt-get install -y emacs
 
 # finger
 #
-# user information lookup program
-#
-# http://packages.ubuntu.com/trusty/finger
+# Description-en: user information lookup program
+#  finger displays information about the system users.
 sudo apt-get install -y finger
 
 # gnutls-bin
 #
-# GNU TLS library - commandline utilities
-#
-# http://packages.ubuntu.com/trusty/gnutls-bin
+# Description-en: GNU TLS library - commandline utilities
+#  GnuTLS is a portable library which implements the Transport Layer
+#  Security (TLS 1.0, 1.1, 1.2) and Secure Sockets Layer (SSL) 3.0 protocols.
+#  .
+#  GnuTLS features support for:
+#   - TLS extensions: server name indication, max record size, opaque PRF
+#     input, etc.
+#   - authentication using the SRP protocol.
+#   - authentication using both X.509 certificates and OpenPGP keys.
+#   - TLS Pre-Shared-Keys (PSK) extension.
+#   - Inner Application (TLS/IA) extension.
+#   - X.509 and OpenPGP certificate handling.
+#   - X.509 Proxy Certificates (RFC 3820).
+#   - all the strong encryption algorithms (including SHA-256/384/512 and
+#     Camellia (RFC 4132)).
+#  .
+#  This package contains a commandline interface to the GNU TLS library, which
+#  can be used to set up secure connections from e.g. shell scripts, debugging
+#  connection issues or managing certificates.
+# Homepage: http://www.gnutls.org/
 sudo apt-get install -y gnutls-bin
 
 # ispell
 #
-# International Ispell (an interactive spelling corrector)
-#
-# http://packages.ubuntu.com/trusty/ispell
+# Description-en: International Ispell (an interactive spelling corrector)
+#  Ispell corrects spelling in plain text, LaTeX, sgml/html/xml, and nroff files.
+#  [x]Emacs and jed have nice interfaces to ispell, and ispell works from many
+#  other tools and from the command line as well.
+#  .
+#  No ispell dictionaries are included in this package; you must install
+#  at least one of them ("iamerican" is recommended by default for no good
+#  reason); install the "ispell-dictionary" package(s) for the language(s)
+#  you and your users will want to spell-check.
+#  .
+#  It's a good idea to install "word list" package(s) for the same language(s),
+#  because they'll be used by ispell's (L)ookup command.
+# Homepage: http://www.lasr.cs.ucla.edu/geoff/ispell.html
 sudo apt-get install -y ispell
 
 # less
 #
-# pager program similar to more
-#
-# http://packages.ubuntu.com/trusty/less
+# Description-en: pager program similar to more
+#  This package provides "less", a file pager (that is, a memory-efficient
+#  utility for displaying text one screenful at a time). Less has many
+#  more features than the basic pager "more". As part of the GNU project,
+#  it is widely regarded as the standard pager on UNIX-derived systems.
+#  .
+#  Also provided are "lessecho", a simple utility for ensuring arguments
+#  with spaces are correctly quoted; "lesskey", a tool for modifying the
+#  standard (vi-like) keybindings; and "lesspipe", a filter for specific
+#  types of input, such as .doc or .txt.gz files.
+# Homepage: http://www.greenwoodsoftware.com/less/
 sudo apt-get install -y less
 
 # libssl-dev
 #
-# Secure Sockets Layer toolkit - development files
-#
-# http://packages.ubuntu.com/trusty/libssl-dev
+# Description-en: Secure Sockets Layer toolkit - development files
+#  This package is part of the OpenSSL project's implementation of the SSL
+#  and TLS cryptographic protocols for secure communication over the
+#  Internet.
+#  .
+#  It contains development libraries, header files, and manpages for libssl
+#  and libcrypto.
 sudo apt-get install -y libssl-dev
 
 # mercurial
 #
-# easy-to-use, scalable distributed version control system
-#
-# http://packages.ubuntu.com/trusty/mercurial
-# http://mercurial.selenic.com/
+# Description-en: easy-to-use, scalable distributed version control system
+#  Mercurial is a fast, lightweight Source Control Management system designed
+#  for efficient handling of very large distributed projects.
+#  .
+#  Its features include:
+#   * O(1) delta-compressed file storage and retrieval scheme
+#   * Complete cross-indexing of files and changesets for efficient exploration
+#     of project history
+#   * Robust SHA1-based integrity checking and append-only storage model
+#   * Decentralized development model with arbitrary merging between trees
+#   * High-speed HTTP-based network merge protocol
+#   * Easy-to-use command-line interface
+#   * Integrated stand-alone web interface
+#   * Small Python codebase
+#  .
+#  This package contains the architecture dependent files.
+# Homepage: http://mercurial.selenic.com/
 sudo apt-get install -y mercurial
 
 # nodejs
 #
-# evented I/O for V8 javascript
-#
-# http://packages.ubuntu.com/trusty/nodejs
+# Description-en: evented I/O for V8 javascript
+#  Node.js is a platform built on Chrome's JavaScript runtime for easily
+#  building fast, scalable network applications. Node.js uses an
+#  event-driven, non-blocking I/O model that makes it lightweight and
+#  efficient, perfect for data-intensive real-time applications that run
+#  across distributed devices.
+#  .
+#  Node.js is bundled with several useful libraries to handle server
+#  tasks:
+#  .
+#  System, Events, Standard I/O, Modules, Timers, Child Processes, POSIX,
+#  HTTP, Multipart Parsing, TCP, DNS, Assert, Path, URL, Query Strings.
+# Homepage: http://nodejs.org/
 sudo apt-get install -y nodejs
 
 # npm
 #
-# package manager for Node.js
-#
-# http://packages.ubuntu.com/trusty/npm
+# Description-en: package manager for Node.js
+#  Node.js is an event-based server-side javascript engine.
+#  .
+#  npm is the package manager for the Node JavaScript platform.  It puts
+#  modules in place so that node can find them, and manages dependency
+#  conflicts intelligently.
+#  .
+#  It is extremely configurable to support a wide variety of use cases.
+#  Most commonly, it is used to publish, discover, install, and develop
+#  node programs.
+# Homepage: http://github.com/isaacs/npm
 sudo apt-get install -y npm
 
 # poppler-utils
 #
-# PDF utilities (based on Poppler)
-#
-# http://packages.ubuntu.com/trusty/poppler-utils
+# Description-en: PDF utilities (based on Poppler)
+#  Poppler is a PDF rendering library based on Xpdf PDF viewer.
+#  .
+#  This package contains command line utilities (based on Poppler) for getting
+#  information of PDF documents, convert them to other formats, or manipulate
+#  them:
+#   * pdfdetach -- lists or extracts embedded files (attachments)
+#   * pdffonts -- font analyzer
+#   * pdfimages -- image extractor
+#   * pdfinfo -- document information
+#   * pdfseparate -- page extraction tool
+#   * pdftocairo -- PDF to PNG/JPEG/PDF/PS/EPS/SVG converter using Cairo
+#   * pdftohtml -- PDF to HTML converter
+#   * pdftoppm -- PDF to PPM/PNG/JPEG image converter
+#   * pdftops -- PDF to PostScript (PS) converter
+#   * pdftotext -- text extraction
+#   * pdfunite -- document merging tool
+# Homepage: http://poppler.freedesktop.org/
 sudo apt-get install -y poppler-utils
 
 # recoll
 #
-# Personal full text search package with a Qt GUI
-#
-# http://packages.ubuntu.com/trusty/recoll
+# Description-en: Personal full text search package with a Qt GUI
+#  This package is a personal full text search package is based on a very strong
+#  backend (Xapian), for which it provides an easy to use and feature-rich
+#  interface.
+#  .
+#  Features:
+#   * Qt-based GUI
+#   * Supports the following document types (and their compressed versions)
+#    - Natively: text, html, OpenOffice files, maildir and mailbox (Mozilla and
+#      IceDove mail) with attachments, pidgin log files
+#    - With external helpers:  pdf (pdftotext), postscript (ghostscript), msword
+#      (antiword), excel, ppt (catdoc), rtf (unrtf)
+#   * Powerful query facilities, with boolean searches, phrases, filter on file
+#     types and directory tree
+#   * Support for multiple charsets, Internal processing and storage uses Unicode
+#     UTF-8
+#   * Stemming performed at query time (can switch stemming language after
+#     indexing)
+#   * Easy installation. No database daemon, web server or exotic language
+#     necessary
+#   * An indexer which runs either as a thread inside the GUI or as an external,
+#     cron'able program
+# Homepage: http://www.lesbonscomptes.com/recoll
 sudo apt-get install -y recoll
 
 # ruby-full
 #
-# Ruby full installation (default version)
-#
-# http://packages.ubuntu.com/trusty/ruby-full
+# Description-en: Ruby full installation (default version)
+#  For many good reasons, the Ruby programming language is split in many
+#  small different packages. Installing this package will make sure you have
+#  all the packages that add up to a full Ruby installation, with the exception
+#  of the Tcl/Tk bindings for Ruby, which are only recommended.
+#  .
+#  This package is a dependency package, which depends on Debian's default Ruby
+#  version (currently v1.9.3).
+# Homepage: http://www.ruby-lang.org/
 sudo apt-get install -y ruby-full
 
 # screen
 #
-# terminal multiplexer with VT100/ANSI terminal emulation
-#
-# http://packages.ubuntu.com/trusty/screen
+# Description-en: terminal multiplexer with VT100/ANSI terminal emulation
+#  GNU Screen is a terminal multiplexer that runs several separate "screens" on
+#  a single physical character-based terminal. Each virtual terminal emulates a
+#  DEC VT100 plus several ANSI X3.64 and ISO 2022 functions. Screen sessions
+#  can be detached and resumed later on a different terminal.
+#  .
+#  Screen also supports a whole slew of other features, including configurable
+#  input and output translation, serial port support, configurable logging,
+#  and multi-user support.
+# Homepage: http://savannah.gnu.org/projects/screen
 sudo apt-get install -y screen
 
 # tmux
 #
-# terminal multiplexer
-#
-# http://packages.ubuntu.com/trusty/tmux
-# http://tmux.sourceforge.net/
-# https://en.wikipedia.org/wiki/Tmux
+# Description-en: terminal multiplexer
+#  tmux enables a number of terminals (or windows) to be accessed and
+#  controlled from a single terminal like screen. tmux runs as a
+#  server-client system. A server is created automatically when necessary
+#  and holds a number of sessions, each of which may have a number of
+#  windows linked to it. Any number of clients may connect to a session,
+#  or the server may be controlled by issuing commands with tmux.
+#  Communication takes place through a socket, by default placed in /tmp.
+#  Moreover tmux provides a consistent and well-documented command
+#  interface, with the same syntax whether used interactively, as a key
+#  binding, or from the shell. It offers a choice of vim or Emacs key
+#  layouts.
+# Homepage: http://tmux.sourceforge.net/
 sudo apt-get install -y tmux
 
 # tree
 #
-# displays directory tree, in color
-#
-# http://packages.ubuntu.com/trusty/tree
+# Description-en: displays directory tree, in color
+#  Displays an indented directory tree, using the same color assignments as
+#  ls, via the LS_COLORS environment variable.
+# Homepage: http://mama.indstate.edu/users/ice/tree/
 sudo apt-get install -y tree
 
 # unzip
 #
-# De-archiver for .zip files
-#
-# http://packages.ubuntu.com/trusty/unzip
+# Description-en: De-archiver for .zip files
+#  InfoZIP's unzip program. With the exception of multi-volume archives
+#  (ie, .ZIP files that are split across several disks using PKZIP's /& option),
+#  this can handle any file produced either by PKZIP, or the corresponding
+#  InfoZIP zip program.
+#  .
+#  This version supports encryption.
+# Homepage: http://www.info-zip.org/UnZip.html
 sudo apt-get install -y unzip
 
 # vim
 #
-# Vi IMproved - enhanced vi editor
-#
-# http://packages.ubuntu.com/trusty/vim
+# Description-en: Vi IMproved - enhanced vi editor
+#  Vim is an almost compatible version of the UNIX editor Vi.
+#  .
+#  Many new features have been added: multi level undo, syntax
+#  highlighting, command line history, on-line help, filename
+#  completion, block operations, folding, Unicode support, etc.
+#  .
+#  This package contains a version of vim compiled with a rather
+#  standard set of features.  This package does not provide a GUI
+#  version of Vim.  See the other vim-* packages if you need more
+#  (or less).
+# Homepage: http://www.vim.org/
 sudo apt-get install -y vim
 
 # wget
 #
-# retrieves files from the web
-#
-# http://packages.ubuntu.com/trusty/wget
+# Description-en: retrieves files from the web
+#  Wget is a network utility to retrieve files from the web
+#  using HTTP(S) and FTP, the two most widely used internet
+#  protocols. It works non-interactively, so it will work in
+#  the background, after having logged off. The program supports
+#  recursive retrieval of web-authoring pages as well as FTP
+#  sites -- you can use Wget to make mirrors of archives and
+#  home pages or to travel the web like a WWW robot.
+#  .
+#  Wget works particularly well with slow or unstable connections
+#  by continuing to retrieve a document until the document is fully
+#  downloaded. Re-getting files from where it left off works on
+#  servers (both HTTP and FTP) that support it. Both HTTP and FTP
+#  retrievals can be time stamped, so Wget can see if the remote
+#  file has changed since the last retrieval and automatically
+#  retrieve the new version if it has.
+#  .
+#  Wget supports proxy servers; this can lighten the network load,
+#  speed up retrieval, and provide access behind firewalls.
+# Homepage: http://www.gnu.org/software/wget/
 sudo apt-get install -y wget
 
 # zip
 #
-# Archiver for .zip files
-#
-# http://packages.ubuntu.com/trusty/zip
+# Description-en: Archiver for .zip files
+#  This is InfoZIP's zip program. It produces files that are fully
+#  compatible with the popular PKZIP program; however, the command line
+#  options are not identical. In other words, the end result is the same,
+#  but the methods differ. :-)
+#  .
+#  This version supports encryption.
+# Homepage: http://www.info-zip.org/Zip.html
 sudo apt-get install -y zip
 
 # zsh
 #
-# shell with lots of features
-#
-# http://packages.ubuntu.com/trusty/zsh
+# Description-en: shell with lots of features
+#  Zsh is a UNIX command interpreter (shell) usable as an
+#  interactive login shell and as a shell script command
+#  processor. Of the standard shells, zsh most closely resembles
+#  ksh but includes many enhancements. Zsh has command-line editing,
+#  built-in spelling correction, programmable command completion,
+#  shell functions (with autoloading), a history mechanism, and a
+#  host of other features.
+# Homepage: http://www.zsh.org/
 sudo apt-get install -y zsh
