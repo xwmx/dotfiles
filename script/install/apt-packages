@@ -153,6 +153,13 @@ sudo apt-get install -y vim
 # http://packages.ubuntu.com/trusty/wget
 sudo apt-get install -y wget
 
+# zip
+#
+# Archiver for .zip files
+#
+# http://packages.ubuntu.com/trusty/zip
+sudo apt-get install -y zip
+
 # zsh
 #
 # shell with lots of features
