@@ -171,6 +171,15 @@ brew install imagemagick --with-webp
 # http://iolanguage.org/
 brew install io --without-addons
 
+# ispell
+#
+# International Ispell is an interactive spell-checking program for Unix which
+# supports a large number of European languages. An emacs interface is
+# available as well as the standard command-line mode.
+#
+# http://lasr.cs.ucla.edu/geoff/ispell.html
+brew install ispell
+
 # Leiningen
 #
 # Automate Clojure projects without setting your hair on fire.
