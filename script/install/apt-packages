@@ -23,6 +23,13 @@ fi
 # http://packages.ubuntu.com/trusty/ack-grep
 sudo apt-get install -y ack-grep
 
+# antiword
+#
+# Converts MS Word files to text, PS and PDF
+#
+# http://packages.ubuntu.com/trusty/antiword
+sudo apt-get install -y antiword
+
 # build-essential
 #
 # Informational list of build-essential packages
