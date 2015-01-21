@@ -66,6 +66,14 @@ sudo apt-get install -y less
 # http://packages.ubuntu.com/trusty/libssl-dev
 sudo apt-get install -y libssl-dev
 
+# mercurial
+#
+# easy-to-use, scalable distributed version control system
+#
+# http://packages.ubuntu.com/trusty/mercurial
+# http://mercurial.selenic.com/
+sudo apt-get install -y mercurial
+
 # screen
 #
 # terminal multiplexer with VT100/ANSI terminal emulation
