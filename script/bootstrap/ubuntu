@@ -15,4 +15,4 @@ git submodule init && git submodule update --init --recursive && \
 
 #chsh -s $(which zsh)
 
-$(which zsh) --login
+#$(which zsh) --login
