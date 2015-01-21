@@ -22,27 +22,21 @@ configuration management tool](https://github.com/alphabetum/dots).
 
 Create a `$HOME/bin` directory if one doesn't already exist.
 
-_Note_: be careful when following these steps over an existing
-configuration, and make sure you have backups in case anything gets
-overwritten. It might be better to take each step individually.
-
 If you are ready to live on the edge and go wild, copy the following and paste
 it into your terminal:
 
-    git clone https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
-    [ ! -e "~/bin" ] && mkdir "~/bin" && \
-    export DOTSPATH="$HOME/.dotfiles" && \
-    cd "$DOTSPATH" && \
-    git submodule init && git submodule update --init --recursive && \
-    ./bin/dots link && ./bin/dots bin link
+    brew install alphabetum/taps/dots && \
+    dots init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
+    ~/.dotfiles/script/bootstrap/osx
 
-This will take some time to run and should clone the repository to your home
-directory and link all files, excluding any that you already have in `$HOME`
-and `~/bin` that have the same name as any of the files in the repository.
+This will take some time to run and should
 
-Use the [`dots`](https://github.com/alphabetum/dots) tool (which should
-be available at `~/bin/dots` after the above steps) to handle the
-additional files and experiment with everything. `dots` commands can be
+1. install the `dots` tool,
+2. clone the repository to your home directory
+3. add a `~/bin` directory if one is not already present
+4. and add a `~/.dotsrc` configuration file.
+
+Use the [`dots`](https://github.com/alphabetum/dots) tool to experiment with linking files into your environment and experimenting. `dots` commands can be
 discovered by running `~/bin/dots help`.
 
 ## Components
