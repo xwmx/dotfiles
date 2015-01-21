@@ -40,7 +40,7 @@ build_prompt_path() {
     # Path is shorter than max.
     # Example:
     # - /bin/
-    ps1_pwd_path="$path_colors\w "
+    ps1_pwd_path="$path_colors\w"
   elif [[ $user_path_length -gt 0 && $home_pwd_length -gt $max_pwd_length ]]; then
     # In home, $PWD minus $HOME is longer than max.
     # Example:
@@ -48,7 +48,7 @@ build_prompt_path() {
     # Becomes:
     # - ~...brary/Application Support
     new_pwd=$(trim_prompt_path $max_pwd_length)
-    ps1_pwd_path="$path_colors~$ps1_truncation$path_colors$new_pwd "
+    ps1_pwd_path="$path_colors~$ps1_truncation$path_colors$new_pwd"
   elif [ "$user_path_length" -gt 0 ]; then
     # in home, $PWD minus $HOME is less than max, but $PWD is longer than max.
     # Example:
@@ -56,7 +56,7 @@ build_prompt_path() {
     # Becomes:
     # - ~/Library
     new_pwd=$(trim_prompt_path $home_pwd_length)
-    ps1_pwd_path="$path_colors~/$new_pwd "
+    ps1_pwd_path="$path_colors~/$new_pwd"
   else
     # Not in home and $PWD is longer than max.
     # Example:
@@ -64,7 +64,7 @@ build_prompt_path() {
     # Becomes:
     # - ...ocal/lib/ocaml/ocamldoc
     new_pwd=$(trim_prompt_path $max_pwd_length)
-    ps1_pwd_path="$ps1_truncation$path_colors$new_pwd "
+    ps1_pwd_path="$ps1_truncation$path_colors$new_pwd"
   fi
 
   echo "$ps1_pwd_path"
@@ -127,7 +127,7 @@ prompt_command() {
   # Primary sections
   local ps1_start="$ps1_prefix""$ps1_user""$ps1_at""$ps1_host"
   local ps1_pwd_path=$(build_prompt_path "$path_colors" "$ps1_truncation")
-  local ps1_end=$(vcprompt)"$ps1_prompt""$ps1_suffix"
+  local ps1_end=$(__git_ps1)\ "$ps1_prompt""$ps1_suffix"
 
   # Combined primary sections
   export PS1=$ps1_start$ps1_pwd_path$ps1_end
