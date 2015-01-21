@@ -181,6 +181,20 @@ sudo apt-get install -y less
 #  and libcrypto.
 sudo apt-get install -y libssl-dev
 
+# lynx-cur (lynx)
+#
+# Description-en: Text-mode WWW Browser with NLS support (development version)
+#  Lynx is a fully-featured World Wide Web (WWW) client for users running
+#  cursor-addressable, character-cell display devices.
+#  It is very fast and easy to use. It will display HTML documents
+#  containing links to files residing on the local system,
+#  as well as files residing on remote systems running Gopher, HTTP, FTP,
+#  WAIS, and NNTP servers.
+#  .
+#  This package contains a development version of lynx.
+# Homepage: http://lynx.isc.org/
+sudo apt-get install -y lynx-cur
+
 # mercurial
 #
 # Description-en: easy-to-use, scalable distributed version control system
