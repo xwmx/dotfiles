@@ -9,7 +9,6 @@
 # Platform Check
 ###############################################################################
 
-# Exit unless OS X
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   printf "osx_apps.sh is only supported on OS X.\nSkipping...\n"
   exit 0

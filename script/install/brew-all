@@ -8,11 +8,14 @@
 # Platform Check
 ###############################################################################
 
-# Exit unless OS X
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   printf "brew-all is only supported on OS X\nSkipping...\n"
   exit 0
 fi
+
+###############################################################################
+# Formulae Scripts
+###############################################################################
 
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi

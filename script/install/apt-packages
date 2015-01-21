@@ -6,7 +6,6 @@
 # Platform Check
 ###############################################################################
 
-# Skip unless ubuntu
 if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
   printf "apt-packages is only supported on Ubuntu.\nSkipping...\n"
   exit 0

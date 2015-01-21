@@ -11,7 +11,6 @@
 # Platform Check
 ###############################################################################
 
-# Exit unless OS X
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   printf "brew-casks is only supported on OS X\nSkipping...\n"
   exit 0
