@@ -269,6 +269,18 @@ brew install msgpack
 # http://www.gnu.org/software/mit-scheme/
 brew install mit-scheme
 
+# Mosh / mobile-shell
+#
+# Remote terminal application that allows roaming, supports intermittent
+# connectivity, and provides intelligent local echo and line editing of user
+# keystrokes.
+#
+# Mosh is a replacement for SSH. It's more robust and responsive, especially
+# over Wi-Fi, cellular, and long-distance links.
+#
+# https://mosh.mit.edu/
+brew install mobile-shell
+
 # MOST
 #
 # MOST is a powerful paging program for Unix, VMS, MSDOS, and win32 systems.
