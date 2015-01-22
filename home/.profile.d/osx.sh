@@ -22,6 +22,7 @@ volume() {
       ;;
     *)
       printf "Usage: audio volume ( <0-9> | <mute> )\n"
+      ;;
   esac
 }
 
