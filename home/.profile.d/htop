@@ -9,4 +9,6 @@
 #==============================================================================
 
 # For htop to display correctly all running processes, it needs to run as root.
-alias htop="sudo htop"
+htop() {
+  sudo htop "$@"
+}
