@@ -1,9 +1,14 @@
 # Web -------------------------------------------------------------------------
 
 # One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-  alias "$method"="lwp-request -m '$method'"
-done
+GET()     { lwp-request -m 'GET';     }
+HEAD()    { lwp-request -m 'HEAD';    }
+POST()    { lwp-request -m 'POST';    }
+PUT()     { lwp-request -m 'PUT';     }
+DELETE()  { lwp-request -m 'DELETE';  }
+TRACE()   { lwp-request -m 'TRACE';   }
+OPTIONS() { lwp-request -m 'OPTIONS'; }
+
 
 # IP addresses
 ip() {
