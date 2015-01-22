@@ -149,6 +149,14 @@ updatedb() {
   sudo /usr/libexec/locate.updatedb
 }
 
+# Preferences -----------------------------------------------------------------
+
+# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+plistbuddy() {
+  /usr/libexec/PlistBuddy "$@"
+}
+
+
 # Quick Look ------------------------------------------------------------------
 
 # Open items with Quick Look.
