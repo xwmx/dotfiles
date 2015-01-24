@@ -7,9 +7,9 @@ calc() {
   if [[ "$result" == *.* ]]; then
     # improve the output for decimal numbers
     printf "%s" "$result" |
-    sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-        -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-        -e 's/0*$//;s/\.$//';  # remove trailing zeros
+    sed -e 's/^\./0./'       \ # add "0" for cases like ".5"
+        -e 's/^-\./-0./'     \ # add "0" for cases like "-.5"
+        -e 's/0*$//;s/\.$//'   # remove trailing zeros
   else
     printf "%s" "$result"
   fi
