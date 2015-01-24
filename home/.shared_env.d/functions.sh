@@ -141,7 +141,7 @@ escape() {
   printf "\\\x%s" "$(printf "%s" "$@" | xxd -p -c1 -u)"
   # print a newline unless we’re piping the output to another program
   if [ -t 1 ]; then
-    echo ""; # newline
+    printf "\n"
   fi
 }
 
@@ -150,7 +150,7 @@ unidecode() {
   perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
   # print a newline unless we’re piping the output to another program
   if [ -t 1 ]; then
-    echo "" # newline
+    printf "\n"
   fi
 }
 
@@ -159,7 +159,7 @@ codepoint() {
   perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
   # print a newline unless we’re piping the output to another program
   if [ -t 1 ]; then
-    echo "" # newline
+    printf "\n"
   fi
 }
 
