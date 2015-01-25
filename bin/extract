@@ -1,22 +1,74 @@
 #!/usr/bin/env bash
 #
+#             _                  _
+#    _____  _| |_ _ __ __ _  ___| |_
+#   / _ \ \/ / __| '__/ _` |/ __| __|
+#  |  __/>  <| |_| | | (_| | (__| |_
+#   \___/_/\_\\__|_|  \__,_|\___|\__|
+#
 # Easily extract all compressed file types
+#
+# Usage:
+#   extract filename
+#
+# Depends on:
+#  tar
+#  bunzip2
+#  unrar
+#  gunzip
+#  unzip
+#  uncompress
+#  7z
 
-if [ -f "$1" ] ; then
-  case $1 in
-    *.tar.bz2)   tar xvjf -- "$1"    ;;
-    *.tar.gz)    tar xvzf -- "$1"    ;;
-    *.bz2)       bunzip2 -- "$1"     ;;
-    *.rar)       unrar x -- "$1"     ;;
-    *.gz)        gunzip -- "$1"      ;;
-    *.tar)       tar xvf -- "$1"     ;;
-    *.tbz2)      tar xvjf -- "$1"    ;;
-    *.tgz)       tar xvzf -- "$1"    ;;
-    *.zip)       unzip -- "$1"       ;;
-    *.Z)         uncompress -- "$1"  ;;
-    *.7z)        7z x -- "$1"        ;;
-    *)           printf "don't know how to extract '%s'...\n" "$1" ;;
-  esac
-else
-  printf "'%s' is not a valid file" "$1"
+_extract() {
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xvjf -- "$1"    ;;
+      *.tar.gz)    tar xvzf -- "$1"    ;;
+      *.bz2)       bunzip2 -- "$1"     ;;
+      *.rar)       unrar x -- "$1"     ;;
+      *.gz)        gunzip -- "$1"      ;;
+      *.tar)       tar xvf -- "$1"     ;;
+      *.tbz2)      tar xvjf -- "$1"    ;;
+      *.tgz)       tar xvzf -- "$1"    ;;
+      *.zip)       unzip -- "$1"       ;;
+      *.Z)         uncompress -- "$1"  ;;
+      *.7z)        7z x -- "$1"        ;;
+      *)           printf "don't know how to extract '%s'...\n" "$1" ;;
+    esac
+  else
+    printf "'%s' is not a valid file\n" "$1"
+  fi
+}
+
+usage="\
+            _                  _
+   _____  _| |_ _ __ __ _  ___| |_
+  / _ \\ \\/ / __| '__/ _\` |/ __| __|
+ |  __/>  <| |_| | | (_| | (__| |_
+  \\___/_/\\_\\\\__|_|  \\__,_|\\___|\\__|
+
+Easily extract all compressed file types
+
+Usage:
+  extract filename
+
+Supported File Extensions:
+  .tar.bz2
+  .tar.gz
+  .bz2
+  .rar
+  .gz
+  .tar
+  .tbz2
+  .tgz
+  .zip
+  .Z
+  .7z
+"
+if [[ -z "$1" || "$1" = "-h" ]]; then
+  printf "%s\n" "$usage"
+  exit 1
 fi
+
+_extract "$@"
