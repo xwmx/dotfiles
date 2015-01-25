@@ -278,17 +278,6 @@ weather() {
 perl -ne 's/&amp;deg;/°/g;/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"'
 }
 
-# Define a word using collinsdictionary.com
-#
-# Usage:
-#  define [word]
-define() {
-  curl -s "http://www.collinsdictionary.com/dictionary/english/$*" | \
-    sed -n '/class="def"/p' | \
-    awk '{gsub(/.*<span class="def">|<\/span>.*/,"");print}' | \
-    sed "s/<[^>]\+>//g"
-}
-
 # Epoch time conversion
 epoch() {
   TESTREG="[\d{10}]"

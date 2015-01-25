@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Define a word using collinsdictionary.com
+#
+# Usage:
+#  define [word]
+
+curl -s "http://www.collinsdictionary.com/dictionary/english/$*" | \
+  sed -n '/class="def"/p' | \
+  awk '{gsub(/.*<span class="def">|<\/span>.*/,"");print}' | \
+  sed "s/<[^>]\+>//g"
