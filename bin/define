@@ -1,10 +1,39 @@
 #!/usr/bin/env bash
+#
+#      ____  _________________   ________
+#    / __ \/ ____/ ____/  _/ | / / ____/
+#   / / / / __/ / /_   / //  |/ / __/
+#  / /_/ / /___/ __/ _/ // /|  / /___
+# /_____/_____/_/   /___/_/ |_/_____/
+#
 # Define a word using collinsdictionary.com
 #
 # Usage:
 #  define [word]
 
-curl -s "http://www.collinsdictionary.com/dictionary/english/$*" | \
-  sed -n '/class="def"/p' | \
-  awk '{gsub(/.*<span class="def">|<\/span>.*/,"");print}' | \
-  sed "s/<[^>]\+>//g"
+_define() {
+  curl -s "http://www.collinsdictionary.com/dictionary/english/$*" | \
+    sed -n '/class="def"/p' | \
+    awk '{gsub(/.*<span class="def">|<\/span>.*/,"");print}' | \
+    sed "s/<[^>]\+>//g"
+}
+
+usage="\
+    ____  _________________   ________
+   / __ \\/ ____/ ____/  _/ | / / ____/
+  / / / / __/ / /_   / //  |/ / __/
+ / /_/ / /___/ __/ _/ // /|  / /___
+/_____/_____/_/   /___/_/ |_/_____/
+
+Define a word using collinsdictionary.com
+
+Usage:
+ define word
+"
+if [[ -z "$1" || "$1" = "-h" ]]; then
+  printf "%s\n" "$usage"
+  exit 1
+fi
+
+_define "$@"
+
