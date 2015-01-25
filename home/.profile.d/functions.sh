@@ -345,10 +345,23 @@ unidecode() {
 
 # Get a character’s Unicode code point
 codepoint() {
-  perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
-  # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
-    printf "\n"
+  if [[ "$1" == "-h" ]]; then
+    printf "\
+Get a character’s Unicode code point.
+
+Usage:
+  codepoint <character>
+"
+  else
+    _character="$*"
+    if [[ $_character == "$" ]]; then
+      _character="\\$"
+    fi
+    perl -e "use utf8; print sprintf('U+%04X', ord(\"$_character\"))"
+    # print a newline unless we’re piping the output to another program
+    if [ -t 1 ]; then
+      printf "\n"
+    fi
   fi
 }
 
