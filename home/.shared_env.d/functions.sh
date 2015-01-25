@@ -267,16 +267,6 @@ extract () {
   fi
 }
 
-# Get weather data via the Wunderground API
-#
-# Usage:
-#   weather         # weather for 93015 (Santa Barbara)
-#   weather [query] # weather data for a given query, zip codes preferred.
-weather() {
-  curl -s \
-"http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-93105}" | \
-perl -ne 's/&amp;deg;/°/g;/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"'
-}
 
 # Epoch time conversion
 epoch() {
