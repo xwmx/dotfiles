@@ -1,11 +1,42 @@
 #!/usr/bin/env bash
 #
-# Get weather data via the Wunderground API
+#                       __  __
+#  _      _____  ____ _/ /_/ /_  ___  _____
+# | | /| / / _ \/ __ `/ __/ __ \/ _ \/ ___/
+# | |/ |/ /  __/ /_/ / /_/ / / /  __/ /
+# |__/|__/\___/\__,_/\__/_/ /_/\___/_/
+#
+# Get and print weather forecast data via the Wunderground API
 #
 # Usage:
 #   weather         # weather for 93015 (Santa Barbara)
 #   weather [query] # weather data for a given query, zip codes preferred.
 
+_weather() {
+_query=${@:-93105}
+
 curl -s \
-"http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-93105}" | \
+"http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${_query}" | \
 perl -ne 's/&amp;deg;/°/g;/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"'
+}
+
+usage="\
+                      __  __
+ _      _____  ____ _/ /_/ /_  ___  _____
+| | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/
+| |/ |/ /  __/ /_/ / /_/ / / /  __/ /
+|__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/
+
+Get and print weather forecast data via the Wunderground API
+
+Usage:
+  weather         # weather for 93015 (Santa Barbara)
+  weather [query] # weather data for a given query, zip codes preferred.
+"
+if [[ "$1" = "-h" ]]; then
+  printf "%s\n" "$usage"
+  exit 1
+fi
+
+_weather "$@"
+
