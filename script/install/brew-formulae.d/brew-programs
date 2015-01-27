@@ -366,6 +366,15 @@ brew install osxutils
 # http://p7zip.sourceforge.net/
 brew install p7zip
 
+# PacVim
+#
+# PacVim is a game that teaches you vim commands. You must move pacman (the
+# green cursor) to highlight each word on the gameboard while avoiding the
+# ghosts (in red).
+#
+# https://github.com/jmoon018/PacVim
+brew install pacvim
+
 # Pandoc
 #
 # Pandoc converts files from one markup format into another
