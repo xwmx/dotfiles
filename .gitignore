@@ -52,6 +52,10 @@
 !/home/.ipython/profile_default/ipython_notebook_config.py
 !/home/.ipython/profile_default/ipython_qtconsole_config.py
 
+# Only track the leiningen / clojure default profiles
+/home/.lein/*
+!/home/.lein/profiles.cjl
+
 # Don't commit rbenv temp files.
 /home/.rbenv/shims/
 /home/.rbenv/versions/
