@@ -133,3 +133,6 @@
 [submodule "home/.nvm"]
 	path = home/.nvm
 	url = https://github.com/creationix/nvm.git
+[submodule "vendor/com/github/alphabetum/osx-cli"]
+	path = vendor/com/github/alphabetum/osx-cli
+	url = https://github.com/alphabetum/osx-cli.git
