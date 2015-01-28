@@ -56,6 +56,17 @@ npm install -g component
 # https://github.com/CSSLint/csslint/wiki/Command-line-interface
 npm install -g csslint
 
+# dat
+#
+# Dat is an open source project that provides a streaming interface between
+# every file format and data storage backend.
+#
+# Real-time replication and versioning for data sets.
+#
+# http://dat-data.com/
+# https://github.com/maxogden/dat
+npm install -g dat
+
 # Docco
 #
 # A quick-and-dirty documentation generator, written in Literate
