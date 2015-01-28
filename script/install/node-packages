@@ -207,6 +207,14 @@ npm install -g slap
 # https://github.com/volojs/volo
 npm install -g volo
 
+# vtop
+#
+# A graphical activity monitor for the command line.
+#
+# https://parall.ax/vtop
+# https://github.com/MrRio/vtop
+npm install -g vtop
+
 # Yeoman
 #
 # A robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful,
