@@ -83,7 +83,7 @@ npm install -g grunt-cli
 # The streaming build system.
 #
 # http://gulpjs.com/
-npm install --g gulp
+npm install -g gulp
 
 # Learn You The Node.js
 #
