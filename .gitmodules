@@ -139,3 +139,6 @@
 [submodule "vendor/com/github/e36freak/tools"]
 	path = vendor/com/github/e36freak/tools
 	url = https://github.com/e36freak/tools.git
+[submodule "vendor/com/github/alphabetum/starters"]
+	path = vendor/com/github/alphabetum/starters
+	url = https://github.com/alphabetum/starters.git
