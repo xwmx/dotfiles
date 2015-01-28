@@ -29,11 +29,11 @@ following and paste it into your terminal:
     dots init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
     dots bootstrap osx
 
-This will take some time to run and should
+This will take some time to run (it has to pull the submodules) and should
 
 1. install the `dots` tool,
-2. clone the repository to your home directory
-3. add a `~/bin` directory if one is not already present
+2. clone the repository to your home directory,
+3. add a `~/bin` directory if one is not already present,
 4. and add a `~/.dotsrc` configuration file.
 
 Use the [`dots`](https://github.com/alphabetum/dots) tool to experiment with linking files into your environment and experimenting. `dots` commands can be
