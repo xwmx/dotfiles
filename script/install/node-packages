@@ -67,6 +67,13 @@ npm install -g csslint
 # https://github.com/maxogden/dat
 npm install -g dat
 
+# datop
+#
+# top for dat
+#
+# https://github.com/maxogden/datop
+npm install -g datop
+
 # Docco
 #
 # A quick-and-dirty documentation generator, written in Literate
