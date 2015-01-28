@@ -42,3 +42,10 @@ gem install powify
 #
 # https://github.com/YorickPeterse/ruby-lint
 gem install ruby-lint
+
+# Tmuxinator
+#
+# Create and manage tmux sessions easily.
+#
+# https://github.com/tmuxinator/tmuxinator
+gem install tmuxinator
