@@ -19,6 +19,15 @@ npm install -g broccoli-cli
 # http://bower.io/
 npm install -g bower
 
+# CoffeeLint
+#
+# CoffeeLint is a style checker that helps keep CoffeeScript code clean and
+# consistent.
+#
+# http://www.coffeelint.org/
+# https://github.com/clutchski/coffeelint
+npm install -g coffeelint
+
 # CoffeeScript
 #
 # A little language that compiles into JavaScript.
