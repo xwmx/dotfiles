@@ -317,8 +317,10 @@ brew install nimrod --HEAD
 #
 # https://nodejs.org/
 #
-# NOTE: also install npm
-brew install node
+# NOTES:
+# - also install npm
+# - --devel version is current
+brew install node --devel
 
 # OCaml
 #
