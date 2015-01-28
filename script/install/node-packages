@@ -26,6 +26,18 @@ npm install -g bower
 # http://coffeescript.org/
 npm install -g coffee-script
 
+# Component
+#
+# Component is a vertically integrated frontend solution, handling everything
+# from package management to the build process, handling everything including
+# HTML, JS, CSS, images, and fonts. Think of it as an opinionated npm +
+# browserify + rework-npm + grunt/gulp/broccoli all wrapped into component
+# build.
+#
+# http://component.github.io/
+# https://github.com/componentjs/component
+npm install -g component
+
 # Docco
 #
 # A quick-and-dirty documentation generator, written in Literate
