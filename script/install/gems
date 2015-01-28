@@ -21,6 +21,13 @@ gem install faker
 # https://github.com/ddollar/foreman
 gem install foreman
 
+# git-up
+#
+# fetch and rebase all locally-tracked remote branches
+#
+# https://github.com/aanand/git-up
+gem install git-up
+
 # hijack
 #
 # Provides an irb session to a running ruby process.
