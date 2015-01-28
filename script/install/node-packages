@@ -217,8 +217,8 @@ npm install -g vtop
 
 # Yeoman
 #
-# A robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful,
-# compelling web apps.
+# A robust and opinionated set of tools, libraries, and a workflow that can
+# help developers quickly build beautiful, compelling web apps.
 #
 # http://yeoman.io/
 npm install -g yo
