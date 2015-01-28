@@ -27,7 +27,7 @@ following and paste it into your terminal:
 
     brew install alphabetum/taps/dots && \
     dots init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
-    ~/.dotfiles/script/bootstrap/osx
+    dots bootstrap osx
 
 This will take some time to run and should
 
