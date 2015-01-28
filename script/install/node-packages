@@ -65,6 +65,24 @@ npm install --g gulp
 # https://github.com/rvagg/learnyounode
 npm install -g learnyounode
 
+# lodash-cli
+#
+# The lodash command-line interface for creating custom builds & precompiling
+# templates.
+#
+# lodash
+#
+# A JavaScript utility library delivering consistency, modularity, performance,
+# & extras.
+#
+# An alternative to Underscore.
+#
+# https://www.npmjs.com/package/lodash-cli
+# https://github.com/lodash/lodash-cli
+# https://lodash.com/
+# https://github.com/lodash/lodash/
+npm install -g lodash-cli
+
 # slap
 #
 # A Sublime-like terminal-based text editor that strives to make
