@@ -40,6 +40,14 @@ pip install --upgrade pep8
 # https://github.com/amjith/pgcli
 pip install --upgrade pgcli
 
+# pre-commit
+#
+# A framework for managing and maintaining multi-language pre-commit hooks.
+#
+# http://pre-commit.com/
+# https://github.com/pre-commit/pre-commit
+pip install --upgrade pre-commit
+
 # pythonpy
 #
 # python -c, with shorthand and tab completion
