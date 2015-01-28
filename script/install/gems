@@ -28,6 +28,13 @@ gem install foreman
 # https://github.com/ileitch/hijack
 gem install hijack
 
+# lunchy
+#
+# A friendly wrapper for launchctl. Start your agents and go to lunch!
+#
+# https://github.com/eddiezane/lunchy
+gem install lunchy
+
 # Powify
 #
 # Powify is a management tool for Pow by 37 signals. It allows you to easily
