@@ -36,6 +36,13 @@ gem install hijack
 # https://github.com/sethvargo/powify
 gem install powify
 
+# Puppet-lint
+#
+# Check that your Puppet manifests conform to the style guide
+#
+# https://github.com/rodjek/puppet-lint
+gem install puppet-lint
+
 # ruby-lint
 #
 # Static code analysis for Ruby.
