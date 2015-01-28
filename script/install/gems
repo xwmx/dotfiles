@@ -35,6 +35,15 @@ gem install git-up
 # https://github.com/ileitch/hijack
 gem install hijack
 
+# jekyll
+#
+# Jekyll is a simple, blog-aware, static site generator perfect for personal,
+# project, or organization sites.
+#
+# http://jekyllrb.com/
+# https://github.com/jekyll/jekyll
+gem install jekyll
+
 # lunchy
 #
 # A friendly wrapper for launchctl. Start your agents and go to lunch!
