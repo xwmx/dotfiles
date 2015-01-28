@@ -131,6 +131,13 @@ npm install -g learnyounode
 # https://github.com/lodash/lodash/
 npm install -g lodash-cli
 
+# Shipit
+#
+# Universal automation and deployment tool written in JavaScript.
+#
+# https://github.com/shipitjs/shipit
+npm install -g shipit-cli
+
 # slap
 #
 # A Sublime-like terminal-based text editor that strives to make
