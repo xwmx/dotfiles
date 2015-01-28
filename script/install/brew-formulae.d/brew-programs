@@ -32,6 +32,19 @@ brew install ack
 # http://aspell.net/
 brew install aspell --with-lang-en
 
+# ctags
+#
+# Ctags is a programming tool that generates an index (or tag) file of names
+# found in source and header files of various programming languages. Depending
+# on the language, functions, variables, class members, macros and so on may be
+# indexed. These tags allow definitions to be quickly and easily located by a
+# text editor or other utility. Alternatively, there is also an output mode
+# that generates a cross reference file, listing information about various
+# names found in a set of language files in human-readable form.
+#
+# http://ctags.sourceforge.net/
+brew install ctags
+
 # dash
 #
 # DASH is a POSIX-compliant implementation of /bin/sh that aims to be as small
