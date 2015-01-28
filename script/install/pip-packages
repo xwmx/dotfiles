@@ -15,7 +15,7 @@ pip install --upgrade pip
 # A rich architecture for interactive computing.
 #
 # http://ipython.org/
-pip install "ipython[all]"
+pip install --upgrade "ipython[all]"
 
 # mitmproxy
 #
@@ -23,7 +23,7 @@ pip install "ipython[all]"
 # inspected, modified and replayed.
 #
 # http://mitmproxy.org/
-pip install mitmproxy
+pip install --upgrade mitmproxy
 
 # pep8 - Python style guide checker
 #
@@ -38,7 +38,7 @@ pip install --upgrade pep8
 # Postgres CLI with autocompletion and syntax highlighting
 #
 # https://github.com/amjith/pgcli
-pip install pgcli
+pip install --upgrade pgcli
 
 # pythonpy
 #
@@ -46,4 +46,4 @@ pip install pgcli
 #
 # https://github.com/Russell91/pythonpy
 # https://github.com/Russell91/pythonpy/wiki/Python3
-pip3 install -I pythonpy
+pip3 install -I --upgrade pythonpy
