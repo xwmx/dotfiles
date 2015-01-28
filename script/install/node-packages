@@ -38,6 +38,15 @@ npm install -g coffee-script
 # https://github.com/componentjs/component
 npm install -g component
 
+# CSSLint
+#
+# Automated linting of Cascading Stylesheets.
+#
+# http://csslint.net
+# https://github.com/CSSLint/csslint
+# https://github.com/CSSLint/csslint/wiki/Command-line-interface
+npm install -g csslint
+
 # Docco
 #
 # A quick-and-dirty documentation generator, written in Literate
