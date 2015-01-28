@@ -399,6 +399,13 @@ brew cask install vico
 # http://vimr.org/
 brew cask install vimr
 
+# Vivaldi
+#
+# A web browser.
+#
+# https://vivaldi.com
+brew cask install vivaldi
+
 # VLC - vlc-nightly
 #
 # VLC is a free and open source cross-platform multimedia player and framework
