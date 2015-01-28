@@ -181,6 +181,15 @@ npm install -g lodash-cli
 # https://github.com/mochajs/mocha
 npm install -g mocha
 
+# react-tools
+#
+# A set of complementary tools to React, including the JSX transformer.
+#
+# https://www.npmjs.com/package/react-tools
+# https://github.com/facebook/react
+# http://facebook.github.io/react/
+npm install -g react-tools
+
 # Shipit
 #
 # Universal automation and deployment tool written in JavaScript.
