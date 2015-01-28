@@ -91,6 +91,17 @@ npm install -g lodash-cli
 # https://github.com/slap-editor/slap
 npm install -g slap
 
+# volo
+#
+# volo is a tool which lets you quickly create projects, add libraries, and
+# automate common tasks using node and JavaScript. Create browser-based,
+# front-end projects from project templates, and add dependencies by fetching
+# them from GitHub. Once your project is set up, automate common tasks.
+#
+# http://volojs.org/
+# https://github.com/volojs/volo
+npm install -g volo
+
 # Yeoman
 #
 # A robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful,
