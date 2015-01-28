@@ -103,6 +103,15 @@ npm install -g gulp
 # https://github.com/jshint/jshint
 npm install -g jshint
 
+# jspm CLI
+#
+# jspm is a package manager for the SystemJS universal module loader, built on
+# top of the dynamic ES6 module loader
+#
+# http://jspm.io/
+# https://github.com/jspm/jspm-cli
+npm install -g jspm
+
 # Learn You The Node.js
 #
 # An intro to Node.js via a set of self-guided workshops.
