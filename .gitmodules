@@ -136,3 +136,6 @@
 [submodule "vendor/com/github/alphabetum/osx-cli"]
 	path = vendor/com/github/alphabetum/osx-cli
 	url = https://github.com/alphabetum/osx-cli.git
+[submodule "vendor/com/github/e36freak/tools"]
+	path = vendor/com/github/e36freak/tools
+	url = https://github.com/e36freak/tools.git
