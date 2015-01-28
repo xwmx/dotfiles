@@ -320,6 +320,15 @@ brew install nimrod --HEAD
 # NOTE: also install npm
 brew install node
 
+# NSQ
+#
+# NSQ is a realtime distributed messaging platform designed to operate at
+# scale, handling billions of messages per day.
+#
+# http://nsq.io/
+# https://github.com/bitly/nsq
+brew install nsq
+
 # OCaml
 #
 # OCaml, originally known as Objective Caml, is the main implementation of the
