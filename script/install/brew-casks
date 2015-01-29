@@ -299,6 +299,17 @@ brew cask install kindlegen
 # https://krita.org/
 brew cask install krita
 
+# LibreOffice
+#
+# LibreOffice is a free and open source office suite, developed by The Document
+# Foundation. It was forked from OpenOffice.org in 2010, which was an
+# open-sourced version of the earlier StarOffice. The LibreOffice suite
+# comprises programs to do word processing, spreadsheets, slideshows, diagrams
+# and drawings, maintain databases, and compose mathematical formulae.
+#
+# http://www.libreoffice.org/
+brew cask install libreoffice
+
 # Light Table
 #
 # A text editor and IDE build with JavaScript.
