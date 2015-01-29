@@ -368,6 +368,17 @@ brew cask install pd-extended
 # http://pgadmin.org
 brew cask install pgadmin3
 
+# rowanj-gitx
+#
+# GitX-dev is a fork (variant) of GitX, a long-defunct GUI for the git
+# version-control system. It has been maintained and enhanced with productivity
+# and friendliness oriented changes, with effort focused on making a
+# first-class, maintainable tool for today's active developers.
+#
+# http://rowanj.github.io/gitx/
+# https://github.com/rowanj/gitx
+brew cask install rowanj-gitx
+
 # Secrets
 #
 # A database of hidden settings for Mac OS X
