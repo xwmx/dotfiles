@@ -260,7 +260,19 @@ brew cask install haskell-platform
 # Graphics (SVG), an open XML-based W3C standard, as the native format.
 #
 # https://inkscape.org/en/
-brew cask install inkscape
+#brew cask install inkscape
+#
+# NOTE: using own inkscape-osxmenu cask
+#
+# This is a development branch that includes a more native interface for OS X.
+#
+# Info:
+#   https://code.launchpad.net/~suv-lp/inkscape/osxmenu
+# Builds:
+#   https://www.dropbox.com/sh/b7tyrnugif2ywqj/AAAEYen8C0L0aEqMwMo-hfHZa?dl=0
+# Cask:
+#   http://git.io/alphabetum-inkscape-osxmenu-cask
+brew cask install inkscape-osxmenu
 
 # iTerm2
 #
