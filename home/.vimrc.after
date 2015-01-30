@@ -152,7 +152,7 @@ vmap <d-cr> <Esc>:set invfu<cr>gv
 " Navigation and Selection
 " ============================================================================
 
-" Enable custom HIG movement and selection related settings when running MacVim
+" Enable custom HIG movement and selection settings when running MacVim
 "
 " Custom mapping location:
 "   .gvimrc.after

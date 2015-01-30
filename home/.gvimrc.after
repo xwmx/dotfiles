@@ -52,9 +52,9 @@ if exists("custom_macvim_hig_movement")
   " cursor movement. These mappings make it behave more closely to other OS X
   " applications.
 
-  " ###########################################################################
+  " ##########################################################################
   " Command / Option Movement Mappings
-  " ###########################################################################
+  " ##########################################################################
   "
   " ##################
   " Command-Left Arrow
@@ -131,9 +131,9 @@ if exists("custom_macvim_hig_movement")
   ino  <D-BS>         <C-u>
 
 
-  " ###########################################################################
+  " ##########################################################################
   " Shift Movement and Selection Mappings
-  " ###########################################################################
+  " ##########################################################################
   "
   " Note - selectmode and keymodel settings from original MacVim settings are
   " not used here since they enable select mode and this configuration prefers
