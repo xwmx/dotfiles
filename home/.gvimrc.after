@@ -17,13 +17,13 @@
 " Set end of line character.
 "
 " Common characters for eol: ¬ $ ~ ¤ ×
-" ¬ is used in some other editors on OS X, such as Atom.
+" ¬ is used in some other editors, such as Atom.
 set listchars+=eol:¬
 
 " Set tab character. Must be a two character string.
 "
-" Common character for tabs: ▸ »
-" » is used in some other editors on OS X, such as Atom.
+" Common characters for tabs: ▸ »
+" » is used in some other editors, such as Atom.
 set listchars+=tab:»\  " trailing space is intended.
 
 " ============================================================================
