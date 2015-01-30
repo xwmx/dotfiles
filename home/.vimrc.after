@@ -92,10 +92,17 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 " In Vim >= 7.3, also highlight columns 120+
 
 " Better grey ColorColumn for some themes
-hi ColorColumn guifg=#f8f8f8 guibg=#161616 gui=NONE
+if has("gui_macvim")
+  " Experimental ColorColumn that tweaks the non-GUI version to make the
+  " foreground less glaring (to avoid too much noise from newlines) and make
+  " the background match the NonText background.
+  hi ColorColumn guifg=#bbbbbb guibg=#1a1a1a gui=NONE
+else
+  hi ColorColumn guifg=#f8f8f8 guibg=#161616 gui=NONE
+endif
 
 if exists('+colorcolumn')
-  " (I picked 120-320 because you have to provide an upper bound and 320 just
+  " (120-320 because you have to provide an upper bound and 320 just
   "  covers a 1080p GVim window in Ubuntu Mono 11 font.)
   let &colorcolumn="80,".join(range(120,320),",")
 else
