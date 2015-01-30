@@ -2,8 +2,22 @@
 "
 " Runs after the regular gvimrc, now controlled by Janus, is loaded.
 
-" Custom MacVim HIG Shift Movement Mappings
+" ============================================================================
+" Whitespace Display
+" ============================================================================
+
+" Whitespace settings are also performed elsewhere in the config process, such
+" as in plugins.
 "
+" Common characters to use for whitespace display: ¬ $ ~ ¤ ×
+
+" Set end of line character.
+set listchars+=eol:¬
+
+" ============================================================================
+" Custom MacVim HIG Shift Movement Mappings
+" ============================================================================
+
 " MacVim default mappings can be found in the default gvimrc:
 "
 " https://github.com/b4winckler/macvim/blob/master/src/MacVim/gvimrc
