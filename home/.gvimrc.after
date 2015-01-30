@@ -9,6 +9,11 @@
 " Whitespace settings are also performed elsewhere in the config process, such
 " as in plugins.
 "
+" Some Janus listchars settings can be found here:
+"   ~/.vim/core/before/plugin/settings.vim#L26
+" Or on github:
+"   http://git.io/janus-vim-core-before-plugin-settings-vim-L26
+"
 " Common characters to use for whitespace display: ¬ $ ~ ¤ ×
 
 " Set end of line character.
