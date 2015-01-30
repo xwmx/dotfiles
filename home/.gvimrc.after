@@ -13,11 +13,18 @@
 "   ~/.vim/core/before/plugin/settings.vim#L26
 " Or on github:
 "   http://git.io/janus-vim-core-before-plugin-settings-vim-L26
-"
-" Common characters to use for whitespace display: ¬ $ ~ ¤ ×
 
 " Set end of line character.
+"
+" Common characters for eol: ¬ $ ~ ¤ ×
+" ¬ is used in some other editors on OS X, such as Atom.
 set listchars+=eol:¬
+
+" Set tab character. Must be a two character string.
+"
+" Common character for tabs: ▸ »
+" » is used in some other editors on OS X, such as Atom.
+set listchars+=tab:»\  " trailing space is intended.
 
 " ============================================================================
 " Custom MacVim HIG Shift Movement Mappings
