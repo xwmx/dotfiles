@@ -71,6 +71,18 @@ endif
 " Ensure indent is on
 filetype plugin indent on
 
+" Associate the .es6 file extension with JavaScript
+"
+" The `.es6` is used by 6to5 (and, by extension, Sprockets) which turns ES6+
+" code into ES5.
+"
+" https://6to5.org/
+" https://github.com/josh/sprockets-es6
+"
+" Setting via:
+"   http://robots.thoughtbot.com/replace-coffeescript-with-es6
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
 " ============================================================================
 " Line length highlighting
 " ============================================================================
