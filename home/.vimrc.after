@@ -85,11 +85,12 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 " Line length highlighting
 " ============================================================================
 
-" highlight the 80th column
+" highlight the 81st column, to limit line length to 80 columns.
 "
-" In Vim >= 7.3, also highlight columns 120+
-
-" Better grey ColorColumn for some themes
+" Why do we limit to 80 columns? Read on...
+"   http://programmers.stackexchange.com/a/148729
+"   http://www.emacswiki.org/emacs/EightyColumnRule
+"
 if has("gui_macvim")
   " Experimental ColorColumn that tweaks the non-GUI version to make the
   " foreground less glaring (to avoid too much noise from newlines) and make
@@ -100,6 +101,8 @@ else
 endif
 
 if exists('+colorcolumn')
+  " In Vim >= 7.3, also highlight columns 120+
+  "
   " (120-320 because you have to provide an upper bound and 320 just
   "  covers a 1080p GVim window in Ubuntu Mono 11 font.)
   let &colorcolumn="81,".join(range(120,320),",")
