@@ -36,7 +36,8 @@ This will take some time to run (it has to pull the submodules) and should
 3. add a `~/bin` directory if one is not already present,
 4. and add a `~/.dotsrc` configuration file.
 
-Use the [`dots`](https://github.com/alphabetum/dots) tool to experiment with linking files into your environment and experimenting. `dots` commands can be
+Use the [`dots`](https://github.com/alphabetum/dots) tool to experiment with
+linking files into your environment and experimenting. `dots` commands can be
 discovered by running `dots help`.
 
 ### Ubuntu
