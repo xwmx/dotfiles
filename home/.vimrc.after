@@ -59,7 +59,9 @@ set guioptions-=L
 " FileType settings
 " ============================================================================
 
- " Turn off balloons in ruby.  See http://stackoverflow.com/a/1111363
+ " Turn off balloons in ruby.  See:
+ "   http://stackoverflow.com/a/1111363
+ "   http://vimdoc.sourceforge.net/htmldoc/debugger.html#balloon-eval
 if has("gui_running")
   autocmd FileType ruby,eruby set noballooneval
 endif
