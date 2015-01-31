@@ -104,7 +104,7 @@ endif
 if exists('+colorcolumn')
   " (120-320 because you have to provide an upper bound and 320 just
   "  covers a 1080p GVim window in Ubuntu Mono 11 font.)
-  let &colorcolumn="80,".join(range(120,320),",")
+  let &colorcolumn="81,".join(range(120,320),",")
 else
   " fallback for Vim < v7.3
   autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
