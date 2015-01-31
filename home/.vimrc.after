@@ -48,14 +48,12 @@ set guifont=Menlo\ for\ Powerline:h11
 " Enable mouse in terminal vim
 set mouse=a
 
-
 " ============================================================================
 " GUI options
 " ============================================================================
 
 " disable left scrollbar
 set guioptions-=L
-
 
 " ============================================================================
 " FileType settings
@@ -114,7 +112,6 @@ endif
 " ============================================================================
 " Splits, Tabs, and Buffers
 " ============================================================================
-
 
 " Extra split navigation shortcuts
 nmap <C-j> <C-w>j
@@ -189,7 +186,6 @@ vmap <ESC>oA <ESC>ki
 vmap <ESC>oB <ESC>ji
 vmap <ESC>oC <ESC>li
 vmap <ESC>oD <ESC>hi
-
 
 " ============================================================================
 " CtrlP
