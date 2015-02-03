@@ -120,6 +120,14 @@ brew install flow
 # http://git-scm.com
 brew install git
 
+# git-extras
+#
+# GIT utilities -- repo summary, repl, changelog population, author commit
+# percentages and more.
+#
+# https://github.com/tj/git-extras
+brew install git-extras
+
 # go / golang
 #
 # Go is an open source programming language that makes it easy to build simple,
