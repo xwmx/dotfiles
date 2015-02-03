@@ -367,6 +367,20 @@ brew cask install pgadmin3
 # https://github.com/rowanj/gitx
 brew cask install rowanj-gitx
 
+# Scribus
+#
+# Scribus is an Open Source program that brings professional page layout to
+# Linux, BSD UNIX, Solaris, OpenIndiana, GNU/Hurd, Mac OS X, OS/2 Warp 4,
+# eComStation, Windows and Haiku desktops with a combination of press-ready
+# output and new approaches to page design.
+#
+# Underneath a modern and user-friendly interface, Scribus supports
+# professional publishing features, such as color separations, CMYK and spot
+# colors, ICC color management, and versatile PDF creation.
+#
+# http://www.scribus.net/canvas/Scribus
+brew cask install scribus
+
 # Secrets
 #
 # A database of hidden settings for Mac OS X
