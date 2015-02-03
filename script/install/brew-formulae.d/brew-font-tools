@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# brew-font-tools
+#
+# Various tools for working with fonts.
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  printf "brew-formulae is only supported on OS X\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Formulae
+###############################################################################
+
+# ttf2eot
+#
+# Very small utility to convert TTF files to EOT. EOT is used by Internet
+# Explorer to support css @font-face declarations.
+#
+# http://code.google.com/p/ttf2eot/
+brew install ttf2eot
