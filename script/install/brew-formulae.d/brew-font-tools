@@ -17,6 +17,14 @@ fi
 # Formulae
 ###############################################################################
 
+# fontforge
+#
+# Create and edit fonts in many formats: OpenType, TrueType, AAT, PostScript,
+# Multiple Master, CID-Keyed, SVG and various bitmap formats.
+#
+# https://fontforge.github.io
+brew install fontforge
+
 # ttf2eot
 #
 # Very small utility to convert TTF files to EOT. EOT is used by Internet
