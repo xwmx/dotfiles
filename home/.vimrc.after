@@ -28,7 +28,8 @@
 "colorscheme Tomorrow-Night
 
 if has("gui_macvim")
-  colorscheme vwilight
+  colorscheme base16-default
+  "colorscheme vwilight
 else
   colorscheme hybrid
 endif
