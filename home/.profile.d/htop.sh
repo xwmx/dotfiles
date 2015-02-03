@@ -9,6 +9,7 @@
 ###############################################################################
 
 # For htop to display correctly all running processes, it needs to run as root.
+_original_htop="$(which htop)"
 htop() {
-  sudo htop "$@"
+  sudo "$_original_htop" "$@"
 }
