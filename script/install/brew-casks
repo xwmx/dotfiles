@@ -412,6 +412,14 @@ brew cask install sonic-visualiser
 # http://spectacleapp.com
 brew cask install spectacle
 
+# sublime-text3
+#
+# Sublime Text is a text editor for code, markup and prose.
+#
+# http://www.sublimetext.com/
+# http://www.sublimetext.com/3
+brew cask install sublime-text3
+
 # Vagrant
 #
 # Create and configure lightweight, reproducible, and portable development
