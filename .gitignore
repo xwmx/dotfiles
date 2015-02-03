@@ -36,6 +36,7 @@
 
 # Only track specific .config files
 /home/.config/*
+!/home/.config/base16-shell
 !/home/.config/htop
 !/home/.config/htop/htoprc
 
