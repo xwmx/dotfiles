@@ -1,4 +1,4 @@
-#==============================================================================
+###############################################################################
 # Base16 Shell
 #
 # A shell script to change your shell's default ANSI colors but most
@@ -8,7 +8,7 @@
 # providing the additional base16 colors to applications such as Vim.
 #
 # https://github.com/chriskempson/base16-shell
-#==============================================================================
+###############################################################################
 
 # Including favorites here for easier switching.
 

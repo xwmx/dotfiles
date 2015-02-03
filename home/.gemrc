@@ -1,7 +1,9 @@
+###############################################################################
 # .gemrc
 #
 # Environment configuration for RubyGems.
 #
 # http://guides.rubygems.org/command-reference/#gem-environment
+###############################################################################
 ---
 gem: --no-document

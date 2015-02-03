@@ -1,9 +1,11 @@
+###############################################################################
 # Configuration file for tig
 #
 # Tig is an ncurses-based text-mode interface for git.
 #
 # http://jonas.nitro.dk/tig/
 # https://github.com/jonas/tig
+###############################################################################
 
 # enable mouse support
 set mouse = true

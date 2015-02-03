@@ -1,8 +1,10 @@
+###############################################################################
 # .inputrc
 #
 # Readline Init File
 #
 # https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File.html
+###############################################################################
 
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on

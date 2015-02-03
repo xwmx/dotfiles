@@ -1,3 +1,4 @@
+###############################################################################
 # ackrc
 #
 # ack is a tool like grep, optimized for programmers
@@ -7,6 +8,7 @@
 # Docs:
 # http://beyondgrep.com/documentation/
 # http://beyondgrep.com/documentation/ack-2.12-man.html#ackrc_location_semantics
+###############################################################################
 
 # Always color, even if piping to a another program
 --color

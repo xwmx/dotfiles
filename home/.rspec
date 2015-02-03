@@ -1,3 +1,4 @@
+###############################################################################
 # .rspec
 #
 # Configuration for RSpec / rspec-core
@@ -5,6 +6,7 @@
 # http://rspec.info/
 # https://github.com/rspec/rspec-core
 # http://www.rubydoc.info/github/rspec/rspec-core#store_command_line_options__rspec
+###############################################################################
 
 # Enable color in the output.
 --colour

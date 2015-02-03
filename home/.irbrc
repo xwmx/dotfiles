@@ -1,9 +1,11 @@
+###############################################################################
 # .irbrc
 #
 # Configuration for the IRB Ruby REPL
 #
 # https://en.wikipedia.org/wiki/Interactive_Ruby_Shell
 # http://www.ruby-doc.org/stdlib-2.0/libdoc/irb/rdoc/IRB.html
+###############################################################################
 
 # copy the argument to the OS X clipboard
 def copy(str)
