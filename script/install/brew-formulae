@@ -129,7 +129,6 @@ brew install findutils
 # NOTE: overwriting the built-in `sed`
 brew install gnu-sed --default-names
 
-
 # GNU Bash
 #
 # Bash 4. Newer than OS X default.
