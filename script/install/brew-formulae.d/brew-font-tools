@@ -25,6 +25,47 @@ fi
 # https://fontforge.github.io
 brew install fontforge
 
+# sfnt2woff
+#
+# Tool for converting TrueType and OpenType font files to WOFF made by Jonathan
+# Kew. This installs two utilities sfnt2woff to compress and woff2sfnt to
+# decompress.
+#
+# http://people.mozilla.org/~jkew/woff/
+# https://github.com/bramstein/homebrew-webfonttools
+brew install bramstein/webfonttools/sfnt2woff
+
+# sfnt2woff-zopfli
+#
+# Modified version of sfnt2woff that uses the Zopfli compression algorithm
+# (2-5% better compression than standard WOFF). This installs two utilities
+# sfnt2woff-zopfli to compress and woff2sfnt-zopfli to decompress.
+#
+# http://people.mozilla.org/~jkew/woff/
+# https://github.com/bramstein/sfnt2woff-zopfli
+# https://github.com/bramstein/homebrew-webfonttools
+brew install bramstein/webfonttools/sfnt2woff-zopfli
+
+# sfntly
+#
+# Google's subsetting and font conversion tools. This will install two
+# utilities called sfnttool and fontinfo. The sfnttool utility performs
+# subsetting and can also create WOFF and EOT files. The fontinfo utility
+# shows you information about a font.
+#
+# https://code.google.com/p/sfntly/
+# https://github.com/bramstein/homebrew-webfonttools
+brew install bramstein/webfonttools/sfntly
+
+# woff2
+#
+# WOFF2 compression and decompression utilities by Google. This installs two
+# utilities woff2_compress to compress and woff2_decompress to decompress.
+#
+# https://github.com/google/woff2
+# https://github.com/bramstein/homebrew-webfonttools
+brew install bramstein/webfonttools/woff2
+
 # ttf2eot
 #
 # Very small utility to convert TTF files to EOT. EOT is used by Internet
