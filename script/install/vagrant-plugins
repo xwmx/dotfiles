@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-#
+###############################################################################
 # vagrant-plugins
 #
 # https://docs.vagrantup.com/v2/plugins/
 # https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins
+###############################################################################
 
 # sahara
 #

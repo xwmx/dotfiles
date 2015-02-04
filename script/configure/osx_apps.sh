@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-
+###############################################################################
 # osx_apps.sh
 #
 # Configure and set various preferences for non-default OS X applications,
 # including developer and third-party applications.
+###############################################################################
 
 ###############################################################################
 # Platform Check
