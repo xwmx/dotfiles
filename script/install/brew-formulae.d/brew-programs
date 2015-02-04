@@ -136,6 +136,16 @@ brew install git-extras
 # https://github.com/golang/go
 brew install go
 
+# gtk+
+#
+# GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating
+# graphical user interfaces. Offering a complete set of widgets, GTK+ is
+# suitable for projects ranging from small one-off tools to complete
+#application suites.
+#
+# http://gtk.org/
+brew install gtk+
+
 # heroku
 #
 # Heroku client - CLI tool for creating and managing Heroku apps
@@ -435,6 +445,16 @@ brew install pigz
 #
 # http://www.ivarch.com/programs/pv.shtml
 brew install pv
+
+# pygtk - GTK+ for Python
+#
+# PyGTK lets you to easily create programs with a graphical user interface
+# using the Python programming language. The underlying GTK+ library provides
+# all kind of visual elements and utilities for it and, if needed, you can
+# develop full featured applications for the GNOME Desktop.
+#
+# http://www.pygtk.org/
+brew install pygtk
 
 # python
 #
