@@ -24,7 +24,7 @@ fi
 # Multiple Master, CID-Keyed, SVG and various bitmap formats.
 #
 # https://fontforge.github.io
-brew install fontforge --with-x11
+brew install fontforge --with-giflib --with-x11 --with-libspiro
 
 # sfnt2woff
 #
