@@ -103,6 +103,14 @@ brew install exiv2
 # https://ffmpeg.org/
 brew install ffmpeg
 
+# forego
+#
+# Foreman (Manage Procfile-based applications) in Go.
+#
+# https://github.com/ddollar/foreman
+# https://github.com/ddollar/forego
+brew install forego
+
 # Flow
 #
 # Flow is a static type checker, designed to find type errors in JavaScript
