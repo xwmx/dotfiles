@@ -1,0 +1,29 @@
+###############################################################################
+# .gntrc
+#
+# GNT - The GLib Ncurses Toolkit
+#
+# GNT is an ncurses toolkit for creating text-mode graphical user interfaces
+# in a fast and easy way. Part of the Finch project.
+#
+# Configuration for gnt applications.
+###############################################################################
+
+[general]
+# Enable mouse
+mouse = 1
+
+# Finch
+#
+# A Pimpin' Penguin console frontend to libpurple. Instant Messaging client.
+#
+# A text-based user interface for using libpurple.  This can be run from a
+# standard text console or from a terminal within X Windows.  It
+# uses ncurses and our homegrown gnt library for drawing windows
+# and text.
+#
+# https://developer.pidgin.im/wiki/Using%20Finch
+# http://linux.die.net/man/1/finch
+[Finch]
+# Enable mouse
+mouse = 1
