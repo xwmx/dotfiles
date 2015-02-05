@@ -31,6 +31,13 @@ brew install ack
 # http://aspell.net/
 brew install aspell --with-lang-en
 
+# cmatrix
+#
+# 'The Matrix'-inspired scrolling lines.
+#
+# http://www.asty.org/cmatrix/
+brew install cmatrix
+
 # ctags
 #
 # Ctags is a programming tool that generates an index (or tag) file of names
