@@ -24,6 +24,29 @@ fi
 # Multiple Master, CID-Keyed, SVG and various bitmap formats.
 #
 # https://fontforge.github.io
+#
+# Options:
+#   --with-giflib
+#     Build with GIF support
+#
+#   --with-x11
+#     Build with x11 support
+#
+#     The X Window System (X11, X, and sometimes informally X-Windows) is a
+#     windowing system for bitmap displays, common on UNIX-like computer
+#     operating systems.
+#
+#     https://en.wikipedia.org/wiki/X_Window_System
+#
+#   --with-libspiro
+#     Build with libspiro support
+#
+#     Spiro is the creation of Raph Levien. It simplifies the drawing of
+#     beautiful curves.
+#
+#     http://libspiro.sourceforge.net/
+#     https://github.com/fontforge/libspiro/
+#
 brew install fontforge --with-giflib --with-x11 --with-libspiro
 
 # sfnt2woff
