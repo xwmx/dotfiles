@@ -444,6 +444,16 @@ brew install pacvim
 #http://johnmacfarlane.net/pandoc/
 brew install pandoc
 
+# pidgin
+#
+# Pidgin is a chat program which lets you log in to accounts on multiple chat
+# networks simultaneously. This means that you can be chatting with friends on
+# MSN, talking to a friend on Google Talk, and sitting in a Yahoo chat room
+# all at the same time.
+#
+# https://pidgin.im/
+brew install pidgin --with-gsasl --without-GUI
+
 # pigz
 #
 # A parallel implementation of gzip for modern multi-processor, multi-core
