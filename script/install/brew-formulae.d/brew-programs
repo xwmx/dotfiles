@@ -511,6 +511,15 @@ brew install riak
 # http://www.rust-lang.org/
 brew install rust
 
+# sbt
+#
+# The interactive build tool
+#
+# Use Scala to define your tasks. Then run them in parallel from the shell.
+#
+# http://www.scala-sbt.org/
+brew install sbt
+
 # Scala
 #
 # Scala is an object-functional programming language for general software
