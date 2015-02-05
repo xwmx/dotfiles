@@ -452,6 +452,31 @@ brew install pandoc
 # all at the same time.
 #
 # https://pidgin.im/
+#
+# Options:
+#   --with-gsasl
+#     Build with gsasl support
+#
+#     GNU SASL Library - Libgsasl
+#
+#     GNU SASL is an implementation of the Simple Authentication and Security
+#     Layer framework and a few common SASL mechanisms. SASL is used by
+#     network servers (e.g., IMAP, SMTP) to request authentication from
+#     clients, and in clients to authenticate against servers.
+#
+#     http://www.gnu.org/software/gsasl/
+#
+#   --without-GUI
+#     Build Finch instead of Pidgin
+#
+#     A text-based user interface for using libpurple.  This can be run from a
+#     standard text console or from a terminal within X Windows.  It
+#     uses ncurses and our homegrown gnt library for drawing windows
+#     and text.
+#
+#     https://en.wikipedia.org/wiki/Finch_(software)
+#     https://developer.pidgin.im/wiki/Using%20Finch
+#     http://linux.die.net/man/1/finch
 brew install pidgin --with-gsasl --without-GUI
 
 # pigz
