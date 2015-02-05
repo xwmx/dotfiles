@@ -64,6 +64,15 @@ pip install --upgrade pgcli
 # https://github.com/pre-commit/pre-commit
 pip install --upgrade pre-commit
 
+# python-Levenshtein
+#
+# The Levenshtein Python C extension module contains functions for fast
+# computation of Levenshtein distance and string similarity
+#
+# https://github.com/ztane/python-Levenshtein/
+# https://pypi.python.org/pypi/python-Levenshtein/
+pip install --upgrade python-Levenshtein
+
 # pythonpy
 #
 # python -c, with shorthand and tab completion
