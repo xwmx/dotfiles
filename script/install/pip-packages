@@ -18,6 +18,14 @@ pip install --upgrade pip
 # Packages
 ###############################################################################
 
+# 1pass
+#
+# A command line interface for 1Password
+#
+# https://pypi.python.org/pypi/1pass
+# https://github.com/georgebrock/1pass
+pip install --upgrade 1pass
+
 # IPython
 #
 # A rich architecture for interactive computing.
