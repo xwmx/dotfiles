@@ -216,6 +216,14 @@ brew install imagemagick --with-webp
 # http://iolanguage.org/
 brew install io --without-addons
 
+# irssi
+#
+#Irssi is a terminal based IRC client for UNIX systems. It also supports SILC
+# and ICB protocols via plugins.
+#
+# http://irssi.org/
+brew install irssi
+
 # ispell
 #
 # International Ispell is an interactive spell-checking program for Unix which
