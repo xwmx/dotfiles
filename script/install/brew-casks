@@ -203,6 +203,18 @@ brew cask install disk-inventory-x
 # http://www.elm-lang.org
 brew cask install elm-platform
 
+# Factor
+#
+# The Factor programming language combines powerful language features with a
+# full-featured library. Factor belongs to the family of concatenative
+# languages: this means that, at the lowest level, a Factor program is a
+# series of words (functions) that manipulate a stack of references to
+# dynamically-typed values. This gives the language a powerful foundation
+# which allows many abstractions and paradigms to be built on top.
+#
+# http://factorcode.org/
+brew cask install factor
+
 # Firefox
 #
 # A free and open-source web browser.
