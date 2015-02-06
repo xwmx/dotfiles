@@ -59,6 +59,21 @@ go get -u -v github.com/tools/godep
 # https://godoc.org/golang.org/x/tools/cmd/godoc
 go get -u -v golang.org/x/tools/cmd/godoc
 
+# go-ipfs / ipfs
+#
+# ipfs implementation in go
+#
+# IPFS - The Permanent Web
+#
+# IPFS is a distributed file system that seeks to connect all computing devices
+# with the same system of files. In some ways, this is similar to the original
+# aims of the Web, but IPFS is actually more similar to a single bittorrent
+# swarm exchanging git objects.
+#
+# https://github.com/jbenet/ipfs
+# https://github.com/jbenet/go-ipfs
+go get -u -v github.com/jbenet/go-ipfs/cmd/ipfs
+
 # goimports
 #
 # Command goimports updates your Go import lines, adding missing ones and
@@ -88,20 +103,6 @@ go get -u -v golang.org/x/tools/cmd/gorename
 #
 # https://github.com/jstemmer/gotags
 go get -u -v github.com/jstemmer/gotags
-
-# go-ipfs / ipfs
-#
-# ipfs implementation in go
-#
-# IPFS - The Permanent Web
-# IPFS is a distributed file system that seeks to connect all computing devices
-# with the same system of files. In some ways, this is similar to the original
-# aims of the Web, but IPFS is actually more similar to a single bittorrent
-# swarm exchanging git objects.
-#
-# https://github.com/jbenet/ipfs
-# https://github.com/jbenet/go-ipfs
-go get -u -v github.com/jbenet/go-ipfs/cmd/ipfs
 
 # oracle
 #
