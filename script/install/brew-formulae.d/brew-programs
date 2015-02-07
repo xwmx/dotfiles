@@ -508,6 +508,16 @@ brew install python
 # https://www.python.org
 brew install python3
 
+# ranger
+#
+# ranger is a file manager with VI key bindings. It provides a minimalistic
+# and nice curses interface with a view on the directory hierarchy. The
+# secondary task of ranger is to psychically guess which program you want to
+# use for opening particular files.
+#
+# http://ranger.nongnu.org/
+brew install ranger
+
 # rbenv
 #
 # Groom your app’s Ruby environment
