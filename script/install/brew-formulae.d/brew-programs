@@ -517,6 +517,18 @@ brew install python
 # https://www.python.org
 brew install python3
 
+# R
+#
+# R is a free software environment for statistical computing and graphics.
+#
+# http://www.r-project.org/
+#
+# Options:
+#   --with-openblas
+#     Build with openblas support
+#     http://www.openblas.net/
+brew install r --with-openblas
+
 # ranger
 #
 # ranger is a file manager with VI key bindings. It provides a minimalistic
