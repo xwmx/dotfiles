@@ -145,3 +145,6 @@
 [submodule "home/.janus/ag"]
 	path = home/.janus/ag
 	url = https://github.com/rking/ag.vim
+[submodule "home/.janus/vim-hackernews"]
+	path = home/.janus/vim-hackernews
+	url = https://github.com/ryanss/vim-hackernews.git
