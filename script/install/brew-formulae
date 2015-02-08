@@ -41,6 +41,13 @@ brew upgrade
 # https://github.com/alphabetum/homebrew-taps
 brew tap alphabetum/taps
 
+# bramstein/webfonttools
+#
+# Homebrew web font tools
+#
+# https://github.com/bramstein/homebrew-webfonttools
+brew tap bramstein/webfonttools
+
 # homebrew-completions
 #
 # Shell completion formulae for the Homebrew package manager
