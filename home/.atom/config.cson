@@ -26,3 +26,4 @@
     showErrorInline: true
   "go-plus":
     goPath: "~/.go"
+  "tree-view": {}
