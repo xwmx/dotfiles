@@ -343,6 +343,15 @@ brew install mobile-shell
 # http://www.jedsoft.org/most/
 brew install most
 
+# neovim
+#
+# http://neovim.org/
+# https://github.com/neovim/neovim
+# https://github.com/neovim/neovim/wiki/Installing
+#
+# Note that this is a tapped formula from the neovim/homebrew-neovim tap.
+brew install --HEAD neovim/neovim/neovim
+
 # ngrep - network grep
 #
 # ngrep strives to provide most of GNU grep's common features, applying them to

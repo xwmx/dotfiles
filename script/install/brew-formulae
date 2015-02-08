@@ -81,6 +81,13 @@ brew tap homebrew/head-only
 # https://github.com/Homebrew/homebrew-science
 brew tap homebrew/science
 
+# homebrew-neovim
+#
+# Homebrew formula for neovim.
+#
+# https://github.com/neovim/homebrew-neovim
+brew tap neovim/homebrew-neovim
+
 # brew-desc.rb
 #
 # Searchable descriptions for Homebrew formulas
