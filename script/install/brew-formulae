@@ -120,12 +120,8 @@ brew tap telemachus/homebrew-desc
 #
 # http://gcc.gnu.org
 #
-# Options:
-#   --with-all-languages
-#     Enable all compilers and languages, except Ada
-#   --with-java
-#     Build the gcj compiler
-brew install gcc --with-all-languages --with-java
+# NOTE: languages built: c c++ objc obj-c++ fortran
+brew install gcc
 
 # GNU Core Utilities
 #
