@@ -31,6 +31,16 @@ brew install ack
 # http://aspell.net/
 brew install aspell --with-lang-en
 
+# Autoconf
+#
+# Autoconf is an extensible package of M4 macros that produce shell scripts to
+# automatically configure software source code packages. These scripts can
+# adapt the packages to many kinds of UNIX-like systems without manual user
+# intervention.
+#
+# http://www.gnu.org/software/autoconf/
+brew install autoconf
+
 # cmatrix
 #
 # 'The Matrix'-inspired scrolling lines.
