@@ -238,7 +238,7 @@ let NERDTreeShowHidden = 1
 " Only automatically open NERDTree in Macvim.
 "
 " The corresponding NERDTree initialization that's being disabled here can be
-" found at .vim/janus/vim/toools/janus/after/plugin/nerdtree.vim#7:9
+" found at .vim/janus/vim/tools/janus/after/plugin/nerdtree.vim#7:9
 if !has("gui_macvim")
   augroup AuNERDTreeCmd
     autocmd!
