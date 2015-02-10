@@ -96,3 +96,8 @@ Other `.local` files can also be used to modify other tracked files. All
 of the available `.local` files can be created by copying the
 corresponding `.local.example` files into `$HOME` with the `.example`
 extension removed.
+
+## More Resources
+
+- [alphabetum/dots](https://github.com/alphabetum/dots)
+- [alphabetum/dotfile-research](https://github.com/alphabetum/dotfile-research)
