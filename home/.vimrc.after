@@ -245,6 +245,9 @@ if !has("gui_macvim")
   augroup end
 endif
 
+" Set to use single mouse click to open node or file.
+let g:NERDTreeMouseMode = 3
+
 " ============================================================================
 " vim-gitgutter
 " ============================================================================
