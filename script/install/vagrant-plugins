@@ -6,6 +6,18 @@
 # https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins
 ###############################################################################
 
+# vagrant-hostmanager
+#
+# A Vagrant plugin that manages the /etc/hosts file on guests within a
+# multi-machine environment
+#
+# NOTE: alternatives include:
+# - https://github.com/cogitatio/vagrant-hostsupdater
+# - https://github.com/adrienthebo/vagrant-hosts
+#
+# https://github.com/smdahlen/vagrant-hostmanager
+vagrant plugin install vagrant-hostmanager
+
 # sahara
 #
 # plugin for vagrant that allows you manage a sandbox state
