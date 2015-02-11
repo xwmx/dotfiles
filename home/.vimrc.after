@@ -30,6 +30,7 @@
 "colorscheme Tomorrow-Night
 
 if has("gui_macvim")
+  set background=dark
   colorscheme base16-default
   "colorscheme vwilight
 else
