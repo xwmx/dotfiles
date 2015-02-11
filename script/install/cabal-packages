@@ -37,6 +37,13 @@ cabal install cabalg
 # https://github.com/kazu-yamamoto/ghc-mod
 cabal install ghc-mod
 
+# hdevtools
+#
+# Persistent GHC powered background server for FAST Haskell development tools
+#
+# https://github.com/bitc/hdevtools
+cabal install hdevtools
+
 # HLint
 #
 # HLint is a tool for suggesting possible improvements to Haskell code. These
