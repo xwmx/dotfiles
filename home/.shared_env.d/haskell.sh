@@ -3,4 +3,4 @@
 ###############################################################################
 
 # Add binaries in cabal install location to path.
-export PATH="/Users/Shared/Library/Haskell/bin:$PATH"
+export PATH="$HOME"/Library/Haskell/bin:$PATH
