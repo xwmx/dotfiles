@@ -13,36 +13,32 @@ set -o pipefail
 IFS="$(printf '\n\t')"
 
 ###############################################################################
-# Update Config Files
+# Update Config File
 ###############################################################################
 
-# The cabal configuration files are included as templates since the $HOME
-# paths have to be absolute paths and, therefore, end up containin
+# The cabal configuration file is included as a template since the $HOME
+# path has to be absolute path and, therefore, ends up containing
 # user-specific information.
 #
-# This function takes the template files and replaces any instances of the
+# This function takes the template file and replaces any instances of the
 # string {{$HOME}} with the value of the $HOME environment variable.
-_update_cabal_config_from_templates() {
+_update_cabal_config_from_template() {
   local cabal_dir="$DOTSPATH/home/.cabal"
-  local config_files=( config config.platform )
 
-  for file in "${config_files[@]}"
-  do
-    # if the template file exists
-    if [[ -f "$cabal_dir"/"$file".template ]]; then
-      # Remove current if present
-      if [[ -f "$cabal_dir/$file" ]]; then
-        rm "$cabal_dir/$file"
-      fi
-      # copy the template to the original file's location
-      cp "$cabal_dir"/"$file".template "$cabal_dir"/"$file"
-      # Replace {{$HOME}} with value of $HOME
-      sed -i "s|{{\$HOME}}|$HOME|g" "$cabal_dir"/"$file"
+  # if the template file exists
+  if [[ -f "$cabal_dir"/config.template ]]; then
+    # Remove current if present
+    if [[ -f "$cabal_dir"/config ]]; then
+      rm "$cabal_dir"/config
     fi
-  done
+    # copy the template to the original file's location
+    cp "$cabal_dir"/config.template "$cabal_dir"/config
+    # Replace {{$HOME}} with value of $HOME
+    sed -i "s|{{\$HOME}}|$HOME|g" "$cabal_dir"/config
+  fi
 }
 
-_update_cabal_config_from_templates
+_update_cabal_config_from_template
 
 ###############################################################################
 # Update

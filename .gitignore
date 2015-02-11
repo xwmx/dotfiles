@@ -30,7 +30,6 @@
 #
 # Include example config and help files only.
 /home/.cabal/*
-!/home/.cabal/config.platform.template
 !/home/.cabal/config.template
 !/home/.cabal/README.md
 !/home/.cabal/where-is-my-stuff.txt
