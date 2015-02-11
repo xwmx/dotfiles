@@ -1,0 +1,24 @@
+
+**********************************************************************
+
+=== Configuration for cabal has been written to
+    ~/.cabal/config
+
+=== Executables will be installed in:
+    ~/Library/Haskell/bin
+
+    You may wish to place this on your PATH by adding the following
+    line to your ~/.bash_profile:
+
+    export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+=== When documentation is built, a master index to all documentation
+    will be placed in:
+
+    ~/Library/Haskell/doc/index.html
+
+    You may wish to bookmark that file once it gets built (after the
+    first cabal install).
+
+**********************************************************************
+

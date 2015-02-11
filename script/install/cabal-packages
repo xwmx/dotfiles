@@ -5,6 +5,45 @@
 # Download and install cabal / haskell packages.
 ###############################################################################
 
+# Bash 'Strict Mode'
+# https://github.com/alphabetum/bash-boilerplate#bash-strict-mode
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS="$(printf '\n\t')"
+
+###############################################################################
+# Update Config Files
+###############################################################################
+
+# The cabal configuration files are included as templates since the $HOME
+# paths have to be absolute paths and, therefore, end up containin
+# user-specific information.
+#
+# This function takes the template files and replaces any instances of the
+# string {{$HOME}} with the value of the $HOME environment variable.
+_update_cabal_config_from_templates() {
+  local cabal_dir="$DOTSPATH/home/.cabal"
+  local config_files=( config config.platform )
+
+  for file in "${config_files[@]}"
+  do
+    # if the template file exists
+    if [[ -f "$cabal_dir"/"$file".template ]]; then
+      # Remove current if present
+      if [[ -f "$cabal_dir/$file" ]]; then
+        rm "$cabal_dir/$file"
+      fi
+      # copy the template to the original file's location
+      cp "$cabal_dir"/"$file".template "$cabal_dir"/"$file"
+      # Replace {{$HOME}} with value of $HOME
+      sed -i "s|{{\$HOME}}|$HOME|g" "$cabal_dir"/"$file"
+    fi
+  done
+}
+
+_update_cabal_config_from_templates
+
 ###############################################################################
 # Update
 ###############################################################################

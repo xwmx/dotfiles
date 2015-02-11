@@ -28,10 +28,11 @@
 
 # Only track specific .cabal files
 #
-# Include config and help files only.
+# Include example config and help files only.
 /home/.cabal/*
-!/home/.cabal/config
-!/home/.cabal/config.platform
+!/home/.cabal/config.platform.template
+!/home/.cabal/config.template
+!/home/.cabal/README.md
 !/home/.cabal/where-is-my-stuff.txt
 
 # Only track specific .config files
