@@ -4,7 +4,8 @@ The configuration file in this directory is generated using the
 corresponding .template file. The template processing script can be
 found at the following location:
 
-    "$DOTSPATH"/script/install/cabal-packages
+[`"$DOTSPATH"/script/install/cabal-packages`
+](https://github.com/alphabetum/dotfiles/blob/master/script/install/cabal-packages)
 
 The config.platform file is installed by the haskell platform
 installation process and demonstrates the expected standard
