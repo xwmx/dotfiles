@@ -16,6 +16,14 @@ cabal update
 # Packages
 ###############################################################################
 
+# cabalg
+#
+# cabalg is an alias for installing cabal package from a git source repository.
+#
+# https://hackage.haskell.org/package/cabalg
+# https://github.com/dmalikov/cabalg
+cabal install cabalg
+
 # HLint
 #
 # HLint is a tool for suggesting possible improvements to Haskell code. These
@@ -33,7 +41,7 @@ cabal install hlint
 # with the Vim Tagbar plugin.
 #
 # https://github.com/bitc/lushtags
-cabal install lushtags
+cabalg https://github.com/bitc/lushtags.git@429fab3
 
 # record
 #
