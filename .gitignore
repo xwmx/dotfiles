@@ -31,6 +31,7 @@
 # Include example config and help files only.
 /home/.cabal/*
 !/home/.cabal/config.template
+!/home/.cabal/generate_config.sh
 !/home/.cabal/README.md
 !/home/.cabal/where-is-my-stuff.txt
 

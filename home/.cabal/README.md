@@ -1,15 +1,19 @@
 # config file and template information
 
-The configuration file in this directory is generated using the
-corresponding .template file. The template processing script can be
-found at the following location:
+## config / config.template
 
-[`"$DOTSPATH"/script/install/cabal-packages`
-](https://github.com/alphabetum/dotfiles/blob/master/script/install/cabal-packages)
+The config file in this directory is generated using the corresponding
+.template file because the paths in .cabal/config have to be absolute paths
+and therefore end up containing user-specific information.
 
-The config.platform file is installed by the haskell platform
-installation process and demonstrates the expected standard
-configuration for the platform (OS X).
+To make changes to the configuration, edit config.template and then
+generate a new config file using the `generate_config.sh` script.
+
+## config.platform
+
+The config.platform file is an untracked file installed by the haskell platform
+installation process and demonstrates the expected standard configuration for
+the platform (OS X).
 
 The config.platform file is not used directly, but is used for
 reference. As noted in the help wiki:
