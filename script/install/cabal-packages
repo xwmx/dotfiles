@@ -25,6 +25,16 @@ cabal update
 # https://github.com/ndmitchell/hlint
 cabal install hlint
 
+# lushtags
+#
+# Create ctags compatible tags files for Haskell programs. Similar programs
+# are hasktags, gasbag, hothasktags, and GHC's builtin ctags generation.
+# lushtags differs from these by being designed to have smooth integration
+# with the Vim Tagbar plugin.
+#
+# https://github.com/bitc/lushtags
+cabal install lushtags
+
 # record
 #
 # An API of just two quasi-quoters, providing a full-scale solution to the
