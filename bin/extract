@@ -9,7 +9,7 @@
 # Easily extract all compressed file types
 #
 # Usage:
-#   extract filename
+#   extract <filename>
 #
 # Depends on:
 #  tar
@@ -51,7 +51,7 @@ usage="\
 Easily extract all compressed file types
 
 Usage:
-  extract filename
+  extract <filename>
 
 Supported File Extensions:
   .tar.bz2
