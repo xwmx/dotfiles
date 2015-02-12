@@ -388,6 +388,19 @@ brew cask install pd-extended
 # http://pgadmin.org
 brew cask install pgadmin3
 
+# processing3
+#
+# Processing is an open source programming language and integrated development
+# environment (IDE) built for the electronic arts, new media art, and visual
+# design communities with the purpose of teaching the fundamentals of computer
+# programming in a visual context, and to serve as the foundation for
+# electronic sketchbooks.
+#
+# NOTE: processing3 is the alpha for the upcoming version 3.
+#
+# https://processing.org
+brew cask install processing3
+
 # rowanj-gitx
 #
 # GitX-dev is a fork (variant) of GitX, a long-defunct GUI for the git
