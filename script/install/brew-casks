@@ -187,6 +187,15 @@ brew cask install colors
 # http://www.consul.io/
 brew cask install consul
 
+# coqide
+#
+# a graphical user interface based on gtk (CoqIde) for coq.
+#
+# NOTE: see `brew install coq` in `brew-programs`.
+#
+# https://coq.inria.fr/
+brew cask install coqide
+
 # Disk Inventory X
 #
 # Disk Inventory X is a disk usage utility for Mac OS X 10.3 (and later). It
