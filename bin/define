@@ -9,7 +9,7 @@
 # Define a word using collinsdictionary.com
 #
 # Usage:
-#  define [word]
+#  define <word>
 
 _define() {
   curl -s "http://www.collinsdictionary.com/dictionary/english/$*" | \
@@ -28,7 +28,7 @@ usage="\
 Define a word using collinsdictionary.com
 
 Usage:
- define word
+ define <word>
 "
 if [[ -z "$1" || "$1" = "-h" ]]; then
   printf "%s\n" "$usage"
