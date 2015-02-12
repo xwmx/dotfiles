@@ -38,7 +38,7 @@ $(_ccal)
 "
 if [ "$1" = "-h" ]; then
   printf "%s\n" "$usage"
-  exit 1
+  exit 0
 fi
 
 _ccal
