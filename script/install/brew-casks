@@ -338,6 +338,15 @@ brew cask install libreoffice
 # https://github.com/LightTable/LightTable
 brew cask install lighttable
 
+# Macfusion
+#
+# Macfusion brings servers from across the internet directly to your Mac's
+# desktop. Mount files and documents as a "Volume" in the Mac OS X Finder.
+# Support for SSH (Secure Shell) and FTP (File Transfer Protocol) servers.
+#
+# http://macfusionapp.org/
+brew cask install macfusion
+
 # MacTex
 #
 # MacTeX is an OS X-specific redistribution of TeX Live, a typesetting
