@@ -119,6 +119,15 @@ brew install elinks
 # http://elixir-lang.org/
 brew install elixir
 
+# EncFS - an Encrypted Filesystem
+#
+# EncFS provides an encrypted filesystem in user-space. It runs with regular
+# user permissions using the FUSE library.
+#
+# https://github.com/vgough/encfs
+# https://vgough.github.io/encfs/
+brew install encfs
+
 # Erlang
 #
 # Erlang is a programming language used to build massively scalable soft
