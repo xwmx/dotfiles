@@ -5,6 +5,17 @@
 # Install various global node modules
 ###############################################################################
 
+# Babel
+#
+# Babel is a JavaScript transpiler. Use next generation JavaScript, today.
+# Babel is a transpiler for writing next generation JavaScript. (Previously
+# 6to5). ES6 and beyond. Babel will turn your ES6+ code into ES5 friendly code,
+# so you can start using it right now without waiting for browser support
+#
+# https://babeljs.io/
+# https://github.com/babel/babel
+npm install -g babel
+
 # Broccoli
 #
 # Browser compilation library – a build tool for applications that run in the
