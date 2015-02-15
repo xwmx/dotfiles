@@ -81,7 +81,10 @@ brew cask install font-sauce-code-powerline
 #
 # http://www.virtualbox.org
 #
-# NOTE: Installing first since it's important and other casks use it.
+# NOTES:
+#   - Installing first since it's important and other casks use it.
+#   - Installation fails if a VM is running. If this happens, check from
+#     running VMs, such as a boot2docker VM.
 brew cask install virtualbox
 
 # 1Password
