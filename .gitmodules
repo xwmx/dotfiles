@@ -148,3 +148,6 @@
 [submodule "home/.janus/vim-hackernews"]
 	path = home/.janus/vim-hackernews
 	url = https://github.com/ryanss/vim-hackernews.git
+[submodule "home/.janus/lambdatoast/elm.vim"]
+	path = home/.janus/lambdatoast/elm.vim
+	url = https://github.com/lambdatoast/elm.vim.git
