@@ -41,6 +41,19 @@ brew install aspell --with-lang-en
 # http://www.gnu.org/software/autoconf/
 brew install autoconf
 
+# calc
+#
+# Calc is an interactive calculator which provides for easy large numeric
+# calculations, but which also can be easily programmed for difficult or long
+# calculations. It can accept a command line argument, in which case it
+# executes that single command and exits. Otherwise, it enters interactive
+# mode. In this mode, it accepts commands one at a time, processes them, and
+# displays the answers. In the simplest case, commands are simply expressions
+# which are evaluated.
+#
+# http://www.isthe.com/chongo/tech/comp/calc/
+brew install calc
+
 # cmatrix
 #
 # 'The Matrix'-inspired scrolling lines.
@@ -788,6 +801,19 @@ brew install --HEAD valgrind
 #
 # http://w3m.sourceforge.net/
 brew install w3m
+
+# Wcalc
+#
+# Wcalc is a very capable calculator. It supports abitrary precision, has
+# standard functions (sin, asin, and sinh for example, in either radians or
+# degrees), many pre-defined constants (pi, e, c, etc.), support for using
+# variables, "active" variables, a command history, hex/octal/binary input
+# and output, unit conversions, embedded comments, and an expandable
+# expression entry field. It evaluates expressions using the standard order
+# of operations.
+#
+# http://w-calc.sourceforge.net
+brew install w-calc
 
 # webkit2png
 #
