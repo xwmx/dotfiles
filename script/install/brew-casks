@@ -372,6 +372,9 @@ brew cask install natron
 # file systems. OSXFUSE is a successor to MacFUSE.
 #
 # https://osxfuse.github.io/
+#
+# NOTE: There is a vanilla Homebrew osxfuse formula, but it can't be
+# installed on Yosemite because of the unsigned kext ban.
 brew cask install osxfuse
 
 # Packer
