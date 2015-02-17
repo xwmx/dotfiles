@@ -150,4 +150,5 @@
 	url = https://github.com/ryanss/vim-hackernews.git
 [submodule "home/.janus/elm.vim"]
 	path = home/.janus/elm.vim
-	url = https://github.com/lambdatoast/elm.vim.git
+  url = https://github.com/lambdatoast/elm.vim.git
+  ignore = dirty
