@@ -372,7 +372,7 @@ Usage:
 # Utilities -------------------------------------------------------------------
 
 # Simple calculator
-calc() {
+shell_calc() {
   local result=""
   result="$(printf "scale=10;%s\n" "$*" | bc --mathlib | tr -d '\\\n')"
   #                       └─ default (when `--mathlib` is used) is 20
