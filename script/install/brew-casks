@@ -509,7 +509,7 @@ brew cask install sublime-text3
 # instead of dvi output.
 #
 # http://pages.uoregon.edu/koch/texshop
-brew cask install textshop
+brew cask install texshop
 
 # Vagrant
 #
