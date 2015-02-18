@@ -341,6 +341,16 @@ brew cask install libreoffice
 # https://github.com/LightTable/LightTable
 brew cask install lighttable
 
+# LyX – The Document Processor
+#
+# LyX is a document processor that encourages an approach to writing based on
+# the structure of your documents (WYSIWYM) and not simply their appearance
+# (WYSIWYG). LyX combines the power and flexibility of TeX/LaTeX with the ease
+# of use of a graphical interface.
+#
+# http://www.lyx.org/Home
+brew cask install lyx
+
 # Macfusion
 #
 # Macfusion brings servers from across the internet directly to your Mac's
