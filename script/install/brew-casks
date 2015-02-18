@@ -359,6 +359,10 @@ brew cask install lighttable
 # of use of a graphical interface.
 #
 # http://www.lyx.org/Home
+#
+# NOTE: as of LyX version 2.1.3, retina / hidpi display is still suboptimal,
+# with text blurred in the main work area. There are patches in the wild, but
+# none have apparently been applied at this time.
 brew cask install lyx
 
 # Macfusion
