@@ -515,6 +515,27 @@ brew cask install sublime-text3
 # http://pages.uoregon.edu/koch/texshop
 brew cask install texshop
 
+# UnicodeChecker
+#
+# Exploration Unicode number and UTF encodings for each codepoint • Related
+# codepoints and decomposition • Browsing by plane, codepoint number or
+# character block • Unihan data such as definitions, variants, pronunciations
+# and older encodings for many Asian codepoints • Finding code points by name
+# or their Unihan definition • Finding codepoints via Spotlight.
+#
+# Conversion To and from: HTML, CSS, URLs, IDNA and various programming
+# languages • Unicode Normalisation with an indication whether the string is
+# already normalised (NFC, NFKC, NFD and NFKD) • Split Up and Diff tools to
+# analyse a string codepoint by codepoint and highlight the differences • Most
+# of the features are available to all applications you use via the ‘Services’
+# menu and AppleScript.
+#
+# http://earthlingsoft.net/UnicodeChecker/
+#
+# NOTE: there is an official cask for this application, but it's outdated.
+# Experimenting with own cask localy.
+brew cask install alphabetum/taps/unicodechecker
+
 # Vagrant
 #
 # Create and configure lightweight, reproducible, and portable development
