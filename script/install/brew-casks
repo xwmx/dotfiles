@@ -130,6 +130,16 @@ brew cask install atom
 # http://audacity.sourceforge.net/
 brew cask install audacity
 
+# BibDesk - Mac Bibliography Manager
+#
+# Use BibDesk to edit and manage your bibliography. It will keep track of both
+# the bibliographic information and the associated files or web links for you.
+# BibDesk’s services will simplify using your bibliography in other
+# applications and are particularly well suited for LATEX users.
+#
+# http://bibdesk.sourceforge.net/
+brew cask install bibdesk
+
 # Blender
 #
 # Blender is a free and open source 3D animation suite.
