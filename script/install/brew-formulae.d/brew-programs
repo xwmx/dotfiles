@@ -116,6 +116,14 @@ brew install djvu2pdf
 # https://github.com/alphabetum/dots
 brew install dots
 
+# Dwarf Fortress
+#
+# Dwarf Fortress is a part construction and management simulation, part
+# roguelike, freeware indie video game.
+#
+# http://www.bay12games.com/dwarves/
+brew install dwarf-fortress
+
 # ELinks - Full-Featured Text WWW Browser
 #
 # ELinks is an advanced and well-established feature-rich text mode web
