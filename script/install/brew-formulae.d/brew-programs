@@ -226,7 +226,11 @@ brew install gpg
 # Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
 #
 # https://www.gnupg.org/
-brew install gpg2
+brew install gnupg2
+# Prefer gnupg2 gpg2 binary. Another version is installed with the gpgtools
+# cask, but using the gpg2 formula's version shouldn't have any impact on the
+# functioning of the other tools.
+brew link --overwrite gnupg2
 
 # heroku
 #
