@@ -41,6 +41,22 @@ brew install aspell --with-lang-en
 # http://www.gnu.org/software/autoconf/
 brew install autoconf
 
+# bup
+#
+# Very efficient backup system based on the git packfile format, providing
+# fast incremental saves and global deduplication (among and within files,
+# including virtual machine images).
+#
+# Options:
+#   --with-pandoc
+#     build and install the manpage (depends on pandoc)
+#   --run-tests
+#     Run unit tests after compilation
+#
+# https://bup.github.io/
+# https://github.com/bup/bup
+brew install bup --with-pandoc --run-tests
+
 # calc
 #
 # Calc is an interactive calculator which provides for easy large numeric
