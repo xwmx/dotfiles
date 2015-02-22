@@ -466,6 +466,18 @@ brew install most
 # Note that this is a tapped formula from the neovim/homebrew-neovim tap.
 brew install --HEAD neovim/neovim/neovim
 
+# mutt
+#
+# Mutt is a small but very powerful text-based mail client for Unix operating
+# systems.
+#
+# http://www.mutt.org/
+#
+# Options:
+#   --with-trash-patch
+#     Apply trash folder patch
+brew install mutt --with-trash-patch
+
 # ngrep - network grep
 #
 # ngrep strives to provide most of GNU grep's common features, applying them to
