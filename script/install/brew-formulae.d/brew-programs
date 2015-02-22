@@ -448,6 +448,16 @@ brew install msgpack
 # http://www.gnu.org/software/mit-scheme/
 brew install mit-scheme
 
+# MongoDB
+#
+# MongoDB (from humongous) is a cross-platform document-oriented database.
+# Classified as a NoSQL database, MongoDB eschews the traditional table-based
+# relational database structure in favor of JSON-like documents with dynamic
+# schemas (MongoDB calls the format BSON).
+#
+# https://www.mongodb.org/
+brew install mongodb
+
 # Mosh / mobile-shell
 #
 # Remote terminal application that allows roaming, supports intermittent
