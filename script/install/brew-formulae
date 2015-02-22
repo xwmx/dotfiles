@@ -76,7 +76,6 @@ brew tap homebrew/games
 # available as the latest version from e.g. a version control system.
 #
 # https://github.com/Homebrew/homebrew-head-only
-
 brew tap homebrew/head-only
 
 # homebrew-python
