@@ -17,4 +17,51 @@ if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   exit 0
 fi
 
+###############################################################################
+# Utility Functions
+###############################################################################
 
+# _is_installed_with_homebrew()
+#
+# Determine if a Homebrew formula is installed.
+#
+# Usage:
+#   _is_installed_with_homebrew "libgit2"
+_is_installed_with_homebrew() {
+  brew list -1 | grep -q "^${1}\$"
+}
+
+###############################################################################
+# exa
+#
+# exa is a modern replacement for ls. It uses colours for information by
+# default, helping you distinguish between many types of files, such as whether
+# you are the owner, or in the owning group. It also has extra features not
+# present in the original ls, such as viewing the Git status for a directory,
+# or recursing into directories with a tree view. exa is written in Rust, so
+# it's small, fast, and portable.
+#
+# http://bsago.me/exa/
+#
+# NOTE: included as an orhan because a rust crate doesn't appear to exist for
+# it yet and, therefore, it needs to be built with cargo.
+###############################################################################
+
+_install_exa() {
+  [[ -f "$HOME/bin/exa" ]] && printf "exa already installed.\n" && exit 0
+  [[ ! -f "$(which cmake)" ]] && printf "Install cmake dependency.\n" && exit 0
+  if ! ( _is_installed_with_homebrew "libgit2" ); then
+    printf "Install libgit2 dependency.\n" && exit 0
+  fi
+
+  local tmp_exa=/tmp/orphans/exa
+
+  git clone https://github.com/ogham/exa.git "$tmp_exa" &&
+    cd "$tmp_exa" &&
+    cargo build &&
+    cp "$tmp_exa/target/exa" "$HOME/bin" &&
+    cd "/tmp/orphans" &&
+    trash "$tmp_exa"
+}
+
+_install_exa
