@@ -111,12 +111,11 @@ brew tap neovim/homebrew-neovim
 brew tap telemachus/homebrew-desc
 
 ###############################################################################
-# Homebrew - Formula
+# Homebrew - Core Formula
+#
+# Formulae that override or supercede utilities included with OS X, plus some
+# additional core utilities.
 ###############################################################################
-
-# ----------------------------------------------------------------------------
-# Utilities and Basic Programs
-# ----------------------------------------------------------------------------
 
 # GCC, the GNU Compiler Collection
 #
