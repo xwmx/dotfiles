@@ -395,13 +395,6 @@ brew install luarocks
 # http://lynx.isc.org/release/
 brew install lynx
 
-# MacVim
-#
-# The text editor Vim for Mac OS X.
-#
-# http://code.google.com/p/macvim/
-brew install macvim
-
 # matplotlib
 #
 # matplotlib is a python 2D plotting library which produces publication
@@ -880,6 +873,23 @@ brew install the_silver_searcher
 #
 # NOTE: installing head version for yosemite support.
 brew install --HEAD valgrind
+
+# vim
+#
+# Vim (a contraction of Vi IMproved) is a clone of Bill Joy's vi editor for
+# Unix. It was written by Bram Moolenaar based on source for a port of the
+# Stevie editor to the Amiga and first released publicly in 1991. Vim is
+# designed for use both from a command-line interface and as a standalone
+# application in a graphical user interface.
+#
+# http://www.vim.org/
+brew install vim --override-system-vi
+# vim - MacVim
+#
+# The text editor Vim for Mac OS X.
+#
+# http://code.google.com/p/macvim/
+brew install macvim
 
 # w3m
 #
