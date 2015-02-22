@@ -58,8 +58,6 @@ set mouse=a
 
 " disable left scrollbar
 set guioptions-=L
-" disable right scrollbar
-set guioptions-=r
 
 " ============================================================================
 " FileType settings
