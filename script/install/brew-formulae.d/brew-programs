@@ -429,6 +429,15 @@ brew install memcached
 # http://mercurial.selenic.com/
 brew install mercurial
 
+# MIT/GNU Scheme
+#
+# MIT/GNU Scheme is an implementation of the Scheme programming language,
+# providing an interpreter, compiler, source-code debugger, integrated
+# Emacs-like editor, and a large runtime library.
+#
+# http://www.gnu.org/software/mit-scheme/
+brew install mit-scheme
+
 # msgpack
 #
 # MessagePack is an efficient binary serialization format. It lets you exchange
@@ -438,15 +447,6 @@ brew install mercurial
 #
 # http://msgpack.org/
 brew install msgpack
-
-# MIT/GNU Scheme
-#
-# MIT/GNU Scheme is an implementation of the Scheme programming language,
-# providing an interpreter, compiler, source-code debugger, integrated
-# Emacs-like editor, and a large runtime library.
-#
-# http://www.gnu.org/software/mit-scheme/
-brew install mit-scheme
 
 # MongoDB
 #
