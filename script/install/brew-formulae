@@ -176,14 +176,6 @@ brew install gnu-sed --default-names
 brew install bash
 brew install bash-completion
 
-# RingoJS
-#
-# Ringo is a CommonJS-based JavaScript runtime written in Java and based on the
-# Mozilla Rhino JavaScript engine.
-#
-# http://ringojs.org
-brew install ringojs
-
 # ----------------------------------------------------------------------------
 # More recent versions of some OS X tools.
 # ----------------------------------------------------------------------------

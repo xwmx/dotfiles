@@ -745,6 +745,14 @@ brew install rhino
 # http://basho.com/riak/
 brew install riak
 
+# RingoJS
+#
+# Ringo is a CommonJS-based JavaScript runtime written in Java and based on the
+# Mozilla Rhino JavaScript engine.
+#
+# http://ringojs.org
+brew install ringojs
+
 # sbt
 #
 # The interactive build tool
