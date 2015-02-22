@@ -746,6 +746,14 @@ brew install sbt
 # http://www.scala-lang.org/
 brew install scala
 
+# scipy
+#
+# SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source
+# software for mathematics, science, and engineering.
+#
+# http://www.scipy.org
+brew install homebrew/python/scipy
+
 # scsh
 #
 # Scsh is a POSIX API layered on top of the Scheme programming language in a
