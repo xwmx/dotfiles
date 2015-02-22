@@ -5,6 +5,13 @@
 # Programs and packages not available through package managers.
 ###############################################################################
 
+# Bash 'Strict Mode'
+# https://github.com/alphabetum/bash-boilerplate#bash-strict-mode
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS="$(printf '\n\t')"
+
 ###############################################################################
 # Platform Check
 #
@@ -13,7 +20,7 @@
 ###############################################################################
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  printf "brew-all is only supported on OS X\nSkipping...\n"
+  printf "orphans is only supported on OS X\nSkipping...\n"
   exit 0
 fi
 
@@ -48,8 +55,15 @@ _is_installed_with_homebrew() {
 ###############################################################################
 
 _install_exa() {
-  [[ -f "$HOME/bin/exa" ]] && printf "exa already installed.\n" && exit 0
-  [[ ! -f "$(which cmake)" ]] && printf "Install cmake dependency.\n" && exit 0
+  # Don't install if exa is already installed.
+  if [[ -f "$HOME/bin/exa" ]]; then
+    printf "exa already installed.\n" && exit 0
+  fi
+  # Make sure cmake is installed
+  if [[ ! -f "$(which cmake)" ]]; then
+    printf "Install cmake dependency.\n" && exit 0
+  fi
+  # Make sure libgit2 is installed.
   if ! ( _is_installed_with_homebrew "libgit2" ); then
     printf "Install libgit2 dependency.\n" && exit 0
   fi
@@ -61,7 +75,11 @@ _install_exa() {
     cargo build &&
     cp "$tmp_exa/target/exa" "$HOME/bin" &&
     cd "/tmp/orphans" &&
-    trash "$tmp_exa"
+    if [[ -f "$(which trash)" ]]; then
+      trash "$tmp_exa"
+    else
+      rm -rf "$tmp_exa"
+    fi
 }
 
 _install_exa
