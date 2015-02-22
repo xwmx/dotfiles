@@ -80,3 +80,12 @@ pip install --upgrade python-Levenshtein
 # https://github.com/Russell91/pythonpy
 # https://github.com/Russell91/pythonpy/wiki/Python3
 pip3 install -I --upgrade pythonpy
+
+# virtualenv - Virtual Environments
+#
+# virtualenv is a tool to create isolated Python environments.
+#
+# https://virtualenv.pypa.io/en/latest/
+# http://docs.python-guide.org/en/latest/dev/virtualenvs/
+# https://pypi.python.org/pypi/virtualenv
+pip install --upgrade virtualenv
