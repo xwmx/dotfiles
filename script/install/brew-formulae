@@ -81,7 +81,8 @@ brew tap homebrew/head-only
 
 # homebrew-python
 #
-# Python formulae for Homebrew
+# Homebrew formulae to install Python 2.x and 3.x libraries, which are not yet
+# well supported by pip install due to compiler and dependency issues.
 #
 # https://github.com/Homebrew/homebrew-python
 brew tap homebrew/python
