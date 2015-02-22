@@ -176,25 +176,13 @@ brew install gnu-sed --default-names
 brew install bash
 brew install bash-completion
 
-# RingoJS and Narwhal.
+# RingoJS
 #
 # Ringo is a CommonJS-based JavaScript runtime written in Java and based on the
 # Mozilla Rhino JavaScript engine.
 #
 # http://ringojs.org
-#
-# Narwhal is a cross-platform, multi-interpreter, general purpose JavaScript
-# platform. It aims to provide a solid foundation for building JavaScript
-# applications, primarily outside the web browser. Narwhal includes a package
-# manager, module system, and standard library for multiple JavaScript
-# interpreters.
-#
-# https://github.com/280north/narwhal
-#
-# NOTE: the order in which these are installed is important. See:
-# http://git.io/brew-narwhal-ringo.
 brew install ringojs
-brew install narwhal
 
 # ----------------------------------------------------------------------------
 # More recent versions of some OS X tools.
