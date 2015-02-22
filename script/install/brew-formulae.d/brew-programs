@@ -928,6 +928,17 @@ brew install webkit2png
 # https://weechat.org/
 brew install weechat
 
+# wget
+#
+# GNU Wget is a free software package for retrieving files using HTTP, HTTPS
+# and FTP, the most widely-used Internet protocols.
+#
+# https://www.gnu.org/software/wget/
+#
+# NOTE: including support of IRIs, Internationalized Resource Identifiers,
+# which are similar to URI, but allow unicode charaters to be used.
+brew install wget --with-iri
+
 # Wine
 #
 # Run Windows applications on Linux, BSD, Solaris and Mac OS X.
