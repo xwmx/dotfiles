@@ -83,3 +83,27 @@ _install_exa() {
 }
 
 _install_exa
+
+###############################################################################
+# Meteor
+#
+#
+# Meteor is an ultra-simple environment for building modern web applications.
+#
+# With Meteor you write apps:
+#
+# - in pure JavaScript
+# - that send data over the wire, rather than HTML
+# - using your choice of popular open-source libraries
+# - Documentation is available at http://docs.meteor.com/
+#
+# https://www.meteor.com/
+# https://github.com/meteor/meteor
+# https://install.meteor.com/
+###############################################################################
+
+_install_meteor() {
+  curl https://install.meteor.com | /bin/sh
+}
+
+_install_meteor
