@@ -621,7 +621,7 @@ brew install pacvim
 #http://johnmacfarlane.net/pandoc/
 brew install pandoc
 
-# PHP 5.5
+# PHP 5.6
 #
 # PHP is a server-side scripting language designed for web development but also
 # used as a general-purpose programming language.
@@ -632,7 +632,7 @@ brew install pandoc
 #   --with-gpm
 #     Build with gmp support. GNU Multiple Precision:
 #     http://php.net/manual/en/book.gmp.php
-brew install homebrew/php/php55 --with-gmp
+brew install homebrew/php/php56 --with-gmp
 
 # pidgin
 #
