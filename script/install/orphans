@@ -121,6 +121,9 @@ _exa_install
 ###############################################################################
 
 _meteor_install() {
+  if [[ -f "/usr/local/bin/meteor" ]]; then
+    printf "meteor is already installed.\n" && exit 0
+  fi
   curl https://install.meteor.com | /bin/sh
 }
 
