@@ -415,7 +415,7 @@ brew install lynx
 # six graphical user interface toolkits.
 #
 # http://matplotlib.org
-brew install matplotlib
+brew install homebrew/python/matplotlib
 
 # Memcached
 #
