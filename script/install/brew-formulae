@@ -182,7 +182,6 @@ brew install bash-completion
 
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
 
 ###############################################################################
 # Docker
