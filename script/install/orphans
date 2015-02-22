@@ -38,6 +38,21 @@ _is_installed_with_homebrew() {
   brew list -1 | grep -q "^${1}\$"
 }
 
+# _remove()
+#
+# If a `trash` command is present in the environment, use that to remove the
+# provided path, otherwise, use rm -rf
+#
+# Usage:
+#   _remove /path/to/a/file/or/directory/
+_remove() {
+  if [[ -f "$(which trash)" ]]; then
+    trash "$1"
+  else
+    rm -rf "$1"
+  fi
+}
+
 ###############################################################################
 # exa
 #
@@ -52,9 +67,12 @@ _is_installed_with_homebrew() {
 #
 # NOTE: included as an orhan because a rust crate doesn't appear to exist for
 # it yet and, therefore, it needs to be built with cargo.
+#
+# Uninstall:
+#   _remove "$HOME/bin/exa"
 ###############################################################################
 
-_install_exa() {
+_exa_install() {
   # Don't install if exa is already installed.
   if [[ -f "$HOME/bin/exa" ]]; then
     printf "exa already installed.\n" && exit 0
@@ -75,14 +93,10 @@ _install_exa() {
     cargo build &&
     cp "$tmp_exa/target/exa" "$HOME/bin" &&
     cd "/tmp/orphans" &&
-    if [[ -f "$(which trash)" ]]; then
-      trash "$tmp_exa"
-    else
-      rm -rf "$tmp_exa"
-    fi
+    _remove "$tmp_exa"
 }
 
-_install_exa
+_exa_install
 
 ###############################################################################
 # Meteor
@@ -100,10 +114,14 @@ _install_exa
 # https://www.meteor.com/
 # https://github.com/meteor/meteor
 # https://install.meteor.com/
+#
+# Uninstall:
+#   _remove "$HOME/.meteor/"
+#   _remove "/usr/local/bin/meteor"
 ###############################################################################
 
-_install_meteor() {
+_meteor_install() {
   curl https://install.meteor.com | /bin/sh
 }
 
-_install_meteor
+_meteor_install
