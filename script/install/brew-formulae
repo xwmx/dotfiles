@@ -180,7 +180,20 @@ brew install bash-completion
 # More recent versions of some OS X tools.
 # ----------------------------------------------------------------------------
 
+# GNU Grep
+#
+# Grep searches one or more input files for lines containing a match to a
+# specified pattern. By default, Grep outputs the matching lines.
+#
+# https://www.gnu.org/software/grep/
 brew install homebrew/dupes/grep
+
+# GNU Screen
+#
+# Screen is a full-screen window manager that multiplexes a physical terminal
+# between several processes, typically interactive shells.
+#
+# https://www.gnu.org/software/screen
 brew install homebrew/dupes/screen
 
 ###############################################################################
