@@ -79,6 +79,13 @@ brew tap homebrew/games
 
 brew tap homebrew/head-only
 
+# homebrew-python
+#
+# Python formulae for Homebrew
+#
+# https://github.com/Homebrew/homebrew-python
+brew tap homebrew/python
+
 # homebrew-science
 #
 # These formulae provide software tailored to scientific endeavours. Need to
