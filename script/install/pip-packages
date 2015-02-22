@@ -89,3 +89,16 @@ pip3 install -I --upgrade pythonpy
 # http://docs.python-guide.org/en/latest/dev/virtualenvs/
 # https://pypi.python.org/pypi/virtualenv
 pip install --upgrade virtualenv
+
+# virtualenvwrapper
+#
+# virtualenvwrapper is a set of extensions to Ian Bicking’s virtualenv tool.
+# The extensions include wrappers for creating and deleting virtual
+# environments and otherwise managing your development workflow, making it
+# easier to work on more than one project at a time without introducing
+# conflicts in their dependencies.
+#
+# https://virtualenvwrapper.readthedocs.org/en/latest/
+# https://bitbucket.org/dhellmann/virtualenvwrapper
+# https://pypi.python.org/pypi/virtualenvwrapper/
+pip install --upgrade virtualenvwrapper
