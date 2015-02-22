@@ -468,15 +468,6 @@ brew link --overwrite mono
 # http://www.jedsoft.org/most/
 brew install most
 
-# neovim
-#
-# http://neovim.org/
-# https://github.com/neovim/neovim
-# https://github.com/neovim/neovim/wiki/Installing
-#
-# Note that this is a tapped formula from the neovim/homebrew-neovim tap.
-brew install --HEAD neovim/neovim/neovim
-
 # mutt
 #
 # Mutt is a small but very powerful text-based mail client for Unix operating
@@ -488,6 +479,15 @@ brew install --HEAD neovim/neovim/neovim
 #   --with-trash-patch
 #     Apply trash folder patch
 brew install mutt --with-trash-patch
+
+# neovim
+#
+# http://neovim.org/
+# https://github.com/neovim/neovim
+# https://github.com/neovim/neovim/wiki/Installing
+#
+# Note that this is a tapped formula from the neovim/homebrew-neovim tap.
+brew install --HEAD neovim/neovim/neovim
 
 # ngrep - network grep
 #
