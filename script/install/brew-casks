@@ -325,6 +325,14 @@ brew cask install iterm2-nightly
 # http://www.amazon.com/gp/feature.html?docId=1000765211
 brew cask install kindlegen
 
+# Kitematic
+#
+# Kitematic is a simple application for managing Docker containers on Mac OS X.
+#
+# https://kitematic.com/
+# https://github.com/kitematic/kitematic
+brew cask install kitematic
+
 # Krita
 #
 # Krita is a digital painting and illustration application.
