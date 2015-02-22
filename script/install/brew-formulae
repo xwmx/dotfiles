@@ -188,14 +188,6 @@ brew install bash-completion
 # https://www.gnu.org/software/grep/
 brew install homebrew/dupes/grep
 
-# GNU Screen
-#
-# Screen is a full-screen window manager that multiplexes a physical terminal
-# between several processes, typically interactive shells.
-#
-# https://www.gnu.org/software/screen
-brew install homebrew/dupes/screen
-
 ###############################################################################
 # Docker
 #

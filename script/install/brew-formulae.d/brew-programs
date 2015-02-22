@@ -791,6 +791,17 @@ brew install scala
 # http://www.scipy.org
 brew install homebrew/python/scipy
 
+# GNU Screen
+#
+# Screen is a full-screen window manager that multiplexes a physical terminal
+# between several processes, typically interactive shells.
+#
+# https://www.gnu.org/software/screen
+#
+# NOTE: An older BSD version is included with OS X, but this newer GNU
+# version supercedes it.
+brew install homebrew/dupes/screen
+
 # scsh
 #
 # Scsh is a POSIX API layered on top of the Scheme programming language in a
