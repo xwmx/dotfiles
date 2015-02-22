@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+###############################################################################
+# Orphans
+#
+# Programs and packages not available through package managers.
+###############################################################################
+
+###############################################################################
+# Platform Check
+#
+# Limit to OS X, which is the primary platform for this configuration at the
+# moment.
+###############################################################################
+
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  printf "brew-all is only supported on OS X\nSkipping...\n"
+  exit 0
+fi
+
+
