@@ -256,6 +256,18 @@ brew install gnupg2
 # functioning of the other tools.
 brew link --overwrite gnupg2
 
+# GNU Grep
+#
+# Grep searches one or more input files for lines containing a match to a
+# specified pattern. By default, Grep outputs the matching lines.
+#
+# https://www.gnu.org/software/grep/
+#
+# NOTES:
+#   - An older version of grep is included by default in OS X
+#   - this version is installed with a 'g' prefex and is called via `ggrep`
+brew install homebrew/dupes/grep
+
 # heroku
 #
 # Heroku client - CLI tool for creating and managing Heroku apps
