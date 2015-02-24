@@ -389,6 +389,15 @@ brew cask install mactex
 # https://natron.inria.fr/
 brew cask install natron
 
+# Origami - Design Prototyping
+#
+# Origami is a free tool for designing modern user interfaces. Quickly put
+# together a prototype, run it on your iPhone or iPad, iterate on it, and
+# export code snippets.
+#
+# http://facebook.github.io/origami/
+brew cask install origami
+
 # osxfuse - FUSE for OS X
 #
 # The easiest and fastest way to create filesystems for OS X. FUSE for OS X
