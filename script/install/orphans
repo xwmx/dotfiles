@@ -712,6 +712,54 @@ exa_uninstall() {
   _remove "$HOME/bin/exa"
 }
 
+# ------------------------------------------------------------------------ iota
+
+desc iota <<-EOM
+Usage:
+  $_me iota
+
+Description:
+
+Iota is a terminal-based text-editor written in Rust.
+
+https://github.com/gchp/iota
+
+NOTE: included as an orhan because a rust crate doesn't appear to exist for
+it yet and, therefore, it needs to be built with cargo.
+EOM
+iota() {
+  # Don't install if already installed.
+  if [[ -f "$HOME/bin/iota" ]]; then
+    printf "iota already installed.\n" && exit 0
+  fi
+
+  printf ">> Installing iota\n"
+
+  local binary_name="iota"
+  local tmp_repo=/tmp/orphans/iota
+  local remote_url=https://github.com/gchp/iota.git
+
+  git clone "$remote_url" "$tmp_repo" &&
+    cd "$tmp_repo" &&
+    cargo build &&
+    cp "$tmp_repo/target/$binary_name" "$HOME/bin" &&
+    cd "/tmp/orphans" &&
+    _remove "$tmp_repo"
+}
+
+desc iota_uninstall <<-EOM
+Usage:
+  $_me iota_uninstall
+
+Description:
+
+Uninstall iota
+EOM
+iota_uninstall() {
+  printf ">> Uninstalling iota\n"
+  _remove "$HOME/bin/iota"
+}
+
 # ---------------------------------------------------------------------- meteor
 
 desc meteor <<-EOM
