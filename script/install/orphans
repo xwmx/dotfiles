@@ -689,14 +689,16 @@ exa() {
 
   printf ">> Installing exa\n"
 
-  local tmp_exa=/tmp/orphans/exa
+  local binary_name="exa"
+  local tmp_repo=/tmp/orphans/exa
+  local remote_url=https://github.com/ogham/exa.git
 
-  git clone https://github.com/ogham/exa.git "$tmp_exa" &&
-    cd "$tmp_exa" &&
+  git clone "$remote_url" "$tmp_repo" &&
+    cd "$tmp_repo" &&
     cargo build &&
-    cp "$tmp_exa/target/exa" "$HOME/bin" &&
+    cp "$tmp_repo/target/$binary_name" "$HOME/bin" &&
     cd "/tmp/orphans" &&
-    _remove "$tmp_exa"
+    _remove "$tmp_repo"
 }
 
 desc exa_uninstall <<-EOM
