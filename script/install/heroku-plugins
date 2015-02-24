@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+###############################################################################
+# heroku-plugins
+#
+# Heroku plugins allow developers to extend the functionality of the Heroku
+# command interface, adding commands or features.
+#
+# Heroku Plugin Documentation:
+#
+# https://devcenter.heroku.com/articles/using-cli-plugins
+###############################################################################
+
+# heroku-pg-transfer
+#
+# Transfer Heroku Postgres databases
+#
+# https://github.com/ddollar/heroku-pg-transfer
+# http://www.higherorderheroku.com/articles/pgtransfer-is-the-new-taps/
+heroku plugins:install https://github.com/ddollar/heroku-pg-transfer
+
+# pg-extras
+#
+# A heroku plugin for awesome pg:* commands that are also great and fun and
+# super.
+#
+# https://github.com/heroku/heroku-pg-extras/
+heroku plugins:install git://github.com/heroku/heroku-pg-extras.git
