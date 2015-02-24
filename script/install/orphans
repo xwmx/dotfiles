@@ -711,7 +711,9 @@ Uninstall exa
 EOM
 exa_uninstall() {
   printf ">> Uninstalling exa\n"
-  _remove "$HOME/bin/exa"
+  [[ -e "$HOME/bin/exa"    ]] && _remove "$HOME/bin/exa"
+  [[ -e "/tmp/orphans/exa" ]] && _remove "/tmp/orphans/exa"
+
 }
 
 # ------------------------------------------------------------------------ iota
@@ -759,7 +761,8 @@ Uninstall iota
 EOM
 iota_uninstall() {
   printf ">> Uninstalling iota\n"
-  _remove "$HOME/bin/iota"
+  [[ -e "$HOME/bin/iota"    ]] && _remove "$HOME/bin/iota"
+  [[ -e "/tmp/orphans/iota" ]] && _remove "/tmp/orphans/iota"
 }
 
 # ---------------------------------------------------------------------- meteor
@@ -801,8 +804,8 @@ Unisntall Meteor
 EOM
 meteor_uninstall() {
   printf ">> Uninstalling meteor\n"
-  _remove "$HOME/.meteor/"
-  _remove "/usr/local/bin/meteor"
+  [[ -e "$HOME/.meteor/"        ]] && _remove "$HOME/.meteor/"
+  [[ -e "/usr/local/bin/meteor" ]] && _remove "/usr/local/bin/meteor"
 }
 
 ###############################################################################
