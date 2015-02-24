@@ -846,13 +846,13 @@ xsv() {
     _remove "$tmp_repo"
 }
 
-desc iota_uninstall <<-EOM
+desc xsv_uninstall <<-EOM
 Usage:
-  $_me iota_uninstall
+  $_me xsv_uninstall
 
 Description:
 
-Uninstall iota
+Uninstall xsv
 EOM
 xsv_uninstall() {
   printf ">> Uninstalling iota\n"
