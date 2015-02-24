@@ -655,8 +655,11 @@ commands() {
 
 # ------------------------------------------------------------------------- exa
 
-desc install_exa <<-EOM
-install exa
+desc exa <<-EOM
+Usage:
+  $_me exa
+
+Description:
 
 exa is a modern replacement for ls. It uses colours for information by
 default, helping you distinguish between many types of files, such as whether
@@ -670,7 +673,7 @@ http://bsago.me/exa/
 NOTE: included as an orhan because a rust crate doesn't appear to exist for
 it yet and, therefore, it needs to be built with cargo.
 EOM
-install_exa() {
+exa() {
   # Don't install if exa is already installed.
   if [[ -f "$HOME/bin/exa" ]]; then
     printf "exa already installed.\n" && exit 0
@@ -684,6 +687,8 @@ install_exa() {
     printf "Install libgit2 dependency.\n" && exit 0
   fi
 
+  printf ">> Installing exa\n"
+
   local tmp_exa=/tmp/orphans/exa
 
   git clone https://github.com/ogham/exa.git "$tmp_exa" &&
@@ -694,17 +699,26 @@ install_exa() {
     _remove "$tmp_exa"
 }
 
-desc uninstall_exa <<-EOM
-uninstall exa
+desc exa_uninstall <<-EOM
+Usage:
+  $_me exa_uninstall
+
+Description:
+
+Uninstall exa
 EOM
-uninstall_exa() {
+exa_uninstall() {
+  printf ">> Uninstalling exa\n"
   _remove "$HOME/bin/exa"
 }
 
 # ---------------------------------------------------------------------- meteor
 
-desc install_meteor <<-EOM
-install Meteor
+desc meteor <<-EOM
+Usage:
+  $_me meteor
+
+Description:
 
 Meteor is an ultra-simple environment for building modern web applications.
 
@@ -719,17 +733,24 @@ https://www.meteor.com/
 https://github.com/meteor/meteor
 https://install.meteor.com/
 EOM
-install_meteor() {
+meteor() {
   if [[ -f "/usr/local/bin/meteor" ]]; then
     printf "meteor is already installed.\n" && exit 0
   fi
+  printf ">> Installing meteor\n"
   curl https://install.meteor.com | /bin/sh
 }
 
-desc uninstall_meteor <<-EOM
-unisntall meteor
+desc meteor_uninstall <<-EOM
+Usage:
+  $_me meteor_uninstall
+
+Description:
+
+Unisntall Meteor
 EOM
-uninstall_meteor() {
+meteor_uninstall() {
+  printf ">> Uninstalling meteor\n"
   _remove "$HOME/.meteor/"
   _remove "/usr/local/bin/meteor"
 }
