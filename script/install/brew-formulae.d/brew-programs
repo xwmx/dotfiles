@@ -77,6 +77,13 @@ brew install calc
 # http://www.asty.org/cmatrix/
 brew install cmatrix
 
+# composer
+#
+# Dependency Manager for PHP
+#
+# http://getcomposer.org
+brew install composer
+
 # coq
 #
 # Coq is a formal proof management system. It provides a formal language to
