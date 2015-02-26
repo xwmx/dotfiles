@@ -152,3 +152,6 @@
 	path = home/.janus/elm.vim
   url = https://github.com/lambdatoast/elm.vim.git
   ignore = dirty
+[submodule "vendor/com/github/alphabetum/manuel"]
+	path = vendor/com/github/alphabetum/manuel
+	url = https://github.com/alphabetum/manuel.git
