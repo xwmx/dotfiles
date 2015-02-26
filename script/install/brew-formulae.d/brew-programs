@@ -688,6 +688,34 @@ brew install pidgin --with-gsasl --without-GUI
 # http://www.zlib.net/pigz/
 brew install pigz
 
+# pow
+#
+# Pow is a zero-config Rack server for Mac OS X.
+#
+# http://pow.cx/
+# https://github.com/basecamp/pow
+brew install pow
+# pow post-install
+#
+# Create the required host directories:
+if [[ ! -d "$HOME/Library/Application Support/Pow/Hosts" ]]; then
+  mkdir -p "$HOME/Library/Application Support/Pow/Hosts"
+  if [[ ! -e "$HOME/.pow" ]]; then
+    ln -s "$HOME/Library/Application Support/Pow/Hosts" "$HOME/.pow"
+  fi
+fi
+# Setup and launch port 80 forwarding and launchd agents
+if ! ( [[ -e "/Library/LaunchDaemons/cx.pow.firewall.plist" ]] || \
+       [[ -e "/etc/resolver/dev" ]]
+  ); then
+  sudo pow --install-system
+  sudo launchctl load -w "/Library/LaunchDaemons/cx.pow.firewall.plist"
+fi
+if [[ ! -e "$HOME/Library/LaunchAgents/cx.pow.powd.plist" ]]; then
+  pow --install-local
+  launchctl load -w "$HOME/Library/LaunchAgents/cx.pow.powd.plist"
+fi
+
 # pv - Pipe Viewer
 #
 # A terminal-based tool for monitoring the progress of data through a pipeline.
