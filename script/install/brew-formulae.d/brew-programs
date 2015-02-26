@@ -132,6 +132,28 @@ brew install dash
 # https://en.wikipedia.org/wiki/DjVu
 brew install djvu2pdf
 
+# Docker Machine
+#
+# Machine management for a container-centric world
+#
+# Machine makes it really easy to create Docker hosts on your computer, on
+# cloud providers and inside your own data center. It creates servers,
+# installs Docker on them, then configures the Docker client to talk to them.
+#
+# https://docs.docker.com/machine/
+# https://github.com/docker/machine
+brew install docker-machine --devel
+
+# Docker Swarm
+#
+# Swarm: a Docker-native clustering system
+#
+# Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts
+# into a single, virtual host.
+#
+# https://github.com/docker/swarm
+brew install docker-swarm --devel
+
 # dots
 #
 # A configuration tool and framework for your laptop or desktop

@@ -55,6 +55,14 @@ brew tap bramstein/webfonttools
 # https://github.com/Homebrew/homebrew-completions
 brew tap homebrew/completions
 
+# homebrew devel-only
+#
+# These formulae are only available as pre-release versions and have no stable
+# tarballs.
+#
+# https://github.com/Homebrew/homebrew-devel-only
+brew tap homebrew/devel-only
+
 # homebrew-dupes
 #
 # These formulae duplicate software provided by OS X, though may provide more
