@@ -107,12 +107,6 @@
 [submodule "vendor/com/github/alphabetum/git-nest"]
 	path = vendor/com/github/alphabetum/git-nest
 	url = https://github.com/alphabetum/git-nest.git
-[submodule "home/.manuel.d/plugins/manuel-contrib-watch"]
-	path = home/.manuel.d/plugins/manuel-contrib-watch
-	url = https://github.com/ShaneKilkelly/manuel-contrib-watch.git
-[submodule "home/.manuel.d/plugins/manuel-contrib-concurrent"]
-	path = home/.manuel.d/plugins/manuel-contrib-concurrent
-	url = https://github.com/ShaneKilkelly/manuel-contrib-concurrent.git
 [submodule "vendor/com/github/ddollar/git-utils"]
 	path = vendor/com/github/ddollar/git-utils
 	url = https://github.com/ddollar/git-utils.git
@@ -155,3 +149,9 @@
 [submodule "vendor/com/github/alphabetum/manuel"]
 	path = vendor/com/github/alphabetum/manuel
 	url = https://github.com/alphabetum/manuel.git
+[submodule "home/.manuel.d/plugins/manuel-contrib-concurrent"]
+	path = home/.manuel.d/plugins/manuel-contrib-concurrent
+	url = https://github.com/alphabetum/manuel-contrib-concurrent.git
+[submodule "home/.manuel.d/plugins/manuel-contrib-watch"]
+	path = home/.manuel.d/plugins/manuel-contrib-watch
+	url = https://github.com/alphabetum/manuel-contrib-watch.git
