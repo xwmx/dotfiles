@@ -28,3 +28,6 @@
 
 # Ignore sass-cache directories
 --ignore-directory=is:sass-cache
+# Ignore compiled sass and scssc files
+--ignore-file=ext:scssc
+--ignore-file=ext:sassc
