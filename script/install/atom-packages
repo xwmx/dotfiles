@@ -1,0 +1,218 @@
+#!/usr/bin/env bash
+###############################################################################
+# Atom packages via APM, the Atom Package Manager
+#
+# Install packages for the Atom text editor using the apm command line tool.
+#
+# https://github.com/atom/apm
+# https://atom.io/packages
+# https://atom.io/
+###############################################################################
+
+# atom-dark-ui-slim
+#
+# Default dark theme for interface components
+#
+# https://github.com/bmathews/atom-dark-ui-slim
+apm install atom-dark-ui-slim
+
+# atom-jshint
+#
+# Validates your JS against JSHint as you type. The original and most used.
+#
+# https://github.com/Joezo/atom-jshint
+apm install atom-jshint
+
+# atom-prettify
+#
+# Validates your JS against JSHint as you type. The original and most used.
+#
+# https://github.com/Joezo/atom-jshint
+apm install atom-prettify
+
+# atom-simple-dark-ui
+#
+# Simple default dark theme for interface components
+#
+# https://github.com/cristianferrarig/atom-simple-dark-ui
+apm install atom-simple-dark-ui
+
+# atom-soda-dark-ui
+#
+#Soda Dark theme for interface components
+#
+# https://github.com/dmackerman/atom-soda-dark-ui
+apm install atom-soda-dark-ui
+
+# autocomplete-plus
+#
+# Display possible completions in the editor while typing
+#
+# https://github.com/atom-community/autocomplete-plus
+apm install autocomplete-plus
+
+# color-picker
+#
+# Right click or press CMD-SHIFT-C/CTRL-ALT-C to open it.
+#
+# https://github.com/thomaslindstrom/color-picker
+apm install color-picker
+
+# command-logger
+#
+# View a treemap of your Atom activity. Open from the command palette.
+#
+# https://github.com/kevinsawicki/command-logger
+apm install "command-logger"
+
+# editor-stats
+#
+# Display a graph of keyboard and mouse usage for the last 6 hours.
+#
+# https://github.com/atom/editor-stats
+apm install editor-stats
+
+# fizzy
+#
+# A light-hearted, bright and bubbly syntax theme featuring bright colors,
+# and inspired by the Espresso default highlighting, and the Soda Sublime Text
+# 2 theme.
+#
+# https://github.com/jglovier/fizzy
+apm install fizzy
+
+# go-plus
+#
+# Adds `gocode`, `gofmt`, `goimports`, `go vet`, `golint`, `go build` and
+# `go test` functionality for the go language.
+#
+# https://github.com/joefitzgerald/go-plus
+apm install go-plus
+
+# language-haml
+#
+# HAML package for atom
+#
+# https://github.com/cannikin/language-haml
+apm install language-haml
+
+# language-haskell
+#
+# Haskell language support in Atom
+#
+# https://github.com/jroesch/language-haskell
+apm install language-haskell
+
+# language-jade
+#
+# Jade TextMate bundle converted for Atom
+#
+# https://github.com/devongovett/atom-jade
+apm install language-jade
+
+# language-scala
+#
+# Scala language support in atom
+#
+# https://github.com/jroesch/language-scala
+apm install language-scala
+
+# linter
+#
+# Validates your code using linter
+#
+# https://github.com/AtomLinter/Linter
+apm install linter
+
+# minimap
+#
+# A preview of the full source code
+#
+# https://github.com/atom-minimap/minimap
+apm install minimap
+
+# monokai
+#
+# A monokai theme
+#
+# https://github.com/kevinsawicki/monokai
+apm install monokai
+
+# next-dark-ui
+#
+# Next Dark UI theme
+#
+# https://github.com/casesandberg/next-dark-ui
+apm install next-dark-ui
+
+# resize-panes
+#
+# Resize panes by enlarging or shrinking them
+#
+# https://github.com/santip/resize-panes
+apm install resize-panes
+
+# select-rectangle
+#
+# Select rectangle region.
+#
+# https://github.com/hmatsuda/select-rectangle
+apm install select-rectangle
+
+# sort-lines
+#
+# Sorts your lines. Never gets tired
+#
+# https://github.com/atom/sort-lines
+apm install "sort-lines"
+
+# toggle-quotes
+#
+# Quickly toggle between single and double quotes
+#
+# https://github.com/atom/toggle-quotes
+apm install toggle-quotes
+
+# twilight-syntax
+#
+# Twilight syntax theme for GitHub's Atom ID
+#
+# https://github.com/cannikin/twilight-syntax
+apm install twilight-syntax
+
+# unity-dark-ui
+#
+# An atom theme for a more native experience in OS X
+#
+# https://github.com/rschiang/unity-dark-ui
+apm install unity-dark-ui
+
+# vim-mode
+#
+# Add vim modal control.
+#
+# https://github.com/atom/vim-mode
+apm install vim-mode
+
+# visual-bell
+#
+# Shows a visual cue when the `beep` event is triggered
+#
+# https://github.com/probablycorey/visual-bell
+apm install visual-bell
+
+# Sublime-Style-Column-Selection
+#
+# Enable Sublime style 'Column Selection'. Just hold 'alt' while you
+# select. Also similar to Texmate's 'Multiple Carets', or BBEdit's 'Block
+# Select'
+#
+# https://github.com/bigfive/atom-sublime-select
+apm install Sublime-Style-Column-Selection
+
+# Zen
+#
+# Distraction free writing.
+#
+# https://github.com/defunkt/zen
+apm install Zen
