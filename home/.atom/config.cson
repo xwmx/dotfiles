@@ -27,3 +27,4 @@
   "go-plus":
     goPath: "~/.go"
   "tree-view": {}
+  "autocomplete-plus": {}
