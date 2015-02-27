@@ -9,6 +9,41 @@
 # https://atom.io/
 ###############################################################################
 
+# Get the path to the apm executable.
+_apm=$(which apm)
+
+# If the apm command is not found, exit.
+if [[ ! -e "${_apm}" ]]; then
+  printf "apm not found. Skipping...\n" && exit 0
+fi
+
+# override to apm command to do updates when a package is already installed.
+#
+# Overriding the apm command rather than using a unique function name in order
+# to keep the apm install entries in case I want to remove this function, since
+# it's not totally necessary and just speeds things up a bit.
+apm() {
+  if [[ "${1:-}" == "install" ]]; then
+    local local_entry=$(apm ls | grep "${2:-}")
+    if [[ -z ${local_entry} ]]; then
+      "$_apm" install "${2}"
+    fi
+  else
+    "$_apm" "${@}"
+  fi
+}
+
+###############################################################################
+# Upgrade
+###############################################################################
+
+# Upgrade without confirmation.
+apm upgrade -c false
+
+###############################################################################
+# Packages
+###############################################################################
+
 # atom-dark-ui-slim
 #
 # Default dark theme for interface components
