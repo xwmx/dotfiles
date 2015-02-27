@@ -18,8 +18,14 @@ fi
 # Formulae Scripts
 ###############################################################################
 
+# Get the current directory path.
+#
+# This is a more explicit derivative of the following:
+# http://stackoverflow.com/a/246128
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+
+# Source primary install scripts for Homebrew and Homewbrew Cask.
 . "$DIR/brew-formulae"
 . "$DIR/brew-casks"
 
