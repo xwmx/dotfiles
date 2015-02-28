@@ -78,6 +78,3 @@ let g:signify_diffoptions = { 'git': 'HEAD' }
 " NOTE: disabled temporarily to experiment and see if slowdowns when entering
 " buffers are avoided.
 " let g:signify_update_on_focusgained = 1
-
-" Key mappings
-nnoremap <leader>> SignifyRefresh
