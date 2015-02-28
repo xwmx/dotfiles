@@ -543,6 +543,13 @@ brew cask install sublime-text3
 # http://pages.uoregon.edu/koch/texshop
 brew cask install texshop
 
+# Textadept
+#
+# A fast, minimalist, and remarkably extensible cross-platform text editor
+#
+# http://foicica.com/textadept/
+brew cask install textadept
+
 # UnicodeChecker
 #
 # Exploration Unicode number and UTF encodings for each codepoint • Related

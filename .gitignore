@@ -87,3 +87,6 @@
 /home/.ssh/*
 !/home/.ssh/config
 
+# Only trash .textadept/init.lua
+/home/.textadept/*
+!/home/.textadept/init.lua
