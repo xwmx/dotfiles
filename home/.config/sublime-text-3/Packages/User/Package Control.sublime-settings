@@ -1,0 +1,32 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFileName",
+		"BracketHighlighter",
+		"CoffeeScriptHaml",
+		"Dockerfile Syntax Highlighting",
+		"Dotfiles Syntax Highlighting",
+		"GenerateUUID",
+		"GitGutter",
+		"GoSublime",
+		"Haml",
+		"HexViewer",
+		"Jade",
+		"Package Control",
+		"Python Improved",
+		"RSpec",
+		"Sass",
+		"SideBarGit",
+		"SublimeLinter",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-ruby",
+		"SublimeREPL",
+		"Theme - Soda",
+		"TrailingSpaces",
+		"Twilightcyanide Colorscheme",
+		"Vagrant"
+	]
+}

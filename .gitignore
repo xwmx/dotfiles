@@ -35,11 +35,25 @@
 !/home/.cabal/README.md
 !/home/.cabal/where-is-my-stuff.txt
 
+# .config
+#
 # Only track specific .config files
 /home/.config/*
+# base16-shell
 !/home/.config/base16-shell
+# htop
 !/home/.config/htop
 !/home/.config/htop/htoprc
+# Sublime Text 3
+!/home/.config/sublime-text-3
+/home/.config/sublime-text-3/*
+!/home/.config/sublime-text-3/Readme.md
+!/home/.config/sublime-text-3/Packages
+/home/.config/sublime-text-3/Packages/*
+!/home/.config/sublime-text-3/Packages/User
+/home/.config/sublime-text-3/Packages/User/*
+!/home/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+!/home/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
 
 # Only track specific ipython config files
 #
