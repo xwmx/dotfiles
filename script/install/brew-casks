@@ -550,6 +550,14 @@ brew cask install texshop
 # http://foicica.com/textadept/
 brew cask install textadept
 
+# Thunderbird
+#
+# Mozilla Thunderbird is a free, open source, cross-platform email, news, and
+# chat client developed by the Mozilla Foundation.
+#
+# http://www.mozilla.org/en-US/thunderbird/
+brew cask install thunderbird
+
 # UnicodeChecker
 #
 # Exploration Unicode number and UTF encodings for each codepoint • Related
