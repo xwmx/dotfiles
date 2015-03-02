@@ -74,7 +74,4 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_diffoptions = { 'git': 'HEAD' }
 
 " Update signify (ie, run :SignifyRefresh) when vim regains focus.
-"
-" NOTE: disabled temporarily to experiment and see if slowdowns when entering
-" buffers are avoided.
-" let g:signify_update_on_focusgained = 1
+let g:signify_update_on_focusgained = 1
