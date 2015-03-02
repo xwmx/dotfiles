@@ -41,6 +41,16 @@ pip install --upgrade "ipython[all]"
 # http://mitmproxy.org/
 pip install --upgrade mitmproxy
 
+# neovim
+#
+# Python client for Neovim. Library for scripting Nvim processes through it's
+# msgpack-rpc API.
+#
+# https://github.com/neovim/python-client
+# https://pypi.python.org/pypi/neovim
+# http://neovim.org/doc/user/nvim_python.html
+pip install --upgrade neovim
+
 # pep8 - Python style guide checker
 #
 # pep8 is a tool to check your Python code against some of the style
