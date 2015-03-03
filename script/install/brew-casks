@@ -579,6 +579,14 @@ brew cask install thunderbird
 # Experimenting with own cask localy.
 brew cask install alphabetum/taps/unicodechecker
 
+# Unity
+#
+# Unity is a flexible and powerful development platform for creating
+# multiplatform 3D and 2D games and interactive experiences.
+#
+# http://unity3d.com/unity/
+brew cask install unity
+
 # Vagrant
 #
 # Create and configure lightweight, reproducible, and portable development
