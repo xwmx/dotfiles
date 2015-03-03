@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+###############################################################################
+# Vim
+#
+# A wrapper for vim commands.
+###############################################################################
+
+# Use `nvim` for all vim operations if it is present in the $PATH. Otherwise,
+# use regular `vim`.
+#
+# `exec` tells the shell to just give control to the executable without
+# forking. See: http://stackoverflow.com/a/1696062
+_nvim_path="$(which nvim)"
+if [ -e "$_nvim_path" ]; then
+  exec "$_nvim_path" "$@"
+else
+  exec "vim" "$@"
+fi
