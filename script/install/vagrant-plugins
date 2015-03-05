@@ -6,6 +6,13 @@
 # https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins
 ###############################################################################
 
+# sahara
+#
+# plugin for vagrant that allows you manage a sandbox state
+#
+# https://github.com/jedi4ever/sahara
+vagrant plugin install sahara
+
 # vagrant-aws
 #
 # Use Vagrant to manage your EC2 and VPC instances.
@@ -32,10 +39,3 @@ vagrant plugin install vagrant-digitalocean
 #
 # https://github.com/smdahlen/vagrant-hostmanager
 vagrant plugin install vagrant-hostmanager
-
-# sahara
-#
-# plugin for vagrant that allows you manage a sandbox state
-#
-# https://github.com/jedi4ever/sahara
-vagrant plugin install sahara
