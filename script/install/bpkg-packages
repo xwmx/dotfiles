@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+###############################################################################
+# bpkg-packages
+#
+# Install various bpkg (bash package manager) packages
+#
+# http://www.bpkg.io/
+# https://github.com/bpkg/bpkg
+###############################################################################
+
+# C
+#
+# Compile and execute C "scripts" in one go!
+#
+# https://github.com/ryanmjacobs/c
+# https://news.ycombinator.com/item?id=9144467
+
+# Temporarily set PREFIX to $HOME to ensure installation in $HOME/bin
+# https://github.com/ryanmjacobs/c/blob/master/package.json#L6
+export PREFIX="$HOME"
+bpkg install -g ryanmjacobs/c
+unset PREFIX
