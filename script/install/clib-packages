@@ -7,6 +7,20 @@
 # https://github.com/clibs/clib
 ###############################################################################
 
+# bpkg
+#
+# bpkg is a bash package manager
+#
+# JavaScript has npm, Ruby has Gems, Python has pip and now Shell has bpkg!
+#
+# bpkg is a lightweight bash package manager. It takes care of fetching the
+# shell scripts, installing them appropriately, setting the execution
+# permission and more.
+#
+# http://www.bpkg.io/
+# https://github.com/bpkg/bpkg
+clib install bpkg/bpkg
+
 # mon(1) - Simple single-process process monitoring program written in C
 #
 # Super-simple monitoring program.
