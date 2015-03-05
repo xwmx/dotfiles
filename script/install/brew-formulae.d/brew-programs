@@ -70,6 +70,13 @@ brew install bup --with-pandoc --run-tests
 # http://www.isthe.com/chongo/tech/comp/calc/
 brew install calc
 
+# clib(1) - C package manager-ish
+#
+# Package manager for the C programming language.
+#
+# https://github.com/clibs/clib
+brew install clib
+
 # cmatrix
 #
 # 'The Matrix'-inspired scrolling lines.
