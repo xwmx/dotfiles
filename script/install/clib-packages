@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+###############################################################################
+# clib-packages
+#
+# Install various clib packages
+#
+# https://github.com/clibs/clib
+###############################################################################
+
+# mon(1) - Simple single-process process monitoring program written in C
+#
+# Super-simple monitoring program.
+#
+# mon spawned from the needlessly complex frustration that tools like monit
+# provide, with their awkward DSLs and setup. mon is written in C, uses less
+# than 400kb of memory, and is incredibly simple to set up.
+#
+# https://github.com/tj/mon
+clib install visionmedia/mon
+
+# Watch
+#
+# A tiny C program used to periodically execute a command.
+#
+# watch(1) periodically executes the given command - useful for auto-testing,
+# auto-building, auto-anything
+#
+# https://github.com/tj/watch
+clib install visionmedia/watch
