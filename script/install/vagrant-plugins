@@ -6,6 +6,21 @@
 # https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins
 ###############################################################################
 
+# vagrant-aws
+#
+# Use Vagrant to manage your EC2 and VPC instances.
+#
+# https://github.com/mitchellh/vagrant-aws
+vagrant plugin install vagrant-aws
+
+# Digital Ocean Vagrant Provider
+#
+# A Vagrant provider plugin that supports the management of Digital Ocean
+# droplets (instances).
+#
+# https://github.com/smdahlen/vagrant-digitalocean
+vagrant plugin install vagrant-digitalocean
+
 # vagrant-hostmanager
 #
 # A Vagrant plugin that manages the /etc/hosts file on guests within a
