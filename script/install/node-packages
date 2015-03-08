@@ -110,6 +110,13 @@ npm install -g ember-cli
 # https://github.com/eslint/eslint
 npm install -g eslint
 
+# gg
+#
+# Shortcuts for git commands
+#
+# https://github.com/qw3rtman/gg
+npm install -g gitgoodies
+
 # Grunt
 #
 # The JavaScript task runner.
