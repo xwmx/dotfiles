@@ -79,6 +79,14 @@ gem install powify
 # https://github.com/rodjek/puppet-lint
 gem install puppet-lint
 
+# rubocop
+#
+# A Ruby static code analyzer, based on the community Ruby style guide.
+#
+# http://batsov.com/rubocop/
+# https://github.com/bbatsov/rubocop
+gem install rubocop
+
 # ruby-lint
 #
 # Static code analysis for Ruby.
