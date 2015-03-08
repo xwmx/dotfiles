@@ -263,6 +263,15 @@ endif
 let g:NERDTreeMouseMode = 3
 
 " ============================================================================
+" syntastic
+" ============================================================================
+
+" Set Ruby file type to only use rubocop and mri
+"
+" rubylint returns undesirable warnings, so exclude from list.
+let g:syntastic_ruby_checkers=["rubocop", "mri"]
+
+" ============================================================================
 " vim-gitgutter
 " ============================================================================
 
