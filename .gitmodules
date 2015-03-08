@@ -149,9 +149,9 @@
 [submodule "vendor/com/github/alphabetum/manuel"]
 	path = vendor/com/github/alphabetum/manuel
 	url = https://github.com/alphabetum/manuel.git
-[submodule "home/.manuel.d/plugins/manuel-contrib-concurrent"]
-	path = home/.manuel.d/plugins/manuel-contrib-concurrent
-	url = https://github.com/alphabetum/manuel-contrib-concurrent.git
-[submodule "home/.manuel.d/plugins/manuel-contrib-watch"]
-	path = home/.manuel.d/plugins/manuel-contrib-watch
+[submodule "vendor/com/github/alphabetum/manuel-contrib-watch"]
+	path = vendor/com/github/alphabetum/manuel-contrib-watch
 	url = https://github.com/alphabetum/manuel-contrib-watch.git
+[submodule "vendor/com/github/alphabetum/manuel-contrib-concurrent"]
+	path = vendor/com/github/alphabetum/manuel-contrib-concurrent
+	url = https://github.com/alphabetum/manuel-contrib-concurrent.git
