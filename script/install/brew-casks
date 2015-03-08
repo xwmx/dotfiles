@@ -500,6 +500,14 @@ brew cask install scribus
 # http://secrets.blacktree.com
 brew cask install secrets
 
+# SmartGit
+#
+# SmartGit is a Git client with support for GitHub Pull Requests+Comments,
+# SVN, and Mercurial.
+#
+# http://www.syntevo.com/smartgit/
+brew cask install smartgit
+
 # Sonic Pi
 #
 # Audible Computing. A free sound synthesiser for live coding designed to
