@@ -155,3 +155,6 @@
 [submodule "vendor/com/github/alphabetum/manuel-contrib-concurrent"]
 	path = vendor/com/github/alphabetum/manuel-contrib-concurrent
 	url = https://github.com/alphabetum/manuel-contrib-concurrent.git
+[submodule "home/.janus/syntastic"]
+	path = home/.janus/syntastic
+	url = https://github.com/scrooloose/syntastic.git

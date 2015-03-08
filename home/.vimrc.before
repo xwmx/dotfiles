@@ -32,6 +32,10 @@ let mapleader=","
 "call janus#disable_plugin('vimwiki')
 "call janus#disable_plugin('vroom')
 
+" Disable syntastic in favor of non-janus installation to better ensure that
+" it's up to date.
+call janus#disable_plugin('syntastic')
+
 " ============================================================================
 " Disable Pathogen plugins
 " ============================================================================
