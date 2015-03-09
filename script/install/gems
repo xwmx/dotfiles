@@ -52,6 +52,15 @@ gem install jekyll
 # https://github.com/eddiezane/lunchy
 gem install lunchy
 
+# Middleman
+#
+# Middleman is a static site generator using all the shortcuts and tools in
+# modern web development.
+#
+# https://middlemanapp.com
+# https://github.com/middleman/middleman
+gem install middleman
+
 # mina
 #
 # Really fast deployer and server automation tool.
