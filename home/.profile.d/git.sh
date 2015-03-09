@@ -15,4 +15,7 @@
 #
 # However, in order to use the gg command line tool (installed via
 # node-packages), this alias must be unset.
-unalias gg
+#
+# Also, redirect errors to /dev/null if it's not set, as is currently the case
+# in the bash side of this configuration.
+unalias gg 2>/dev/null
