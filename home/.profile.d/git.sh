@@ -6,6 +6,7 @@
 #   - $HOME/.oh-my-zsh/plugins/git/git.plugin.zsh
 #   - $HOME/.gitconfig
 #   - $HOME/.gitconfig.local
+#   - $HOME/.scm_breeze
 #
 ###############################################################################
 
