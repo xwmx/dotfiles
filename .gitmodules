@@ -158,3 +158,6 @@
 [submodule "home/.janus/syntastic"]
 	path = home/.janus/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "home/.scm_breeze"]
+	path = home/.scm_breeze
+	url = https://github.com/ndbroadbent/scm_breeze.git
