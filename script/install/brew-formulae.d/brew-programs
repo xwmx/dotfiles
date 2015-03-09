@@ -70,6 +70,16 @@ brew install bup --with-pandoc --run-tests
 # http://www.isthe.com/chongo/tech/comp/calc/
 brew install calc
 
+# checkbashisms - check for bashisms in /bin/sh scripts
+#
+# checkbashisms,  based  on  one  of  the checks from the lintian system,
+# performs basic  checks  on  /bin/sh  shell  scripts  for  the  possible
+# presence  of  bashisms.  It takes the names of the shell scripts on the
+# command line, and outputs warnings if possible bashisms are detected.
+#
+# http://manpages.ubuntu.com/manpages/natty/man1/checkbashisms.1.html
+brew install checkbashisms
+
 # clib(1) - C package manager-ish
 #
 # Package manager for the C programming language.
