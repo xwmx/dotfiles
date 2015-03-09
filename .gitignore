@@ -79,6 +79,10 @@
 
 # Only track specific rvm config files
 /home/.rvm/*
+!/home/.rvm/gemsets
+/home/.rvm/gemsets/*
+!/home/.rvm/gemsets/default.gems
+!/home/.rvm/gemsets/global.gems
 !/home/.rvm/user
 /home/.rvm/user/*
 !/home/.rvm/user/db
