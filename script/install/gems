@@ -85,7 +85,11 @@ gem install puppet-lint
 #
 # http://batsov.com/rubocop/
 # https://github.com/bbatsov/rubocop
-gem install rubocop
+#
+# NOTE: Version 0.29+ isn't displaying properly in syntastic, it's unclear
+# what the problem is, and there are no open issues on either project.
+# Version 0.28 works as expected, so just sticking with that for now.
+gem install rubocop --version 0.28
 
 # ruby-lint
 #
