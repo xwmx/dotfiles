@@ -7,8 +7,8 @@
 
 # load bashenv
 # Unlike zsh, this is not a file known to bash, so it needs an explicit invite.
-source $HOME/.bashenv
-source $HOME/.profile
+source "$HOME/.bashenv"
+source "$HOME/.profile"
 
 ###############################################################################
 # Init
