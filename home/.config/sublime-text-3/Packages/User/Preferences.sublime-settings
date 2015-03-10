@@ -1,6 +1,7 @@
 {
 	"auto_indent": true,
-	"color_inactive_tabs": true, // Afterglow inactive GUI tab setting
+	"color_inactive_tabs": true,
+	"color_inactive_tabs_comment": "Afterglow inactive GUI tab setting",
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
 	"detect_indentation": true,
 	"draw_white_space": "all",
@@ -17,7 +18,8 @@
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
-	"tabs_small": true, // Afterflow GUI tab size setting
+	"tabs_small": true,
+	"tabs_small_comment": "Afterflow GUI tab size setting",
 	"theme": "Afterglow.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true
