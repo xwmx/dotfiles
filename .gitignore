@@ -52,6 +52,7 @@
 /home/.config/sublime-text-3/Packages/*
 !/home/.config/sublime-text-3/Packages/User
 /home/.config/sublime-text-3/Packages/User/*
+!/home/.config/sublime-text-3/Packages/User/Markdown\ Extended.sublime-settings
 !/home/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 !/home/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
 
