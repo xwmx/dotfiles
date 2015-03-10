@@ -1,6 +1,5 @@
 {
 	"auto_indent": true,
-	"color_scheme": "Packages/Twilightcyanide Colorscheme/Twilightcyanide ColorScheme - Constrasted Semi.tmTheme",
 	"detect_indentation": true,
 	"draw_white_space": "all",
 	"font_face": "Menlo",
@@ -16,7 +15,10 @@
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
-	"theme": "Soda Dark 3.sublime-theme",
+	"theme": "Afterglow.sublime-theme",
+	"tabs_small": true,
+	"color_inactive_tabs": true,
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true
 }
