@@ -224,6 +224,14 @@ npm install -g shipit-cli
 # https://github.com/slap-editor/slap
 npm install -g slap
 
+# TypeScript
+#
+# TypeScript is a superset of JavaScript that adds optional types, classes,
+# and modules and compiles to JavaScript.
+#
+# http://www.typescriptlang.org/
+npm install -g typescript
+
 # volo
 #
 # volo is a tool which lets you quickly create projects, add libraries, and
