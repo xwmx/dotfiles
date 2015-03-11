@@ -161,3 +161,6 @@
 [submodule "home/.scm_breeze"]
 	path = home/.scm_breeze
 	url = https://github.com/ndbroadbent/scm_breeze.git
+[submodule "vendor/com/github/livibetter/pipes.sh"]
+	path = vendor/com/github/livibetter/pipes.sh
+	url = https://github.com/livibetter/pipes.sh.git
