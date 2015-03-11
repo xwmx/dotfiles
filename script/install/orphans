@@ -855,7 +855,7 @@ Description:
 Uninstall xsv
 EOM
 xsv_uninstall() {
-  printf ">> Uninstalling iota\n"
+  printf ">> Uninstalling xsv\n"
   [[ -e "$HOME/bin/xsv"    ]] && _remove "$HOME/bin/xsv"
   [[ -e "/tmp/orphans/xsv" ]] && _remove "/tmp/orphans/xsv"
 }
