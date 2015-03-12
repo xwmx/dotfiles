@@ -489,6 +489,14 @@ brew install memcached
 # http://mercurial.selenic.com/
 brew install mercurial
 
+# Midnight Commander
+#
+# GNU Midnight Commander is a visual file manager
+#
+# https://www.midnight-commander.org/
+# http://en.wikipedia.org/wiki/Midnight_Commander
+brew install midnight-commander
+
 # MIT/GNU Scheme
 #
 # MIT/GNU Scheme is an implementation of the Scheme programming language,
