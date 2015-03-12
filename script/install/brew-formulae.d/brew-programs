@@ -947,6 +947,22 @@ brew install sphinx
 # http://www.gnu.org/software/stow/
 brew install stow
 
+# syncthing
+#
+# Open Source Continuous File Synchronization
+#
+# http://syncthing.net
+# https://github.com/syncthing/syncthing
+brew install syncthing
+# syncthing post-install
+#
+# Setup and launch launchd agent
+if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]; then
+  ln -sfv /usr/local/opt/syncthing/*.plist "$HOME/Library/LaunchAgents"
+  launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+fi
+
+
 # tag
 #
 # A command line tool to manipulate tags on Mavericks files, and to query for
