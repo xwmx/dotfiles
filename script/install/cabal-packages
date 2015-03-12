@@ -70,3 +70,12 @@ cabal install hlint
 # https://github.com/nikita-volkov/record
 # http://nikita-volkov.github.io/record/
 cabal install record
+
+# Shake
+#
+# Shake is a tool for writing build systems - an alternative to make, Scons,
+# Ant etc.
+#
+# http://shakebuild.com/
+# https://github.com/ndmitchell/shake
+cabal install shake
