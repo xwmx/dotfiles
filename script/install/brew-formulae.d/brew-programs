@@ -962,7 +962,6 @@ if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]; then
   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
 fi
 
-
 # tag
 #
 # A command line tool to manipulate tags on Mavericks files, and to query for
