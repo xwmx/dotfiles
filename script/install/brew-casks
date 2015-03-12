@@ -140,6 +140,14 @@ brew cask install audacity
 # http://bibdesk.sourceforge.net/
 brew cask install bibdesk
 
+# bittorrent-sync
+#
+# Fast, private file sharing for teams and individuals.
+#
+# http://www.bittorrent.com/sync
+# https://www.getsync.com/
+brew cask install bittorrent-sync
+
 # Blender
 #
 # Blender is a free and open source 3D animation suite.
