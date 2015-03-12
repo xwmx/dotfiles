@@ -34,3 +34,12 @@ fi
 # https://github.com/i2y/mochi
 pip3 install --upgrade mochi
 
+# the xonsh shell
+#
+# xonsh is a Python-ish, BASHwards-compatible shell language and command
+# prompt. The language is a superset of Python 3.4 with additional shell
+# primitives that you are used to from BASH and IPython.
+#
+# http://xonsh.org/
+# https://github.com/scopatz/xonsh
+pip3 install --upgrade xonsh
