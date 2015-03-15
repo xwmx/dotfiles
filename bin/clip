@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+#       _                 _
+#         ___
+#   _____/ (_)___
+#  / ___/ / / __ \
+# / /__/ / / /_/ /
+# \___/_/_/ .___/
+#        /_/
+#
+# A simple wrapper combining pbcopy & pbpaste in a single command.
+#
+# Based on Bash Boilerplate: https://github.com/alphabetum/bash-boilerplate
+#
+# Copyright (c) 2015 William Melody • hi@williammelody.com
+
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS="$(printf '\n\t')"
+
+###############################################################################
+# Environment
+###############################################################################
+
+# $_me
+#
+# Set to the program's basename.
+_me=$(basename "$0")
+
+###############################################################################
+# Help
+###############################################################################
+
+read -d '' "_program_help" <<EOM || true
+        ___
+  _____/ (_)___
+ / ___/ / / __ \\\\
+/ /__/ / / /_/ /
+\\\\___/_/_/ .___/
+       /_/
+
+A simple wrapper combining pbcopy & pbpaste in a single command.
+
+Usage:
+  $_me [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
+  $_me <input> [-pboard {general | ruler | find | font}]
+  $_me -h | --help
+
+Options:
+  -h --help  Show this screen.
+EOM
+
+# _print_help()
+#
+# Usage: _print_help
+#
+# Print the program help information.
+_print_help() {
+  printf "%s\n" "$_program_help"
+}
+
+###############################################################################
+# Program Functions
+###############################################################################
+
+_clip() {
+  if [[ -t 0 ]]; then
+    if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]; then
+      input="$1"
+      options=(${@:1})
+      printf "%s" "$input" | pbcopy "${options:-}"
+    else
+      pbpaste "$@"
+    fi
+  else
+    cat | pbcopy "$@"
+  fi
+}
+
+###############################################################################
+# Main
+###############################################################################
+
+_main() {
+  # Set a local arg1 variable to the first argument or, if there is no first
+  # argument, just a blank value.
+  #
+  # NOTE: 'local' is a non-POSIX bash feature and keeps the variable local to
+  # the block of code, as defined by curly braces. It's easiest to just think
+  # of them as local to a function.
+  local arg1=${1:-}
+
+  # Avoiding getops (or pattern equivalent) to avoid complexity when only one
+  # program option is expected.
+  if ( \
+    [[ "$arg1" == "-h"     ]] ||
+    [[ "$arg1" == "--help" ]]
+  ); then
+    _print_help
+  else
+    _clip "$@"
+  fi
+}
+
+_main "$@"
