@@ -169,6 +169,14 @@ brew cask install brackets
 # http://breach.cc
 brew cask install breach
 
+# Boot2Docker Status
+#
+# Status bar application to manage the state of your Boot2Docker VM.
+#
+# http://boot2docker-status.nickgartmann.com/
+# https://github.com/nickgartmann/boot2docker-status
+brew cask install "boot2docker-status"
+
 # Cakebrew
 #
 # The Mac App for Homebrew.
