@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-#       _                 _
-#         ___
-#   _____/ (_)___
-#  / ___/ / / __ \
-# / /__/ / / /_/ /
-# \___/_/_/ .___/
-#        /_/
+#            __
+#     ____  / /_
+#    / __ \/ __ \
+#   / /_/ / /_/ /
+#  / .___/_.___/
+# /_/
 #
 # A simple wrapper combining pbcopy & pbpaste in a single command.
 #
@@ -23,7 +22,7 @@ IFS="$(printf '\n\t')"
 ###############################################################################
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  printf "clip is only supported on OS X\n" 1>&2
+  printf "pb is only supported on OS X\n" 1>&2
   exit 1
 fi
 
@@ -41,12 +40,12 @@ _me=$(basename "$0")
 ###############################################################################
 
 read -d '' "_program_help" <<EOM || true
-        ___
-  _____/ (_)___
- / ___/ / / __ \\\\
-/ /__/ / / /_/ /
-\\\\___/_/_/ .___/
-       /_/
+           __
+    ____  / /_
+   / __ \\\\/ __ \\\\
+  / /_/ / /_/ /
+ / .___/_.___/
+/_/
 
 A simple wrapper combining pbcopy & pbpaste in a single command.
 
@@ -72,7 +71,7 @@ _print_help() {
 # Program Functions
 ###############################################################################
 
-_clip() {
+_pb() {
   if [[ -t 0 ]]; then
     if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]; then
       input="$1"
@@ -107,7 +106,7 @@ _main() {
   ); then
     _print_help
   else
-    _clip "$@"
+    _pb "$@"
   fi
 }
 
