@@ -18,12 +18,17 @@ set -o pipefail
 IFS="$(printf '\n\t')"
 
 ###############################################################################
-# Platform Check
+# Dependency / Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-  printf "pb is only supported on OS X\n" 1>&2
-  exit 1
+program_exists() {
+  hash "$1" 2>/dev/null
+}
+
+if ! program_exists pbcopy;then
+  printf "pbcopy not found on this system.\n"
+elif ! program_exists pbpaste; then
+  printf "pbpaste not found on this system\n"
 fi
 
 ###############################################################################
