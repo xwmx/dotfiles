@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+###############################################################################
+# opam-packages
+#
+# Download and install OPAM / OCaml packages
+#
+# https://opam.ocaml.org/
+###############################################################################
+
+###############################################################################
+# Environment
+###############################################################################
+
+# Some settings in $LDFLAGS can cause opam install to fail. In particular, the
+# current setting, `-arch x86_64` causes the zarith package (a dependency of
+# the irmin package) to fail when trying to compile, with ocamlmklib outputting
+# the following error message:
+#   Unknown option -arch
+#   Don't know what to do with x86_64
+# Unsetting $LDFLAGS resolves this error.
+export LDFLAGS=
+
+###############################################################################
+# Update
+###############################################################################
+
+opam upgrade --yes
+
+###############################################################################
+# Packages
+###############################################################################
+
+# CoHTTP
+#
+# CoHTTP is an OCaml library for creating HTTP daemons. It has a portable HTTP
+# parser, and implementations using various asynchronous programming libraries.
+#
+# https://opam.ocaml.org/packages/cohttp/cohttp.0.15.2/
+# https://github.com/mirage/ocaml-cohttp
+opam install --yes cohttp
+
+# git / ocaml-git
+#
+# Pure OCaml low-level bindings to Git
+#
+# https://github.com/mirage/ocaml-git
+# https://opam.ocaml.org/packages/git/git.1.4.11/
+opam install --yes git
+
+# Irmin
+#
+# Irmin is a library for persistent stores with built-in snapshot, branching
+# and reverting mechanisms. It is designed to use a large variety of backends.
+# Irmin is written in pure OCaml and does not depend on external C stubs; it
+# aims is to run everywhere, from Linux to Xen unikernels.
+#
+# https://github.com/mirage/irmin
+# https://opam.ocaml.org/packages/irmin/irmin.0.9.4/
+#
+# OPAM Dependencies:
+#   cohttp
+#   git
+opam install --yes irmin
