@@ -5,6 +5,15 @@
 # Install various global ruby gems modules
 ###############################################################################
 
+# artoo
+#
+# Ruby robotics framework using Celluloid with support for 15 different
+# platforms.
+#
+# http://artoo.io/
+# https://github.com/hybridgroup/artoo
+gem install artoo
+
 # faker
 #
 # A library for generating fake data such as names, addresses, and phone
