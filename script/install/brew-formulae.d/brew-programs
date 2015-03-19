@@ -388,6 +388,15 @@ brew install imagemagick --with-webp
 # http://iolanguage.org/
 brew install io --without-addons
 
+# Ioke
+#
+# Ioke is a new language for the JVM, based on Io and other languages. Ioke is
+# a strongly typed, dynamic, prototype based programming language.
+#
+# https://ioke.org/
+# https://github.com/olabini/ioke
+brew install ioke
+
 # irssi
 #
 #Irssi is a terminal based IRC client for UNIX systems. It also supports SILC
