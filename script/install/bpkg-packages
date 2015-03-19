@@ -20,3 +20,13 @@
 export PREFIX="$HOME"
 bpkg install -g ryanmjacobs/c
 unset PREFIX
+
+# clip
+#
+# Silly terminal clipboard
+#
+# https://github.com/bpkg/clip
+# http://www.bpkg.io/pkg/clip/
+export PREFIX="$HOME"
+bpkg install -g clip
+unset PREFIX
