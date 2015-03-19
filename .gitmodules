@@ -164,3 +164,6 @@
 [submodule "vendor/com/github/livibetter/pipes.sh"]
 	path = vendor/com/github/livibetter/pipes.sh
 	url = https://github.com/livibetter/pipes.sh.git
+[submodule "vendor/com/github/alphabetum/hosts"]
+	path = vendor/com/github/alphabetum/hosts
+	url = https://github.com/alphabetum/hosts.git
