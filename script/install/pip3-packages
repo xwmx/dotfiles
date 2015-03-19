@@ -27,6 +27,17 @@ fi
 # Packages
 ###############################################################################
 
+# Hy
+#
+# Hy is a wonderful dialect of Lisp that’s embedded in Python.
+#
+# Since Hy transforms its Lisp code into the Python Abstract Syntax Tree, you
+# have the whole beautiful world of Python at your fingertips, in Lisp form!
+#
+# https://github.com/hylang/hy
+# http://hylang.org/
+pip3 install --upgrade hy
+
 # Mochi
 #
 # Dynamically typed functional programming language.
