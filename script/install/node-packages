@@ -68,6 +68,15 @@ npm install -g component
 # https://github.com/CSSLint/csslint/wiki/Command-line-interface
 npm install -g csslint
 
+# Cylon
+#
+# JavaScript framework for robotics, physical computing, and the Internet of
+# Things.
+#
+# https://github.com/hybridgroup/cylon/
+# http://cylonjs.com/
+npm install -g cylon
+
 # dat
 #
 # Dat is an open source project that provides a streaming interface between
