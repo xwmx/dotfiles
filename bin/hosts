@@ -1,1 +1,17 @@
-../vendor/com/github/alphabetum/hosts/hosts
+#!/usr/bin/env bash
+###############################################################################
+# hosts
+#
+# A wrapper for the hosts program that includes some additional functions.
+###############################################################################
+
+block() {
+  $_me add 127.0.0.1 "${1}"
+}
+
+unblock() {
+  $_me remove "${1}"
+}
+
+# Source the original hosts program.
+. "${HOME}/.dotfiles/vendor/com/github/alphabetum/hosts/hosts"
