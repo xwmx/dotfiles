@@ -169,7 +169,7 @@ brew install docker-machine --devel
 # into a single, virtual host.
 #
 # https://github.com/docker/swarm
-brew install docker-swarm --devel
+brew install docker-swarm
 
 # dots
 #
