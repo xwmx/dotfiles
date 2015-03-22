@@ -563,6 +563,15 @@ brew cask install spectacle
 # http://www.sublimetext.com/3
 brew cask install sublime-text3
 
+# swi-prolog
+#
+# SWI-Prolog offers a comprehensive free Prolog environment. Since its start in
+# 1987, SWI-Prolog development has been driven by the needs of real world
+# applications.
+#
+# http://www.swi-prolog.org/
+brew cask install swi-prolog
+
 # TeXShop
 #
 # TeXShop is a TeX previewer for Mac OS X, written in Cocoa. Since pdf is a
