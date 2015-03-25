@@ -398,13 +398,6 @@ brew cask install macfusion
 # http://www.tug.org/mactex/
 brew cask install mactex
 
-# Monodraw
-#
-# Powerful ASCII art editor designed for the Mac.
-#
-# http://monodraw.helftone.com/
-brew cask install monodraw
-
 # Natron
 #
 # Natron is an open-source • crossplatform nodal • compositing software
