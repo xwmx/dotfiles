@@ -577,6 +577,14 @@ brew install most
 #     Apply trash folder patch
 brew install mutt --with-trash-patch
 
+# mvnvm
+#
+# Maven Version Manager
+#
+# http://mvnvm.org/
+# https://bitbucket.org/mjensen/mvnvm
+brew install mvnvm
+
 # neovim
 #
 # http://neovim.org/
