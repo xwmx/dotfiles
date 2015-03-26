@@ -85,6 +85,12 @@ filetype plugin indent on
 "   http://robots.thoughtbot.com/replace-coffeescript-with-es6
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
+" Associate Baskfile and Manuelfile with bash
+"
+" Files with these names are expected to be bash files without a shebang since
+" they are sourced and run from their respective programs: 'bask' and manuel.
+autocmd BufRead,BufNewFile Baskfile,Manuelfile call SetFileTypeSH("bash")
+
 " ============================================================================
 " Line length highlighting
 " ============================================================================
