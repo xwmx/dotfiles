@@ -167,3 +167,6 @@
 [submodule "vendor/com/github/alphabetum/hosts"]
 	path = vendor/com/github/alphabetum/hosts
 	url = https://github.com/alphabetum/hosts.git
+[submodule "vendor/com/github/alphabetum/bask"]
+	path = vendor/com/github/alphabetum/bask
+	url = https://github.com/alphabetum/bask.git
