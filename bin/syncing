@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+# syncing - a bask extension script
+#
+# Add this script and bask to your $PATH, then run `syncing help` for usage info.
+
+source "$(which bask)"
+
+desc start <<EOM
+Usage:
+  syncing start
+
+Description:
+  Start syncthing. A shortcut for the following:
+
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+EOM
+start() {
+  printf "Starting syncthing...\n"
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+}
+
+desc stop <<EOM
+Usage:
+  syncing stop
+
+Description:
+  Stop syncthing. A shortcut for the following:
+
+  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+EOM
+stop() {
+  printf "Stopping syncthing..."
+  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+}
+
+
+_main
