@@ -133,6 +133,13 @@ go get -u -v github.com/fogleman/pt/pt
 # https://github.com/tj/stack
 go get -u -v github.com/visionmedia/stack/cmd/stack
 
+# termui
+#
+# Go terminal dashboard. Inspired by blessed-contrib, but purely in Go.
+#
+# https://github.com/gizak/termui
+go get -u -v github.com/gizak/termui
+
 # vet
 #
 # Vet examines Go source code and reports suspicious constructs, such as Printf
