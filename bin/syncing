@@ -32,9 +32,8 @@ Description:
   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
 EOM
 stop() {
-  printf "Stopping syncthing..."
+  printf "Stopping syncthing...\n"
   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
 }
-
 
 _main
