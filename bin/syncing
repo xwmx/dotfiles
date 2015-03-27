@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-#
+#########################################################################
 # syncing - a bask extension script
 #
-# Add this script and bask to your $PATH, then run `syncing help` for usage info.
+# Add this script and %s to your \$PATH. For usage information, run:
+# syncing help
+#########################################################################
 
 source "$(which bask)"
 
