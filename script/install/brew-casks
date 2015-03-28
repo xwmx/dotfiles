@@ -314,6 +314,10 @@ brew cask install haskell-platform
 # some of the world's best-known writers of IF.
 #
 # http://inform7.com/
+#
+# Additional links and resources:
+#
+# https://news.ycombinator.com/item?id=9279639
 brew cask install inform
 
 # Inkscape
