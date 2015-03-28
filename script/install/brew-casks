@@ -306,6 +306,16 @@ brew cask install gpgtools
 # http://www.haskell.org/platform/
 brew cask install haskell-platform
 
+# Inform
+#
+# Inform is a design system for interactive fiction based on natural language.
+# It is a radical reinvention of the way interactive fiction is designed,
+# guided by contemporary work in semantics and by the practical experience of
+# some of the world's best-known writers of IF.
+#
+# http://inform7.com/
+brew cask install inform
+
 # Inkscape
 #
 # Inkscape is an open-source vector graphics editor similar to Adobe
