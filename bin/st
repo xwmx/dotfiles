@@ -10,7 +10,7 @@ source "$(which bask)"
 
 desc start <<EOM
 Usage:
-  syncing start
+  $_me start
 
 Description:
   Start syncthing. A shortcut for the following:
@@ -24,7 +24,7 @@ start() {
 
 desc stop <<EOM
 Usage:
-  syncing stop
+  $_me stop
 
 Description:
   Stop syncthing. A shortcut for the following:
