@@ -847,6 +847,15 @@ brew install ranger
 # https://github.com/sstephenson/rbenv
 brew install rbenv
 
+# redo
+#
+# Smaller, easier, more powerful, and more reliable than make. An
+# implementation of djb's redo.
+#
+# https://github.com/apenwarr/redo
+# http://homepage.ntlworld.com/jonathan.deboynepollard/FGA/introduction-to-redo.html
+brew install redo
+
 # rename
 #
 # renames files according to modification rules specified on the command line.
