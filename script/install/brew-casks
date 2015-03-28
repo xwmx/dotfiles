@@ -601,6 +601,18 @@ brew cask install textadept
 # http://www.mozilla.org/en-US/thunderbird/
 brew cask install thunderbird
 
+# Twine
+#
+# Twine is an open-source tool for telling interactive, nonlinear stories. You
+# don't need to write any code to create a simple story with Twine, but you
+# can extend your stories with variables, conditional logic, images, CSS, and
+# JavaScript when you're ready. Twine publishes directly to HTML, so you can
+# post your work nearly anywhere. Anything you create with it is completely
+# free to use any way you like, including for commercial purposes.
+#
+# http://twinery.org/
+brew cask install twine
+
 # UnicodeChecker
 #
 # Exploration Unicode number and UTF encodings for each codepoint • Related
