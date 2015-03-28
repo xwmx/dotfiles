@@ -244,6 +244,53 @@ meteor_uninstall() {
   [[ -e "/usr/local/bin/meteor" ]] && _remove "/usr/local/bin/meteor"
 }
 
+# -------------------------------------------------------------- neovim-dot-app
+
+desc neovim_dot_app <<-EOM
+Usage:
+  $_me neovim_dot_app
+
+Description:
+
+OS X GUI for NeoVim.
+
+https://github.com/rogual/neovim-dot-app
+EOM
+neovim_dot_app() {
+  local install_location="$HOME/Applications/NeoVim.app"
+
+  if [[ -f "$install_location" ]]; then
+    printf "neovim-dot-app is already installed.\n" && exit 0
+  fi
+
+  printf ">> Installing neovim-dot-app\n"
+
+  local tmp_repo=/tmp/orphans/neovim-dot-app
+  local remote_url=https://github.com/rogual/neovim-dot-app.git
+
+  git clone "$remote_url" "$tmp_repo" &&
+    cd "$tmp_repo" &&
+    make &&
+    mv "${tmp_repo}/build/NeoVim.app" "$install_location" &&
+    _remove "$tmp_repo"
+}
+
+desc neovim_dot_app_uninstall <<-EOM
+Usage:
+  $_me neovim_dot_app_uninstall
+
+Description:
+
+Unisntall neovim-dot-app
+EOM
+neovim_dot_app_uninstall() {
+  printf ">> Uninstalling neovim-dot-app\n"
+  local install_location="$HOME/Applications/NeoVim.app"
+  local tmp_location="/tmp/orphans/neovim-dot-app"
+  [[ -e "$install_location" ]] && _remove "$install_location"
+  [[ -e "$tmp_location" ]] && _remove "$tmp_location"
+}
+
 # ------------------------------------------------------------------------- xsv
 
 desc xsv <<-EOM
