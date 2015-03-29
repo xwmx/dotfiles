@@ -428,6 +428,14 @@ brew cask install mactex
 # https://natron.inria.fr/
 brew cask install natron
 
+# nvALT
+#
+# nvALT 2 is a fork of the original Notational Velocity with some additional
+# features and interface modifications, including MultiMarkdown functionality.
+#
+# http://brettterpstra.com/projects/nvalt/
+brew cask install nvalt
+
 # Origami - Design Prototyping
 #
 # Origami is a free tool for designing modern user interfaces. Quickly put
