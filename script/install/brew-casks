@@ -208,6 +208,15 @@ brew cask install colors
 # http://www.consul.io/
 brew cask install consul
 
+# Context Free
+#
+# Context Free is a program that generates images from written instructions
+# called a grammar. The program follows the instructions in a few seconds to
+# create images that can contain millions of shapes.
+#
+# http://www.contextfreeart.org/
+brew cask install context-free
+
 # coqide
 #
 # a graphical user interface based on gtk (CoqIde) for coq.
