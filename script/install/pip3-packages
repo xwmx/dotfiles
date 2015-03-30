@@ -27,6 +27,15 @@ fi
 # Packages
 ###############################################################################
 
+# csvkit
+#
+# csvkit is a suite of utilities for converting to and working with CSV, the
+# king of tabular file formats.
+#
+# https://github.com/onyxfish/csvkit
+# https://robots.thoughtbot.com/csvkit-brings-the-unix-philosophy-to-csv
+pip3 install --upgrade csvkit
+
 # Hy
 #
 # Hy is a wonderful dialect of Lisp that’s embedded in Python.
