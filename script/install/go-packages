@@ -59,14 +59,6 @@ go get -u -v github.com/tools/godep
 # https://godoc.org/golang.org/x/tools/cmd/godoc
 go get -u -v golang.org/x/tools/cmd/godoc
 
-# gore
-#
-# Yet another Go REPL that works nicely. Featured with line editing, code
-# completion, and more
-#
-# https://github.com/motemen/gore
-go get -u -v github.com/motemen/gore
-
 # go-ipfs / ipfs
 #
 # ipfs implementation in go
@@ -96,6 +88,14 @@ go get -u -v golang.org/x/tools/cmd/goimports
 #
 # https://github.com/golang/lint/
 go get -u -v github.com/golang/lint/golint
+
+# gore
+#
+# Yet another Go REPL that works nicely. Featured with line editing, code
+# completion, and more
+#
+# https://github.com/motemen/gore
+go get -u -v github.com/motemen/gore
 
 # gorename
 #
