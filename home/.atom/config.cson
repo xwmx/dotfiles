@@ -20,7 +20,7 @@
     ]
     themes: [
       "atom-dark-ui-slim"
-      "atom-dark-syntax"
+      "twilight-syntax"
     ]
   linter:
     showErrorInline: true
