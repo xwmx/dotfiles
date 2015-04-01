@@ -76,10 +76,10 @@ let g:airline_symbols.linenr = ''
 " vim-signify
 " ============================================================================
 
-" Only use signify for git and hg.
+" Only use signify for git
 "
 " This reduces the number of calls and improves performance.
-let g:signify_vcs_list = [ 'git', 'hg' ]
+let g:signify_vcs_list = [ 'git' ]
 
 " Display all changes since last commit, even those that are staged to index.
 let g:signify_diffoptions = { 'git': 'HEAD' }
