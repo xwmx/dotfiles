@@ -130,6 +130,15 @@ brew cask install atom
 # http://audacity.sourceforge.net/
 brew cask install audacity
 
+# AU Lab
+#
+# Apple’s free digital audio mixing application, AU Lab, can be used as a host
+# application for Audio Unit effects, including AURoundTripAAC Audio Unit, one
+# of the new Mastered for iTunes tools.
+#
+# http://www.apple.com/itunes/mastered-for-itunes/
+brew cask install au-lab
+
 # BibDesk - Mac Bibliography Manager
 #
 # Use BibDesk to edit and manage your bibliography. It will keep track of both
