@@ -202,6 +202,14 @@ apm install select-rectangle
 # https://github.com/jesseweed/seti-syntax
 apm install seti-syntax
 
+# Seti UI
+#
+# A dark colored UI theme for Atom with custom file icons
+#
+# https://atom.io/themes/seti-ui
+# https://github.com/jesseweed/seti-ui
+apm install seti-ui
+
 # sort-lines
 #
 # Sorts your lines. Never gets tired
