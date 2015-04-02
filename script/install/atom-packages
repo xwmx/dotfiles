@@ -24,7 +24,8 @@ fi
 # it's not totally necessary and just speeds things up a bit.
 apm() {
   if [[ "${1:-}" == "install" ]]; then
-    local local_entry=$(apm ls | grep "${2:-}")
+    local local_entry
+    local_entry=$(apm ls | grep "${2:-}")
     if [[ -z ${local_entry} ]]; then
       "$_apm" install "${2}"
     fi
