@@ -580,6 +580,16 @@ brew cask install sonic-pi
 # http://www.sonicvisualiser.org/
 brew cask install sonic-visualiser
 
+# Soundflower
+#
+# Soundflower is a MacOS system extension that allows applications to pass
+# audio to other applications. Soundflower is easy to use, it simply presents
+# itself as an audio device, allowing any audio application to send and receive
+# audio with no other support needed.
+#
+# https://code.google.com/p/soundflower/
+brew cask install soundflower
+
 # Spectacle
 #
 # Move and resize windows with ease. Window control with simple, customizable
