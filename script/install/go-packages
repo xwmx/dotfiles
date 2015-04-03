@@ -112,6 +112,17 @@ go get -u -v golang.org/x/tools/cmd/gorename
 # https://github.com/jstemmer/gotags
 go get -u -v github.com/jstemmer/gotags
 
+# hashpipe
+#
+# hashpipe helps you venture into the unknown. It reads from stdin, checks the
+# hash of the content, and outputs it IF AND ONLY IF it matches the provided
+# hash checksum. This makes executing things a teensy bit safer, as it
+# requires compromising more communication channels.
+#
+# https://github.com/jbenet/hashpipe
+# http://jbenet.github.io/hashpipe/
+go get -u -v https://github.com/jbenet/hashpipe
+
 # oracle
 #
 # a tool for answering questions about Go source code.
