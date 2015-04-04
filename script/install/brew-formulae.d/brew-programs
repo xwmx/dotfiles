@@ -668,6 +668,17 @@ brew install ocaml
 # https://opam.ocaml.org
 brew install opam
 
+# Open CASCADE Technology, 3D modeling & numerical simulation
+#
+# Open CASCADE Technology is a software development kit (SDK) intended for
+# development of applications dealing with 3D CAD data, freely available in
+# open source. It includes a set of C++ class libraries providing services for
+# 3D surface and solid modeling, visualization, data exchange and rapid
+# application development.
+#
+# http://www.opencascade.org/
+brew install opencascade
+
 # ori - A Secure Distributed File System
 #
 # Ori is a distributed file system built for offline operation and empowers the
