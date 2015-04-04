@@ -858,6 +858,15 @@ brew install ranger
 # https://github.com/sstephenson/rbenv
 brew install rbenv
 
+# recutils
+#
+# GNU Recutils is a set of tools and libraries to access human-editable, plain
+# text databases called recfiles. The data is stored as a sequence of records,
+# each record containing an arbitrary number of named fields.
+#
+# http://www.gnu.org/software/recutils/
+brew install recutils
+
 # redo
 #
 # Smaller, easier, more powerful, and more reliable than make. An
