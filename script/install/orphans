@@ -129,12 +129,13 @@ exa() {
   local tmp_repo=/tmp/orphans/exa
   local remote_url=https://github.com/ogham/exa.git
 
+  export PREFIX="$HOME"
   git clone "$remote_url" "$tmp_repo" &&
     cd "$tmp_repo" &&
-    cargo build &&
-    cp "$tmp_repo/target/$binary_name" "$HOME/bin" &&
+    make install &&
     cd "/tmp/orphans" &&
     _remove "$tmp_repo"
+  unset PREFIX
 }
 
 desc exa_uninstall <<-EOM
