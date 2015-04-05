@@ -506,6 +506,14 @@ brew cask install pd-extended
 # http://pgadmin.org
 brew cask install pgadmin3
 
+# Postgres.app
+#
+# Postgres.app contains a full-featured PostgreSQL installation in a single
+# package.
+#
+# http://postgresapp.com/
+brew cask install postgres
+
 # processing3
 #
 # Processing is an open source programming language and integrated development
