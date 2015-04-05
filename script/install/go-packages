@@ -121,7 +121,7 @@ go get -u -v github.com/jstemmer/gotags
 #
 # https://github.com/jbenet/hashpipe
 # http://jbenet.github.io/hashpipe/
-go get -u -v https://github.com/jbenet/hashpipe
+go get -u -v github.com/jbenet/hashpipe
 
 # oracle
 #
