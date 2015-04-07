@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+#########################################################################
+# unicode - a bask extension script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# unicode help
+#########################################################################
+
+source "$(which bask)"
+
+desc escape <<EOM
+Usage:
+  $_me escape <character>
+
+Description:
+  UTF-8-encode a Unicode character.
+EOM
+escape() {
+  printf "\\\x%s" "$(printf "%s" "$@" | xxd -p -c1 -u)"
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    printf "\n"
+  fi
+}
+
+desc unidecode <<EOM
+Usage:
+  $_me unidecode <escape sequence>
+
+Description:
+  Decode \x{ABCD}-style Unicode escape sequences.
+EOM
+unidecode() {
+  perl -e "binmode(STDOUT, ':utf8'); print \"$*\""
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    printf "\n"
+  fi
+}
+
+desc codepoint <<EOM
+Usage:
+  $_me codepoint <character>
+
+Description:
+  Get a character’s Unicode code point.
+EOM
+codepoint() {
+  _character="$*"
+  if [[ $_character == "$" ]]; then
+    _character="\\$"
+  fi
+  perl -e "use utf8; print sprintf('U+%04X', ord(\"$_character\"))"
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    printf "\n"
+  fi
+}
+
+_main

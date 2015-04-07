@@ -321,44 +321,9 @@ map() {
 
 # Unicode ---------------------------------------------------------------------
 
-# UTF-8-encode a string of Unicode symbols
-escape() {
-  printf "\\\x%s" "$(printf "%s" "$@" | xxd -p -c1 -u)"
-  # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
-    printf "\n"
-  fi
-}
-
-# Decode \x{ABCD}-style Unicode escape sequences
-unidecode() {
-  perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
-  # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
-    printf "\n"
-  fi
-}
-
-# Get a character’s Unicode code point
-codepoint() {
-  if [[ "$1" == "-h" ]]; then
-    printf "\
-Get a character’s Unicode code point.
-
-Usage:
-  codepoint <character>
-"
-  else
-    _character="$*"
-    if [[ $_character == "$" ]]; then
-      _character="\\$"
-    fi
-    perl -e "use utf8; print sprintf('U+%04X', ord(\"$_character\"))"
-    # print a newline unless we’re piping the output to another program
-    if [ -t 1 ]; then
-      printf "\n"
-    fi
-  fi
+# A shortcut for the unicode program.
+u() {
+  unicode "$@"
 }
 
 # Utilities -------------------------------------------------------------------
