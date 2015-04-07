@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#########################################################################
+# my - a bask extension script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# my help
+#########################################################################
+
+source "$(which bask)"
+
+desc ip <<EOM
+Usage:
+  my ip
+
+Description:
+  Print the current ip address.
+EOM
+ip() {
+  dig +short myip.opendns.com @resolver1.opendns.com
+}
+
+_main
