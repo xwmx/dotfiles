@@ -10,13 +10,26 @@ source "$(which bask)"
 
 desc ip <<EOM
 Usage:
-  my ip
+  my ip [--local | --remote]
+
+Options:
+  --local   Display the local IP address.
+  --remote  Display the remote IP address (default).
 
 Description:
-  Print the current ip address.
+  Print the current IP address. By default, the remote IP address is queried
+  and displayed, or the '--local' option can be used to return the local IP
+  address.
 EOM
 ip() {
-  dig +short myip.opendns.com @resolver1.opendns.com
+  # Only the '--local' option is actually checked. The '--remote' option is the
+  # default behavior when no option is passed, but the option is included for
+  # psychological balance. :-)
+  if [[ "$1" == "--local" ]]; then
+    ipconfig getifaddr en0
+  else
+    dig +short myip.opendns.com @resolver1.opendns.com
+  fi
 }
 
 _main

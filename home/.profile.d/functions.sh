@@ -229,14 +229,6 @@ TRACE()   { lwp-request -m 'TRACE';   }
 OPTIONS() { lwp-request -m 'OPTIONS'; }
 
 
-# IP addresses
-ip() {
-  dig +short myip.opendns.com @resolver1.opendns.com
-}
-localip() {
-  ipconfig getifaddr en0
-}
-
 # Run `dig` and display the most useful info
 digga() {
   dig +nocmd "$1" any +multiline +noall +answer
