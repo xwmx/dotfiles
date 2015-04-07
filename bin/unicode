@@ -10,7 +10,7 @@ source "$(which bask)"
 
 desc escape <<EOM
 Usage:
-  $_me escape <character>
+  $_ME escape <character>
 
 Description:
   UTF-8-encode a Unicode character.
@@ -25,7 +25,7 @@ escape() {
 
 desc unidecode <<EOM
 Usage:
-  $_me unidecode <escape sequence>
+  $_ME unidecode <escape sequence>
 
 Description:
   Decode \x{ABCD}-style Unicode escape sequences.
@@ -40,7 +40,7 @@ unidecode() {
 
 desc codepoint <<EOM
 Usage:
-  $_me codepoint <character>
+  $_ME codepoint <character>
 
 Description:
   Get a character’s Unicode code point.

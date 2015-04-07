@@ -10,7 +10,7 @@ source "$(which bask)"
 
 desc ip <<EOM
 Usage:
-  my ip [--local | --remote]
+  $_ME ip [--local | --remote]
 
 Options:
   --local   Display the local IP address.

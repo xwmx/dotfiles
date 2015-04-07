@@ -10,7 +10,7 @@ source "$(which bask)"
 
 desc info <<EOM
 Usage:
-  ip info <ip address>
+  $_ME info <ip address>
 
 Description:
   Display information about an IP address.
@@ -51,7 +51,7 @@ http://www.infosniper.net/index.php?ip_address=%s
 
 desc me <<EOM
 Usage:
-  ip me [--local|--remote]
+  $_ME me [--local|--remote]
 
 Description:
   Returns the the current IP address by calling \`my ip\` with the supplied
