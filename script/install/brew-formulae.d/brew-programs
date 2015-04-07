@@ -454,6 +454,17 @@ brew install libcello
 # https://libgit2.github.com/
 brew install libgit2
 
+# libmaxminddb
+#
+# C library for the MaxMind DB file format
+#
+# http://maxmind.github.io/libmaxminddb/
+# https://github.com/maxmind/libmaxminddb
+#
+# NOTE: for usage example, see the test in the homebrew formula:
+# http://git.io/vezQa
+brew install libmaxminddb
+
 # Lua
 #
 # Lua is a powerful, fast, lightweight, embeddable scripting language.
