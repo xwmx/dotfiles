@@ -49,4 +49,16 @@ http://www.infosniper.net/index.php?ip_address=%s
 " "$ip_address"
 }
 
+desc me <<EOM
+Usage:
+  ip me [--local|--remote]
+
+Description:
+  Returns the the current IP address by calling \`my ip\` with the supplied
+  arguments.
+EOM
+me() {
+  my ip "$@"
+}
+
 _main
