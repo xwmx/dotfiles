@@ -253,6 +253,14 @@ brew install forego
 # http://flowtype.org/
 brew install flow
 
+# geoip
+#
+# Libraries and tools for MaxMind’s GeoIP.
+#
+# http://dev.maxmind.com/geoip/
+# https://github.com/maxmind/geoip-api-c
+brew install geoip
+
 # git
 #
 # Git is a free and open source distributed version control system designed to
