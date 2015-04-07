@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#########################################################################
+# ip - a bask extension script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# ip help
+#########################################################################
+
+source "$(which bask)"
+
+desc info <<EOM
+Usage:
+  ip info <ip address>
+
+Description:
+  Display information about an IP address.
+EOM
+info() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No IP address supplied.\n"
+  fi
+  local ip_address="$1"
+  printf "\
+# =============================================================================
+# whois %s
+# =============================================================================
+" "$ip_address"
+  whois "$ip_address"
+  printf "\
+# =============================================================================
+# host %s
+# =============================================================================
+" "$ip_address"
+  host "$ip_address"
+  printf "\
+# =============================================================================
+# dig %s
+# =============================================================================
+" "$ip_address"
+  dig "$ip_address"
+}
+
+_main
