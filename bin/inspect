@@ -1,0 +1,160 @@
+#!/usr/bin/env bash
+#########################################################################
+# inspect - a bask extension script
+#
+# This is just a list of common inspection tools, recorded here for easy
+# reference. This is basically a functional bookmark list or blog post.
+#
+# References:
+# - http://jvns.ca/blog/2015/04/06/a-few-spy-tools-for-your-operating-system-other-than-strace/
+# - https://news.ycombinator.com/item?id=9337826
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# inspect help
+#########################################################################
+
+source "$(which bask)"
+
+desc execsnoop <<EOM
+Usage:
+  $_ME execsnoop
+
+Description:
+  Run \`sudo execsnoop\`
+
+  execsnoop - snoop new process execution. Uses DTrace.
+EOM
+_execsnoop="$(which execsnoop)"
+execsnoop() {
+  sudo "$_execsnoop"
+}
+
+desc iftop <<EOM
+Usage:
+  $_ME iftop
+
+Description:
+  Run \`sudo iftop\`
+
+  iftop - display bandwidth usage on an interface by host.
+EOM
+_iftop="$(which iftop)"
+iftop() {
+  sudo "$_iftop"
+}
+
+desc iosnoop <<EOM
+Usage:
+  $_ME iosnoop
+
+Description:
+  Run \`sudo iosnoop\`
+
+  iosnoop - snoop I/O events as they occur. Uses DTrace.
+EOM
+_iosnoop="$(which iosnoop)"
+iosnoop() {
+  sudo "$_iosnoop"
+}
+
+desc iotop <<EOM
+Usage:
+  $_ME iotop
+
+Description:
+  Run \`sudo iotop\`
+
+  iotop - display top disk I/O events by process. Uses DTrace.
+EOM
+_iotop="$(which iotop)"
+iotop() {
+  sudo "$_iotop"
+}
+
+desc lsof-c <<EOM
+Usage:
+  $_ME lsof-c <command>
+
+Description:
+  Run \`sudo lsof -p <command>\`
+
+  lsof - list open files
+
+  -c c     selects the listing of files for processes executing the command
+  that begins with the characters of c. Multiple commands may be specified,
+  using multiple -c options.  They are joined in a single ORed set before
+  participating in AND option selection.
+EOM
+lsof-c() {
+  [[ -z "${1:-}" ]] && _die printf "No command specified.\n"
+  sudo lsof -c "$1"
+}
+
+desc lsof-i <<EOM
+Usage:
+  $_ME lsof-i [<address>]
+
+Description:
+  Run \`sudo lsof -i [<address>]\`
+
+  lsof - list open files
+
+  -i [i]   selects the listing of files any of whose Internet address matches
+  the address specified in i. If no address is specified, this option selects
+  the listing of all Internet and x.25 (HP-UX) network files.
+EOM
+lsof-i() {
+  sudo lsof -i "$@"
+}
+
+desc lsof-p <<EOM
+Usage:
+  $_ME lsof-p <PID>
+
+Description:
+  Run \`sudo lsof -p <PID>\`
+
+  lsof - list open files
+
+  -p s     excludes or selects the listing of files for the processes whose
+  optional process IDentification (PID) numbers are in the comma-separated set
+  s - e.g., ''123'' or ''123,^456''. (There should be no spaces in the set.)
+EOM
+lsof-p() {
+  [[ -z "${1:-}" ]] && _die printf "No PID specified.\n"
+  sudo lsof -p "$1"
+}
+
+desc lsof-u <<EOM
+Usage:
+  $_ME lsof-u <user>
+
+Description:
+  Run \`sudo lsof -u <user>\`
+
+  lsof - list open files
+
+  -u s     selects the listing of files for the user whose login names or user
+  ID numbers are in the comma-separated set s - e.g., \`\`abe'', or
+  \`\`548,root''. (There should be no spaces in the set.)
+EOM
+lsof-u() {
+  [[ -z "${1:-}" ]] && _die printf "No user specified.\n"
+  sudo lsof -u "$1"
+}
+
+desc opensnoop <<EOM
+Usage:
+  $_ME opensnoop
+
+Description:
+  Run \`sudo opensnoop\`
+
+  opensnoop - snoop file opens as they occur. Uses DTrace.
+EOM
+_opensnoop="$(which opensnoop)"
+opensnoop() {
+  sudo "$_opensnoop"
+}
+
+_main
