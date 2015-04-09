@@ -278,20 +278,6 @@ let g:NERDTreeMouseMode = 3
 let g:syntastic_ruby_checkers=["rubocop", "mri"]
 
 " ============================================================================
-" vim-gitgutter
-" ============================================================================
-
-" Display all changes since last commit, even those that are staged to index.
-let g:gitgutter_diff_args = 'HEAD'
-
-" Speed up buffer switching
-"
-" Turn off realtime updates.
-let g:gitgutter_realtime = 0
-" Turn off eager updates.
-let g:gitgutter_eager = 0
-
-" ============================================================================
 " search
 " ============================================================================
 
