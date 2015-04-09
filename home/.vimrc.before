@@ -85,4 +85,6 @@ let g:signify_vcs_list = [ 'git' ]
 let g:signify_diffoptions = { 'git': 'HEAD' }
 
 " Update signify (ie, run :SignifyRefresh) when vim regains focus.
-let g:signify_update_on_focusgained = 1
+if ! has("gui_macvim")
+  let g:signify_update_on_focusgained = 1
+endif
