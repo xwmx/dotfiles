@@ -84,7 +84,16 @@ let g:signify_vcs_list = [ 'git' ]
 " Display all changes since last commit, even those that are staged to index.
 let g:signify_diffoptions = { 'git': 'HEAD' }
 
+" MacVim refresh settings.
+"
+" Because refrishing causing a long pause, only refresh vim-signify in MacVim
+" on demand.
+"
 " Update signify (ie, run :SignifyRefresh) when vim regains focus.
 if ! has("gui_macvim")
   let g:signify_update_on_focusgained = 1
+endif
+" Map control-R to :SignifyRefresh in MacVim
+if has("gui_macvim")
+  map <C-r> :SignifyRefresh<CR>
 endif
