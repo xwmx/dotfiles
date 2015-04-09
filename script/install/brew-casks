@@ -612,6 +612,15 @@ brew cask install sonic-visualiser
 # https://code.google.com/p/soundflower/
 brew cask install soundflower
 
+# Soundnode
+#
+# Soundnode App is a Open-Source project to support Soundcloud for desktop.
+# Built with Node-Webkit, Node.js, Angular.js and consuming Soundcloud API.
+#
+# http://www.soundnodeapp.com/
+# https://github.com/Soundnode/soundnode-app
+brew cask install soundnode
+
 # Spectacle
 #
 # Move and resize windows with ease. Window control with simple, customizable
