@@ -313,9 +313,9 @@ inoremap <C-c> <Esc><Esc>
 " run file
 " ============================================================================
 
-" When in MacVim, use command-R to save and run the current file.
+" When in MacVim, use control-R to save and run the current file.
 if has("gui_macvim")
-  map <D-r> :w<CR>:!./%<CR>
+  map <C-r> :w<CR>:!./%<CR>
 endif
 
 " ============================================================================

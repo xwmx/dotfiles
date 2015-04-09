@@ -93,7 +93,7 @@ let g:signify_diffoptions = { 'git': 'HEAD' }
 if ! has("gui_macvim")
   let g:signify_update_on_focusgained = 1
 endif
-" Map control-R to :SignifyRefresh in MacVim
+" Map command-R to :SignifyRefresh in MacVim
 if has("gui_macvim")
-  map <C-r> :SignifyRefresh<CR>
+  map <D-r> :SignifyRefresh<CR>
 endif
