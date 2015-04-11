@@ -3,7 +3,7 @@
 
 # Ignore the local directory, but track .gitkeep so it's included in the repo.
 /local/*
-!/local/.gitkeep
+!/local/.keep
 
 # Ignore known possible .local versions of dotfiles
 #
