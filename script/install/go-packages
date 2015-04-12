@@ -30,6 +30,16 @@ go get -u -v github.com/elves/elvish
 # https://github.com/kisielk/errcheck
 go get -u -v github.com/kisielk/errcheck
 
+# Escher: A language for programming in metaphors
+#
+# Escher is a simple syntax for representing generic labeled graphs called
+# circuits, much like XML is a (not-so-simple) syntax for representing generic
+# labeled trees.
+#
+# http://gocircuit.github.io/escher/
+# https://github.com/gocircuit/escher
+go get -u -v github.com/gocircuit/escher/escher
+
 # gocode
 #
 # An autocompletion daemon for the Go programming language.
