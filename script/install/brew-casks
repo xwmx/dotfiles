@@ -244,6 +244,25 @@ brew cask install coqide
 # http://www.derlien.com/
 brew cask install disk-inventory-x
 
+# Docear
+#
+# Free and Open Source Academic Literature Suite
+#
+# Docear (pronounced dog-ear) is what we call an “academic literature suite”.
+# It integrates everything you need to search, organize and create academic
+# literature in a single application: a digital library, reference manager,
+# PDF and file manager, note taking and mind mapping. And the best: Docear
+# works seemlessly with many existing tools like Mendeley, Microsoft Word, and
+# Foxit Reader.
+#
+# Docear is free and open source, based on Freeplane, funded by the German
+# Federal Ministry of Technology and developed by scientists from around the
+# world, among others from OvGU, and the University of California, Berkeley.
+#
+# http://www.docear.org/
+# http://sourceforge.net/projects/docear/
+brew cask install docear
+
 # Elm
 #
 # A functional reactive language for interactive applications
