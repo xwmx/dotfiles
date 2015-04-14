@@ -4,7 +4,14 @@
 
 # Apps ------------------------------------------------------------------------
 
-# Kill all the tabs in Chrome to free up memory
+# chromekill()
+#
+# Usage:
+#   chromekill
+#
+# Description:
+#   Kill all "Chrome Helper" renderer processes (and, therefore, browser tabs)
+#   in order to free up memory.
 chromekill() {
   pgrep -f '[C]hrome Helper --type=renderer' | xargs kill
 }
