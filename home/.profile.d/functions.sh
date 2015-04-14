@@ -158,7 +158,25 @@ o() {
 #   Create a data URL from a file
 dataurl() {
   local mimeType
+
+  # When running `file`, set LC_ALL to `C` to avoid the following error:
+  #   ERROR: line 22: regexec error 17, (illegal byte sequence)
+  # Once the command is run, set the variable back to its original value.
+  #
+  # More information:
+  # - http://stackoverflow.com/a/11287641
+  # - https://trac.macports.org/ticket/38771
+  #
+  # Step descriptions included for clarity:
+  #
+  # 1. Save original LC_ALL and set to 'C'
+  local original_LC_ALL="$LC_ALL"
+  export LC_ALL=C
+  # 2. Run `file` with new LC_ALL value
   mimeType=$(file -b --mime-type "$1")
+  # 3. Set LC_ALL back to the original value.
+  export LC_ALL="$original_LC_ALL"
+
   if [[ $mimeType == text/* ]]; then
     mimeType="${mimeType};charset=utf-8"
   fi
