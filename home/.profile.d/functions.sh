@@ -273,11 +273,18 @@ for key, value in map.items():
   python -c "$server_script" "$port"
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
+# phpserver()
+#
+# Usage:
+#   phpserver [<port>]
+#
+# Description:
+#   Start a PHP server from a directory, optionally specifying the port
+#   (Requires PHP 5.4.0+.), and open the location in the browser.
 phpserver() {
   local port="${1:-4000}"
-  local ip=$(ipconfig getifaddr en1)
+  local ip
+  ip=$(ipconfig getifaddr en1)
   sleep 1 && open "http://${ip}:${port}/" &
   php -S "${ip}:${port}"
 }
