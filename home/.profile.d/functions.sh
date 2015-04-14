@@ -239,13 +239,29 @@ urlencode() {
   python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);" "$@"
 }
 
-# Start an HTTP server from a directory, optionally specifying the port
+# server()
+#
+# Usage:
+#   server [<port>]
+#
+# Description:
+#   Start an HTTP server from a directory, optionally specifying the port.
+#   When no port is specified, the default port is '8080'.
 server() {
   local port="${1:-8000}";
-  sleep 1 && open "http://localhost:${port}/" &
-  # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+  # Set the default Content-Type to `text/plain` instead of
+  # `application/octet-stream` and serve everything as UTF-8 (although not
+  # technically correct, this doesn’t break anything for binary files)
+  local server_script
+  server_script=$(printf "\
+import SimpleHTTPServer
+map = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map
+map[\"\"] = \"text/plain\"
+for key, value in map.items():
+    map[key] = value + \";charset=UTF-8\"
+    SimpleHTTPServer.test()
+")
+  python -c "$server_script" "$port"
 }
 
 # Start a PHP server from a directory, optionally specifying the port
