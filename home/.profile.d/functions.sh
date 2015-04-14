@@ -181,9 +181,18 @@ fs() {
   fi
 }
 
-# Change working directory to the top-most Finder window location
-cdf() { # short for `cdfinder`
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+# cdf()
+#
+# Usage:
+#   cdf
+#
+# Description:
+#   Change working directory to the top-most Finder window location. `cdf` is
+#   short for 'cdfinder'
+cdf() {
+  local _script
+  _script='tell app "Finder" to POSIX path of (insertion location as alias)'
+  cd "$(osascript -e "$_script")"
 }
 
 # Git / GitHub ----------------------------------------------------------------
