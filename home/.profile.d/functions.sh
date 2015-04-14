@@ -142,9 +142,16 @@ o() {
 
 # Encoding --------------------------------------------------------------------
 
-# Create a data URL from a file
+# dataurl()
+#
+# Usage:
+#   dataurl [<file path>]
+#
+# Description:
+#   Create a data URL from a file
 dataurl() {
-  local mimeType=$(file -b --mime-type "$1")
+  local mimeType
+  mimeType=$(file -b --mime-type "$1")
   if [[ $mimeType == text/* ]]; then
     mimeType="${mimeType};charset=utf-8"
   fi
