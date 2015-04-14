@@ -9,4 +9,14 @@
 # See also: $HOME/.tigrc
 ###############################################################################
 
-tiga() { tig --all; }
+# tiga()
+#
+# Usage:
+#   tiga
+#
+# Description:
+#   Run `tig` with the `--all` flag, which includes all branches in the default
+#   view.
+tiga() {
+  tig --all
+}
