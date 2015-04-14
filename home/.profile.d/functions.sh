@@ -260,9 +260,14 @@ DELETE()  { lwp-request -m 'DELETE' "$*";  }
 TRACE()   { lwp-request -m 'TRACE' "$*";   }
 OPTIONS() { lwp-request -m 'OPTIONS' "$*"; }
 
-
-# Run `dig` and display the most useful info
-digga() {
+# digg()
+#
+# Usage:
+#   digg <domain>
+#
+# Description:
+#   Run `dig` and display the most useful info.
+digg() {
   dig +nocmd "$1" any +multiline +noall +answer
 }
 
