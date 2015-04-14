@@ -271,9 +271,15 @@ digg() {
   dig +nocmd "$1" any +multiline +noall +answer
 }
 
-# URL-encode strings
+# urlencode()
+#
+# Usage:
+#   urlencode <string>
+#
+# Description:
+#   URL-encode strings
 urlencode() {
-  python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);" "$@"
+  python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);" "$*"
 }
 
 # server()
