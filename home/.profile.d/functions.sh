@@ -162,7 +162,10 @@ dataurl() {
   if [[ $mimeType == text/* ]]; then
     mimeType="${mimeType};charset=utf-8"
   fi
-  echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+  # Include trailing newline in output for easier manual selection.
+  printf \
+    "data:${mimeType};base64,%s\n" \
+    "$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
 # Filesystem ------------------------------------------------------------------
