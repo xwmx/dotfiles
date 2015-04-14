@@ -249,12 +249,18 @@ if [ $? -eq 0 ]; then
   }
 fi
 
-# Create a git.io short URL
+# gitio()
+#
+# Usage:
+#   gitio <slug> <url>
+#
+# Description:
+#   Create a git.io short URL
 gitio() {
   if [ -z "${1}" -o -z "${2}" ]; then
-    echo "Usage: \`gitio slug url\`"
+    echo "Usage: gitio <slug> <url>"
     return 1
-  fi;
+  fi
   curl -i http://git.io/ -F "url=${2}" -F "code=${1}"
 }
 
