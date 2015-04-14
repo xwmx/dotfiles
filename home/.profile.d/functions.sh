@@ -252,13 +252,13 @@ json() {
 # Network & Web ---------------------------------------------------------------
 
 # One of @janmoesen’s ProTip™s
-GET()     { lwp-request -m 'GET';     }
-HEAD()    { lwp-request -m 'HEAD';    }
-POST()    { lwp-request -m 'POST';    }
-PUT()     { lwp-request -m 'PUT';     }
-DELETE()  { lwp-request -m 'DELETE';  }
-TRACE()   { lwp-request -m 'TRACE';   }
-OPTIONS() { lwp-request -m 'OPTIONS'; }
+GET()     { lwp-request -m 'GET' "$*";     }
+HEAD()    { lwp-request -m 'HEAD' "$*";    }
+POST()    { lwp-request -m 'POST' "$*";    }
+PUT()     { lwp-request -m 'PUT' "$*";     }
+DELETE()  { lwp-request -m 'DELETE' "$*";  }
+TRACE()   { lwp-request -m 'TRACE' "$*";   }
+OPTIONS() { lwp-request -m 'OPTIONS' "$*"; }
 
 
 # Run `dig` and display the most useful info
