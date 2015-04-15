@@ -54,6 +54,15 @@ pip3 install --upgrade hy
 # https://github.com/i2y/mochi
 pip3 install --upgrade mochi
 
+# Rainbow Stream
+#
+# Terminal-based Twitter Client. Realtime tweetstream, compose, search,
+# favorite … and much more fun directly from terminal.
+#
+# http://www.rainbowstream.org/
+# https://github.com/DTVD/rainbowstream
+pip3 install --upgrade rainbowstream
+
 # Stellar
 #
 # Fast database snapshot and restore tool for development. Stellar allows you
