@@ -131,6 +131,16 @@ gem install ruby-lint
 # https://github.com/causes/scss-lint
 gem install scss-lint
 
+# t
+#
+# A command-line power tool for Twitter.
+#
+# The CLI takes syntactic cues from the Twitter SMS commands, but it offers
+# vastly more commands and capabilities than are available via SMS.
+#
+# https://github.com/sferik/t
+gem install t
+
 # Tmuxinator
 #
 # Create and manage tmux sessions easily.
