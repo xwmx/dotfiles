@@ -108,6 +108,14 @@ apm install "command-logger"
 # https://github.com/atom/editor-stats
 apm install editor-stats
 
+# ex-mode
+#
+# ex-mode for Atom's vim-mode.
+#
+# https://atom.io/packages/ex-mode
+# https://github.com/lloeki/ex-mode
+apm install ex-mode
+
 # fizzy
 #
 # A light-hearted, bright and bubbly syntax theme featuring bright colors,
