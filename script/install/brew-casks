@@ -525,6 +525,15 @@ brew cask install pd-extended
 # http://pgadmin.org
 brew cask install pgadmin3
 
+# Pharo
+#
+# Pharo is a pure object-oriented programming language and a powerful
+# environment, focused on simplicity and immediate feedback (think IDE and
+# OS rolled into one).
+#
+# http://pharo.org/
+brew cask install pharo
+
 # Postgres.app
 #
 # Postgres.app contains a full-featured PostgreSQL installation in a single
