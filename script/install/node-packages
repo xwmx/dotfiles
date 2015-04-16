@@ -218,6 +218,18 @@ npm install -g mocha
 # http://facebook.github.io/react/
 npm install -g react-tools
 
+# ShellJS - Unix shell commands for Node.js
+#
+# ShellJS is a portable (Windows/Linux/OS X) implementation of Unix shell
+# commands on top of the Node.js API. You can use it to eliminate your shell
+# script's dependency on Unix while still keeping its familiar and powerful
+# commands. You can also install it globally so you can run it from outside
+# Node projects.
+#
+# http://documentup.com/arturadib/shelljs
+# https://github.com/arturadib/shelljs
+npm install -g shelljs
+
 # Shipit
 #
 # Universal automation and deployment tool written in JavaScript.
