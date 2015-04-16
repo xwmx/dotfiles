@@ -472,6 +472,15 @@ brew install libmaxminddb
 # http://www.lua.org/
 brew install lua
 
+# LuaJIT
+#
+# LuaJIT is a Just-In-Time Compiler (JIT) for the Lua programming language.
+# Lua is a powerful, dynamic and light-weight programming language. It may be
+# embedded or used as a general-purpose, stand-alone language.
+#
+# http://luajit.org/
+brew install luajit
+
 # LuaRocks
 #
 # Package management for Lua modules. LuaRocks is a deployment and management
