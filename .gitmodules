@@ -167,3 +167,6 @@
 [submodule "vendor/com/github/alphabetum/bask"]
 	path = vendor/com/github/alphabetum/bask
 	url = https://github.com/alphabetum/bask.git
+[submodule "home/.janus/seti.vim"]
+	path = home/.janus/seti.vim
+	url = https://github.com/trusktr/seti.vim.git

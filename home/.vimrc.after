@@ -24,6 +24,7 @@
 "colorscheme darkburn
 "colorscheme deepblue
 "colorscheme hybrid
+"colorscheme seti
 "colorscheme vwilight
 "colorscheme Tomorrow-Night-Blue
 "colorscheme Tomorrow-Night-Eighties
@@ -31,7 +32,8 @@
 
 if has("gui_macvim")
   set background=dark
-  colorscheme base16-default
+  "colorscheme base16-default
+  colorscheme seti
   "colorscheme vwilight
 else
   colorscheme hybrid
