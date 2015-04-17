@@ -1,1 +1,1 @@
-../vendor/com/github/alphabetum/.emacs.d
+../vendor/com/github/alphabetum/prelude
