@@ -77,9 +77,6 @@
 [submodule "vendor/com/github/alphabetum/.emacs.d"]
 	path = vendor/com/github/alphabetum/prelude
 	url = https://github.com/alphabetum/prelude.git
-[submodule "vendor/com/github/iam-TJ/git-submodule-move"]
-	path = vendor/com/github/iam-TJ/git-submodule-move
-	url = https://github.com/iam-TJ/git-submodule-move.git
 [submodule "vendor/com/github/alphabetum/dots"]
 	path = vendor/com/github/alphabetum/dots
 	url = https://github.com/alphabetum/dots.git
