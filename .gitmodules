@@ -74,8 +74,8 @@
 [submodule "home/.janus/swift.vim"]
 	path = home/.janus/swift.vim
 	url = https://github.com/Keithbsmiley/swift.vim.git
-[submodule "home/.emacs.d"]
-	path = home/.emacs.d
+[submodule "vendor/com/github/alphabetum/.emacs.d"]
+	path = vendor/com/github/alphabetum/.emacs.d
 	url = https://github.com/alphabetum/prelude.git
 [submodule "vendor/com/github/iam-TJ/git-submodule-move"]
 	path = vendor/com/github/iam-TJ/git-submodule-move
