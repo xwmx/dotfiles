@@ -1,1 +1,1 @@
-../vendor/com/github/alphabetum/prelude
+../vendor/com/github/syl20bnr/spacemacs
