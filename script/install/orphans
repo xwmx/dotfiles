@@ -47,7 +47,7 @@ _remove() {
 
 desc bish <<-EOM
 Usage:
-  $_me bish
+  $_ME bish
 
 Description:
 
@@ -76,7 +76,7 @@ bish() {
 
 desc bish_uninstall <<-EOM
 Usage:
-  $_me bish_uninstall
+  $_ME bish_uninstall
 
 Description:
 
@@ -93,7 +93,7 @@ bish_uninstall() {
 
 desc exa <<-EOM
 Usage:
-  $_me exa
+  $_ME exa
 
 Description:
 
@@ -140,7 +140,7 @@ exa() {
 
 desc exa_uninstall <<-EOM
 Usage:
-  $_me exa_uninstall
+  $_ME exa_uninstall
 
 Description:
 
@@ -157,7 +157,7 @@ exa_uninstall() {
 
 desc iota <<-EOM
 Usage:
-  $_me iota
+  $_ME iota
 
 Description:
 
@@ -190,7 +190,7 @@ iota() {
 
 desc iota_uninstall <<-EOM
 Usage:
-  $_me iota_uninstall
+  $_ME iota_uninstall
 
 Description:
 
@@ -206,7 +206,7 @@ iota_uninstall() {
 
 desc meteor <<-EOM
 Usage:
-  $_me meteor
+  $_ME meteor
 
 Description:
 
@@ -233,7 +233,7 @@ meteor() {
 
 desc meteor_uninstall <<-EOM
 Usage:
-  $_me meteor_uninstall
+  $_ME meteor_uninstall
 
 Description:
 
@@ -249,7 +249,7 @@ meteor_uninstall() {
 
 desc neovim_dot_app <<-EOM
 Usage:
-  $_me neovim_dot_app
+  $_ME neovim_dot_app
 
 Description:
 
@@ -278,7 +278,7 @@ neovim_dot_app() {
 
 desc neovim_dot_app_uninstall <<-EOM
 Usage:
-  $_me neovim_dot_app_uninstall
+  $_ME neovim_dot_app_uninstall
 
 Description:
 
@@ -296,7 +296,7 @@ neovim_dot_app_uninstall() {
 
 desc xsv <<-EOM
 Usage:
-  $_me xsv
+  $_ME xsv
 
 Description:
 
@@ -332,7 +332,7 @@ xsv() {
 
 desc xsv_uninstall <<-EOM
 Usage:
-  $_me xsv_uninstall
+  $_ME xsv_uninstall
 
 Description:
 
