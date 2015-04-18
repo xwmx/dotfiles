@@ -55,6 +55,25 @@ set guifont=Menlo\ for\ Powerline:h11
 set mouse=a
 
 " ============================================================================
+" SH / shell default syntax config
+" ============================================================================
+
+" Setting this variable prevents errors from being displayed in sh shell
+" scripts. For example, without this setting, $() command substitution is
+" displayed as an error, typically with a red background (specified by either
+" the Error or ErrorMsg highlight group), because pre-POSIX
+" shells only supported the backtick syntax (`..`) which is now discouraged.
+" (see: https://github.com/koalaman/shellcheck/wiki/SC2006). With this
+" setting, however, the default is set to KornShell (ksh), which is
+" POSIX-compliant and supports the $() syntax.
+"
+" More information:
+"
+" https://github.com/b4winckler/vim/blob/master/runtime/doc/syntax.txt#L2802
+" http://stackoverflow.com/a/5423808
+let g:is_posix = 1
+
+" ============================================================================
 " GUI options
 " ============================================================================
 
