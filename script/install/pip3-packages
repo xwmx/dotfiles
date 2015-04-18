@@ -54,6 +54,16 @@ pip3 install --upgrade hy
 # https://github.com/i2y/mochi
 pip3 install --upgrade mochi
 
+# Pandas
+#
+# Flexible and powerful data analysis / manipulation library for Python,
+# providing labeled data structures similar to R data.frame objects,
+# statistical functions, and much more.
+#
+# http://pandas.pydata.org/
+# https://github.com/pydata/pandas
+pip3 install --upgrade pandas
+
 # Rainbow Stream
 #
 # Terminal-based Twitter Client. Realtime tweetstream, compose, search,
