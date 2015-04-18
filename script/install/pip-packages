@@ -51,6 +51,16 @@ pip install --upgrade mitmproxy
 # http://neovim.org/doc/user/nvim_python.html
 pip install --upgrade neovim
 
+# Pandas
+#
+# Flexible and powerful data analysis / manipulation library for Python,
+# providing labeled data structures similar to R data.frame objects,
+# statistical functions, and much more.
+#
+# http://pandas.pydata.org/
+# https://github.com/pydata/pandas
+pip install --upgrade pandas
+
 # pep8 - Python style guide checker
 #
 # pep8 is a tool to check your Python code against some of the style
