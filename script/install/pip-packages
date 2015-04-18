@@ -26,6 +26,15 @@ pip install --upgrade pip
 # https://github.com/georgebrock/1pass
 pip install --upgrade 1pass
 
+# Cython
+#
+# The Cython compiler for writing C extensions for the Python language.
+#
+# http://cython.org/
+# https://github.com/cython/cython
+# https://pypi.python.org/pypi/Cython/
+pip install --upgrade cython
+
 # IPython
 #
 # A rich architecture for interactive computing.
