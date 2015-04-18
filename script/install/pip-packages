@@ -84,6 +84,15 @@ pip install --upgrade pgcli
 # https://github.com/pre-commit/pre-commit
 pip install --upgrade pre-commit
 
+# PyMongo
+#
+# Python driver for MongoDB
+#
+# https://pypi.python.org/pypi/pymongo/
+# https://api.mongodb.org/python/current/
+# https://github.com/mongodb/mongo-python-driver/
+pip install --upgrade pymongo
+
 # python-Levenshtein
 #
 # The Levenshtein Python C extension module contains functions for fast
