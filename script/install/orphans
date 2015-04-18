@@ -292,6 +292,55 @@ neovim_dot_app_uninstall() {
   [[ -e "$tmp_location" ]] && _remove "$tmp_location"
 }
 
+# --------------------------------------------------------------------- rosetta
+
+desc rosetta <<-EOM
+Usage:
+  $_ME rosetta
+
+Description:
+
+Tools for data science with a focus on text processing.
+
+https://github.com/columbia-applied-data-science/rosetta
+
+NOTE:
+- Requires Pandas
+- Requires Python 2 and will fail on Python 3 with the following error:
+  "ImportError: No module named 'StringIO'"
+- Requires pymongo
+EOM
+rosetta() {
+  # Don't install if already installed.
+  if [[ -n "$(pip show rosetta)" ]]; then
+    printf "Rosetta is already installed.\n" && exit 0
+  fi
+
+  local tmp_repo=/tmp/orphans/rosetta
+  local remote_url=https://github.com/columbia-applied-data-science/rosetta.git
+
+  git clone "$remote_url" "$tmp_repo" &&
+    cd "$tmp_repo" &&
+    make install
+}
+
+desc rosetta_uninstall <<-EOM
+Usage:
+  $_ME rosetta_uninstall
+
+Description:
+
+Uninstall rosetta
+EOM
+rosetta_uninstall() {
+  printf ">> Uninstalling rosetta\n"
+  local tmp_location="/tmp/orphans/rosetta"
+  if [[ -n "$(pip show rosetta)" ]]; then
+    pip uninstall rosetta -y
+  fi
+  [[ -e "$tmp_location" ]] && _remove "$tmp_location"
+}
+
 # ------------------------------------------------------------------------- xsv
 
 desc xsv <<-EOM
