@@ -209,6 +209,20 @@ npm install -g lodash-cli
 # https://github.com/mochajs/mocha
 npm install -g mocha
 
+# node-osa
+#
+# Node.js module for running Open Scripting Architecture code in OSX 10.10+
+#
+# OSA allows for advanced interaction between applications on OSX. In the past,
+# it has largely been implemented using AppleScript. Beginning in OSX 10.10
+# Yosemite, Apple has opened up this platform for development in Javascript.
+#
+# https://github.com/brandonhorst/node-osa
+#
+# Apple "JavaScript for Automation" Documentation:
+# http://goo.gl/cigQfz
+npm install -g osa
+
 # react-tools
 #
 # A set of complementary tools to React, including the JSX transformer.
