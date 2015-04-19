@@ -1,1 +1,0 @@
-../../../../config/color-schemes/seti/base16/vim/base16-seti.vim

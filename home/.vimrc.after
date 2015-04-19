@@ -33,8 +33,7 @@
 if has("gui_macvim")
   set background=dark
   "colorscheme base16-default
-  colorscheme base16-seti
-  " colorscheme seti
+  colorscheme seti
   "colorscheme vwilight
 else
   colorscheme hybrid
