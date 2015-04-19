@@ -26,7 +26,7 @@ icons = [
     destination: File.join(
       local_app_dir, "/MacVim.app/Contents/Resources/MacVim.icns"
     )
-  },{
+  }, {
     source: File.join(source_icon_dir, 'MacVim.icns'),
     destination: File.join(
       local_app_dir, "/MacVim.app/Contents/Resources/MacVim-generic.icns"
