@@ -34,7 +34,6 @@ icons = [
   }
 ]
 
-
 icons.each do |icon|
   next unless File.exists?(icon[:source])
   next unless File.exists?(icon[:destination])
