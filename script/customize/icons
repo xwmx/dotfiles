@@ -35,9 +35,9 @@ icons = [
 ]
 
 icons.each do |icon|
-  next unless File.exists?(icon[:source])
-  next unless File.exists?(icon[:destination])
-  next if File.exists?("#{icon[:destination]}.bak")
+  next unless File.exist?(icon[:source])
+  next unless File.exist?(icon[:destination])
+  next if File.exist?("#{icon[:destination]}.bak")
 
   source_hash = Digest::MD5.file(icon[:source]).hexdigest
   destination_hash = Digest::MD5.file(icon[:destination]).hexdigest
