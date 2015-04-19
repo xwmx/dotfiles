@@ -19,17 +19,17 @@ icons = [
   {
     source: File.join(source_icon_dir, 'iTerm2.icns'),
     destination: File.join(
-      local_app_dir, "/iTerm.app/Contents/Resources/iTerm2.icns"
+      local_app_dir, '/iTerm.app/Contents/Resources/iTerm2.icns'
     )
   },{
     source: File.join(source_icon_dir, 'MacVim.icns'),
     destination: File.join(
-      local_app_dir, "/MacVim.app/Contents/Resources/MacVim.icns"
+      local_app_dir, '/MacVim.app/Contents/Resources/MacVim.icns'
     )
   }, {
     source: File.join(source_icon_dir, 'MacVim.icns'),
     destination: File.join(
-      local_app_dir, "/MacVim.app/Contents/Resources/MacVim-generic.icns"
+      local_app_dir, '/MacVim.app/Contents/Resources/MacVim-generic.icns'
     )
   }
 ]
