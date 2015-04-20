@@ -1081,14 +1081,6 @@ fi
 # https://github.com/jdberry/tag
 brew install tag
 
-# tree
-#
-# Tree is a recursive directory listing command that produces a depth indented
-# listing of files.
-#
-# http://mama.indstate.edu/users/ice/tree/
-brew install tree
-
 # Tig - text-mode interface for Git
 #
 # Tig is an ncurses-based text-mode interface for git. It functions mainly as a
@@ -1123,6 +1115,14 @@ brew install tmuxinator-completion
 #
 # NOTE: command name is `ag`
 brew install the_silver_searcher
+
+# tree
+#
+# Tree is a recursive directory listing command that produces a depth indented
+# listing of files.
+#
+# http://mama.indstate.edu/users/ice/tree/
+brew install tree
 
 # Tup
 #
