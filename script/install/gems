@@ -14,6 +14,16 @@
 # https://github.com/hybridgroup/artoo
 gem install artoo
 
+# contracts.ruby
+#
+# contracts.ruby brings code contracts to the Ruby language. Code contracts
+# allow you make some assertions about your code, and then checks them to make
+# sure they hold.
+
+# https://github.com/egonSchiele/contracts.ruby
+# http://egonschiele.github.io/contracts.ruby/
+gem install contracts
+
 # faker
 #
 # A library for generating fake data such as names, addresses, and phone
