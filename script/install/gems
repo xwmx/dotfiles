@@ -41,6 +41,14 @@ gem install faker
 # https://github.com/ddollar/foreman
 gem install foreman
 
+# fpm
+#
+# Effing package management. Build packages for multiple platforms (deb,
+# rpm, etc) with great ease and sanity.
+#
+# https://github.com/jordansissel/fpm
+gem install fpm
+
 # gem_updater
 #
 # Update gems in your Gemfile and fetch their changelogs
