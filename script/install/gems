@@ -79,6 +79,14 @@ gem install hijack
 # https://github.com/jekyll/jekyll
 gem install jekyll
 
+# lolcat
+#
+# Rainbows and unicorns!
+#
+# https://github.com/busyloop/lolcat
+# https://rubygems.org/gems/lolcat
+gem install lolcat
+
 # lunchy
 #
 # A friendly wrapper for launchctl. Start your agents and go to lunch!
