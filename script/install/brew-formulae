@@ -213,7 +213,7 @@ brew install docker
 # https://github.com/boot2docker/boot2docker-cli
 brew install boot2docker
 # - Post-install for boot2docker LaunchAgent
-# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]; then
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]; then
 #   ln -sfv /usr/local/opt/boot2docker/*.plist "$HOME/Library/LaunchAgents"
 #   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
 # fi
