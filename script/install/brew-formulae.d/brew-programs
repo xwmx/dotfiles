@@ -56,6 +56,29 @@ brew install aspell --with-lang-en
 # http://www.gnu.org/software/autoconf/
 brew install autoconf
 
+# boot2docker
+#
+# boot2docker management utility
+#
+# This tool downloads the boot2docker ISO image, creates a VirtualBox virtual
+# machine, sets up two networks for that virtual machine (one NAT to allow
+# the VM and containers to access the internet, the other host-only to allow
+# container port mapping to work securely), and then provides the user a
+# simple way to login via SSH.
+#
+# https://github.com/boot2docker/boot2docker-cli
+brew install boot2docker
+# - Post-install for boot2docker LaunchAgent
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]; then
+#   ln -sfv /usr/local/opt/boot2docker/*.plist "$HOME/Library/LaunchAgents"
+#   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
+# fi
+# - Post-install for disabled boot2docker LaunchAgent
+if [[ -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]; then
+  launchctl unload "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
+  rm "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
+fi
+
 # bup
 #
 # Very efficient backup system based on the git packfile format, providing
@@ -163,6 +186,18 @@ brew install dash
 # http://djvu.sourceforge.net/
 # https://en.wikipedia.org/wiki/DjVu
 brew install djvu2pdf
+
+# Docker
+#
+# Docker is an open platform for developers and sysadmins to build, ship, and
+# run distributed applications.
+#
+# Docker is an open source project to pack, ship and run any application as a
+# lightweight container.
+#
+# https://www.docker.com/
+# https://github.com/docker/docker
+brew install docker
 
 # Docker Machine
 #
