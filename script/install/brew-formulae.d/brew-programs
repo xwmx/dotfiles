@@ -396,6 +396,14 @@ brew install heroku
 # https://github.com/max-horvath/htop-osx
 brew install htop
 
+# httpie
+#
+# HTTPie is a command line HTTP client, a user-friendly cURL replacement.
+#
+# http://httpie.org
+# https://github.com/jakubroztocil/httpie
+brew install httpie
+
 # hub
 #
 # hub is a command-line wrapper for git that makes you better at GitHub.
