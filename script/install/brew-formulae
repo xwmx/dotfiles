@@ -182,6 +182,10 @@ brew install gnu-sed --default-names
 # NOTE: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
 brew install bash
+# bash-completion
+#
+# http://bash-completion.alioth.debian.org/
+# https://alioth.debian.org/projects/bash-completion/
 brew install bash-completion
 
 ###############################################################################
