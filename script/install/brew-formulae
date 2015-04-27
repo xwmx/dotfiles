@@ -190,6 +190,7 @@ brew install bash-completion
 # https://www.docker.com/
 ###############################################################################
 
+brew install docker
 brew install boot2docker
 # To have launchd start boot2docker at login:
 #     ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
@@ -197,7 +198,6 @@ brew install boot2docker
 #     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
 ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
-brew install docker
 
 ###############################################################################
 # brew-formulae.d
