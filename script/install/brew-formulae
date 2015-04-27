@@ -169,9 +169,7 @@ brew install findutils
 # sed (stream editor) isn't an interactive text editor.
 #
 # https://www.gnu.org/software/sed/
-#
-# NOTE: overwriting the built-in `sed`
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 
 # GNU Bash
 #
