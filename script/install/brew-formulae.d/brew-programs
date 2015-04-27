@@ -575,6 +575,17 @@ brew install luajit
 # http://luarocks.org
 brew install luarocks
 
+# Lynis
+#
+# Lynis is an open source security auditing tool. Commonly used by system
+# administrators, security professionals and auditors, to evaluate the
+# security defenses of their Linux/Unix based systems. It runs on the host
+# itself, so it performs more extensive security scans than vulnerability
+# scanners.
+#
+# https://cisofy.com/lynis/
+brew install lynis
+
 # Lynx
 #
 # Lynx is a fully-featured World Wide Web (WWW) client for users running
