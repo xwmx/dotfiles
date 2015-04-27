@@ -174,7 +174,7 @@ brew install djvu2pdf
 #
 # https://docs.docker.com/machine/
 # https://github.com/docker/machine
-brew install docker-machine --devel
+brew install docker-machine
 
 # Docker Swarm
 #
