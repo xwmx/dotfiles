@@ -171,7 +171,7 @@ brew install findutils
 # https://www.gnu.org/software/sed/
 #
 # NOTE: overwriting the built-in `sed`
-brew install gnu-sed --default-names
+brew install gnu-sed --with-default-names
 
 # GNU Bash
 #
