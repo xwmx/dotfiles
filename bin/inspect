@@ -15,6 +15,17 @@
 
 source "$(which bask)"
 
+desc "HELP_HEADER" <<EOM
+inspect
+
+This is just a list of common inspection tools, recorded here for easy
+reference. This is basically a functional bookmark list or blog post.
+
+References:
+  http://goo.gl/3V7fB0/
+  https://news.ycombinator.com/item?id=9337826
+EOM
+
 desc execsnoop <<EOM
 Usage:
   $_ME execsnoop
