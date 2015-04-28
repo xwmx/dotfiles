@@ -233,6 +233,15 @@ npm install -g mocha
 # http://goo.gl/cigQfz
 npm install -g osa
 
+# Overcast
+#
+# A command line program designed to make it easy to spin up, configure, and
+# interact with any number of machines over SSH.
+#
+# https://github.com/andrewchilds/overcast
+# http://andrewchilds.github.io/overcast/
+npm install -g overcast
+
 # react-tools
 #
 # A set of complementary tools to React, including the JSX transformer.
