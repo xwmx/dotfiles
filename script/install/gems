@@ -173,3 +173,10 @@ gem install t
 #
 # https://github.com/tmuxinator/tmuxinator
 gem install tmuxinator
+
+# Tugboat
+#
+# A command line tool for interacting with your DigitalOcean droplets.
+#
+# https://github.com/pearkes/tugboat
+gem install tugboat
