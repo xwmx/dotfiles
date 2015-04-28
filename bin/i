@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#########################################################################
+# i - a bask script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# i help
+#########################################################################
+
+source "$(which bask)"
+
+desc docean <<EOM
+Usage:
+  $_ME docean
+
+Description:
+  List all DigitalOcean instances.
+EOM
+docean() {
+  overcast digitalocean instances
+}
+
+desc list <<EOM
+Usage:
+  $_ME list
+
+Description:
+  List all instances.
+EOM
+list() {
+  printf "Digital Ocean:\n"
+  docean
+
+  printf "\n"
+
+  printf "VirtualBox:\n"
+  vbox
+}
+
+desc vbox <<EOM
+Usage:
+  $_ME vbox [--running]
+
+Description:
+  List all VirtualBox instances.
+EOM
+vbox() {
+  if _contains "--running" "${command_argv[@]:-}"; then
+    VBoxManage list runningvms
+  else
+    VBoxManage list vms
+  fi
+}
+
+_init
