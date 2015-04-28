@@ -8,6 +8,12 @@
 
 source "$(which bask)"
 
+desc "HELP_HEADER" <<EOM
+i
+
+A small set of command aliases for interfacing with machine instances.
+EOM
+
 desc docean <<EOM
 Usage:
   $_ME docean
