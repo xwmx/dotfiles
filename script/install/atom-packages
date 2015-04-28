@@ -161,6 +161,13 @@ apm install language-jade
 # https://github.com/jroesch/language-scala
 apm install language-scala
 
+# language-swift
+#
+# Swift language support for the Atom editor
+#
+# https://github.com/freebroccolo/atom-language-swift
+apm install language-swift
+
 # linter
 #
 # Validates your code using linter
