@@ -73,6 +73,11 @@
 /home/.lein/*
 !/home/.lein/profiles.cjl
 
+# Only track example Overcast configuration files.
+/home/.overcast/*
+!/home/.overcast/example.clusters.json
+!/home/.overcast/example.variables.json
+
 # Don't commit rbenv temp files.
 /home/.rbenv/shims/
 /home/.rbenv/versions/
