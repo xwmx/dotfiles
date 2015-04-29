@@ -60,6 +60,18 @@ pip install --upgrade mitmproxy
 # http://neovim.org/doc/user/nvim_python.html
 pip install --upgrade neovim
 
+# Nubo
+#
+# Nubo is a command line program that allows you to start virtual machines on
+# different cloud providers, also making sure you can SSH into those instances
+# once they are available.
+#
+# http://pythonhosted.org/nubo/
+# https://github.com/ema/nubo
+#
+# NOTE: only supports Python 2.7+ as of version 0.7.
+pip install --upgrade nubo
+
 # Pandas
 #
 # Flexible and powerful data analysis / manipulation library for Python,
