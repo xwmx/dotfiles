@@ -22,7 +22,15 @@ Description:
   List all DigitalOcean instances.
 EOM
 docean() {
+  # Overcast
+  #
+  # https://github.com/andrewchilds/overcast/
+  # http://andrewchilds.github.io/overcast/
   overcast digitalocean instances
+  # Tugboat
+  #
+  # https://github.com/pearkes/tugboat
+  # tugboat droplets
 }
 
 desc list <<EOM
