@@ -8,6 +8,12 @@
 
 source "$(which bask)"
 
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+  _die printf \
+    "%s uses \`hdiutil\` and is therefore only supported on OS X\n" \
+    "$_ME"
+fi
+
 desc create <<EOM
 Usage:
   $_ME create <size> <name>
