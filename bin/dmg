@@ -49,7 +49,7 @@ mount() {
 
 desc unmount <<EOM
 Usage:
-  $_ME unmount <path/to/dmg>
+  $_ME unmount <volname>
 
 Description:
   Unmount a disk image.
