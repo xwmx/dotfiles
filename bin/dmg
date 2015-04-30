@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+#########################################################################
+# dmg - a bask script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# dmg help
+#########################################################################
+
+source "$(which bask)"
+
+desc create <<EOM
+Usage:
+  $_ME create <size> <name>
+
+Description:
+  Create a new encrypted sparsebundle disk image.
+EOM
+create() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No size or name specified.\n"
+  elif [[ -z "${2:-}" ]]; then
+    _die printf "No name specified.\n"
+  else
+    hdiutil create \
+      -encryption \
+      -size "${1}" \
+      -type SPARSEBUNDLE \
+      -fs HFS+J \
+      -volname "${2}" \
+      "${2}.dmg"
+  fi
+}
+
+desc mount <<EOM
+Usage:
+  $_ME mount <path/to/dmg>
+
+Description:
+  Mount a disk image.
+EOM
+mount() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No disk image specified.\n"
+  else
+    hdiutil mount \
+      "${1}"
+  fi
+}
+
+desc unmount <<EOM
+Usage:
+  $_ME unmount <path/to/dmg>
+
+Description:
+  Unmount a disk image.
+EOM
+unmount() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No disk image specified.\n"
+  else
+    hdiutil unmount \
+      "/Volumes/${1}"
+  fi
+}
+
+_init
