@@ -18,12 +18,18 @@ desc create <<EOM
 Usage:
   $_ME create <size> <name>
 
+Arguments:
+  <size>  The size of the image in the format \\\d\\\d[b|k|m|g|t|p|e]
+  <name>  The name used for volname and the filename, without the extension.
+
 Description:
   Create a new encrypted sparsebundle disk image.
 EOM
 create() {
   if [[ -z "${1:-}" ]]; then
     _die printf "No size or name specified.\n"
+  elif [[ ! "${1}" =~ [0-9][b|k|m|g|t|p|e]$ ]]; then
+    _die printf "Specify size in the format \"\\\d\\\d[b|k|m|g|t|p|e]\"\n"
   elif [[ -z "${2:-}" ]]; then
     _die printf "No name specified.\n"
   else
