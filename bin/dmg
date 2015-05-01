@@ -14,6 +14,17 @@ if [[ ! "$OSTYPE" =~ ^darwin ]]; then
     "$_ME"
 fi
 
+desc "HELP_HEADER" <<EOM
+    .___
+  __| _/_____    ____
+ / __ |/     \\\\  / ___\\\\
+/ /_/ |  Y Y  \\\\/ /_/  >
+\\\\____ |__|_|  /\\\\___  /
+     \\\\/     \\\\//_____/
+
+Shortcuts for working with .dmg disk images using \`hdiutil\`.
+EOM
+
 desc create <<EOM
 Usage:
   $_ME create <size> <name>
