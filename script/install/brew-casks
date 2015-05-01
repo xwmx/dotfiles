@@ -791,6 +791,13 @@ brew cask install vico
 # http://vimr.org/
 brew cask install vimr
 
+# Visual Studio Code
+#
+# An editor built with Electron.
+#
+# https://code.visualstudio.com/
+brew cask install visual-studio-code
+
 # Vivaldi
 #
 # A web browser.
