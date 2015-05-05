@@ -176,3 +176,6 @@
 [submodule "vendor/com/github/mietek/bashmenot"]
 	path = vendor/com/github/mietek/bashmenot
 	url = https://github.com/mietek/bashmenot.git
+[submodule "vendor/com/github/hnarayanan/shpotify"]
+	path = vendor/com/github/hnarayanan/shpotify
+	url = https://github.com/hnarayanan/shpotify.git
