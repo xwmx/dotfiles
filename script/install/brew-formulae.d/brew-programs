@@ -1275,6 +1275,12 @@ brew install macvim
 #
 # https://github.com/rkitover/vimpager
 # http://www.vim.org/scripts/script.php?script_id=1723
+#
+# NOTE: also installs vimcat
+#
+# cat with Vim's syntax highlighting
+#
+# https://github.com/ofavre/vimcat
 brew install vimpager
 
 # w3m
