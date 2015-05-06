@@ -389,6 +389,15 @@ brew install homebrew/dupes/grep
 # https://github.com/heroku/heroku
 brew install heroku
 
+# Highlight
+#
+# Highlight converts sourcecode to HTML, XHTML, RTF, LaTeX, TeX, SVG, BBCode
+# and terminal escape sequences with coloured syntax highlighting. Language
+# definitions and colour themes are customizable.
+#
+# http://www.andre-simon.de/doku/highlight/en/highlight.php
+brew install highlight
+
 # htop (htop-osx)
 #
 # htop, an interactive process viewer.
