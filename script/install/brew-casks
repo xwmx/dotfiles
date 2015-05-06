@@ -270,6 +270,16 @@ brew cask install docear
 # http://www.elm-lang.org
 brew cask install elm-platform
 
+# Facter
+#
+# Facter gathers basic facts about nodes (systems) such as hardware details,
+# network settings, OS type and version, IP addresses, MAC addresses, SSH keys
+# and more. These facts are then made available in your Puppet manifests as
+# variables.
+#
+# https://puppetlabs.com/facter
+brew cask install facter
+
 # Factor
 #
 # The Factor programming language combines powerful language features with a
