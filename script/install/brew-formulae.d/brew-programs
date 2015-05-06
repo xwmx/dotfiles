@@ -1266,6 +1266,17 @@ brew install vim --override-system-vi
 # http://code.google.com/p/macvim/
 brew install macvim
 
+# vimpager
+#
+# Use ViM as PAGER
+#
+# A PAGER using less.vim with support for highlighting of man pages and many
+# other features.
+#
+# https://github.com/rkitover/vimpager
+# http://www.vim.org/scripts/script.php?script_id=1723
+brew install vimpager
+
 # w3m
 #
 # w3m is a text-based web browser as well as a pager like `more' or `less'.
