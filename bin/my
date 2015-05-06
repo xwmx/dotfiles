@@ -26,7 +26,19 @@ ip() {
   # default behavior when no option is passed, but the option is included for
   # psychological balance. :-)
   if [[ "$1" == "--local" ]]; then
-    ipconfig getifaddr en0
+    local _active_interface
+    _active_interface="$(
+      ifconfig | \
+        pcregrep \
+          -M \
+          -o '^[^\t:]+:([^\n]|\n\t)*status: active' | \
+      egrep \
+        -o \
+        -m 1 \
+        '^[^\t:]+'
+    )"
+    _debug printf "ip() \$_active_interface: %s\n" "$_active_interface"
+    ipconfig getifaddr "$_active_interface"
   else
     dig +short myip.opendns.com @resolver1.opendns.com
   fi
