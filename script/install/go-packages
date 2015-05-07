@@ -179,3 +179,12 @@ go get -u -v github.com/gizak/termui
 # https://godoc.org/golang.org/x/tools/cmd/vet
 go get -u -v golang.org/x/tools/cmd/vet
 
+# wego
+#
+# wego is a weather client for the terminal.
+#
+# https://github.com/schachmat/wego
+#
+# NOTE: this requires additional setup, including getting an API key from
+# worldweatheronline.com See the Readme for additional information.
+go get -u -v github.com/schachmat/wego
