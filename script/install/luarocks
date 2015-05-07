@@ -5,6 +5,24 @@
 # Install various global lua rocks.
 ###############################################################################
 
+###############################################################################
+# Setup
+###############################################################################
+
+# Alias the luarocks command to the luarocks-5.2 executable.
+#
+# Homebrew-installed lua includes luarocks with an executable name that
+# includes the version. In order to make a simpler `luarocks` command
+# available, alias luarocks to the current executable.
+#
+# More background information here:
+# https://github.com/Homebrew/homebrew/pull/37842
+alias luarocks="luarocks-5.2"
+
+###############################################################################
+# Install
+###############################################################################
+
 # Mjolnir
 #
 # Lightweight automation and productivity app for OS X. Mjolnir is an OS X app
