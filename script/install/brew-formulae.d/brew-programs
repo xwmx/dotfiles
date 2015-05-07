@@ -332,6 +332,18 @@ brew install forego
 # http://flowtype.org/
 brew install flow
 
+# Facebook PathPicker
+#
+# PathPicker accepts a wide range of input -- output from git commands, grep
+# results, searches -- pretty much anything. After parsing the input,
+# PathPicker presents you with a nice UI to select which files you're
+# interested in. After that you can open them in your favorite editor or
+# execute arbitrary commands.
+#
+# http://facebook.github.io/PathPicker/
+# https://github.com/facebook/pathpicker/
+brew install fpp
+
 # geoip
 #
 # Libraries and tools for MaxMind’s GeoIP.
