@@ -605,11 +605,7 @@ brew cask install rowanj-gitx
 # dependencies, and ensure that you'll always get a repeatable build.
 #
 # https://crates.io/
-#
-# Options:
-#   --force
-#     Download and install the latest version on each run.
-brew cask install rust --force
+brew cask install rust
 
 # Scribus
 #
