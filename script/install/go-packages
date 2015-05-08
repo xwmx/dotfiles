@@ -48,6 +48,14 @@ go get -u -v github.com/kisielk/errcheck
 # https://github.com/gocircuit/escher
 go get -u -v github.com/gocircuit/escher/escher
 
+# go-bootstrap
+#
+# Generates a lean and mean Go web project.
+#
+# http://go-bootstrap.io/
+# https://github.com/go-bootstrap/go-bootstrap
+go get -u -v github.com/go-bootstrap/go-bootstrap
+
 # gocode
 #
 # An autocompletion daemon for the Go programming language.
