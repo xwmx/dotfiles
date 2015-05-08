@@ -179,3 +179,6 @@
 [submodule "vendor/com/github/hnarayanan/shpotify"]
 	path = vendor/com/github/hnarayanan/shpotify
 	url = https://github.com/hnarayanan/shpotify.git
+[submodule "vendor/com/github/junegunn/fzf"]
+	path = vendor/com/github/junegunn/fzf
+	url = https://github.com/junegunn/fzf.git
