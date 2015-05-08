@@ -15,8 +15,8 @@ if [[ ! $SHARED_ENV_LOADED == true ]]; then
 fi
 
 # load .zshenv.local if it exists
-if [ -f $HOME/.zshenv.local ]; then
-  source $HOME/.zshenv.local
+if [ -f "$HOME/.zshenv.local" ]; then
+  source "$HOME/.zshenv.local"
 fi
 
 

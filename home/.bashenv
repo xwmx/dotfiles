@@ -19,8 +19,8 @@ if [[ ! $SHARED_ENV_LOADED == true ]]; then
 fi
 
 # load .bashenv.local if it exists
-if [ -f $HOME/.bashenv.local ]; then
-  source $HOME/.bashenv.local
+if [ -f "$HOME/.bashenv.local" ]; then
+  source "$HOME/.bashenv.local"
 fi
 
 
