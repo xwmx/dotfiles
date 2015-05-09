@@ -100,7 +100,11 @@ __search() {
 # ------------------------------------------------------------------------ bing
 
 desc "bing" <<EOM
-Usage: $_ME bing [<query>]
+Usage:
+  $_ME bing [<query>]
+
+Description:
+  Search with Bing.
 EOM
 bing() {
   __search "$_BING_URL" "$@"
@@ -109,7 +113,11 @@ bing() {
 # ------------------------------------------------------------------------- ddg
 
 desc "ddg" <<EOM
-Usage: $_ME ddg [<query>]
+Usage:
+  $_ME ddg [<query>]
+
+Description:
+  Search with DuckDuckGo.
 EOM
 ddg() {
   __search "$_DUCKDUCKGO_URL" "$@"
@@ -118,7 +126,11 @@ ddg() {
 # ---------------------------------------------------------------------- google
 
 desc "google" <<EOM
-Usage: $_ME google [<query>]
+Usage:
+  $_ME google [<query>]
+
+Description:
+  Search with Google.
 EOM
 google() {
   __search "$_GOOGLE_URL" "$@"
@@ -127,7 +139,11 @@ google() {
 # ----------------------------------------------------------------------- yahoo
 
 desc "yahoo" <<EOM
-Usage: $_ME yahoo [<query>]
+Usage:
+  $_ME yahoo [<query>]
+
+Description:
+  Search with Yahoo!
 EOM
 yahoo() {
   __search "$_YAHOO_URL" "$@"
@@ -137,7 +153,11 @@ yahoo() {
 # ---------------------------------------------------------------------- yandex
 
 desc "yandex" <<EOM
-Usage: $_ME yandex [<query>]
+Usage:
+  $_ME yandex [<query>]
+
+Description:
+  Search with Yandex.
 EOM
 yandex() {
   __search "$_YANDEX_URL" "$@"
@@ -150,7 +170,11 @@ yandex() {
 # ----------------------------------------------------------------------- ducky
 
 desc "ducky" <<EOM
-Usage: $_ME ducky [<query>]
+Usage:
+  $_ME ducky [<query>]
+
+Description:
+  I feel ducky.
 EOM
 ducky() {
   __search "$_DUCKDUCKGO_URL" "\\! ${*}"
@@ -159,7 +183,11 @@ ducky() {
 # ------------------------------------------------------------------ graphemica
 
 desc "graphemica" <<EOM
-Usage: $_ME graphemica [<query>]
+Usage:
+  $_ME graphemica [<query>]
+
+Description:
+  Search Graphemica, for people who ♥ letters, numbers, punctuation, &c.
 EOM
 graphemica() {
   __search "$_DUCKDUCKGO_URL" "\\!graphemica ${*}"
@@ -168,7 +196,11 @@ graphemica() {
 # ----------------------------------------------------------------------- image
 
 desc "image" <<EOM
-Usage: $_ME image [<query>]
+Usage:
+  $_ME image [<query>]
+
+Description:
+  Search Google Images.
 EOM
 image() {
   __search "$_DUCKDUCKGO_URL" "\\!i ${*}"
@@ -177,7 +209,11 @@ image() {
 # ------------------------------------------------------------------------- map
 
 desc "map" <<EOM
-Usage: $_ME map [<query>]
+Usage:
+  $_ME map [<query>]
+
+Description:
+  Search Google Maps.
 EOM
 map() {
   __search "$_DUCKDUCKGO_URL" "\\!m ${*}"
@@ -186,7 +222,11 @@ map() {
 # ------------------------------------------------------------------------ news
 
 desc "news" <<EOM
-Usage: $_ME news [<query>]
+Usage:
+  $_ME news [<query>]
+
+Description:
+  Search Google News.
 EOM
 wiki() {
   __search "$_DUCKDUCKGO_URL" "\\!n ${*}"
@@ -195,7 +235,11 @@ wiki() {
 # --------------------------------------------------------------------- youtube
 
 desc "youtube" <<EOM
-Usage: $_ME youtube [<query>]
+Usage:
+  $_ME youtube [<query>]
+
+Description:
+  Search YouTube.
 EOM
 youtube() {
   __search "$_DUCKDUCKGO_URL" "\\!yt ${*}"
@@ -204,7 +248,11 @@ youtube() {
 # ------------------------------------------------------------------------ wiki
 
 desc "wiki" <<EOM
-Usage: $_ME wiki [<query>]
+Usage:
+  $_ME wiki [<query>]
+
+Description:
+  Search Wikipedia.
 EOM
 wiki() {
   __search "$_DUCKDUCKGO_URL" "\\!w ${*}"
