@@ -116,6 +116,29 @@ http://ipinfo.io/%s
 " "$1" "$1"
 }
 
+# ---------------------------------------------------------------------- locate
+
+desc locate <<EOM
+Usage:
+  $_ME locate <ip>
+
+Description:
+  Print location information about the ip address.
+EOM
+locate() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No IP address supplied.\n"
+  fi
+
+  _infoio_json="$(infoio "$1")"
+
+  printf "%s\n" "$_infoio_json" | jq .loc      | sed 's/\"//g'
+  printf "%s\n" "$_infoio_json" | jq .country  | sed 's/\"//g'
+  printf "%s\n" "$_infoio_json" | jq .region   | sed 's/\"//g'
+  printf "%s\n" "$_infoio_json" | jq .city     | sed 's/\"//g'
+  printf "%s\n" "$_infoio_json" | jq .postal   | sed 's/\"//g'
+}
+
 # -------------------------------------------------------------------------- me
 
 desc me <<EOM
