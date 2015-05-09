@@ -84,7 +84,7 @@ infoio() {
   fi
 
   local _ipinfoio
-  _ipinfoio="$(curl "http://ipinfo.io/${1}/json")"
+  _ipinfoio="$(curl -s "http://ipinfo.io/${1}/json")"
   # Print with trailing newline.
   printf "%s\n" "$_ipinfoio"
 }
