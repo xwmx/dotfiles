@@ -137,6 +137,9 @@ locate() {
   if [[ -z "${1:-}" ]]; then
     _die printf "No IP address supplied.\n"
   fi
+  if ! _command_exists "jq"; then
+    _die printf "The \`jq\` command is required but not found.\n"
+  fi
 
   _infoio_json="$(infoio "$1")"
 
@@ -158,6 +161,9 @@ Description:
   arguments.
 EOM
 me() {
+  if ! _command_exists "my"; then
+    _die printf "The \`my\` command is required but not found.\n"
+  fi
   my ip "$@"
 }
 
