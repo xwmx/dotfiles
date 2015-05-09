@@ -50,6 +50,18 @@ info() {
 " "$ip_address"
   dig "$ip_address" || true
 
+  # ipinfo.io
+  # ===
+  printf "\
+# =============================================================================
+# ipinfo.io/%s
+# =============================================================================
+" "$ip_address"
+  # Print formatted with trailing newline.
+  local _ipinfoio
+  _ipinfoio="$($_ME infoio "$ip_address")"
+  printf "%s\n" "$_ipinfoio"
+
   # locate
   # ======
   printf "\
