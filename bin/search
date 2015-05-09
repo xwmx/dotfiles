@@ -228,7 +228,7 @@ Usage:
 Description:
   Search Google News.
 EOM
-wiki() {
+news() {
   __search "$_DUCKDUCKGO_URL" "\\!n ${*}"
 }
 
