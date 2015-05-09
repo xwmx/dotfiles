@@ -8,6 +8,8 @@
 
 source "$(which bask)"
 
+# ------------------------------------------------------------------------ info
+
 desc info <<EOM
 Usage:
   $_ME info <ip address>
@@ -60,6 +62,24 @@ https://www.maxmind.com/en/geoip-demo
 http://www.infosniper.net/index.php?ip_address=%s
 " "$ip_address"
 }
+
+# ---------------------------------------------------------------------- infoio
+
+desc infoio <<EOM
+Usage:
+  $_ME infoio <ip>
+
+Description:
+  Query the ipinfo.io API for JSON-formatted info about the given ip address.
+EOM
+infoio() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No IP address supplied.\n"
+  fi
+  curl "http://ipinfo.io/${1}/json"
+}
+
+# -------------------------------------------------------------------------- me
 
 desc me <<EOM
 Usage:
