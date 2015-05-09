@@ -156,6 +156,15 @@ ducky() {
   __search "$_DUCKDUCKGO_URL" "\\! ${*}"
 }
 
+# ------------------------------------------------------------------ graphemica
+
+desc "graphemica" <<EOM
+Usage: $_ME graphemica [<query>]
+EOM
+graphemica() {
+  __search "$_DUCKDUCKGO_URL" "\\!graphemica ${*}"
+}
+
 # ----------------------------------------------------------------------- image
 
 desc "image" <<EOM
