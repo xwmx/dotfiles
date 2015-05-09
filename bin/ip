@@ -62,17 +62,14 @@ info() {
   _ipinfoio="$($_ME infoio "$ip_address")"
   printf "%s\n" "$_ipinfoio"
 
-  # locate
+  # links
   # ======
   printf "\
 # =============================================================================
-# locate
+# Links
 # =============================================================================
-
-https://www.maxmind.com/en/geoip-demo
-
-http://www.infosniper.net/index.php?ip_address=%s
-" "$ip_address"
+"
+  $_ME links "$ip_address"
 }
 
 # ---------------------------------------------------------------------- infoio
@@ -89,6 +86,27 @@ infoio() {
     _die printf "No IP address supplied.\n"
   fi
   curl "http://ipinfo.io/${1}/json"
+}
+
+# ----------------------------------------------------------------------- links
+
+desc links <<EOM
+Usage:
+  $_ME links <ip>
+
+Description:
+  Query the ipinfo.io API for JSON-formatted info about the given ip address.
+EOM
+links() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No IP address supplied.\n"
+  fi
+
+  printf "\
+https://www.maxmind.com/en/geoip-demo
+http://www.infosniper.net/index.php?ip_address=%s
+http://ipinfo.io/%s
+" "$1" "$1"
 }
 
 # -------------------------------------------------------------------------- me
