@@ -8,6 +8,8 @@
 
 source "$(which bask)"
 
+_IPINFOIO_RESPONSE=
+
 # ------------------------------------------------------------------------ info
 
 desc info <<EOM
@@ -82,11 +84,15 @@ infoio() {
   if [[ -z "${1:-}" ]]; then
     _die printf "No IP address supplied.\n"
   fi
-
-  local _ipinfoio
-  _ipinfoio="$(curl -s "http://ipinfo.io/${1}/json")"
+  # Cache response to avoid calling API multiple times.
+  if _blank "$_IPINFOIO_RESPONSE"; then
+    _debug printf "infoio(): querying API."
+    local _ipinfoio
+    _ipinfoio="$(curl -s "http://ipinfo.io/${1}/json")"
+    _IPINFOIO_RESPONSE="$(printf "%s" "$_ipinfoio")"
+  fi
   # Print with trailing newline.
-  printf "%s\n" "$_ipinfoio"
+  printf "%s\n" "$_IPINFOIO_RESPONSE"
 }
 
 # ----------------------------------------------------------------------- links
