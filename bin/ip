@@ -102,7 +102,7 @@ Usage:
   $_ME links <ip>
 
 Description:
-  Query the ipinfo.io API for JSON-formatted info about the given ip address.
+  Print links that can be used to view additional information for this address.
 EOM
 links() {
   if [[ -z "${1:-}" ]]; then
