@@ -143,11 +143,11 @@ locate() {
 
   _infoio_json="$(infoio "$1")"
 
-  printf "%s\n" "$_infoio_json" | jq .loc      | sed 's/\"//g'
-  printf "%s\n" "$_infoio_json" | jq .country  | sed 's/\"//g'
-  printf "%s\n" "$_infoio_json" | jq .region   | sed 's/\"//g'
-  printf "%s\n" "$_infoio_json" | jq .city     | sed 's/\"//g'
-  printf "%s\n" "$_infoio_json" | jq .postal   | sed 's/\"//g'
+  printf "%s\n" "$_infoio_json" | jq '.loc'      --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.country'  --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.region'   --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.city'     --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.postal'   --raw-output
 }
 
 # -------------------------------------------------------------------------- me
