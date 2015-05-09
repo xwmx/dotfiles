@@ -85,7 +85,6 @@ dig() {
     esac
   done
 
-
   if [[ -z "${_query:-}" ]]; then
     _die printf "No IP address or domain supplied.\n"
   fi
@@ -120,7 +119,6 @@ host() {
       *) _query+="$arg";;
     esac
   done
-
 
   if [[ -z "${_query:-}" ]]; then
     _die printf "No IP address or domain supplied.\n"
@@ -290,7 +288,6 @@ whois() {
       *) _query+="$arg";;
     esac
   done
-
 
   if [[ -z "${_query:-}" ]]; then
     _die printf "No IP address or domain supplied.\n"
