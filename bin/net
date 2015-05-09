@@ -1,0 +1,311 @@
+#!/usr/bin/env bash
+#########################################################################
+# net - a bask script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# net help
+#########################################################################
+
+source "$(which bask)"
+
+desc "HELP_HEADER" <<EOM
+            _
+ _ __   ___| |_
+| '_ \\\ / _ \\\ __|
+| | | |  __/ |_
+|_| |_|\\\___|\\\__|
+
+net
+
+Commands and shortcuts wrapping unix network utility commands.
+EOM
+
+###############################################################################
+# Original Utilities
+#
+# For those commands whose names are overridden within this script, get the
+# original paths so they can be used.
+###############################################################################
+
+_DIG_CMD="$(which dig)"
+_HOST_CMD="$(which host)"
+_IFTOP_CMD="$(which iftop)"
+_WHOIS_CMD="$(which whois)"
+
+###############################################################################
+# Commands
+###############################################################################
+
+# ---------------------------------------------------------------------- active
+
+desc "active" <<EOM
+Usage:
+$_ME active ( --lsof | --netstat )
+
+Description:
+  List active TCP connections.
+EOM
+active() {
+  if _command_argv_includes "--netstat"; then
+    # via http://unix.stackexchange.com/a/132494
+    netstat \
+        -a \
+        -p TCP \
+        -W \
+        2>&1 | \
+      tail -n +2 | \
+      sort -k 7,7 -k 6,6
+  else
+    lsof -i 2>&1 | tail -n +2 | sort -k 1,1
+  fi
+}
+
+# ------------------------------------------------------------------------- dig
+
+desc "dig" <<EOM
+Usage:
+  $_ME dig ( <ip> | <domain> ) [--basic]
+
+Options:
+  --basic  Perform a basic \`dig "\$@"\` query.
+
+Description:
+  Query with dig, the DNS lookup utility. By default this is a proxy for the
+  following command: \`dig +nocmd "\$@" any +multiline +noall +answer\`. With
+  the '--basic' options, dig performs a basic \`dig "\$@"\` query.
+EOM
+dig() {
+  local _basic=0
+  local _query=()
+
+  for arg in "${COMMAND_ARGV[@]:1}"; do
+    case $arg in
+      --basic) _basic=1;;
+      *) _query+="$arg";;
+    esac
+  done
+
+
+  if [[ -z "${_query:-}" ]]; then
+    _die printf "No IP address or domain supplied.\n"
+  fi
+
+  if (("$_basic")); then
+    "$_DIG_CMD" "${_query[@]}"
+  else
+    "$_DIG_CMD" +nocmd "${_query[@]}" any +multiline +noall +answer
+  fi
+}
+
+
+# ------------------------------------------------------------------------ host
+
+desc "host" <<EOM
+Usage:
+  $_ME host ( <ip> | <domain> ) [-a|--all]
+
+Options:
+  -a --all  Equivalent of \`host -a "\$@"\`
+
+Description:
+  Query with \`host\`.
+EOM
+host() {
+  local _all=0
+  local _query=()
+
+  for arg in "${COMMAND_ARGV[@]:1}"; do
+    case $arg in
+      --all|-a) _all=1;;
+      *) _query+="$arg";;
+    esac
+  done
+
+
+  if [[ -z "${_query:-}" ]]; then
+    _die printf "No IP address or domain supplied.\n"
+  fi
+
+  if (("$_all")); then
+    "$_HOST_CMD" -a "${_query[@]}"
+  else
+    "$_HOST_CMD" "${_query[@]}"
+  fi
+}
+
+# ---------------------------------------------------------------- host:current
+
+desc "host:current" <<EOM
+Usage:
+  $_ME host:current [--local | --remote]
+
+Options:
+  --local   Display the local hostname (default).
+  --remote  Display the remote hostname.
+
+Description:
+  Print the current hostname. By default, the local hostname is queried
+  and displayed, or the '--remote' option can be used to return the remote
+  hostname.
+EOM
+host:current() {
+  # Only the '--remote' option is actually checked. The '--local' option is the
+  # default behavior when no option is passed, but the option is included for
+  # psychological balance. :-)
+  if _command_argv_includes "--remote"; then
+   local _remote_ip
+    _remote_ip="$(_get_ip_current_remote)"
+    "$_HOST_CMD" "$_remote_ip"
+  else
+    hostname
+  fi
+}
+
+# ----------------------------------------------------------------------- iftop
+
+desc "iftop" <<EOM
+Usage:
+  $_ME iftop
+
+Description:
+  Run \`sudo iftop\`
+
+  iftop - display bandwidth usage on an interface by host.
+EOM
+iftop() {
+  sudo "$_IFTOP_CMD"
+}
+
+# ------------------------------------------------------------------ ip:current
+
+desc "ip:current" <<EOM
+Usage:
+  $_ME ip:current [--local | --remote]
+
+Options:
+  --local   Display the local IP address.
+  --remote  Display the remote IP address (default).
+
+Description:
+  Print the current IP address. By default, the remote IP address is queried
+  and displayed, or the '--local' option can be used to return the local IP
+  address.
+EOM
+_get_ip_current_remote() {
+  "$_DIG_CMD" +short myip.opendns.com @resolver1.opendns.com
+}
+ip:current() {
+  # Only the '--local' option is actually checked. The '--remote' option is the
+  # default behavior when no option is passed, but the option is included for
+  # psychological balance. :-)
+  if _command_argv_includes "--local"; then
+    local _active_interface
+    _active_interface="$(
+      ifconfig | \
+        pcregrep \
+          -M \
+          -o '^[^\t:]+:([^\n]|\n\t)*status: active' | \
+      egrep \
+        -o \
+        -m 1 \
+        '^[^\t:]+'
+    )"
+    _debug printf "ip() \$_active_interface: %s\n" "$_active_interface"
+    ipconfig getifaddr "$_active_interface"
+  else
+    _get_ip_current_remote
+  fi
+}
+
+# ------------------------------------------------------------------- ip:infoio
+
+desc "ip:infoio" <<EOM
+Usage:
+  $_ME ip:infoio <ip>
+
+Description:
+  Query the ipinfo.io API for JSON-formatted info about the given ip address.
+EOM
+ip:infoio() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No IP address supplied.\n"
+  fi
+  # Cache response to avoid calling API multiple times.
+  if _blank "$_IPINFOIO_RESPONSE"; then
+    _debug printf "infoio(): querying API."
+    local _ipinfoio
+    _ipinfoio="$(curl -s "http://ipinfo.io/${1}/json")"
+    _IPINFOIO_RESPONSE="$(printf "%s" "$_ipinfoio")"
+  fi
+  # Print with trailing newline.
+  printf "%s\n" "$_IPINFOIO_RESPONSE"
+}
+
+# ------------------------------------------------------------------- ip:locate
+
+desc "ip:locate" <<EOM
+Usage:
+  $_ME ip:locate <ip>
+
+Description:
+  Print location information about the ip address.
+EOM
+ip:locate() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No IP address supplied.\n"
+  fi
+  if ! _command_exists "jq"; then
+    _die printf "The \`jq\` command is required but not found.\n"
+  fi
+
+  _infoio_json="$(infoio "$1")"
+
+  printf "%s\n" "$_infoio_json" | jq '.loc'      --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.country'  --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.region'   --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.city'     --raw-output
+  printf "%s\n" "$_infoio_json" | jq '.postal'   --raw-output
+}
+
+# ------------------------------------------------------------------- ip:locate
+
+desc "whois" <<EOM
+Usage:
+  $_ME whois ( <ip> | <domain> ) [--exact]
+
+Options:
+  --exact  Query using the exact query, which can be used to ignore whois spam
+           on some domains.
+
+Description:
+  Query and print whois information.
+EOM
+whois() {
+  local _exact=0
+  local _query=()
+
+  for arg in "${COMMAND_ARGV[@]:1}"; do
+    case $arg in
+      --exact) _exact=1;;
+      *) _query+="$arg";;
+    esac
+  done
+
+
+  if [[ -z "${_query:-}" ]]; then
+    _die printf "No IP address or domain supplied.\n"
+  fi
+
+  if (("$_exact")); then
+    # Do a double whois query. Explanation: http://superuser.com/a/38008
+    "$_WHOIS_CMD" \
+      -h "$("$_WHOIS_CMD" "domain $_query" | \
+              sed '/^.*Whois Server:/!d;s///' | \
+              sed 's/ //g')" \
+      "$_query"
+  else
+    "$_WHOIS_CMD" "$_query"
+  fi
+}
+
+_init
