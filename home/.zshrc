@@ -70,7 +70,6 @@ plugins=(
   tmuxinator
   vi-mode
   wd
-  web-search
   z
  )
 
