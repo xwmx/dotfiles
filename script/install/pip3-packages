@@ -82,6 +82,16 @@ pip3 install --upgrade rainbowstream
 # https://github.com/fastmonkeys/stellar
 pip3 install --upgrade stellar
 
+# x_x
+#
+# x_x is a command line reader that displays either Excel files or CSVs in
+# your terminal. The purpose of this is to not break the workflow of people
+# who live on the command line and need to access a spreadsheet generated
+# using Microsoft Excel.
+#
+# https://github.com/krockode/x_x
+pip3 install --upgrade x_x
+
 # the xonsh shell
 #
 # xonsh is a Python-ish, BASHwards-compatible shell language and command
