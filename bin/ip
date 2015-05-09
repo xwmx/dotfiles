@@ -57,10 +57,7 @@ info() {
 # ipinfo.io/%s
 # =============================================================================
 " "$ip_address"
-  # Print formatted with trailing newline.
-  local _ipinfoio
-  _ipinfoio="$($_ME infoio "$ip_address")"
-  printf "%s\n" "$_ipinfoio"
+  $_ME infoio "$ip_address"
 
   # links
   # ======
@@ -85,7 +82,11 @@ infoio() {
   if [[ -z "${1:-}" ]]; then
     _die printf "No IP address supplied.\n"
   fi
-  curl "http://ipinfo.io/${1}/json"
+
+  local _ipinfoio
+  _ipinfoio="$(curl "http://ipinfo.io/${1}/json")"
+  # Print with trailing newline.
+  printf "%s\n" "$_ipinfoio"
 }
 
 # ----------------------------------------------------------------------- links
