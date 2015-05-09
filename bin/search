@@ -12,8 +12,9 @@ source "$(which bask)"
 # Terminal Browser
 ###############################################################################
 
-_DEFAULT_TERM_BROWSER="w3m"
 # _DEFAULT_TERM_BROWSER="elinks"
+# _DEFAULT_TERM_BROWSER="lynx"
+_DEFAULT_TERM_BROWSER="w3m"
 
 ###############################################################################
 # Base URLs
