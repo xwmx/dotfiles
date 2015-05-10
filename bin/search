@@ -103,6 +103,61 @@ __search() {
 }
 
 ###############################################################################
+# Local Search
+###############################################################################
+
+# ------------------------------------------------------------------- Spotlight
+
+# Only load this if `mdfind` is present on the system.
+if _command_exists "mdfind"; then
+desc spotlight <<EOM
+Usage:
+  spotlight ( -f | --filename ) <filename>
+  spotlight ( -t | --text | --fulltext | -c | --content ) <query>
+  spotlight <full text query | filename>
+
+Description:
+  Search using spotlight.
+EOM
+spotlight() {
+  local _search_type=
+  local _query=()
+
+  for arg in "${COMMAND_ARGV[@]:1}"; do
+    case $arg in
+      -f|--filename)
+        _search_type="filename"
+        ;;
+      # NOTE: including many different flags here to see which ones get used
+      # more before committing to a smaller set.
+      -t|--text|--fulltext|-c|--content)
+        _search_type="fulltext"
+        ;;
+      *)
+        _query+="$arg"
+        ;;
+    esac
+  done
+
+  if [[ -z "${_query:-}" ]]; then
+    _die printf "Query missing.\n"
+  fi
+
+  case "$_search_type" in
+    filename)
+      mdfind "kMDItemDisplayName == '${_query[*]}'wc"
+      ;;
+    fulltext)
+      mdfind "kMDItemTextContent == '${_query[*]}'wc"
+      ;;
+    *)
+      mdfind -interpret "$*"
+      ;;
+  esac
+}
+fi
+
+###############################################################################
 # Search Engines
 ###############################################################################
 
