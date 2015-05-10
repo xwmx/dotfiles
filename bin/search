@@ -110,20 +110,26 @@ __search() {
 
 desc "find" <<EOM
 Usage:
-  find <filename>
+  find <filename> [<directory>]
 
 Description:
-  Search for a file with a given filename in the current directory subtree
-  using the \`find\` utility. This is really just a little alias for:
-    \`find . -name "$@"\`
+  Search for a file with a given filename in the a directory subtree
+  using the \`find\` utility. By default, this is really just an alias for:
+    \`find . -name <filename>\`
+  When the <directory> argument is provided, find uses that directory as the
+  subtree root.
 EOM
 _FIND_CMD="$(which find)"
 find() {
   if [[ -z "${1:-}" ]]; then
     _die printf "Query missing.\n"
   fi
+  local _directory="."
+  if _present "${2:-}" && [[ -d "$2" ]]; then
+    _directory="$2"
+  fi
 
-  "$_FIND_CMD" . -name "$@"
+  "$_FIND_CMD" "$_directory" -name "$1"
 }
 
 # ------------------------------------------------------------------- Spotlight
