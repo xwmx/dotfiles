@@ -148,6 +148,13 @@ Options:
 
 Description:
   Search using spotlight.
+
+  When no options are used, this behaves as if the query was typed into the
+  Spotlight menu and will return hits for both the filename and content. When
+  a <directory> argument is provided, the search will be scoped to that
+  directory and its subtree.
+
+  This command wraps \`mdfind\` and only works on OS X.
 EOM
 spotlight() {
   local _search_type=
