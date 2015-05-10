@@ -56,6 +56,14 @@ go get -u -v github.com/gocircuit/escher/escher
 # https://github.com/go-bootstrap/go-bootstrap
 go get -u -v github.com/go-bootstrap/go-bootstrap
 
+# gb
+#
+# gb, the project based build tool for Go
+#
+# https://github.com/constabulary/gb
+# https://walledcity.com/supermighty/building-go-projects-with-gb
+go get -u -v github.com/constabulary/gb/...
+
 # gocode
 #
 # An autocompletion daemon for the Go programming language.
