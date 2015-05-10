@@ -133,7 +133,7 @@ if _command_exists "mdfind"; then
 desc spotlight <<EOM
 Usage:
   spotlight ( -f | --filename ) <filename>
-  spotlight ( -t | --text | --fulltext | -c | --content ) <query>
+  spotlight ( -fulltext | -c | --content ) <query>
   spotlight <full text query | filename>
 
 Description:
@@ -150,7 +150,7 @@ spotlight() {
         ;;
       # NOTE: including many different flags here to see which ones get used
       # more before committing to a smaller set.
-      -t|--text|--fulltext|-c|--content)
+      --fulltext|-c|--content)
         _search_type="fulltext"
         ;;
       *)
