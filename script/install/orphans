@@ -341,6 +341,53 @@ rosetta_uninstall() {
   [[ -e "$tmp_location" ]] && _remove "$tmp_location"
 }
 
+# ------------------------------------------------------------------------ rtop
+
+desc rtop <<-EOM
+Usage:
+  $_ME rtop
+
+Description:
+
+rtop is a simple, agent-less, remote server monitoring tool that works over
+plain SSH. It does not need any software to be installed on the server that
+you want to monitor. It works by establishing an SSH session, and running
+commands on the remote server to collect system metrics.
+
+http://www.rtop-monitor.org/
+https://github.com/rapidloop/rtop
+EOM
+rtop() {
+  # Don't install if already installed.
+  if [[ -e "$HOME/bin/rtop" ]]; then
+    printf "rtop is already installed.\n" && exit 0
+  fi
+
+  local tmp_repo=/tmp/orphans/rtop
+
+  git clone --recursive http://github.com/rapidloop/rtop "$tmp_repo" &&
+    cd "$tmp_repo" &&
+    make &&
+    mv "${tmp_repo}/rtop" "$HOME/bin/rtop" &&
+    _remove "$tmp_repo"
+}
+
+desc rtop_uninstall <<-EOM
+Usage:
+  $_ME rtop_uninstall
+
+Description:
+
+Uninstall rtop
+EOM
+rtop_uninstall() {
+  printf ">> Uninstalling rtop\n"
+  local install_location="$HOME/bin/rtop"
+  [[ -e "$install_location" ]] && _remove "$install_location"
+  local tmp_location="/tmp/orphans/rtop"
+  [[ -e "$tmp_location" ]] && _remove "$tmp_location"
+}
+
 # ------------------------------------------------------------------------- xsv
 
 desc xsv <<-EOM
