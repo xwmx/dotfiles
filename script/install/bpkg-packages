@@ -30,3 +30,12 @@ unset PREFIX
 export PREFIX="$HOME"
 bpkg install -g clip
 unset PREFIX
+
+# Spot
+#
+# Tiny ack-style file search utility.
+#
+# https://github.com/rauchg/spot
+export PREFIX="$HOME"
+bpkg install -g rauchg/spot
+unset PREFIX
