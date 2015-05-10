@@ -138,32 +138,42 @@ find() {
 if _command_exists "mdfind"; then
 desc spotlight <<EOM
 Usage:
-  spotlight ( -f | --filename ) <filename>
-  spotlight ( -fulltext | -c | --content ) <query>
-  spotlight <full text query | filename>
+  spotlight <full text query | filename> [<directory>]
+  spotlight ( -f | --filename ) <filename> [<directory>]
+  spotlight ( --fulltext | -c | --content ) <query> [<directory>]
+
+Options:
+  -f --filename             A filename to search for.
+  --fulltext -c --content   Text to search for in file contents.
 
 Description:
   Search using spotlight.
 EOM
 spotlight() {
   local _search_type=
-  local _query=()
+  local _query=
+  local _directory=
 
   for arg in "${COMMAND_ARGV[@]:1}"; do
     case $arg in
       -f|--filename)
         _search_type="filename"
         ;;
-      # NOTE: including many different flags here to see which ones get used
-      # more before committing to a smaller set.
       --fulltext|-c|--content)
         _search_type="fulltext"
         ;;
       *)
-        _query+="$arg"
+        if _blank "$_query"; then
+          _query="$arg"
+        elif _blank "$_directory"; then
+          _directory="$arg"
+        fi
         ;;
     esac
   done
+
+  _debug printf "search spotlight() \$_query: %s\n" "$_query"
+  _debug printf "search spotlight() \$_directory: %s\n" "$_directory"
 
   if [[ -z "${_query:-}" ]]; then
     _die printf "Query missing.\n"
@@ -171,13 +181,25 @@ spotlight() {
 
   case "$_search_type" in
     filename)
-      mdfind "kMDItemDisplayName == '${_query[*]}'wc"
+      if _present "$_directory"; then
+        mdfind "kMDItemDisplayName == '$_query'wc" -onlyin "$_directory"
+      else
+        mdfind "kMDItemDisplayName == '$_query'wc"
+      fi
       ;;
     fulltext)
-      mdfind "kMDItemTextContent == '${_query[*]}'wc"
+      if _present "$_directory"; then
+        mdfind "kMDItemTextContent == '$_query'wc" -onlyin "$_directory"
+      else
+        mdfind "kMDItemTextContent == '$_query'wc"
+      fi
       ;;
     *)
-      mdfind -interpret "$*"
+      if _present "$_directory"; then
+        mdfind -interpret "$_query" -onlyin "$_directory"
+      else
+        mdfind -interpret "$_query"
+      fi
       ;;
   esac
 }
