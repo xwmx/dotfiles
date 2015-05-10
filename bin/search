@@ -106,6 +106,26 @@ __search() {
 # Local Search
 ###############################################################################
 
+# ------------------------------------------------------------------------ find
+
+desc "find" <<EOM
+Usage:
+  find <filename>
+
+Description:
+  Search for a file with a given filename in the current directory subtree
+  using the \`find\` utility. This is really just a little alias for:
+    \`find . -name "$@"\`
+EOM
+_FIND_CMD="$(which find)"
+find() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "Query missing.\n"
+  fi
+
+  "$_FIND_CMD" . -name "$@"
+}
+
 # ------------------------------------------------------------------- Spotlight
 
 # Only load this if `mdfind` is present on the system.
