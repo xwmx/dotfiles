@@ -43,5 +43,7 @@
 #   alias ea='exa -a1'
 #   alias ee='exa -hla'
 
-alias e='exa -hla'
-alias ee='exa -hl'
+alias e='exa -la'
+alias eh='exa -hla'
+alias ee='exa -l'
+alias eeh='exa -hl'
