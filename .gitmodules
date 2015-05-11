@@ -182,3 +182,6 @@
 [submodule "vendor/com/github/junegunn/fzf"]
 	path = vendor/com/github/junegunn/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "vendor/com/github/alphabetum/search.sh"]
+	path = vendor/com/github/alphabetum/search.sh
+	url = https://github.com/alphabetum/search.sh.git
