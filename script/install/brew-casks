@@ -679,6 +679,13 @@ brew cask install soundnode
 # http://spectacleapp.com
 brew cask install spectacle
 
+# Spotify
+#
+# A commercial music streaming service.
+#
+# https://www.spotify.com
+brew cask install spotify
+
 # sublime-text3
 #
 # Sublime Text is a text editor for code, markup and prose.
