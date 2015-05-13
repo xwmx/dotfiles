@@ -44,5 +44,10 @@ do
 done
 
 exit 0
-# Source:
+###############################################################################
+# imagecat
+#
+# Display images directly in iTerm.
+#
+# Source (unmodified above this footer):
 # https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat
