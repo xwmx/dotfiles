@@ -28,6 +28,7 @@
   lgac = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative --all
   merge-branch = !git checkout master && git merge @{-1}
   msg = commit --allow-empty -m
+  pom = push origin master
   pr = !gh pull-request
   st = status
   up = !git fetch origin && git rebase origin/master
