@@ -185,3 +185,6 @@
 [submodule "vendor/com/github/alphabetum/search.sh"]
 	path = vendor/com/github/alphabetum/search.sh
 	url = https://github.com/alphabetum/search.sh.git
+[submodule "home/.janus/rust.vim"]
+	path = home/.janus/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
