@@ -635,6 +635,14 @@ brew cask install scribus
 # http://secrets.blacktree.com
 brew cask install secrets
 
+# Sequel Pro
+#
+# A fast, easy-to-use Mac database management application for working with
+# MySQL databases.
+
+# http://www.sequelpro.com/
+brew cask install sequel-pro
+
 # SmartGit
 #
 # SmartGit is a Git client with support for GitHub Pull Requests+Comments,
