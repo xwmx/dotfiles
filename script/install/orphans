@@ -50,16 +50,15 @@ Usage:
   $_ME alcatraz
 
 Description:
+  The package manager for Xcode.
 
-The package manager for Xcode.
+  Alcatraz is an open-source package manager for Xcode. It lets you discover
+  and install plugins, templates and color schemes without the need for
+  manually cloning or copying files. It installs itself as a part of Xcode and
+  it feels like home.
 
-Alcatraz is an open-source package manager for Xcode. It lets you discover and
-install plugins, templates and color schemes without the need for manually
-cloning or copying files. It installs itself as a part of Xcode and it feels
-like home.
-
-http://alcatraz.io/
-https://github.com/supermarin/Alcatraz
+  http://alcatraz.io/
+  https://github.com/supermarin/Alcatraz
 EOM
 alcatraz() {
   local _dev_shared_path
@@ -83,7 +82,7 @@ Options:
   --remove-packages  Remove packages
 
 Description:
-Uninstall alcatraz.
+  Uninstall alcatraz.
 EOM
 alcatraz_uninstall() {
   local _dev_shared_path
@@ -106,16 +105,15 @@ alcatraz_uninstall() {
 
 # ------------------------------------------------------------------------ bish
 
-desc bish <<-EOM
+desc "bish" <<EOM
 Usage:
   $_ME bish
 
 Description:
+  Bish is a language that compiles to Bash. It's designed to give shell
+  scripting a more comfortable and modern feel.
 
-Bish is a language that compiles to Bash. It's designed to give shell scripting
-a more comfortable and modern feel.
-
-https://github.com/tdenniston/bish
+  https://github.com/tdenniston/bish
 EOM
 bish() {
   # Don't install if already installed.
@@ -135,13 +133,12 @@ bish() {
     _remove "$tmp_repo"
 }
 
-desc bish_uninstall <<-EOM
+desc "bish_uninstall" <<EOM
 Usage:
   $_ME bish_uninstall
 
 Description:
-
-Uninstall bish
+  Uninstall bish
 EOM
 bish_uninstall() {
   printf ">> Uninstalling bish\n"
@@ -152,23 +149,22 @@ bish_uninstall() {
 
 # ------------------------------------------------------------------------- exa
 
-desc exa <<-EOM
+desc "exa" <<EOM
 Usage:
   $_ME exa
 
 Description:
+  \`exa\` is a modern replacement for ls. It uses colours for information by
+  default, helping you distinguish between many types of files, such as whether
+  you are the owner, or in the owning group. It also has extra features not
+  present in the original ls, such as viewing the Git status for a directory,
+  or recursing into directories with a tree view. \`exa\` is written in Rust,
+  so it's small, fast, and portable.
 
-exa is a modern replacement for ls. It uses colours for information by
-default, helping you distinguish between many types of files, such as whether
-you are the owner, or in the owning group. It also has extra features not
-present in the original ls, such as viewing the Git status for a directory,
-or recursing into directories with a tree view. exa is written in Rust, so
-it's small, fast, and portable.
+  http://bsago.me/exa/
 
-http://bsago.me/exa/
-
-NOTE: included as an orhan because a rust crate doesn't appear to exist for
-it yet and, therefore, it needs to be built with cargo.
+  NOTE: included as an orhan because a rust crate doesn't appear to exist for
+  it yet and, therefore, it needs to be built with cargo.
 EOM
 exa() {
   # Don't install if exa is already installed.
@@ -199,13 +195,12 @@ exa() {
   unset PREFIX
 }
 
-desc exa_uninstall <<-EOM
+desc "exa_uninstall" <<EOM
 Usage:
   $_ME exa_uninstall
 
 Description:
-
-Uninstall exa
+  Uninstall exa
 EOM
 exa_uninstall() {
   printf ">> Uninstalling exa\n"
@@ -216,18 +211,17 @@ exa_uninstall() {
 
 # ------------------------------------------------------------------------ iota
 
-desc iota <<-EOM
+desc "iota" <<EOM
 Usage:
   $_ME iota
 
 Description:
+  Iota is a terminal-based text-editor written in Rust.
 
-Iota is a terminal-based text-editor written in Rust.
+  https://github.com/gchp/iota
 
-https://github.com/gchp/iota
-
-NOTE: included as an orhan because a rust crate doesn't appear to exist for
-it yet and, therefore, it needs to be built with cargo.
+  NOTE: included as an orhan because a rust crate doesn't appear to exist for
+  it yet and, therefore, it needs to be built with cargo.
 EOM
 iota() {
   # Don't install if already installed.
@@ -249,13 +243,12 @@ iota() {
     _remove "$tmp_repo"
 }
 
-desc iota_uninstall <<-EOM
+desc "iota_uninstall" <<EOM
 Usage:
   $_ME iota_uninstall
 
 Description:
-
-Uninstall iota
+  Uninstall iota
 EOM
 iota_uninstall() {
   printf ">> Uninstalling iota\n"
@@ -265,24 +258,22 @@ iota_uninstall() {
 
 # ---------------------------------------------------------------------- meteor
 
-desc meteor <<-EOM
+desc "meteor" <<EOM
 Usage:
   $_ME meteor
 
 Description:
+  Meteor is an ultra-simple environment for building modern web applications.
 
-Meteor is an ultra-simple environment for building modern web applications.
+  With Meteor you write apps:
+  - in pure JavaScript
+  - that send data over the wire, rather than HTML
+  - using your choice of popular open-source libraries
+  - Documentation is available at http://docs.meteor.com/
 
-With Meteor you write apps:
-
-- in pure JavaScript
-- that send data over the wire, rather than HTML
-- using your choice of popular open-source libraries
-- Documentation is available at http://docs.meteor.com/
-
-https://www.meteor.com/
-https://github.com/meteor/meteor
-https://install.meteor.com/
+  https://www.meteor.com/
+  https://github.com/meteor/meteor
+  https://install.meteor.com/
 EOM
 meteor() {
   if [[ -f "/usr/local/bin/meteor" ]]; then
@@ -292,13 +283,12 @@ meteor() {
   curl https://install.meteor.com | /bin/sh
 }
 
-desc meteor_uninstall <<-EOM
+desc "meteor_uninstall" <<EOM
 Usage:
   $_ME meteor_uninstall
 
 Description:
-
-Unisntall Meteor
+  Unisntall Meteor
 EOM
 meteor_uninstall() {
   printf ">> Uninstalling meteor\n"
@@ -308,15 +298,14 @@ meteor_uninstall() {
 
 # -------------------------------------------------------------- neovim-dot-app
 
-desc neovim_dot_app <<-EOM
+desc "neovim_dot_app" <<EOM
 Usage:
   $_ME neovim_dot_app
 
 Description:
+  OS X GUI for NeoVim.
 
-OS X GUI for NeoVim.
-
-https://github.com/rogual/neovim-dot-app
+  https://github.com/rogual/neovim-dot-app
 EOM
 neovim_dot_app() {
   local install_location="$HOME/Applications/NeoVim.app"
@@ -337,13 +326,12 @@ neovim_dot_app() {
     _remove "$tmp_repo"
 }
 
-desc neovim_dot_app_uninstall <<-EOM
+desc "neovim_dot_app_uninstall" <<EOM
 Usage:
   $_ME neovim_dot_app_uninstall
 
 Description:
-
-Unisntall neovim-dot-app
+  Unisntall neovim-dot-app
 EOM
 neovim_dot_app_uninstall() {
   printf ">> Uninstalling neovim-dot-app\n"
@@ -355,21 +343,20 @@ neovim_dot_app_uninstall() {
 
 # --------------------------------------------------------------------- rosetta
 
-desc rosetta <<-EOM
+desc "rosetta" <<EOM
 Usage:
   $_ME rosetta
 
 Description:
+  Tools for data science with a focus on text processing.
 
-Tools for data science with a focus on text processing.
+  https://github.com/columbia-applied-data-science/rosetta
 
-https://github.com/columbia-applied-data-science/rosetta
-
-NOTE:
-- Requires Pandas
-- Requires Python 2 and will fail on Python 3 with the following error:
-  "ImportError: No module named 'StringIO'"
-- Requires pymongo
+  NOTE:
+  - Requires Pandas
+  - Requires Python 2 and will fail on Python 3 with the following error:
+    "ImportError: No module named 'StringIO'"
+  - Requires pymongo
 EOM
 rosetta() {
   # Don't install if already installed.
@@ -385,13 +372,12 @@ rosetta() {
     make install
 }
 
-desc rosetta_uninstall <<-EOM
+desc "rosetta_uninstall" <<EOM
 Usage:
   $_ME rosetta_uninstall
 
 Description:
-
-Uninstall rosetta
+  Uninstall rosetta
 EOM
 rosetta_uninstall() {
   printf ">> Uninstalling rosetta\n"
@@ -404,19 +390,18 @@ rosetta_uninstall() {
 
 # ------------------------------------------------------------------------ rtop
 
-desc rtop <<-EOM
+desc "rtop" <<EOM
 Usage:
   $_ME rtop
 
 Description:
+  rtop is a simple, agent-less, remote server monitoring tool that works over
+  plain SSH. It does not need any software to be installed on the server that
+  you want to monitor. It works by establishing an SSH session, and running
+  commands on the remote server to collect system metrics.
 
-rtop is a simple, agent-less, remote server monitoring tool that works over
-plain SSH. It does not need any software to be installed on the server that
-you want to monitor. It works by establishing an SSH session, and running
-commands on the remote server to collect system metrics.
-
-http://www.rtop-monitor.org/
-https://github.com/rapidloop/rtop
+  http://www.rtop-monitor.org/
+  https://github.com/rapidloop/rtop
 EOM
 rtop() {
   # Don't install if already installed.
@@ -433,13 +418,12 @@ rtop() {
     _remove "$tmp_repo"
 }
 
-desc rtop_uninstall <<-EOM
+desc "rtop_uninstall" <<EOM
 Usage:
   $_ME rtop_uninstall
 
 Description:
-
-Uninstall rtop
+  Uninstall rtop
 EOM
 rtop_uninstall() {
   printf ">> Uninstalling rtop\n"
@@ -451,21 +435,20 @@ rtop_uninstall() {
 
 # ------------------------------------------------------------------------- xsv
 
-desc xsv <<-EOM
+desc "xsv" <<EOM
 Usage:
   $_ME xsv
 
 Description:
+  A fast CSV toolkit written in Rust.
 
-A fast CSV toolkit written in Rust.
+  xsv is a command line program for indexing, slicing, analyzing, splitting
+  and joining CSV files.
 
-xsv is a command line program for indexing, slicing, analyzing, splitting and
-joining CSV files.
+  https://github.com/BurntSushi/xsv
 
-https://github.com/BurntSushi/xsv
-
-NOTE: included as an orhan because a rust crate doesn't appear to exist for
-it yet and, therefore, it needs to be built with cargo.
+  NOTE: included as an orhan because a rust crate doesn't appear to exist for
+  it yet and, therefore, it needs to be built with cargo.
 EOM
 xsv() {
   # Don't install if already installed.
@@ -487,13 +470,12 @@ xsv() {
     _remove "$tmp_repo"
 }
 
-desc xsv_uninstall <<-EOM
+desc "xsv_uninstall" <<EOM
 Usage:
   $_ME xsv_uninstall
 
 Description:
-
-Uninstall xsv
+  Uninstall xsv
 EOM
 xsv_uninstall() {
   printf ">> Uninstalling xsv\n"
@@ -503,18 +485,17 @@ xsv_uninstall() {
 
 # ---------------------------------------------------------------------- zindex
 
-desc zindex <<-EOM
+desc "zindex" <<EOM
 Usage:
   $_ME zindex
 
 Description:
+  Create an index on a compressed text file
 
-Create an index on a compressed text file
+  zindex creates and queries an index on a compressed, line-based text file in
+  a time- and space-efficient way.
 
-zindex creates and queries an index on a compressed, line-based text file in a
-time- and space-efficient way.
-
-https://github.com/mattgodbolt/zindex
+  https://github.com/mattgodbolt/zindex
 EOM
 zindex() {
   # Don't install if already installed.
@@ -537,13 +518,12 @@ zindex() {
     _remove "$tmp_repo"
 }
 
-desc zindex_uninstall <<-EOM
+desc "zindex_uninstall" <<EOM
 Usage:
   $_ME zindex_uninstall
 
 Description:
-
-Uninstall zindex
+  Uninstall zindex
 EOM
 zindex_uninstall() {
   printf ">> Uninstalling zindex\n"
