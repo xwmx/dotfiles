@@ -19,7 +19,7 @@
 # - https://github.com/schachmat/wego/
 
 _weather() {
-_query=${@:-93105}
+_query="${*:-93105}"
 
 curl -s \
 "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${_query}" | \
