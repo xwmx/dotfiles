@@ -11,6 +11,12 @@
 # Usage:
 #   weather         # weather for 93015 (Santa Barbara)
 #   weather [query] # weather data for a given query, zip codes preferred.
+#
+# Other weather data sources and command links:
+# - http://graphical.weather.gov/xml/
+# - http://forecast.weather.gov/MapClick.php?lat=34.44033172283184&lon=-119.7352482503058&site=all&smap=1
+#   - http://forecast.weather.gov/MapClick.php?lat=34.4403&lon=-119.7352&unit=0&lg=english&FcstType=dwml
+# - https://github.com/schachmat/wego/
 
 _weather() {
 _query=${@:-93105}
