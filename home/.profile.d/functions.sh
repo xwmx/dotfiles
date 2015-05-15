@@ -284,13 +284,15 @@ json() {
 #   __lwp_request_m "VERB" <url> [<arguments>]
 #
 # Description:
-#   Perform an HTTP request using `lwp-request -m`. If `ccat` is present, pipe
-#   through that to provide some color.
+#   Perform an HTTP request using `lwp-request -m`. If `ccat` or `pygmentize`
+#   are present, pipe through that to provide some color.
 __lwp_request_m() {
   local _lwp_cat_cmd
   local _lwp_method
   if hash ccat 2> /dev/null; then
     _lwp_cat_cmd="ccat"
+  elif hash pygmentize 2> /dev/null; then
+    _lwp_cat_cmd="pygmentize"
   else
     _lwp_cat_cmd="cat"
   fi
