@@ -24,6 +24,18 @@ npm install -g babel
 # https://github.com/broccolijs/broccoli
 npm install -g broccoli-cli
 
+# Brunch
+#
+# A lightweight approach to building HTML5 applications with emphasis on
+# elegance and simplicity. Brunch is a build tool for front-end web
+# applications. It's agnostic to frameworks, libraries, programming,
+# stylesheet & templating languages and backend technology.
+#
+# http://brunch.io/
+# https://github.com/brunch/brunch
+# https://www.npmjs.com/package/brunch
+npm install -g brunch
+
 # Bower
 #
 # A package manager for the web.
