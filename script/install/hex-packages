@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+###############################################################################
+# hex-packages
+#
+# About Hex
+# =========
+#
+# Hex is a package manager for the Erlang ecosystem.
+#
+# https://hex.pm/
+#
+# About Mix
+# =========
+#
+# Mix is a build tool that provides tasks for creating, compiling, testing
+# Elixir projects, as well as handle dependencies, and more.
+#
+# Mix is installed with Elixir.
+#
+# http://elixir-lang.org/docs/stable/mix/
+# http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+###############################################################################
+
+###############################################################################
+# Helpers
+###############################################################################
+
+# _mix_has_archived()
+#
+# Test whether a given package is archived.
+#
+# Usage:
+#   _mix_has_archived "archive_name"
+_mix_has_archived() {
+  local _archive_name
+  local _matches
+  _archive_name="$1"
+  # Match beginning of package name so `.ez` extension can be omitted.
+  #
+  # `mix archive` output is in the form `* archivename`, so match with a
+  # leading '*', which is not a wildcard in this case.
+  _matches="$(mix archive 2>/dev/null | grep "^\* ${_archive_name}")"
+  [[ -n "$_matches" ]]
+}
+
+###############################################################################
+# Hex Install
+###############################################################################
+
+if ! _mix_has_archived "hex.ez"; then
+  mix local.hex
+fi
+
+###############################################################################
+# Packages
+###############################################################################
+
