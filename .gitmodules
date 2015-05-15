@@ -188,3 +188,6 @@
 [submodule "home/.janus/rust.vim"]
 	path = home/.janus/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "home/.janus/toml"]
+	path = home/.janus/toml
+	url = https://github.com/cespare/vim-toml.git
