@@ -278,14 +278,34 @@ json() {
 
 # Network & Web ---------------------------------------------------------------
 
+# __lwp_request_m()
+#
+# Usage:
+#   __lwp_request_m "VERB" <url> [<arguments>]
+#
+# Description:
+#   Perform an HTTP request using `lwp-request -m`. If `ccat` is present, pipe
+#   through that to provide some color.
+__lwp_request_m() {
+  local _lwp_cat_cmd
+  local _lwp_method
+  if hash ccat 2> /dev/null; then
+    _lwp_cat_cmd="ccat"
+  else
+    _lwp_cat_cmd="cat"
+  fi
+  _lwp_method="$1"
+  shift
+  lwp-request -m "$_lwp_method" "${*}" | "$_lwp_cat_cmd"
+}
 # One of @janmoesen’s ProTip™s
-GET()     { lwp-request -m 'GET' "$*";     }
-HEAD()    { lwp-request -m 'HEAD' "$*";    }
-POST()    { lwp-request -m 'POST' "$*";    }
-PUT()     { lwp-request -m 'PUT' "$*";     }
-DELETE()  { lwp-request -m 'DELETE' "$*";  }
-TRACE()   { lwp-request -m 'TRACE' "$*";   }
-OPTIONS() { lwp-request -m 'OPTIONS' "$*"; }
+GET()     { __lwp_request_m "GET" "$*";     }
+HEAD()    { __lwp_request_m "HEAD" "$*";    }
+POST()    { __lwp_request_m "POST" "$*";    }
+PUT()     { __lwp_request_m "PUT" "$*";     }
+DELETE()  { __lwp_request_m "DELETE" "$*";  }
+TRACE()   { __lwp_request_m "TRACE" "$*";   }
+OPTIONS() { __lwp_request_m "OPTIONS" "$*"; }
 
 # digg()
 #
