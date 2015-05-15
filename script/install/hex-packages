@@ -55,3 +55,14 @@ fi
 # Packages
 ###############################################################################
 
+# Phoenix
+#
+# Phoenix is a web development framework written in Elixir which implements
+# the server-side MVC pattern.
+#
+# http://www.phoenixframework.org/
+# https://github.com/phoenixframework/phoenix
+mix \
+  archive.install \
+  --force \
+  https://github.com/phoenixframework/phoenix/releases/download/v0.13.0/phoenix_new-0.13.0.ez
