@@ -8,7 +8,7 @@
 ###############################################################################
 
 # Skip unless OS X
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "${OSTYPE}" =~ ^darwin ]]; then
   printf "OS X bootstrapping is only supported on OS X\nSkipping...\n"
   exit 0
 fi
@@ -17,11 +17,14 @@ fi
 # Bootstrap
 ###############################################################################
 
-[ ! -e "$HOME"/bin ] && mkdir "$HOME"/bin
+if [[ ! -e "${HOME}/bin" ]]; then
+  mkdir "${HOME}/bin"
+fi
 
-export DOTSPATH="$HOME/.dotfiles" && \
-cd "$DOTSPATH" && \
-git submodule init && git submodule update --init --recursive
+export DOTSPATH="${HOME}/.dotfiles" && \
+  cd "${DOTSPATH}" && \
+  git submodule init && \
+  git submodule update --init --recursive
 
 # Bootstrap janus
-"$DOTSPATH"/home/.vim/bootstrap.sh
+"${DOTSPATH}/home/.vim/bootstrap.sh"

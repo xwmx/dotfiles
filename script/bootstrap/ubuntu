@@ -24,21 +24,24 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #------------------------------------------------------------------------------
 
-export DOTSPATH="$HOME/.dotfiles"
+export DOTSPATH="${HOME}/.dotfiles"
 
-"$DOTSPATH"/script/install/apt-packages
+"${DOTSPATH}/script/install/apt-packages"
 
-[ ! -e "$HOME"/bin ] && mkdir "$HOME"/bin
+if [[ ! -e "${HOME}/bin" ]]; then
+  mkdir "${HOME}/bin"
+fi
 
-cp "$HOME"/.ssh/* "$HOME"/.dotfiles/home/.ssh/ && \
-cd "$DOTSPATH" && \
-git submodule init && git submodule update --init --recursive && \
-./bin/dots link --overwrite --with-backup &&
-./bin/dots bin link
+cp "${HOME}/.ssh/*" "${HOME}/.dotfiles/home/.ssh/" && \
+  cd "${DOTSPATH}" && \
+  git submodule init && \
+  git submodule update --init --recursive && \
+  ./bin/dots link --overwrite --with-backup && \
+  ./bin/dots bin link
 
 # Bootstrap janus
-"$DOTSPATH"/home/.vim/bootstrap.sh
+"${DOTSPATH}/home/.vim/bootstrap.sh"
 
 sudo chsh -s "$(which zsh)" "$(whoami)"
 
-$(which zsh) --login
+"$(which zsh)" --login
