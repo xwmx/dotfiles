@@ -293,9 +293,16 @@ OPTIONS() { lwp-request -m 'OPTIONS' "$*"; }
 #   digg <domain>
 #
 # Description:
-#   Run `dig` and display the most useful info.
+#   Run `dig` and display the most useful info. If `ccat` is present, pipe
+#   through that to provide some color.
 digg() {
-  dig +nocmd "$1" any +multiline +noall +answer
+  local _cat_cmd
+  if hash ccat 2> /dev/null; then
+    _cat_cmd="ccat"
+  else
+    _cat_cmd="cat"
+  fi
+  dig +nocmd "$1" any +multiline +noall +answer | "$_cat_cmd"
 }
 
 # urlencode()
