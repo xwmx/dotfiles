@@ -193,6 +193,14 @@ brew cask install "boot2docker-status"
 # http://www.cakebrew.com
 brew cask install cakebrew
 
+# Calibre
+#
+# calibre is a free and open source e-book library management application
+# developed by users of e-books for users of e-books.
+#
+# http://calibre-ebook.com/
+brew cask install calibre
+
 # Codebox
 #
 # Open source cloud & desktop IDE.
