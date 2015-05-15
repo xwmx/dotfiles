@@ -265,6 +265,14 @@ brew install elinks
 # maintainable applications.
 #
 # http://elixir-lang.org/
+#
+# NOTE: also installs mix
+#
+# Mix is a build tool that provides tasks for creating, compiling, testing
+# Elixir projects, as well as handle dependencies, and more.
+#
+# http://elixir-lang.org/docs/stable/mix/
+# http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 brew install elixir
 
 # EncFS - an Encrypted Filesystem
