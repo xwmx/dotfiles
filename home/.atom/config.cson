@@ -11,7 +11,8 @@
     fontSize: 11
     showInvisibles: true
     showIndentGuide: true
-    invisibles: {}
+    invisibles:
+      {}
   core:
     disabledPackages: [
       "metrics"
@@ -26,5 +27,7 @@
     showErrorInline: true
   "go-plus":
     goPath: "~/.go"
-  "tree-view": {}
-  "autocomplete-plus": {}
+  "tree-view":
+    {}
+  "autocomplete-plus":
+    {}
