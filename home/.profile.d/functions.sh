@@ -105,6 +105,39 @@ epoch() {
   fi
 }
 
+# now()
+#
+# Usage:
+#   now
+#
+# Description:
+#   Display the current time and date, followed by a calendar with the current
+#   date highlighted.
+now() {
+  if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+    printf "\
+Usage: now
+
+Description:
+  Display the current time and date, followed by a calendar with the current
+  date highlighted.
+"
+    return 0
+  fi
+  date
+  # The calendar logic should already be encapsulated in the `ccal` script, so
+  # use that if it's present.
+  if hash ccal 2> /dev/null; then
+    ccal
+  else
+    _TODAY=$(date +%e)
+    _B=$(tput smso)
+    _N=$(tput rmso)
+    printf "\n"
+    cal | sed s/"$_TODAY"/"$_B""$_TODAY""$_N"/
+  fi
+}
+
 # Edit / Open Shortcuts -------------------------------------------------------
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
