@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+#########################################################################
+# spotlight - a bask script
+#
+# Add this script and bask to your $PATH. For usage information, run:
+# spotlight help
+#########################################################################
+
+source "$(which bask)"
+
+desc "search" <<EOM
+Usage:
+  $_ME search <full text query | filename> [<path>]
+  $_ME search ( -f | --filename ) <filename> [<path>]
+  $_ME search ( --fulltext | -c | --content ) <query> [<path>]
+
+Options:
+  -f --filename             A filename to search for.
+  --fulltext -c --content   Text to search for in file contents.
+
+Description:
+  Search using spotlight.
+
+  When no options are used, this behaves as if the query was typed into the
+  Spotlight menu and will return hits for both the filename and content. When
+  a <path> argument is provided, the search will be scoped to that
+  directory and its subtree.
+EOM
+search() {
+  local _search_type=
+  local _query=
+  local _path=
+
+  for arg in "${COMMAND_ARGV[@]:1}"; do
+    case $arg in
+      -f|--filename)
+        _search_type="filename"
+        ;;
+      --fulltext|-c|--content)
+        _search_type="fulltext"
+        ;;
+      *)
+        if _blank "$_query"; then
+          _query="$arg"
+        elif _blank "$_path"; then
+          _path="$arg"
+        fi
+        ;;
+    esac
+  done
+
+  _debug printf "search spotlight() \$_query: %s\n" "$_query"
+  _debug printf "search spotlight() \$_path: %s\n" "$_path"
+
+  if [[ -z "${_query:-}" ]]; then
+    _die printf "Query missing.\n"
+  fi
+  if _present "$_path"; then
+    _validate_existence_of_path "$_path"
+  fi
+
+  case "$_search_type" in
+    filename)
+      if _present "$_path"; then
+        mdfind "kMDItemDisplayName == '$_query'wc" -onlyin "$_path"
+      else
+        mdfind "kMDItemDisplayName == '$_query'wc"
+      fi
+      ;;
+    fulltext)
+      if _present "$_path"; then
+        mdfind "kMDItemTextContent == '$_query'wc" -onlyin "$_path"
+      else
+        mdfind "kMDItemTextContent == '$_query'wc"
+      fi
+      ;;
+    *)
+      if _present "$_path"; then
+        mdfind -interpret "$_query" -onlyin "$_path"
+      else
+        mdfind -interpret "$_query"
+      fi
+      ;;
+  esac
+}
+
+if _command_exists "mdfind" && _command_exists "mdutil"; then
+  _init
+else
+  _die printf "%s only works on OS X.\n" "$_ME"
+fi
