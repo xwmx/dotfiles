@@ -184,6 +184,14 @@ apm install language-scala
 # https://github.com/freebroccolo/atom-language-swift
 apm install language-swift
 
+# language-viml
+#
+# VimL for Atom.
+#
+# https://atom.io/packages/language-viml
+# https://github.com/EvanHahn/atom-vimL
+apm install language-viml
+
 # linter
 #
 # Validates your code using linter
