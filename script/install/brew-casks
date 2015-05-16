@@ -71,6 +71,16 @@ brew tap caskroom/fonts
 # https://github.com/powerline/fonts/tree/master/SourceCodePro
 brew cask install font-sauce-code-powerline
 
+# Office Code Pro
+#
+# Office Code Pro is a customized version of the Source Code Pro type family,
+# originally created for Adobe Systems Incorporated by Paul D. Hunt. The
+# customizations were made specifically for text editors and coding
+# environments, but are still very usable in other applications.
+#
+# https://github.com/nathco/Office-Code-Pro
+brew cask install font-office-code-pro
+
 ###############################################################################
 # Homebrew Cask - Applications
 ###############################################################################
