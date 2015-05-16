@@ -112,8 +112,12 @@ search() {
   esac
 }
 
+###############################################################################
+# Run Program
+###############################################################################
+
 if _command_exists "mdfind" && _command_exists "mdutil"; then
   _init
 else
-  _die printf "%s only works on OS X.\n" "$_ME"
+  _die printf "\`%s\` only works on OS X.\n" "$_ME"
 fi
