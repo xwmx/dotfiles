@@ -8,6 +8,34 @@
 
 source "$(which bask)"
 
+# -------------------------------------------------------------------- disable
+
+desc "disable" <<EOM
+Usage:
+  $_ME disable
+
+Description:
+  Disable spotlight.
+EOM
+disable() {
+  sudo mdutil -a -i off
+}
+
+# --------------------------------------------------------------------- enable
+
+desc "enable" <<EOM
+Usage:
+  $_ME enable
+
+Description:
+  Enable spotlight.
+EOM
+enable() {
+  sudo mdutil -a -i on
+}
+
+# --------------------------------------------------------------------- search
+
 desc "search" <<EOM
 Usage:
   $_ME search <full text query | filename> [<path>]
