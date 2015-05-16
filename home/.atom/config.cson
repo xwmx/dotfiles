@@ -31,3 +31,12 @@
     {}
   "autocomplete-plus":
     {}
+  "file-types":
+    "^.gvimrc.after": "viml"
+    "^.profile$": "shell"
+    "^.shared_env.*": "shell"
+    "^.spacemacs$": "lisp"
+    "^.vimrc.before$": "viml"
+    "^.vimrc.after$": "viml"
+    "^.zshenv.local.*$": "shell"
+    "^.zshrc.local.*$": "shell"
