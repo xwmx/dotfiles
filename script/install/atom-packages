@@ -162,6 +162,14 @@ apm install language-haskell
 # https://github.com/devongovett/atom-jade
 apm install language-jade
 
+# language-lisp
+#
+# Lisp support for Atom (converted from Textmate bundle)
+#
+# https://atom.io/packages/language-lisp
+# https://github.com/enriquefernandez/language-lisp
+apm install language-lisp
+
 # language-scala
 #
 # Scala language support in atom
