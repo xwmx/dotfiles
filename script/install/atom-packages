@@ -116,6 +116,14 @@ apm install editor-stats
 # https://github.com/lloeki/ex-mode
 apm install ex-mode
 
+# file-types
+#
+# Specify additional file types for languages.
+#
+# https://atom.io/packages/file-types
+# https://github.com/execjosh/atom-file-types
+apm install file-types
+
 # fizzy
 #
 # A light-hearted, bright and bubbly syntax theme featuring bright colors,
