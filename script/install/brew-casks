@@ -253,6 +253,14 @@ brew cask install context-free
 # https://coq.inria.fr/
 brew cask install coqide
 
+# CotEditor
+#
+# Lightweight Plain-Text Editor for OS X.
+#
+# http://coteditor.com/
+# https://github.com/coteditor/CotEditor
+brew cask install coteditor
+
 # Disk Inventory X
 #
 # Disk Inventory X is a disk usage utility for Mac OS X 10.3 (and later). It
