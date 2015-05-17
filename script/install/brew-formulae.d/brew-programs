@@ -550,6 +550,15 @@ brew install ispell
 # https://github.com/stedolan/jq
 brew install jq
 
+# kore
+#
+# Kore is an easy to use web application framework for writing scalable web
+# APIs in C. Its main goals are security, scalability and allowing rapid
+# development and deployment of such APIs.
+#
+# https://kore.io/
+brew install kore
+
 # Leiningen
 #
 # Automate Clojure projects without setting your hair on fire.
