@@ -58,7 +58,7 @@ Description:
   List all VirtualBox instances.
 EOM
 vbox() {
-  if _contains "--running" "${COMMAND_ARGV[@]:-}"; then
+  if _contains "--running" "${_COMMAND_ARGV[@]:-}"; then
     VBoxManage list runningvms
   else
     VBoxManage list vms

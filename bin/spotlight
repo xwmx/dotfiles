@@ -59,7 +59,7 @@ search() {
   local _query=
   local _path=
 
-  for arg in "${COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"; do
     case $arg in
       -f|--filename)
         _search_type="filename"

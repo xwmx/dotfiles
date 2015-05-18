@@ -78,7 +78,7 @@ dig() {
   local _basic=0
   local _query=()
 
-  for arg in "${COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"; do
     case $arg in
       --basic) _basic=1;;
       *) _query+="$arg";;
@@ -113,7 +113,7 @@ host() {
   local _all=0
   local _query=()
 
-  for arg in "${COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"; do
     case $arg in
       --all|-a) _all=1;;
       *) _query+="$arg";;
@@ -282,7 +282,7 @@ whois() {
   local _exact=0
   local _query=()
 
-  for arg in "${COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"; do
     case $arg in
       --exact) _exact=1;;
       *) _query+="$arg";;
