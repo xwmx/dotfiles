@@ -145,9 +145,15 @@ brew install gcc
 #
 # NOTE: To use, add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-if [[ ! -e /usr/local/bin/sha256sum ]]; then
-  ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
-fi
+_remove_sha256sum_link() {
+  printf "_remove_sha256sum_link(): remove this function after first run.\n"
+  local _sha256sum_link_url="/usr/local/bin/sha256sum"
+  if [[ -L "$_sha256sum_link_url" ]]
+  then
+    rm "$_sha256sum_link_url"
+  fi
+}
+_remove_sha256sum_link
 
 # moreutils
 #
