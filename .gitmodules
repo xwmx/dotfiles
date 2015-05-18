@@ -191,3 +191,6 @@
 [submodule "home/.janus/toml"]
 	path = home/.janus/toml
 	url = https://github.com/cespare/vim-toml.git
+[submodule "home/.prezto"]
+	path = home/.prezto
+	url = https://github.com/sorin-ionescu/prezto.git
