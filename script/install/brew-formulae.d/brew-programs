@@ -324,6 +324,15 @@ brew install ffmpeg
 # http://www.figlet.org/
 brew install figlet
 
+# Fish
+#
+# Fish is a smart and user-friendly command line shell for OS X, Linux, and
+# the rest of the family.
+#
+# http://fishshell.com/
+# https://github.com/fish-shell/fish-shell
+brew install fish
+
 # Flow
 #
 # Flow is a static type checker, designed to find type errors in JavaScript
