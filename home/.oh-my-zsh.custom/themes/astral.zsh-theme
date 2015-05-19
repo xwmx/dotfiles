@@ -12,11 +12,11 @@
 
 # Prefix prompt with arrow with color indicating last return status: green
 # for 0 and red for non-0.
-local _astral_ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+local _astral_return_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 
 # The current time in 24-hour format.
 #
-# Will have same color at `$_astral_ret_status`
+# Will have same color at whatever preceeds it.
 local _astral_time="%T"
 
 # Display alternate machine prompt for remote sessions.
@@ -37,9 +37,12 @@ local _astral_path="%{$fg[cyan]%}%2~"
 # Parts
 ###############################################################################
 
-local _astral_prefix="${_astral_ret_status}${_astral_time}"
+# _prefix
+#
+# Combine return status, followed by time.
+local _astral_prefix="${_astral_return_status}${_astral_time}"
 
-# Context
+# _context
 #
 # machine:~/path
 # ssh:machine:~/path
