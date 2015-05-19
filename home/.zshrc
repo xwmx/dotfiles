@@ -52,7 +52,8 @@ HIST_STAMPS="mm/dd/yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 ZSH_CUSTOM="$HOME/.oh-my-zsh.custom"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load? (plugins can be found in
+# ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -110,13 +111,13 @@ source "$HOME/.profile"
 
 . "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null || true
 
-#==========================================================================
+###############################################################################
 # zsh-autosuggestions
 #
 # Fish-like autosuggestions for zsh
 #
 # https://github.com/tarruda/zsh-autosuggestions
-#==========================================================================
+###############################################################################
 
 # Setup zsh-autosuggestions
 source "$HOME/.zsh-autosuggestions/autosuggestions.zsh"
@@ -129,9 +130,9 @@ zle -N zle-line-init
 # zsh-autosuggestions is designed to be unobtrusive)
 bindkey '^T' autosuggest-toggle
 
-#==========================================================================
+###############################################################################
 # Local config
-#==========================================================================
+###############################################################################
 
 # Load local config if present
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
