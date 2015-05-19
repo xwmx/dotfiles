@@ -194,3 +194,6 @@
 [submodule "home/.prezto"]
 	path = home/.prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "home/.zsh-autosuggestions"]
+	path = home/.zsh-autosuggestions
+	url = https://github.com/tarruda/zsh-autosuggestions.git
