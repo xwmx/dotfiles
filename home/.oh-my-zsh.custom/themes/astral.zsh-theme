@@ -14,8 +14,10 @@
 # for 0 and red for non-0.
 local _astral_ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 
-# The 'precise' time in 12-hour format.
-local _astral_time="%{$fg_bold[green]%}%p"
+# The current time in 24-hour format.
+#
+# Will have same color at `$_astral_ret_status`
+local _astral_time="%T"
 
 # Display alternate machine prompt for remote sessions.
 #
