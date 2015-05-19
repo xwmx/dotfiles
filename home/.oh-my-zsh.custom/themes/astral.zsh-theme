@@ -33,7 +33,6 @@ fi
 # Show the first two current path segments, with a ~ for the home directory.
 local _astral_path="%{$fg[cyan]%}%2~"
 
-
 # Parts
 ###############################################################################
 
