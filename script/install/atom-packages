@@ -141,6 +141,15 @@ apm install fizzy
 # https://github.com/joefitzgerald/go-plus
 apm install go-plus
 
+# Hydrogen
+#
+# Run code and get results inline using Jupyter kernels like IPython, IJulia,
+# and iTorch
+#
+# https://atom.io/packages/hydrogen
+# https://github.com/willwhitney/hydrogen
+apm install hydrogen
+
 # language-haml
 #
 # HAML package for atom
