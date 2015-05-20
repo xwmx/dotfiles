@@ -37,8 +37,7 @@ if has("gui_macvim")
   "colorscheme vwilight
 else
   " 'hybrid' is a good default to return to if necessary.
-  "colorscheme hybrid
-  colorscheme Tomorrow-Night-Eighties
+  colorscheme hybrid
 endif
 
 " ============================================================================
