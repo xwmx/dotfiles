@@ -30,13 +30,15 @@
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night
 
+set background=dark
 if has("gui_macvim")
-  set background=dark
   "colorscheme base16-default
   colorscheme seti
   "colorscheme vwilight
 else
-  colorscheme hybrid
+  " 'hybrid' is a good default to return to if necessary.
+  "colorscheme hybrid
+  colorscheme Tomorrow-Night-Eighties
 endif
 
 " ============================================================================
