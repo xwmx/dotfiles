@@ -515,6 +515,13 @@ brew cask install mactex
 # http://mameosx.sourceforge.net/
 brew cask install mame
 
+# Mapbox Studio
+#
+# Design radically custom maps and datasets powered by vector tiles.
+#
+# https://www.mapbox.com/mapbox-studio/
+brew cask install mapbox-studio
+
 # Monodraw
 #
 # Powerful ASCII art editor designed for the Mac.
