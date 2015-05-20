@@ -529,6 +529,16 @@ brew cask install mapbox-studio
 # http://monodraw.helftone.com/
 brew cask install monodraw
 
+# Monu
+#
+# Monu is an open source process monitoring menu bar application for Mac OS.
+# You can configure Monu to launch programs, and when Monu starts up it will
+# start them. Additionally, it will monitor the processes and restart them if
+# they crash.
+#
+# https://github.com/maxogden/monu
+brew cask install monu
+
 # Natron
 #
 # Natron is an open-source • crossplatform nodal • compositing software
