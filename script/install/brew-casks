@@ -635,6 +635,17 @@ brew cask install postgres
 # https://processing.org
 brew cask install processing3
 
+# RetroArch / libretro
+#
+# RetroArch is the reference frontend for the libretro API. Popular examples of
+# implementations for this API includes videogame system emulators and game
+# engines, but also more generalized 3D programs. These programs are
+# instantiated as dynamic libraries. We refer to these as "libretro cores".
+#
+# https://github.com/libretro/RetroArch
+# http://www.libretro.com/
+brew cask install retroarch
+
 # rowanj-gitx
 #
 # GitX-dev is a fork (variant) of GitX, a long-defunct GUI for the git
