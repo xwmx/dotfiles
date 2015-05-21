@@ -26,6 +26,7 @@ apm() {
   if [[ "${1:-}" == "install" ]]; then
     local local_entry
     local_entry=$(apm ls | grep "${2:-}")
+    printf "%s\n" "$local_entry"
     if [[ -z ${local_entry} ]]; then
       "$_apm" install "${2}"
     fi
@@ -148,7 +149,7 @@ apm install go-plus
 #
 # https://atom.io/packages/hydrogen
 # https://github.com/willwhitney/hydrogen
-apm install hydrogen
+apm install Hydrogen
 
 # language-haml
 #
