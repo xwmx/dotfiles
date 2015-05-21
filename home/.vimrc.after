@@ -300,6 +300,15 @@ let g:NERDTreeMouseMode = 3
 let g:syntastic_ruby_checkers=["rubocop", "mri"]
 
 " ============================================================================
+" vim-json
+" ============================================================================
+
+" Disable quote concealing
+"
+" Quote concealing is a little disorienting, so disable it.
+let g:vim_json_syntax_conceal = 0
+
+" ============================================================================
 " search
 " ============================================================================
 
