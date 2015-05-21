@@ -16,7 +16,7 @@ local _astral_return_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s
 
 # The current time in 24-hour format.
 #
-# Will have same color at whatever preceeds it.
+# Will have same color as whatever preceeds it.
 local _astral_time="%T"
 
 # Display alternate machine prompt for remote sessions.
@@ -47,12 +47,12 @@ local _astral_prefix="${_astral_return_status}${_astral_time}"
 # ssh:machine:~/path
 local _astral_context="${_astral_machine}:${_astral_path}"
 
-# Contruct
+# Prompt
 ###############################################################################
 
 PROMPT='${_astral_prefix} ${_astral_context} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-# `git_prompt_info` variabled
+# `git_prompt_info` variables
 ###############################################################################
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
