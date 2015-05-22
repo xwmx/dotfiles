@@ -36,6 +36,11 @@ let mapleader=","
 " it's up to date.
 call janus#disable_plugin('syntastic')
 
+" Disable Janus-installed gitgutter
+"
+" vim-signify is preferred over vim-gitgutter.
+call janus#disable_plugin('gitgutter')
+
 " ============================================================================
 " Disable Pathogen plugins
 " ============================================================================
