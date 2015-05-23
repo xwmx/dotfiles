@@ -77,9 +77,6 @@
 [submodule "vendor/com/github/alphabetum/prelude"]
 	path = vendor/com/github/alphabetum/prelude
 	url = https://github.com/alphabetum/prelude.git
-[submodule "vendor/com/github/alphabetum/dots"]
-	path = vendor/com/github/alphabetum/dots
-	url = https://github.com/alphabetum/dots.git
 [submodule "vendor/com/github/alphabetum/alias-app"]
 	path = vendor/com/github/alphabetum/alias-app
 	url = https://github.com/alphabetum/alias-app.git
@@ -194,3 +191,6 @@
 [submodule "home/.prezto"]
 	path = home/.prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "vendor/com/github/alphabetum/bindle"]
+	path = vendor/com/github/alphabetum/bindle
+	url = https://github.com/alphabetum/bindle.git
