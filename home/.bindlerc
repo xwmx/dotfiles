@@ -1,0 +1,9 @@
+# .bindlerc
+#
+# Configuration file for bindle
+#
+# https://github.com/alphabetum/bindle
+
+# Set bindle directory to ~/.dotfiles
+export BINDLEPATH="$HOME/.dotfiles"
+
