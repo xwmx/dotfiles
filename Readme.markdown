@@ -15,8 +15,8 @@
 
 🅓🅞🅣🅢
 
-An OS X and Ubuntu environment with configuration scripts. Uses the [`dots`
-configuration management tool](https://github.com/alphabetum/dots).
+An OS X and Ubuntu environment with configuration scripts. Uses the [`bindle`
+configuration management tool](https://github.com/alphabetum/bindle).
 
 ## Setup
 
@@ -25,20 +25,20 @@ configuration management tool](https://github.com/alphabetum/dots).
 Assuming you have [Homebrew](http://brew.sh/) installed, copy the
 following and paste it into your terminal:
 
-    brew install alphabetum/taps/dots && \
-    dots init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
-    dots bootstrap osx
+    brew install alphabetum/taps/bindle && \
+    bindle init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
+    bindle bootstrap osx
 
 This will take some time to run (it has to pull the submodules) and should
 
-1. install the `dots` tool,
+1. install the `bindle` tool,
 2. clone the repository to your home directory,
 3. add a `~/bin` directory if one is not already present,
-4. and add a `~/.dotsrc` configuration file.
+4. and add a `~/.bindlerc` configuration file.
 
-Use the [`dots`](https://github.com/alphabetum/dots) tool to experiment with
-linking files into your environment and experimenting. `dots` commands can be
-discovered by running `dots help`.
+Use the [`bindle`](https://github.com/alphabetum/bindle) tool to experiment with
+linking files into your environment and experimenting. `bindle` commands can be
+discovered by running `bindle help`.
 
 ### Ubuntu
 
@@ -99,5 +99,5 @@ extension removed.
 
 ## More Resources
 
-- [alphabetum/dots](https://github.com/alphabetum/dots)
+- [alphabetum/bindle](https://github.com/alphabetum/bindle)
 - [alphabetum/dotfile-research](https://github.com/alphabetum/dotfile-research)
