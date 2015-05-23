@@ -607,6 +607,13 @@ brew cask install packer
 # http://puredata.info/downloads/pd-extended
 brew cask install pd-extended
 
+# Pencil
+#
+# Multiplatform GUI Prototyping/Wireframing
+#
+# https://github.com/prikhi/pencil
+brew cask install pencil
+
 # pgAdmin
 #
 # pgAdmin is the most popular and feature rich Open Source administration and
