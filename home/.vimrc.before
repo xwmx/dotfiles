@@ -12,6 +12,20 @@
 let mapleader=","
 
 " ============================================================================
+" Disable Pathogen plugins
+"
+" NOTE: This section must come before `janus#disable_plugin` is called since
+" it apparently uses the `g:pathogen_disabled` variable..
+" ============================================================================
+
+" To disable a plugin, add its bundle name to the following list
+let g:pathogen_disabled = []
+
+" Example disable call:
+"
+" call add(g:pathogen_disabled, '<plugin_name>')
+
+" ============================================================================
 " Disable Janus plugins
 " ============================================================================
 
@@ -39,18 +53,7 @@ call janus#disable_plugin('syntastic')
 " Disable Janus-installed gitgutter
 "
 " vim-signify is preferred over vim-gitgutter.
-call janus#disable_plugin('gitgutter')
-
-" ============================================================================
-" Disable Pathogen plugins
-" ============================================================================
-
-" To disable a plugin, add its bundle name to the following list
-let g:pathogen_disabled = []
-
-" Example disable call:
-"
-" call add(g:pathogen_disabled, '<plugin_name>')
+call janus#disable_plugin('vim-gitgutter')
 
 " ============================================================================
 " vim-airline
