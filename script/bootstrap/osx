@@ -21,10 +21,10 @@ if [[ ! -e "${HOME}/bin" ]]; then
   mkdir "${HOME}/bin"
 fi
 
-export DOTSPATH="${HOME}/.dotfiles" && \
-  cd "${DOTSPATH}" && \
+export BINDLEPATH="${HOME}/.dotfiles" && \
+  cd "${BINDLEPATH}" && \
   git submodule init && \
   git submodule update --init --recursive
 
 # Bootstrap janus
-"${DOTSPATH}/home/.vim/bootstrap.sh"
+"${BINDLEPATH}/home/.vim/bootstrap.sh"

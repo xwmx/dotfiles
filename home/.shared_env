@@ -70,8 +70,8 @@ init_src() {
 ###############################################################################
 
 # Set DOTFILES directory
-if program_exists dots ; then
-  export DOTFILES=$(dots dir)
+if program_exists "bindle"; then
+  export DOTFILES="$(bindle dir)"
 else
   export DOTFILES="$HOME/.dotfiles"
 fi
