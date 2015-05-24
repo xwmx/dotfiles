@@ -32,6 +32,15 @@ _homebrew_formula_is_installed() {
 # Programs
 ###############################################################################
 
+# AAlib
+#
+# AAlib is a software library which allows applications to automatically
+# convert still and moving images into ASCII art.
+#
+# http://aa-project.sourceforge.net/aalib/
+# https://en.wikipedia.org/wiki/AAlib
+brew install aalib
+
 # Ack
 #
 # Ack is a tool like grep, optimized for programmers
