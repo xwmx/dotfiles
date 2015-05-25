@@ -30,17 +30,24 @@ About cowsay / cowthink:
 
   https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
 "
-_cowsay_CMD="$(which cowsay)" || _die \
-  printf \
-    "cowsay not installed. %s\n" \
-    "${_cowsay_ABOUT}"
-desc "cowsay" <<EOM
+_cowsay_CMD="$(which cowsay || true)"
+if ! _command_exists "${_cowsay_CMD}"; then
+  desc "cowsay" <<EOM
+cowsay not installed.
+${_cowsay_ABOUT}
+EOM
+else
+  desc "cowsay" <<EOM
 cow{say,think} version 3.03, (c) 1999 Tony Monroe
 Usage: cowsay [-bdgpstwy] [-h] [-e eyes] [-f cowfile]
           [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
 ${_cowsay_ABOUT}
 EOM
+fi
 cowsay() {
+  if ! _command_exists "${_cowsay_CMD}"; then
+    _die _print_desc "cowsay"
+  fi
   if [[ -z "$1" ]]; then
     "${_cowsay_CMD}"
   else
@@ -50,24 +57,30 @@ cowsay() {
 
 # -------------------------------------------------------------------- cowthink
 
-_cowthink_CMD="$(which cowthink)" || _die \
-  printf \
-    "cowsay not installed. %s\n" \
-    "${_cowsay_ABOUT}"
-desc "cowthink" <<EOM
+_cowthink_CMD="$(which cowthink || true)"
+if ! _command_exists "${_cowthink_CMD}"; then
+  desc "cowthink" <<EOM
+cowsay / cowthink not installed.
+${_cowsay_ABOUT}
+EOM
+else
+  desc "cowthink" <<EOM
 cow{say,think} version 3.03, (c) 1999 Tony Monroe
 Usage: cowsay [-bdgpstwy] [-h] [-e eyes] [-f cowfile]
           [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
 ${_cowsay_ABOUT}
 EOM
+fi
 cowthink() {
+  if ! _command_exists "${_cowthink_CMD}"; then
+    _die _print_desc "cowthink"
+  fi
   if [[ -z "$1" ]]; then
     "${_cowthink_CMD}"
   else
     "${_cowthink_CMD}" "${@}"
   fi
 }
-
 
 # ---------------------------------------------------------------------- figlet
 
@@ -77,17 +90,24 @@ About Figlet:
 
   http://www.figlet.org/
 "
-_figlet_CMD="$(which figlet)" || _die \
-  printf \
-    "figlet not installed. %s\n" \
-    "${_figlet_ABOUT}"
-desc "figlet" <<EOM
+_figlet_CMD="$(which figlet || true)"
+if ! _command_exists "${_figlet_CMD}"; then
+  desc "figlet" <<EOM
+figlet not installed.
+${_figlet_ABOUT}
+EOM
+else
+  desc "figlet" <<EOM
 Usage: figlet [ -cklnoprstvxDELNRSWX ] [ -d fontdirectory ]
               [ -f fontfile ] [ -m smushmode ] [ -w outputwidth ]
               [ -C controlfile ] [ -I infocode ] [ message ]
 ${_figlet_ABOUT}
 EOM
+fi
 figlet() {
+  if ! _command_exists "${_figlet_CMD}"; then
+    _die _print_desc "figlet"
+  fi
   if [[ -z "$1" ]]; then
     "${_figlet_CMD}"
   else
@@ -97,11 +117,14 @@ figlet() {
 
 # ---------------------------------------------------------------------- figlist
 
-_figlist_CMD="$(which figlist)" || _die \
-  printf \
-    "figlet not installed. %s\n" \
-    "${_figlet_ABOUT}"
-desc "figlist" <<EOM
+_figlist_CMD="$(which figlist || true)"
+if ! _command_exists "${_figlist_CMD}"; then
+  desc "figlist" <<EOM
+figlet not installed.
+${_figlet_ABOUT}
+EOM
+else
+  desc "figlist" <<EOM
 Usage:
   figlist [ -d directory ]
 
@@ -109,7 +132,11 @@ Description:
   Lists figlet fonts and control files.
 ${_figlet_ABOUT}
 EOM
+fi
 figlist() {
+  if ! _command_exists "${_figlist_CMD}"; then
+    _die _print_desc "figlist"
+  fi
   if [[ -z "$1" ]]; then
     "${_figlist_CMD}"
   else
@@ -126,16 +153,23 @@ About jp2a:
 
   http://csl.sublevel3.org/jp2a/
 "
-_jp2a_CMD="$(which jp2a)" || _die \
-  printf \
-    "jp2a not installed. %s\n" \
-    "${_jp2a_ABOUT}"
-_jp2a_HELP="$("${_jp2a_CMD}" --help 2>&1)"
-desc "jp2a" <<EOM
+_jp2a_CMD="$(which jp2a || true)"
+if ! _command_exists "${_jp2a_CMD}"; then
+  desc "jp2a" <<EOM
+jp2a not installed.
+${_jp2a_ABOUT}
+EOM
+else
+  _jp2a_HELP="$("${_jp2a_CMD}" --help 2>&1 || true)"
+  desc "jp2a" <<EOM
 ${_jp2a_HELP}
 ${_jp2a_ABOUT}
 EOM
+fi
 jp2a() {
+  if ! _command_exists "${_jp2a_CMD}"; then
+    _die _print_desc "jp2a"
+  fi
   if [[ -z "$1" ]]; then
     "${_jp2a_CMD}"
   else
@@ -168,11 +202,14 @@ About MPlayer:
   See also:
     http://archive.oreilly.com/pub/h/4441
 "
-_mplayer_CMD="$(which mplayer)" || _die \
-  printf \
-    "MPlayer not installed. %s\n" \
-    "${_mplayer_ABOUT}"
-desc "mplayer" <<EOM
+_mplayer_CMD="$(which mplayer || true)"
+if ! _command_exists "${_mplayer_CMD}"; then
+  desc "mplayer" <<EOM
+MPlayer not installed.
+${_mplayer_ABOUT}
+EOM
+else
+  desc "mplayer" <<EOM
 Usage:
   mplayer -vo aa <video> [<options>]
   mplayer -vo caca <video> [<options>]
@@ -185,7 +222,11 @@ Description:
   Display video as text in terminal.
 ${_mplayer_ABOUT}
 EOM
+fi
 mplayer() {
+  if ! _command_exists  "${_mplayer_CMD}"; then
+    _die _print_desc "mplayer"
+  fi
   if [[ -z "$1" ]]; then
     _print_desc "mplayer"
   else
@@ -195,11 +236,14 @@ mplayer() {
 
 # ---------------------------------------------------------------- showfigfonts
 
-_showfigfonts_CMD="$(which showfigfonts)" || _die \
-  printf \
-    "figlet not installed. %s\n" \
-    "${_figlet_ABOUT}"
-desc "showfigfonts" <<EOM
+_showfigfonts_CMD="$(which showfigfonts || true)"
+if ! _command_exists "showfigfonts"; then
+  desc "showfigfonts" <<EOM
+figlet not installed.
+${_figlet_ABOUT}
+EOM
+else
+  desc "showfigfonts" <<EOM
 Usage:
   showfigfonts [ -d directory ] [ word ]
 
@@ -207,7 +251,11 @@ Description:
   Prints a list of available figlet fonts.
 ${_figlet_ABOUT}
 EOM
+fi
 showfigfonts() {
+  if ! _command_exists  "${_showfigfonts_CMD}"; then
+    _die _print_desc "showfigfonts"
+  fi
   if [[ -z "$1" ]]; then
     "${_showfigfonts_CMD}"
   else
@@ -230,16 +278,23 @@ About TOIlet:
 
   http://caca.zoy.org/wiki/toilet
 "
-_toilet_CMD="$(which toilet)" || _die \
-  printf \
-    "toilet not installed. %s\n" \
-    "${_toilet_ABOUT}"
-_toilet_HELP="$("${_toilet_CMD}" --help)"
-desc "toilet" <<EOM
+_toilet_CMD="$(which toilet || true)"
+if ! _command_exists "${_toilet_CMD}"; then
+  desc "toilet" <<EOM
+TOIlet not installed.
+${_toilet_ABOUT}
+EOM
+else
+  _toilet_HELP="$("${_toilet_CMD}" --help)"
+  desc "toilet" <<EOM
 ${_toilet_HELP}
 ${_toilet_ABOUT}
 EOM
+fi
 toilet() {
+  if ! _command_exists  "${_toilet_CMD}"; then
+    _die _print_desc "toilet"
+  fi
   if [[ -z "$1" ]]; then
     "${_toilet_CMD}"
   else
