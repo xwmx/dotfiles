@@ -862,7 +862,7 @@ brew install ngrep
 # mechanisms in all their various forms.
 #
 # http://nim-lang.org/
-brew install nimrod --HEAD
+brew install nimrod
 
 # node.js
 #
