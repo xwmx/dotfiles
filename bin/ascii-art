@@ -19,6 +19,56 @@ _____    ______ ____ |__|__|         _____ ________/  |_
 Command line bookmarks for ascii art utilities.
 EOM
 
+# ---------------------------------------------------------------------- cowsay
+
+_cowsay_ABOUT="
+About cowsay / cowthink:
+  Configurable speaking/thinking cow (and a bit more)
+
+  Cowsay generates an ASCII picture of a cow saying  something  provided  by
+  the user.
+
+  https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
+"
+_cowsay_CMD="$(which cowsay)" || _die \
+  printf \
+    "cowsay not installed. %s\n" \
+    "${_cowsay_ABOUT}"
+desc "cowsay" <<EOM
+cow{say,think} version 3.03, (c) 1999 Tony Monroe
+Usage: cowsay [-bdgpstwy] [-h] [-e eyes] [-f cowfile]
+          [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
+${_cowsay_ABOUT}
+EOM
+cowsay() {
+  if [[ -z "$1" ]]; then
+    "${_cowsay_CMD}"
+  else
+    "${_cowsay_CMD}" "${@}"
+  fi
+}
+
+# -------------------------------------------------------------------- cowthink
+
+_cowthink_CMD="$(which cowthink)" || _die \
+  printf \
+    "cowsay not installed. %s\n" \
+    "${_cowsay_ABOUT}"
+desc "cowthink" <<EOM
+cow{say,think} version 3.03, (c) 1999 Tony Monroe
+Usage: cowsay [-bdgpstwy] [-h] [-e eyes] [-f cowfile]
+          [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
+${_cowsay_ABOUT}
+EOM
+cowthink() {
+  if [[ -z "$1" ]]; then
+    "${_cowthink_CMD}"
+  else
+    "${_cowthink_CMD}" "${@}"
+  fi
+}
+
+
 # ---------------------------------------------------------------------- figlet
 
 _figlet_ABOUT="
