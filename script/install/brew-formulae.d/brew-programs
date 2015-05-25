@@ -1325,6 +1325,20 @@ brew install tmuxinator-completion
 # NOTE: command name is `ag`
 brew install the_silver_searcher
 
+# TOIlet
+#
+# The TOIlet project attempts to create a free replacement for the FIGlet
+# utility. TOIlet stands for “The Other Implementation’s letters”, coined
+# after FIGlet’s “Frank, Ian and Glen’s letters”.
+#
+# TOIlet is in its very early development phase. It uses the powerful libcaca
+# library to achieve various text-based effects.
+#
+# TOIlet also aims for full FIGlet compatibility.
+#
+# http://caca.zoy.org/wiki/toilet
+brew install toilet
+
 # tree
 #
 # Tree is a recursive directory listing command that produces a depth indented
