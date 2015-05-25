@@ -735,16 +735,6 @@ brew install midnight-commander
 # http://www.gnu.org/software/mit-scheme/
 brew install mit-scheme
 
-# msgpack
-#
-# MessagePack is an efficient binary serialization format. It lets you exchange
-# data among multiple languages like JSON. But it's faster and smaller. Small
-# integers are encoded into a single byte, and typical short strings require
-# only one extra byte in addition to the strings themselves.
-#
-# http://msgpack.org/
-brew install msgpack
-
 # MongoDB
 #
 # MongoDB (from humongous) is a cross-platform document-oriented database.
@@ -784,6 +774,16 @@ brew link --overwrite mono
 #
 # http://www.jedsoft.org/most/
 brew install most
+
+# msgpack
+#
+# MessagePack is an efficient binary serialization format. It lets you exchange
+# data among multiple languages like JSON. But it's faster and smaller. Small
+# integers are encoded into a single byte, and typical short strings require
+# only one extra byte in addition to the strings themselves.
+#
+# http://msgpack.org/
+brew install msgpack
 
 # mutt
 #
