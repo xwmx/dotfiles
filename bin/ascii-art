@@ -27,7 +27,10 @@ About Figlet:
 
   http://www.figlet.org/
 "
-_figlet_CMD="$(which figlet)"
+_figlet_CMD="$(which figlet)" || _die \
+  printf \
+    "figlet not installed. %s\n" \
+    "${_figlet_ABOUT}"
 desc "figlet" <<EOM
 Usage: figlet [ -cklnoprstvxDELNRSWX ] [ -d fontdirectory ]
               [ -f fontfile ] [ -m smushmode ] [ -w outputwidth ]
@@ -44,7 +47,10 @@ figlet() {
 
 # ---------------------------------------------------------------------- figlist
 
-_figlist_CMD="$(which figlist)"
+_figlist_CMD="$(which figlist)" || _die \
+  printf \
+    "figlet not installed. %s\n" \
+    "${_figlet_ABOUT}"
 desc "figlist" <<EOM
 Usage:
   figlist [ -d directory ]
@@ -139,7 +145,10 @@ mplayer() {
 
 # ---------------------------------------------------------------- showfigfonts
 
-_showfigfonts_CMD="$(which showfigfonts)"
+_showfigfonts_CMD="$(which showfigfonts)" || _die \
+  printf \
+    "figlet not installed. %s\n" \
+    "${_figlet_ABOUT}"
 desc "showfigfonts" <<EOM
 Usage:
   showfigfonts [ -d directory ] [ word ]
