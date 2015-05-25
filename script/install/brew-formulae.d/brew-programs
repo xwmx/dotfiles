@@ -775,6 +775,26 @@ brew link --overwrite mono
 # http://www.jedsoft.org/most/
 brew install most
 
+# MPlayer
+#
+# MPlayer is a free software and open source media player.
+#
+# http://www.mplayerhq.hu/
+# https://en.wikipedia.org/wiki/MPlayer
+#
+# Options:
+#   --with-libcaca
+#     Build with libcaca support
+#
+#     libcaca is a graphics library that outputs text instead of pixels, so
+#     that it can work on older video cards or text terminals.
+#
+#     http://caca.zoy.org/wiki/libcaca
+#
+#   --with-x11
+#     Build with x11 support
+brew install mplayer --with-libcaca --with-x11
+
 # msgpack
 #
 # MessagePack is an efficient binary serialization format. It lets you exchange
