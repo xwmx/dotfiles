@@ -165,4 +165,36 @@ showfigfonts() {
   fi
 }
 
+# ---------------------------------------------------------------------- toilet
+
+_toilet_ABOUT="
+About TOIlet:
+  The TOIlet project attempts to create a free replacement for the FIGlet
+  utility. TOIlet stands for “The Other Implementation’s letters”, coined
+  after FIGlet’s “Frank, Ian and Glen’s letters”.
+
+  TOIlet is in its very early development phase. It uses the powerful libcaca
+  library to achieve various text-based effects.
+
+  TOIlet also aims for full FIGlet compatibility.
+
+  http://caca.zoy.org/wiki/toilet
+"
+_toilet_CMD="$(which toilet)" || _die \
+  printf \
+    "toilet not installed. %s\n" \
+    "${_toilet_ABOUT}"
+_toilet_HELP="$("${_toilet_CMD}" --help)"
+desc "toilet" <<EOM
+${_toilet_HELP}
+${_toilet_ABOUT}
+EOM
+toilet() {
+  if [[ -z "$1" ]]; then
+    "${_toilet_CMD}"
+  else
+    "${_toilet_CMD}" "${@}"
+  fi
+}
+
 _init
