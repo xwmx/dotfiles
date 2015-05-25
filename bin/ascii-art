@@ -21,11 +21,18 @@ EOM
 
 # ---------------------------------------------------------------------- figlet
 
+_figlet_ABOUT="
+About Figlet:
+  FIGlet is a program for making large letters out of ordinary text
+
+  http://www.figlet.org/
+"
 _figlet_CMD="$(which figlet)"
 desc "figlet" <<EOM
 Usage: figlet [ -cklnoprstvxDELNRSWX ] [ -d fontdirectory ]
               [ -f fontfile ] [ -m smushmode ] [ -w outputwidth ]
               [ -C controlfile ] [ -I infocode ] [ message ]
+${_figlet_ABOUT}
 EOM
 figlet() {
   if [[ -z "$1" ]]; then
@@ -44,6 +51,7 @@ Usage:
 
 Description:
   Lists figlet fonts and control files.
+${_figlet_ABOUT}
 EOM
 figlist() {
   if [[ -z "$1" ]]; then
@@ -55,10 +63,21 @@ figlist() {
 
 # ------------------------------------------------------------------------ jp2a
 
-_jp2a_CMD="$(which jp2a)"
+_jp2a_ABOUT="
+About jp2a:
+  jp2a is a small utility that converts JPG images to ASCII.
+  It's written in C and released under the GPL.
+
+  http://csl.sublevel3.org/jp2a/
+"
+_jp2a_CMD="$(which jp2a)" || _die \
+  printf \
+    "jp2a not installed. %s\n" \
+    "${_jp2a_ABOUT}"
 _jp2a_HELP="$("${_jp2a_CMD}" --help 2>&1)"
 desc "jp2a" <<EOM
 ${_jp2a_HELP}
+${_jp2a_ABOUT}
 EOM
 jp2a() {
   if [[ -z "$1" ]]; then
@@ -70,24 +89,12 @@ jp2a() {
 
 # --------------------------------------------------------------------- mplayer
 
-_mplayer_CMD="$(which mplayer)"
-desc "mplayer" <<EOM
-Usage:
-  mplayer -vo aa <video> [<options>]
-  mplayer -vo caca <video> [<options>]
+_mplayer_ABOUT="
+About MPlayer:
+  MPlayer is a free software and open source media player.
 
-Options:
-  -vo aa    AAlib output.
-  -vo caca  Libcaca output.
-
-Description:
-  Display video as text in terminal.
-
-  MPlayer:
-    MPlayer is a free software and open source media player.
-
-    http://www.mplayerhq.hu/
-    https://en.wikipedia.org/wiki/MPlayer
+  http://www.mplayerhq.hu/
+  https://en.wikipedia.org/wiki/MPlayer
 
   AAlib:
     AAlib is a software library which allows applications to automatically
@@ -104,6 +111,23 @@ Description:
 
   See also:
     http://archive.oreilly.com/pub/h/4441
+"
+_mplayer_CMD="$(which mplayer)" || _die \
+  printf \
+    "MPlayer not installed. %s\n" \
+    "${_mplayer_ABOUT}"
+desc "mplayer" <<EOM
+Usage:
+  mplayer -vo aa <video> [<options>]
+  mplayer -vo caca <video> [<options>]
+
+Options:
+  -vo aa    AAlib output.
+  -vo caca  Libcaca output.
+
+Description:
+  Display video as text in terminal.
+${_mplayer_ABOUT}
 EOM
 mplayer() {
   if [[ -z "$1" ]]; then
@@ -122,6 +146,7 @@ Usage:
 
 Description:
   Prints a list of available figlet fonts.
+${_figlet_ABOUT}
 EOM
 showfigfonts() {
   if [[ -z "$1" ]]; then
