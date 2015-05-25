@@ -177,6 +177,16 @@ brew install composer
 # https://coq.inria.fr/
 brew install coq
 
+# cowsay
+#
+# cowsay / cowthink - configurable speaking/thinking cow (and a bit more)
+#
+# Cowsay generates an ASCII picture of a cow saying  something  provided  by
+# the user.
+#
+# https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
+brew install cowsay
+
 # ctags
 #
 # Ctags is a programming tool that generates an index (or tag) file of names
