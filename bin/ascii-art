@@ -68,6 +68,51 @@ jp2a() {
   fi
 }
 
+# --------------------------------------------------------------------- mplayer
+
+_mplayer_CMD="$(which mplayer)"
+desc "mplayer" <<EOM
+Usage:
+  mplayer -vo aa <video> [<options>]
+  mplayer -vo caca <video> [<options>]
+
+Options:
+  -vo aa    AAlib output.
+  -vo caca  Libcaca output.
+
+Description:
+  Display video as text in terminal.
+
+  MPlayer:
+    MPlayer is a free software and open source media player.
+
+    http://www.mplayerhq.hu/
+    https://en.wikipedia.org/wiki/MPlayer
+
+  AAlib:
+    AAlib is a software library which allows applications to automatically
+    convert still and moving images into ASCII art.
+
+    http://aa-project.sourceforge.net/aalib/
+    https://en.wikipedia.org/wiki/AAlib
+
+  Libcaca:
+    libcaca is a graphics library that outputs text instead of pixels, so that
+    it can work on older video cards or text terminals.
+
+    http://caca.zoy.org/wiki/libcaca
+
+  See also:
+    http://archive.oreilly.com/pub/h/4441
+EOM
+mplayer() {
+  if [[ -z "$1" ]]; then
+    _print_desc "mplayer"
+  else
+    "${_mplayer_CMD}" "${@}"
+  fi
+}
+
 # ---------------------------------------------------------------- showfigfonts
 
 _showfigfonts_CMD="$(which showfigfonts)"
