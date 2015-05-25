@@ -556,6 +556,14 @@ brew install irssi
 # http://lasr.cs.ucla.edu/geoff/ispell.html
 brew install ispell
 
+# jp2a
+#
+# jp2a is a small utility that converts JPG images to ASCII.
+# It's written in C and released under the GPL.
+#
+# http://csl.sublevel3.org/jp2a/
+brew install jp2a
+
 # jq
 #
 # A lightweight and flexible command-line JSON processor.
