@@ -54,6 +54,25 @@ create() {
   fi
 }
 
+desc eject <<EOM
+Usage:
+  $_ME eject <volname>
+
+Description:
+  Eject a disk image.
+EOM
+eject() {
+  if [[ -z "${1:-}" ]]; then
+    _die printf "No disk image specified.\n"
+  else
+    if [[ "${1}" =~ ^\/Volumes ]]; then
+      diskutil eject "${1}"
+    else
+      diskutil eject "/Volumes/${1}"
+    fi
+  fi
+}
+
 desc list <<EOM
 Usage:
   $_ME list
@@ -78,25 +97,6 @@ mount() {
   else
     hdiutil mount \
       "${1}"
-  fi
-}
-
-desc unmount <<EOM
-Usage:
-  $_ME unmount <volname>
-
-Description:
-  Unmount a disk image.
-EOM
-unmount() {
-  if [[ -z "${1:-}" ]]; then
-    _die printf "No disk image specified.\n"
-  else
-    if [[ "${1}" =~ ^\/Volumes ]]; then
-      diskutil eject "${1}"
-    else
-      diskutil eject "/Volumes/${1}"
-    fi
   fi
 }
 
