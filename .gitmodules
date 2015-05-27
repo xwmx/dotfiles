@@ -194,3 +194,6 @@
 [submodule "vendor/com/github/alphabetum/bindle"]
 	path = vendor/com/github/alphabetum/bindle
 	url = https://github.com/alphabetum/bindle.git
+[submodule "vendor/com/github/chadbraunduin/markdown.bash"]
+	path = vendor/com/github/chadbraunduin/markdown.bash
+	url = https://github.com/chadbraunduin/markdown.bash.git
