@@ -54,6 +54,17 @@ create() {
   fi
 }
 
+desc list <<EOM
+Usage:
+  $_ME list
+
+Description:
+  List mounted disk information.
+EOM
+list() {
+  hdiutil info
+}
+
 desc mount <<EOM
 Usage:
   $_ME mount <path/to/dmg>
