@@ -82,9 +82,9 @@ unmount() {
     _die printf "No disk image specified.\n"
   else
     if [[ "${1}" =~ ^\/Volumes ]]; then
-      hdiutil unmount "${1}"
+      diskutil eject "${1}"
     else
-      hdiutil unmount "/Volumes/${1}"
+      diskutil eject "/Volumes/${1}"
     fi
   fi
 }
