@@ -36,6 +36,26 @@ fi
 # https://robots.thoughtbot.com/csvkit-brings-the-unix-philosophy-to-csv
 pip3 install --upgrade csvkit
 
+# ftfy - fixes text for you
+#
+# Given Unicode text, make its representation consistent and possibly less
+# broken.
+#
+# The goal of ftfy is to take in bad Unicode and output good Unicode, for
+# use in your Unicode-aware code. This is different from taking in non-Unicode
+# and outputting Unicode, which is not a goal of ftfy. It also isn’t designed
+# to protect you from having to write Unicode-aware code. ftfy helps those who
+# help themselves.
+#
+# https://github.com/LuminosoInsight/python-ftfy
+# http://ftfy.readthedocs.org/en/latest/
+#
+# Via:
+#
+# http://blog.luminoso.com/2015/05/21/ftfy-fixes-text-for-you-4-0-changing-less-and-fixing-more/
+# https://news.ycombinator.com/item?id=9611710
+pip3 install --upgrade ftfy
+
 # Hy
 #
 # Hy is a wonderful dialect of Lisp that’s embedded in Python.
