@@ -17,7 +17,7 @@
 # In order to keep bpkg-installed programs separated from everything else,
 # place installed items in ~/.bpkg/bin, which needs to be added to the $PATH.
 
-export PREFIX="$HOME/.local"
+export PREFIX="$HOME/.bpkg"
 
 if [[ ! -e "$PREFIX" ]]; then
   mkdir -p "$PREFIX"
