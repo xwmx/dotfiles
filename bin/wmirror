@@ -134,11 +134,11 @@ Usage:
   $_ME -h | --help
 
 Options:
-  --to       A path to a local directory in which to save the mirrored files.
-             If this directory doesn't exist, it will be automatically created.
-             The current default is:
-             ${_DOWNLOAD_DIRECTORY}
-  -h --help  Show this screen.
+  --to <path> A path to a local directory in which to save the mirrored files.
+              If this directory doesn't exist yet, it will be created.
+              The current default is:
+              ${_DOWNLOAD_DIRECTORY}
+  -h --help   Show this screen.
 EOM
 
 # _print_help()
