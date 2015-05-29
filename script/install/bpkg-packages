@@ -46,6 +46,13 @@ bpkg install -g ryanmjacobs/c
 # http://www.bpkg.io/pkg/clip/
 bpkg install -g clip
 
+# osx-screencast
+#
+# Easily create a screencast on OS X in a few commands.
+#
+# https://github.com/bpkg/osx-screencast
+bpkg install osx-screencast
+
 ###############################################################################
 # Cleanup
 ###############################################################################
