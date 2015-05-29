@@ -8,8 +8,8 @@
 ###############################################################################
 
 # Since $PREFIX is set to .bpkg in `bpkg-packages`, add `~/.bpkg/bin` and
-# `~/.bpkg/man` to `$PATH` and $MANPATH`.
+# `~/.bpkg/share/man` to `$PATH` and $MANPATH`.
 PATH="$PATH:$HOME/.bpkg/bin"
 export PATH
-MANPATH="$HOME/.bpkg/man:$MANPATH"
+MANPATH="$HOME/.bpkg/share/man:$MANPATH"
 export MANPATH
