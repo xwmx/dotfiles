@@ -1,62 +1,372 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #
-# wmirror
+#                           _
+#  __ _  ___ __ _ __ _ __ _(_) ___ __ ___      __
+# |__` |/ _ \__` |__` |__` | |/ _ ' _` \ \ /\ / /
+#    | | (_) | | |  | |  | | | | | | | |\ V  V /
+#    |_|\___/  |_|  |_|  |_|_|_| |_| |_| \_/\_/
 #
-# Mirror a website.
+# wmirror - Mirror a website.
+#
+# Use wget with some useful options to mirror a website locally.
+#
+# Created using Bash Boilerplate:
+# https://github.com/alphabetum/bash-boilerplate
 
-URL=$1
-DIR=~/Downloads/_websites/
+###############################################################################
+# Strict Mode
+###############################################################################
 
-if [ ! -d "$DIR" ]
-then
-  echo mkdir -p "$DIR"
-  mkdir -p "$DIR"
-fi
+# Bash 'Strict Mode'
+# http://redsymbol.net/articles/unofficial-bash-strict-mode
+# https://github.com/alphabetum/bash-boilerplate#bash-strict-mode
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS="$(printf '\n\t')"
 
-_domain=$(printf "%s\n" "$URL" | awk -F/ '{print $3}')
+###############################################################################
+# Debug
+###############################################################################
 
-if [ -z "$_domain" ]; then
-  printf "Domain not found.\n"
+# _debug()
+#
+# Usage:
+#   _debug printf "Debug info. Variable: %s\n" "$0"
+#
+# A simple function for executing a specified command if the `$_USE_DEBUG`
+# variable has been set. The command is expected to print a message and
+# should typically be either `echo`, `printf`, or `cat`.
+_debug() {
+  if [[ "${_USE_DEBUG:-"0"}" -eq 1 ]]; then
+    # Prefix debug message with "bug (U+1F41B)"
+    printf "🐛  "
+    "$@"
+  fi
+}
+# debug()
+#
+# Usage:
+#   debug "Debug info. Variable: $0"
+#
+# Print the specified message if the `$_USE_DEBUG` variable has been set.
+#
+# This is a shortcut for the _debug() function that simply echos the message.
+debug() {
+  _debug echo "$@"
+}
+
+###############################################################################
+# Die
+###############################################################################
+
+# _die()
+#
+# Usage:
+#   _die printf "Error message. Variable: %s\n" "$0"
+#
+# A simple function for exiting with an error after executing the specified
+# command. The command is expected to print a message and should typically
+# be either `echo`, `printf`, or `cat`.
+_die() {
+  # Prefix die message with "cross mark (U+274C)", often displayed as a red x.
+  printf "❌  "
+  "$@" 1>&2
   exit 1
-fi
-
-# allow S3 in order to include assets.
+}
+# die()
 #
-# TODO: make this possible to set with options.
-_allowed_hosts="$_domain,s3.amazonaws.com"
+# Usage:
+#   die "Error message. Variable: $0"
+#
+# Exit with an error and print the specified message.
+#
+# This is a shortcut for the _die() function that simply echos the message.
+die() {
+  _die echo "$@"
+}
 
-cd "$DIR"
+###############################################################################
+# Environment
+###############################################################################
 
-# Build Command:
-_cmd="wget \
-  -r \
-  -H -D$_allowed_hosts \
-  -l inf \
-  -np \
-  -k \
-  -c \
-  -N \
-  -w1 \
-  --random-wait \
-  -e robots=off \
-  --no-check-certificate \
-  $URL"
+# $_ME
+#
+# Set to the program's basename.
+_ME=$(basename "$0")
 
-# Debug Command:
-# printf "%s\n" "$_cmd"
+# $_DOWNLOAD_DIRECTORY
+#
+# The local directory that will contain the downloads.
+_DOWNLOAD_DIRECTORY="$HOME/Downloads/_websites/"
 
-# Call Command:
-$_cmd
+###############################################################################
+# Help
+###############################################################################
 
-# -r                      recursive
-# -H                      follow links to other hosts
-# -D                      limit to the specified host list
-# -l inf                  all sub directories
-# -np                     do NOT crawl parent directories
-# -k                      convert links (to refer to local directories)
-# -c                      continue (script is restartable)
-# -N                      only retrieve files when newer than local file
-# -w1                     wait interval is 1 second
-# --random-wait           random wait between 0..2 seconds (2 * wait interval)
-# --e robots=off          ignore robots.txt (naughty)
-# --no-check-certificate  live dangerously
+# Set $_program_help
+#
+# The `read` form of assignment is used for a balance of ease of
+# implementation and simplicity. There is an alternative assignment form
+# that could be used here:
+#
+# var="$(cat <<'EOM'
+# some message
+# EOM
+# )
+#
+# However, this form appears to require trailing space after backslases to
+# preserve newlines, which is unexpected. Using `read` simply requires
+# escaping backslashes, which is more common.
+read -d '' "_program_help" <<EOM || true
+                          _
+ __ _  ___ __ _ __ _ __ _(_) ___ __ ___      __
+|__\` |/ _ \\\__\` |__\` |__\` | |/ _ ' _\` \\\ \\\ /\\\ / /
+   | | (_) | | |  | |  | | | | | | | |\\\ V  V /
+   |_|\\\___/  |_|  |_|  |_|_|_| |_| |_| \\\_/\\\_/
+
+wmirror - Mirror a website.
+
+Use wget with some useful options to mirror a website locally.
+
+Usage:
+  $_ME <url> [--to <path/to/local/directory>]
+  $_ME -h | --help
+
+Options:
+  --to       A path to a local directory in which to save the mirrored files.
+             If this directory doesn't exist, it will be automatically created.
+             The current default is:
+             ${_DOWNLOAD_DIRECTORY}
+  -h --help  Show this screen.
+EOM
+
+# _print_help()
+#
+# Usage: _print_help
+#
+# Print the program help information.
+_print_help() {
+  printf "%s\n" "$_program_help"
+}
+
+###############################################################################
+# Options
+###############################################################################
+
+# Steps:
+#
+# 1. set expected short options in `optstring` at beginning of the "Normalize
+#    Options" section,
+# 2. parse options in while loop in the "Parse Options" section.
+
+# Normalize Options ###########################################################
+
+# Source:
+#   https://github.com/e36freak/templates/blob/master/options
+
+# The first loop, even though it uses 'optstring', will NOT check if an
+# option that takes a required argument has the argument provided. That must
+# be done within the second loop and case statement, yourself. Its purpose
+# is solely to determine that -oARG is split into -o ARG, and not -o -A -R -G.
+
+# Set short options -----------------------------------------------------------
+
+# option string, for short options.
+#
+# Very much like getopts, expected short options should be appended to the
+# string here. Any option followed by a ':' takes a required argument.
+#
+# In this example, `-x` and `-h` are regular short options, while `o` is
+# assumed to have an argument and will be split if joined with the string,
+# meaning `-oARG` would be split to `-o ARG`.
+optstring=h
+
+# Normalize -------------------------------------------------------------------
+
+# iterate over options, breaking -ab into -a -b and --foo=bar into --foo bar
+# also turns -- into --endopts to avoid issues with things like '-o-', the '-'
+# should not indicate the end of options, but be an invalid option (or the
+# argument to the option, such as wget -qO-)
+unset options
+# while the number of arguments is greater than 0
+while (($#)); do
+  case $1 in
+    # if option is of type -ab
+    -[!-]?*)
+      # loop over each character starting with the second
+      for ((i=1; i<${#1}; i++)); do
+        # extract 1 character from position 'i'
+        c=${1:i:1}
+        # add current char to options
+        options+=("-$c")
+
+        # if option takes a required argument, and it's not the last char
+        # make the rest of the string its argument
+        if [[ $optstring = *"$c:"* && ${1:i+1} ]]; then
+          options+=("${1:i+1}")
+          break
+        fi
+      done
+      ;;
+    # if option is of type --foo=bar, split on first '='
+    --?*=*) options+=("${1%%=*}" "${1#*=}");;
+    # end of options, stop breaking them up
+    --)
+      options+=(--endopts)
+      shift
+      options+=("$@")
+      break
+      ;;
+    # otherwise, nothing special
+    *) options+=("$1");;
+  esac
+
+  shift
+done
+# set new positional parameters to altered options. Set default to blank.
+set -- "${options[@]:-}"
+unset options
+
+# Parse Options ###############################################################
+
+# Initialize program option variables.
+_print_help=0
+_USE_DEBUG=0
+
+# Initialize additional expected option variables.
+_COMMAND_ARGV=("$0")
+
+# _require_argument()
+#
+# Usage:
+#  _require_argument "$opt" "$_value_variable"
+#
+# Checks if an value has been set to the expected variable and, if not, prints
+# and error message and exits with status 1.
+_require_argument() {
+  # Set local variables from arguments.
+  #
+  # NOTE: 'local' is a non-POSIX bash feature and keeps the variable local to
+  # the block of code, as defined by curly braces. It's easiest to just think
+  # of them as local to a function.
+  local option="$1"
+  local value="$2"
+
+  if [[ -z "$value" ]]; then
+    _die printf "Option requires an argument: %s\n" "$option"
+  fi
+}
+# getopts and getopts have inconsistent behavior, so using a simple home-brewed
+# while loop. This isn't perfectly compliant with POSIX, but it's close enough
+# and this appears to be a widely used approach.
+#
+# More info:
+#   http://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html
+#   http://stackoverflow.com/a/14203146
+#   http://stackoverflow.com/a/7948533
+while [ $# -gt 0 ]; do
+  opt="$1"
+  shift
+  case "$opt" in
+    -h|--help)
+      _print_help=1
+      ;;
+    --debug)
+      _USE_DEBUG=1
+      ;;
+    --to)
+      _DOWNLOAD_DIRECTORY="${1:-}"
+      shift
+      ;;
+    *)
+      _COMMAND_ARGV+=("$opt")
+      ;;
+  esac
+done
+
+_debug printf "\${_COMMAND_ARGV[*]}: %s\n" "${_COMMAND_ARGV[*]}"
+
+###############################################################################
+# Program Functions
+###############################################################################
+
+_wmirror() {
+  local _target_url="${_COMMAND_ARGV[1]:-}"
+
+  _debug printf "_wmirror(): \$_target_url: %s\n" "$_target_url"
+
+  if [[ -z "$_target_url" ]]; then
+    _die printf "No target URL given.\n%s\n" "$(_print_help)"
+  fi
+
+  if [[ ! -d "$_DOWNLOAD_DIRECTORY" ]]; then
+    echo mkdir -p "$_DOWNLOAD_DIRECTORY"
+    mkdir -p "$_DOWNLOAD_DIRECTORY"
+  fi
+
+  local _domain=$(printf "%s\n" "$_target_url" | awk -F/ '{print $3}')
+
+  if [[ -z "$_domain" ]]; then
+    _die printf "Domain not found.\n"
+  fi
+
+  # allow S3 in order to include assets.
+  #
+  # TODO: make this possible to set with options.
+  local _allowed_hosts="$_domain,s3.amazonaws.com"
+
+  cd "$_DOWNLOAD_DIRECTORY"
+
+  # Wget Options:
+  # -r                      recursive
+  # -H                      follow links to other hosts
+  # -D                      limit to the specified host list
+  # -l inf                  all sub directories
+  # -np                     do NOT crawl parent directories
+  # -k                      convert links (to refer to local directories)
+  # -c                      continue (script is restartable)
+  # -N                      only retrieve files when newer than local file
+  # -w1                     wait interval is 1 second
+  # --random-wait           random wait between 0..2 seconds (2 * wait interval)
+  # --e robots=off          ignore robots.txt (naughty)
+  # --no-check-certificate  live dangerously
+  wget \
+    -r \
+    -H \
+    -D "$_allowed_hosts" \
+    -l inf \
+    -np \
+    -k \
+    -c \
+    -N \
+    -w1 \
+    --random-wait \
+    -e robots=off \
+    --no-check-certificate \
+    "$_target_url"
+
+  printf "\n
+Mirror complete!
+
+You can find the files within the following directory:
+
+%s
+" "$PWD"
+}
+
+###############################################################################
+# Main
+###############################################################################
+
+_main() {
+  local arg1="${_COMMAND_ARGV[1]:-}"
+
+  if (("$_print_help")); then
+    _print_help
+  else
+    _wmirror "${_COMMAND_ARGV[@]}"
+  fi
+}
+
+_main "$@"
