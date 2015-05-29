@@ -245,14 +245,8 @@ _COMMAND_ARGV=("$0")
 # Checks if an value has been set to the expected variable and, if not, prints
 # and error message and exits with status 1.
 _require_argument() {
-  # Set local variables from arguments.
-  #
-  # NOTE: 'local' is a non-POSIX bash feature and keeps the variable local to
-  # the block of code, as defined by curly braces. It's easiest to just think
-  # of them as local to a function.
   local option="$1"
   local value="$2"
-
   if [[ -z "$value" ]]; then
     _die printf "Option requires an argument: %s\n" "$option"
   fi
@@ -276,6 +270,7 @@ while [ $# -gt 0 ]; do
       _USE_DEBUG=1
       ;;
     --to)
+      _require_argument "$opt" "${1:-}"
       _DOWNLOAD_DIRECTORY="${1:-}"
       shift
       ;;
