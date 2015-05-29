@@ -148,6 +148,18 @@ npm install -g eslint
 # https://github.com/qw3rtman/gg
 npm install -g gitgoodies
 
+# GitTorrent
+#
+# A decentralization of GitHub using BitTorrent and Bitcoin.
+#
+# GitTorrent is a peer-to-peer network of Git repositories being shared over
+# BitTorrent.
+#
+# https://github.com/cjb/gittorrent
+# http://blog.printf.net/articles/2015/05/29/announcing-gittorrent-a-decentralized-github/
+# https://news.ycombinator.com/item?id=9625840
+npm install -g gittorrent
+
 # Grunt
 #
 # The JavaScript task runner.
