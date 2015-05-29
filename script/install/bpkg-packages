@@ -8,6 +8,25 @@
 # https://github.com/bpkg/bpkg
 ###############################################################################
 
+###############################################################################
+# Setup
+###############################################################################
+
+# PREFIX ---------------------------------------------------------------------
+
+# In order to keep bpkg-installed programs separated from everything else,
+# place installed items in ~/.bpkg/bin, which needs to be added to the $PATH.
+
+export PREFIX="$HOME/.local"
+
+if [[ ! -e "$PREFIX" ]]; then
+  mkdir -p "$PREFIX"
+fi
+
+###############################################################################
+# Packages
+###############################################################################
+
 # C
 #
 # Compile and execute C "scripts" in one go!
@@ -17,9 +36,7 @@
 
 # Temporarily set PREFIX to $HOME to ensure installation in $HOME/bin
 # https://github.com/ryanmjacobs/c/blob/master/package.json#L6
-export PREFIX="$HOME"
 bpkg install -g ryanmjacobs/c
-unset PREFIX
 
 # clip
 #
@@ -27,15 +44,10 @@ unset PREFIX
 #
 # https://github.com/bpkg/clip
 # http://www.bpkg.io/pkg/clip/
-export PREFIX="$HOME"
 bpkg install -g clip
-unset PREFIX
 
-# Spot
-#
-# Tiny ack-style file search utility.
-#
-# https://github.com/rauchg/spot
-export PREFIX="$HOME"
-bpkg install -g rauchg/spot
+###############################################################################
+# Cleanup
+###############################################################################
+
 unset PREFIX
