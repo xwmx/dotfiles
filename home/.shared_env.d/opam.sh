@@ -12,10 +12,10 @@ export CAML_LD_LIBRARY_PATH
 OPAMUTF8MSGS="1"
 export OPAMUTF8MSGS
 
-MANPATH=":$HOME/.opam/system/man"
+MANPATH="$MANPATH:$HOME/.opam/system/man"
 export MANPATH
 
-PERL5LIB="$HOME/.opam/system/lib/perl5:"
+PERL5LIB="$HOME/.opam/system/lib/perl5:$PERL5LIB"
 export PERL5LIB
 
 OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
