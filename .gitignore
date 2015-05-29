@@ -26,6 +26,10 @@
 !/home/.atom/snippets.cson
 !/home/.atom/styles.less
 
+# Only track home/.bpkg Readme
+/home/.bpkg/*
+!/home/.bpkg/Readme.md
+
 # Only track specific .cabal files
 #
 # Include example config and help files only.
