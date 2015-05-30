@@ -7,5 +7,5 @@
 ###############################################################################
 
 # .npmrc sets the install prefix to ~/.npm-packages
-PATH="$PATH:$HOME/.npm-packages/bin"
+PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH
