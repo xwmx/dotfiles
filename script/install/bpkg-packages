@@ -59,9 +59,3 @@ bpkg install -g jwerle/mush
 #
 # https://github.com/bpkg/osx-screencast
 bpkg install -g osx-screencast
-
-###############################################################################
-# Cleanup
-###############################################################################
-
-unset PREFIX
