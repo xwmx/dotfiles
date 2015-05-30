@@ -77,6 +77,10 @@
 /home/.lein/*
 !/home/.lein/profiles.cjl
 
+# Only track home/.npm-packages Readme
+/home/.npm-packages/*
+!/home/.npm-packages/Readme.md
+
 # Only track example Overcast configuration files.
 /home/.overcast/*
 !/home/.overcast/example.clusters.json

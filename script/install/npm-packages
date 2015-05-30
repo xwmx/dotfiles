@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ###############################################################################
-# node-packages
+# npm-packages
 #
-# Install various global node modules
+# Install various global npm packages.
 ###############################################################################
 
 # Babel
