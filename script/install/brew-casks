@@ -341,6 +341,14 @@ brew cask install firefoxdeveloperedition
 # http://www.gimp.org
 brew cask install gimp
 
+# GitUp
+#
+# A GUI for git
+#
+# http://gitup.co/
+# http://forums.gitup.co/t/getting-started-with-gitup-pre-release/30
+brew cask install gitup
+
 # GnuCash
 #
 # GnuCash is open source personal and small-business financial-accounting
