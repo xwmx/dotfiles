@@ -15,7 +15,10 @@ Usage:
   $_ME disable
 
 Description:
-  Disable spotlight.
+  Disable spotlight indexing for all volumes.
+
+  Aliased command:
+    sudo mdutil -a -i off
 EOM
 disable() {
   sudo mdutil -a -i off
@@ -28,7 +31,10 @@ Usage:
   $_ME enable
 
 Description:
-  Enable spotlight.
+  Enable spotlight indexing for all volumes.
+
+  Aliased command:
+    sudo mdutil -a -i on
 EOM
 enable() {
   sudo mdutil -a -i on
@@ -53,6 +59,8 @@ Description:
   Spotlight menu and will return hits for both the filename and content. When
   a <path> argument is provided, the search will be scoped to that
   directory and its subtree.
+
+  This is a wrapper for various \`mdfind\` commands.
 EOM
 search() {
   local _search_type=
