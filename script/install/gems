@@ -149,6 +149,22 @@ gem install rubocop --version 0.28
 # https://github.com/YorickPeterse/ruby-lint
 gem install ruby-lint
 
+# Rush
+#
+# manage your unix systems with pure Ruby
+#
+# rush is a unix integration library and an interactive shell which uses pure
+# Ruby syntax. Walk directory trees; create, copy, search, and destroy files;
+# find and kill processes - everything you'd normally do with shell commands,
+# now in the strict and elegant world of Ruby.
+#
+# https://github.com/s-mage/rush
+#
+# rush2 is a fork of the original that's currently being developed. The
+# original version of Rush:
+# https://github.com/adamwiggins/rush
+gem install rush2
+
 # scss-lint
 #
 # scss-lint is a tool to help keep your SCSS files clean and readable. You can
