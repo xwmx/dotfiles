@@ -243,6 +243,15 @@ npm install -g lodash-cli
 # https://github.com/mochajs/mocha
 npm install -g mocha
 
+# nshell
+#
+# scriptable shell written with node. A work-in-progress scriptable shell
+# written with node (replacing bash, ksh, etc).
+#
+# https://www.npmjs.com/package/nshell
+# https://github.com/tj/nshell
+npm install -g nshell
+
 # node-osa
 #
 # Node.js module for running Open Scripting Architecture code in OSX 10.10+
