@@ -120,6 +120,22 @@ search() {
   esac
 }
 
+# --------------------------------------------------------------------- status
+
+desc "status" <<EOM
+Usage:
+  $_ME status
+
+Description:
+  Print the spotlight indexing status for all volumes.
+
+  Aliased command:
+    mdutil -a -s
+EOM
+status() {
+  mdutil -a -s
+}
+
 ###############################################################################
 # Run Program
 ###############################################################################
