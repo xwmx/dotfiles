@@ -7,8 +7,9 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
-  printf "apt-packages is only supported on Ubuntu.\nSkipping...\n"
+if hash "apt-get" 2>/dev/null
+then
+  printf "apt-packages requires APT.\nSkipping...\n"
   exit 0
 fi
 

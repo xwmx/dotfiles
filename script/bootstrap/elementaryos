@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+###############################################################################
+# Bootstrap dotfiles on a fresh ElementaryOS install
+###############################################################################
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+# Skip unless ubuntu
+if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ elementary ]]; then
+  printf "\
+Elementary OS bootstrapping not supported on this system.
+Skipping...
+"
+  exit 0
+fi
+
+###############################################################################
+# Bootstrap
+###############################################################################
+
+# Might as well ask for password up-front, right?
+sudo -v
+# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+#------------------------------------------------------------------------------
+
+export BINDLEPATH="${HOME}/.dotfiles"
+
+"${BINDLEPATH}/script/install/apt-packages"
+
+if [[ ! -e "${HOME}/bin" ]]; then
+  mkdir "${HOME}/bin"
+fi
+
+cp "${HOME}/.ssh/*" "${HOME}/.dotfiles/home/.ssh/" && \
+  cd "${BINDLEPATH}" && \
+  git submodule init && \
+  git submodule update --init --recursive && \
+  ./bin/bindle link --overwrite --with-backup && \
+  ./bin/bindle bin link
+
+# Bootstrap janus
+"${BINDLEPATH}/home/.vim/bootstrap.sh"
+
+sudo chsh -s "$(which zsh)" "$(whoami)"
+
+"$(which zsh)" --login
+
