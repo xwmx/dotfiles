@@ -446,6 +446,24 @@ brew install gnupg2
 # functioning of the other tools.
 brew link --overwrite gnupg2
 
+# GRASS GIS
+#
+# GRASS GIS, commonly referred to as GRASS (Geographic Resources Analysis
+# Support System), is a free and open source Geographic Information System
+# (GIS) software suite used for geospatial data management and analysis, image
+# processing, graphics and maps production, spatial modeling, and
+# visualization. GRASS GIS is currently used in academic and commercial
+# settings around the world, as well as by many governmental agencies and
+# environmental consulting companies. It is a founding member of the Open
+# Source Geospatial Foundation (OSGeo).
+#
+# http://grass.osgeo.org/
+#
+# Options:
+#   --with-postgresql
+#     Build with postgresql support
+brew install grass --with-postgresql
+
 # GNU Grep
 #
 # Grep searches one or more input files for lines containing a match to a
