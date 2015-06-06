@@ -458,11 +458,7 @@ brew link --overwrite gnupg2
 # Source Geospatial Foundation (OSGeo).
 #
 # http://grass.osgeo.org/
-#
-# Options:
-#   --with-postgresql
-#     Build with postgresql support
-brew install grass --with-postgresql
+brew install grass
 
 # GNU Grep
 #
