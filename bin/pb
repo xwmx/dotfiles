@@ -39,10 +39,7 @@ fi
 # Environment
 ###############################################################################
 
-# $_me
-#
-# Set to the program's basename.
-_me=$(basename "$0")
+_ME=$(basename "$0")
 
 ###############################################################################
 # Help
@@ -59,9 +56,9 @@ read -d '' "_program_help" <<EOM || true
 A simple wrapper combining pbcopy & pbpaste in a single command.
 
 Usage:
-  $_me [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
-  $_me <input> [-pboard {general | ruler | find | font}]
-  $_me -h | --help
+  $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
+  $_ME <input> [-pboard {general | ruler | find | font}]
+  $_ME -h | --help
 
 Options:
   -h --help  Show this screen.
@@ -92,14 +89,27 @@ _interactive_input() {
   [[ -t 0 ]]
 }
 
+# _pb()
+#
+# Usage:
+#   pb
+#   pb <arguments>
+#   <command> | pb
+#
+# Description:
+#   Copy to or paste from the OS X clipboard/pasteboard. With no input, `pb`
+#   prints the current contents of the clipboard to stdout using the `pbpaste`
+#   command. When input is passed via stdin or an argument, `pb` acts as a
+#   wrapper for `pbcopy`, which in the simplest case means that it replaces the
+#   clipboard contents with the input.
 _pb() {
   if _interactive_input
   then
     if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]
     then
-      input="$1"
-      options=(${@:1})
-      printf "%s" "$input" | pbcopy "${options:-}"
+      local _input="$1"
+      local _options=(${@:1})
+      printf "%s" "$_input" | pbcopy "${_options:-}"
     else
       pbpaste "$@"
     fi
@@ -113,16 +123,8 @@ _pb() {
 ###############################################################################
 
 _main() {
-  # Set a local arg1 variable to the first argument or, if there is no first
-  # argument, just a blank value.
-  #
-  # NOTE: 'local' is a non-POSIX bash feature and keeps the variable local to
-  # the block of code, as defined by curly braces. It's easiest to just think
-  # of them as local to a function.
-  local arg1=${1:-}
+  local arg1="${1:-}"
 
-  # Avoiding getops (or pattern equivalent) to avoid complexity when only one
-  # program option is expected.
   if ( \
     [[ "$arg1" == "-h"     ]] ||
     [[ "$arg1" == "--help" ]]
