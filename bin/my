@@ -10,7 +10,7 @@ source "$(which bask)"
 
 # ------------------------------------------------------------------------- ip
 
-desc ip <<EOM
+desc "ip" <<EOM
 Usage:
   $_ME ip [--local | --remote]
 
@@ -27,7 +27,8 @@ ip() {
   # Only the '--local' option is actually checked. The '--remote' option is the
   # default behavior when no option is passed, but the option is included for
   # psychological balance. :-)
-  if [[ "$1" == "--local" ]]; then
+  if [[ "$1" == "--local" ]]
+  then
     local _active_interface
     _active_interface="$(
       ifconfig | \
@@ -48,7 +49,7 @@ ip() {
 
 # ----------------------------------------------------------------------- users
 
-desc users <<EOM
+desc "users" <<EOM
 Usage:
   $_ME users [--all [-l|--long]]
 
@@ -60,11 +61,13 @@ Description:
   List local users.
 EOM
 users() {
-  if _command_argv_includes "--all"; then
+  if _command_argv_includes "--all"
+  then
     if ( \
       _command_argv_includes "-l" || \
       _command_argv_includes "--long"
-    ); then
+    )
+    then
       dscacheutil -q user
     else
       dscl . list /Users
