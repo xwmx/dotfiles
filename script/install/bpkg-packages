@@ -38,6 +38,13 @@ fi
 # https://github.com/ryanmjacobs/c/blob/master/package.json#L6
 bpkg install -g ryanmjacobs/c
 
+# Clock
+#
+# Track your working hours on the command line.
+#
+# https://github.com/lordvlad/clock
+bpkg install -g lordvlad/clock
+
 # clip
 #
 # Silly terminal clipboard
