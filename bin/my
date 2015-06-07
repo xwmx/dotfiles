@@ -8,6 +8,8 @@
 
 source "$(which bask)"
 
+# ------------------------------------------------------------------------- ip
+
 desc ip <<EOM
 Usage:
   $_ME ip [--local | --remote]
@@ -41,6 +43,34 @@ ip() {
     ipconfig getifaddr "$_active_interface"
   else
     dig +short myip.opendns.com @resolver1.opendns.com
+  fi
+}
+
+# ----------------------------------------------------------------------- users
+
+desc users <<EOM
+Usage:
+  $_ME users [--all [-l|--long]]
+
+Options:
+  --all      List all users, including system users.
+  -l --long  Print long output.
+
+Description:
+  List local users.
+EOM
+users() {
+  if _command_argv_includes "--all"; then
+    if ( \
+      _command_argv_includes "-l" || \
+      _command_argv_includes "--long"
+    ); then
+      dscacheutil -q user
+    else
+      dscl . list /Users
+    fi
+  else
+    dscl . list /Users | grep -v '^_'
   fi
 }
 
