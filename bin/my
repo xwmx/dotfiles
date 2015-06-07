@@ -47,6 +47,28 @@ ip() {
   fi
 }
 
+# ---------------------------------------------------------------------- logins
+
+desc "logins" <<EOM
+Usage:
+  $_ME logins [--history]
+
+Options:
+  --history  Include login history.
+
+Decription:
+  Display current system logins. By default only the currently active logins
+  are displayed. Using the '--history' option displays all historical logins.
+EOM
+logins() {
+  if _command_argv_includes "--history"
+  then
+    last
+  else
+    last | head
+  fi
+}
+
 # ----------------------------------------------------------------------- users
 
 desc "users" <<EOM
