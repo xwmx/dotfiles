@@ -725,6 +725,13 @@ brew install lynis
 # http://lynx.isc.org/release/
 brew install lynx
 
+# man2html
+#
+# Convert nroff man pages to HTML
+#
+# http://dcssrv1.oit.uci.edu/indiv/ehood/man2html.html
+brew install man2html
+
 # matplotlib
 #
 # matplotlib is a python 2D plotting library which produces publication
