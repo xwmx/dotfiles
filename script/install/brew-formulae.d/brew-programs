@@ -80,6 +80,16 @@ brew install aspell --with-lang-en
 # http://www.gnu.org/software/autoconf/
 brew install autoconf
 
+# Bats
+#
+# Bash Automated Testing System
+#
+# Bats is a TAP-compliant testing framework for Bash. It provides a simple way
+# to verify that the UNIX programs you write behave as expected.
+#
+# https://github.com/sstephenson/bats
+brew install bats
+
 # boot2docker
 #
 # boot2docker management utility
