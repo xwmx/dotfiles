@@ -15,7 +15,7 @@
 set -o nounset
 set -o errexit
 set -o pipefail
-IFS="$(printf '\n\t')"
+IFS=$'\n\t'
 
 ###############################################################################
 # Dependency / Platform Check
@@ -25,10 +25,12 @@ program_exists() {
   hash "$1" 2>/dev/null
 }
 
-if ! program_exists pbcopy;then
+if ! program_exists "pbcopy"
+then
   printf "pbcopy not found on this system.\n"
   exit 1
-elif ! program_exists pbpaste; then
+elif ! program_exists "pbpaste"
+then
   printf "pbpaste not found on this system\n"
   exit 1
 fi
@@ -78,9 +80,23 @@ _print_help() {
 # Program Functions
 ###############################################################################
 
+# _interactive_input()
+#
+# Usage:
+#   if _interactive_input; then ..
+#
+# Description:
+#   Check whether the current input is interactive (ie, a shell). If not, the
+#   assumption is to use stdin / piped input.
+_interactive_input() {
+  [[ -t 0 ]]
+}
+
 _pb() {
-  if [[ -t 0 ]]; then
-    if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]; then
+  if _interactive_input
+  then
+    if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]
+    then
       input="$1"
       options=(${@:1})
       printf "%s" "$input" | pbcopy "${options:-}"
@@ -110,7 +126,8 @@ _main() {
   if ( \
     [[ "$arg1" == "-h"     ]] ||
     [[ "$arg1" == "--help" ]]
-  ); then
+  )
+  then
     _print_help
   else
     _pb "$@"
