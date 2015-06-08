@@ -103,6 +103,15 @@ brew tap homebrew/python
 # https://github.com/Homebrew/homebrew-science
 brew tap homebrew/science
 
+# brew tap manastech-crystal
+#
+# Formulae for the Crystal Programming Language.
+#
+# https://github.com/manastech/homebrew-crystal
+# https://github.com/manastech/crystal
+# http://crystal-lang.org/
+brew tap manastech/crystal
+
 # homebrew-neovim
 #
 # Homebrew formula for neovim.

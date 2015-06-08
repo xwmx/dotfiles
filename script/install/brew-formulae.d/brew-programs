@@ -197,6 +197,27 @@ brew install coq
 # https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
 brew install cowsay
 
+# Crystal
+#
+# The Crystal Programming Language
+#
+# Crystal is a programming language with the following goals:
+# - Have the same syntax as Ruby, or at least as similar as possible.
+# - Statically type-checked but without having to specify the type of
+#   variables or method arguments.
+# - Be able to call C code by writing bindings to it in Crystal.
+# - Have compile-time evaluation and generation of code, to avoid boilerplate
+#   code.
+# - Compile to efficient native code.
+#
+# http://crystal-lang.org/
+# https://github.com/manastech/crystal
+#
+# Options:
+# --with-llvm
+#   Build with llvm support
+brew install manastech/crystal/crystal --with-llvm
+
 # ctags
 #
 # Ctags is a programming tool that generates an index (or tag) file of names
