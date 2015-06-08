@@ -33,7 +33,8 @@ About cowsay / cowthink:
   https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
 "
 _cowsay_CMD="$(which cowsay || true)"
-if ! _command_exists "${_cowsay_CMD}"; then
+if ! _command_exists "${_cowsay_CMD}"
+then
   desc "cowsay" <<EOM
 cowsay not installed.
 ${_cowsay_ABOUT}
@@ -47,10 +48,12 @@ ${_cowsay_ABOUT}
 EOM
 fi
 cowsay() {
-  if ! _command_exists "${_cowsay_CMD}"; then
+  if ! _command_exists "${_cowsay_CMD}"
+  then
     _die _print_desc "cowsay"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_cowsay_CMD}"
   else
     "${_cowsay_CMD}" "${@}"
@@ -60,7 +63,8 @@ cowsay() {
 # -------------------------------------------------------------------- cowthink
 
 _cowthink_CMD="$(which cowthink || true)"
-if ! _command_exists "${_cowthink_CMD}"; then
+if ! _command_exists "${_cowthink_CMD}"
+then
   desc "cowthink" <<EOM
 cowsay / cowthink not installed.
 ${_cowsay_ABOUT}
@@ -74,10 +78,12 @@ ${_cowsay_ABOUT}
 EOM
 fi
 cowthink() {
-  if ! _command_exists "${_cowthink_CMD}"; then
+  if ! _command_exists "${_cowthink_CMD}"
+  then
     _die _print_desc "cowthink"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_cowthink_CMD}"
   else
     "${_cowthink_CMD}" "${@}"
@@ -93,7 +99,8 @@ About Figlet:
   http://www.figlet.org/
 "
 _figlet_CMD="$(which figlet || true)"
-if ! _command_exists "${_figlet_CMD}"; then
+if ! _command_exists "${_figlet_CMD}"
+then
   desc "figlet" <<EOM
 figlet not installed.
 ${_figlet_ABOUT}
@@ -107,10 +114,12 @@ ${_figlet_ABOUT}
 EOM
 fi
 figlet() {
-  if ! _command_exists "${_figlet_CMD}"; then
+  if ! _command_exists "${_figlet_CMD}"
+  then
     _die _print_desc "figlet"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_figlet_CMD}"
   else
     "${_figlet_CMD}" "${@}"
@@ -120,7 +129,8 @@ figlet() {
 # ---------------------------------------------------------------------- figlist
 
 _figlist_CMD="$(which figlist || true)"
-if ! _command_exists "${_figlist_CMD}"; then
+if ! _command_exists "${_figlist_CMD}"
+then
   desc "figlist" <<EOM
 figlet not installed.
 ${_figlet_ABOUT}
@@ -136,10 +146,12 @@ ${_figlet_ABOUT}
 EOM
 fi
 figlist() {
-  if ! _command_exists "${_figlist_CMD}"; then
+  if ! _command_exists "${_figlist_CMD}"
+  then
     _die _print_desc "figlist"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_figlist_CMD}"
   else
     "${_figlist_CMD}" "${@}"
@@ -156,7 +168,8 @@ About jp2a:
   http://csl.sublevel3.org/jp2a/
 "
 _jp2a_CMD="$(which jp2a || true)"
-if ! _command_exists "${_jp2a_CMD}"; then
+if ! _command_exists "${_jp2a_CMD}"
+then
   desc "jp2a" <<EOM
 jp2a not installed.
 ${_jp2a_ABOUT}
@@ -169,10 +182,12 @@ ${_jp2a_ABOUT}
 EOM
 fi
 jp2a() {
-  if ! _command_exists "${_jp2a_CMD}"; then
+  if ! _command_exists "${_jp2a_CMD}"
+  then
     _die _print_desc "jp2a"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_jp2a_CMD}"
   else
     "${_jp2a_CMD}" "${@}"
@@ -205,7 +220,8 @@ About MPlayer:
     http://archive.oreilly.com/pub/h/4441
 "
 _mplayer_CMD="$(which mplayer || true)"
-if ! _command_exists "${_mplayer_CMD}"; then
+if ! _command_exists "${_mplayer_CMD}"
+then
   desc "mplayer" <<EOM
 MPlayer not installed.
 ${_mplayer_ABOUT}
@@ -226,10 +242,12 @@ ${_mplayer_ABOUT}
 EOM
 fi
 mplayer() {
-  if ! _command_exists  "${_mplayer_CMD}"; then
+  if ! _command_exists  "${_mplayer_CMD}"
+  then
     _die _print_desc "mplayer"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     _print_desc "mplayer"
   else
     "${_mplayer_CMD}" "${@}"
@@ -239,7 +257,8 @@ mplayer() {
 # ---------------------------------------------------------------- showfigfonts
 
 _showfigfonts_CMD="$(which showfigfonts || true)"
-if ! _command_exists "showfigfonts"; then
+if ! _command_exists "showfigfonts"
+then
   desc "showfigfonts" <<EOM
 figlet not installed.
 ${_figlet_ABOUT}
@@ -255,10 +274,12 @@ ${_figlet_ABOUT}
 EOM
 fi
 showfigfonts() {
-  if ! _command_exists  "${_showfigfonts_CMD}"; then
+  if ! _command_exists  "${_showfigfonts_CMD}"
+  then
     _die _print_desc "showfigfonts"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_showfigfonts_CMD}"
   else
     "${_showfigfonts_CMD}" "${@}"
@@ -281,7 +302,8 @@ About TOIlet:
   http://caca.zoy.org/wiki/toilet
 "
 _toilet_CMD="$(which toilet || true)"
-if ! _command_exists "${_toilet_CMD}"; then
+if ! _command_exists "${_toilet_CMD}"
+then
   desc "toilet" <<EOM
 TOIlet not installed.
 ${_toilet_ABOUT}
@@ -294,10 +316,12 @@ ${_toilet_ABOUT}
 EOM
 fi
 toilet() {
-  if ! _command_exists  "${_toilet_CMD}"; then
+  if ! _command_exists  "${_toilet_CMD}"
+  then
     _die _print_desc "toilet"
   fi
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]
+  then
     "${_toilet_CMD}"
   else
     "${_toilet_CMD}" "${@}"
