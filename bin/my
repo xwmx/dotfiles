@@ -55,40 +55,51 @@ ip() {
 
 desc "logins" <<EOM
 Usage:
-  $_ME logins [--history | --recent | --active]
+  $_ME logins [--who|--what|--recent|--history]
 
 Options:
-  --history  Include login history.
-
-Decription:
-  Display current system logins. By default only the currently active logins
-  are displayed. Using the '--history' option displays all historical logins.
+  --who      Display who is logged in using \`who -aH\`
+  --what     Display who is logged in and what they are doing using \`w\`
+  --recent   Indicate last 20 logins of users and ttys using \`last -20\`
+  --history  Indicate all historical logins of users and ttys using
+             \`last | tail -r\`
 
 Wrapped Commands:
-             (--active and --recent, with group formatting)
-  --active   last | grep --color=never 'still logged in'
+             (--who, --what, --recent, with group formatting)
+  --who      who -aH
+  --what     w
   --recent   last -20
   --history  last | tail -r
 EOM
 logins() {
-  if _command_argv_includes "--history"
+  if _command_argv_includes "--who"
+  then
+    who -aH
+  elif _command_argv_includes "--what"
+  then
+    w
+  elif _command_argv_includes "--history"
   then
     last | tail -r
   elif _command_argv_includes "--recent"
   then
     last -20
-  elif _command_argv_includes "--active"
-  then
-    last | grep --color=never 'still logged in'
   else
     printf "\
-Active:
-=======
+Who (who -aH):
+--------------------------------------------------------------------------
 "
-    $_ME logins --active
+    $_ME logins --who
     printf "\
-Recent:
-=======
+
+What (w):
+--------------------------------------------------------------------------
+"
+    $_ME logins --what
+    printf "\
+
+Recent (last -20):
+--------------------------------------------------------------------------
 "
     $_ME logins --recent
   fi
