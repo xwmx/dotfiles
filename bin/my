@@ -55,7 +55,7 @@ ip() {
 
 desc "logins" <<EOM
 Usage:
-  $_ME logins [--history]
+  $_ME logins [--history | --recent | --active]
 
 Options:
   --history  Include login history.
@@ -65,15 +65,32 @@ Decription:
   are displayed. Using the '--history' option displays all historical logins.
 
 Wrapped Commands:
-             last | head
-  --history  last
+             (--active and --recent, with group formatting)
+  --active   last | grep --color=never 'still logged in'
+  --recent   last -20
+  --history  last | tail -r
 EOM
 logins() {
   if _command_argv_includes "--history"
   then
-    last
+    last | tail -r
+  elif _command_argv_includes "--recent"
+  then
+    last -20
+  elif _command_argv_includes "--active"
+  then
+    last | grep --color=never 'still logged in'
   else
-    last | head
+    printf "\
+Active:
+=======
+"
+    $_ME logins --active
+    printf "\
+Recent:
+=======
+"
+    $_ME logins --recent
   fi
 }
 
