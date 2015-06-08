@@ -71,20 +71,7 @@ Wrapped Commands:
   --recent   last -20
   --history  last | tail -r
 EOM
-logins() {
-  if _command_argv_includes "--who"
-  then
-    who -aH
-  elif _command_argv_includes "--what"
-  then
-    w
-  elif _command_argv_includes "--history"
-  then
-    last | tail -r
-  elif _command_argv_includes "--recent"
-  then
-    last -20
-  else
+_default_logins_groups() {
     printf "\
 Who (who -aH):
 --------------------------------------------------------------------------
@@ -102,6 +89,27 @@ Recent (last -20):
 --------------------------------------------------------------------------
 "
     $_ME logins --recent
+}
+logins() {
+  if _command_argv_includes "--who"
+  then
+    who -aH
+  elif _command_argv_includes "--what"
+  then
+    w
+  elif _command_argv_includes "--history"
+  then
+    last | tail -r
+  elif _command_argv_includes "--recent"
+  then
+    last -20
+  else
+    if _command_exists "ccat"
+    then
+      _default_logins_groups | ccat
+    else
+      _default_logins_groups
+    fi
   fi
 }
 
