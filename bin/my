@@ -8,6 +8,18 @@
 
 source "$(which bask)"
 
+desc "HELP_HEADER" <<EOM
+ _ __ ___  _   _
+| '_ \` _ \\\| | | |
+| | | | | | |_| |
+|_| |_| |_|\\\__, |  _____
+           |___/  |_____|
+
+my
+
+Shortcuts for local system information commands.
+EOM
+
 # ------------------------------------------------------------------------- ip
 
 desc "ip" <<EOM
