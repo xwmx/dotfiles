@@ -70,6 +70,14 @@ gem install git-up
 # https://github.com/ileitch/hijack
 gem install hijack
 
+# iStats
+#
+# iStats is a command-line tool that allows you to easily grab the CPU
+# temperature, fan speeds and battery information on OS X.
+#
+# https://github.com/Chris911/iStats
+gem install iStats
+
 # jekyll
 #
 # Jekyll is a simple, blog-aware, static site generator perfect for personal,
