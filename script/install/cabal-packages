@@ -11,7 +11,7 @@
 
 # Run the generate_config.sh script to generate a new config file based on
 # .cabal/config.template
-"$DOTFILES"/home/.cabal/generate_config.sh
+"$DOTFILES/home/.cabal/generate_config.sh"
 
 ###############################################################################
 # Update

@@ -19,7 +19,8 @@
 
 export PREFIX="$HOME/.bpkg"
 
-if [[ ! -e "$PREFIX" ]]; then
+if [[ ! -e "$PREFIX" ]]
+then
   mkdir -p "$PREFIX"
 fi
 

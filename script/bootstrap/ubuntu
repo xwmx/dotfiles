@@ -8,7 +8,8 @@
 ###############################################################################
 
 # Skip unless ubuntu
-if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
+if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]
+then
   printf "Ubuntu bootstrapping is only supported on Ubuntu.\nSkipping...\n"
   exit 0
 fi
@@ -28,7 +29,8 @@ export BINDLEPATH="${HOME}/.dotfiles"
 
 "${BINDLEPATH}/script/install/apt-packages"
 
-if [[ ! -e "${HOME}/bin" ]]; then
+if [[ ! -e "${HOME}/bin" ]]
+then
   mkdir "${HOME}/bin"
 fi
 

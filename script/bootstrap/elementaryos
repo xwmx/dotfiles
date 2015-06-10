@@ -8,7 +8,8 @@
 ###############################################################################
 
 # Skip unless ubuntu
-if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ elementary ]]; then
+if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ elementary ]]
+then
   printf "\
 Elementary OS bootstrapping not supported on this system.
 Skipping...
@@ -31,7 +32,8 @@ export BINDLEPATH="${HOME}/.dotfiles"
 
 "${BINDLEPATH}/script/install/apt-packages"
 
-if [[ ! -e "${HOME}/bin" ]]; then
+if [[ ! -e "${HOME}/bin" ]]
+then
   mkdir "${HOME}/bin"
 fi
 
@@ -48,4 +50,3 @@ cp "${HOME}/.ssh/*" "${HOME}/.dotfiles/home/.ssh/" && \
 sudo chsh -s "$(which zsh)" "$(whoami)"
 
 "$(which zsh)" --login
-

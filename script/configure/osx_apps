@@ -10,7 +10,8 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "osx_apps.sh is only supported on OS X.\nSkipping...\n"
   exit 0
 fi
@@ -23,7 +24,6 @@ fi
 # Notes: spotlight apparently doesn't index symlinks properly, so an alias is
 # required in order to get it picked up properly.
 make_alias "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications"
-
 
 ###############################################################################
 # iTerm2
@@ -38,5 +38,3 @@ make_alias "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulato
 # Revert command:
 # defaults delete com.googlecode.iterm2 AlternateMouseScroll
 defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
-
-

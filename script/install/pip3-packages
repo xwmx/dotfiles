@@ -19,7 +19,8 @@ pip3 install --upgrade pip
 # Upgrading pip with pip3 makes `pip` default to pip3 rather than pip2.
 # Running another upgrade using pip2 sets it back to pip2. Also checking for
 # the presence of the pip2 command before running the pip2 upgrade.
-if ( hash pip2 2>/dev/null ); then
+if hash pip2 2>/dev/null
+then
   pip2 install --upgrade pip
 fi
 

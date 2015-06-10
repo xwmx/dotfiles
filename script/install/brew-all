@@ -9,7 +9,8 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "brew-all is only supported on OS X\nSkipping...\n"
   exit 0
 fi
@@ -23,9 +24,11 @@ fi
 # This is a more explicit derivative of the following:
 # http://stackoverflow.com/a/246128
 DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+if [[ ! -d "$DIR" ]]
+then
+  DIR="$PWD"
+fi
 
 # Source primary install scripts for Homebrew and Homewbrew Cask.
 . "$DIR/brew-formulae"
 . "$DIR/brew-casks"
-

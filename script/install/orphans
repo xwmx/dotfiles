@@ -30,7 +30,8 @@ _is_installed_with_homebrew() {
 # Usage:
 #   _remove /path/to/a/file/or/directory/
 _remove() {
-  if [[ -f "$(which trash)" ]]; then
+  if [[ -f "$(which trash)" ]]
+  then
     trash "$1"
   else
     rm -rf "$1"
@@ -65,7 +66,8 @@ alcatraz() {
   local _install_location
   _dev_shared_path="${HOME}/Library/Application Support/Developer/Shared"
   _install_location="${_dev_shared_path}/Xcode/Plug-ins/Alcatraz.xcplugin"
-  if [[ -e "$_install_location" ]]; then
+  if [[ -e "$_install_location" ]]
+  then
     printf "alcatraz is already installed.\n" && exit 0
   fi
   printf ">> Installing alcatraz\n"
@@ -97,7 +99,8 @@ alcatraz_uninstall() {
   printf ">> Uninstalling alcatraz...\n"
   [[ -e "$_install_location" ]] && _remove "$_install_location"
 
-  if _command_argv_includes "--remove-packages"; then
+  if _command_argv_includes "--remove-packages"
+  then
   printf ">> Removing alcatraz packages...\n"
     [[ -e "$_packages_path" ]] && _remove "$_packages_path"
   fi
@@ -117,7 +120,8 @@ Description:
 EOM
 bish() {
   # Don't install if already installed.
-  if [[ -f "$HOME/bin/bish" ]]; then
+  if [[ -f "$HOME/bin/bish" ]]
+  then
     printf "bish already installed.\n" && exit 0
   fi
 
@@ -168,15 +172,18 @@ Description:
 EOM
 exa() {
   # Don't install if exa is already installed.
-  if [[ -f "$HOME/bin/exa" ]]; then
+  if [[ -f "$HOME/bin/exa" ]]
+  then
     printf "exa already installed.\n" && exit 0
   fi
   # Make sure cmake is installed
-  if [[ ! -f "$(which cmake)" ]]; then
+  if [[ ! -f "$(which cmake)" ]]
+  then
     printf "Install cmake dependency.\n" && exit 0
   fi
   # Make sure libgit2 is installed.
-  if ! ( _is_installed_with_homebrew "libgit2" ); then
+  if ! _is_installed_with_homebrew "libgit2"
+  then
     printf "Install libgit2 dependency.\n" && exit 0
   fi
 
@@ -225,7 +232,8 @@ Description:
 EOM
 iota() {
   # Don't install if already installed.
-  if [[ -f "$HOME/bin/iota" ]]; then
+  if [[ -f "$HOME/bin/iota" ]]
+  then
     printf "iota already installed.\n" && exit 0
   fi
 
@@ -276,7 +284,8 @@ Description:
   https://install.meteor.com/
 EOM
 meteor() {
-  if [[ -f "/usr/local/bin/meteor" ]]; then
+  if [[ -f "/usr/local/bin/meteor" ]]
+  then
     printf "meteor is already installed.\n" && exit 0
   fi
   printf ">> Installing meteor\n"
@@ -310,7 +319,8 @@ EOM
 neovim_dot_app() {
   local install_location="$HOME/Applications/NeoVim.app"
 
-  if [[ -f "$install_location" ]]; then
+  if [[ -f "$install_location" ]]
+  then
     printf "neovim-dot-app is already installed.\n" && exit 0
   fi
 
@@ -360,7 +370,8 @@ Description:
 EOM
 rosetta() {
   # Don't install if already installed.
-  if [[ -n "$(pip show rosetta)" ]]; then
+  if [[ -n "$(pip show rosetta)" ]]
+  then
     printf "Rosetta is already installed.\n" && exit 0
   fi
 
@@ -382,7 +393,8 @@ EOM
 rosetta_uninstall() {
   printf ">> Uninstalling rosetta\n"
   local tmp_location="/tmp/orphans/rosetta"
-  if [[ -n "$(pip show rosetta)" ]]; then
+  if [[ -n "$(pip show rosetta)" ]]
+  then
     pip uninstall rosetta -y
   fi
   [[ -e "$tmp_location" ]] && _remove "$tmp_location"
@@ -405,7 +417,8 @@ Description:
 EOM
 rtop() {
   # Don't install if already installed.
-  if [[ -e "$HOME/bin/rtop" ]]; then
+  if [[ -e "$HOME/bin/rtop" ]]
+  then
     printf "rtop is already installed.\n" && exit 0
   fi
 
@@ -452,7 +465,8 @@ Description:
 EOM
 xsv() {
   # Don't install if already installed.
-  if [[ -f "$HOME/bin/xsv" ]]; then
+  if [[ -f "$HOME/bin/xsv" ]]
+  then
     printf "xsv already installed.\n" && exit 0
   fi
 
@@ -499,10 +513,12 @@ Description:
 EOM
 zindex() {
   # Don't install if already installed.
-  if [[ -f "$HOME/bin/zindex" ]]; then
+  if [[ -f "$HOME/bin/zindex" ]]
+  then
     printf "zindex (zindex) already installed.\n" && exit 0
   fi
-  if [[ -f "$HOME/bin/zq" ]]; then
+  if [[ -f "$HOME/bin/zq" ]]
+  then
     printf "zindex (zq) already installed.\n" && exit 0
   fi
 
@@ -541,10 +557,10 @@ zindex_uninstall() {
 #
 # Limit to OS X, which is the primary platform for this configuration at the
 # moment.
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "orphans is only supported on OS X\nSkipping...\n"
   exit 0
 fi
-
 
 _main

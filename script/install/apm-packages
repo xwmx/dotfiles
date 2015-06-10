@@ -13,7 +13,8 @@
 _apm=$(which apm)
 
 # If the apm command is not found, exit.
-if [[ ! -e "${_apm}" ]]; then
+if [[ ! -e "${_apm}" ]]
+then
   printf "apm not found. Skipping...\n" && exit 0
 fi
 
@@ -23,11 +24,13 @@ fi
 # to keep the apm install entries in case I want to remove this function, since
 # it's not totally necessary and just speeds things up a bit.
 apm() {
-  if [[ "${1:-}" == "install" ]]; then
+  if [[ "${1:-}" == "install" ]]
+  then
     local local_entry
     local_entry=$(apm ls | grep "${2:-}")
     printf "%s\n" "$local_entry"
-    if [[ -z ${local_entry} ]]; then
+    if [[ -z ${local_entry} ]]
+    then
       "$_apm" install "${2}"
     fi
   else

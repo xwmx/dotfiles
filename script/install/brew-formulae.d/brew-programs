@@ -8,7 +8,8 @@
 ###############################################################################
 
 # Skip unless OS X
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "brew-programs is only supported on OS X\nSkipping...\n"
   exit 0
 fi
@@ -103,12 +104,14 @@ brew install bats
 # https://github.com/boot2docker/boot2docker-cli
 brew install boot2docker
 # - Post-install for boot2docker LaunchAgent
-# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]; then
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]
+# then
 #   ln -sfv /usr/local/opt/boot2docker/*.plist "$HOME/Library/LaunchAgents"
 #   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
 # fi
 # - Post-install for disabled boot2docker LaunchAgent
-if [[ -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]; then
+if [[ -e "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist" ]]
+then
   launchctl unload "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
   rm "$HOME/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist"
 fi
@@ -720,7 +723,8 @@ brew install lnav
 # http://luarocks.org
 #
 # Remove existing outdated luarocks formula installation if present.
-if _homebrew_formula_is_installed "luarocks"; then
+if _homebrew_formula_is_installed "luarocks"
+then
   brew uninstall luarocks
 fi
 brew install lua
@@ -1110,20 +1114,24 @@ brew install pow
 # pow post-install
 #
 # Create the required host directories:
-if [[ ! -d "$HOME/Library/Application Support/Pow/Hosts" ]]; then
+if [[ ! -d "$HOME/Library/Application Support/Pow/Hosts" ]]
+then
   mkdir -p "$HOME/Library/Application Support/Pow/Hosts"
-  if [[ ! -e "$HOME/.pow" ]]; then
+  if [[ ! -e "$HOME/.pow" ]]
+  then
     ln -s "$HOME/Library/Application Support/Pow/Hosts" "$HOME/.pow"
   fi
 fi
 # Setup and launch port 80 forwarding and launchd agents
 if ! ( [[ -e "/Library/LaunchDaemons/cx.pow.firewall.plist" ]] || \
        [[ -e "/etc/resolver/dev" ]]
-  ); then
+  )
+  then
   sudo pow --install-system
   sudo launchctl load -w "/Library/LaunchDaemons/cx.pow.firewall.plist"
 fi
-if [[ ! -e "$HOME/Library/LaunchAgents/cx.pow.powd.plist" ]]; then
+if [[ ! -e "$HOME/Library/LaunchAgents/cx.pow.powd.plist" ]]
+then
   pow --install-local
   launchctl load -w "$HOME/Library/LaunchAgents/cx.pow.powd.plist"
 fi
@@ -1341,12 +1349,14 @@ brew install syncthing
 # adding new disabling commands.
 #
 # - Post-install for enabled syncthing:
-# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]; then
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+# then
 #   ln -sfv /usr/local/opt/syncthing/*.plist "$HOME/Library/LaunchAgents"
 #   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
 # fi
 # - Post-install for disabled syncthing:
-if [[ -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]; then
+if [[ -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+then
   launchctl unload "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
   rm "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
 fi
@@ -1578,4 +1588,3 @@ brew install zeromq
 #
 # https://code.google.com/p/zopfli/
 brew install zopfli
-

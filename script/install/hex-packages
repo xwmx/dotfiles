@@ -47,7 +47,8 @@ _mix_has_archived() {
 # Hex Install
 ###############################################################################
 
-if ! _mix_has_archived "hex.ez"; then
+if ! _mix_has_archived "hex.ez"
+then
   mix local.hex
 fi
 

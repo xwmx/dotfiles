@@ -9,7 +9,8 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "brew-ctf-tools is only supported on OS X\nSkipping...\n"
   exit 0
 fi

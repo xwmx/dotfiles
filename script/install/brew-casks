@@ -12,7 +12,8 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "brew-casks is only supported on OS X\nSkipping...\n"
   exit 0
 fi
@@ -978,4 +979,3 @@ brew cask cleanup
 ###############################################################################
 
 brew cask aliasapps
-

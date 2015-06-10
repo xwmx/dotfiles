@@ -9,7 +9,8 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "sublime-text-3 is only supported on OS X.\nSkipping...\n"
   exit 0
 fi
@@ -22,18 +23,22 @@ link_config() {
   local osx_prefs_path="${HOME}/Library/Application Support/Sublime Text 3"
   local config_path="${HOME}/.config/sublime-text-3"
 
-  if [[ ! -e "${config_path}" ]]; then
+  if [[ ! -e "${config_path}" ]]
+  then
     printf "%s not found. Skipping...\n" "${config_path}"
     exit 0
   fi
 
-  if [[ -L "$osx_prefs_path" ]]; then
+  if [[ -L "$osx_prefs_path" ]]
+  then
     printf "%s is already a link. Skipping...\n" "${osx_prefs_path}"
     exit 0
-  elif [[ ! -d "${osx_prefs_path}" ]]; then
+  elif [[ ! -d "${osx_prefs_path}" ]]
+  then
     printf "%s is not a directory. Skipping...\n" "${osx_prefs_path}"
     exit 0
-  elif [[ -e "${osx_prefs_path}.bak" ]]; then
+  elif [[ -e "${osx_prefs_path}.bak" ]]
+  then
     printf "%s.bak exists. Manually remove it to proceed. Skipping...\n" \
       "${osx_prefs_path}"
   else

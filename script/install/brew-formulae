@@ -11,7 +11,8 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   printf "brew-formulae is only supported on OS X\nSkipping...\n"
   exit 0
 fi
@@ -200,10 +201,11 @@ brew install bash-completion
 
 # Load all files in brew-formulae.d if it exists.
 brewformulaed="$DOTFILES/script/install/brew-formulae.d"
-if [ -e "$brewformulaed" ]; then
+if [[ -e "$brewformulaed" ]]
+then
   for f in "$brewformulaed"/*
-    do
-      source "$f"
+  do
+    source "$f"
   done
 fi
 

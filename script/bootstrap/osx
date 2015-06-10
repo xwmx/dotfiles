@@ -8,7 +8,8 @@
 ###############################################################################
 
 # Skip unless OS X
-if [[ ! "${OSTYPE}" =~ ^darwin ]]; then
+if [[ ! "${OSTYPE}" =~ ^darwin ]]
+then
   printf "OS X bootstrapping is only supported on OS X\nSkipping...\n"
   exit 0
 fi
@@ -17,7 +18,8 @@ fi
 # Bootstrap
 ###############################################################################
 
-if [[ ! -e "${HOME}/bin" ]]; then
+if [[ ! -e "${HOME}/bin" ]]
+then
   mkdir "${HOME}/bin"
 fi
 
