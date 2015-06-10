@@ -197,6 +197,13 @@ brew install coq
 # https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
 brew install cowsay
 
+# cputhrottle
+#
+# Limit the CPU usage of a process
+#
+# http://www.willnolan.com/cputhrottle/cputhrottle.html
+brew install cputhrottle
+
 # Crystal
 #
 # The Crystal Programming Language
