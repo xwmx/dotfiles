@@ -847,6 +847,19 @@ brew cask install textadept
 # http://www.mozilla.org/en-US/thunderbird/
 brew cask install thunderbird
 
+# TimeMachineScheduler
+#
+# Set the backup interval of Time Machine from 1 to 12 hours
+#
+# TimeMachineScheduler disables the automatic backup function of Time Machine
+# (the big slider) and installs its own launchd daemon. As the daemon is
+# located in the main library, the administrator password is required for all
+# (writing) operations. Except disabling Time Machine no further system files
+# and preferences will be touched by TimeMachineScheduler.
+#
+# http://www.klieme.com/TimeMachineScheduler.html
+brew cask install timemachinescheduler
+
 # Twine
 #
 # Twine is an open-source tool for telling interactive, nonlinear stories. You
