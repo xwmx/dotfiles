@@ -10,12 +10,14 @@
 ###############################################################################
 
 # Load environment if it hasn't already been.
-if [[ ! $SHARED_ENV_LOADED == true ]]; then
+if [[ ! $SHARED_ENV_LOADED == true ]]
+then
   source "$HOME/.shared_env"
 fi
 
 # load .zshenv.local if it exists
-if [ -f "$HOME/.zshenv.local" ]; then
+if [[ -f "$HOME/.zshenv.local" ]]
+then
   source "$HOME/.zshenv.local"
 fi
 
