@@ -15,6 +15,13 @@ then
   source "$HOME/.shared_env"
 fi
 
+# Source everything in .zshenv.d if it's present. `init_src` is defined in
+# $HOME/.shared_env
+if [[ -d "$HOME/.zshenv.d" ]]
+then
+  init_src .zshenv.d
+fi
+
 # load .zshenv.local if it exists
 if [[ -f "$HOME/.zshenv.local" ]]
 then
