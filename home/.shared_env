@@ -40,10 +40,12 @@ program_exists() {
 }
 
 test_program_exists() {
-  if ! program_exists not_a_real_program ; then
+  if ! program_exists "not_a_real_program"
+  then
     echo "test_program_exists Passed"
   fi
-  if program_exists bash ; then
+  if program_exists "bash"
+  then
     echo "test_program_exists Passed"
   fi
 
@@ -53,10 +55,13 @@ test_program_exists() {
 # specified directory.
 init_src() {
   local file
-  if [ -n "$2" ]; then
+  if [ -n "$2" ]
+  then
     source "$HOME/$1/$2"
-  elif [ -n "$1" ]; then
-    for file in $HOME/$1/*; do
+  elif [ -n "$1" ]
+  then
+    for file in "$HOME/$1"/*
+    do
       source "$file"
     done
   else
@@ -70,7 +75,8 @@ init_src() {
 ###############################################################################
 
 # Set DOTFILES directory
-if program_exists "bindle"; then
+if program_exists "bindle"
+then
   export DOTFILES="$(bindle dir)"
 else
   export DOTFILES="$HOME/.dotfiles"
@@ -80,10 +86,10 @@ fi
 init_src .shared_env.d
 
 # load shared_env.local if it exists
-if [ -f $HOME/.shared_env.local ]; then
-  source $HOME/.shared_env.local
+if [ -f "$HOME/.shared_env.local" ]
+then
+  source "$HOME/.shared_env.local"
 fi
 
 
 SHARED_ENV_LOADED=true
-
