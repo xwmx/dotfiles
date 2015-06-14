@@ -434,6 +434,23 @@ brew cask install inkscape
 # http://www.iterm2.com/
 brew cask install iterm2-nightly
 
+# Java
+#
+# Java Standard Edition Development Kit
+#
+# http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+#
+# Caveats:
+#
+# This Cask makes minor modifications to the JRE to prevent issues with
+# packaged applications, as discussed here:
+#
+#  https://bugs.eclipse.org/bugs/show_bug.cgi?id=411361
+#
+# If your Java application still asks for JRE installation, you might need
+# to reboot or logout/login.
+brew cask install java
+
 # KindleGen
 #
 # KindleGen is a command line tool which enables publishers to work in an
