@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+###############################################################################
+# screencast - a bask script
+#
+# Get bask:
+#   https://github.com/alphabetum/bask
+#
+# Add this script and the bask program to your $PATH.
+#
+# For usage information, run:
+#   screencast help
+###############################################################################
+
+source "$(which bask)"
+
+desc "HELP_HEADER" <<EOM
+                                            _
+ ___  ___ _ __ ___  ___ _ __   ___ __ _ ___| |_
+/ __|/ __| '__/ _ \\\/ _ \\\ '_ \\\ / __/ _\` / __| __|
+\\\__ \\\ (__| | |  __/  __/ | | | (_| (_| \\\__ \\\ |_
+|___/\\\___|_|  \\\___|\\\___|_| |_|\\\___\\\__,_|___/\\\__|
+
+Record video and gif screencasts.
+EOM
+
+desc "video" <<EOM
+Usage:
+  $_ME screencast
+
+Record a long silent video screencast.
+EOM
+video() {
+  if hash avconv 2> /dev/null
+  then
+    # via https://github.com/amontalenti/home/blob/master/.bash_aliases#L34
+    avconv \
+      -v warning \
+      -f x11grab \
+      -s 1360x768 \
+      -r 30 \
+      -i :0.0 \
+      -s 1366x768 \
+      -vcodec libx264 \
+      -threads 0 \
+      screencast.mp4
+  else
+    printf "\
+\`avconv\` not found. Install with:
+  apt-get install libav-tools -y
+"
+    exit 1
+  fi
+}
+
+desc "gif" <<EOM
+Usage:
+  $_ME gifcast
+
+Record a 30 second gif screencast using byzanz.
+  https://github.com/GNOME/byzanz
+EOM
+gif() {
+  if hash byzanz 2> /dev/null
+  then
+    # via https://github.com/amontalenti/home/blob/master/.bash_aliases#L36
+    byzanz-record \
+      -v \
+      -c \
+      -d 30 \
+      --delay 5 \
+      screencast.gif
+  else
+    printf "\
+\`byzanz\` not installed. Install with:
+  apt-get install byzanz -y
+
+See also: https://github.com/GNOME/byzanz\n"
+    exit 1
+  fi
+}
+
+_init

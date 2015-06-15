@@ -413,68 +413,6 @@ getcertnames() {
   fi
 }
 
-# Screencasts -----------------------------------------------------------------
-
-# These two functions only work on Ubuntu in this configuration.
-if is_ubuntu; then
-
-  # screencast()
-  #
-  # Usage:
-  #   screencast
-  #
-  # Record a long silent video screencast.
-  screencast() {
-    if hash avconv 2> /dev/null; then
-      # via https://github.com/amontalenti/home/blob/master/.bash_aliases#L34
-      avconv \
-        -v warning \
-        -f x11grab \
-        -s 1360x768 \
-        -r 30 \
-        -i :0.0 \
-        -s 1366x768 \
-        -vcodec libx264 \
-        -threads 0 \
-        screencast.mp4
-    else
-      printf "\
-\`avconv\` not found. Install with:
-  apt-get install libav-tools -y
-"
-      exit 1
-    fi
-  }
-
-  # gifcast()
-  #
-  # Usage:
-  #   gifcast
-  #
-  # Record a 30 second gif screencast using byzanz.
-  #
-  # https://github.com/GNOME/byzanz
-  gifcast() {
-    if hash byzanz 2> /dev/null; then
-      # via https://github.com/amontalenti/home/blob/master/.bash_aliases#L36
-      byzanz-record \
-        -v \
-        -c \
-        -d 30 \
-        --delay 5 \
-        screencast.gif
-    else
-      printf "\
-\`byzanz\` not installed. Install with:
-  apt-get install byzanz -y
-
-See also: https://github.com/GNOME/byzanz\n"
-      exit 1
-    fi
-  }
-
-fi
-
 # Shell -----------------------------------------------------------------------
 
 # Reload the shell (i.e. invoke as a login shell)
