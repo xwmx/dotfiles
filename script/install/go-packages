@@ -171,6 +171,18 @@ go get -u -v golang.org/x/tools/cmd/oracle
 # https://github.com/fogleman/pt
 go get -u -v github.com/fogleman/pt/pt
 
+# rtop
+#
+# rtop is an interactive, remote system monitoring tool based on SSH
+#
+# rtop is a remote system monitor. It connects over SSH to a remote system and
+# displays vital system metrics (CPU, disk, memory, network). No special
+# software is needed on the remote system, other than an SSH server and
+# working credentials.
+#
+# https://github.com/rapidloop/rtop
+go get -u -v github.com/rapidloop/rtop
+
 # stack
 #
 # Minimalist provisioning tool written in Go.
