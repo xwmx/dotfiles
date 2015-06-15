@@ -197,3 +197,6 @@
 [submodule "vendor/com/github/chadbraunduin/markdown.bash"]
 	path = vendor/com/github/chadbraunduin/markdown.bash
 	url = https://github.com/chadbraunduin/markdown.bash.git
+[submodule "vendor/com/github/alphabetum/orphans"]
+	path = vendor/com/github/alphabetum/orphans
+	url = https://github.com/alphabetum/orphans.git
