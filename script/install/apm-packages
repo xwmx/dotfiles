@@ -233,13 +233,6 @@ apm install monokai
 # https://github.com/casesandberg/next-dark-ui
 apm install next-dark-ui
 
-# resize-panes
-#
-# Resize panes by enlarging or shrinking them
-#
-# https://github.com/santip/resize-panes
-apm install resize-panes
-
 # select-rectangle
 #
 # Select rectangle region.
