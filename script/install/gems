@@ -14,6 +14,15 @@
 # https://github.com/hybridgroup/artoo
 gem install artoo
 
+# CocoaPods
+#
+# CocoaPods is the dependency manager for Swift and Objective-C Cocoa projects.
+# It has almost ten thousand libraries and can help you scale your projects
+# elegantly.
+#
+# https://cocoapods.org/
+gem install cocoapods
+
 # contracts.ruby
 #
 # contracts.ruby brings code contracts to the Ruby language. Code contracts
