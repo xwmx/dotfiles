@@ -44,68 +44,6 @@ _remove() {
 
 # Install / Uninstall #########################################################
 
-# -------------------------------------------------------------------- alcatraz
-
-desc "alcatraz" <<EOM
-Usage:
-  $_ME alcatraz
-
-Description:
-  The package manager for Xcode.
-
-  Alcatraz is an open-source package manager for Xcode. It lets you discover
-  and install plugins, templates and color schemes without the need for
-  manually cloning or copying files. It installs itself as a part of Xcode and
-  it feels like home.
-
-  http://alcatraz.io/
-  https://github.com/supermarin/Alcatraz
-EOM
-alcatraz() {
-  local _dev_shared_path
-  local _install_location
-  _dev_shared_path="${HOME}/Library/Application Support/Developer/Shared"
-  _install_location="${_dev_shared_path}/Xcode/Plug-ins/Alcatraz.xcplugin"
-  if [[ -e "$_install_location" ]]
-  then
-    printf "alcatraz is already installed.\n" && exit 0
-  fi
-  printf ">> Installing alcatraz\n"
-  curl \
-    -fsSL \
-    https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
-}
-
-desc "alcatraz_uninstall" <<EOM
-Usage:
-  $_ME alcatraz_uninstall [--remove-packages]
-
-Options:
-  --remove-packages  Remove packages
-
-Description:
-  Uninstall alcatraz.
-EOM
-alcatraz_uninstall() {
-  local _dev_shared_path
-  local _install_location
-  local _packages_path
-
-  _dev_shared_path="${HOME}/Library/Application Support/Developer/Shared"
-  _install_location="${_dev_shared_path}/Xcode/Plug-ins/Alcatraz.xcplugin"
-
-  _packages_path="${HOME}/Library/Application Support/Alcatraz/"
-
-  printf ">> Uninstalling alcatraz...\n"
-  [[ -e "$_install_location" ]] && _remove "$_install_location"
-
-  if _command_argv_includes "--remove-packages"
-  then
-  printf ">> Removing alcatraz packages...\n"
-    [[ -e "$_packages_path" ]] && _remove "$_packages_path"
-  fi
-}
-
 # ------------------------------------------------------------------------- exa
 
 desc "exa" <<EOM
