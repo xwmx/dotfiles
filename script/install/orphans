@@ -1,63 +1,18 @@
 #!/usr/bin/env bash
 #########################################################################
-# orphans - a bask extension script
+# orphans
 #
-# Add this script and bask to your $PATH. For usage information, run:
-# orphans help
+# Install various orphans.
 #########################################################################
 
-source "$(which bask)"
+# View descriptions with `orphans help <script:up>`
 
-###############################################################################
-# Utility Functions
-###############################################################################
-
-# _is_installed_with_homebrew()
-#
-# Determine if a Homebrew formula is installed.
-#
-# Usage:
-#   _is_installed_with_homebrew "libgit2"
-_is_installed_with_homebrew() {
-  brew list -1 | grep -q "^${1}\$"
-}
-
-# _remove()
-#
-# If a `trash` command is present in the environment, use that to remove the
-# provided path, otherwise, use rm -rf
-#
-# Usage:
-#   _remove /path/to/a/file/or/directory/
-_remove() {
-  if [[ -f "$(which trash)" ]]
-  then
-    trash "$1"
-  else
-    rm -rf "$1"
-  fi
-}
-
-###############################################################################
-# Commands
-###############################################################################
-
-# Install / Uninstall #########################################################
-
-# ------------------------------------------------------------------------- exa
-
-###############################################################################
-# Run Program
-###############################################################################
-
-# Platform Check
-#
-# Limit to OS X, which is the primary platform for this configuration at the
-# moment.
-if [[ ! "$OSTYPE" =~ ^darwin ]]
-then
-  printf "orphans is only supported on OS X\nSkipping...\n"
-  exit 0
-fi
-
-_main
+# orphans alcatraz:up
+orphans bish:up
+orphans exa:up
+orphans iota:up
+orphans meteor:up
+orphans neovim_dot_app:up
+orphans rosetta:up
+orphans xsv:up
+orphans zindex:up
