@@ -3,6 +3,16 @@
 #
 # config for non-interactive and interactive instances. Zsh loads this after
 # .zshenv and before .zshrc
+#
+# zsh startup sequence:
+#
+# .zshenv
+# >> .zprofile
+# .zshrc
+# .zlogin
+# .zlogout
+#
+# http://zsh.sourceforge.net/Intro/intro_3.html
 ###############################################################################
 
 ###############################################################################
