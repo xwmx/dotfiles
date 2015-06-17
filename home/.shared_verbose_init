@@ -1,0 +1,40 @@
+###############################################################################
+# .shared_verbose_init
+#
+# Provides a function for debugging initialization. The first time this file
+# is sourced, the `__verbose_init` function is set up, and the value for the
+# `$__VERBOSE_INIT` environment variable is set if it hasn't been already.
+###############################################################################
+
+if [ -z $__VERBOSE_INIT_LOADED ]
+then
+  if [ -z $__VERBOSE_INIT ]
+  then
+    ###########################################################################
+    # Set this value to true in order to trigger `__verbose_init` statements.
+    ###########################################################################
+    __VERBOSE_INIT=false
+  fi
+
+  __SET_TPUT_NORMAL=$(tput sgr0)
+  __SET_TPUT_RED=$(tput setaf 1)
+  __SET_TPUT_GREEN=$(tput setaf 2; tput bold)
+  __SET_TPUT_YELLOW=$(tput setaf 3)
+  __SET_TPUT_BLUE=$(tput setaf 4)
+  __SET_TPUT_MAGENTA=$(tput setaf 5)
+  __SET_TPUT_CYAN=$(tput setaf 6)
+  __SET_TPUT_WHITE=$(tput setaf 7)
+
+  __verbose_init() {
+    if [ $__VERBOSE_INIT = true ]
+    then
+      printf "%s" "$__SET_TPUT_GREEN"
+      printf "🐛  >> "
+      "$@"
+      printf "%s" "$__SET_TPUT_NORMAL"
+    fi
+  }
+  __verbose_init printf "Loading .shared_verbose_init\n"
+fi
+
+__VERBOSE_INIT_LOADED=true

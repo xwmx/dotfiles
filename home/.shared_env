@@ -12,6 +12,13 @@
 ###############################################################################
 
 ###############################################################################
+# Verbose Init
+###############################################################################
+
+. "$HOME/.shared_verbose_init"
+__verbose_init printf "Loading .shared_env\n"
+
+###############################################################################
 # Utility Functions
 #
 # Note: these functions must be included prior to the .profile.d or .bashrc.d
@@ -62,7 +69,10 @@ init_src() {
   then
     for file in "$HOME/$1"/*
     do
-      source "$file"
+      if [ -f "$file" ]
+      then
+        source "$file"
+      fi
     done
   else
     echo "Please specify directory to be sourced."

@@ -1,8 +1,8 @@
 ###############################################################################
-# .bash_profile
+# .zprofile
 #
-# More info about OS X shell startup:
-# http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
+# config for non-interactive and interactive instances. Zsh loads this after
+# .zshenv and before .zshrc
 ###############################################################################
 
 ###############################################################################
@@ -10,18 +10,21 @@
 ###############################################################################
 
 . "$HOME/.shared_verbose_init"
-__verbose_init printf "Loading .bash_profile\n"
+__verbose_init printf "Loading .zprofile\n"
 
 ###############################################################################
-# Source .bashrc
+# Init
 ###############################################################################
 
-# .bashrc is the preferred loaction for basic bash configuration commands, but
-# this file is loaded for login sessions on some systems. Sourcing .bashrc
-# here ensures that the settings are the same in both places.
-#
-# .profile is sourced in .bashrc, and will in turn be sourced here.
-if [[ -f ~/.bashrc ]]
+# Load .profile if present.
+if [[ -f "$HOME/.profile" ]]
 then
-  source ~/.bashrc
+  source "$HOME/.profile"
 fi
+
+###############################################################################
+# Local .zprofile
+###############################################################################
+
+# Load local config if present
+[[ -f ~/.zprofile.local ]] && source ~/.zprofile.local

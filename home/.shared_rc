@@ -1,5 +1,8 @@
 ###############################################################################
-# .bash_profile
+# .shared_rc
+#
+# This file is sourced by both .zshrc and .bashrc and is used to set common
+# rc settings for both shells.
 #
 # More info about OS X shell startup:
 # http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
@@ -10,18 +13,11 @@
 ###############################################################################
 
 . "$HOME/.shared_verbose_init"
-__verbose_init printf "Loading .bash_profile\n"
+__verbose_init printf "Loading .shared_rc\n"
 
 ###############################################################################
-# Source .bashrc
+# Init
 ###############################################################################
 
-# .bashrc is the preferred loaction for basic bash configuration commands, but
-# this file is loaded for login sessions on some systems. Sourcing .bashrc
-# here ensures that the settings are the same in both places.
-#
-# .profile is sourced in .bashrc, and will in turn be sourced here.
-if [[ -f ~/.bashrc ]]
-then
-  source ~/.bashrc
-fi
+# Source all files in ".shared_rc.d"
+init_src .shared_rc.d
