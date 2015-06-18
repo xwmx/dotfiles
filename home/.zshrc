@@ -22,7 +22,13 @@
 __verbose_init printf "Loading .zshrc\n"
 
 ###############################################################################
-# Base Settings
+# oh-my-zsh
+#
+# Oh My Zsh is an open source, community-driven framework for managing your
+# zsh configuration.
+#
+# http://ohmyz.sh/
+# https://github.com/robbyrussell/oh-my-zsh
 ###############################################################################
 
 # Path to your oh-my-zsh installation.
@@ -124,23 +130,36 @@ source "$ZSH/oh-my-zsh.sh"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# OPAM configuration ##########################################################
-
-. "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null || true
-
 ###############################################################################
-# Shared rc
+# .shared_rc
 ###############################################################################
 
 # Load .shared_rc if present.
 #
 # This is loaded after oh-my-zsh since some things are intended to override
 # the oh-my-zsh settings.
-[[ -f ~/.shared_rc ]] && source ~/.shared_rc
+if [[ -f "$HOME/.shared_rc" ]]
+then
+  source "$HOME/.shared_rc"
+fi
+
+###############################################################################
+# .zshrc.d
+###############################################################################
+
+# Source everything in .zshrc.d if it's present. `init_src` is defined in
+# $HOME/.shared_env
+if [[ -d "$HOME/.zshrc.d" ]]
+then
+  init_src .zshrc.d
+fi
 
 ###############################################################################
 # Local config
 ###############################################################################
 
 # Load local config if present
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -f "$HOME/.zshrc.local" ]]
+then
+  source "$HOME/.zshrc.local"
+fi
