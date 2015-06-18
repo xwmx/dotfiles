@@ -21,14 +21,21 @@
 __verbose_init printf "Loading .profile\n"
 
 ###############################################################################
-# Init
+# .shared_env
 ###############################################################################
 
 # Load environment if it hasn't already been.
-if [[ ! $SHARED_ENV_LOADED == true ]]; then
+if [[ ! $SHARED_ENV_LOADED == true ]]
+then
   source "$HOME/.shared_env"
 fi
 
+###############################################################################
+# .shared_env
+###############################################################################
 
-# Source all files in ".profile.d"
-init_src .profile.d
+# Source all files in ".profile.d" if present.
+if [[ -d "$HOME/.profile.d" ]]
+then
+  init_src .profile.d
+fi
