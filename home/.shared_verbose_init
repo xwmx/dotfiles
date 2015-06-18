@@ -6,14 +6,23 @@
 # `$__VERBOSE_INIT` environment variable is set if it hasn't been already.
 ###############################################################################
 
+###############################################################################
+# $__DEFAULT_VERBOSE_INIT
+#
+# Set this value to true in order to trigger `__verbose_init` statements.
+###############################################################################
+
+__DEFAULT_VERBOSE_INIT=false
+
+###############################################################################
+# __verbose_init setup.
+###############################################################################
+
 if [ -z $__VERBOSE_INIT_LOADED ]
 then
   if [ -z $__VERBOSE_INIT ]
   then
-    ###########################################################################
-    # Set this value to true in order to trigger `__verbose_init` statements.
-    ###########################################################################
-    __VERBOSE_INIT=false
+    __VERBOSE_INIT="$__DEFAULT_VERBOSE_INIT"
   fi
 
   __SET_TPUT_NORMAL=$(tput sgr0)
