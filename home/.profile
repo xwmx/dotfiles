@@ -1,8 +1,13 @@
 ###############################################################################
 # .profile
 #
-# This file is sourced by both .zshrc and .bashrc and is used to set common
-# rc and profile settings for both shells.
+# This file is sourced by both .zprofile and .bashrc and is used to set common
+# profile settings for both shells.
+#
+# Since the current configuration includes a .bash_profile, Bash sources that
+# file rather than this one on startup. As a result, neither zsh nor bash
+# source this file automatically, and it therefore acts as a shared startup
+# file.
 #
 # More info about OS X shell startup:
 # http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
