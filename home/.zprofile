@@ -24,7 +24,7 @@
 __verbose_init printf "Loading .zprofile\n"
 
 ###############################################################################
-# Init
+# .profile
 ###############################################################################
 
 # Load .profile if present.
@@ -34,8 +34,11 @@ then
 fi
 
 ###############################################################################
-# Local .zprofile
+# Local config
 ###############################################################################
 
 # Load local config if present
-[[ -f ~/.zprofile.local ]] && source ~/.zprofile.local
+if [[ -f "$HOME/.zprofile.local" ]]
+then
+  source "$HOME/.zprofile.local"
+fi
