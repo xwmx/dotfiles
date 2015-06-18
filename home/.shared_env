@@ -92,8 +92,11 @@ else
   export DOTFILES="$HOME/.dotfiles"
 fi
 
-# Source all files in ".shared_env.d"
-init_src .shared_env.d
+# Source all files in ".shared_env.d" if present.
+if [ -d "$HOME/.shared_env.d" ]
+then
+  init_src .shared_env.d
+fi
 
 # load shared_env.local if it exists
 if [ -f "$HOME/.shared_env.local" ]
