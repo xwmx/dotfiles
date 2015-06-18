@@ -24,7 +24,7 @@
 __verbose_init printf "Loading .zshenv\n"
 
 ###############################################################################
-# Init
+# .shared_env
 ###############################################################################
 
 # Load environment if it hasn't already been.
@@ -33,12 +33,20 @@ then
   source "$HOME/.shared_env"
 fi
 
+###############################################################################
+# .zshenv.d
+###############################################################################
+
 # Source everything in .zshenv.d if it's present. `init_src` is defined in
 # $HOME/.shared_env
 if [[ -d "$HOME/.zshenv.d" ]]
 then
   init_src .zshenv.d
 fi
+
+###############################################################################
+# Local config
+###############################################################################
 
 # load .zshenv.local if it exists
 if [[ -f "$HOME/.zshenv.local" ]]
