@@ -207,7 +207,7 @@ brew install cowsay
 # http://www.willnolan.com/cputhrottle/cputhrottle.html
 brew install cputhrottle
 
-# Crystal
+# crystal-lang
 #
 # The Crystal Programming Language
 #
@@ -226,7 +226,7 @@ brew install cputhrottle
 # Options:
 # --with-llvm
 #   Build with llvm support
-brew install manastech/crystal/crystal --with-llvm
+brew install manastech/crystal/crystal-lang --with-llvm
 
 # ctags
 #
