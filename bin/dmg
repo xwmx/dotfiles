@@ -8,7 +8,8 @@
 
 source "$(which bask)"
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
   _die printf \
     "%s uses \`hdiutil\` and is therefore only supported on OS X\n" \
     "$_ME"
@@ -39,9 +40,11 @@ EOM
 create() {
   if [[ -z "${1:-}" ]]; then
     _die printf "No size or name specified.\n"
-  elif [[ ! "${1}" =~ [0-9][b|k|m|g|t|p|e]$ ]]; then
+  elif [[ ! "${1}" =~ [0-9][b|k|m|g|t|p|e]$ ]]
+  then
     _die printf "Specify size in the format \"\\\d\\\d[b|k|m|g|t|p|e]\"\n"
-  elif [[ -z "${2:-}" ]]; then
+  elif [[ -z "${2:-}" ]]
+  then
     _die printf "No name specified.\n"
   else
     hdiutil create \
@@ -62,10 +65,12 @@ Description:
   Eject a disk image.
 EOM
 eject() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No disk image specified.\n"
   else
-    if [[ "${1}" =~ ^\/Volumes ]]; then
+    if [[ "${1}" =~ ^\/Volumes ]]
+    then
       diskutil eject "${1}"
     else
       diskutil eject "/Volumes/${1}"
@@ -92,7 +97,8 @@ Description:
   Mount a disk image.
 EOM
 mount() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No disk image specified.\n"
   else
     hdiutil mount \
