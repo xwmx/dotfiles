@@ -233,6 +233,18 @@ apm install monokai
 # https://github.com/casesandberg/next-dark-ui
 apm install next-dark-ui
 
+# Nuclide
+#
+# An open IDE for web and native mobile development, built on top of Atom.
+#
+# Nuclide is a collection of packages for Atom to provide IDE-like
+# functionality for a variety of programming languages and technologies.
+#
+# http://nuclide.io/
+# https://github.com/facebook/nuclide
+# https://code.facebook.com/posts/397706937084869/
+apm install nuclide-installer
+
 # select-rectangle
 #
 # Select rectangle region.
