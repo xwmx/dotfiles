@@ -833,15 +833,6 @@ brew install mongodb
 # https://mosh.mit.edu/
 brew install mobile-shell
 
-# Mono
-#
-# Cross platform, open source .NET framework
-#
-# http://www.mono-project.com/
-brew install mono
-# mono's makecert conflicts with czmq's. Prefer mono's for now.
-brew link --overwrite mono
-
 # MOST
 #
 # MOST is a powerful paging program for Unix, VMS, MSDOS, and win32 systems.
