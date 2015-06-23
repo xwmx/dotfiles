@@ -141,6 +141,18 @@ npm install -g ember-cli
 # https://github.com/eslint/eslint
 npm install -g eslint
 
+# GitBook
+#
+# GitBook is a command line tool (and Node.js library) for building beautiful
+# books using GitHub/Git and Markdown (or AsciiDoc).
+#
+# You can publish and host book easily online using gitbook.com, a web-editor
+# is also available.
+#
+# https://www.gitbook.com/
+# https://github.com/GitbookIO/gitbook
+npm install -g gitbook-cli
+
 # gg
 #
 # Shortcuts for git commands
