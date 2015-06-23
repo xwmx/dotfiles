@@ -355,6 +355,13 @@ brew install encfs
 # http://www.erlang.org/
 brew install erlang
 
+# es
+#
+# Extensible shell with first class functions, lexical scoping, and more.
+#
+# http://wryun.github.io/es-shell/
+brew install es
+
 # Exiv2
 #
 # Image metadata library and tools
