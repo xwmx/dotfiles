@@ -17,6 +17,14 @@
       "metrics"
       "select-rectangle"
       "vim-mode"
+      "nuclide-installer"
+      "nuclide-hack"
+      "nuclide-flow"
+      "nuclide-file-watcher"
+      "nuclide-file-tree"
+      "nuclide-diff-view"
+      "nuclide-code-format"
+      "nuclide-click-to-symbol"
     ]
     themes: [
       "atom-dark-ui-slim"
