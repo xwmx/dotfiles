@@ -250,7 +250,8 @@ apm install nuclide-installer
 # Select rectangle region.
 #
 # https://github.com/hmatsuda/select-rectangle
-apm install select-rectangle
+apm uninstall select-rectangle
+printf ">> Remove select-rectangle from apm-packages."
 
 # Seti Syntax
 #

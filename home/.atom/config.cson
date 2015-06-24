@@ -15,7 +15,6 @@
   core:
     disabledPackages: [
       "metrics"
-      "select-rectangle"
       "nuclide-installer"
       "nuclide-hack"
       "nuclide-flow"
