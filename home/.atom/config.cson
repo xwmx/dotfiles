@@ -16,7 +16,6 @@
     disabledPackages: [
       "metrics"
       "select-rectangle"
-      "vim-mode"
       "nuclide-installer"
       "nuclide-hack"
       "nuclide-flow"
