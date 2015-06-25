@@ -319,43 +319,75 @@ wifi() {
 
 desc wireless <<EOM
 Usage:
-  $_ME wireless (info | scan)
+  $_ME wireless (on | off | info | scan | join <SSID>)
 
 Subcommands:
-  info  Show the current wireless status.
+  on    Turn wireless on.
+  off   Turn wireless off.
+  info  Show the current airport status.
   scan  Perform a scan for wireless networks.
+  join  Join the specified network.
 EOM
 _AIRPORT_FRAMEWORK_PATH="/System/Library/PrivateFrameworks/Apple80211.framework"
 _AIRPORT_CMD="${_AIRPORT_FRAMEWORK_PATH}/Versions/A/Resources/airport"
 wireless() {
-  if [[ ! -x "$_AIRPORT_CMD" ]]; then
-    _die printf "Only OS X is currently supported.\n"
-  fi
-
+  local _networksetup_cmd="$(which networksetup)"
   local _subcommand="info"
+  local _arguments=()
+
+  # Command references:
+  # - http://apple.stackexchange.com/a/90516
+  # - https://jamfnation.jamfsoftware.com/discussion.html?id=4849
+  local _wifi_interface="$(
+    "$_networksetup_cmd" \
+      -listallhardwareports | \
+      /usr/bin/awk '/Wi-Fi|AirPort/ {getline; print $NF}'
+  )"
+
+
   for arg in "${_COMMAND_ARGV[@]:-}"; do
     case $arg in
-      on|off|info|scan)
+      on|off|info|scan|join)
         _subcommand="$arg"
         ;;
       *)
-        arguments+=($arg)
+        _arguments+=($arg)
         ;;
     esac
   done
 
   case "$_subcommand" in
     "on")
-      networksetup -setairportpower airport on
+      "$_networksetup_cmd" -setairportpower "$_wifi_interface" on && \
+        printf "Wireless on\n"
       ;;
     "off")
-      networksetup -setairportpower airport off
+      "$_networksetup_cmd" -setairportpower "$_wifi_interface" off && \
+        printf "Wireless off\n"
+      ;;
+    "join")
+      local _ssid="${_arguments[1]:-}"
+      local _password=
+
+      # Request password without displaying it
+      printf "Password: "
+      read -s _password
+      printf "\n" # print newline to stop `read`.
+
+      _debug printf "airport() \$_wifi_interface: %s\n" "$_wifi_interface"
+      _debug printf "airport() \$_ssid: %s\n" "${_ssid}"
+
+      "$_networksetup_cmd" \
+        -setairportnetwork \
+        "$_wifi_interface" \
+        "$_ssid" \
+        "$_password"
       ;;
     "info")
       "$_AIRPORT_CMD" --getinfo
       ;;
     "scan")
-      "$_AIRPORT_CMD" -s
+      "$_AIRPORT_CMD" --scan
       ;;
   esac
 }
