@@ -307,6 +307,16 @@ whois() {
 
 # -------------------------------------------------------------------- Wireless
 
+desc wifi <<EOM
+Alias for \`$_ME wireless\`
+
+For full usage information, run:
+  $_ME help wireless
+EOM
+wifi() {
+  wireless "$*"
+}
+
 desc wireless <<EOM
 Usage:
   $_ME wireless (info | scan)
