@@ -325,7 +325,7 @@ wireless() {
   local _subcommand="info"
   for arg in "${_COMMAND_ARGV[@]:-}"; do
     case $arg in
-      info|scan)
+      on|off|info|scan)
         _subcommand="$arg"
         ;;
       *)
@@ -335,6 +335,12 @@ wireless() {
   done
 
   case "$_subcommand" in
+    "on")
+      networksetup -setairportpower airport on
+      ;;
+    "off")
+      networksetup -setairportpower airport off
+      ;;
     "info")
       "$_AIRPORT_CMD" --getinfo
       ;;
