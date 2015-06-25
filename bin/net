@@ -344,7 +344,6 @@ wireless() {
       -listallhardwareports | awk '/Wi-Fi|AirPort/ {getline; print $NF}'
   )"
 
-
   for arg in "${_COMMAND_ARGV[@]:-}"; do
     case $arg in
       on|off|info|quality|scan|join)
