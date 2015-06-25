@@ -319,14 +319,15 @@ wifi() {
 
 desc wireless <<EOM
 Usage:
-  $_ME wireless (on | off | info | scan | join <SSID>)
+  $_ME wireless (on | off | info | quality | scan | join <SSID>)
 
 Subcommands:
-  on    Turn wireless on.
-  off   Turn wireless off.
-  info  Show the current airport status.
-  scan  Perform a scan for wireless networks.
-  join  Join the specified network.
+  on       Turn wireless on.
+  off      Turn wireless off.
+  info     Show the current airport status.
+  quality  Show the wireless quality as a percentage.
+  scan     Perform a scan for wireless networks.
+  join     Join the specified network.
 EOM
 _AIRPORT_FRAMEWORK_PATH="/System/Library/PrivateFrameworks/Apple80211.framework"
 _AIRPORT_CMD="${_AIRPORT_FRAMEWORK_PATH}/Versions/A/Resources/airport"
@@ -347,7 +348,7 @@ wireless() {
 
   for arg in "${_COMMAND_ARGV[@]:-}"; do
     case $arg in
-      on|off|info|scan|join)
+      on|off|info|quality|scan|join)
         _subcommand="$arg"
         ;;
       *)
@@ -382,6 +383,19 @@ wireless() {
         "$_wifi_interface" \
         "$_ssid" \
         "$_password"
+      ;;
+    "quality")
+      # Reference: http://apple.stackexchange.com/a/110884
+      local _info="$($_ME wireless info)"
+      local _signal="$(
+        printf "%s\n" "$_info" | awk '/agrCtlRSSI/ {print $NF}'
+      )"
+      local _noise="$(
+        printf "%s\n" "$_info" | awk '/agrCtlNoise/ {print $NF}'
+      )"
+      local _snr="$(printf "100*(%s -(%s))\n" "$_signal" "$_noise" | bc -l)"
+      local _percent="$(printf "%s/50\n" "$_snr" | bc -l)"
+      printf "%s%%\n" "${_percent%.*}"
       ;;
     "info")
       "$_AIRPORT_CMD" --getinfo
