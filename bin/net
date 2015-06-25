@@ -305,4 +305,43 @@ whois() {
   fi
 }
 
+# -------------------------------------------------------------------- Wireless
+
+desc wireless <<EOM
+Usage:
+  $_ME wireless (info | scan)
+
+Subcommands:
+  info  Show the current wireless status.
+  scan  Perform a scan for wireless networks.
+EOM
+_AIRPORT_FRAMEWORK_PATH="/System/Library/PrivateFrameworks/Apple80211.framework"
+_AIRPORT_CMD="${_AIRPORT_FRAMEWORK_PATH}/Versions/A/Resources/airport"
+wireless() {
+  if [[ ! -x "$_AIRPORT_CMD" ]]; then
+    _die printf "Only OS X is currently supported.\n"
+  fi
+
+  local _subcommand="info"
+  for arg in "${_COMMAND_ARGV[@]:-}"; do
+    case $arg in
+      info|scan)
+        _subcommand="$arg"
+        ;;
+      *)
+        arguments+=($arg)
+        ;;
+    esac
+  done
+
+  case "$_subcommand" in
+    "info")
+      "$_AIRPORT_CMD" --getinfo
+      ;;
+    "scan")
+      "$_AIRPORT_CMD" -s
+      ;;
+  esac
+}
+
 _init
