@@ -34,12 +34,14 @@ build_prompt_path() {
   # Maximum number of characters from the $PWD that should be kept.
   local max_pwd_length=23
 
-  if [ "$total_path_length" -lt "$max_pwd_length" ]; then
+  if [[ "$total_path_length" -lt "$max_pwd_length" ]]
+  then
     # Path is shorter than max.
     # Example:
     # - /bin/
     ps1_pwd_path="$path_colors\w"
-  elif [[ $user_path_length -gt 0 && $home_pwd_length -gt $max_pwd_length ]]; then
+  elif [[ $user_path_length -gt 0 && $home_pwd_length -gt $max_pwd_length ]]
+  then
     # In home, $PWD minus $HOME is longer than max.
     # Example:
     # - /Users/name/Library/Application Support
@@ -47,7 +49,8 @@ build_prompt_path() {
     # - ~...brary/Application Support
     new_pwd=$(trim_prompt_path $max_pwd_length)
     ps1_pwd_path="$path_colors~$ps1_truncation$path_colors$new_pwd"
-  elif [ "$user_path_length" -gt 0 ]; then
+  elif [[ "$user_path_length" -gt 0 ]]
+  then
     # in home, $PWD minus $HOME is less than max, but $PWD is longer than max.
     # Example:
     # - /Users/name/Library
