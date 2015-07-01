@@ -141,6 +141,14 @@ npm install -g ember-cli
 # https://github.com/eslint/eslint
 npm install -g eslint
 
+# Fly
+#
+# Fly is a build system for Node based in ES6 generators and promises that
+# aims to be simple and elegant to write and extend.
+#
+# https://github.com/flyjs/fly
+npm install -g fly
+
 # GitBook
 #
 # GitBook is a command line tool (and Node.js library) for building beautiful
