@@ -1175,8 +1175,8 @@ fi
 # Setup and launch port 80 forwarding and launchd agents
 if ! ( [[ -e "/Library/LaunchDaemons/cx.pow.firewall.plist" ]] || \
        [[ -e "/etc/resolver/dev" ]]
-  )
-  then
+)
+then
   sudo pow --install-system
   sudo launchctl load -w "/Library/LaunchDaemons/cx.pow.firewall.plist"
 fi
