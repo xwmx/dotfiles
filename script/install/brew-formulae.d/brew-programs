@@ -892,6 +892,34 @@ brew install mutt --with-trash-patch
 # https://bitbucket.org/mjensen/mvnvm
 brew install mvnvm
 
+# mysql
+#
+# Open source relational database management system.
+#
+# https://dev.mysql.com/doc/refman/5.6/en/
+#
+# Caveats:
+#   A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+#   server starting up correctly.
+#
+#   To connect:
+#     mysql -uroot
+#
+#   To reload mysql after an upgrade:
+#       launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+#       launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+#   Or, if you don't want/need launchctl, you can just run:
+#       mysql.server start
+brew install mysql
+# mysql post-install
+#
+# - Post-install for enabled syncthing:
+if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist" ]]
+then
+  ln -sfv /usr/local/opt/mysql/*.plist "$HOME/Library/LaunchAgents"
+  launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+fi
+
 # neovim
 #
 # http://neovim.org/
