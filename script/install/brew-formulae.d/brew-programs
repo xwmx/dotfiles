@@ -913,11 +913,22 @@ brew install mvnvm
 brew install mysql
 # mysql post-install
 #
-# - Post-install for enabled syncthing:
-if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist" ]]
+# Setup LaunchAgent for mysql.
+#
+# NOTE: Temporarily remove mysql LaunchAgent autoloading. MySQL takes up a
+# lot of memory and is not used much.
+#
+# - Post-install for enabled mysql:
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist" ]]
+# then
+#   ln -sfv /usr/local/opt/mysql/*.plist "$HOME/Library/LaunchAgents"
+#   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+# fi
+# - Post-install for disabled mysql:
+if [[ -e "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist" ]]
 then
-  ln -sfv /usr/local/opt/mysql/*.plist "$HOME/Library/LaunchAgents"
-  launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+  launchctl unload "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+  rm "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
 fi
 
 # neovim
