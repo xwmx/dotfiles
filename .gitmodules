@@ -203,3 +203,6 @@
 [submodule "vendor/com/github/alphabetum/airport"]
 	path = vendor/com/github/alphabetum/airport
 	url = https://github.com/alphabetum/airport.git
+[submodule "vendor/com/github/drduh/pwd.sh"]
+	path = vendor/com/github/drduh/pwd.sh
+	url = https://github.com/drduh/pwd.sh.git
