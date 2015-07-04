@@ -12,7 +12,8 @@ _bin_path="$_app_path/Contents/MacOS/Disk Inventory X"
 # - Application must be opened as root via the binary in the app bundle. `sudo`
 #   doesn't open the application as root, neither does `open`, even after
 #   switchin to root.
-if [ "$1" = "--root" ]; then
+if [ "$1" = "--root" ]
+then
   echo "(\"$_bin_path\" &)" | sudo su root
 else
   ("$_bin_path" &)
