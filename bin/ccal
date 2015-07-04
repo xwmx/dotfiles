@@ -36,7 +36,8 @@ usage="\
 Highlight current day in cal - alot smaller than gcal ;)
 $(_ccal)
 "
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ]
+then
   printf "%s\n" "$usage"
   exit 0
 fi
