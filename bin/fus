@@ -1,0 +1,353 @@
+#!/usr/bin/env bash
+#
+# Fast User Switching.
+#
+# Based on Bash Boilerplate: https://github.com/alphabetum/bash-boilerplate
+#
+# Copyright (c) 2015 William Melody • hi@williammelody.com
+
+###############################################################################
+# Strict Mode
+###############################################################################
+
+# Bash 'Strict Mode'
+# http://redsymbol.net/articles/unofficial-bash-strict-mode
+# https://github.com/alphabetum/bash-boilerplate#bash-strict-mode
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS=$'\n\t'
+
+###############################################################################
+# Environment
+###############################################################################
+
+# $_ME
+#
+# Set to the program's basename.
+_ME=$(basename "$0")
+
+###############################################################################
+# Debug
+###############################################################################
+
+# _debug()
+#
+# Usage:
+#   _debug printf "Debug info. Variable: %s\n" "$0"
+#
+# A simple function for executing a specified command if the `$_USE_DEBUG`
+# variable has been set. The command is expected to print a message and
+# should typically be either `echo`, `printf`, or `cat`.
+_debug() {
+  if [[ "${_USE_DEBUG:-"0"}" -eq 1 ]]
+  then
+    # Prefix debug message with "bug (U+1F41B)"
+    printf "🐛  "
+    "$@"
+  fi
+}
+# debug()
+#
+# Usage:
+#   debug "Debug info. Variable: $0"
+#
+# Print the specified message if the `$_USE_DEBUG` variable has been set.
+#
+# This is a shortcut for the _debug() function that simply echos the message.
+debug() {
+  _debug echo "$@"
+}
+
+###############################################################################
+# Die
+###############################################################################
+
+# _die()
+#
+# Usage:
+#   _die printf "Error message. Variable: %s\n" "$0"
+#
+# A simple function for exiting with an error after executing the specified
+# command. The command is expected to print a message and should typically
+# be either `echo`, `printf`, or `cat`.
+_die() {
+  # Prefix die message with "cross mark (U+274C)", often displayed as a red x.
+  printf "❌  "
+  "$@" 1>&2
+  exit 1
+}
+# die()
+#
+# Usage:
+#   die "Error message. Variable: $0"
+#
+# Exit with an error and print the specified message.
+#
+# This is a shortcut for the _die() function that simply echos the message.
+die() {
+  _die echo "$@"
+}
+
+###############################################################################
+# Help
+###############################################################################
+
+read -d '' "_program_help" <<EOM || true
+Fast user switching.
+
+Usage:
+  $_ME login <username>
+  $_ME accounts [window]
+  $_ME -h | --help
+
+Subcommands:
+  login <username> Login as the specified user.
+  accounts
+    <no argument>  List local OS X user accounts.
+    window         Go to the OS X login window.
+
+Options:
+  -h --help  Display this help information.
+EOM
+
+# _print_help()
+#
+# Usage: _print_help
+#
+# Print the program help information.
+_print_help() {
+  printf "%s\n" "$_program_help"
+}
+
+###############################################################################
+# Options
+###############################################################################
+
+# Steps:
+#
+# 1. set expected short options in `optstring` at beginning of the "Normalize
+#    Options" section,
+# 2. parse options in while loop in the "Parse Options" section.
+
+# Normalize Options ###########################################################
+
+# Source:
+#   https://github.com/e36freak/templates/blob/master/options
+
+# The first loop, even though it uses 'optstring', will NOT check if an
+# option that takes a required argument has the argument provided. That must
+# be done within the second loop and case statement, yourself. Its purpose
+# is solely to determine that -oARG is split into -o ARG, and not -o -A -R -G.
+
+# Set short options -----------------------------------------------------------
+
+# option string, for short options.
+#
+# Very much like getopts, expected short options should be appended to the
+# string here. Any option followed by a ':' takes a required argument.
+#
+# In this example, `-x` and `-h` are regular short options, while `o` is
+# assumed to have an argument and will be split if joined with the string,
+# meaning `-oARG` would be split to `-o ARG`.
+optstring=h
+
+# Normalize -------------------------------------------------------------------
+
+# iterate over options, breaking -ab into -a -b and --foo=bar into --foo bar
+# also turns -- into --endopts to avoid issues with things like '-o-', the '-'
+# should not indicate the end of options, but be an invalid option (or the
+# argument to the option, such as wget -qO-)
+unset options
+# while the number of arguments is greater than 0
+while (($#))
+do
+  case $1 in
+    # if option is of type -ab
+    -[!-]?*)
+      # loop over each character starting with the second
+      for ((i=1; i<${#1}; i++))
+      do
+        # extract 1 character from position 'i'
+        c=${1:i:1}
+        # add current char to options
+        options+=("-$c")
+
+        # if option takes a required argument, and it's not the last char
+        # make the rest of the string its argument
+        if [[ $optstring = *"$c:"* && ${1:i+1} ]]
+        then
+          options+=("${1:i+1}")
+          break
+        fi
+      done
+      ;;
+    # if option is of type --foo=bar, split on first '='
+    --?*=*)
+      options+=("${1%%=*}" "${1#*=}")
+      ;;
+    # end of options, stop breaking them up
+    --)
+      options+=(--endopts)
+      shift
+      options+=("$@")
+      break
+      ;;
+    # otherwise, nothing special
+    *)
+      options+=("$1")
+      ;;
+  esac
+
+  shift
+done
+# set new positional parameters to altered options. Set default to blank.
+set -- "${options[@]:-}"
+unset options
+
+# Parse Options ###############################################################
+
+# Initialize program option variables.
+_PRINT_HELP=0
+_USE_DEBUG=0
+_CMD=
+_ARGUMENTS=("$0")
+
+# _require_argument()
+#
+# Usage:
+#  _require_argument "$opt" "$_value_variable"
+#
+# Checks if an value has been set to the expected variable and, if not, prints
+# and error message and exits with status 1.
+_require_argument() {
+  # Set local variables from arguments.
+  #
+  # NOTE: 'local' is a non-POSIX bash feature and keeps the variable local to
+  # the block of code, as defined by curly braces. It's easiest to just think
+  # of them as local to a function.
+  local option="$1"
+  local value="$2"
+
+  if [[ -z "$value" ]]
+  then
+    _die printf "Option requires an argument: %s\n" "$option"
+  fi
+}
+# getopts and getopts have inconsistent behavior, so using a simple home-brewed
+# while loop. This isn't perfectly compliant with POSIX, but it's close enough
+# and this appears to be a widely used approach.
+#
+# More info:
+#   http://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html
+#   http://stackoverflow.com/a/14203146
+#   http://stackoverflow.com/a/7948533
+while [ $# -gt 0 ]
+do
+  opt="$1"
+  shift
+  case "$opt" in
+    -h|--help)
+      _PRINT_HELP=1
+      ;;
+    --debug)
+      _USE_DEBUG=1
+      ;;
+    login|accounts)
+      if [[ -z "$_CMD" ]]
+      then
+        _CMD="$opt"
+      else
+        _ARGUMENTS+=("$opt")
+      fi
+      ;;
+    --endopts)
+      # Terminate option parsing.
+      break
+      ;;
+    *)
+      _ARGUMENTS+=("$opt")
+      ;;
+  esac
+done
+
+if [[ -z "$_CMD" ]]
+then
+  _PRINT_HELP=1
+fi
+
+###############################################################################
+# Program Functions
+###############################################################################
+
+_USER_MENU="/System/Library/CoreServices/Menu Extras/User.menu"
+_CGSESSION="${_USER_MENU}/Contents/Resources/CGSession"
+
+_accounts() {
+  local _subcommand="${_ARGUMENTS[1]:-}"
+  if [[ "$_subcommand" == "window" ]]
+  then
+    "$_CGSESSION" -suspend
+  else
+    local _users_and_ids=($(dscl . list /Users uid | grep -v '^_'))
+    for _user in "${_users_and_ids[@]}"
+    do
+      local _username="$(echo "$_user" | awk '{print $1}')"
+
+      # Only print users with valid home directories, which is used here as an
+      # indication that the account is a valid login account. So far I've been
+      # unable to find a better way to list only full login user accounts.
+      local _home_directory="$(
+        dscl . -read "/Users/${_username}" NFSHomeDirectory | \
+          awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}'
+      )"
+      _debug printf "_accounts() \$_username: %s\n" "$_username"
+      _debug printf "_accounts() \$_home_directory: %s\n" "$_home_directory"
+      if ! ( [[ "$_username" == "root" ]]         ||
+             [[ "$_username" == "daemon" ]]       ||
+             [[ "$_home_directory" =~ ^/var.* ]]  ||
+             [[ "$_home_directory" =~ ^/dev.* ]]  ||
+             [[ "$_home_directory" =~ ^/opt.* ]]
+      )
+      then
+        echo "$_username"
+      fi
+    done
+  fi
+}
+
+_login() {
+  local _user="${_ARGUMENTS[1]:-}"
+  if [[ -z "$_user" ]]
+  then
+    _die printf "User missing.\n%s\n" "$(_print_help)"
+  fi
+
+  local _user_id=$(id -u "$_user")
+  if [[ -z "$_user_id" ]]
+  then
+    _die printf "No user with that name found.\n"
+  fi
+
+  _debug printf "%s\n" "$_CGSESSION -switchToUserID $_user_id"
+  "$_CGSESSION" -switchToUserID "$_user_id"
+}
+
+###############################################################################
+# Main
+###############################################################################
+
+_main() {
+  if (("$_PRINT_HELP"))
+  then
+    _print_help
+  elif [[ "$_CMD" == "login" ]]
+  then
+    _login "$@"
+  elif [[ "$_CMD" == "accounts" ]]
+  then
+    _accounts "$@"
+  fi
+}
+
+_main "$@"
