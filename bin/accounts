@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 #
-# Fast User Switching.
+#                                                        **
+#                                                       /**
+#   ******    *****   *****   ******  **   ** *******  ******  ******
+#  //////**  **///** **///** **////**/**  /**//**///**///**/  **////
+#   ******* /**  // /**  // /**   /**/**  /** /**  /**  /**  //*****
+#  **////** /**   **/**   **/**   /**/**  /** /**  /**  /**   /////**
+# //********//***** //***** //****** //****** ***  /**  //**  ******
+#  ////////  /////   /////   //////   ////// ///   //    //  //////
+#
+# Common OS X user account operations.
 #
 # Based on Bash Boilerplate: https://github.com/alphabetum/bash-boilerplate
 #
@@ -94,18 +103,27 @@ die() {
 ###############################################################################
 
 read -d '' "_program_help" <<EOM || true
-Fast user switching.
+                                                       **
+                                                      /**
+  ******    *****   *****   ******  **   ** *******  ******  ******
+ //////**  **///** **///** **////**/**  /**//**///**///**/  **////
+  ******* /**  // /**  // /**   /**/**  /** /**  /**  /**  //*****
+ **////** /**   **/**   **/**   /**/**  /** /**  /**  /**   /////**
+//********//***** //***** //****** //****** ***  /**  //**  ******
+ ////////  /////   /////   //////   ////// ///   //    //  //////
+
+Common OS X user account operations.
 
 Usage:
+  $_ME list
   $_ME login <username>
-  $_ME accounts [window]
+  $_ME window
   $_ME -h | --help
 
 Subcommands:
-  login <username> Login as the specified user.
-  accounts
-    <no argument>  List local OS X user accounts.
-    window         Go to the OS X login window.
+  list    List login user accounts.
+  login   Login as the specified user, aka "Fast User Switching."
+  window  Go to the OS X login window.
 
 Options:
   -h --help  Display this help information.
@@ -210,7 +228,7 @@ unset options
 # Initialize program option variables.
 _PRINT_HELP=0
 _USE_DEBUG=0
-_CMD=
+_SUBCOMMAND=
 _ARGUMENTS=("$0")
 
 # _require_argument()
@@ -253,10 +271,10 @@ do
     --debug)
       _USE_DEBUG=1
       ;;
-    login|accounts)
-      if [[ -z "$_CMD" ]]
+    list|login|window)
+      if [[ -z "$_SUBCOMMAND" ]]
       then
-        _CMD="$opt"
+        _SUBCOMMAND="$opt"
       else
         _ARGUMENTS+=("$opt")
       fi
@@ -271,10 +289,13 @@ do
   esac
 done
 
-if [[ -z "$_CMD" ]]
+if [[ -z "$_SUBCOMMAND" ]]
 then
-  _PRINT_HELP=1
+  _SUBCOMMAND="help"
 fi
+
+_debug printf "\$_SUBCOMMAND: %s\n" "$_SUBCOMMAND"
+_debug printf "\$_ARGUMENTS: %s\n" "${_ARGUMENTS[*]:-}"
 
 ###############################################################################
 # Program Functions
@@ -284,53 +305,58 @@ _USER_MENU="/System/Library/CoreServices/Menu Extras/User.menu"
 _CGSESSION="${_USER_MENU}/Contents/Resources/CGSession"
 
 _accounts() {
-  local _subcommand="${_ARGUMENTS[1]:-}"
-  if [[ "$_subcommand" == "window" ]]
-  then
-    "$_CGSESSION" -suspend
-  else
-    local _users_and_ids=($(dscl . list /Users uid | grep -v '^_'))
-    for _user in "${_users_and_ids[@]}"
-    do
-      local _username="$(echo "$_user" | awk '{print $1}')"
+  _debug printf "_accounts() >> start\n"
 
-      # Only print users with valid home directories, which is used here as an
-      # indication that the account is a valid login account. So far I've been
-      # unable to find a better way to list only full login user accounts.
-      local _home_directory="$(
-        dscl . -read "/Users/${_username}" NFSHomeDirectory | \
-          awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}'
-      )"
-      _debug printf "_accounts() \$_username: %s\n" "$_username"
-      _debug printf "_accounts() \$_home_directory: %s\n" "$_home_directory"
-      if ! ( [[ "$_username" == "root" ]]         ||
-             [[ "$_username" == "daemon" ]]       ||
-             [[ "$_home_directory" =~ ^/var.* ]]  ||
-             [[ "$_home_directory" =~ ^/dev.* ]]  ||
-             [[ "$_home_directory" =~ ^/opt.* ]]
-      )
+  case "$_SUBCOMMAND" in
+    "list")
+      local _users_and_ids=($(dscl . list /Users uid | grep -v '^_'))
+      for _user in "${_users_and_ids[@]}"
+      do
+        local _username="$(echo "$_user" | awk '{print $1}')"
+
+        # Only print users with valid home directories, which is used here as an
+        # indication that the account is a valid login account. So far I've been
+        # unable to find a better way to list only full login user accounts.
+        local _home_directory="$(
+          dscl . -read "/Users/${_username}" NFSHomeDirectory | \
+            awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}'
+        )"
+        _debug printf "_accounts() \$_username: %s\n" "$_username"
+        _debug printf "_accounts() \$_home_directory: %s\n" "$_home_directory"
+        if ! ( [[ "$_username" == "root" ]]         ||
+               [[ "$_username" == "daemon" ]]       ||
+               [[ "$_home_directory" =~ ^/var.* ]]  ||
+               [[ "$_home_directory" =~ ^/dev.* ]]  ||
+               [[ "$_home_directory" =~ ^/opt.* ]]
+        )
+        then
+          echo "$_username"
+        fi
+      done
+      ;;
+    "login")
+      local _user="${_ARGUMENTS[1]:-}"
+      if [[ -z "$_user" ]]
       then
-        echo "$_username"
+        _die printf "User missing.\n%s\n" "$(_print_help)"
       fi
-    done
-  fi
-}
 
-_login() {
-  local _user="${_ARGUMENTS[1]:-}"
-  if [[ -z "$_user" ]]
-  then
-    _die printf "User missing.\n%s\n" "$(_print_help)"
-  fi
+      local _user_id=$(id -u "$_user")
+      if [[ -z "$_user_id" ]]
+      then
+        _die printf "No user with that name found.\n"
+      fi
 
-  local _user_id=$(id -u "$_user")
-  if [[ -z "$_user_id" ]]
-  then
-    _die printf "No user with that name found.\n"
-  fi
-
-  _debug printf "%s\n" "$_CGSESSION -switchToUserID $_user_id"
-  "$_CGSESSION" -switchToUserID "$_user_id"
+      _debug printf "%s\n" "$_CGSESSION -switchToUserID $_user_id"
+      "$_CGSESSION" -switchToUserID "$_user_id"
+      ;;
+    "window")
+      "$_CGSESSION" -suspend
+      ;;
+    "help")
+      _print_help
+      ;;
+  esac
 }
 
 ###############################################################################
@@ -341,11 +367,7 @@ _main() {
   if (("$_PRINT_HELP"))
   then
     _print_help
-  elif [[ "$_CMD" == "login" ]]
-  then
-    _login "$@"
-  elif [[ "$_CMD" == "accounts" ]]
-  then
+  else
     _accounts "$@"
   fi
 }
