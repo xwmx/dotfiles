@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# dupecheck - identified potential duplicates of a file using Spotlight metadata
+# by Derick Fay, October 2006
+#
+# via:
+#   http://hints.macworld.com/article.php?story=20061003163429425
+#   https://web.archive.org/web/20100701131856/http://www.macosxhints.com/dlfiles/spotlight_dupes_sh.txt
+
+if [ -n $1 ]; then 	# -n tests to see if the argument is non empty
+	echo "usage: dupecheck filename"
+	exit
+fi
+
+#extract metadata from the file to be checked
+size=`mdls "$1" | grep kMDItemFSSize`
+name=`mdls "$1" | grep kMDItemFSName`
+kind=`mdls "$1" | grep kMDItemKind`
+
+#trim the strings
+size1=${size:33}
+name1=${name:33}
+kind1=${kind:33}
+
+#run the searches
+echo "Possible matches based on filename:"
+mdfind "kMDItemFSName == $name1"
+echo
+echo "Possible matches based on size and kind:"
+mdfind "kMDItemFSSize == $size1 && kMDItemKind=$kind1"
