@@ -69,7 +69,7 @@ eject() {
   then
     _die printf "No disk image specified.\n"
   else
-    if [[ "${1}" =~ ^\/Volumes ]]
+    if [[ "${1}" =~ ^/Volumes ]]
     then
       diskutil eject "${1}"
     else
