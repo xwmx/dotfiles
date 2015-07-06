@@ -694,6 +694,13 @@ brew cask install postgres
 # https://processing.org
 brew cask install processing3
 
+# PSequel
+#
+# PostgreSQL GUI tool for Mac OS X
+#
+# http://www.psequel.com/
+brew cask install psequel
+
 # RetroArch / libretro
 #
 # RetroArch is the reference frontend for the libretro API. Popular examples of
