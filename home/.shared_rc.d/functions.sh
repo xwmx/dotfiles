@@ -107,45 +107,45 @@ epoch() {
 
 # Edit / Open Shortcuts -------------------------------------------------------
 
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
-# opens the given location
-s() {
-  if [ $# -eq 0 ]; then
-    subl .
-  else
-    subl "$@"
-  fi
-}
-
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-a() {
-  if [ $# -eq 0 ]; then
-    atom .
-  else
-    atom "$@"
-  fi
-}
-
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
-v() {
-  if [ $# -eq 0 ]; then
-    vim .
-  else
-    vim "$@"
-  fi
-}
-
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
-o() {
-  if [ $# -eq 0 ]; then
-    open .
-  else
-    open "$@"
-  fi
-}
+# # `s` with no arguments opens the current directory in Sublime Text, otherwise
+# # opens the given location
+# s() {
+#   if [ $# -eq 0 ]; then
+#     subl .
+#   else
+#     subl "$@"
+#   fi
+# }
+#
+# # `a` with no arguments opens the current directory in Atom Editor, otherwise
+# # opens the given location
+# a() {
+#   if [ $# -eq 0 ]; then
+#     atom .
+#   else
+#     atom "$@"
+#   fi
+# }
+#
+# # `v` with no arguments opens the current directory in Vim, otherwise opens the
+# # given location
+# v() {
+#   if [ $# -eq 0 ]; then
+#     vim .
+#   else
+#     vim "$@"
+#   fi
+# }
+#
+# # `o` with no arguments opens the current directory, otherwise opens the given
+# # location
+# o() {
+#   if [ $# -eq 0 ]; then
+#     open .
+#   else
+#     open "$@"
+#   fi
+# }
 
 # Encoding --------------------------------------------------------------------
 
