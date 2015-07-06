@@ -369,6 +369,13 @@ brew install es
 # http://www.exiv2.org
 brew install exiv2
 
+# fasd
+#
+# CLI tool for quick access to files and directories
+#
+# https://github.com/clvv/fasd
+brew install fasd
+
 # FFmpeg
 #
 # A complete, cross-platform solution to record, convert and stream audio and
