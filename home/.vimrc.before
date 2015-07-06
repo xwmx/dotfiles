@@ -48,6 +48,22 @@ let g:pathogen_disabled = []
 
 " Disable syntastic in favor of non-janus installation to better ensure that
 " it's up to date.
+"
+" NOTE: Janus plugins can't be disabled and overridden by a plugin with the
+" same name. Disabling the janus plugin also disables manually-installed
+" plugins in .janus. If the janus plugin is not disabled, then the plugin
+" is loaded twice, with the plugin in the .janus folder being loaded after
+" the one in the janus distribution.
+"
+" According to the customization wiki, plugins can override the janus
+" distribution plugins by being added to .janus.before, but so far I've
+" been unable to get this to work. For more information see:
+"
+" https://github.com/carlhuda/janus/wiki/Customization#adding-a-new-plugin-color-scheme-
+"
+" In order to override it within the .janus folder, rename the syntastic
+" submodule to syntastic.overrride and retain the disabling of the
+" traditionally-named syntastic in the janus distribution.
 call janus#disable_plugin('syntastic')
 
 " Disable Janus-installed gitgutter
