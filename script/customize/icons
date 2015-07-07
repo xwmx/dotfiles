@@ -19,7 +19,7 @@ icons = [
   {
     source: File.join(source_icon_dir, 'iTerm2.icns'),
     destination: File.join(
-      local_app_dir, '/iTerm.app/Contents/Resources/iTerm2.icns'
+      local_app_dir, '/iTerm.app/Contents/Resources/AppIcon.icns'
     )
   }, {
     source: File.join(source_icon_dir, 'MacVim.icns'),
