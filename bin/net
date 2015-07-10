@@ -332,19 +332,23 @@ EOM
 _AIRPORT_FRAMEWORK_PATH="/System/Library/PrivateFrameworks/Apple80211.framework"
 _AIRPORT_CMD="${_AIRPORT_FRAMEWORK_PATH}/Versions/A/Resources/airport"
 wireless() {
-  local _networksetup_cmd="$(which networksetup)"
+  local _networksetup_cmd=
+  local _wifi_interface=
   local _subcommand="info"
   local _arguments=()
+
+  _networksetup_cmd="$(which networksetup)"
 
   # Command references:
   # - http://apple.stackexchange.com/a/90516
   # - https://jamfnation.jamfsoftware.com/discussion.html?id=4849
-  local _wifi_interface="$(
+  _wifi_interface="$(
     "$_networksetup_cmd" \
       -listallhardwareports | awk '/Wi-Fi|AirPort/ {getline; print $NF}'
   )"
 
-  for arg in "${_COMMAND_ARGV[@]:-}"; do
+  for arg in "${_COMMAND_ARGV[@]:-}"
+  do
     case $arg in
       on|off|info|quality|scan|join)
         _subcommand="$arg"
@@ -358,11 +362,11 @@ wireless() {
   case "$_subcommand" in
     "on")
       "$_networksetup_cmd" -setairportpower "$_wifi_interface" on && \
-        printf "Wireless on\n"
+        printf "Airport on\n"
       ;;
     "off")
       "$_networksetup_cmd" -setairportpower "$_wifi_interface" off && \
-        printf "Wireless off\n"
+        printf "Airport off\n"
       ;;
     "join")
       local _ssid="${_arguments[1]:-}"
@@ -382,21 +386,27 @@ wireless() {
         "$_ssid" \
         "$_password"
       ;;
-    "quality")
-      # Reference: http://apple.stackexchange.com/a/110884
-      local _info="$($_ME wireless info)"
-      local _signal="$(
-        printf "%s\n" "$_info" | awk '/agrCtlRSSI/ {print $NF}'
-      )"
-      local _noise="$(
-        printf "%s\n" "$_info" | awk '/agrCtlNoise/ {print $NF}'
-      )"
-      local _snr="$(printf "100*(%s -(%s))\n" "$_signal" "$_noise" | bc -l)"
-      local _percent="$(printf "%s/50\n" "$_snr" | bc -l)"
-      printf "%s%%\n" "${_percent%.*}"
-      ;;
     "info")
       "$_AIRPORT_CMD" --getinfo
+      ;;
+    "quality")
+      local _info=
+      local _signal=
+      local _noise=
+      local _snr=
+      local _percent=
+
+      # Reference: http://apple.stackexchange.com/a/110884
+      _info="$($_ME airport info)"
+      _signal="$(
+        printf "%s\n" "$_info" | awk '/agrCtlRSSI/ {print $NF}'
+      )"
+      _noise="$(
+        printf "%s\n" "$_info" | awk '/agrCtlNoise/ {print $NF}'
+      )"
+      _snr="$(printf "100*(%s -(%s))\n" "$_signal" "$_noise" | bc -l)"
+      _percent="$(printf "%s/50\n" "$_snr" | bc -l)"
+      printf "%s%%\n" "${_percent%.*}"
       ;;
     "scan")
       "$_AIRPORT_CMD" --scan
