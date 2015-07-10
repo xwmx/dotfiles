@@ -10,6 +10,16 @@
 # https://devcenter.heroku.com/articles/using-cli-plugins
 ###############################################################################
 
+# heroku-docker
+#
+# Develop with Docker. Deploy to Heroku.
+#
+# https://github.com/heroku/heroku-docker
+# https://devcenter.heroku.com/articles/introduction-local-development-with-docker?preview=1
+# https://devcenter.heroku.com/articles/getting-started-with-node-js-and-heroku-local-docker-dev?preview=1
+# https://devcenter.heroku.com/articles/getting-started-with-ruby-and-heroku-local-docker-dev?preview=1
+heroku plugins:install heroku-docker
+
 # heroku-pg-transfer
 #
 # Transfer Heroku Postgres databases
