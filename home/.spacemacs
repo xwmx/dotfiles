@@ -29,6 +29,13 @@
           git-butter-use-fringe t)
      markdown
      org
+     ;; The recommend mac port of emacs, emacs-mac-port, has slightly
+     ;; different key handling than traditional emacs. The osx configuration
+     ;; layer corrects this. More information:
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs#os-x
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/osx
+     osx
      syntax-checking
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
