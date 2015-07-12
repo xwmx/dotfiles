@@ -127,6 +127,13 @@ brew tap neovim/homebrew-neovim
 # https://github.com/telemachus/homebrew-desc
 brew tap telemachus/homebrew-desc
 
+# thoughtbot/formulae
+#
+# A Homebrew tap for various thoughtbot projects.
+#
+# https://github.com/thoughtbot/homebrew-formulae
+brew tap thoughtbot/formulae
+
 ###############################################################################
 # Homebrew - Core Formula
 #

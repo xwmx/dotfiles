@@ -1135,6 +1135,15 @@ brew install pass
 #     http://php.net/manual/en/book.gmp.php
 brew install homebrew/php/php56 --with-gmp
 
+# Pick
+#
+# The pick(1) utility allows users to choose one option from a set of choices
+# using an interface with fuzzy search functionality.
+#
+# https://github.com/thoughtbot/pick
+# https://robots.thoughtbot.com/announcing-pick
+brew install thoughtbot/formulae/pick
+
 # pidgin
 #
 # Pidgin is a chat program which lets you log in to accounts on multiple chat
