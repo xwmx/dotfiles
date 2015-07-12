@@ -59,8 +59,8 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!source-control/git
      ;; http://magit.vc/
-     (git :variable
-          git-butter-use-fringe t)
+     (git :variables
+          git-gutter-use-fringe t)
      ;; markdown
      ;;
      ;; This layer adds markdown support to Spacemacs.
