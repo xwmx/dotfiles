@@ -192,21 +192,6 @@ brew install findutils
 # https://www.gnu.org/software/sed/
 brew install gnu-sed
 
-# GNU Bash
-#
-# Bash 4. Newer than OS X default.
-#
-# http://www.gnu.org/software/bash/
-#
-# NOTE: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
-# running `chsh`.
-brew install bash
-# bash-completion
-#
-# http://bash-completion.alioth.debian.org/
-# https://alioth.debian.org/projects/bash-completion/
-brew install bash-completion
-
 ###############################################################################
 # brew-formulae.d
 #
