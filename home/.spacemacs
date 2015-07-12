@@ -24,6 +24,7 @@
      ;; org
      ;; syntax-checking
      ;; --------------------------------------------------------
+     ;; --------------------------------------------------------
      ;; auto-completion
      ;;
      ;; This layer provides auto-completion to Spacemacs.
