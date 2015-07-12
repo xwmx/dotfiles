@@ -23,10 +23,49 @@
      ;; markdown
      ;; org
      ;; syntax-checking
+     ;; --------------------------------------------------------
+     ;; auto-completion
+     ;;
+     ;; This layer provides auto-completion to Spacemacs.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/auto-completion
      auto-completion
+     ;; better-defaults
+     ;;
+     ;; This layer enhances the default commands of Emacs and is primarily
+     ;; intended to be used with the emacs editing style as it does not change
+     ;; anything in the Vim key bindings.
+     ;;
+     ;; However the emacs editing style is not required, you can still use this
+     ;; layer while you are using the vim editing style if you have some kind
+     ;; of mixed style.
+     ;;
+     ;; The commands defined in this layer are taken from various sources like
+     ;; Prelude.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/better-defaults
      better-defaults
+     ;; git
+     ;;
+     ;; This layers adds extensive support for git.
+     ;;
+     ;; Features:
+     ;; - git repository management the indispensable magit package
+     ;; - git-flow add-on for magit.
+     ;; - quick in buffer history browsing with git-timemachine.
+     ;; - quick in buffer last commit message per line with git-messenger
+     ;; - colorize buffer line by age of commit with smeargle
+     ;; - gitignore generator with helm-gitignore
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!source-control/git
+     ;; http://magit.vc/
      (git :variable
           git-butter-use-fringe t)
+     ;; markdown
+     ;;
+     ;; This layer adds markdown support to Spacemacs.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/markdown
      markdown
      ;; org
      ;;
@@ -43,6 +82,12 @@
      ;; https://github.com/syl20bnr/spacemacs#os-x
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/osx
      osx
+     ;; syntax-checking
+     ;;
+     ;; This layer provides on the fly syntax and spelling checking using
+     ;; Flycheck and Flyspell.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/syntax-checking
      syntax-checking
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
