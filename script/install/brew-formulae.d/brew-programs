@@ -578,8 +578,14 @@ brew install httpie
 #
 # http://hub.github.com/
 #
-# NOTE: installing HEAD in order to get the golang rewrite 2.0.0 pre-release.
-brew install --HEAD hub
+# NOTE: uninstall / reinstall hub if 2.2.0-rc1... is still installed via
+# the previous command with the `--head` option.
+# TODO: remove this.
+if [[ -n "$(hub --version | awk '/2.2.0-rc1/ {print $3}')" ]]
+then
+  brew uninstall hub
+fi
+brew install hub
 
 # iftop
 #
