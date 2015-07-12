@@ -23,6 +23,13 @@
      ;; markdown
      ;; org
      ;; syntax-checking
+     auto-completion
+     better-defaults
+     (git :variable
+          git-butter-use-fringe t)
+     markdown
+     org
+     syntax-checking
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
