@@ -1714,3 +1714,10 @@ brew install zeromq
 #
 # https://code.google.com/p/zopfli/
 brew install zopfli
+
+# ZSH
+#
+# A UNIX shell (command interpreter)
+#
+# http://www.zsh.org/
+brew install zsh
