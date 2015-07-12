@@ -113,6 +113,14 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 " they are sourced and run from their respective programs: 'bask' and manuel.
 autocmd BufRead,BufNewFile Baskfile,Manuelfile call SetFileTypeSH("bash")
 
+" Associate the .spacemacs dotfile with lisp
+"
+" Spacemacs is an Emacs advanced Kit focused on Evil, and .spacemacs is a
+" configuration file for it.
+"
+" https://github.com/syl20bnr/spacemacs
+autocmd BufRead,BufNewFile .spacemacs setfiletype lisp
+
 " ============================================================================
 " Line length highlighting
 " ============================================================================
