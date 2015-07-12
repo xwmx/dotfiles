@@ -157,6 +157,17 @@ go get -u -v github.com/jstemmer/gotags
 # http://jbenet.github.io/hashpipe/
 go get -u -v github.com/jbenet/hashpipe
 
+# happyfinder / hf
+#
+# Fuzzy file finder for the command line
+#
+# hf is a command line utility to quickly find files and execute a command -
+# something like Helm/Anything/CtrlP for the terminal. It tries to find the
+# best match, like other fuzzy finders (Sublime, ido, Helm).
+#
+# https://github.com/hugows/hf
+go get -u -v github.com/hugows/hf
+
 # oracle
 #
 # a tool for answering questions about Go source code.
