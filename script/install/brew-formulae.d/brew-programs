@@ -373,7 +373,17 @@ brew install elixir
 # GNU Emacs text editor
 #
 # https://www.gnu.org/software/emacs/
-brew install emacs --with-cocoa
+#
+# Options:
+#   --with-cocoa
+#     Build a Cocoa version of emacs
+#
+# NOTE: Temporarily disable in favor of railwaycat/emacsmacport/emacs-mac
+# brew install emacs --with-cocoa
+if _homebrew_formula_is_installed "emacs"
+then
+  brew uninstall emacs
+fi
 
 # emacs-mac-port
 #
@@ -387,7 +397,11 @@ brew install emacs --with-cocoa
 # http://www.math.s.chiba-u.ac.jp/~mituharu/emacs-mac.git/
 # https://github.com/railwaycat/homebrew-emacsmacport
 # https://github.com/syl20bnr/spacemacs#os-x
-brew install railwaycat/emacsmacport/emacs-mac
+#
+# Options:
+#   --with-spacemacs-icon
+#     Using the spacemacs Emacs icon by Nasser Alshammari
+brew install railwaycat/emacsmacport/emacs-mac --with-spacemacs-icon
 
 # EncFS - an Encrypted Filesystem
 #
