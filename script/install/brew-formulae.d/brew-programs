@@ -352,6 +352,13 @@ brew install elinks
 # http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 brew install elixir
 
+# Emacs
+#
+# GNU Emacs text editor
+#
+# https://www.gnu.org/software/emacs/
+brew install emacs --with-cocoa
+
 # EncFS - an Encrypted Filesystem
 #
 # EncFS provides an encrypted filesystem in user-space. It runs with regular
