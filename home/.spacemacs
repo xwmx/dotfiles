@@ -28,7 +28,14 @@
      (git :variable
           git-butter-use-fringe t)
      markdown
+     ;; org
+     ;;
+     ;; This layer enables org mode for Spacemacs.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/org
      org
+     ;; osx
+     ;;
      ;; The recommend mac port of emacs, emacs-mac-port, has slightly
      ;; different key handling than traditional emacs. The osx configuration
      ;; layer corrects this. More information:
