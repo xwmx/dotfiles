@@ -359,6 +359,20 @@ brew install elixir
 # https://www.gnu.org/software/emacs/
 brew install emacs --with-cocoa
 
+# emacs-mac-port
+#
+# This is "Mac port" addition to GNU Emacs 24.  This provides a native
+# GUI support for Mac OS X 10.4 - 10.10.  Note that Emacs 23 and later
+# already contain the official GUI support via the NS (Cocoa) port for
+# Mac OS X 10.4 and later.  So if it is good enough for you, then you
+# don't need to try this.
+#
+# https://github.com/railwaycat/emacs-mac-port/blob/master/README-mac
+# http://www.math.s.chiba-u.ac.jp/~mituharu/emacs-mac.git/
+# https://github.com/railwaycat/homebrew-emacsmacport
+# https://github.com/syl20bnr/spacemacs#os-x
+brew install railwaycat/emacsmacport/emacs-mac
+
 # EncFS - an Encrypted Filesystem
 #
 # EncFS provides an encrypted filesystem in user-space. It runs with regular

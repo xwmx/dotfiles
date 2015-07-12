@@ -120,6 +120,13 @@ brew tap manastech/crystal
 # https://github.com/neovim/homebrew-neovim
 brew tap neovim/homebrew-neovim
 
+# railwaycat/emacsmacport
+#
+# Emacs mac port formulae for the Homebrew package manager
+#
+# https://github.com/railwaycat/homebrew-emacsmacport
+brew tap railwaycat/emacsmacport
+
 # brew-desc.rb
 #
 # Searchable descriptions for Homebrew formulas
