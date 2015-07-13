@@ -62,6 +62,17 @@
      ;; http://magit.vc/
      (git :variables
           git-gutter-use-fringe t)
+     ;; go
+     ;;
+     ;; This layer adds extensive support for go.
+     ;;
+     ;; Features:
+     ;; - gofmt on file save
+     ;; - Auto-completion using go-autocomplete
+     ;; - Source analysis using go-oracle
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/go
+     go
      ;; markdown
      ;;
      ;; This layer adds markdown support to Spacemacs.
