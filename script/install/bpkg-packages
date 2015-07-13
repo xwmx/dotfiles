@@ -35,8 +35,7 @@ fi
 # https://github.com/ryanmjacobs/c
 # https://news.ycombinator.com/item?id=9144467
 
-# Temporarily set PREFIX to $HOME to ensure installation in $HOME/bin
-# https://github.com/ryanmjacobs/c/blob/master/package.json#L6
+# https://github.com/ryanmjacobs/c
 bpkg install -g ryanmjacobs/c
 
 # Clock
