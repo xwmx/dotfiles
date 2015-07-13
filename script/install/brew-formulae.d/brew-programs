@@ -1456,6 +1456,15 @@ brew install shellcheck
 # http://www.joedog.org/index/siege-home
 brew install siege
 
+# Spark
+#
+# sparklines for your shell
+#
+# See? Here's a graph of your productivity gains after using spark: ▁▂▃▅▇
+#
+# https://github.com/holman/spark
+brew install spark
+
 # Sphinx
 #
 # Sphinx is a free software/open source Fulltext search engine designed to
