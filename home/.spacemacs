@@ -73,6 +73,19 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/go
      go
+     ;; javascript
+     ;;
+     ;; This layer adds support for the JavaScript language using js2-mode.
+     ;;
+     ;; Features:
+     ;; - Smart code folding
+     ;; - Refactoring: done using js2-refactor.
+     ;; - Auto-completion and documentation: provided by tern
+     ;; - CoffeeScript support
+     ;; - Formatting with web-beautify
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/javascript
+     javascript
      ;; markdown
      ;;
      ;; This layer adds markdown support to Spacemacs.
