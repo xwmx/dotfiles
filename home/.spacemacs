@@ -118,6 +118,23 @@
      ;; https://github.com/syl20bnr/spacemacs#os-x
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/osx
      osx
+     ;; python
+     ;;
+     ;; This layer adds support for the Python language.
+     ;;
+     ;; Features:
+     ;; - Auto-completion using anaconda-mode
+     ;; - Code Navigation using anaconda-mode
+     ;; - Documentation Lookup using anaconda-mode and pylookup
+     ;; - Test Runners using nose.el or pytest
+     ;; - Virtual Environment using pyvenv and pyenv
+     ;; - semantic mode is enabled
+     ;; - Django support via pony-mode
+     ;; - PEP8 compliant formatting via YAPF
+     ;; - Suppression of unused import with autoflake
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/python
+     python
      ;; syntax-checking
      ;;
      ;; This layer provides on the fly syntax and spelling checking using
