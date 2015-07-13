@@ -1,3 +1,5 @@
+export PREFIX="$HOME/.hyperlocal"
+
 desc "xsv:up" <<EOM
 Usage:
   $_ME xsv:up
@@ -15,10 +17,15 @@ Description:
 EOM
 xsv:up() {
   # Don't install if already installed.
-  if [[ -f "$HOME/bin/xsv" ]]
+  if [[ -f "$PREFIX/bin/xsv" ]]
   then
     printf "xsv already installed.\n" && exit 0
   fi
+
+  # Remove xsc if installed in old location.
+  # TODO: remove this line.
+  [[ -e "$HOME/bin/xsv" ]] && _remove "$HOME/bin/xsv"
+
 
   printf ">> Installing xsv\n"
 
@@ -29,7 +36,7 @@ xsv:up() {
   git clone "$remote_url" "$tmp_repo" &&
     cd "$tmp_repo" &&
     cargo build &&
-    cp "$tmp_repo/target/$binary_name" "$HOME/bin" &&
+    cp "$tmp_repo/target/$binary_name" "$PREFIX/bin" &&
     cd "/tmp/orphans" &&
     _remove "$tmp_repo"
 }
@@ -43,6 +50,10 @@ Description:
 EOM
 xsv:down() {
   printf ">> Uninstalling xsv\n"
-  [[ -e "$HOME/bin/xsv"    ]] && _remove "$HOME/bin/xsv"
+  # Remove xsc if installed in old location.
+  # TODO: remove this line.
+  [[ -e "$HOME/bin/xsv" ]] && _remove "$HOME/bin/xsv"
+
+  [[ -e "$PREFIX/bin/xsv"  ]] && _remove "$PREFIX/bin/xsv"
   [[ -e "/tmp/orphans/xsv" ]] && _remove "/tmp/orphans/xsv"
 }

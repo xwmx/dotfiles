@@ -1,3 +1,5 @@
+export PREFIX="$HOME/.hyperlocal"
+
 desc "iota:up" <<EOM
 Usage:
   $_ME iota:up
@@ -12,10 +14,14 @@ Description:
 EOM
 iota:up() {
   # Don't install if already installed.
-  if [[ -f "$HOME/bin/iota" ]]
+  if [[ -f "$PREFIX/bin/iota" ]]
   then
     printf "iota already installed.\n" && exit 0
   fi
+
+  # Remove iota if installed in old location.
+  # TODO: remove this line.
+  [[ -e "$HOME/bin/iota" ]] && _remove "$HOME/bin/iota"
 
   printf ">> Installing iota\n"
 
@@ -26,7 +32,8 @@ iota:up() {
   git clone "$remote_url" "$tmp_repo" &&
     cd "$tmp_repo" &&
     cargo build &&
-    cp "$tmp_repo/target/$binary_name" "$HOME/bin" &&
+    [[ ! -d "$PREFIX/bin" ]] && mkdir -p "$PREFIX/bin" || true &&
+    cp "$tmp_repo/target/$binary_name" "$PREFIX/bin/" &&
     cd "/tmp/orphans" &&
     _remove "$tmp_repo"
 }
@@ -40,6 +47,10 @@ Description:
 EOM
 iota:down() {
   printf ">> Uninstalling iota\n"
-  [[ -e "$HOME/bin/iota"    ]] && _remove "$HOME/bin/iota"
+  # Remove iota if installed in old location.
+  # TODO: remove this line.
+  [[ -e "$HOME/bin/iota" ]] && _remove "$HOME/bin/iota"
+
+  [[ -e "$PREFIX/bin/iota"  ]] && _remove "$PREFIX/bin/iota"
   [[ -e "/tmp/orphans/iota" ]] && _remove "/tmp/orphans/iota"
 }
