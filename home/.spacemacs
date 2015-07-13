@@ -73,6 +73,17 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/go
      go
+     ;; html
+     ;;
+     ;; This layer adds support for editing HTML and CSS.
+     ;; Features:
+     ;; - Editing HTML and CSS file using web-mode
+     ;; - Support for Sass/Scss and Less files
+     ;; - Generate HTML and CSS coding using emmet-mode
+     ;; - Tags navigation on key % using evil-matchit
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/html
+     html
      ;; javascript
      ;;
      ;; This layer adds support for the JavaScript language using js2-mode.
