@@ -135,6 +135,13 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/python
      python
+     ;; ruby
+     ;;
+     ;; This layer aims at providing support for the Ruby language using
+     ;; enh-ruby-mode and robe-mode.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/ruby
+     ruby
      ;; syntax-checking
      ;;
      ;; This layer provides on the fly syntax and spelling checking using
@@ -250,6 +257,27 @@ before layers configuration."
    ;; specified with an installed package.
    ;; Not used for now.
    dotspacemacs-default-package-repository nil
+   ;; -----------------------------------------------------------------------
+   ;; User Defaults
+   ;; -----------------------------------------------------------------------
+   ;; ruby-enable-ruby-on-rails-support
+   ;;
+   ;; From the ruby configuration layer.
+   ;;
+   ;; Rails support is available through projectile-rails. This will also add
+   ;; haml-mode (for templates written in haml language and feature-mode for
+   ;; Cucumber support.
+   ;;
+   ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/ruby#rails-support
+   ruby-enable-ruby-on-rails-support t
+   ;; ruby-version-manager
+   ;;
+   ;; From the ruby configuration layer.
+   ;;
+   ;; Possible values are rbenv and rvm.
+   ;;
+   ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/ruby#ruby-version-management
+   ruby-version-manager 'rbenv
    )
   ;; User initialization goes here
   )
