@@ -46,6 +46,25 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/better-defaults
      better-defaults
+     ;; c-c++
+     ;;
+     ;; This layer adds configuration for C/C++ language as well support for
+     ;; CMake scripts.
+     ;;
+     ;; Features:
+     ;; - Support syntax checking via flycheck with Clang.
+     ;; - Support code reformatting with clang-format.
+     ;; - Display function or variable definition at the bottom. (when semantic
+     ;;   layer is included)
+     ;; - Display current function cursor is in at the top. See
+     ;;   stickyfunc-demos for demos in some programming languages. (when
+     ;;   semantic layer is included)
+     ;; - Support common refactoring with semantic-refactor . See
+     ;;   srefactor-demos for demonstration of refactoring features. (when
+     ;;   semantic layer is included)
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/c-c++
+     c-c++
      ;; git
      ;;
      ;; This layers adds extensive support for git.
