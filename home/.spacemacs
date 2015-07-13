@@ -1,7 +1,11 @@
 ;; -*- mode: dotspacemacs -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
-
+;;
+;; References:
+;; - https://github.com/syl20bnr/spacemacs
+;; - http://www.clauswitt.com/a-walkthrough-of-my-spacemacs-configuration-files.html
+;;
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration."
   (setq-default
