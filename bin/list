@@ -317,7 +317,7 @@ _list() {
 
   case "${1:-}" in
     "")
-      ls "$_colorflag"
+      ls -la "$_colorflag"
       ;;
     launchd)
       launchctl list
