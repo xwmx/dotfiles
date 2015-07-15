@@ -306,9 +306,18 @@ _debug printf "\$_ARGUMENTS: %s\n" "${_ARGUMENTS[*]:-}"
 _list() {
   _debug printf "%s\n" "$@"
 
+  # Determine supported color flag for ls.
+  local _colorflag
+  if ls --color > /dev/null 2>&1
+  then # GNU `ls`
+    _colorflag="--color"
+  else # BSD `ls`
+    _colorflag="-G"
+  fi
+
   case "${1:-}" in
     "")
-      ls
+      ls "$_colorflag"
       ;;
     launchd)
       launchctl list
