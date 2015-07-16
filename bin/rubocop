@@ -72,5 +72,5 @@ then
     sed '/warning: parser\/current is loading parser\/ruby[0-9]*, which recognizes/d;
          /warning: [0-9.]*-compliant syntax, but you are running [0-9.]/d'
 else
-  exec "$__unwrapped_rubocop" "$@"
+  "$__unwrapped_rubocop" "$@"
 fi
