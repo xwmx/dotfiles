@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+###############################################################################
+# rubocop wrapper
+#
+# Supresses versioning warning from the parser gem.
+#
+# Version incompatibilities cause the parser gem to sometimes emit a warning
+# with rubocop and syntastic. Since reports indicate that this happens
+# frequently, this wrapper removes the problematic warning.
+#
+# Projects involved:
+# - https://github.com/whitequark/parser
+# - https://github.com/bbatsov/rubocop
+# - https://github.com/scrooloose/syntastic
+# Related issues:
+# - https://github.com/scrooloose/syntastic/issues/1418
+# - https://github.com/bbatsov/rubocop/issues/1819
+# - https://github.com/scrooloose/syntastic/wiki/Ruby%3A---rubocop
+# - https://gist.github.com/lcd047/96138909015f2f8d2d36
+###############################################################################
+if [ $# -eq 1 -a x"$1" = x--version ]
+then
+  rubocop "$@" 2>&1 | \
+    sed '/warning: parser\/current is loading parser\/ruby[0-9]*, which recognizes/d;
+         /warning: [0-9.]*-compliant syntax, but you are running [0-9.]/d'
+else
+  exec rubocop "$@"
+fi
