@@ -104,5 +104,10 @@ then
   source "$HOME/.shared_env.local"
 fi
 
+# Add $HOME/bin to $PATH
+#
+# $HOME/bin contains overrides for executables elsewhere in the $PATH, so
+# place it in the top position after everything else has loaded..
+export PATH=$HOME/bin:$PATH
 
 SHARED_ENV_LOADED=true

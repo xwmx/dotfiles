@@ -6,6 +6,3 @@
 
 # Add homebrew-managed /usr/local/sbin to PATH
 export PATH=/usr/local/sbin:$PATH
-
-# Add $HOME/bin to PATH
-export PATH=$HOME/bin:$PATH
