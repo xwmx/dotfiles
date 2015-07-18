@@ -900,6 +900,15 @@ brew cask install thunderbird
 # http://www.klieme.com/TimeMachineScheduler.html
 brew cask install timemachinescheduler
 
+# Turbo Boost Switcher
+#
+# Turbo Boost Switcher is a little application for Mac computers that allows
+# to enable and/or disable the Turbo Boost feature.
+#
+# http://www.rugarciap.com/turbo-boost-switcher-for-os-x/
+# https://github.com/rugarciap/Turbo-Boost-Switcher
+brew cask install turbo-boost-switcher
+
 # Twine
 #
 # Twine is an open-source tool for telling interactive, nonlinear stories. You
