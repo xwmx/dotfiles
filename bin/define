@@ -18,7 +18,7 @@ _define() {
     sed "s/<[^>]\+>//g"
 }
 
-usage="\
+_usage="\
     ____  _________________   ________
    / __ \\/ ____/ ____/  _/ | / / ____/
   / / / / __/ / /_   / //  |/ / __/
@@ -30,10 +30,10 @@ Define a word using collinsdictionary.com
 Usage:
  define <word>
 "
-if [[ -z "$1" || "$1" = "-h" ]]; then
-  printf "%s\n" "$usage"
+if [[ -z "$1" || "$1" = "-h" ]]
+then
+  printf "%s\n" "$_usage"
   exit 0
 fi
 
 _define "$@"
-
