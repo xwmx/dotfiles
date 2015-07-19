@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+###############################################################################
+# Explain
+#
+# Explaining Shell Commands in the Shell using a web API at mankier.com.
+#
+# https://www.mankier.com
+#
+# via:
+# - https://www.mankier.com/blog/explaining-shell-commands-in-the-shell.html
+# - https://news.ycombinator.com/item?id=9910265
+#
+# Notes from original:
+#
+# Update 26-03-2015. If using this command gives no output, see if running a simple fetch causes this error:
+# $ curl https://www.mankier.com
+# curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s).
+# If so, try specifying a cipher in the curl commands: curl --ciphers ecdhe_ecdsa_aes_128_sha
+###############################################################################
+# Add this to ~/.bash_profile or ~/.bashrc
+_explain () {
+  if [ "$#" -eq 0 ]; then
+    while read  -p "Command: " cmd; do
+      curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$cmd"
+    done
+    echo "Bye!"
+  elif [ "$#" -eq 1 ]; then
+    curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$1"
+  else
+    echo "Usage"
+    echo "explain                  interactive mode."
+    echo "explain 'cmd -o | ...'   one quoted command to explain it."
+  fi
+}
+
+_explain "$@"
