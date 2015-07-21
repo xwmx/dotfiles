@@ -39,3 +39,11 @@ vagrant plugin install vagrant-digitalocean
 #
 # https://github.com/smdahlen/vagrant-hostmanager
 vagrant plugin install vagrant-hostmanager
+
+# vagrant-triggers
+#
+# Allow the definition of arbitrary scripts that will run on the host before
+# and/or after Vagrant commands.
+#
+# https://github.com/emyl/vagrant-triggers
+vagrant plugin install vagrant-triggers
