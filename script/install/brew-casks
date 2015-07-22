@@ -673,7 +673,7 @@ brew cask install pgadmin3
 # http://pharo.org/
 brew cask install pharo
 
-# Pixate
+# Pixate Studio
 #
 # Pixate is a next-generation mobile interaction design service aimed at
 # helping designers create complex animations and interactions without writing
@@ -682,7 +682,7 @@ brew cask install pharo
 # interactive ideas to stakeholders and team members.
 #
 # http://www.pixate.com/
-brew cask install pixate
+brew cask install pixate-studio
 
 # Postgres.app
 #
