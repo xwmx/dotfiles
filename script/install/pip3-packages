@@ -85,6 +85,13 @@ pip3 install --upgrade mochi
 # https://github.com/pydata/pandas
 pip3 install --upgrade pandas
 
+# pgcli
+#
+# Postgres CLI with autocompletion and syntax highlighting.
+#
+# https://github.com/dbcli/pgcli
+pip3 install --upgrade pgcli
+
 # Rainbow Stream
 #
 # Terminal-based Twitter Client. Realtime tweetstream, compose, search,
