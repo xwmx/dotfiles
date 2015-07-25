@@ -65,7 +65,7 @@ then
   mkdir "${HOME}/bin"
 fi
 
-cp "${HOME}/.ssh/*" "${HOME}/.dotfiles/home/.ssh/" ||
+cp "${HOME}/.ssh/"* "${HOME}/.dotfiles/home/.ssh/" ||
   _die printf "Unable to copy .ssh contents.\n"
 cd "${BINDLEPATH}" ||
   _die printf "Unable to cd into \$BINDLEPATH.\n"
