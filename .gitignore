@@ -45,6 +45,8 @@
 /home/.config/*
 # base16-shell
 !/home/.config/base16-shell
+# git
+!/home/.config/git
 # htop
 !/home/.config/htop
 !/home/.config/htop/htoprc
