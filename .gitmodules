@@ -209,3 +209,6 @@
 [submodule "vendor/com/github/mrowa44/emojify"]
 	path = vendor/com/github/mrowa44/emojify
 	url = https://github.com/mrowa44/emojify.git
+[submodule "vendor/com/github/holman/spaceman-diff"]
+	path = vendor/com/github/holman/spaceman-diff
+	url = https://github.com/holman/spaceman-diff.git

@@ -1,0 +1,15 @@
+###############################################################################
+# .config/git/attributes
+#
+# Global git attributes configuration.
+#
+# http://git-scm.com/docs/gitattributes
+###############################################################################
+
+# spaceman-diff
+#
+# NOTE: additional settings in ~/.gitconfig
+*.png  diff=spaceman-diff
+*.jpg  diff=spaceman-diff
+*.jpeg diff=spaceman-diff
+*.gif  diff=spaceman-dif
