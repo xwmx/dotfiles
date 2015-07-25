@@ -16,4 +16,7 @@
 #
 # For more specific initialization options, see:
 # https://github.com/clvv/fasd#install
-eval "$(fasd --init auto)"
+if program_exists "fasd"
+then
+  eval "$(fasd --init auto)"
+fi
