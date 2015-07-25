@@ -17,4 +17,7 @@
 ###############################################################################
 
 # Initialize
-source "/usr/local/opt/autoenv/activate.sh"
+if [[ -e "/usr/local/opt/autoenv/activate.sh" ]]
+then
+  source "/usr/local/opt/autoenv/activate.sh"
+fi
