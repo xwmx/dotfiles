@@ -57,9 +57,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 export BINDLEPATH="${HOME}/.dotfiles"
 
-"${BINDLEPATH}/script/install/apt-packages" ||
-  _die printf "apt-packages failed.\n"
-
 if [[ ! -e "${HOME}/bin" ]]
 then
   mkdir "${HOME}/bin"
