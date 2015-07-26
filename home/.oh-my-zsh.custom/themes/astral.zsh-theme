@@ -25,7 +25,7 @@ local _astral_time="%T"
 local _astral_machine
 if [[ "$SESSION_TYPE" == "remote/ssh" ]]
 then
-  _astral_machine="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:%{$fg_bold[green]%}%m"
+  _astral_machine="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:%{$fg_bold[green]%}%n@%m"
 else
   _astral_machine="%{$fg_bold[blue]%}%m"
 fi
