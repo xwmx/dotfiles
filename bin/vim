@@ -57,8 +57,6 @@ __unwrap() {
   fi
 }
 
-__unwrapped_executable=$(__unwrap)
-
 ###############################################################################
 # Wrapper operations
 ###############################################################################
@@ -66,9 +64,14 @@ __unwrapped_executable=$(__unwrap)
 # Use `nvim` for all vim operations if it is present in the $PATH. Otherwise,
 # use regular `vim`.
 #
-# `exec` tells the shell to just give control to the executable without
-# forking. See: http://stackoverflow.com/a/1696062
-_nvim_path="$(which nvim)"
+# NOTE:
+# - `exec` tells the shell to just give control to the executable without
+#   forking. See: http://stackoverflow.com/a/1696062
+# - the `||` style used for setting `$_nvim_path` and
+#   `__unwrapped_executable` handles the non-zero exit from `which nvim`
+#   when `nvim` is not found, which otherwise would exit the program due to
+#   the `set -o errexit` strictness setting.
+_nvim_path="$(which nvim)" || __unwrapped_executable=$(__unwrap)
 if [[ -e "$_nvim_path" ]]
 then
   exec "$_nvim_path" "$@"
