@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+################################################################################
+# brew-linux
+#
+# Install programs into the home directory on linux using Linuxbrew / Homebrew.
+#
+# http://brew.sh/linuxbrew/
+# https://github.com/Homebrew/linuxbrew
+###############################################################################
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]
+then
+  printf "brew-formulae is only supported on Ubuntu.\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Homebrew - Update
+###############################################################################
+
+# Upgrade any already-installed formulae.
+brew upgrade --all
+
+###############################################################################
+# Programs
+###############################################################################
+
+# Ack
+#
+# Ack is a tool like grep, optimized for programmers
+#
+# http://beyondgrep.com/
+brew install ack
+
+# htop (htop-osx)
+#
+# htop, an interactive process viewer.
+#
+# https://github.com/max-horvath/htop-osx
+brew install htop
+
+# The Silver Searcher
+#
+# A code-searching tool similar to ack, but faster.
+#
+# https://github.com/ggreer/the_silver_searcher
+# http://geoff.greer.fm/ag/
+#
+# NOTE: command name is `ag`
+brew install the_silver_searcher
+
+# Tig - text-mode interface for Git
+#
+# Tig is an ncurses-based text-mode interface for git. It functions mainly as a
+# Git repository browser, but can also assist in staging changes for commit at
+# chunk level and act as a pager for output from various Git commands.
+#
+# http://jonas.nitro.dk/tig/
+brew install tig
+
+# tree
+#
+# Tree is a recursive directory listing command that produces a depth indented
+# listing of files.
+#
+# http://mama.indstate.edu/users/ice/tree/
+brew install tree
+
+###############################################################################
+# Cleanup
+###############################################################################
+
+# Remove outdated versions.
+brew cleanup
