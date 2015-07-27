@@ -29,6 +29,9 @@ __verbose_init printf "Loading .shared_env\n"
 is_osx() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
 }
+is_linux() {
+  [[ "$(uname -a)" =~ ^Linux ]] || return 1
+}
 is_ubuntu() {
   [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
 }

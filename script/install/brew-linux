@@ -12,9 +12,9 @@
 # Platform Check
 ###############################################################################
 
-if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]
+if [[ ! "$(uname -a)" =~ ^Linux ]]
 then
-  printf "brew-formulae is only supported on Ubuntu.\nSkipping...\n"
+  printf "brew-linux is only supported on Linux.\nSkipping...\n"
   exit 0
 fi
 

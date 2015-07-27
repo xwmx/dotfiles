@@ -14,7 +14,7 @@
 ###############################################################################
 
 # Linuxbrew environment variables.
-if is_ubuntu
+if is_linux
 then
   export PATH="$HOME/.linuxbrew/bin:$PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
