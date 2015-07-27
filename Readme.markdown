@@ -45,8 +45,12 @@ discovered by running `bindle help`.
 _Warning: The current Linux bootstrapping overwrites existing configuration
 files, installs various packages in `$HOME`, and changes the shell to zsh._
 
-`git clone https://github.com/alphabetum/dotfiles.git .dotfiles &&
-  ~/.dotfiles/script/bootstrap/linux`
+Run the following, preferrably at the root level of you home directory.
+
+```bash
+git clone https://github.com/alphabetum/dotfiles.git "$HOME/.dotfiles" && \
+  "$HOME/.dotfiles/script/bootstrap/linux"
+```
 
 ## Components
 
