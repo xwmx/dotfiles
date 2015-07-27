@@ -1319,13 +1319,6 @@ brew install r --with-openblas
 # http://ranger.nongnu.org/
 brew install ranger
 
-# rbenv
-#
-# Groom your app’s Ruby environment
-#
-# https://github.com/sstephenson/rbenv
-brew install rbenv
-
 # recutils
 #
 # GNU Recutils is a set of tools and libraries to access human-editable, plain
