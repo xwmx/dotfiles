@@ -25,9 +25,11 @@ configuration management tool](https://github.com/alphabetum/bindle).
 Assuming you have [Homebrew](http://brew.sh/) installed, copy the
 following and paste it into your terminal:
 
-    brew install alphabetum/taps/bindle && \
-    bindle init https://github.com/alphabetum/dotfiles.git ~/.dotfiles && \
-    bindle bootstrap osx
+```bash
+brew install alphabetum/taps/bindle && \
+bindle init https://github.com/alphabetum/dotfiles.git "$HOME/.dotfiles" && \
+bindle bootstrap osx
+```
 
 This will take some time to run (it has to pull the submodules) and should
 
@@ -49,7 +51,7 @@ Run the following, preferrably at the root level of you home directory.
 
 ```bash
 git clone https://github.com/alphabetum/dotfiles.git "$HOME/.dotfiles" && \
-  "$HOME/.dotfiles/script/bootstrap/linux"
+"$HOME/.dotfiles/script/bootstrap/linux"
 ```
 
 ## Components
