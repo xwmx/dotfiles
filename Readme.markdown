@@ -15,7 +15,7 @@
 
 🅓🅞🅣🅢
 
-An OS X and Ubuntu environment with configuration scripts. Uses the [`bindle`
+An OS X and Linux environment with configuration scripts. Uses the [`bindle`
 configuration management tool](https://github.com/alphabetum/bindle).
 
 ## Setup
@@ -40,13 +40,13 @@ Use the [`bindle`](https://github.com/alphabetum/bindle) tool to experiment with
 linking files into your environment and experimenting. `bindle` commands can be
 discovered by running `bindle help`.
 
-### Ubuntu
+### Linux
 
-_Warning: The current Ubuntu bootstrapping overwrites existing configuration
-files, installs various packages, and changes the shell to zsh._
+_Warning: The current Linux bootstrapping overwrites existing configuration
+files, installs various packages in `$HOME`, and changes the shell to zsh._
 
-1. Clone this repository to `~/.dotfiles`
-2. Run the `~/.dotfiles/script/bootstrap/ubuntu` script
+`git clone https://github.com/alphabetum/dotfiles.git .dotfiles &&
+  ~/.dotfiles/script/bootstrap/linux`
 
 ## Components
 

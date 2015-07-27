@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
 ###############################################################################
-# Bootstrap dotfiles on a fresh ElementaryOS install
+# Bootstrap dotfiles on a fresh Linux user account.
 ###############################################################################
 
 ###############################################################################
 # Platform Check
 ###############################################################################
 
-# Skip unless ubuntu
-if [[ ! "$(cat /etc/issue 2> /dev/null)" =~ elementary ]]
+# Skip unless Linux
+if [[ ! "$(uname -a)" =~ ^Linux ]]
 then
-  printf "\
-Elementary OS bootstrapping not supported on this system.
-Skipping...
-"
+  printf "Linux bootstrapping is only supported on Linux.\nSkipping...\n"
   exit 0
 fi
 
@@ -59,6 +56,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 
 export BINDLEPATH="${HOME}/.dotfiles"
+
+if [[ ! -e "${HOME}/bin" ]]
+then
+  mkdir "${HOME}/bin"
+fi
 
 cp "${HOME}/.ssh/"* "${HOME}/.dotfiles/home/.ssh/" ||
   _die printf "Unable to copy .ssh contents.\n"
