@@ -18,6 +18,36 @@ Skipping...
 fi
 
 ###############################################################################
+# Die
+###############################################################################
+
+# _die()
+#
+# Usage:
+#   _die printf "Error message. Variable: %s\n" "$0"
+#
+# A simple function for exiting with an error after executing the specified
+# command. The command is expected to print a message and should typically
+# be either `echo`, `printf`, or `cat`.
+_die() {
+  # Prefix die message with "cross mark (U+274C)", often displayed as a red x.
+  printf "❌  "
+  "$@" 1>&2
+  exit 1
+}
+# die()
+#
+# Usage:
+#   die "Error message. Variable: $0"
+#
+# Exit with an error and print the specified message.
+#
+# This is a shortcut for the _die() function that simply echos the message.
+die() {
+  _die echo "$@"
+}
+
+###############################################################################
 # Bootstrap
 ###############################################################################
 
@@ -30,22 +60,25 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 export BINDLEPATH="${HOME}/.dotfiles"
 
-"${BINDLEPATH}/script/install/apt-packages"
-
-if [[ ! -e "${HOME}/bin" ]]
-then
-  mkdir "${HOME}/bin"
-fi
-
-cp "${HOME}/.ssh/*" "${HOME}/.dotfiles/home/.ssh/" && \
-  cd "${BINDLEPATH}" && \
-  git submodule init && \
-  git submodule update --init --recursive && \
-  ./bin/bindle link --overwrite --with-backup && \
-  ./bin/bindle bin link
+cp "${HOME}/.ssh/"* "${HOME}/.dotfiles/home/.ssh/" ||
+  _die printf "Unable to copy .ssh contents.\n"
+cd "${BINDLEPATH}" ||
+  _die printf "Unable to cd into \$BINDLEPATH.\n"
+git submodule init ||
+  _die printf "\`git submodule init\` failed.\n"
+git submodule update --init --recursive ||
+  _die printf "\`git submodule update --init --recursive\` failed.\n"
+./bin/bindle link --overwrite --with-backup ||
+  _die printf "\`./bin/bindle link --overwrite --with-backup\` failed.\n"
+./bin/bindle bin link ||
+  _die printf "\`./bin/bindle bin link\` failed.\n"
 
 # Bootstrap janus
-"${BINDLEPATH}/home/.vim/bootstrap.sh"
+"${BINDLEPATH}/home/.vim/bootstrap.sh" ||
+  _die printf "Janus bootstrap failed."
+
+bindle install brew-linux ||
+  _die printf "\`bindle install brew-linux\` failed.\n"
 
 sudo chsh -s "$(which zsh)" "$(whoami)"
 
