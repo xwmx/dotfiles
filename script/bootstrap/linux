@@ -80,7 +80,7 @@ git submodule update --init --recursive ||
   _die printf "Janus bootstrap failed."
 
 ./bin/bindle install brew-linux ||
-  _die printf "\`bindle install brew-linux\` failed.\n"
+  _die printf "\`./bin/bindle install brew-linux\` failed.\n"
 
 sudo chsh -s "$(which zsh)" "$(whoami)"
 
