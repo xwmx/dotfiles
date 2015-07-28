@@ -32,7 +32,7 @@ __verbose_init printf "Loading .bashrc\n"
 
 # source .bashenv
 #
-# Unlike zsh, this file is not known to bash, so it needs an explicit invites.
+# Unlike zsh, this file is not known to bash, so it needs an explicit invite.
 if [[ -f "$HOME/.bashenv" ]]
 then
   source "$HOME/.bashenv"
