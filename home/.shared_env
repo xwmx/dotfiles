@@ -115,4 +115,4 @@ fi
 # place it in the top position after everything else has loaded..
 export PATH=$HOME/bin:$PATH
 
-SHARED_ENV_LOADED=true
+export SHARED_ENV_LOADED=true
