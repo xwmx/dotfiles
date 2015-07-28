@@ -90,11 +90,12 @@ init_src() {
 ###############################################################################
 
 # Set DOTFILES directory
+export DOTFILES
 if program_exists "bindle"
 then
-  export DOTFILES="$(bindle dir)"
+  DOTFILES="$(bindle dir)"
 else
-  export DOTFILES="$HOME/.dotfiles"
+  DOTFILES="$HOME/.dotfiles"
 fi
 
 # Source all files in ".shared_env.d" if present.
