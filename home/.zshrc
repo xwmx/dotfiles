@@ -99,7 +99,6 @@ plugins=(
   tmuxinator
   vi-mode
   wd
-  z
  )
 
 source "$ZSH/oh-my-zsh.sh"

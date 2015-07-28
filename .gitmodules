@@ -218,3 +218,6 @@
 [submodule "vendor/com/github/sstephenson/rbenv"]
 	path = vendor/com/github/sstephenson/rbenv
 	url = https://github.com/sstephenson/rbenv.git
+[submodule "vendor/com/github/rupa/z"]
+	path = vendor/com/github/rupa/z
+	url = https://github.com/rupa/z.git
