@@ -42,7 +42,8 @@ _extract() {
   fi
 }
 
-usage="\
+_help() {
+  printf "\
             _                  _
    _____  _| |_ _ __ __ _  ___| |_
   / _ \\ \\/ / __| '__/ _\` |/ __| __|
@@ -67,10 +68,11 @@ Supported File Extensions:
   .Z
   .7z
 "
-if [[ -z "$1" || "$1" = "-h" ]]
+}
+
+if [[ -z "$1" ]] || [[ "$1" = "-h" ]] || [[ "$1" = "--help" ]]
 then
-  printf "%s\n" "$usage"
-  exit 0
+  _help && exit 0
 fi
 
 _extract "$@"
