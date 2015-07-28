@@ -17,7 +17,6 @@
 # curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s).
 # If so, try specifying a cipher in the curl commands: curl --ciphers ecdhe_ecdsa_aes_128_sha
 ###############################################################################
-# Add this to ~/.bash_profile or ~/.bashrc
 _explain () {
   if [ "$#" -eq 0 ]; then
     while read  -p "Command: " cmd; do
