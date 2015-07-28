@@ -34,5 +34,5 @@ fi
 # load .shared_rc.local if it exists
 if [ -f "$HOME/.shared_rc.local" ]
 then
-  source "$HOME/.shared_rc.local"
+  . "$HOME/.shared_rc.local"
 fi
