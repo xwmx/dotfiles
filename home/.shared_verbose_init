@@ -19,9 +19,9 @@ __DEFAULT_VERBOSE_INIT=false
 # __verbose_init setup.
 ###############################################################################
 
-if [ -z $__VERBOSE_INIT_LOADED ]
+if [ -z "$__VERBOSE_INIT_LOADED" ]
 then
-  if [ -z $__VERBOSE_INIT ]
+  if [ -z "$__VERBOSE_INIT" ]
   then
     __VERBOSE_INIT="$__DEFAULT_VERBOSE_INIT"
   fi
