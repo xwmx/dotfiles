@@ -38,7 +38,7 @@ is_ubuntu() {
 }
 get_os() {
   for os in osx ubuntu; do
-    is_$os; [[ $? == ${1:-0} ]] && echo $os
+    is_$os; [[ $? == "${1:-0}" ]] && echo $os
   done
 }
 
@@ -47,7 +47,7 @@ get_os() {
 # For information on why `which` is not being used, see:
 # http://stackoverflow.com/a/677212
 program_exists() {
-  hash $1 2>/dev/null
+  hash "$1" 2>/dev/null
 }
 
 test_program_exists() {
