@@ -67,20 +67,6 @@
 # Only track home/.hyperlocal Readme
 /home/.hyperlocal/*
 !/home/.hyperlocal/Readme.md
-# Only track specific files in .hyperlocal/etc
-!/home/.hyperlocal/etc
-/home/.hyperlocal/etc/*
-!/home/.hyperlocal/etc/profile.d
-/home/.hyperlocal/etc/profile.d/*
-!/home/.hyperlocal/etc/profile.d/z.sh
-# Only track specifc files in .hyperlocal/share
-!/home/.hyperlocal/share
-/home/.hyperlocal/share/*
-!/home/.hyperlocal/share/man
-/home/.hyperlocal/share/man/*
-!/home/.hyperlocal/share/man/man1
-/home/.hyperlocal/share/man/man1/*
-!/home/.hyperlocal/share/man/man1/z.1
 
 # Only track specific ipython config files
 #
