@@ -116,4 +116,15 @@ fi
 # place it in the top position after everything else has loaded..
 export PATH=$HOME/bin:$PATH
 
-export SHARED_ENV_LOADED=true
+# SHARED_ENV_LOADED
+#
+# Available to other files in the initialization process to use in order to
+# determine whether this shared environment has been loaded.
+#
+# This variable *should not be exported*, since subshells need to be able to
+# run through the initialization process themselves, and this variable would
+# prevent that.
+#
+# Disable ShellCheck "___ appears unused. Verify it or export it." warning:
+# shellcheck disable=SC2034
+SHARED_ENV_LOADED=true
