@@ -79,6 +79,9 @@ git submodule update --init --recursive ||
 "${BINDLEPATH}/home/.vim/bootstrap.sh" ||
   _die printf "Janus bootstrap failed."
 
+# Re-source .bashrc now that the configuration has been installed.
+source "${HOME}/.bashrc"
+
 ./bin/bindle install brew-linux ||
   _die printf "\`./bin/bindle install brew-linux\` failed.\n"
 
