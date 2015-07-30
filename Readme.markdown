@@ -38,9 +38,9 @@ This will take some time to run (it has to pull the submodules) and should
 3. add a `~/bin` directory if one is not already present,
 4. and add a `~/.bindlerc` configuration file.
 
-Use the [`bindle`](https://github.com/alphabetum/bindle) tool to experiment with
-linking files into your environment and experimenting. `bindle` commands can be
-discovered by running `bindle help`.
+Use the [`bindle`](https://github.com/alphabetum/bindle) tool to experiment
+with linking files into your environment. `bindle` commands can be discovered
+by running `bindle help`.
 
 ### Linux
 
