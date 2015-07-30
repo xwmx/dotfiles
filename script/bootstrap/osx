@@ -30,3 +30,15 @@ export BINDLEPATH="${HOME}/.dotfiles" && \
 
 # Bootstrap janus
 "${BINDLEPATH}/home/.vim/bootstrap.sh"
+
+printf "\
+All done!
+
+The configuration has been initialized at the following location:
+
+~/.dotfiles
+
+So far, your existing configuration has not been changed. Use the \`bindle\`
+tool to experiment with linking files into your environment. \`bindle\`
+commands can be discovered by running \`bindle help\`.
+"
