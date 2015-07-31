@@ -262,6 +262,13 @@ brew cask install coqide
 # https://github.com/coteditor/CotEditor
 brew cask install coteditor
 
+# Cyberduck
+#
+# Libre FTP, SFTP, WebDAV, S3 & OpenStack Swift browser for Mac and Windows.
+#
+# https://cyberduck.io/?l=en
+brew cask install cyberduck
+
 # Disk Inventory X
 #
 # Disk Inventory X is a disk usage utility for Mac OS X 10.3 (and later). It
