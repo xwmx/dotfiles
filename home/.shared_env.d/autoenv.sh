@@ -17,7 +17,13 @@
 ###############################################################################
 
 # Initialize
-if [[ -e "/usr/local/opt/autoenv/activate.sh" ]]
-then
-  source "/usr/local/opt/autoenv/activate.sh"
-fi
+#
+# NOTE: Temporarily disabled. iTerm 2 experiences a slowdown over time,
+# especially after `cd`ing around a lot. Autoenv overrides `cd`, so
+# temporarily disbled autoenv to see whether the issue is caused by or related
+# to this in some way.
+# TODO: reenable or uninstall.
+# if [[ -e "/usr/local/opt/autoenv/activate.sh" ]]
+# then
+#   source "/usr/local/opt/autoenv/activate.sh"
+# fi
