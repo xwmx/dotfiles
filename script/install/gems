@@ -5,6 +5,30 @@
 # Install various global ruby gems modules
 ###############################################################################
 
+###############################################################################
+# Utility Functions
+###############################################################################
+
+# _gem_is_installed
+#
+# Usage:
+#   _gem_is_installed <gem-name>
+#
+# Description:
+#   Test whether a gem with the specified name is currently installed
+#   globally. More information: http://serverfault.com/q/391621
+_gem_is_installed() {
+  if [[ -z "${1:-}" ]]
+  then
+    printf "No gem name specified.\n" && exit 1
+  fi
+  [[ "$(gem query -i -n "^t$")" == "true" ]]
+}
+
+###############################################################################
+# Global Gems
+###############################################################################
+
 # artoo
 #
 # Ruby robotics framework using Celluloid with support for 15 different
@@ -193,6 +217,14 @@ gem install scss-lint
 # on.
 #
 # https://github.com/samg/timetrap
+#
+# NOTE: This conflicts with the previously installed t twitter client, so that
+# gem needs to be uninstalled first.
+# TODO: remove this uninstall section.
+if _gem_is_installed "t"
+then
+  gem uninstall t
+fi
 gem install timetrap
 
 # Tmuxinator
