@@ -186,15 +186,14 @@ gem install rush2
 # https://github.com/causes/scss-lint
 gem install scss-lint
 
-# t
+# Timetrap
 #
-# A command-line power tool for Twitter.
+# Timetrap is a simple command line time tracker written in ruby. It provides
+# an easy to use command line interface for tracking what you spend your time
+# on.
 #
-# The CLI takes syntactic cues from the Twitter SMS commands, but it offers
-# vastly more commands and capabilities than are available via SMS.
-#
-# https://github.com/sferik/t
-gem install t
+# https://github.com/samg/timetrap
+gem install timetrap
 
 # Tmuxinator
 #
