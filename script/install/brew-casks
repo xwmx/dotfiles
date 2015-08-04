@@ -739,6 +739,19 @@ brew cask install processing3
 # http://www.psequel.com/
 brew cask install psequel
 
+# qBittorrent
+#
+# qBittorrent is a bittorrent client programmed in C++ / Qt that uses
+# libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.
+#
+# It aims to be a good alternative to all other bittorrent clients out
+# there. qBittorrent is fast, stable and provides unicode support as well
+# as many features.
+#
+# http://www.qbittorrent.org
+# https://github.com/qbittorrent/qBittorrent
+brew cask install qbittorrent
+
 # RetroArch / libretro
 #
 # RetroArch is the reference frontend for the libretro API. Popular examples of
