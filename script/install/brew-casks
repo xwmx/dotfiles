@@ -406,6 +406,19 @@ brew cask install gridwars
 # https://www.google.com/chrome/
 brew cask install google-chrome
 
+# GrandPerspective
+#
+# GrandPerspective is a small utility application for Mac OS X that
+# graphically shows the disk usage within a file system. It can help you to
+# manage your disk, as you can easily spot which files and folders take up
+# the most space. It uses a so called tree map for visualisation. Each file
+# is shown as a rectangle with an area proportional to the file's size.
+# Files in the same folder appear together, but their placement is otherwise
+# arbitrary.
+#
+# http://grandperspectiv.sourceforge.net
+brew cask install grandperspective
+
 # The Haskell Platform
 #
 # http://www.haskell.org/platform/
