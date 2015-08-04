@@ -269,6 +269,13 @@ brew cask install coteditor
 # https://cyberduck.io/?l=en
 brew cask install cyberduck
 
+# Deluge
+#
+# Deluge is a lightweight, Free Software, cross-platform BitTorrent client.
+#
+# http://deluge-torrent.org/
+brew cask install deluge
+
 # Disk Inventory X
 #
 # Disk Inventory X is a disk usage utility for Mac OS X 10.3 (and later). It
