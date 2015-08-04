@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+###############################################################################
+# domain - a bask script
+#
+# Get bask:
+#   https://github.com/alphabetum/bask
+#
+# Add this script and the bask program to your $PATH.
+#
+# For usage information, run:
+#   domain help
+###############################################################################
+
+source "$(which bask)"
+
+# Set __cat_cmd in order to display color output.
+if hash ccat 2> /dev/null
+then
+  __cat_cmd="ccat"
+else
+  __cat_cmd="cat"
+fi
+
+desc "info" <<EOM
+Usage:
+  $_ME info <domain.name>
+
+Description:
+  Check some basic DNS settings using the following commands:
+    \`whois <domain.name>\`
+    \`dig +nocmd <domain.name> any +multiline +noall +answer\`
+    \`curl --head --location --progress-bar <domain.name>\`
+EOM
+info() {
+  local _name
+
+  if [[ -z "${1:-}" ]]
+  then
+    _die printf "No domain name specified.\n"
+  else
+    _name="$1"
+  fi
+
+  printf "\
+###############################################################################
+# whois %s
+###############################################################################
+" "$_name"
+  whois "$_name" | "$__cat_cmd" || true
+
+  printf "\
+###############################################################################
+# dig +nocmd %s any +multiline +noall +answer
+###############################################################################
+" "$_name"
+  dig +nocmd "$_name" any +multiline +noall +answer | "$__cat_cmd" || true
+
+  printf "\
+
+###############################################################################
+# curl --head --location --progress-bar %s
+###############################################################################
+" "$_name"
+  curl \
+    --head \
+    --location \
+    --progress-bar \
+    "$_name" | "$__cat_cmd" || true
+}
+
+_init
