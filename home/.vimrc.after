@@ -121,6 +121,14 @@ autocmd BufRead,BufNewFile Baskfile,Manuelfile call SetFileTypeSH("bash")
 " https://github.com/syl20bnr/spacemacs
 autocmd BufRead,BufNewFile .spacemacs setfiletype lisp
 
+" Associate the .sshconfig file extension with the sshconfig file type.
+"
+" In the current dotfile configuration, .sshconfig files (not an official
+" extenssion and only used in this dotfile configuration for convenience) can
+" be added to the .ssh/config.d directory and subsequently compiled into one
+" larger ssh configuration file.
+autocmd BufRead,BufNewFile *.sshconfig set filetype=sshconfig
+
 " ============================================================================
 " Line length highlighting
 " ============================================================================
