@@ -6,19 +6,23 @@
 # See also: $HOME/.ssh
 ###############################################################################
 
-# Alias `ssh` to a function that combines the contents of `.ssh/config.d` and
-# `.ssh/config` into a `.ssh/config-all` file that is then used as the config
-# file for `ssh`.
+# generate_ssh_config
 #
-# Leaving the .ssh/config file as the default file and compiling to
-# `.ssh/config-all` makes it easier to alter or remove this functionality
-# without needing to perform extensive editing on the `.ssh/config` file.
+# Usage:
+#   generate_ssh_config
 #
-# More information: http://superuser.com/q/247564
-_SSH_CMD="$(which ssh)"
-ssh() {
+# Description:
+#   Combine the contents of `.ssh/config.d` and `.ssh/default.sshconfig` into
+#   a `.ssh/config` file that is then used as the config file for `ssh`.
+#
+#   This function can be called directly in order to manually generate a new
+#   `.ssh/config` file, since commands other than `ssh` will use the
+#   generated configuration.
+generate_ssh_config() {
   printf "\
 ###############################################################################
+# .ssh/config
+#
 # This is a generated ssh config file that is created by a wrapper around the
 # \`ssh\` command in order to combine multiple ssh config files.
 #
@@ -27,7 +31,17 @@ ssh() {
 # More information: ~/.shared_rc.d/ssh.sh
 ###############################################################################
 " > ~/.ssh/config-all
-  cat ~/.ssh/config.d/* >> ~/.ssh/config-all
-  cat ~/.ssh/config >> ~/.ssh/config-all
-  "$_SSH_CMD" -F ~/.ssh/config-all "$@"
+  cat ~/.ssh/config.d/* >> ~/.ssh/config
+  cat ~/.ssh/default.sshconfig >> ~/.ssh/config
+}
+
+# Alias `ssh` to a function that combines the contents of `.ssh/config.d` and
+# `.ssh/config` into a `.ssh/config-all` file that is then used as the config
+# file for `ssh`.
+#
+# More information: http://superuser.com/q/247564
+_SSH_CMD="$(which ssh)"
+ssh() {
+  generate_ssh_config
+  "$_SSH_CMD" "$@"
 }

@@ -111,7 +111,7 @@
 
 # Only track .ssh/config. Everything else in .ssh is private
 /home/.ssh/*
-!/home/.ssh/config
+!/home/.ssh/default.sshconfig
 !/home/.ssh/config.d
 /home/.ssh/config.d/*
 !/home/.ssh/config.d/example.com.sshconfig
