@@ -36,13 +36,6 @@ brew upgrade --all
 # http://beyondgrep.com/
 brew install ack
 
-# htop (htop-osx)
-#
-# htop, an interactive process viewer.
-#
-# https://github.com/max-horvath/htop-osx
-brew install htop
-
 # The Silver Searcher
 #
 # A code-searching tool similar to ack, but faster.
@@ -69,6 +62,15 @@ brew install tig
 #
 # http://mama.indstate.edu/users/ice/tree/
 brew install tree
+
+# htop (htop-osx)
+#
+# htop, an interactive process viewer.
+#
+# https://github.com/max-horvath/htop-osx
+#
+# NOTE: install htop last because otherwise it fails.
+brew install htop
 
 ###############################################################################
 # Cleanup
