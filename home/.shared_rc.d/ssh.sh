@@ -67,7 +67,7 @@ generate_ssh_key() {
     ssh-keygen \
       -t rsa \
       -b 4096 \
-      -C "${_username}@${_remote_host}_id_rsa"
+      -C "${_username}@${_remote_host}_id_rsa" \
       -f "${HOME}/.ssh/${_local_host}_${_username}@${_remote_host}_id_rsa"
   fi
 }
