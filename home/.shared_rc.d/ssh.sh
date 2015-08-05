@@ -30,7 +30,7 @@ generate_ssh_config() {
 #
 # More information: ~/.shared_rc.d/ssh.sh
 ###############################################################################
-" > ~/.ssh/config-all
+" > ~/.ssh/config
   cat ~/.ssh/config.d/* >> ~/.ssh/config
   cat ~/.ssh/default.sshconfig >> ~/.ssh/config
 }
