@@ -75,9 +75,15 @@ git submodule update --init --recursive ||
 ./bin/bindle bin link ||
   _die printf "\`./bin/bindle bin link\` failed.\n"
 
-# Bootstrap janus
-"${BINDLEPATH}/home/.vim/bootstrap.sh" ||
-  _die printf "Janus bootstrap failed."
+# Finalize Janus setup.
+if hash "rake" 2>/dev/null
+then
+  cd "${BINDLEPATH}/home/.vim/"
+  rake || _die printf "Janus bootstrap failed."
+  cd "${BINDLEPATH}"
+else
+  printf "rake not installed. Janus not completely initialized."
+fi
 
 # Re-source .bashrc now that the configuration has been installed.
 source "${HOME}/.bashrc"

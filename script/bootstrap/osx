@@ -28,8 +28,15 @@ export BINDLEPATH="${HOME}/.dotfiles" && \
   git submodule init && \
   git submodule update --init --recursive
 
-# Bootstrap janus
-"${BINDLEPATH}/home/.vim/bootstrap.sh"
+# Finalize Janus setup.
+if hash "rake" 2>/dev/null
+then
+  cd "${BINDLEPATH}/home/.vim/"
+  rake || _die printf "Janus bootstrap failed."
+  cd "${BINDLEPATH}"
+else
+  printf "rake not installed. Janus not completely initialized."
+fi
 
 printf "\
 All done!
