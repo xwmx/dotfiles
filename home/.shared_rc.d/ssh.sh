@@ -72,9 +72,8 @@ generate_ssh_key() {
   fi
 }
 
-# Alias `ssh` to a function that combines the contents of `.ssh/config.d` and
-# `.ssh/config` into a `.ssh/config-all` file that is then used as the config
-# file for `ssh`.
+# Alias `ssh` to a function that first runs `generate_ssh_config` before
+# calling `ssh`.
 #
 # More information: http://superuser.com/q/247564
 _SSH_CMD="$(which ssh)"
