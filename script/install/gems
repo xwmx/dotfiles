@@ -38,6 +38,13 @@ _gem_is_installed() {
 # https://github.com/hybridgroup/artoo
 gem install artoo
 
+# bundler-audit
+#
+# Patch-level verification for Bundler.
+#
+# https://github.com/rubysec/bundler-audit
+gem install bundler-audit
+
 # CocoaPods
 #
 # CocoaPods is the dependency manager for Swift and Objective-C Cocoa projects.
