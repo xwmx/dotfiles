@@ -38,6 +38,17 @@ _gem_is_installed() {
 # https://github.com/hybridgroup/artoo
 gem install artoo
 
+# bro pages
+#
+# bro pages are a highly readable supplement to man pages.
+#
+# bro pages show concise, common-case examples for Unix commands.
+#
+# NOTE: alias in shell as `eg`.
+#
+# http://bropages.org/
+gem install bropages
+
 # bundler-audit
 #
 # Patch-level verification for Bundler.
