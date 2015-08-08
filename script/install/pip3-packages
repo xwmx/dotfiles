@@ -83,6 +83,17 @@ pip3 install --upgrade ftfy
 # http://hylang.org/
 pip3 install --upgrade hy
 
+# Krill
+#
+# Krill are filter feeders. True to its namesake, krill filters feeds. It is
+# not picky about its diet, and will happily consume RSS, Atom, CDF and even
+# Twitter feeds (no credentials required!). It aggregates feed items from all
+# sources you specify, filters out those that interest you, and displays them
+# as a live stream of clean, legible command line output.
+#
+# https://github.com/p-e-w/krill
+pip3 install --upgrade krill
+
 # Mochi
 #
 # Dynamically typed functional programming language.
