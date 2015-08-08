@@ -1021,6 +1021,18 @@ fi
 # Note that this is a tapped formula from the neovim/homebrew-neovim tap.
 brew install --HEAD neovim/neovim/neovim
 
+# Newsbeuter
+#
+# Newsbeuter is an open-source RSS/Atom feed reader for text terminals. It
+# runs on Linux, FreeBSD, Mac OS X and other Unix-like operating systems.
+# Newsbeuter’s great configurability and vast number of features make it a
+# perfect choice for people that need a slick and fast feed reader that can
+# be completely controlled via keyboard.
+#
+# http://www.newsbeuter.org/
+# https://github.com/akrennmair/newsbeuter/
+brew install newsbeuter
+
 # ngrep - network grep
 #
 # ngrep strives to provide most of GNU grep's common features, applying them to
