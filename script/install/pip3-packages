@@ -28,6 +28,21 @@ fi
 # Packages
 ###############################################################################
 
+# AWS Command Line Interface (CLI)
+#
+# The AWS Command Line Interface (CLI) is a unified tool to manage your AWS
+# services. With just one tool to download and configure, you can control
+# multiple AWS services from the command line and automate them through
+# scripts.
+#
+# The AWS CLI introduces a new set of simple file commands for efficient file
+# transfers to and from Amazon S3.
+#
+# https://aws.amazon.com/cli/
+#
+# NOTE: additional configuration in .bashrc.d and .zshrc.d.
+pip3 install --upgrade awscli
+
 # csvkit
 #
 # csvkit is a suite of utilities for converting to and working with CSV, the
