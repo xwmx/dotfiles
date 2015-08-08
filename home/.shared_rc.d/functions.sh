@@ -420,28 +420,6 @@ reload_shell() {
   exec "$SHELL" -l
 }
 
-# cmdfu()
-#
-# Usage:
-#   cmdfu [<command search term>]
-#
-# Description:
-#   Search commandline fu for snippits matching the input.
-cmdfu(){
-  local search_term
-  local stripped_term
-  local hashed_term
-  local commandlinefu_url
-  search_term="$*"
-  stripped_term="$(printf "%s" "$search_term" | tr -d "[:space:]")"
-  hashed_term="$(printf "%s" "$search_term" | openssl base64)"
-  commandlinefu_url="$(printf \
-    "http://www.commandlinefu.com/commands/matching/%s/%s/plaintext" \
-    "$stripped_term" \
-    "$hashed_term")"
-  curl "$commandlinefu_url"
-}
-
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
 badge() {

@@ -78,3 +78,42 @@ Description:
     examples "$@"
   fi
 }
+
+
+# cmdfu()
+#
+# Usage:
+#   cmdfu [<command search term>]
+#
+# Description:
+#   Search commandlinefu.com for snippits matching the input.
+cmdfu(){
+  if [[ -z "${1:-}" ]]
+  then
+    printf "Usage: cmdfu [<command search term>]\n"
+    return 1
+  elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
+  then
+    printf "\
+Usage:
+  cmdfu [<command search term>]
+
+Description:
+  Search commandlinefu.com for snippits matching the input.
+"
+    return 0
+  fi
+
+  local search_term
+  local stripped_term
+  local hashed_term
+  local commandlinefu_url
+  search_term="$*"
+  stripped_term="$(printf "%s" "$search_term" | tr -d "[:space:]")"
+  hashed_term="$(printf "%s" "$search_term" | openssl base64)"
+  commandlinefu_url="$(printf \
+    "http://www.commandlinefu.com/commands/matching/%s/%s/plaintext" \
+    "$stripped_term" \
+    "$hashed_term")"
+  curl "$commandlinefu_url"
+}
