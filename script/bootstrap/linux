@@ -62,8 +62,12 @@ then
   mkdir "${HOME}/bin"
 fi
 
-cp "${HOME}/.ssh/"* "${HOME}/.dotfiles/home/.ssh/" ||
-  _die printf "Unable to copy .ssh contents.\n"
+if [[ -d "${HOME}/.ssh" ]]
+then
+  cp "${HOME}/.ssh/"* "${HOME}/.dotfiles/home/.ssh/" ||
+    _die printf "Unable to copy .ssh contents.\n"
+fi
+
 cd "${BINDLEPATH}" ||
   _die printf "Unable to cd into \$BINDLEPATH.\n"
 git submodule init ||
