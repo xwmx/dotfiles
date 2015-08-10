@@ -19,6 +19,23 @@
 #   `.ssh/config` file, since commands other than `ssh` will use the
 #   generated configuration.
 generate_ssh_config() {
+  if [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
+  then
+    printf "\
+Usage:
+  generate_ssh_config
+
+Description:
+  Combine the contents of \`.ssh/config.d\` and \`.ssh/default.sshconfig\` into
+  a \`.ssh/config\` file that is then used as the config file for \`ssh\`.
+
+  This function can be called directly in order to manually generate a new
+  \`.ssh/config\` file, since commands other than \`ssh\` will use the
+  generated configuration.
+"
+    return 0
+  fi
+
   printf "\
 ###############################################################################
 # .ssh/config
@@ -38,7 +55,7 @@ generate_ssh_config() {
 # generate_ssh_key
 #
 # Usage:
-#   generate_ssh_key "user@host.tld"
+#   generate_ssh_key <user@host.tld>
 #
 # Description:
 #   Generates an ssh key. The generated file uses the following format:
@@ -47,7 +64,26 @@ generate_ssh_config() {
 #
 #   More information: http://askubuntu.com/a/423297
 generate_ssh_key() {
-  [[ -z "${1:-}" ]] && printf "<user@host.tld> required.\n" && return 1
+  if [[ -z "${1:-}" ]]
+  then
+    printf "Usage: generate_ssh_key <user@host.tld>\n"
+    return 1
+  elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
+  then
+    printf "\
+Usage:
+  generate_ssh_key <user@host.tld>
+
+Description:
+  Generates an ssh key. The generated file uses the following format:
+    <local.host>_<remote_user>@<remote host>_id_rsa
+    <local.host>_<remote_user>@<remote.host>_id_rsa
+
+  More information: http://askubuntu.com/a/423297
+"
+    return 0
+  fi
+
   local _local_host
   local _username
   local _remote_host
