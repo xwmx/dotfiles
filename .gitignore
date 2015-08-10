@@ -85,6 +85,10 @@
 /home/.lein/*
 !/home/.lein/profiles.cjl
 
+# Only track home/.newsbeuter/urls
+/home/.newsbeuter/*
+!/home/.newsbeuter/urls
+
 # Only track home/.npm-packages Readme
 /home/.npm-packages/*
 !/home/.npm-packages/Readme.md
