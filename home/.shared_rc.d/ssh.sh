@@ -18,6 +18,11 @@
 #   This function can be called directly in order to manually generate a new
 #   `.ssh/config` file, since commands other than `ssh` will use the
 #   generated configuration.
+#
+# NOTE: disable shellcheck SC2120 "generate_ssh_config references arguments,
+# but none are ever passed," which appears to be triggered by a call of this
+# function later in the file.
+# shellcheck disable=SC2120
 generate_ssh_config() {
   if [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
   then
