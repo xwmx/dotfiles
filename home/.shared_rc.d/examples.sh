@@ -28,18 +28,37 @@ Description:
     return 0
   fi
 
-  local _sed_cmd
-  if hash "gsed" 2>/dev/null
+  # Include both GNU and BSD versions. Default to GNU tools, but if the
+  # `sed` is not GNU, then check for `gsed` and use that, or fall back to
+  # the BSD version.
+  #
+  # More info: https://news.ycombinator.com/item?id=10025216
+  local _sed_cmd="sed"
+  local _sed_cmd_type="GNU"
+  if ! ( sed --version 2>/dev/null | grep -q 'GNU sed' )
   then
-    _sed_cmd="gsed"
-  else
-    _sed_cmd="sed"
+    if hash "gsed" 2>/dev/null
+    then
+      _sed_cmd="gsed"
+    else
+      _sed_cmd_type="BSD"
+    fi
   fi
-  MAN_KEEP_FORMATTING=1 man "$@" 2>/dev/null \
-    | "$_sed_cmd" \
-      --quiet \
-      --expression='/^E\(\x08.\)X\(\x08.\)\?A\(\x08.\)\?M\(\x08.\)\?P\(\x08.\)\?L\(\x08.\)\?E/{:a;p;n;/^[^ ]/q;ba}' \
-    | ${MANPAGER:-${PAGER:-pager -s}}
+
+  if [[ "$_sed_cmd_type" == "GNU" ]]
+  then
+    MAN_KEEP_FORMATTING=1 man "$@" 2>/dev/null \
+      | "$_sed_cmd" \
+        --quiet \
+        --expression='/^E\(\x08.\)X\(\x08.\)\?A\(\x08.\)\?M\(\x08.\)\?P\(\x08.\)\?L\(\x08.\)\?E/{:a;p;n;/^[^ ]/q;ba}' \
+      | ${MANPAGER:-${PAGER:-pager -s}}
+  else
+    man "$1" \
+      | grep '^E.EX.XA' -A 1000 \
+      | grep '^[A-Z]' -m 2 -B 1000 -A 0 \
+      | "$_sed_cmd" '$ d' \
+      | "$PAGER"
+  fi
 }
 
 
