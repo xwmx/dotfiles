@@ -245,14 +245,6 @@ apm install next-dark-ui
 # https://code.facebook.com/posts/397706937084869/
 apm install nuclide-installer
 
-# select-rectangle
-#
-# Select rectangle region.
-#
-# https://github.com/hmatsuda/select-rectangle
-apm uninstall select-rectangle
-printf ">> Remove select-rectangle from apm-packages."
-
 # Seti Syntax
 #
 # A subtle dark colored theme for Atom.
