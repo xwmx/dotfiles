@@ -129,6 +129,9 @@ autocmd BufRead,BufNewFile .spacemacs setfiletype lisp
 " larger ssh configuration file.
 autocmd BufRead,BufNewFile *.sshconfig set filetype=sshconfig
 
+" Associate .cson files with CoffeeScript.
+autocmd BufRead,BufNewFile *.cson set filetype=coffee
+
 " ============================================================================
 " Line length highlighting
 " ============================================================================
