@@ -40,6 +40,22 @@ vagrant plugin install vagrant-digitalocean
 # https://github.com/smdahlen/vagrant-hostmanager
 vagrant plugin install vagrant-hostmanager
 
+# Vagrant::Hostsupdater
+#
+# This plugin adds an entry to your /etc/hosts file on the host system.
+#
+# https://github.com/cogitatio/vagrant-hostsupdater
+#
+# NOTE: alternatives include:
+# - https://github.com/smdahlen/vagrant-hostmanager
+# - https://github.com/adrienthebo/vagrant-hosts
+#
+# NOTE: this is included for full support of Varying Vagrant Vagrants:
+# https://github.com/Varying-Vagrant-Vagrants/VVV
+# Conflict have been encountered with it in the past with the CoreOS vagrant
+# examples.
+vagrant plugin install vagrant-hostsupdater
+
 # vagrant-triggers
 #
 # Allow the definition of arbitrary scripts that will run on the host before
