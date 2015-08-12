@@ -183,6 +183,14 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/syntax-checking
      syntax-checking
+     ;; themes-megapack
+     ;;
+     ;; This simple contribution layer is an example. It installs around 100
+     ;; themes for Emacs. You can try them easily by invoking helm-themes with:
+     ;; <SPC> T h.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/themes-megapack
+     themes-megapack
      ;; version-control
      ;;
      ;; This layers adds general configuration for Emacs VC. It should work
