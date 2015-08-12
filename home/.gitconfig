@@ -149,9 +149,32 @@
 	# local configuration settings.
 	path = ~/.gitconfig.local
 
+# merge
+#
+# http://git-scm.com/docs/git-config#_variables
 [merge]
+	# merge.ff
+	#
+	# By default, Git does not create an extra merge commit when merging a
+	# commit that is a descendant of the current commit. Instead, the tip of the
+	# current branch is fast-forwarded. When set to false, this variable tells
+	# Git to create an extra merge commit in such a case (equivalent to giving
+	# the --no-ff option from the command line). When set to only, only such
+	# fast-forward merges are allowed (equivalent to giving the --ff-only option
+	# from the command line).
 	ff = only
+	# merge.tool
+	#
+	# Controls which merge tool is used by git-mergetool
+	#
+	# http://git-scm.com/docs/git-mergetool
 	tool = opendiff
+	# merge.summary
+	#
+	# If the config option merge.summary is set, the summaries from all merged
+	# commits will make their way into the merge commit message.
+	#
+	# via: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 	summary = true
 
 # mergetool "sourcetree"
