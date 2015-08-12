@@ -6,63 +6,100 @@
 # http://git-scm.com/docs/git-config
 ###############################################################################
 
-[push]
-  default = current
-[color]
-  ui = auto
+# alias
+#
+# http://git-scm.com/docs/git-config#_variables
 [alias]
-  aa = add --all
-  ap = add --patch
-  ca = commit --amend
-  ci = commit -v
-  co = checkout
-  aaci = !git add --all && git commit -v
-  aaca = !git add --all && git commit --amend
-  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
-  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
-  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
-  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
-  lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative
-  lgac = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative --all
-  merge-branch = !git checkout master && git merge @{-1}
-  msg = commit --allow-empty -m
-  pom = push origin master
-  pr = !gh pull-request
-  st = status
-  up = !git fetch origin && git rebase origin/master
+	aa = add --all
+	ap = add --patch
+	ca = commit --amend
+	ci = commit -v
+	co = checkout
+	aaci = !git add --all && git commit -v
+	aaca = !git add --all && git commit --amend
+	co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+	create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+	ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
+	delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
+	lgc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative
+	lgac = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %n %Cgreen(%cr) %C(bold blue)<%an - %ae> %n %b %Creset' --abbrev-commit --date=relative --all
+	merge-branch = !git checkout master && git merge @{-1}
+	msg = commit --allow-empty -m
+	pom = push origin master
+	pr = !gh pull-request
+	st = status
+	up = !git fetch origin && git rebase origin/master
+
+# color
+#
+# http://git-scm.com/docs/git-config#_variables
+[color]
+	# color.ui
+	#
+	# Use color when printing to the terminal.
+	ui = auto
+
+# core
+#
+# http://git-scm.com/docs/git-config#_variables
 [core]
-  excludesfile = ~/.gitignore_global
-  autocrlf = input
+	# core.excludesfile
+	#
+	# In addition to .gitignore (per-directory) and .git/info/exclude, Git
+	# looks into this file for patterns of files which are not meant to be
+	# tracked. See also: http://git-scm.com/docs/gitignore
+	excludesfile = ~/.gitignore_global
+	# core.autocrlf
+	#
+	# Setting this variable to "true" is almost the same as setting the text
+	# attribute to "auto" on all files except that text files are not
+	# guaranteed to be normalized: files that contain CRLF in the repository
+	# will not be touched. Use this setting if you want to have CRLF line
+	# endings in your working directory even though the repository does not
+	# have normalized line endings. This variable can be set to input, in which
+	# case no output conversion is performed.
+	autocrlf = input
+	# core.editor
+	#
+	# Commands such as commit and tag that lets you edit messages by launching
+	# an editor uses the value of this variable when it is set, and the
+	# environment variable GIT_EDITOR is not set.
 	editor = vim
-[merge]
-  ff = only
-  tool = opendiff
-  summary = true
-[gui]
-  fontui = -family helvetica -size 11 -weight bold -slant roman -underline 0 -overstrike 0
-  spellingdictionary = none
-[rerere]
-  enabled = 1
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[diff "spaceman-diff"]
-  # NOTE: additional settings in ~/.config/git/attributes.
-  command = ~/bin/spaceman-diff
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
-[filter "media"]
-  lean = git-media-clean %f
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[include]
-  path = ~/.gitconfig.local
+
+# gitcredentials
+#
+# providing usernames and passwords to Git
+#
+# http://git-scm.com/docs/gitcredentials
 [credential]
+	# credential.helper
+	#
+	# Use the osxkeychain credential helper to cache passwords.
+	#
+	# https://help.github.com/articles/caching-your-github-password-in-git/
 	helper = osxkeychain
+
+# difftool "sourcetree"
+#
+# sourcetree difftool settings.
+#
+# http://git-scm.com/docs/git-difftool
+# https://www.sourcetreeapp.com/
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+
+# diff "spaceman-diff"
+#
+# spaceman-diff settings.
+#
+# https://github.com/holman/spaceman-diff
+#
+# NOTE: additional settings in ~/.config/git/attributes.
+[diff "spaceman-diff"]
+	command = ~/bin/spaceman-diff
 
 # Git Large File Storage
 #
@@ -75,3 +112,71 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+
+# git-media
+#
+# Handling large media files in Git. GitMedia extension allows you to use Git
+# with large media files without storing the media in Git itself.
+#
+# https://github.com/alebedev/git-media
+#
+# NOTE: git-lfs grew out of this.
+[filter "media"]
+	lean = git-media-clean %f
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+# gui
+#
+# Settings for git-gui, a portable interface to git.
+#
+# http://git-scm.com/docs/git-gui
+[gui]
+	fontui = -family helvetica -size 11 -weight bold -slant roman -underline 0 -overstrike 0
+	# gui.spellingdictionary
+	#
+	# Turn off spell checking.
+	spellingdictionary = none
+
+# Includes
+#
+# Include one config file from another.
+#
+# http://git-scm.com/docs/git-config#_includes
+[include]
+	# Include ~/.gitconfig.local if present, which should contain unversioned
+	# local configuration settings.
+	path = ~/.gitconfig.local
+
+[merge]
+	ff = only
+	tool = opendiff
+	summary = true
+
+# mergetool "sourcetree"
+#
+# sourcetree mergetool settings.
+#
+# http://git-scm.com/docs/git-mergetool
+# https://www.sourcetreeapp.com/
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+# push
+#
+# http://git-scm.com/docs/git-config#_variables
+[push]
+	# push the current branch to update a branch with the same name on the
+	# receiving end. Works in both central and non-central workflows.
+	default = current
+
+# git-rerere
+#
+# Reuse recorded resolution of conflicted merges
+#
+# http://git-scm.com/docs/git-rerere
+# https://git-scm.com/blog/2010/03/08/rerere.html
+[rerere]
+	enabled = 1
