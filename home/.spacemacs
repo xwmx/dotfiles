@@ -83,8 +83,19 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!source-control/git
      ;; http://magit.vc/
-     (git :variables
-          git-gutter-use-fringe t)
+     git
+     ;; github
+     ;;
+     ;; This layers adds support for Github.
+     ;;
+     ;; Features:
+     ;; - magit-gh-pulls: handy magit add-on to manage Github pull requests.
+     ;; - gist.el: full-featured mode to browse and post Github gists.
+     ;; - github-browse-file and git-link: quickly browse github URL in your
+     ;;   browser.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!source-control/github
+     github
      ;; go
      ;;
      ;; This layer adds extensive support for go.
@@ -172,6 +183,18 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/syntax-checking
      syntax-checking
+     ;; version-control
+     ;;
+     ;; This layers adds general configuration for Emacs VC. It should work
+     ;; with all VC backends such as Git, Mercurial, Bazaar, SVN, etc…
+     ;;
+     ;; Features:
+     ;; - Highlights uncommitted changes in the fringe or margin with
+     ;;   diff-hl (git-gutter alternative)
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!source-control/version-control
+     ;; https://github.com/dgutov/diff-hl
+     version-control
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
