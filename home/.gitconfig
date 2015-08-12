@@ -63,3 +63,15 @@
   path = ~/.gitconfig.local
 [credential]
 	helper = osxkeychain
+
+# Git Large File Storage
+#
+# An open source Git extension for versioning large files.
+#
+# https://git-lfs.github.com/
+# https://github.com/github/git-lfs
+# https://github.com/blog/1986-announcing-git-large-file-storage-lfs
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
