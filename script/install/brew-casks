@@ -382,6 +382,14 @@ brew cask install gfxcardstatus
 # http://www.gimp.org
 brew cask install gimp
 
+# GitHub Desktop
+#
+# GitHub Desktop is a seamless way to contribute to projects on GitHub and
+# GitHub Enterprise.
+#
+# https://desktop.github.com/
+brew cask install github-desktop
+
 # GitUp
 #
 # A GUI for git
