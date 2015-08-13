@@ -349,6 +349,8 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  ;; Display line numbers by default.
+  (global-linum-mode 1)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
