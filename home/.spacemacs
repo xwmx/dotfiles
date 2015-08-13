@@ -176,6 +176,14 @@
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/!lang/ruby
      ruby
+     ;; shell
+     ;;
+     ;; This layer configures the various shells available in Emacs.
+     ;;
+     ;; https://github.com/syl20bnr/spacemacs/tree/master/contrib/shell
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; syntax-checking
      ;;
      ;; This layer provides on the fly syntax and spelling checking using
