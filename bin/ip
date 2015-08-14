@@ -20,7 +20,8 @@ Description:
   Display information about an IP address.
 EOM
 info() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No IP address supplied.\n"
   fi
   local ip_address="$1"
@@ -89,11 +90,13 @@ Description:
   Query the ipinfo.io API for JSON-formatted info about the given ip address.
 EOM
 infoio() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No IP address supplied.\n"
   fi
   # Cache response to avoid calling API multiple times.
-  if _blank "$_IPINFOIO_RESPONSE"; then
+  if _blank "$_IPINFOIO_RESPONSE"
+  then
     _debug printf "infoio(): querying API."
     local _ipinfoio
     _ipinfoio="$(curl -s "http://ipinfo.io/${1}/json")"
@@ -113,7 +116,8 @@ Description:
   Print links that can be used to view additional information for this address.
 EOM
 links() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No IP address supplied.\n"
   fi
 
@@ -134,10 +138,12 @@ Description:
   Print location information about the ip address.
 EOM
 locate() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No IP address supplied.\n"
   fi
-  if ! _command_exists "jq"; then
+  if ! _command_exists "jq"
+  then
     _die printf "The \`jq\` command is required but not found.\n"
   fi
 
@@ -161,7 +167,8 @@ Description:
   arguments.
 EOM
 me() {
-  if ! _command_exists "my"; then
+  if ! _command_exists "my"
+  then
     _die printf "The \`my\` command is required but not found.\n"
   fi
   my ip "$@"
