@@ -52,6 +52,18 @@ pip3 install --upgrade awscli
 # https://robots.thoughtbot.com/csvkit-brings-the-unix-philosophy-to-csv
 pip3 install --upgrade csvkit
 
+# doge
+#
+# wow very terminal doge
+#
+# doge is a simple motd script based on the slightly stupid but very funny
+# doge meme. It prints random grammatically incorrect statements that are
+# sometimes based on things from your computer.
+#
+# https://github.com/thiderman/doge
+# https://pypi.python.org/pypi/doge/
+pip3 install --upgrade doge
+
 # ftfy - fixes text for you
 #
 # Given Unicode text, make its representation consistent and possibly less
