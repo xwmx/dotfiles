@@ -46,7 +46,8 @@ Description:
   List active TCP connections.
 EOM
 active() {
-  if _command_argv_includes "--netstat"; then
+  if _command_argv_includes "--netstat"
+  then
     # via http://unix.stackexchange.com/a/132494
     netstat \
         -a \
@@ -78,18 +79,21 @@ dig() {
   local _basic=0
   local _query=()
 
-  for arg in "${_COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"
+  do
     case $arg in
       --basic) _basic=1;;
       *) _query+="$arg";;
     esac
   done
 
-  if [[ -z "${_query:-}" ]]; then
+  if [[ -z "${_query:-}" ]]
+  then
     _die printf "No IP address or domain supplied.\n"
   fi
 
-  if (("$_basic")); then
+  if (("$_basic"))
+  then
     "$_DIG_CMD" "${_query[@]}"
   else
     "$_DIG_CMD" +nocmd "${_query[@]}" any +multiline +noall +answer
@@ -113,18 +117,21 @@ host() {
   local _all=0
   local _query=()
 
-  for arg in "${_COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"
+  do
     case $arg in
       --all|-a) _all=1;;
       *) _query+="$arg";;
     esac
   done
 
-  if [[ -z "${_query:-}" ]]; then
+  if [[ -z "${_query:-}" ]]
+  then
     _die printf "No IP address or domain supplied.\n"
   fi
 
-  if (("$_all")); then
+  if (("$_all"))
+  then
     "$_HOST_CMD" -a "${_query[@]}"
   else
     "$_HOST_CMD" "${_query[@]}"
@@ -150,7 +157,8 @@ host:current() {
   # Only the '--remote' option is actually checked. The '--local' option is the
   # default behavior when no option is passed, but the option is included for
   # psychological balance. :-)
-  if _command_argv_includes "--remote"; then
+  if _command_argv_includes "--remote"
+  then
    local _remote_ip
     _remote_ip="$(_get_ip_current_remote)"
     "$_HOST_CMD" "$_remote_ip"
@@ -196,7 +204,8 @@ ip:current() {
   # Only the '--local' option is actually checked. The '--remote' option is the
   # default behavior when no option is passed, but the option is included for
   # psychological balance. :-)
-  if _command_argv_includes "--local"; then
+  if _command_argv_includes "--local"
+  then
     local _active_interface
     _active_interface="$(
       ifconfig | \
@@ -225,11 +234,13 @@ Description:
   Query the ipinfo.io API for JSON-formatted info about the given ip address.
 EOM
 ip:infoio() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No IP address supplied.\n"
   fi
   # Cache response to avoid calling API multiple times.
-  if _blank "${_IPINFOIO_RESPONSE:-}"; then
+  if _blank "${_IPINFOIO_RESPONSE:-}"
+  then
     _debug printf "infoio(): querying API."
     local _ipinfoio
     _ipinfoio="$(curl -s "http://ipinfo.io/${1}/json")"
@@ -249,10 +260,12 @@ Description:
   Print location information about the ip address.
 EOM
 ip:locate() {
-  if [[ -z "${1:-}" ]]; then
+  if [[ -z "${1:-}" ]]
+  then
     _die printf "No IP address supplied.\n"
   fi
-  if ! _command_exists "jq"; then
+  if ! _command_exists "jq"
+  then
     _die printf "The \`jq\` command is required but not found.\n"
   fi
 
@@ -282,18 +295,21 @@ whois() {
   local _exact=0
   local _query=()
 
-  for arg in "${_COMMAND_ARGV[@]:1}"; do
+  for arg in "${_COMMAND_ARGV[@]:1}"
+  do
     case $arg in
       --exact) _exact=1;;
       *) _query+="$arg";;
     esac
   done
 
-  if [[ -z "${_query:-}" ]]; then
+  if [[ -z "${_query:-}" ]]
+  then
     _die printf "No IP address or domain supplied.\n"
   fi
 
-  if (("$_exact")); then
+  if (("$_exact"))
+  then
     # Do a double whois query. Explanation: http://superuser.com/a/38008
     "$_WHOIS_CMD" \
       -h "$("$_WHOIS_CMD" "domain $_query" | \
