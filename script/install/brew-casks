@@ -795,7 +795,21 @@ brew cask install rowanj-gitx
 # dependencies, and ensure that you'll always get a repeatable build.
 #
 # https://crates.io/
-brew cask install rust
+#
+# NOTE: uninstall rust cask in favor of orphan install.
+# TODO: remove this section when the rust cask has been removed from all
+# systems.
+_uninstall_rust_cask() {
+  brew cask uninstall rust
+  # `brew cask uninstall rust` doesn't appear to uninstall rust from the system
+  # fully, so perform a manual uninstall, too.
+  if [[ -e "/usr/local/bin/rustc" ]]
+  then
+    "/usr/local/lib/rustlib/uninstall.sh"
+  fi
+
+}
+_uninstall_rust_cask
 
 # Scribus
 #
