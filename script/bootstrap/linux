@@ -97,7 +97,7 @@ source "${HOME}/.bashrc"
 
 # Set shell to zsh if it's available.
 _ZSH_PATH="$(which zsh)"
-if [[ -z "$_ZSH_PATH" ]]
+if [[ -n "$_ZSH_PATH" ]]
 then
   sudo chsh -s "$_ZSH_PATH" "$(whoami)"
   "$_ZSH_PATH" --login
