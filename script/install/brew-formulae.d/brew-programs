@@ -124,6 +124,14 @@ brew install bash-completion
 # https://github.com/sstephenson/bats
 brew install bats
 
+# bfg repo-cleaner
+#
+# Removes large or troublesome blobs like git-filter-branch does, but faster.
+# And written in Scala
+#
+# http://rtyley.github.io/bfg-repo-cleaner/
+brew install bfg
+
 # boot2docker
 #
 # boot2docker management utility
@@ -1710,6 +1718,22 @@ brew install wine
 #
 # http://code.google.com/p/winetricks/
 brew install winetricks
+
+# Xpdf
+#
+# Xpdf is an open source viewer for Portable Document Format (PDF) files.
+#
+# http://www.foolabs.com/xpdf/
+brew install xpdf
+
+
+# XZ Utils
+#
+# XZ Utils is free general-purpose data compression software with high
+# compression ratio.
+#
+# http://tukaani.org/xz/
+brew install xz
 
 # yap
 #
