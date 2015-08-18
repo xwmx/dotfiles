@@ -25,6 +25,32 @@ then
 fi
 
 ###############################################################################
+# Install Command
+###############################################################################
+
+# pip3_install()
+#
+# Usage:
+#   pip3_install <package-name>
+#
+# Description:
+#   On linux, install a package to the user prefix (`~/.local`), and globally
+#   install on other systems.
+pip3_install() {
+  if [[ -z "${1:-}" ]]
+  then
+    printf "No package specified."
+    return 1
+  fi
+  if [[ "$(uname -a)" =~ ^Linux ]]
+  then
+    pip3 install --user --upgrade "$1"
+  else
+    pip3 install --upgrade "$1"
+  fi
+}
+
+###############################################################################
 # Packages
 ###############################################################################
 
@@ -41,7 +67,7 @@ fi
 # https://aws.amazon.com/cli/
 #
 # NOTE: additional configuration in .bashrc.d and .zshrc.d.
-pip3 install --upgrade awscli
+pip3_install awscli
 
 # csvkit
 #
@@ -50,7 +76,7 @@ pip3 install --upgrade awscli
 #
 # https://github.com/onyxfish/csvkit
 # https://robots.thoughtbot.com/csvkit-brings-the-unix-philosophy-to-csv
-pip3 install --upgrade csvkit
+pip3_install csvkit
 
 # doge
 #
@@ -62,7 +88,7 @@ pip3 install --upgrade csvkit
 #
 # https://github.com/thiderman/doge
 # https://pypi.python.org/pypi/doge/
-pip3 install --upgrade doge
+pip3_install doge
 
 # ftfy - fixes text for you
 #
@@ -82,7 +108,7 @@ pip3 install --upgrade doge
 #
 # http://blog.luminoso.com/2015/05/21/ftfy-fixes-text-for-you-4-0-changing-less-and-fixing-more/
 # https://news.ycombinator.com/item?id=9611710
-pip3 install --upgrade ftfy
+pip3_install ftfy
 
 # Hy
 #
@@ -93,7 +119,7 @@ pip3 install --upgrade ftfy
 #
 # https://github.com/hylang/hy
 # http://hylang.org/
-pip3 install --upgrade hy
+pip3_install hy
 
 # Krill
 #
@@ -104,14 +130,14 @@ pip3 install --upgrade hy
 # as a live stream of clean, legible command line output.
 #
 # https://github.com/p-e-w/krill
-pip3 install --upgrade krill
+pip3_install krill
 
 # Mochi
 #
 # Dynamically typed functional programming language.
 #
 # https://github.com/i2y/mochi
-pip3 install --upgrade mochi
+pip3_install mochi
 
 # Pandas
 #
@@ -121,14 +147,14 @@ pip3 install --upgrade mochi
 #
 # http://pandas.pydata.org/
 # https://github.com/pydata/pandas
-pip3 install --upgrade pandas
+pip3_install pandas
 
 # pgcli
 #
 # Postgres CLI with autocompletion and syntax highlighting.
 #
 # https://github.com/dbcli/pgcli
-pip3 install --upgrade pgcli
+pip3_install pgcli
 
 # Rainbow Stream
 #
@@ -137,7 +163,7 @@ pip3 install --upgrade pgcli
 #
 # http://www.rainbowstream.org/
 # https://github.com/DTVD/rainbowstream
-pip3 install --upgrade rainbowstream
+pip3_install rainbowstream
 
 # Stellar
 #
@@ -146,7 +172,7 @@ pip3 install --upgrade rainbowstream
 # switching branches or messing with SQL. PostgreSQL and MySQL are supported.
 #
 # https://github.com/fastmonkeys/stellar
-pip3 install --upgrade stellar
+pip3_install stellar
 
 # x_x
 #
@@ -156,7 +182,7 @@ pip3 install --upgrade stellar
 # using Microsoft Excel.
 #
 # https://github.com/krockode/x_x
-pip3 install --upgrade x_x
+pip3_install x_x
 
 # the xonsh shell
 #
@@ -166,4 +192,4 @@ pip3 install --upgrade x_x
 #
 # http://xonsh.org/
 # https://github.com/scopatz/xonsh
-pip3 install --upgrade xonsh
+pip3_install xonsh

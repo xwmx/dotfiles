@@ -16,6 +16,32 @@ pip install --upgrade setuptools
 pip install --upgrade pip
 
 ###############################################################################
+# Install Command
+###############################################################################
+
+# pip_install()
+#
+# Usage:
+#   pip_install <package-name>
+#
+# Description:
+#   On linux, install a package to the user prefix (`~/.local`), and globally
+#   install on other systems.
+pip_install() {
+  if [[ -z "${1:-}" ]]
+  then
+    printf "No package specified."
+    return 1
+  fi
+  if [[ "$(uname -a)" =~ ^Linux ]]
+  then
+    pip install --user --upgrade "$1"
+  else
+    pip install --upgrade "$1"
+  fi
+}
+
+###############################################################################
 # Packages
 ###############################################################################
 
@@ -25,7 +51,7 @@ pip install --upgrade pip
 #
 # https://pypi.python.org/pypi/1pass
 # https://github.com/georgebrock/1pass
-pip install --upgrade 1pass
+pip_install 1pass
 
 # Cython
 #
@@ -34,14 +60,14 @@ pip install --upgrade 1pass
 # http://cython.org/
 # https://github.com/cython/cython
 # https://pypi.python.org/pypi/Cython/
-pip install --upgrade cython
+pip_install cython
 
 # IPython
 #
 # A rich architecture for interactive computing.
 #
 # http://ipython.org/
-pip install --upgrade "ipython[all]"
+pip_install "ipython[all]"
 
 # mitmproxy
 #
@@ -49,7 +75,7 @@ pip install --upgrade "ipython[all]"
 # inspected, modified and replayed.
 #
 # http://mitmproxy.org/
-pip install --upgrade mitmproxy
+pip_install mitmproxy
 
 # neovim
 #
@@ -59,7 +85,7 @@ pip install --upgrade mitmproxy
 # https://github.com/neovim/python-client
 # https://pypi.python.org/pypi/neovim
 # http://neovim.org/doc/user/nvim_python.html
-pip install --upgrade neovim
+pip_install neovim
 
 # Nubo
 #
@@ -71,7 +97,7 @@ pip install --upgrade neovim
 # https://github.com/ema/nubo
 #
 # NOTE: only supports Python 2.7+ as of version 0.7.
-pip install --upgrade nubo
+pip_install nubo
 
 # Pandas
 #
@@ -81,7 +107,7 @@ pip install --upgrade nubo
 #
 # http://pandas.pydata.org/
 # https://github.com/pydata/pandas
-pip install --upgrade pandas
+pip_install pandas
 
 # pep8 - Python style guide checker
 #
@@ -89,14 +115,14 @@ pip install --upgrade pandas
 # conventions in PEP 8.
 #
 # https://github.com/jcrocholl/pep8
-pip install --upgrade pep8
+pip_install pep8
 
 # pgcli
 #
 # Postgres CLI with autocompletion and syntax highlighting
 #
 # https://github.com/amjith/pgcli
-pip install --upgrade pgcli
+pip_install pgcli
 
 # pre-commit
 #
@@ -104,7 +130,7 @@ pip install --upgrade pgcli
 #
 # http://pre-commit.com/
 # https://github.com/pre-commit/pre-commit
-pip install --upgrade pre-commit
+pip_install pre-commit
 
 # PyMongo
 #
@@ -113,7 +139,7 @@ pip install --upgrade pre-commit
 # https://pypi.python.org/pypi/pymongo/
 # https://api.mongodb.org/python/current/
 # https://github.com/mongodb/mongo-python-driver/
-pip install --upgrade pymongo
+pip_install pymongo
 
 # python-Levenshtein
 #
@@ -122,7 +148,7 @@ pip install --upgrade pymongo
 #
 # https://github.com/ztane/python-Levenshtein/
 # https://pypi.python.org/pypi/python-Levenshtein/
-pip install --upgrade python-Levenshtein
+pip_install python-Levenshtein
 
 # pythonpy
 #
@@ -139,7 +165,7 @@ pip3 install -I --upgrade pythonpy
 # https://virtualenv.pypa.io/en/latest/
 # http://docs.python-guide.org/en/latest/dev/virtualenvs/
 # https://pypi.python.org/pypi/virtualenv
-pip install --upgrade virtualenv
+pip_install virtualenv
 
 # virtualenvwrapper
 #
@@ -152,4 +178,4 @@ pip install --upgrade virtualenv
 # https://virtualenvwrapper.readthedocs.org/en/latest/
 # https://bitbucket.org/dhellmann/virtualenvwrapper
 # https://pypi.python.org/pypi/virtualenvwrapper/
-pip install --upgrade virtualenvwrapper
+pip_install virtualenvwrapper
