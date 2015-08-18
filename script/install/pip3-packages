@@ -35,7 +35,8 @@ fi
 #
 # Description:
 #   On linux, install a package to the user prefix (`~/.local`), and globally
-#   install on other systems.
+#   install on other systems. The --user flag doesn't work properly with
+#   homebrew-installed Python: http://git.io/vsfqN
 pip3_install() {
   if [[ -z "${1:-}" ]]
   then
