@@ -18,6 +18,12 @@
 .zshenv.local
 .zshrc.local
 
+# .ammonite
+#
+# Only track predef.scala
+/home/.ammonite/*
+!/home/.ammonite/predef.scala
+
 # Only track specific atom config files
 /home/.atom/*
 !/home/.atom/config.cson

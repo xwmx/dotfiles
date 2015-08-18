@@ -8,6 +8,7 @@
 # View descriptions with `orphans help <script:up>`
 
 # orphans alcatraz:up
+orphans ammonite:up
 orphans bish:up
 orphans iota:up
 orphans meteor:up
