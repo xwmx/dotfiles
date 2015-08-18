@@ -12,7 +12,7 @@
 
 # Prefix prompt with arrow with color indicating last return status: green
 # for 0 and red for non-0.
-local _astral_return_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+local _astral_return_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}%s)"
 
 # The current time in 24-hour format.
 #
@@ -50,7 +50,7 @@ local _astral_context="${_astral_machine}:${_astral_path}"
 # Prompt
 ###############################################################################
 
-PROMPT='${_astral_prefix} ${_astral_context} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT=$'${_astral_prefix} ${_astral_context} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
 
 # `git_prompt_info` variables
 ###############################################################################
