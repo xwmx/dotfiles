@@ -305,6 +305,28 @@ sudo apt-get install -y poppler-utils
 # Homepage: http://www.ivarch.com/programs/pv.shtml
 sudo apt-get install -y pv
 
+# python-pip
+#
+# Description: alternative Python package installer
+#  pip is a replacement for easy_install, and is intended to be an improved
+#  Python package installer. It integrates with virtualenv, doesn't do partial
+#  installs, can save package state for replaying, can install from non-egg
+#  sources, and can install from version control repositories.
+# Homepage: http://www.pip-installer.org/
+sudo apt-get install -y python-pip
+
+# python3-pip
+#
+# Description-en: alternative Python package installer - Python 3 version of
+#  the package pip is a replacement for easy_install, and is intended to be an
+#  improved Python package installer.  It integrates with virtualenv, doesn't do
+#  partial installs, can save package state for replaying, can install from
+#  non-egg sources, and can install from version control repositories.
+#  .
+#  This is the Python 3 version of the package.
+# Homepage: http://www.pip-installer.org/
+sudo apt-get install -y python3-pip
+
 # rake
 # Description: ruby make-like utility
 #  Rake is a simple ruby build program with capabilities similar to make.
