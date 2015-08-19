@@ -971,7 +971,17 @@ brew cask install thunderbird
 # and preferences will be touched by TimeMachineScheduler.
 #
 # http://www.klieme.com/TimeMachineScheduler.html
-brew cask install timemachinescheduler
+#
+# NOTE: uninstall timemachinescheduler cask since it's no longer in use.
+# TODO: remove this section when the timemachinescheduler cask has been
+# removed from all systems.
+_uninstall_timemachinescheduler_cask() {
+  if [[ -e "${HOME}/Library/PreferencePanes/TimeMachineScheduler.prefPane" ]]
+  then
+    brew cask uninstall timemachinescheduler
+  fi
+}
+_uninstall_timemachinescheduler_cask
 
 # Turbo Boost Switcher
 #
