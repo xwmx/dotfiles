@@ -310,7 +310,8 @@ _wmirror() {
     mkdir -p "$_DOWNLOAD_DIRECTORY"
   fi
 
-  local _domain=$(printf "%s\n" "$_target_url" | awk -F/ '{print $3}')
+  local _domain
+  _domain=$(printf "%s\n" "$_target_url" | awk -F/ '{print $3}')
 
   if [[ -z "$_domain" ]]
   then
@@ -366,8 +367,6 @@ You can find the files within the following directory:
 ###############################################################################
 
 _main() {
-  local arg1="${_COMMAND_ARGV[1]:-}"
-
   if (("$_print_help"))
   then
     _print_help
