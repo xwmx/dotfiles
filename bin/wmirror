@@ -190,12 +190,14 @@ optstring=h
 # argument to the option, such as wget -qO-)
 unset options
 # while the number of arguments is greater than 0
-while (($#)); do
+while (($#))
+do
   case $1 in
     # if option is of type -ab
     -[!-]?*)
       # loop over each character starting with the second
-      for ((i=1; i<${#1}; i++)); do
+      for ((i=1; i<${#1}; i++))
+      do
         # extract 1 character from position 'i'
         c=${1:i:1}
         # add current char to options
@@ -203,14 +205,17 @@ while (($#)); do
 
         # if option takes a required argument, and it's not the last char
         # make the rest of the string its argument
-        if [[ $optstring = *"$c:"* && ${1:i+1} ]]; then
+        if [[ $optstring = *"$c:"* && ${1:i+1} ]]
+        then
           options+=("${1:i+1}")
           break
         fi
       done
       ;;
     # if option is of type --foo=bar, split on first '='
-    --?*=*) options+=("${1%%=*}" "${1#*=}");;
+    --?*=*)
+      options+=("${1%%=*}" "${1#*=}")
+      ;;
     # end of options, stop breaking them up
     --)
       options+=(--endopts)
@@ -219,7 +224,9 @@ while (($#)); do
       break
       ;;
     # otherwise, nothing special
-    *) options+=("$1");;
+    *)
+      options+=("$1")
+      ;;
   esac
 
   shift
@@ -247,7 +254,8 @@ _COMMAND_ARGV=("$0")
 _require_argument() {
   local option="$1"
   local value="$2"
-  if [[ -z "$value" ]]; then
+  if [[ -z "$value" ]]
+  then
     _die printf "Option requires an argument: %s\n" "$option"
   fi
 }
@@ -291,18 +299,21 @@ _wmirror() {
 
   _debug printf "_wmirror(): \$_target_url: %s\n" "$_target_url"
 
-  if [[ -z "$_target_url" ]]; then
+  if [[ -z "$_target_url" ]]
+  then
     _die printf "No target URL given.\n%s\n" "$(_print_help)"
   fi
 
-  if [[ ! -d "$_DOWNLOAD_DIRECTORY" ]]; then
+  if [[ ! -d "$_DOWNLOAD_DIRECTORY" ]]
+  then
     echo mkdir -p "$_DOWNLOAD_DIRECTORY"
     mkdir -p "$_DOWNLOAD_DIRECTORY"
   fi
 
   local _domain=$(printf "%s\n" "$_target_url" | awk -F/ '{print $3}')
 
-  if [[ -z "$_domain" ]]; then
+  if [[ -z "$_domain" ]]
+  then
     _die printf "Domain not found.\n"
   fi
 
@@ -357,7 +368,8 @@ You can find the files within the following directory:
 _main() {
   local arg1="${_COMMAND_ARGV[1]:-}"
 
-  if (("$_print_help")); then
+  if (("$_print_help"))
+  then
     _print_help
   else
     _wmirror "${_COMMAND_ARGV[@]}"
