@@ -32,6 +32,10 @@
 !/home/.atom/snippets.cson
 !/home/.atom/styles.less
 
+# Only track home/.aws Readme
+/home/.aws/*
+!/home/.aws/Readme.md
+
 # Only track home/.bpkg Readme
 /home/.bpkg/*
 !/home/.bpkg/Readme.md
