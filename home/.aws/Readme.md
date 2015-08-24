@@ -22,3 +22,7 @@ region = <region>
 More information:
 
 https://github.com/aws/aws-cli
+
+See also:
+
+https://github.com/achiku/jungle

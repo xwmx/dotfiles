@@ -122,6 +122,13 @@ pip3_install ftfy
 # http://hylang.org/
 pip3_install hy
 
+# Jungle
+#
+# AWS operations by cli should be simpler.
+#
+# https://github.com/achiku/jungle
+pip3_install jungle
+
 # Krill
 #
 # Krill are filter feeders. True to its namesake, krill filters feeds. It is
