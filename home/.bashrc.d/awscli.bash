@@ -14,4 +14,8 @@
 
 # Load Bash autocompletion.
 # http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
-complete -C '/usr/local/bin/aws_completer' aws
+_aws_bash_completer="/usr/local/bin/aws_completer"
+if [[ -e "$_aws_bash_completer" ]]
+then
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
