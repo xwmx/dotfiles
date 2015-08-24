@@ -19,6 +19,11 @@ aws_secret_access_key = <secret_key>
 region = <region>
 ```
 
+Completion configuration:
+
+- [home/.bashrc.d/awscli.bash](../.bashrc.d/awscli.bash)
+- [home/.zshrc.d/awscli.zsh](../.zshrc.d/awscli.zsh)
+
 More information:
 
 https://github.com/aws/aws-cli
