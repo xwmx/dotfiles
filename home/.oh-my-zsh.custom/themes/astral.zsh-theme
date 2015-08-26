@@ -75,6 +75,15 @@ _rbenv_version_prompt() {
   fi
 }
 
+# git
+###############################################################################
+
+# `git_prompt_info` variables
+ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
 # _astral_git_prompt()
 #
 # Generate the git prompt.
@@ -93,11 +102,3 @@ _astral_git_prompt() {
 ###############################################################################
 
 PROMPT=$'${_astral_prefix} ${_astral_context} $(_rbenv_version_prompt)%{$fg_bold[blue]%}$(_astral_git_prompt)%{$fg_bold[blue]%} % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
-
-# `git_prompt_info` variables
-###############################################################################
-
-ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
