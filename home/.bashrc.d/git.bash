@@ -19,6 +19,7 @@ alias glog="git log \
 
 # Alias the `git` command to the `hub` command.
 # http://github.com/defunkt/hub
-if program_exists hub; then
-  alias git=hub
+if program_exists "hub"
+then
+  alias git="hub"
 fi
