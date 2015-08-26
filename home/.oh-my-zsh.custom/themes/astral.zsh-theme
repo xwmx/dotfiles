@@ -54,7 +54,7 @@ _astral_context="${_astral_machine}:${_astral_path}"
 # show current rbenv version if different from rbenv global
 #
 # via: https://gist.github.com/mislav/1712320
-_rbenv_version_status() {
+_astral_rbenv_version_status() {
   local ver=$(rbenv version-name)
   [ "$(rbenv global)" != "$ver" ] && echo "$ver"
 }
@@ -62,12 +62,12 @@ _rbenv_version_status() {
 #
 # If rbenv is installed and _rbenv_version_status() returns a version,
 # generate the prompt section displaying the Ruby version.
-_rbenv_version_prompt() {
+_astral_rbenv_version_prompt() {
   local _maybe_rbenv_version
   local _rbenv_version_string
   if hash "rbenv" &> /dev/null
   then
-    local _maybe_rbenv_version="$(_rbenv_version_status)"
+    local _maybe_rbenv_version="$(_astral_rbenv_version_status)"
     if [[ -n "$_maybe_rbenv_version" ]]
     then
       _rbenv_version_string="%{$fg_bold[blue]%}ruby:(%{$fg_bold[red]%}${_maybe_rbenv_version}%{$fg_bold[blue]%})%{$reset_color%} "
@@ -104,4 +104,4 @@ _astral_git_prompt() {
 # Prompt
 ###############################################################################
 
-PROMPT=$'${_astral_prefix} ${_astral_context} $(_rbenv_version_prompt)%{$fg_bold[blue]%}$(_astral_git_prompt)%{$fg_bold[blue]%} % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
+PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_version_prompt)%{$fg_bold[blue]%}$(_astral_git_prompt)%{$fg_bold[blue]%} % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
