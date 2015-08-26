@@ -19,15 +19,21 @@ _astral_return_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}%s)"
 # Will have same color as whatever preceeds it.
 _astral_time="%T"
 
+# _astral_machine()
+#
 # Display alternate machine prompt for remote sessions.
 #
 # Makes it easier to distinguish between local and remote sessions.
-if [[ "$SESSION_TYPE" == "remote/ssh" ]]
-then
-  _astral_machine="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:%{$fg_bold[green]%}%n@%m"
-else
-  _astral_machine="%{$fg_bold[blue]%}%m"
-fi
+_astral_machine() {
+  local _machine_string
+  if [[ "$SESSION_TYPE" == "remote/ssh" ]]
+  then
+    _machine_string="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:%{$fg_bold[green]%}%n@%m"
+  else
+    _machine_string="%{$fg_bold[blue]%}%m"
+  fi
+  printf "%s\n" "$_machine_string"
+}
 
 # Show the first two current path segments, with a ~ for the home directory.
 _astral_path="%{$fg[cyan]%}%2~"
@@ -44,7 +50,7 @@ _astral_prefix="${_astral_return_status}${_astral_time}"
 #
 # machine:~/path
 # ssh:machine:~/path
-_astral_context="${_astral_machine}:${_astral_path}"
+_astral_context="$(_astral_machine):${_astral_path}"
 
 # rbenv
 ###############################################################################
