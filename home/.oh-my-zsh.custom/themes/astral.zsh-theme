@@ -46,6 +46,9 @@ _astral_prefix="${_astral_return_status}${_astral_time}"
 # ssh:machine:~/path
 _astral_context="${_astral_machine}:${_astral_path}"
 
+# rbenv
+###############################################################################
+
 # _rbenv_version_status()
 #
 # show current rbenv version if different from rbenv global
