@@ -545,18 +545,6 @@ brew install git-annex
 # https://github.com/tj/git-extras
 brew install git-extras
 
-# git-radar
-#
-# A heads up display for git.
-#
-# https://github.com/michaeldfallen/git-radar
-#
-# See also:
-# https://news.ycombinator.com/item?id=10121997
-# https://github.com/yonchu/zsh-vcs-prompt
-# https://github.com/arialdomartini/oh-my-git
-brew install michaeldfallen/formula/git-radar
-
 # go / golang
 #
 # Go is an open source programming language that makes it easy to build simple,
