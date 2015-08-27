@@ -1,5 +1,5 @@
 ###############################################################################
-# AWS Command Line Interface (CLI)
+# Antigen
 #
 # A plugin manager for zsh, inspired by oh-my-zsh and vundle.
 #
