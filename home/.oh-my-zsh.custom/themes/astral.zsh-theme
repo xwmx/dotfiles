@@ -5,6 +5,9 @@
 #
 # Prompt reference:
 # http://www.nparikh.org/unix/prompt.php
+#
+# See also:
+# https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
 ###############################################################################
 
 # Basic Components
