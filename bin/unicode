@@ -18,7 +18,8 @@ EOM
 escape() {
   printf "\\\x%s" "$(printf "%s" "$@" | xxd -p -c1 -u)"
   # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
+  if [ -t 1 ]
+  then
     printf "\n"
   fi
 }
@@ -33,7 +34,8 @@ EOM
 unidecode() {
   perl -e "binmode(STDOUT, ':utf8'); print \"$*\""
   # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
+  if [ -t 1 ]
+  then
     printf "\n"
   fi
 }
@@ -47,12 +49,14 @@ Description:
 EOM
 codepoint() {
   _character="$*"
-  if [[ $_character == "$" ]]; then
+  if [[ $_character == "$" ]]
+  then
     _character="\\$"
   fi
   perl -e "use utf8; print sprintf('U+%04X', ord(\"$_character\"))"
   # print a newline unless we’re piping the output to another program
-  if [ -t 1 ]; then
+  if [ -t 1 ]
+  then
     printf "\n"
   fi
 }
