@@ -64,6 +64,19 @@ brew install ack
 # installation should be more readily available with fewer environment issues.
 brew install ansible
 
+# Archey
+#
+# An archey script clone for OS X
+#
+# Displays system information and a colorful Apple logo.
+#
+# https://obihann.github.io/archey-osx/
+# https://github.com/obihann/archey-osx
+#
+# See also:
+# https://github.com/djmelik/archey
+brew install archey
+
 # GNU Aspell
 #
 # A Free and Open Source spell checker
