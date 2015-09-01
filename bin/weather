@@ -39,10 +39,10 @@ Usage:
   weather         # weather for 93015 (Santa Barbara)
   weather [query] # weather data for a given query, zip codes preferred.
 "
-if [[ "$1" = "-h" ]]; then
+if [[ "$1" = "-h" ]]
+then
   printf "%s\n" "$usage"
   exit 0
 fi
 
 _weather "$@"
-
