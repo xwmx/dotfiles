@@ -600,6 +600,20 @@ brew install gnupg2
 # http://grass.osgeo.org/
 brew install grass
 
+# The Haskell Tool Stack
+#
+# `stack` is a cross-platform program for developing Haskell projects. It is
+# aimed at Haskellers both new and experienced.
+#
+# Stackage is a stable source of Haskell packages. We guarantee that packages
+# build consistently and pass tests before generating nightly and Long Term
+# Support (LTS) releases.
+#
+# https://www.stackage.org
+# https://github.com/commercialhaskell/stack
+# https://github.com/commercialhaskell/stack/blob/master/GUIDE.md
+brew install haskell-stack
+
 # GNU Grep
 #
 # Grep searches one or more input files for lines containing a match to a
