@@ -95,7 +95,6 @@ plugins=(
   git
   golang
   npm
-  per_directory_history
   tmux
   tmuxinator
   vi-mode

@@ -224,6 +224,6 @@
 [submodule "vendor/com/github/mattly/bork"]
 	path = vendor/com/github/mattly/bork
 	url = https://github.com/mattly/bork.git
-[submodule "home/.oh-my-zsh.custom/plugins/per-directory-history"]
-	path = home/.oh-my-zsh.custom/plugins/per-directory-history
+[submodule "vendor/com/github/jimhester/per-directory-history"]
+	path = vendor/com/github/jimhester/per-directory-history
 	url = https://github.com/jimhester/per-directory-history.git
