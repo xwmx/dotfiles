@@ -227,3 +227,6 @@
 [submodule "vendor/com/github/jimhester/per-directory-history"]
 	path = vendor/com/github/jimhester/per-directory-history
 	url = https://github.com/jimhester/per-directory-history.git
+[submodule "home/.janus/anderson.vim"]
+	path = home/.janus/anderson.vim
+	url = https://github.com/gilgigilgil/anderson.vim.git
