@@ -485,6 +485,13 @@ brew cask install inkscape
 # http://www.iterm2.com/
 brew cask install iterm2-nightly
 
+# Itsycal
+#
+# Itsycal is a tiny calendar for your Mac's menu bar.
+#
+# http://www.mowglii.com/itsycal/
+brew cask install itsycal
+
 # Java
 #
 # Java Standard Edition Development Kit
