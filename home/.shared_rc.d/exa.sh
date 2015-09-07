@@ -43,7 +43,7 @@
 #   alias ea='exa -a1'
 #   alias ee='exa -hla'
 
-alias e='exa -la'
+alias e='exa -la --git'
 alias eh='exa -hla'
 alias ee='exa -l'
 alias eeh='exa -hl'
