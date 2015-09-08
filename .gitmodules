@@ -230,3 +230,6 @@
 [submodule "home/.janus/anderson.vim"]
 	path = home/.janus/anderson.vim
 	url = https://github.com/gilgigilgil/anderson.vim.git
+[submodule "vendor/com/github/alphabetum/dsgn"]
+	path = vendor/com/github/alphabetum/dsgn
+	url = https://github.com/alphabetum/dsgn.git
