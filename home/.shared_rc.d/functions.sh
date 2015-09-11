@@ -433,6 +433,29 @@ map() {
   xargs -n1 "$@"
 }
 
+# show()
+#
+# Usage:
+#   show <../path/to/file>
+#   show <command>
+#
+# Description:
+#   When given a valid file path, the `ls` output is displayed for that file,
+#   otherwise display the output of `which`.
+show() {
+  if [[ -e "$1" ]]
+  then
+    if [[ -d "$1" ]]
+    then
+      ls -lahd "$1"
+    else
+      ls -lah "$1"
+    fi
+  else
+    which "$1"
+  fi
+}
+
 # Unicode ---------------------------------------------------------------------
 
 # A shortcut for the unicode program.
