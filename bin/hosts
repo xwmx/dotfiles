@@ -5,10 +5,24 @@
 # A wrapper for the hosts program that includes some additional functions.
 ###############################################################################
 
+# desc "block" <<EOM
+# Usage:
+#   $_ME block <hostname>
+
+# Description:
+#   Block a given hostname by adding a new entry assigning it to 127.0.0.1.
+# EOM
 block() {
   $_ME add 127.0.0.1 "${1}"
 }
 
+# desc "unblock" <<EOM
+# Usage:
+#   $_ME unblock <hostname>
+
+# Description:
+#   Unblock a given hostname by removing its entry from the hosts file.
+# EOM
 unblock() {
   $_ME remove "${1}"
 }
