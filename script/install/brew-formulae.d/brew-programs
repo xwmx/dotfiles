@@ -993,6 +993,15 @@ brew install mplayer --with-libcaca --with-x11
 # http://msgpack.org/
 brew install msgpack
 
+# multirust
+#
+# A simple tool for managing multiple installations of the Rust toolchain. It
+# replaces the standard Rust toolchain with components that dynamically choose
+# between alternate implementations based on context.
+#
+# https://github.com/brson/multirust
+brew install multirust
+
 # mutt
 #
 # Mutt is a small but very powerful text-based mail client for Unix operating

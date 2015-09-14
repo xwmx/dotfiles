@@ -7,13 +7,20 @@
 
 # View descriptions with `orphans help <script:up>`
 
+# UP ....................................................................
+
 # orphans alcatraz:up
 orphans ammonite:up
 orphans bish:up
 orphans iota:up
 orphans meteor:up
-orphans multirust:up
+[[ "$OSTYPE" =~ ^linux ]] && orphans multirust:up
 orphans neovim_dot_app:up
 orphans rosetta:up
 orphans xsv:up
 orphans zindex:up
+
+# DOWN ...................................................................
+
+# multirust is installed via homebrew on OS X.
+[[ "$OSTYPE" =~ ^darwin ]] && orphans multirust:down
