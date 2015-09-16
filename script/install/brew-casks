@@ -19,6 +19,21 @@ then
 fi
 
 ###############################################################################
+# Helpers
+###############################################################################
+
+# _homebrew_cask_is_installed()
+#
+# Test whether a given homebrew cask is installed on the system.
+#
+# Usage:
+#   _homebrew_cask_is_installed <cask name>
+_homebrew_cask_is_installed() {
+  local _cask_name="$1"
+  [[ -n "$(brew cask list "$_cask_name" 2>/dev/null)" ]]
+}
+
+###############################################################################
 # Homebrew - Update
 ###############################################################################
 
@@ -803,20 +818,13 @@ brew cask install rowanj-gitx
 #
 # https://crates.io/
 #
-# NOTE: uninstall rust cask in favor of orphan install.
+# NOTE: uninstall rust cask in favor of multirust.
 # TODO: remove this section when the rust cask has been removed from all
 # systems.
-_uninstall_rust_cask() {
+if _homebrew_cask_is_installed "rust"
+then
   brew cask uninstall rust
-  # `brew cask uninstall rust` doesn't appear to uninstall rust from the system
-  # fully, so perform a manual uninstall, too.
-  if [[ -e "/usr/local/bin/rustc" ]]
-  then
-    "/usr/local/lib/rustlib/uninstall.sh"
-  fi
-
-}
-_uninstall_rust_cask
+fi
 
 # Scribus
 #
