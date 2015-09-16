@@ -24,7 +24,7 @@ block() {
 #   Unblock a given hostname by removing its entry from the hosts file.
 # EOM
 unblock() {
-  $_ME remove 127.0.0.1 "${1}"
+  $_ME remove 127.0.0.1 "${1}" --force
 }
 
 # Source the original hosts program.
