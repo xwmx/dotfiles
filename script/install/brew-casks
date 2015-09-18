@@ -1121,6 +1121,18 @@ brew cask install vlc-nightly
 # http://xquartz.macosforge.org/landing/
 brew cask install xquartz
 
+# xrg
+#
+# XRG is an open source system monitor for Mac OS X. XRG allows you to monitor
+# CPU activity, GPU activity, memory usage, battery status, machine
+# temperature, network activity, disk I/O, current weather, and stock market
+# data. The goal of XRG is to be a functional system monitor that has a clean
+# and flexible interface, so it doesn't intrude on the rest of your Mac
+# experience.
+#
+# http://www.gauchosoft.com/Products/XRG/
+brew cask install xrg
+
 # Zed
 #
 # Zed is a fully offline-capable, open source, keyboard-focused, text and code
