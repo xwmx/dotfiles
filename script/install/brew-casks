@@ -277,6 +277,13 @@ brew cask install coqide
 # https://github.com/coteditor/CotEditor
 brew cask install coteditor
 
+# cscreen
+#
+# Command line display management utility.
+#
+# http://www.pyehouse.com/cscreen/
+brew cask install cscreen
+
 # Cyberduck
 #
 # Libre FTP, SFTP, WebDAV, S3 & OpenStack Swift browser for Mac and Windows.
