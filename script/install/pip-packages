@@ -152,14 +152,6 @@ pip_install pymongo
 # https://pypi.python.org/pypi/python-Levenshtein/
 pip_install python-Levenshtein
 
-# pythonpy
-#
-# python -c, with shorthand and tab completion
-#
-# https://github.com/Russell91/pythonpy
-# https://github.com/Russell91/pythonpy/wiki/Python3
-pip3 install -I --upgrade pythonpy
-
 # saws
 #
 # A Supercharged AWS Command Line Interface (CLI).

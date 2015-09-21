@@ -165,6 +165,14 @@ pip3_install pandas
 # https://github.com/dbcli/pgcli
 pip3_install pgcli
 
+# pythonpy
+#
+# python -c, with shorthand and tab completion
+#
+# https://github.com/Russell91/pythonpy
+# https://github.com/Russell91/pythonpy/wiki/Python3
+pip3_install -I pythonpy
+
 # Rainbow Stream
 #
 # Terminal-based Twitter Client. Realtime tweetstream, compose, search,
