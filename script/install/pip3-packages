@@ -38,16 +38,17 @@ fi
 #   install on other systems. The --user flag doesn't work properly with
 #   homebrew-installed Python: http://git.io/vsfqN
 pip3_install() {
-  if [[ -z "${1:-}" ]]
+  if (($#))
   then
+    if [[ "$(uname -a)" =~ ^Linux ]]
+    then
+      pip3 install --user --upgrade "$@"
+    else
+      pip3 install --upgrade "$@"
+    fi
+  else
     printf "No package specified."
     return 1
-  fi
-  if [[ "$(uname -a)" =~ ^Linux ]]
-  then
-    pip3 install --user --upgrade "$1"
-  else
-    pip3 install --upgrade "$1"
   fi
 }
 
