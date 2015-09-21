@@ -159,6 +159,13 @@ pip_install python-Levenshtein
 # https://github.com/Russell91/pythonpy/wiki/Python3
 pip3 install -I --upgrade pythonpy
 
+# saws
+#
+# A Supercharged AWS Command Line Interface (CLI).
+#
+# https://github.com/donnemartin/saws
+pip_install saws
+
 # virtualenv - Virtual Environments
 #
 # virtualenv is a tool to create isolated Python environments.
