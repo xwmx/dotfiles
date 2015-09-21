@@ -441,7 +441,26 @@ brew cask install gridwars
 # A freeware web browser developed by Google.
 #
 # https://www.google.com/chrome/
-brew cask install google-chrome
+#
+# NOTE: reinstall google chrome every time this script is run while Chrome is
+# not running. In the current configuration, Chrome is not updating
+# automatically, possibly because it's not in the `/Applications/`
+# directory.
+# TODO: Reconfigure so Chrome's automatic update works properly.
+_google_chrome_is_not_running() {
+  [[ -z "$(pgrep Chrome)" ]]
+}
+_install_google_chrome_cask() {
+  if _google_chrome_is_not_running
+  then
+    if _homebrew_cask_is_installed "google-chrome"
+    then
+      brew cask uninstall google-chrome
+    fi
+    brew cask install google-chrome
+  fi
+}
+_install_google_chrome_cask
 
 # GrandPerspective
 #
