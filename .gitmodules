@@ -233,3 +233,4 @@
 [submodule "home/.janus/vim-bufkill"]
 	path = home/.janus/vim-bufkill
 	url = https://github.com/qpkorr/vim-bufkill.git
+	ignore = dirty
