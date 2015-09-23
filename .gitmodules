@@ -37,9 +37,6 @@
 [submodule "home/.janus/vim-vwilight"]
 	path = home/.janus/vim-vwilight
 	url = https://github.com/alphabetum/vim-vwilight.git
-[submodule "home/.janus/bufkill.vim"]
-	path = home/.janus/bufkill.vim
-	url = https://github.com/mattdbridges/bufkill.vim.git
 [submodule "home/.janus/eclm_wombat.vim"]
 	path = home/.janus/eclm_wombat.vim
 	url = https://github.com/vim-scripts/eclm_wombat.vim.git
@@ -233,3 +230,6 @@
 [submodule "vendor/com/github/alphabetum/dsgn"]
 	path = vendor/com/github/alphabetum/dsgn
 	url = https://github.com/alphabetum/dsgn.git
+[submodule "home/.janus/vim-bufkill"]
+	path = home/.janus/vim-bufkill
+	url = https://github.com/qpkorr/vim-bufkill.git
