@@ -519,6 +519,16 @@ brew cask install inform
 # https://inkscape.org/en/
 brew cask install inkscape
 
+# iStat Menus
+#
+# A Mac system monitor for your menu bar.
+#
+# http://bjango.com/mac/istatmenus/
+#
+# NOTE: this is similar to Menu Meters, but it works in El Capitan, while
+# Menu Meters currently does not.
+brew cask install istat-menus
+
 # iTerm2
 #
 # iTerm2 is a replacement for Terminal and the successor to iTerm.
