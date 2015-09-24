@@ -109,7 +109,7 @@ brew cask install font-office-code-pro
 #
 # NOTES:
 #   - Installing first since it's important and other casks use it.
-#   - Installation fails if a VM is running. If this happens, check from
+#   - Installation fails if a VM is running. If this happens, check for
 #     running VMs, such as a boot2docker VM.
 brew cask install virtualbox
 
