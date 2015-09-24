@@ -9,7 +9,10 @@
 # generate_ssh_config
 #
 # Usage:
-#   generate_ssh_config
+#   generate_ssh_config [-h | --help]
+#
+# Options:
+#   -h --help  Display help and usage information.
 #
 # Description:
 #   Combine the contents of `.ssh/config.d` and `.ssh/default.sshconfig` into
@@ -28,7 +31,10 @@ generate_ssh_config() {
   then
     printf "\
 Usage:
-  generate_ssh_config
+  generate_ssh_config [-h|--help]
+
+Options:
+  -h --help  Display help and usage information.
 
 Description:
   Combine the contents of \`.ssh/config.d\` and \`.ssh/default.sshconfig\` into
@@ -61,6 +67,10 @@ Description:
 #
 # Usage:
 #   generate_ssh_key <user@host.tld>
+#   generate_ssh_key -h | --help
+#
+# Options:
+#   -h --help  Display help and usage information.
 #
 # Description:
 #   Generates an ssh key. The generated file uses the following format:
@@ -78,6 +88,10 @@ generate_ssh_key() {
     printf "\
 Usage:
   generate_ssh_key <user@host.tld>
+  generate_ssh_key -h | --help
+
+Options:
+  -h --help  Display help and usage information.
 
 Description:
   Generates an ssh key. The generated file uses the following format:
@@ -119,6 +133,12 @@ Description:
 # More information: http://superuser.com/q/247564
 _SSH_CMD="$(which ssh)"
 ssh() {
+  # Disable ShellCheck SC2119: "Use foo "$@" if function's $1 should mean
+  # script's $1." The arguments referenced by `generate_ssh_config` are
+  # for displaying help and intended to specified by operators calling the
+  # function manually.
+  #
+  # shellcheck disable=SC2119
   generate_ssh_config
   "$_SSH_CMD" "$@"
 }
