@@ -21,9 +21,11 @@ _update_cabal_config_from_template() {
   local cabal_dir="$HOME/.cabal"
 
   # if the template file exists
-  if [[ -f "$cabal_dir"/config.template ]]; then
+  if [[ -f "$cabal_dir"/config.template ]]
+  then
     # Remove current if present
-    if [[ -f "$cabal_dir"/config ]]; then
+    if [[ -f "$cabal_dir"/config ]]
+    then
       rm "$cabal_dir"/config
     fi
     # copy the template to the original file's location
