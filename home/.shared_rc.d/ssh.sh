@@ -113,7 +113,7 @@ Description:
   fi
 }
 
-# Alias `ssh` to a function that first runs `generate_ssh_config` before
+# Wrap `ssh` in a function that first runs `generate_ssh_config` before
 # calling `ssh`.
 #
 # More information: http://superuser.com/q/247564
