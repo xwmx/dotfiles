@@ -26,7 +26,7 @@ References:
   https://news.ycombinator.com/item?id=9337826
 EOM
 
-desc execsnoop <<EOM
+desc "execsnoop" <<EOM
 Usage:
   $_ME execsnoop
 
@@ -40,7 +40,7 @@ execsnoop() {
   sudo "$_execsnoop"
 }
 
-desc iftop <<EOM
+desc "iftop" <<EOM
 Usage:
   $_ME iftop
 
@@ -54,7 +54,7 @@ iftop() {
   sudo "$_iftop"
 }
 
-desc iosnoop <<EOM
+desc "iosnoop" <<EOM
 Usage:
   $_ME iosnoop
 
@@ -68,7 +68,7 @@ iosnoop() {
   sudo "$_iosnoop"
 }
 
-desc iotop <<EOM
+desc "iotop" <<EOM
 Usage:
   $_ME iotop
 
@@ -82,7 +82,7 @@ iotop() {
   sudo "$_iotop"
 }
 
-desc lsof-c <<EOM
+desc "lsof-c" <<EOM
 Usage:
   $_ME lsof-c <command>
 
@@ -101,7 +101,7 @@ lsof-c() {
   sudo lsof -c "$1"
 }
 
-desc lsof-i <<EOM
+desc "lsof-i" <<EOM
 Usage:
   $_ME lsof-i [<address>]
 
@@ -118,7 +118,7 @@ lsof-i() {
   sudo lsof -i "$@"
 }
 
-desc lsof-p <<EOM
+desc "lsof-p" <<EOM
 Usage:
   $_ME lsof-p <PID>
 
@@ -136,7 +136,7 @@ lsof-p() {
   sudo lsof -p "$1"
 }
 
-desc lsof-u <<EOM
+desc "lsof-u" <<EOM
 Usage:
   $_ME lsof-u <user>
 
@@ -154,7 +154,7 @@ lsof-u() {
   sudo lsof -u "$1"
 }
 
-desc opensnoop <<EOM
+desc "opensnoop" <<EOM
 Usage:
   $_ME opensnoop
 
