@@ -234,3 +234,6 @@
 	path = home/.janus/vim-bufkill
 	url = https://github.com/qpkorr/vim-bufkill.git
 	ignore = dirty
+[submodule "vendor/com/github/alphabetum/accounts"]
+	path = vendor/com/github/alphabetum/accounts
+	url = https://github.com/alphabetum/accounts.git
