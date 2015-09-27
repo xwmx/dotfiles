@@ -6,5 +6,12 @@
 -- https://downloads.haskell.org/~ghc/7.8.3/docs/html/users_guide/ghci.html
 
 -- Set prompt to green lambda, with modules in bold green on line above.
+-- Example session with this prompt:
+-- Prelude
+-- λ> :module + Data.Ratio
+-- Prelude Data.Ratio
+-- λ> 2 + 2
+-- 4
+-- Prelude Data.Ratio
+-- λ>
 :set prompt "\ESC[1;32m%s\ESC[0m\n\ESC[0;32mλ> \ESC[0m"
-
