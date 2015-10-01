@@ -23,9 +23,8 @@
 ##############################################################################
 
 _is_el_capitan() {
-  local version
-  version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$version" -eq "11" ]
+  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+  [ "$___osx_version" -eq "11" ]
 }
 
 _is_zsh() {
