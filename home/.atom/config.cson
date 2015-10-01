@@ -23,6 +23,7 @@
       "nuclide-diff-view"
       "nuclide-code-format"
       "nuclide-click-to-symbol"
+      "vim-mode-visual-block"
     ]
     themes: [
       "atom-dark-ui-slim"
