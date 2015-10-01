@@ -73,7 +73,12 @@ _is_el_capitan() {
 #
 # Revert command:
 # defaults write com.apple.universalaccess reduceTransparency 0
-defaults write com.apple.universalaccess reduceTransparency 1
+if _is_yosemite
+then
+  defaults write com.apple.universalaccess reduceTransparency 1
+else
+  defaults write com.apple.universalaccess reduceTransparency 0
+fi
 
 ###############################################################################
 # Disk Utility
