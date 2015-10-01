@@ -26,7 +26,8 @@ __verbose_init printf "Loading .shared_env\n"
 # files that use them.
 ###############################################################################
 
-# OS detection
+# OS Tests
+###############################################################################
 is_osx() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
 }
@@ -55,6 +56,20 @@ get_os() {
   done
 }
 
+# Shell Tests
+###############################################################################
+
+is_zsh() {
+  [ -n "$ZSH_NAME" ]
+}
+
+is_bash() {
+  [ -n "$BASH" ]
+}
+
+# Program Tests
+###############################################################################
+
 # Check whether a program exists in the PATH
 #
 # For information on why `which` is not being used, see:
@@ -74,6 +89,9 @@ test_program_exists() {
   fi
 
 }
+
+# init_src
+###############################################################################
 
 # source all files in a directory, or optionally source one file from a
 # specified directory.

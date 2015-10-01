@@ -22,11 +22,7 @@
 #   $HOME/.zprofile.d/osx_path_fix.zsh
 ##############################################################################
 
-_is_zsh() {
-  [ -n "$ZSH_NAME" ]
-}
-
-if _is_zsh && is_osx && is_el_capitan
+if is_zsh && is_osx && is_el_capitan
 then
   # Call `path_helper`. Adapted from /etc/zprofile on OS X El Capitan.
   #
