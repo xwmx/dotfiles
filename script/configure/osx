@@ -15,6 +15,50 @@ then
   exit 0
 fi
 
+# _macos_version()
+#
+# Usage:
+#   _macos_version
+#
+# Description:
+#   Return the current macOS version, e.g., '11' when running 10.11.
+_macos_version() {
+  sw_vers -productVersion | awk -F. '{print $2}'
+}
+
+# _is_mavericks
+#
+# Usage:
+#   _is_mavericks
+#
+# Description:
+#   Returns true if the current system is running OS X 10.9 Mavericks.
+_is_mavericks() {
+  [[ "$(_macos_version)" == "9" ]]
+}
+
+# _is_yosemite
+#
+# Usage:
+#   _is_yosemite
+#
+# Description:
+#   Returns true if the current system is running OS X 10.10 Yosemite.
+_is_yosemite() {
+  [[ "$(_macos_version)" == "10" ]]
+}
+
+# _is_el_capitan
+#
+# Usage:
+#   _is_el_capitan
+#
+# Description:
+#   Returns true if the current system is running OS X 10.11 El Capitan.
+_is_el_capitan() {
+  [[ "$(_macos_version)" == "11" ]]
+}
+
 ###############################################################################
 # UX
 ###############################################################################
