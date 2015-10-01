@@ -4,12 +4,7 @@
 # See "$HOME/.zshenv.d/osx_path_fix.zsh" for more information.
 ##############################################################################
 
-_is_el_capitan() {
-  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$___osx_version" -eq "11" ]
-}
-
-if is_osx && _is_el_capitan
+if is_osx && is_el_capitan
 then
   setopt global_rcs
 fi

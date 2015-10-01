@@ -30,6 +30,18 @@ __verbose_init printf "Loading .shared_env\n"
 is_osx() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
 }
+is_mavericks() {
+  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+  [ "$___osx_version" -eq "9" ]
+}
+is_yosemite() {
+  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+  [ "$___osx_version" -eq "10" ]
+}
+is_el_capitan() {
+  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+  [ "$___osx_version" -eq "11" ]
+}
 is_linux() {
   [[ "$(uname -a)" =~ ^Linux ]] || return 1
 }

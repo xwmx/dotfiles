@@ -22,16 +22,11 @@
 #   $HOME/.zprofile.d/osx_path_fix.zsh
 ##############################################################################
 
-_is_el_capitan() {
-  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$___osx_version" -eq "11" ]
-}
-
 _is_zsh() {
   [ -n "$ZSH_NAME" ]
 }
 
-if _is_zsh && is_osx && _is_el_capitan
+if _is_zsh && is_osx && is_el_capitan
 then
   # Call `path_helper`. Adapted from /etc/zprofile on OS X El Capitan.
   #
