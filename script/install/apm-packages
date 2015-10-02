@@ -209,8 +209,17 @@ apm install language-viml
 #
 # Validates your code using linter
 #
+# http://atomlinter.github.io
 # https://github.com/AtomLinter/Linter
 apm install linter
+
+# linter-shellcheck
+#
+# Linter plugin for Bash, using shellcheck.
+#
+# https://github.com/AtomLinter/linter-shellcheck
+# https://atom.io/packages/linter-shellcheck
+apm install linter-shellcheck
 
 # minimap
 #
