@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+###############################################################################
+# osx_calendar_sounds
+#
+# Customize the event notification sounds in OS X Calendar.
+#
+# Calendar doesn't provide a way to customize notification sounds for events.
+# As a result, all Calendar notifications use the 'Basso' sound. In order to
+# use a different sound, we have to jump through some hoops.
+#
+# More information:
+#   https://discussions.apple.com/message/23979540
+#   http://apple.stackexchange.com/q/60017
+###############################################################################
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
+  printf "osx_calendar_sounds is only supported on OS X.\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Customize Event Notification Sound
+###############################################################################
+
+# TODO: Everything
+printf "osx_calendar_sounds not implemented.\n" && exit 0
+
+# _customize_event_notification_sound
+#
+# Usage:
+#   _customize_event_notification_sound
+_customize_event_notification_sound() {
+  local calendars=()
+
+  for _item in ~/Library/Calendars/*
+  do
+    # TODO
+    # Find all entries with a .calendar extension and add them to the
+    # `$calendars` array.
+    echo "$_item"
+  done
+
+  for _item in "${calendars[@]}"
+  do
+    # TODO
+    # For each calendar, edit this file:
+    #   $calendar_path/LocalDefaultAlarms/EventAllDayAlarms.icsalarm
+    # Replace:
+    #   ATTACH;VALUE=URI:Basso
+    # with:
+    #   ATTACH;VALUE=URI:Tink
+    echo "$_item"
+  done
+}
+_customize_event_notification_sound
