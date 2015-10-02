@@ -110,7 +110,21 @@ _astral_git_prompt() {
   printf "%s\n" "%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}"
 }
 
+# Command Prompt
+###############################################################################
+
+# _astral_command_prompt
+#
+# Display a row of color '❯' characters. Use last return status to display
+# green to blue gradient if the last command returned with a 0 and red to
+# blue if it returned with a non-zero status.
+_astral_command_prompt() {
+  local _prompt_0="%{$fg_bold[green]%}❯%{$fg_bold[yellow]%}❯%{$fg_bold[cyan]%}❯%{$fg_bold[blue]%}❯"
+  local _prompt_non_0="%{$fg_bold[red]%}❯%{$fg_bold[magenta]%}❯%{$fg_bold[blue]%}❯%{$fg_bold[cyan]%}❯"
+  printf "%s\n" "%(?:${_prompt_0}:${_prompt_non_0}%s)"
+}
+
 # Prompt
 ###############################################################################
 
-PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_prompt)$(_astral_git_prompt) % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
+PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_prompt)$(_astral_git_prompt) % %{$reset_color%}\n$(_astral_command_prompt) %{$reset_color%} '
