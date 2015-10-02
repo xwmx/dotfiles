@@ -32,6 +32,47 @@ __verbose_init printf "Loading .zshrc\n"
 # https://github.com/robbyrussell/oh-my-zsh
 ###############################################################################
 
+# Modify $fpath for Homebrew.
+###############################################################################
+
+# _modify_fpath()
+#
+# Usage:
+#   _modify_fpath
+#
+# Description:
+#   If /usr/local/share/zsh/site-functions exists, remove it from `$fpath` if
+#   the owner has a different name than the current user.
+#
+#   This directory contains homebrew-installed completions, but because they
+#   are installed with a non-root user account, any user other than the
+#   user who installed the formulas will encounter warnings from `compaudit`
+#   and `compinit`. At this time there doesn't appear to be a good solution
+#   since homebrew's non-root philosophy conflicts with `compaudit`'s
+#   expectations.
+_modify_fpath() {
+  local site_functions_path
+  local site_functions_owner
+  local current_user
+
+  site_functions_path="/usr/local/share/zsh/site-functions"
+
+  if [[ -e "$site_functions_path" ]]
+  then
+    site_functions_owner="$(ls -ld "$site_functions_path" | awk '{print $3}')"
+    current_user="$(whoami)"
+
+    if [[ "$site_functions_owner" != "$current_user" ]]
+    then
+      fpath=( "${fpath[@]/$site_functions_path}" )
+    fi
+  fi
+}
+_modify_fpath
+
+# oh-my-zsh configuration.
+###############################################################################
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
