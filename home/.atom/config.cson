@@ -36,12 +36,12 @@
   "tree-view": {}
   "autocomplete-plus": {}
   "file-types":
-    "^.gvimrc.after": "viml"
-    "^.profile$": "shell"
-    "^.shared_env.*": "shell"
-    "^.spacemacs$": "lisp"
-    "^.vimrc.before$": "viml"
-    "^.vimrc.after$": "viml"
+    "^.gvimrc.after": "source.viml"
+    "^.profile$": "source.shell"
+    "^.shared_env.*": "source.shell"
+    "^.spacemacs$": "source.lisp"
+    "^.vimrc.before$": "source.viml"
+    "^.vimrc.after$": "source.viml"
     ".zsh-theme$": "source.shell"
-    "^.zshenv.local.*$": "shell"
-    "^.zshrc.local.*$": "shell"
+    "^.zshenv.local.*$": "source.shell"
+    "^.zshrc.local.*$": "source.shell"
