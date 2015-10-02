@@ -80,7 +80,7 @@ _astral_rbenv_prompt() {
     if [[ -n "$_maybe_rbenv_version" ]]
     then
       local _formatted_value="%{$fg_bold[red]%}${_maybe_rbenv_version}"
-      _rbenv_version_string="%{$fg_bold[blue]%}ruby:(${_formatted_value}%{$fg_bold[blue]%})%{$reset_color%} "
+      _rbenv_version_string="%{$fg_bold[blue]%}ruby: ${_formatted_value}%{$fg_bold[blue]%}%{$reset_color%} "
     else
       _rbenv_version_string=""
     fi
@@ -92,10 +92,10 @@ _astral_rbenv_prompt() {
 ###############################################################################
 
 # `git_prompt_info` variables
-ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="git: %{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 # _astral_git_prompt()
 #
