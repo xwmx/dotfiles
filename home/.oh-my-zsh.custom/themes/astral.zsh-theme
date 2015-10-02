@@ -67,11 +67,11 @@ _astral_rbenv_version_status() {
   local ver=$(rbenv version-name)
   [ "$(rbenv global)" != "$ver" ] && echo "$ver"
 }
-# _rbenv_version_prompt()
+# _astral_rbenv_prompt()
 #
 # If rbenv is installed and _rbenv_version_status() returns a version,
 # generate the prompt section displaying the Ruby version.
-_astral_rbenv_version_prompt() {
+_astral_rbenv_prompt() {
   local _maybe_rbenv_version
   local _rbenv_version_string
   if hash "rbenv" &> /dev/null
@@ -107,10 +107,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 # https://github.com/michaeldfallen/git-radar
 _astral_git_prompt() {
   # For now, just fall back to the `git_prompt_info`oh-my-zsh shell function.
-  git_prompt_info
+  printf "%s\n" "%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}"
 }
 
 # Prompt
 ###############################################################################
 
-PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_version_prompt)%{$fg_bold[blue]%}$(_astral_git_prompt)%{$fg_bold[blue]%} % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
+PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_prompt)$(_astral_git_prompt) % %{$reset_color%}\n${_astral_return_status}➜ %{$reset_color%} '
