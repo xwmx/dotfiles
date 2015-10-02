@@ -42,5 +42,6 @@
     "^.spacemacs$": "lisp"
     "^.vimrc.before$": "viml"
     "^.vimrc.after$": "viml"
+    ".zsh-theme$": "source.shell"
     "^.zshenv.local.*$": "shell"
     "^.zshrc.local.*$": "shell"
