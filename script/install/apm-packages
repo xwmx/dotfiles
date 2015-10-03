@@ -213,6 +213,192 @@ apm install language-viml
 # https://github.com/AtomLinter/Linter
 apm install linter
 
+# linter-chktex
+#
+# Linter plugin for LaTeX, using chktex
+#
+# https://atom.io/packages/linter-chktex
+# https://github.com/nscaife/linter-chktex
+apm install linter-chktex
+
+# linter-clang
+#
+# Lint C-based files using clang
+#
+# https://atom.io/packages/linter-clang
+# https://github.com/AtomLinter/linter-clang
+apm install linter-clang
+
+# linter-clojure
+#
+# Lint Clojure on the fly, using clojure-x.x.x.jar
+#
+# https://atom.io/packages/linter-clojure
+# https://github.com/AtomLinter/linter-clojure
+apm install linter-clojure
+
+# linter-coffeelint
+#
+# Lint CoffeeScript on the fly, using coffeelint
+#
+# https://atom.io/packages/linter-coffeelint
+# https://github.com/AtomLinter/linter-coffeelint
+apm install linter-coffeelint
+
+# linter-crystal
+#
+# Lint Crystal using the Crystal compiler
+#
+# https://atom.io/packages/linter-crystal
+# https://github.com/atom-crystal/linter-crystal
+apm install linter-crystal
+
+# linter-csslint
+#
+# This linter plugin for Linter provides an interface to csslint. It will be
+# used with files that have the “CSS” or “HTML” syntax.
+#
+# https://atom.io/packages/linter-csslint
+# https://github.com/AtomLinter/linter-csslint
+apm install linter-csslint
+
+# linter-erlang
+#
+# Simple erlang linter
+#
+# https://atom.io/packages/linter-erlang
+# https://github.com/RaoH/linter-erlang
+apm install linter-erlang
+
+# linter-eslint
+#
+# Lint JavaScript on the fly, using ESLint
+#
+# https://atom.io/packages/linter-eslint
+# https://github.com/AtomLinter/linter-eslint
+apm install linter-eslint
+
+# linter-flow
+#
+# Lint JavaScript on the fly, using Flow
+#
+# https://atom.io/packages/linter-flow
+# https://github.com/AtomLinter/linter-flow
+apm install linter-flow
+
+# linter-haml
+#
+# Atom linter plugin for HAML, using haml-lint
+#
+# https://atom.io/packages/linter-haml
+# https://github.com/AtomLinter/linter-haml
+apm install linter-haml
+
+# linter-hlint
+#
+# Lint haskell code with hlint
+#
+# https://atom.io/packages/linter-hlint
+# https://github.com/AtomLinter/linter-hlint
+apm install linter-hlint
+
+# linter-htmlhint
+#
+# Linter plugin for HTML, using htmlhint
+#
+# https://atom.io/packages/linter-htmlhint
+# https://github.com/AtomLinter/linter-htmlhint
+apm install linter-htmlhint
+
+# linter-jade
+#
+# Jade linter
+#
+# https://atom.io/packages/linter-jade
+# https://github.com/d9d/atom-linter-jade
+apm install linter-jade
+
+# linter-js-yaml
+#
+# Linter plugin for YAML, using js-yaml
+#
+# https://atom.io/packages/linter-js-yaml
+# https://github.com/AtomLinter/linter-js-yaml
+apm install linter-js-yaml
+
+# linter-jshint
+#
+# Linter plugin for JavaScript, using jshint
+#
+# https://atom.io/packages/linter-jshint
+# https://github.com/AtomLinter/linter-jshint
+apm install linter-jshint
+
+# linter-jsonlint
+#
+# Lint JSON on the fly
+#
+# https://atom.io/packages/linter-jsonlint
+# https://github.com/AtomLinter/linter-jsonlint
+apm install linter-jsonlint
+
+# linter-markdown
+#
+# Lint markdown on the fly, using mdast-lint
+#
+# https://atom.io/packages/linter-markdown
+# https://github.com/AtomLinter/linter-markdown
+apm install linter-markdown
+
+# linter-protocol-buffer
+#
+# Basic protocol buffer linter
+#
+# https://atom.io/packages/linter-protocol-buffer
+# https://github.com/d9d/atom-linter-protocol-buffer
+apm install linter-protocol-buffer
+
+# linter-pylama
+#
+# Lint python on the fly, using pylama. pylama is a wrapper for pylint, pep8,
+# pep257, pyflakes and mccabe
+#
+# https://atom.io/packages/linter-pylama
+# https://github.com/AtomLinter/linter-pylama
+apm install linter-pylama
+
+# linter-rubocop
+#
+# Lint `Ruby` on the fly, using rubocop
+#
+# https://atom.io/packages/linter-rubocop
+# https://github.com/AtomLinter/linter-rubocop
+apm install linter-rubocop
+
+# linter-ruby
+#
+# Lint Ruby on the fly, using ruby -wc
+#
+# https://atom.io/packages/linter-ruby
+# https://github.com/AtomLinter/linter-ruby
+apm install linter-ruby
+
+# linter-rust
+#
+# Lint Rust-files, using rustc and/or cargo
+#
+# https://atom.io/packages/linter-rust
+# https://github.com/AtomLinter/linter-rust
+apm install linter-rust
+
+# linter-scss-lint
+#
+# Lint SCSS on the fly, using scss-lint
+#
+# https://atom.io/packages/linter-scss-lint
+# https://github.com/AtomLinter/linter-scss-lint
+apm install linter-scss-lint
+
 # linter-shellcheck
 #
 # Linter plugin for Bash, using shellcheck.
@@ -220,6 +406,30 @@ apm install linter
 # https://github.com/AtomLinter/linter-shellcheck
 # https://atom.io/packages/linter-shellcheck
 apm install linter-shellcheck
+
+# linter-stylint
+#
+# Linter plugin for Stylus, using `stylint`.
+#
+# https://atom.io/packages/linter-stylint
+# https://github.com/AtomLinter/linter-stylint
+apm install linter-stylint
+
+# linter-swiftc
+#
+# Lint Swift using swiftc
+#
+# https://atom.io/packages/linter-swiftc
+# https://github.com/AtomLinter/linter-swiftc
+apm install linter-swiftc
+
+# linter-tslint
+#
+# Linter plugin for Typescript, using tslint
+#
+# https://atom.io/packages/linter-tslint
+# https://github.com/AtomLinter/linter-tslint
+apm install linter-tslint
 
 # minimap
 #
