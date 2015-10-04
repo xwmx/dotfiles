@@ -79,8 +79,10 @@ _astral_rbenv_prompt() {
     local _maybe_rbenv_version="$(_astral_rbenv_version_status)"
     if [[ -n "$_maybe_rbenv_version" ]]
     then
-      local _formatted_value="%{$fg_bold[cyan]%}${_maybe_rbenv_version}"
-      _rbenv_version_string="%{$fg_bold[blue]%}ruby:${_formatted_value}%{$fg_bold[blue]%}%{$reset_color%} "
+      local _rbenv_prefix="%{$fg_bold[blue]%}ruby:"
+      local _rbenv_value="%{$fg_bold[cyan]%}${_maybe_rbenv_version}"
+      local _rbenv_suffix="%{$fg_bold[blue]%}%{$reset_color%} "
+      _rbenv_version_string="${_rbenv_prefix}${_rbenv_value}${_rbenv_suffix}"
     else
       _rbenv_version_string=""
     fi
