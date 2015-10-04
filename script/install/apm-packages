@@ -183,6 +183,14 @@ apm install language-jade
 # https://github.com/enriquefernandez/language-lisp
 apm install language-lisp
 
+# language-rust
+#
+# Rust language support in Atom
+#
+# https://atom.io/packages/language-rust
+# https://github.com/zargony/atom-language-rust
+apm install language-rust
+
 # language-scala
 #
 # Scala language support in atom
