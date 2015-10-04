@@ -28,14 +28,15 @@ _astral_time="%T"
 #
 # Makes it easier to distinguish between local and remote sessions.
 _astral_machine() {
-  local _machine_string
+  local _astral_machine_string
   if [[ "$SESSION_TYPE" == "remote/ssh" ]]
   then
-    _machine_string="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:%{$fg_bold[green]%}%n@%m"
+    local _astral_ssh_prefix="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:"
+    _astral_machine_string="${_astral_ssh_prefix}%{$fg_bold[green]%}%n@%m"
   else
-    _machine_string="%{$fg_bold[blue]%}%m"
+    _astral_machine_string="%{$fg_bold[blue]%}%m"
   fi
-  printf "%s\n" "$_machine_string"
+  printf "%s\n" "${_astral_machine_string}"
 }
 
 # Show the first two current path segments, with a ~ for the home directory.
