@@ -12,6 +12,7 @@
     showInvisibles: true
     showIndentGuide: true
     invisibles: {}
+    scrollPastEnd: true
   core:
     disabledPackages: [
       "metrics"
