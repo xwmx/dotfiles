@@ -46,3 +46,8 @@
     ".zsh-theme$": "source.shell"
     "^.zshenv.local.*$": "source.shell"
     "^.zshrc.local.*$": "source.shell"
+  "fuzzy-finder":
+    ignoredNames: [
+      "usr"
+      "etc"
+    ]
