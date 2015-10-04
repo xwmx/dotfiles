@@ -165,6 +165,13 @@ pip3_install pandas
 # https://github.com/dbcli/pgcli
 pip3_install pgcli
 
+# Pylama
+#
+# Code audit tool for python.
+#
+# https://github.com/klen/pylama
+pip3_install pylama
+
 # pythonpy
 #
 # python -c, with shorthand and tab completion
