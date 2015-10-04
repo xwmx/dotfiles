@@ -141,4 +141,17 @@ _astral_command_prompt() {
 # Prompt
 ###############################################################################
 
-PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n$(_astral_command_prompt) %{$reset_color%} '
+# _astral_top_prefix
+#
+# The top line, before any contextual data functions.
+_astral_top_prefix="${_astral_prefix} ${_astral_context}"
+
+# _astral_bottom_line
+#
+# The bottom line.
+_astral_bottom_line="$(_astral_command_prompt) %{$reset_color%} "
+
+# PROMPT
+#
+# Primary prompt variable. Use $RPROMPT to put a prompt on the right side.
+PROMPT=$'${_astral_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n${_astral_bottom_line}'
