@@ -122,8 +122,18 @@ _astral_git_prompt() {
 # green to blue gradient if the last command returned with a 0 and red to
 # blue if it returned with a non-zero status.
 _astral_command_prompt() {
-  local _prompt_0="%{$fg_bold[green]%}❯%{$fg_bold[yellow]%}❯%{$fg_bold[cyan]%}❯%{$fg_bold[blue]%}❯"
-  local _prompt_non_0="%{$fg_bold[red]%}❯%{$fg_bold[magenta]%}❯%{$fg_bold[blue]%}❯%{$fg_bold[cyan]%}❯"
+  local _prompt_0=""
+  for color in green yellow cyan blue
+  do
+    _prompt_0="$_prompt_0%{$fg_bold[$color]%}❯"
+  done
+
+  local _prompt_non_0=""
+  for color in red magenta blue cyan
+  do
+    _prompt_non_0="$_prompt_non_0%{$fg_bold[$color]%}❯"
+  done
+
   printf "%s\n" "%(?:${_prompt_0}:${_prompt_non_0}%s)"
 }
 
