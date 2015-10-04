@@ -141,4 +141,4 @@ _astral_command_prompt() {
 # Prompt
 ###############################################################################
 
-PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_prompt)$(_astral_git_prompt) % %{$reset_color%}\n$(_astral_command_prompt) %{$reset_color%} '
+PROMPT=$'${_astral_prefix} ${_astral_context} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n$(_astral_command_prompt) %{$reset_color%} '
