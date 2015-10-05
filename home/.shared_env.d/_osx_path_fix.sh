@@ -12,7 +12,7 @@
 # before the files in .shared_env.
 #
 # NOTE: This file must be the first one that runs in .shared_env.d, which is
-# whey it has an underscore prefix.
+# why it has an underscore prefix.
 #
 # References:
 #   http://www.zsh.org/mla/users/2015/msg00725.html
@@ -32,5 +32,6 @@ then
     eval `/usr/libexec/path_helper -s`
   fi
 
+  # NOTE: make sure `setopt global_rcs` is set in .zprofile or .zprofile.d.
   setopt no_global_rcs
 fi
