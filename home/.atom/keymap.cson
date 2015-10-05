@@ -43,3 +43,7 @@
   'ctrl-[': 'vim-mode-visual-block:escape'
   'ctrl-c': 'vim-mode-visual-block:escape'
   'ctrl-v': 'vim-mode:activate-blockwise-visual-mode'
+  # For unknown reasons, the 'delete' key doesn't delete the selection in
+  # visual-mode. Assigning 'backspace' seems to provide the expected
+  # behavior.
+  'backspace': 'vim-mode:delete-left'
