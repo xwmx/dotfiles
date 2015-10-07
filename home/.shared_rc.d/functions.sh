@@ -47,11 +47,13 @@ targz() {
   );
 
   local cmd="";
-  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null
+  then
     # the .tar file is smaller than 50 MB and Zopfli is available; use it
     cmd="zopfli"
   else
-    if hash pigz 2> /dev/null; then
+    if hash pigz 2> /dev/null
+    then
       cmd="pigz"
     else
       cmd="gzip"
@@ -92,12 +94,14 @@ timer() {
 # Epoch time conversion
 epoch() {
   TESTREG="[\d{10}]"
-  if [[ "$1" =~ $TESTREG ]]; then
+  if [[ "$1" =~ $TESTREG ]]
+  then
     # is epoch
     date -d @$*
   else
     # is date
-    if [ $# -gt 0 ]; then
+    if [ $# -gt 0 ]
+    then
       date +%s --date="$*"
     else
       date +%s
@@ -177,7 +181,8 @@ dataurl() {
   # 3. Set LC_ALL back to the original value.
   export LC_ALL="$original_LC_ALL"
 
-  if [[ $mimeType == text/* ]]; then
+  if [[ $mimeType == text/* ]]
+  then
     mimeType="${mimeType};charset=utf-8"
   fi
   # Include trailing newline in output for easier manual selection.
@@ -213,12 +218,14 @@ mkd() {
 
 # Determine size of a file or total size of a directory
 fs() {
-  if du -b /dev/null > /dev/null 2>&1; then
+  if du -b /dev/null > /dev/null 2>&1
+  then
     local arg=-sbh
   else
     local arg=-sh
   fi
-  if [[ -n "$@" ]]; then
+  if [[ -n "$@" ]]
+  then
     du $arg -- "$@"
   else
     du $arg .[^.]* ./*;
@@ -243,7 +250,8 @@ cdf() {
 
 # Use Git’s colored diff when available
 hash git &>/dev/null;
-if [ $? -eq 0 ]; then
+if [ $? -eq 0 ]
+then
   diff() {
     git diff --no-index --color-words "$@";
   }
@@ -257,7 +265,8 @@ fi
 # Description:
 #   Create a git.io short URL
 gitio() {
-  if [ -z "${1}" ] || [ -z "${2}" ]; then
+  if [ -z "${1}" ] || [ -z "${2}" ]
+  then
     echo "Usage: gitio <slug> <url>"
     return 1
   fi
@@ -269,7 +278,8 @@ gitio() {
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 json() {
-  if [ -t 0 ]; then # argument
+  if [ -t 0 ]
+  then # argument
     printf "%s" "$*" | python -mjson.tool | pygmentize -l javascript
   else # pipe
     python -mjson.tool | pygmentize -l javascript
@@ -289,9 +299,11 @@ json() {
 __lwp_request_m() {
   local _lwp_cat_cmd
   local _lwp_method
-  if hash ccat 2> /dev/null; then
+  if hash ccat 2> /dev/null
+  then
     _lwp_cat_cmd="ccat"
-  elif hash pygmentize 2> /dev/null; then
+  elif hash pygmentize 2> /dev/null
+  then
     _lwp_cat_cmd="pygmentize"
   else
     _lwp_cat_cmd="cat"
@@ -319,7 +331,8 @@ OPTIONS() { __lwp_request_m "OPTIONS" "$*"; }
 #   through that to provide some color.
 digg() {
   local _cat_cmd
-  if hash ccat 2> /dev/null; then
+  if hash ccat 2> /dev/null
+  then
     _cat_cmd="ccat"
   else
     _cat_cmd="cat"
@@ -394,7 +407,8 @@ getcertnames() {
   local tmp=$(echo -e "GET / HTTP/1.0\nEOT" \
     | openssl s_client -connect "${domain}:443" -servername "${domain}" 2>&1)
 
-  if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]; then
+  if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]
+  then
     local certText=$(echo "${tmp}" \
       | openssl x509 -text -certopt "no_aux, no_header, no_issuer, no_pubkey, \
       no_serial, no_sigdump, no_signame, no_validity, no_version")
@@ -471,7 +485,8 @@ shell_calc() {
   result="$(printf "scale=10;%s\n" "$*" | bc --mathlib | tr -d '\\\n')"
   #                       └─ default (when `--mathlib` is used) is 20
   #
-  if [[ "$result" == *.* ]]; then
+  if [[ "$result" == *.* ]]
+  then
     # improve the output for decimal numbers
     printf "%s" "$result" |
     sed -e 's/^\./0./'       \ # add "0" for cases like ".5"
