@@ -502,6 +502,14 @@ apm install "sort-lines"
 # https://github.com/atom/toggle-quotes
 apm install toggle-quotes
 
+# trailing-spaces
+#
+# Highlight trailing whitespace.
+#
+# https://atom.io/packages/trailing-spaces
+# https://github.com/wpillar/atom-trailing-spaces
+apm install trailing-spaces
+
 # twilight-syntax
 #
 # Twilight syntax theme for GitHub's Atom ID
