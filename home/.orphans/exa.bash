@@ -34,7 +34,6 @@ exa:up() {
 
   printf ">> Installing exa\n"
 
-  local binary_name="exa"
   local tmp_repo=/tmp/orphans/exa
   local remote_url=https://github.com/ogham/exa.git
 
