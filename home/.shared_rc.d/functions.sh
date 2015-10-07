@@ -257,7 +257,7 @@ fi
 # Description:
 #   Create a git.io short URL
 gitio() {
-  if [ -z "${1}" -o -z "${2}" ]; then
+  if [ -z "${1}" ] || [ -z "${2}" ]; then
     echo "Usage: gitio <slug> <url>"
     return 1
   fi
@@ -482,4 +482,3 @@ shell_calc() {
   fi
   printf "\n"
 }
-
