@@ -123,7 +123,7 @@
 /home/.rvm/user/*
 !/home/.rvm/user/db
 
-# Only track .ssh/config. Everything else in .ssh is private
+# Only track ssh config default and example configuration files.
 /home/.ssh/*
 !/home/.ssh/default.sshconfig
 !/home/.ssh/config.d
