@@ -238,3 +238,6 @@
 [submodule "vendor/com/github/alphabetum/accounts"]
 	path = vendor/com/github/alphabetum/accounts
 	url = https://github.com/alphabetum/accounts.git
+[submodule "vendor/com/github/nextrevision/sempl"]
+	path = vendor/com/github/nextrevision/sempl
+	url = https://github.com/nextrevision/sempl.git
