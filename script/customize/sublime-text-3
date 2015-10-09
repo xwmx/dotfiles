@@ -19,6 +19,15 @@ fi
 # Link Config
 ###############################################################################
 
+# link_config()
+#
+# Usage:
+#   link_config
+#
+# Description:
+#   Add links from the OS X preferences location to the ~/.config location.
+#   ~/.config is used on linux systems and versioned within in this
+#   configuration project.
 link_config() {
   local osx_prefs_path="${HOME}/Library/Application Support/Sublime Text 3"
   local config_path="${HOME}/.config/sublime-text-3"
