@@ -472,7 +472,7 @@ Description:
   When given a valid file path, the \`ls\` output is displayed for that file,
   otherwise display the output of \`which\`.
 HEREDOC
-  return 0
+    return 0
   fi
 
   if [[ -e "$1" ]]
