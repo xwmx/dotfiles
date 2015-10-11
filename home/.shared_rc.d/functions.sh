@@ -459,11 +459,16 @@ map() {
 show() {
   if [[ -e "$1" ]]
   then
-    if [[ -d "$1" ]]
+    if hash "exa" 2>/dev/null
     then
-      ls -lahd "$1"
+      exa \
+        --long \
+        --all \
+        --list-dirs \
+        --git \
+        "$1"
     else
-      ls -lah "$1"
+      ls -lahd "$1"
     fi
   else
     which "$1"
