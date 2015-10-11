@@ -13,6 +13,7 @@
     showIndentGuide: true
     invisibles: {}
     scrollPastEnd: true
+    autoIndentOnPaste: false
   core:
     disabledPackages: [
       "metrics"
