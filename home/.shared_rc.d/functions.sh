@@ -452,6 +452,7 @@ map() {
 # Usage:
 #   show <../path/to/file>
 #   show <command>
+#   show -h | --help
 #
 # Description:
 #   When given a valid file path, the `ls` output is displayed for that file,
@@ -459,6 +460,21 @@ map() {
 #
 # TODO: Add tab completion.
 show() {
+  if [[ "--help" == "$1" ]] || [[ "-h" == "$1" ]]
+  then
+    cat <<HEREDOC
+Usage:
+  show <../path/to/file>
+  show <command>
+  show -h | --help
+
+Description:
+  When given a valid file path, the \`ls\` output is displayed for that file,
+  otherwise display the output of \`which\`.
+HEREDOC
+  return 0
+  fi
+
   if [[ -e "$1" ]]
   then
     if hash "exa" 2>/dev/null
