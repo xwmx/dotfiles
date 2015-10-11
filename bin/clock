@@ -249,7 +249,7 @@ _PRINT_VERSION=0
 _USE_DEBUG=0
 
 # Initialize additional expected option variables.
-_SUBCOMMAND="help"
+_SUBCOMMAND=
 _ARGUMENTS=("$0")
 
 # _require_argument()
@@ -298,7 +298,12 @@ do
       break
       ;;
     *)
-      _ARGUMENTS+=("$opt")
+      if [[ -z "$_SUBCOMMAND" ]]
+      then
+        _SUBCOMMAND="$opt"
+      else
+        _ARGUMENTS+=("$opt")
+      fi
       ;;
   esac
 done
@@ -325,6 +330,12 @@ _clock() {
       ;;
     "help")
       _print_help
+      ;;
+    "")
+      _print_help
+      ;;
+    *)
+      timetrap "${_SUBCOMMAND}" "${_ARGUMENTS[@]:1}"
       ;;
   esac
 }
