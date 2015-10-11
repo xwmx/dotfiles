@@ -460,7 +460,7 @@ map() {
 #
 # TODO: Add tab completion.
 show() {
-  if [[ "--help" == "$1" ]] || [[ "-h" == "$1" ]]
+  if [[ "--help" == "$1" ]] || [[ "-h" == "$1" ]] || [[ -z "$1" ]]
   then
     cat <<HEREDOC
 Usage:
