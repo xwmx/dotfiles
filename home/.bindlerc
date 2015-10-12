@@ -6,4 +6,3 @@
 
 # Set bindle directory to ~/.dotfiles
 export BINDLEPATH="$HOME/.dotfiles"
-
