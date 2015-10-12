@@ -291,6 +291,13 @@ brew cask install cscreen
 # https://cyberduck.io/?l=en
 brew cask install cyberduck
 
+# Max
+#
+# Visual programming language for media.
+#
+# https://cycling74.com/
+brew cask install cycling74-max
+
 # Deluge
 #
 # Deluge is a lightweight, Free Software, cross-platform BitTorrent client.
