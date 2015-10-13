@@ -17,5 +17,5 @@
 _aws_bash_completer="/usr/local/bin/aws_completer"
 if [[ -e "$_aws_bash_completer" ]]
 then
-  complete -C '/usr/local/bin/aws_completer' aws
+  complete -C "$_aws_bash_completer" aws
 fi
