@@ -118,7 +118,7 @@ _/\/\__/\/\________/\/\__/\/\/\/\______/\/\/\/\__/\/\_______
 ___/\/\/\/\__/\/\/\/\____/\/\/\/\/\________/\/\____/\/\/\/\_
 _____________________________________/\/\/\/\_______________
 
-A wrapper for tools that measure usage of local computing resources.
+A wrapper for tools that measure usage of local resources.
 
 Usage:
   $_ME (ncdu | ohmu) [options] [<arguments>]
