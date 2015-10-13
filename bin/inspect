@@ -154,6 +154,53 @@ lsof-u() {
   sudo lsof -u "$1"
 }
 
+desc "ncdu" <<EOM
+Usage:
+  $_ME ncdu
+
+Description:
+  Run \`ncdu\`
+
+  ncdu - NCurses Disk Usage.
+  http://dev.yorhel.nl/ncdu
+EOM
+_ncdu="$(which ncdu || printf "")"
+ncdu() {
+  if [[ -n "$_ncdu" ]] || [[ -e "$_ncdu" ]]
+  then
+    "$_ncdu"
+  else
+    echo hi
+    cat <<EOM
+ncdu is not installed. Find it here:
+http://dev.yorhel.nl/ncdu
+EOM
+  fi
+}
+
+desc "ohmu" <<EOM
+Usage:
+  $_ME ohmu
+
+Description:
+  Run \`ohmu\`
+
+  ohmu - Graph space usage in the terminal.
+  https://github.com/paul-nechifor/ohmu
+EOM
+_ohmu="$(which ohmu || printf "")"
+ohmu() {
+  if [[ -n "$_ncdu" ]] || [[ -e "$_ncdu" ]]
+  then
+    "$_ohmu"
+  else
+    cat <<EOM
+ohmu is not installed. Find it here:
+https://github.com/paul-nechifor/ohmu
+EOM
+  fi
+}
+
 desc "opensnoop" <<EOM
 Usage:
   $_ME opensnoop
