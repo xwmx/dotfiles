@@ -121,11 +121,13 @@ _____________________________________/\/\/\/\_______________
 A wrapper for tools that measure usage of local resources.
 
 Usage:
-  $_ME (ncdu | ohmu) [options] [<arguments>]
+  $_ME (df | du | ncdu | ohmu) [options] [<arguments>]
   $_ME -h | --help | help
   $_ME --version
 
 Subcommands:
+  df    Use the df tool to display free disk space.
+  du    Use the du tool to display disk usage statistics.
   ncdu  Use the ncdu tool to explore disk usage.
         More information:
         http://dev.yorhel.nl/ncdu
@@ -300,7 +302,7 @@ do
         _PRINT_VERSION=1
       fi
       ;;
-    ncdu|ohmu)
+    df|du|ncdu|ohmu)
       _SUBCOMMAND="$opt"
       ;;
     --endopts)
@@ -333,6 +335,12 @@ _usage() {
   _debug printf "_usage() >> start\n"
 
   case "$_SUBCOMMAND" in
+    "df")
+      df "${_ARGUMENTS[@]:1}"
+      ;;
+    "du")
+      du "${_ARGUMENTS[@]:1}"
+      ;;
     "ncdu")
       if _command_exists "ncdu"
       then
