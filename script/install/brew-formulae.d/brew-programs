@@ -1061,6 +1061,13 @@ then
   rm "$HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
 fi
 
+# ncdu
+#
+# NCurses Disk Usage
+#
+# http://dev.yorhel.nl/ncdu
+brew install ncdu
+
 # neovim
 #
 # http://neovim.org/
