@@ -605,6 +605,13 @@ brew install gnupg2
 # http://grass.osgeo.org/
 brew install grass
 
+# ghostscript
+#
+# Interpreter for PostScript and PDF
+#
+# http://www.ghostscript.com/
+brew install gs
+
 # The Haskell Tool Stack
 #
 # `stack` is a cross-platform program for developing Haskell projects. It is
@@ -1265,6 +1272,13 @@ brew install pandoc
 # https://news.ycombinator.com/item?id=9820249
 brew install pass
 
+# pdfgrep
+#
+# Search PDFs for strings matching a regular expression
+#
+# https://pdfgrep.org/
+brew install pdfgrep
+
 # PHP 5.6
 #
 # PHP is a server-side scripting language designed for web development but also
@@ -1329,6 +1343,13 @@ brew install pidgin --with-gsasl --without-GUI
 #
 # http://www.zlib.net/pigz/
 brew install pigz
+
+# poppler
+#
+# PDF rendering library (based on the xpdf-3.0 code base)
+#
+# http://poppler.freedesktop.org
+brew install poppler
 
 # pow
 #

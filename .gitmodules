@@ -241,3 +241,6 @@
 [submodule "vendor/com/github/nextrevision/sempl"]
 	path = vendor/com/github/nextrevision/sempl
 	url = https://github.com/nextrevision/sempl.git
+[submodule "vendor/com/github/dsanson/termpdf"]
+	path = vendor/com/github/dsanson/termpdf
+	url = https://github.com/dsanson/termpdf.git
