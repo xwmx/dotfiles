@@ -49,7 +49,7 @@ Description:
 
   iftop - display bandwidth usage on an interface by host.
 EOM
-_iftop="$(which iftop)"
+_iftop="$(which "iftop")"
 iftop() {
   sudo "$_iftop"
 }
