@@ -881,6 +881,23 @@ brew install lynis
 # http://lynx.isc.org/release/
 brew install lynx
 
+# MacVim
+#
+# The text editor Vim for Mac OS X.
+#
+# http://code.google.com/p/macvim/
+#
+# NOTE: install HEAD version in order to get unreleased updates for El Capitan,
+# particularly split screen issues, like those discussed here:
+# https://github.com/macvim-dev/macvim/issues/79
+# Also, since formulas installed with the HEAD option are not updates normally,
+# rebuild on each run.
+if _homebrew_formula_is_installed "macvim"
+then
+  brew uninstall macvim
+fi
+brew install macvim --HEAD
+
 # man2html
 #
 # Convert nroff man pages to HTML
@@ -1681,12 +1698,6 @@ brew install --HEAD valgrind
 #
 # http://www.vim.org/
 brew install vim --override-system-vi
-# vim - MacVim
-#
-# The text editor Vim for Mac OS X.
-#
-# http://code.google.com/p/macvim/
-brew install macvim
 
 # vimpager
 #
