@@ -79,6 +79,13 @@ pip_install "ipython[all]"
 # http://mitmproxy.org/
 pip_install mitmproxy
 
+# ohmu
+#
+# Graph space usage in the terminal.
+#
+# https://github.com/paul-nechifor/ohmu
+pip_install ohmu
+
 # neovim
 #
 # Python client for Neovim. Library for scripting Nvim processes through it's
