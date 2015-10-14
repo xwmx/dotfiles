@@ -791,15 +791,18 @@ brew cask install pixate-studio
 #
 # http://postgresapp.com/
 #
-# NOTE: don't try to install if /Applications/Postgres.app exists. The app
-# bundle is moved to /Applications in order to work properly, so a better
-# process for installing and upgrading this case is needed.
+# NOTE: uninstall in favor of homebrew formula.
 #
-# TODO: update this process or remove in favor of another postgres
-# installation method.
-if [[ ! -e "/Applications/Postgres.app" ]]
+# TODO: Remove this section after Postgres.app has been removed from all
+# systems.
+if _homebrew_cask_is_installed "postgres"
 then
-  brew cask install postgres
+  printf "\
+#######################################################################
+NOTE: Remember to migrate any data in the current Postgres.app install.
+#######################################################################
+"
+  brew cask uninstall postgres
 fi
 
 # processing3

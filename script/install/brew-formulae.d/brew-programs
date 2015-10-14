@@ -1354,6 +1354,19 @@ brew install poppler
 # TODO: remove this when xpdf has been uninstalled from all systems.
 brew link poppler --force
 
+# PostgreSQL
+#
+# Object-relational database system.
+#
+# https://www.postgresql.org/
+brew install postgresql
+# Post-install for postgresql.
+if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist" ]]
+then
+  ln -sfv /usr/local/opt/postgresql/*.plist "$HOME/Library/LaunchAgents"
+  launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+fi
+
 # pow
 #
 # Pow is a zero-config Rack server for Mac OS X.
