@@ -1350,6 +1350,9 @@ brew install pigz
 #
 # http://poppler.freedesktop.org
 brew install poppler
+# force link poppler to overwrite xpdf links.
+# TODO: remove this when xpdf has been uninstalled from all systems.
+brew link poppler --force
 
 # pow
 #
@@ -1805,8 +1808,14 @@ brew install winetricks
 # Xpdf is an open source viewer for Portable Document Format (PDF) files.
 #
 # http://www.foolabs.com/xpdf/
-brew install xpdf
-
+#
+# NOTE: Uninstall xpdf in favor of poppler.
+#
+# TODO: remove this entry when xpdf has been removed from all systems.
+if _homebrew_formula_is_installed "xpdf"
+then
+  brew uninstall xpdf
+fi
 
 # XZ Utils
 #
