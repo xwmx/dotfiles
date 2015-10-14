@@ -790,7 +790,17 @@ brew cask install pixate-studio
 # package.
 #
 # http://postgresapp.com/
-brew cask install postgres
+#
+# NOTE: don't try to install if /Applications/Postgres.app exists. The app
+# bundle is moved to /Applications in order to work properly, so a better
+# process for installing and upgrading this case is needed.
+#
+# TODO: update this process or remove in favor of another postgres
+# installation method.
+if [[ ! -e "/Applications/Postgres.app" ]]
+then
+  brew cask install postgres
+fi
 
 # processing3
 #
