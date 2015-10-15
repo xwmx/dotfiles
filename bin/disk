@@ -119,17 +119,23 @@ read -r -d '' "_program_help" <<EOM || true
 A wrapper with shortcuts for commands that measure disk usage.
 
 Usage:
-  $_ME (free | used | explore | graph)
+  $_ME free
+  $_ME used [<path>]
+  $_ME explore [<path>]
+  $_ME graph [<path>]
   $_ME -h | --help | help
   $_ME --version
 
 Subcommands:
   free     Display free disk space using the df tool.
-  used     Display disk usage of the current directory using the du tool.
-  explore  Explore disk usage using the ncdu tool.
+  used     Display disk usage of the current directory or a path using
+           the \`du\` tool.
+  explore  Explore disk usage of the current directory or a path using
+           the \`ncdu\` tool.
            More information:
            http://dev.yorhel.nl/ncdu
-  graph    Graph disk usage of the current directory using the ohmu tool.
+  graph    Graph disk usage of the current directory or a path using
+           the \`ohmu\` tool.
            More information:
            https://github.com/paul-nechifor/ohmu
 
@@ -325,6 +331,16 @@ _debug printf "\$_ARGUMENTS: %s\n" "${_ARGUMENTS[*]:-}"
 # Program Functions
 ###############################################################################
 
+# _present()
+#
+# Usage:
+#   _present "$an_argument"
+#
+# Takes an argument and returns true if it is present.
+_present() {
+  [[ -n "${1:-}" ]]
+}
+
 _command_exists() {
   hash "${1:-}" 2>/dev/null
 }
@@ -332,17 +348,29 @@ _command_exists() {
 _disk() {
   _debug printf "_usage() >> start\n"
 
+  local _path="${_ARGUMENTS[1]:-}"
+
   case "$_SUBCOMMAND" in
     "free")
       df -h
       ;;
     "used")
-      du -h -d 1 .
+      if _present "$_path"
+      then
+        du -h -d 1 "$_path"
+      else
+        du -h -d 1 .
+      fi
       ;;
     "explore")
       if _command_exists "ncdu"
       then
-        ncdu
+        if _present "$_path"
+        then
+          ncdu "$_path"
+        else
+          ncdu
+        fi
       else
         cat <<EOM
 ncdu is not installed. Find it here:
@@ -353,7 +381,12 @@ EOM
     "graph")
       if _command_exists "ohmu"
       then
-        ohmu
+        if _present "$_path"
+        then
+          ohmu "$_path"
+        else
+          ohmu
+        fi
       else
         cat <<EOM
 ohmu is not installed. Find it here:
