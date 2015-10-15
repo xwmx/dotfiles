@@ -341,6 +341,13 @@ _present() {
   [[ -n "${1:-}" ]]
 }
 
+# _command_exists()
+#
+# Usage:
+#   _command_exists "command_name"
+#
+# Take a candidate command name artgument and checks to see if a command with
+# that name is available.
 _command_exists() {
   hash "${1:-}" 2>/dev/null
 }
