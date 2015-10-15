@@ -48,5 +48,15 @@ _customize_app_bundle_launcher() {
 "\$(dirname \$0)"/Atom.bin \$@
 HEREDOC
   chmod +x "${binary_path}"
+
+  # NOTE: Replacing the binary with a launcher script seems to make the
+  # application stop showing up in spotlight.
+  # TODO: Confirm whether this works in spotlight and if not, then find a
+  # better workaround.
+  printf "\
+Warning: This app might not show up as an app in Spotlight.
+More information can be found in the notes here:
+%s
+" "$0"
 }
 _customize_app_bundle_launcher
