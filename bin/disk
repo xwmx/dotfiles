@@ -364,9 +364,19 @@ _disk() {
     "used")
       if _present "$_path"
       then
-        du -h -d 1 "$_path"
+        if _command_exists "du --version"
+        then # GNU `du`
+          du -h --max-depth 1 "$_path"
+        else # BSD `du`
+          du -h -d 1 "$_path"
+        fi
       else
-        du -h -d 1 .
+        if _command_exists "du --version"
+        then # GNU `du`
+          du -h --max-depth 1 "$_path"
+        else # BSD `du`
+          du -h -d 1 .
+        fi
       fi
       ;;
     "explore")
