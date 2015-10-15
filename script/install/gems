@@ -114,6 +114,13 @@ gem install gem_updater
 # https://github.com/aanand/git-up
 gem install git-up
 
+# haml-lint
+#
+# Tool for writing clean and consistent HAML.
+#
+# https://github.com/brigade/haml-lint
+gem install haml-lint
+
 # hijack
 #
 # Provides an irb session to a running ruby process.
