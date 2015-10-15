@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+###############################################################################
+# osx_atom
+#
+# Custom Atom configuration on OS X.
+#
+# https://atom.io
+###############################################################################
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
+  printf "osx_atom is only supported on OS X.\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Make Atom.app launch with shell environment.
+#
+# When an app is launched on OS X, it doesn't inherit the shell environment
+# unless it is launched from a shell. In order to get around this, replace
+# the application binary with a script that launches it.
+#
+# https://github.com/atom/atom/issues/3018
+# http://apple.stackexchange.com/a/87283
+###############################################################################
+
+# _customize_app_bundle_launcher
+#
+# Usage:
+#   _customize_app_bundle_launcher
+_customize_app_bundle_launcher() {
+  local app_path="/opt/homebrew-cask/Caskroom/atom/latest/Atom.app"
+  local binary_path="${app_path}/Contents/MacOS/Atom"
+
+  if [[ -e "${binary_path}.bin" ]]
+  then
+    printf "Exists: %s\n" "${binary_path}.bin"
+    exit 1
+  fi
+
+  mv "${binary_path}" "${binary_path}".bin
+  cat <<HEREDOC > "${binary_path}"
+#!/usr/local/bin/bash -l
+"\$(dirname \$0)"/Atom.bin \$@
+HEREDOC
+  chmod +x "${binary_path}"
+}
+_customize_app_bundle_launcher
