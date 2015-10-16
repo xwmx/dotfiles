@@ -76,7 +76,8 @@ _is_el_capitan() {
 if _is_yosemite
 then
   defaults write com.apple.universalaccess reduceTransparency 1
-else
+elif _is_el_capitan
+then
   defaults write com.apple.universalaccess reduceTransparency 0
 fi
 
