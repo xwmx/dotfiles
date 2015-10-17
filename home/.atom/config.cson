@@ -37,6 +37,7 @@
   "tree-view": {}
   "autocomplete-plus": {}
   "file-types":
+    "^Baskfile$": "source.shell"
     "^.gitignore": "source.git-config"
     "^.gvimrc.after": "source.viml"
     "^.profile$": "source.shell"
