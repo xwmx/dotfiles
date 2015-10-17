@@ -5,7 +5,8 @@
 ###############################################################################
 
 __search_cmd="$(which search)"
-if [[ -n "${__search_cmd}" ]]; then
+if [[ -n "${__search_cmd}" ]]
+then
   google() {
     "${__search_cmd}" "google" "${@}"
   }
