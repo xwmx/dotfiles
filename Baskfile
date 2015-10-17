@@ -1,0 +1,19 @@
+###############################################################################
+# Baskfile
+#
+# Local Bask commands.
+#
+# Bask is a mini-framework for command-centric Bash scripts.
+# https://github.com/alphabetum/bask
+###############################################################################
+
+desc "push" <<EOM
+Usage:
+  bask push
+
+Description:
+  Push to both the origin and backup remote git repositories.
+EOM
+push() {
+  git push origin master && git push backup master
+}
