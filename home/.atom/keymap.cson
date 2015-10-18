@@ -34,6 +34,20 @@
   'ctrl-down': 'editor:move-line-down'
 
 ###############################################################################
+# map ', t t b' to symbols-tree-view toggle.
+#
+# symbols-tree-view is an atom analogue to tagbar in vim. In the current
+# configuration, tabbar in vim is mapped to `nmap <leader>ttb`, with <leader>
+# mapped to comma. This atom mapping mirrors that from vim.
+#
+# https://github.com/xndcn/symbols-tree-view
+#
+# NOTE: the default  mapping is to ctrl-alt-o
+###############################################################################
+'atom-text-editor.vim-mode.normal-mode':
+  ', t t b': 'symbols-tree-view:toggle'
+
+###############################################################################
 # vim-mode-visual-block keymappings
 #
 # As of vim-mode-visual-block@0.2.4 there are no default keymappings and
