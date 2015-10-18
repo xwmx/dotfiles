@@ -373,7 +373,7 @@ _disk() {
       else
         if _command_exists "du --version"
         then # GNU `du`
-          du -h --max-depth 1 "$_path"
+          du -h --max-depth 1 .
         else # BSD `du`
           du -h -d 1 .
         fi
