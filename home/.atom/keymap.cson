@@ -48,6 +48,18 @@
   ', t t b': 'symbols-tree-view:toggle'
 
 ###############################################################################
+# minimap mappings.
+#
+# https://github.com/atom-minimap/minimap
+###############################################################################
+'.workspace':
+  # vim-like mapping to `<leader>m`, with comma as <leader>.
+  ', m': 'minimap:toggle'
+  # This mapping is the suggested mapping in the minimap package's
+  # mimimap.cson, but it is commented out and therefore disabled by default.
+  'ctrl-k ctrl-m': 'minimap:toggle'
+
+###############################################################################
 # vim-mode-visual-block keymappings
 #
 # As of vim-mode-visual-block@0.2.4 there are no default keymappings and
