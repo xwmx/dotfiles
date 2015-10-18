@@ -1,3 +1,4 @@
+###############################################################################
 # Your keymap
 #
 # Atom keymaps work similarly to stylesheets. Just as stylesheets use selectors
@@ -16,16 +17,23 @@
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
+# References:
+#   https://github.com/atom/atom/tree/master/keymaps
+#   https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+###############################################################################
 
+###############################################################################
 # map ctrl-up / ctrl-down to line movement.
 #
 # This mirrors the current vim configuration.
 #
 # The existing keymappings for these operations are ctrl-cmd-up / ctrl-cmd-down
+###############################################################################
 'body':
   'ctrl-up': 'editor:move-line-up'
   'ctrl-down': 'editor:move-line-down'
 
+###############################################################################
 # vim-mode-visual-block keymappings
 #
 # As of vim-mode-visual-block@0.2.4 there are no default keymappings and
@@ -33,12 +41,13 @@
 #
 # https://atom.io/packages/vim-mode-visual-block
 # https://github.com/t9md/atom-vim-mode-visual-block
+###############################################################################
 'atom-text-editor.vim-mode.visual-mode':
   'j':      'vim-mode-visual-block:j'
   'down':   'vim-mode-visual-block:j'
   'k':      'vim-mode-visual-block:k'
   'up':     'vim-mode-visual-block:k'
-  # Disable h and l. Setting these causes these key to do nothing.
+  # Disable h and l. Setting these causes these keys to do nothing.
   # 'h':      'vim-mode-visual-block:h'
   # 'left':   'vim-mode-visual-block:h'
   # 'l':      'vim-mode-visual-block:l'
