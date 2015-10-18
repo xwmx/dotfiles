@@ -17,6 +17,15 @@
 #   'ctrl-p': 'core:move-down'
 #
 
+# map ctrl-up / ctrl-down to line movement.
+#
+# This mirrors the current vim configuration.
+#
+# The existing keymappings for these operations are ctrl-cmd-up / ctrl-cmd-down
+'body':
+  'ctrl-up': 'editor:move-line-up'
+  'ctrl-down': 'editor:move-line-down'
+
 # vim-mode-visual-block keymappings
 #
 # As of vim-mode-visual-block@0.2.4 there are no default keymappings and
