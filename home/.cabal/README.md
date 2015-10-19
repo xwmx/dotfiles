@@ -11,9 +11,9 @@ generate a new `config` file using the `generate_config.sh` script.
 
 ## `config.platform`
 
-The `config.platform` file is an untracked file installed by the haskell platform
-installation process and demonstrates the expected standard configuration for
-the platform (OS X).
+The `config.platform` file is an untracked file installed by the haskell
+platform installation process and demonstrates the expected standard
+configuration for the platform (OS X).
 
 The `config.platform` file is not used directly, but is used for
 reference. As noted in the help wiki:
