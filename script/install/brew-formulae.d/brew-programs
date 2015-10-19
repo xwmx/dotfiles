@@ -1102,6 +1102,13 @@ brew install ncdu
 # Note that this is a tapped formula from the neovim/homebrew-neovim tap.
 brew install --HEAD neovim/neovim/neovim
 
+# netcat
+#
+# Utility for managing network connections.
+#
+# http://netcat.sourceforge.net/
+brew install netcat
+
 # Newsbeuter
 #
 # Newsbeuter is an open-source RSS/Atom feed reader for text terminals. It
