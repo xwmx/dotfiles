@@ -76,17 +76,48 @@ HEREDOC
 # iTerm2
 ###############################################################################
 
-_swap_icons \
-  "${_SOURCE_ICON_DIR}/iTerm2.icns" \
-  "${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/AppIcon.icns"
+# _swap_iterm2_icons
+#
+# Usage:
+#   _swap_iterm2_icons
+#
+# Description:
+#   Swap icons for homebrew cask-installed iterm2.
+#
+#   NOTE: in the current (2015/10) nightly, the icon is in a different location
+#   from the current release version
+_swap_iterm2_icons() {
+  local _nightly_icon_path="${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/AppIcon.icns"
+  if [[ -e "${_nightly_icon_path}" ]]
+  then
+    _swap_icons \
+      "${_SOURCE_ICON_DIR}/iTerm2.icns" \
+      "${_nightly_icon_path}"
+  else
+    _swap_icons \
+      "${_SOURCE_ICON_DIR}/iTerm2.icns" \
+      "${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/iTerm.icns"
+  fi
+}
+_swap_iterm2_icons
 
 ###############################################################################
 # Macvim
 ###############################################################################
 
-_swap_icons \
-  "${_SOURCE_ICON_DIR}/MacVim.icns" \
-  "${_LOCAL_APP_DIR}/MacVim.app/Contents/Resources/MacVim.icns"
-_swap_icons \
-  "${_SOURCE_ICON_DIR}/MacVim.icns" \
-  "${_LOCAL_APP_DIR}/MacVim.app/Contents/Resources/MacVim-generic.icns"
+# _swap_macvim_icons
+#
+# Usage:
+#   _swap_macvim_icons
+#
+# Description:
+#   Swap icons for homebrew-installed MacVim.
+_swap_macvim_icons() {
+  _swap_icons \
+    "${_SOURCE_ICON_DIR}/MacVim.icns" \
+    "${_LOCAL_APP_DIR}/MacVim.app/Contents/Resources/MacVim.icns"
+  _swap_icons \
+    "${_SOURCE_ICON_DIR}/MacVim.icns" \
+    "${_LOCAL_APP_DIR}/MacVim.app/Contents/Resources/MacVim-generic.icns"
+}
+_swap_macvim_icons
