@@ -541,7 +541,13 @@ brew cask install istat-menus
 # iTerm2 is a replacement for Terminal and the successor to iTerm.
 #
 # http://www.iterm2.com/
-brew cask install iterm2-nightly
+#
+# NOTE: use local tap pinned to known good version.
+if [[ -z "$(pgrep iTerm2)" ]] # if iTerm2 is not running.
+then
+  brew cask uninstall iterm2-nightly --force
+  brew cask install alphabetum/taps/iterm2-nightly-pinned
+fi
 
 # Itsycal
 #
