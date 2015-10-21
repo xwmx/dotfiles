@@ -1,53 +1,92 @@
-#!/usr/bin/env ruby
-
+#!/usr/bin/env bash
+###############################################################################
+# icons
+#
 # Swap icons of specified apps with custom icons included in $DOTFILES/vendor
+###############################################################################
 
-require 'digest/md5'
-require 'fileutils'
+###############################################################################
+# Platform Check
+###############################################################################
 
-source_icon_dir = File.join(
-  ENV['DOTFILES'],
-  'vendor',
-  'local',
-  'customizations',
-  'icons'
-)
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
+  printf "icons is only supported on OS X.\nSkipping...\n"
+  exit 0
+fi
 
-local_app_dir = File.join(ENV['HOME'], 'Applications')
+###############################################################################
+# Base paths and function
+###############################################################################
 
-icons = [
-  {
-    source: File.join(source_icon_dir, 'iTerm2.icns'),
-    destination: File.join(
-      local_app_dir, '/iTerm.app/Contents/Resources/AppIcon.icns'
-    )
-  }, {
-    source: File.join(source_icon_dir, 'MacVim.icns'),
-    destination: File.join(
-      local_app_dir, '/MacVim.app/Contents/Resources/MacVim.icns'
-    )
-  }, {
-    source: File.join(source_icon_dir, 'MacVim.icns'),
-    destination: File.join(
-      local_app_dir, '/MacVim.app/Contents/Resources/MacVim-generic.icns'
-    )
-  }
-]
+_SOURCE_ICON_DIR="${DOTFILES}/vendor/local/customizations/icons"
+_LOCAL_APP_DIR="${HOME}/Applications"
 
-icons.each do |icon|
-  next unless File.exist?(icon[:source])
-  next unless File.exist?(icon[:destination])
-  next if File.exist?("#{icon[:destination]}.bak")
+# _swap_icons()
+#
+# Usage:
+#   _swap_icons </source/path> </destination/path>
+#
+# Description:
+#   Append '.bak' to the filename of the item at the destination path, then
+#   copy the item at the source path to the destination's non-.bak location.
+_swap_icons() {
+  local source_path="${1:-}"
+  local destination_path="${2:-}"
 
-  source_hash = Digest::MD5.file(icon[:source]).hexdigest
-  destination_hash = Digest::MD5.file(icon[:destination]).hexdigest
-  next if source_hash == destination_hash
+  if [[ -z "${source_path}" ]]
+  then
+    printf "No source path provided.\n"
+    exit 1
+  fi
+  if [[ -z "${destination_path}" ]]
+  then
+    printf "No destination path provided.\n"
+    exit 1
+  fi
 
-  FileUtils.mv(icon[:destination], "#{icon[:destination]}.bak")
-  FileUtils.cp(icon[:source], icon[:destination])
+  if [[ -e "${destination_path}.bak" ]]
+  then
+    printf "Exists: %s\nSkipping...\n" "${destination_path}.bak"
+    return 0
+  fi
 
-  # Touch .app directory to refresh icons
-  FileUtils.touch(File.join(File.dirname(icon[:destination]), '..', '..'))
+  local source_hash
+  local destination_hash
 
-  puts "Updated icon: \n #{icon[:source]} -> #{icon[:destination]}"
-end
+  source_hash="$(md5 -q "$source_path")"
+  destination_hash="$(md5 -q "$destination_path")"
+  if [[ "$source_hash" == "$destination_hash" ]]
+  then
+    return 0
+  fi
+
+  mv "${destination_path}" "${destination_path}.bak"
+  cp "${source_path}" "${destination_path}"
+
+  # touch .app directory to refresh icons
+  touch "${destination_path}/../.."
+
+  cat <<HEREDOC
+Updated icon:
+  ${source_path} -> ${destination_path}
+HEREDOC
+}
+###############################################################################
+# iTerm2
+###############################################################################
+
+_swap_icons \
+  "${_SOURCE_ICON_DIR}/iTerm2.icns" \
+  "${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/AppIcon.icns"
+
+###############################################################################
+# Macvim
+###############################################################################
+
+_swap_icons \
+  "${_SOURCE_ICON_DIR}/MacVim.icns" \
+  "${_LOCAL_APP_DIR}/MacVim.app/Contents/Resources/MacVim.icns"
+_swap_icons \
+  "${_SOURCE_ICON_DIR}/MacVim.icns" \
+  "${_LOCAL_APP_DIR}/MacVim.app/Contents/Resources/MacVim-generic.icns"
