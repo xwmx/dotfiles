@@ -45,12 +45,6 @@ _swap_icons() {
     exit 1
   fi
 
-  if [[ -e "${destination_path}.bak" ]]
-  then
-    printf "Exists: %s\nSkipping...\n" "${destination_path}.bak"
-    return 0
-  fi
-
   local source_hash
   local destination_hash
 
@@ -61,11 +55,19 @@ _swap_icons() {
     return 0
   fi
 
+  if [[ -e "${destination_path}.bak" ]]
+  then
+    printf "Exists: %s\nSkipping...\n" "${destination_path}.bak"
+    return 0
+  fi
+
   mv "${destination_path}" "${destination_path}.bak"
   cp "${source_path}" "${destination_path}"
 
   # touch .app directory to refresh icons
-  touch "${destination_path}/../.."
+  local destination_directory_path
+  destination_directory_path="$(dirname "${destination_path}")"
+  touch "${destination_directory_path}/../.."
 
   cat <<HEREDOC
 Updated icon:
