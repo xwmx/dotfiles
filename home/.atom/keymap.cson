@@ -91,3 +91,14 @@
   # visual-mode. Assigning 'backspace' seems to provide the expected
   # behavior.
   'backspace': 'vim-mode:delete-left'
+
+###############################################################################
+# tree-view mappings.
+#
+# https://github.com/atom/tree-view/blob/master/keymaps/tree-view.cson
+###############################################################################
+
+# Map to ', n', which reflects the mapping for nerdtree toggling in the current
+# vim configuration.
+'.platform-darwin, .platform-linux':
+  ', n': 'tree-view:toggle'
