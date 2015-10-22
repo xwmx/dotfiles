@@ -1,7 +1,7 @@
 ###############################################################################
 # osx_path_fix.zsh
 #
-# See "$HOME/.zshenv.d/osx_path_fix.zsh" for more information.
+# See "$HOME/.shared_env.d/_osx_path_fix.zsh" for more information.
 ##############################################################################
 
 if is_osx && is_el_capitan
