@@ -503,6 +503,17 @@ brew cask install haskell-platform
 # https://github.com/Hammerspoon/hammerspoon
 brew cask install hammerspoon
 
+# helium / jadengeller-helium
+#
+# A floating browser window for OS X
+#
+# Helium is a floating browser window that allows you to watch media while you
+# work. Your content will never fall behind your other windows even as you
+# switch tasks.
+#
+# https://jadengeller.github.io/Helium/
+brew cask install jadengeller-helium
+
 # Inform
 #
 # Inform is a design system for interactive fiction based on natural language.
