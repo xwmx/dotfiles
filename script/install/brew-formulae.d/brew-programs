@@ -228,6 +228,15 @@ brew install clib
 # http://www.asty.org/cmatrix/
 brew install cmatrix
 
+# cmus
+#
+# cmus is a small, fast and powerful console music player for Unix-like
+# operating systems.
+#
+# https://cmus.github.io
+# https://news.ycombinator.com/item?id=10430512
+brew install cmus
+
 # composer
 #
 # Dependency Manager for PHP
