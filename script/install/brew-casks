@@ -670,6 +670,23 @@ brew cask install mame
 # https://www.mapbox.com/mapbox-studio/
 brew cask install mapbox-studio
 
+# MenuMeters
+#
+# MenuMeters is a set of CPU, memory, disk, and network monitoring tools for
+# Mac OS X.
+#
+# http://www.ragingmenace.com/software/menumeters/
+# brew cask install menumeters
+#
+# NOTE: the offial menumeters has not yet been update for El Capitan, so
+# the yujitach fork is used:
+# yujitach-menumeter
+#
+# MenuMeters, MenuMeters El Capitan Port
+#
+# http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
+brew cask install yujitach-menumeters
+
 # Monodraw
 #
 # Powerful ASCII art editor designed for the Mac.
