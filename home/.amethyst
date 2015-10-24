@@ -4,13 +4,16 @@
     "widescreen-tall",
     "column",
     "tall",
-    "fullscreen",
+    "fullscreen"
   ],
   "floating": [
     "com.adiumX.adiumX",
     "com.agilebits.onepassword4",
-    "com.apple.systempreferences",
+    "com.apple.systempreferences"
   ],
+  "float-small-windows": false,
+  "mouse-follows-focus": false,
+  "focus-follows-mouse": true,
+  "enables-layout-hud": false,
   "enables-layout-hud-on-space-change": false
 }
-
