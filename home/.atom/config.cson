@@ -45,6 +45,7 @@
     "^.profile$": "source.shell"
     "^.shared_env.*": "source.shell"
     "^.spacemacs$": "source.lisp"
+    ".*.sshconfig": "source.ssh-config"
     "^.vimrc.before$": "source.viml"
     "^.vimrc.after$": "source.viml"
     ".zsh-theme$": "source.shell"

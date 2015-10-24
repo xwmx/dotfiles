@@ -495,6 +495,14 @@ apm install seti-ui
 # https://github.com/atom/sort-lines
 apm install "sort-lines"
 
+# ssh-config
+#
+# ssh config syntax
+#
+# https://atom.io/packages/ssh-config
+# https://github.com/lalyos/ssh-config
+apm install ssh-config
+
 # symbols-tree-view
 #
 # Symbols Tree View for Atom.io, just like taglist or tagbar for VIM.
