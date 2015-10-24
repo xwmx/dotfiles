@@ -11,7 +11,7 @@
     "com.agilebits.onepassword4",
     "com.apple.systempreferences"
   ],
-  "float-small-windows": false,
+  "float-small-windows": true,
   "mouse-follows-focus": false,
   "focus-follows-mouse": true,
   "enables-layout-hud": false,
