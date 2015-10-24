@@ -346,6 +346,13 @@ brew cask install disk-inventory-x
 # http://sourceforge.net/projects/docear/
 brew cask install docear
 
+# DTerm
+#
+#  command line anywhere and everywhere.
+#
+# https://decimus.net/DTerm
+brew cask install dterm
+
 # Elm
 #
 # A functional reactive language for interactive applications
