@@ -90,7 +90,6 @@ off() {
   defaults write com.amethyst.Amethyst focus-follows-mouse -bool false
 }
 
-
 desc "on" <<EOM
 Usage:
   $_ME on
@@ -129,7 +128,6 @@ toggle() {
   fi
 }
 
-
 desc "t" <<EOM
 Usage:
   $_ME t
@@ -140,6 +138,5 @@ EOM
 t() {
   $_ME toggle
 }
-
 
 _init
