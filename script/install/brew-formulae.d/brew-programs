@@ -988,6 +988,23 @@ brew install mongodb
 # https://mosh.mit.edu/
 brew install mobile-shell
 
+# mopidy
+#
+# Mopidy is an extensible music server written in Python.
+#
+# Mopidy plays music from local disk, Spotify, SoundCloud, Google Play Music,
+# and more. You edit the playlist from any phone, tablet, or computer using a
+# range of MPD and web clients.
+#
+# https://www.mopidy.com
+brew install mopidy/mopidy/mopidy
+# - Post-install for mopidy LaunchAgent
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mopidy.mopidy.plist" ]]
+# then
+#   ln -sfv /usr/local/opt/mopidy/*.plist "$HOME/Library/LaunchAgents"
+#   launchctl load "$HOME/Library/LaunchAgents/homebrew.mopidy.mopidy.plist"
+# fi
+
 # MOST
 #
 # MOST is a powerful paging program for Unix, VMS, MSDOS, and win32 systems.
