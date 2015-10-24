@@ -1,0 +1,137 @@
+#!/usr/bin/env bash
+###############################################################################
+# focus - a bask script
+#
+# Get bask:
+#   https://github.com/alphabetum/bask
+#
+# Add this script and the bask program to your $PATH.
+#
+# For usage information, run:
+#   focus help
+###############################################################################
+
+source "$(which bask)"
+
+###############################################################################
+# Helper functions.
+###############################################################################
+
+# _validate_os
+#
+# Usage:
+#   _validate_os
+#
+# Description:
+#   If the current system is not OS X, exit 1 with a message.
+_validate_os() {
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
+  _die printf "%s is only supported on OS X\n" "$_ME"
+fi
+}
+_validate_os
+
+# _find_app()
+#
+# Usage:
+#   _find_app <Name.app>
+#
+# Description:
+#   Use spotlight to search for a given .app. Return the path if it is
+#   found, or return 1 if not found.
+_find_app() {
+  if ! (($#))
+  then
+    _die printf "Usage: _find_app <Name.app>\n"
+  fi
+
+  mdfind kMDItemContentTypeTree=com.apple.application-bundle -onlyin / | \
+    grep "${1:-}"
+}
+
+# _validate_app_presence()
+#
+# Usage:
+#   _validate_app_presence
+#
+# Description:
+#   If the specified .app is not found on the system, exit 1 with a message.
+_validate_app_presence() {
+  if [[ ! -e "$(_find_app 'Amethyst.app')" ]]
+  then
+    _die printf "Amethyst.app not found on this system.\n"
+  fi
+}
+_validate_app_presence
+
+###############################################################################
+# Custom Help
+###############################################################################
+
+desc "HELP_HEADER" <<EOM
+Focus.
+
+Turn focus-follows-mouse on and off by opening or closing Amethyst.app.
+
+NOTE: this requires "focus-follows-mouse" to be enabled in ~/.amethyst.
+EOM
+
+###############################################################################
+# Subcommands.
+###############################################################################
+
+desc "off" <<EOM
+Usage:
+  $_ME off
+
+Description:
+  Turn off focus-follows-mouse by quitting Amethyst.app.
+EOM
+off() {
+  osascript -e 'quit app "Amethyst"'
+}
+
+
+desc "on" <<EOM
+Usage:
+  $_ME on
+
+Description:
+  Turn on focus-follows-mouse by running Amethyst.app.
+EOM
+on() {
+  open -a "Amethyst"
+}
+
+
+desc "toggle" <<EOM
+Usage:
+  $_ME toggle
+
+Description:
+  Turn on focus-follows-mouse by running Amethyst.app.
+EOM
+toggle() {
+  if [[ -n "$(pgrep Amethyst)" ]]
+  then
+    $_ME off
+  else
+    $_ME on
+  fi
+}
+
+
+desc "t" <<EOM
+Usage:
+  $_ME t
+
+Description:
+  Shortcut for \`$_ME toggle\`.
+EOM
+t() {
+  $_ME toggle
+}
+
+
+_init
