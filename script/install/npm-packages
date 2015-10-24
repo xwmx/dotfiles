@@ -194,6 +194,16 @@ npm install -g grunt-cli
 # http://gulpjs.com/
 npm install -g gulp
 
+# jasmine
+#
+# Jasmine is a Behavior Driven Development testing framework for JavaScript.
+# It does not rely on browsers, DOM, or any JavaScript framework. Thus it's
+# suited for websites, Node.js projects, or anywhere that JavaScript can run.
+#
+# http://jasmine.github.io
+# https://github.com/jasmine/jasmine
+npm install -g jasmine
+
 # JSHint, A Static Code Analysis Tool for JavaScript
 #
 # JSHint is a community-driven tool to detect errors and potential problems in
