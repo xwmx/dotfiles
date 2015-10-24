@@ -72,9 +72,7 @@ _validate_app_presence
 desc "HELP_HEADER" <<EOM
 Focus.
 
-Turn focus-follows-mouse on and off by opening or closing Amethyst.app.
-
-NOTE: this requires "focus-follows-mouse" to be enabled in ~/.amethyst.
+Turn focus-follows-mouse in Amethyst.app.
 EOM
 
 ###############################################################################
@@ -86,10 +84,10 @@ Usage:
   $_ME off
 
 Description:
-  Turn off focus-follows-mouse by quitting Amethyst.app.
+  Turn off focus-follows-mouse in Amethyst.app.
 EOM
 off() {
-  osascript -e 'quit app "Amethyst"'
+  defaults write com.amethyst.Amethyst focus-follows-mouse -bool false
 }
 
 
@@ -98,12 +96,22 @@ Usage:
   $_ME on
 
 Description:
-  Turn on focus-follows-mouse by running Amethyst.app.
+  Turn on focus-follows-mouse in Amethyst.app.
 EOM
 on() {
-  open -a "Amethyst"
+  defaults write com.amethyst.Amethyst focus-follows-mouse -bool true
 }
 
+desc "status" <<EOM
+Usage:
+  $_ME status
+
+Description:
+  Return the status of focus-follows-mouse in Amethyst.app.
+EOM
+status() {
+  defaults read com.amethyst.Amethyst focus-follows-mouse
+}
 
 desc "toggle" <<EOM
 Usage:
@@ -113,7 +121,7 @@ Description:
   Turn on focus-follows-mouse by running Amethyst.app.
 EOM
 toggle() {
-  if [[ -n "$(pgrep Amethyst)" ]]
+  if (("$($_ME status)"))
   then
     $_ME off
   else
