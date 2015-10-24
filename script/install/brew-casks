@@ -165,6 +165,19 @@ brew cask install audacity
 # http://www.apple.com/itunes/mastered-for-itunes/
 brew cask install au-lab
 
+# BetterTouchTool
+#
+# BetterTouchTool is a great, feature packed app that allows you to configure
+# many gestures for your Magic Mouse, Macbook Trackpad and Magic Trackpad and
+# also Mouse Gestures for normal mice. It also allows you to configure actions
+# for keyboard shortcuts, normal mice buttons and the Apple Remote. In addition
+# to this it has an iOS companion App (BTT Remote) which can also be configured
+# to control your Mac the way you want.
+#
+# http://www.bettertouchtool.net
+# http://boastr.net
+brew cask install bettertouchtool
+
 # BibDesk - Mac Bibliography Manager
 #
 # Use BibDesk to edit and manage your bibliography. It will keep track of both
