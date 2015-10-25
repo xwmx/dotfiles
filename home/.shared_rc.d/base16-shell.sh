@@ -47,6 +47,5 @@ set_light_shell_theme() {
 #   these themes do not work with it.
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ -n "${TERM:-}" ]]
 then
-  echo "$TERM_PROGRAM"
   set_dark_shell_theme "twilight"
 fi
