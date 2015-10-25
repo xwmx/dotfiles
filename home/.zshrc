@@ -136,7 +136,6 @@ plugins=(
   git
   golang
   npm
-  tmux
   tmuxinator
   vi-mode
   wd
