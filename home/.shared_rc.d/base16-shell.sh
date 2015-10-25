@@ -36,7 +36,8 @@ set_light_shell_theme() {
 #set_dark_shell_theme "tomorrow"
 #set_dark_shell_theme "twilight"
 
-if [[ -n "${TERM:-}" ]]
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ -n "${TERM:-}" ]]
 then
+  echo "$TERM_PROGRAM"
   set_dark_shell_theme "twilight"
 fi
