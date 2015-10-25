@@ -36,6 +36,15 @@ set_light_shell_theme() {
 #set_dark_shell_theme "tomorrow"
 #set_dark_shell_theme "twilight"
 
+# Set the theme.
+#
+# Exceptions:
+# - There are cases where `$TERM` is not set, which can cause the theme's
+#   commands to be printed out in a string. When `$TERM` is unset, the theme
+#   is likely unneeded, so we can avoid setting it and triggering these
+#   messages.
+# - Terminal.app doesn't support setting colors in the 256 colorspace, so
+#   these themes do not work with it.
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ -n "${TERM:-}" ]]
 then
   echo "$TERM_PROGRAM"
