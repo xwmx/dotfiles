@@ -88,6 +88,7 @@ Description:
 EOM
 off() {
   defaults write com.amethyst.Amethyst focus-follows-mouse -bool false
+  $_ME status
 }
 
 desc "on" <<EOM
@@ -99,6 +100,7 @@ Description:
 EOM
 on() {
   defaults write com.amethyst.Amethyst focus-follows-mouse -bool true
+  $_ME status
 }
 
 desc "status" <<EOM
@@ -109,7 +111,14 @@ Description:
   Return the status of focus-follows-mouse in Amethyst.app.
 EOM
 status() {
-  defaults read com.amethyst.Amethyst focus-follows-mouse
+  local _status
+  _status="$(defaults read com.amethyst.Amethyst focus-follows-mouse)"
+  if (("$_status"))
+  then
+    printf "focus-follows-mouse on\n"
+  else
+    printf "focus-follows-mouse off\n"
+  fi
 }
 
 desc "toggle" <<EOM
@@ -120,7 +129,7 @@ Description:
   Turn on focus-follows-mouse by running Amethyst.app.
 EOM
 toggle() {
-  if (("$($_ME status)"))
+  if [[ "$($_ME status)" =~ .*on$ ]]
   then
     $_ME off
   else
