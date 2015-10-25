@@ -1,5 +1,5 @@
 ###############################################################################
-# shared_env.d/remote_session.sh
+# shared_env.d/session_type.sh
 #
 # Test whether the current shell is being used via a remote session.
 #
