@@ -45,7 +45,11 @@ set_light_shell_theme() {
 #   messages.
 # - Terminal.app doesn't support setting colors in the 256 colorspace, so
 #   these themes do not work with it.
-if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ -n "${TERM:-}" ]]
+# - There are cases where `$TERM` is set to "dumb", which should be handled
+#   here similarly to a blank `$TERM`.
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] &&
+   [[ -n "${TERM:-}" ]] &&
+   [[ "$TERM" != "dumb" ]]
 then
   set_dark_shell_theme "twilight"
 fi

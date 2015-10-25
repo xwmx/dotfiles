@@ -17,4 +17,11 @@
 # Received via command:
 #   curl -L https://iterm2.com/misc/bash_startup.in >> \
 #     ~/.iterm2_shell_integration.bash
-source "$HOME/.iterm2_shell_integration.bash"
+#
+# NOTE: when `$TERM` is set to "dumb" and possibly when it's blank, this
+# script prints unexpected output. Avoid this by skipping the sourcing of this
+# shell integration script unless `$TERM` is set to something else.
+if [[ -n "$TERM" ]] && [[ "$TERM" != "dumb" ]]
+then
+  source "$HOME/.iterm2_shell_integration.bash"
+fi
