@@ -36,4 +36,7 @@ set_light_shell_theme() {
 #set_dark_shell_theme "tomorrow"
 #set_dark_shell_theme "twilight"
 
-set_dark_shell_theme "twilight"
+if [[ -n "${TERM:-}" ]]
+then
+  set_dark_shell_theme "twilight"
+fi
