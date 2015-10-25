@@ -26,31 +26,34 @@ then
     __VERBOSE_INIT="$__DEFAULT_VERBOSE_INIT"
   fi
 
-  # `tput` color settings.
-  #
-  # Additional variables are included for reference and easy switching.
-  #
-  # Supress ShellCheck unused variable warnings using a shell brace group to
-  # have the `shellcheck disable` directive apply to mutliple lines:
-  # shellcheck disable=SC2034
-  {
-    __SET_TPUT_NORMAL=$(tput sgr0)
-    __SET_TPUT_RED=$(tput setaf 1)
-    __SET_TPUT_GREEN=$(tput setaf 2; tput bold)
-    __SET_TPUT_YELLOW=$(tput setaf 3)
-    __SET_TPUT_BLUE=$(tput setaf 4)
-    __SET_TPUT_MAGENTA=$(tput setaf 5)
-    __SET_TPUT_CYAN=$(tput setaf 6)
-    __SET_TPUT_WHITE=$(tput setaf 7)
-  }
+  if [ -n "$TERM" ]
+  then
+    # `tput` color settings.
+    #
+    # Additional variables are included for reference and easy switching.
+    #
+    # Supress ShellCheck unused variable warnings using a shell brace group to
+    # have the `shellcheck disable` directive apply to mutliple lines:
+    # shellcheck disable=SC2034
+    {
+      __SET_TPUT_NORMAL=$(tput sgr0)
+      __SET_TPUT_RED=$(tput setaf 1)
+      __SET_TPUT_GREEN=$(tput setaf 2; tput bold)
+      __SET_TPUT_YELLOW=$(tput setaf 3)
+      __SET_TPUT_BLUE=$(tput setaf 4)
+      __SET_TPUT_MAGENTA=$(tput setaf 5)
+      __SET_TPUT_CYAN=$(tput setaf 6)
+      __SET_TPUT_WHITE=$(tput setaf 7)
+    }
+  fi
 
   __verbose_init() {
     if [ $__VERBOSE_INIT = true ]
     then
-      printf "%s" "$__SET_TPUT_GREEN"
+      [ -n "$TERM" ] && printf "%s" "$__SET_TPUT_GREEN"
       printf "🐛  >> "
       "$@"
-      printf "%s" "$__SET_TPUT_NORMAL"
+      [ -n "$TERM" ] && printf "%s" "$__SET_TPUT_NORMAL"
     fi
   }
   __verbose_init printf "Loading .shared_verbose_init\n"
