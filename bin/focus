@@ -72,7 +72,7 @@ _validate_app_presence
 desc "HELP_HEADER" <<EOM
 Focus.
 
-Turn focus-follows-mouse in Amethyst.app.
+Toggle focus-follows-mouse in Amethyst.app.
 EOM
 
 ###############################################################################
