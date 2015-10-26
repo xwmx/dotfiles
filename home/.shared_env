@@ -76,7 +76,7 @@ is_bash() {
 #   command_exists "name"
 #
 # Description:
-#   Check whether a command exists in the `$PATH`.
+#   If the given command name exists, return 0, otherwise return 1.
 #
 #   For information on why `which` is not being used, see:
 #   http://stackoverflow.com/a/677212
