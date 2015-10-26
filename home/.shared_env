@@ -107,8 +107,14 @@ test_command_exists() {
 # init_src
 ###############################################################################
 
-# source all files in a directory, or optionally source one file from a
-# specified directory.
+# init_src()
+#
+# Usage:
+#   init_src <path/to/directory> [<filename>]
+#
+# Description:
+#   Source all files in a directory, or optionally source one file from a
+#   specified directory.
 init_src() {
   local file
   if [ -n "$2" ]
