@@ -168,24 +168,6 @@ command_exists() {
 # For compatibiity, alias this function's previous name, `program_exists`.
 alias program_exists="command_exists"
 
-# test_command_exists()
-#
-# Usage:
-#   test_command_exists
-#
-# Description:
-#   Run a simple test for `command_exists`.
-test_command_exists() {
-  if ! command_exists "not_a_real_command"
-  then
-    echo "test_command_exists Passed"
-  fi
-  if command_exists "bash"
-  then
-    echo "test_command_exists Passed"
-  fi
-}
-
 # init_src
 ###############################################################################
 
