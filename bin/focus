@@ -126,7 +126,7 @@ Usage:
   $_ME toggle
 
 Description:
-  Turn on focus-follows-mouse by running Amethyst.app.
+  Toggle focus-follows-mouse on or off.
 EOM
 toggle() {
   if [[ "$($_ME status)" =~ .*on$ ]]
