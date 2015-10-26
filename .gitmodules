@@ -244,3 +244,6 @@
 [submodule "vendor/com/github/dsanson/termpdf"]
 	path = vendor/com/github/dsanson/termpdf
 	url = https://github.com/dsanson/termpdf.git
+[submodule "vendor/com/github/zsh-users/zaw"]
+	path = vendor/com/github/zsh-users/zaw
+	url = https://github.com/zsh-users/zaw.git
