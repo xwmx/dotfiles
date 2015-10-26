@@ -33,6 +33,9 @@
   linter:
     showErrorInline: true
     gutterPosition: "Left"
+    lintOnFly: false
+    showErrorTabLine: true
+    statusIconScope: "File"
   "go-plus":
     goPath: "~/.go"
   "tree-view": {}
