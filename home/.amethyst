@@ -13,7 +13,7 @@
   ],
   "float-small-windows": true,
   "mouse-follows-focus": false,
-  "focus-follows-mouse": true,
+  "focus-follows-mouse": false,
   "enables-layout-hud": false,
   "enables-layout-hud-on-space-change": false
 }
