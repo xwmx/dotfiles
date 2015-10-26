@@ -28,31 +28,97 @@ __verbose_init printf "Loading .shared_env\n"
 
 # OS Tests
 ###############################################################################
+
+# is_ox()
+#
+# Usage:
+#   is_osx
+#
+# Returns:
+#   0  If current OS is darwin.
+#   1  If not.
 is_osx() {
-  [[ "$OSTYPE" =~ ^darwin ]] || return 1
+  [[ "$OSTYPE" =~ ^darwin ]]
 }
+
+# is_mavericks()
+#
+# Usage:
+#   is_mavericks
+#
+# Returns:
+#   0  If current OS is OS X 10.9 Mavericks.
+#   1  If not.
 is_mavericks() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
   [ "$___osx_version" -eq "9" ]
 }
+
+# is_yosemite()
+#
+# Usage:
+#   is_yosemite
+#
+# Returns:
+#   0  If current OS is OS X 10.10 Yosemite.
+#   1  If not.
 is_yosemite() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
   [ "$___osx_version" -eq "10" ]
 }
+
+# is_el_capitan()
+#
+# Usage:
+#   is_el_capitan
+#
+# Returns:
+#   0  If current OS is OS X 10.11 El Capitan.
+#   1  If not.
 is_el_capitan() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
   [ "$___osx_version" -eq "11" ]
 }
+
+# is_linux()
+#
+# Usage:
+#   is_linux
+#
+# Returns:
+#   0  If current OS is linux.
+#   1  If not.
 is_linux() {
-  [[ "$(uname -a)" =~ ^Linux ]] || return 1
+  [[ "$(uname -a)" =~ ^Linux ]]
 }
+
+# is_ubuntu()
+#
+# Usage:
+#   is_ubuntu
+#
+# Returns:
+#   0  If current OS is Ubuntu.
+#   1  If not.
 is_ubuntu() {
-  [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
+  [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]
 }
+
+# get_os()
+#
+# Usage:
+#   get_os
+#
+# Description:
+#   Print one of 'osx', 'ubuntu', or 'linux' identifying the current system.
 get_os() {
-  for os in osx ubuntu
+  for os in osx ubuntu linux
   do
-    is_$os; [[ $? == "${1:-0}" ]] && echo $os
+    if "is_${os}"
+    then
+      printf "%s\n" "${os}"
+      return 0
+    fi
   done
 }
 
