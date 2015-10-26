@@ -38,19 +38,19 @@
   "tree-view": {}
   "autocomplete-plus": {}
   "file-types":
-    "^Baskfile$":         "source.shell"
-    "^.amethyst":         "source.js"
-    "^.gitignore":        "source.git-config"
-    "^.gvimrc.after":     "source.viml"
-    "^.profile$":         "source.shell"
-    "^.shared_env.*":     "source.shell"
-    "^.spacemacs$":       "source.lisp"
-    ".*.sshconfig":       "source.ssh-config"
-    "^.vimrc.before$":    "source.viml"
-    "^.vimrc.after$":     "source.viml"
-    ".zsh-theme$":        "source.shell"
-    "^.zshenv.local.*$":  "source.shell"
-    "^.zshrc.local.*$":   "source.shell"
+    "^Baskfile$": "source.shell"
+    "^.amethyst": "source.js"
+    "^.gitignore": "source.git-config"
+    "^.gvimrc.after": "source.viml"
+    "^.profile$": "source.shell"
+    "^.shared_env.*": "source.shell"
+    "^.spacemacs$": "source.lisp"
+    ".*.sshconfig": "source.ssh-config"
+    "^.vimrc.before$": "source.viml"
+    "^.vimrc.after$": "source.viml"
+    ".zsh-theme$": "source.shell"
+    "^.zshenv.local.*$": "source.shell"
+    "^.zshrc.local.*$": "source.shell"
   "fuzzy-finder":
     ignoredNames: [
       "usr"
