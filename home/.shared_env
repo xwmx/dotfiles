@@ -125,10 +125,26 @@ get_os() {
 # Shell Tests
 ###############################################################################
 
+# is_zsh()
+#
+# Usage:
+#   is_zsh
+#
+# Returns:
+#   0  If current shell is Zsh.
+#   1  If not.
 is_zsh() {
   [ -n "$ZSH_NAME" ]
 }
 
+# is_bash()
+#
+# Usage:
+#   is_bash
+#
+# Returns:
+#   0  If current shell is Bash.
+#   1  If not.
 is_bash() {
   [ -n "$BASH" ]
 }
