@@ -67,11 +67,10 @@ fi
 # .bashrc.d
 ###############################################################################
 
-# Source all files in ".bashrc.d" if it's present. `init_src` is defined in
-# $HOME/.shared_env
+# Source all files in ".bashrc.d" if it's present.
 if [[ -d "$HOME/.bashrc.d" ]]
 then
-  init_src .bashrc.d
+  source_dir "$HOME/.bashrc.d"
 fi
 
 ###############################################################################

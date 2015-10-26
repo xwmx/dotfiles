@@ -37,11 +37,10 @@ fi
 # .zshenv.d
 ###############################################################################
 
-# Source everything in .zshenv.d if it's present. `init_src` is defined in
-# $HOME/.shared_env
+# Source everything in .zshenv.d if it's present.
 if [[ -d "$HOME/.zshenv.d" ]]
 then
-  init_src .zshenv.d
+  source_dir "$HOME/.zshenv.d"
 fi
 
 ###############################################################################

@@ -37,5 +37,5 @@ fi
 # Source all files in ".profile.d" if present.
 if [[ -d "$HOME/.profile.d" ]]
 then
-  init_src .profile.d
+  source_dir "$HOME/.profile.d"
 fi

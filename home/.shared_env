@@ -168,25 +168,20 @@ command_exists() {
 # For compatibiity, alias this function's previous name, `program_exists`.
 alias program_exists="command_exists"
 
-# init_src
+# source_dir
 ###############################################################################
 
-# init_src()
+# source_dir()
 #
 # Usage:
-#   init_src <path/to/directory> [<filename>]
+#   source_dir <path/to/directory>
 #
 # Description:
-#   Source all files in a directory, or optionally source one file from a
-#   specified directory.
-init_src() {
-  local file
-  if [ -n "$2" ]
+#   Source each of the files in a given directory.
+source_dir() {
+  if (($#)) && [ -d "$1" ]
   then
-    source "$HOME/$1/$2"
-  elif [ -n "$1" ]
-  then
-    for file in "$HOME/$1"/*
+    for file in "$1"/*
     do
       if [ -f "$file" ]
       then
@@ -194,7 +189,7 @@ init_src() {
       fi
     done
   else
-    echo "Please specify directory to be sourced."
+    printf "Usage: source_dir <path/to/directory>\n"
     return 1
   fi
 }
@@ -215,7 +210,7 @@ fi
 # Source all files in ".shared_env.d" if present.
 if [ -d "$HOME/.shared_env.d" ]
 then
-  init_src .shared_env.d
+  source_dir "$HOME/.shared_env.d"
 fi
 
 # load shared_env.local if it exists

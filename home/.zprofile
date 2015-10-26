@@ -37,11 +37,10 @@ fi
 # .zprofile.d
 ###############################################################################
 
-# Source everything in .zprofile.d if it's present. `init_src` is defined in
-# $HOME/.shared_env
+# Source everything in .zprofile.d if it's present.
 if [[ -d "$HOME/.zprofile.d" ]]
 then
-  init_src .zprofile.d
+  source_dir "$HOME/.zprofile.d"
 fi
 
 ###############################################################################

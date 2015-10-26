@@ -20,11 +20,10 @@ __verbose_init printf "Loading .shared_rc\n"
 # .shared_rc.d
 ###############################################################################
 
-# Source all files in ".shared_rc.d" if it's present. `init_src` is defined in
-# .shared_env.
+# Source all files in ".shared_rc.d" if it's present.
 if [ -d "$HOME/.shared_rc.d" ]
 then
-  init_src .shared_rc.d
+  source_dir "$HOME/.shared_rc.d"
 fi
 
 ###############################################################################

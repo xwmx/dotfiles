@@ -187,11 +187,10 @@ fi
 # .zshrc.d
 ###############################################################################
 
-# Source everything in .zshrc.d if it's present. `init_src` is defined in
-# $HOME/.shared_env
+# Source everything in .zshrc.d if it's present.
 if [[ -d "$HOME/.zshrc.d" ]]
 then
-  init_src .zshrc.d
+  source_dir "$HOME/.zshrc.d"
 fi
 
 ###############################################################################
