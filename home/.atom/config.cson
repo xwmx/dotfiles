@@ -46,6 +46,7 @@
     "^.gitignore": "source.git-config"
     "^.gvimrc.after": "source.viml"
     "^.profile$": "source.shell"
+    "^.psqlrc": "source.sql"
     "^.shared_env.*": "source.shell"
     "^.spacemacs$": "source.lisp"
     ".*.sshconfig": "source.ssh-config"
