@@ -4,13 +4,13 @@
 --
 -- Resources:
 --  - Official docs
---    - http://www.postgresql.org/docs/9.3/static/app-psql.html
+--    http://www.postgresql.org/docs/9.3/static/app-psql.html
 --  - An Explained psqlrc
---    - https://robots.thoughtbot.com/an-explained-psqlrc
+--    https://robots.thoughtbot.com/an-explained-psqlrc
 --  - Improving the Command-Line Postgres Experience
---    - http://robots.thoughtbot.com/improving-the-command-line-postgres-experience
+--    http://robots.thoughtbot.com/improving-the-command-line-postgres-experience
 --  - PostgreSQL on the Command Line
---    - http://phili.pe/posts/postgresql-on-the-command-line/
+--    http://phili.pe/posts/postgresql-on-the-command-line/
 --    - comments: https://news.ycombinator.com/item?id=10458866
 --  - Colorizing The psql Prompt — A Guide
 --    http://i-dba.blogspot.com/2014/02/colorizing-psql-prompt-guide.html
