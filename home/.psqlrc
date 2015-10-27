@@ -1,5 +1,23 @@
--- Official docs: http://www.postgresql.org/docs/9.3/static/app-psql.html
--- Unofficial docs: http://robots.thoughtbot.com/improving-the-command-line-postgres-experience
+-- .psqlrc
+--
+-- Configuration for the PostgreSQL Shell.
+--
+-- Resources:
+--  - Official docs
+--    - http://www.postgresql.org/docs/9.3/static/app-psql.html
+--  - An Explained psqlrc
+--    - https://robots.thoughtbot.com/an-explained-psqlrc
+--  - Improving the Command-Line Postgres Experience
+--    - http://robots.thoughtbot.com/improving-the-command-line-postgres-experience
+--  - PostgreSQL on the Command Line
+--    - http://phili.pe/posts/postgresql-on-the-command-line/
+--    - comments: https://news.ycombinator.com/item?id=10458866
+--  - Colorizing The psql Prompt — A Guide
+--    http://i-dba.blogspot.com/2014/02/colorizing-psql-prompt-guide.html
+--  - Getting More Out of Psql (the PostgreSQL CLI)
+--    http://www.craigkerstiens.com/2013/02/21/more-out-of-psql/
+--  - How I Work With Postgres – Psql, My PostgreSQL Admin
+--    http://www.craigkerstiens.com/2013/02/13/How-I-Work-With-Postgres/
 
 -- Don't display the "helpful" message on startup.
 \set QUIET 1
