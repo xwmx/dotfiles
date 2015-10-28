@@ -74,9 +74,10 @@ apm install atom-jshint
 
 # atom-prettify
 #
-# Validates your JS against JSHint as you type. The original and most used.
+# Prettify your HTML.
 #
-# https://github.com/Joezo/atom-jshint
+# https://atom.io/packages/atom-prettify
+# https://github.com/adambutler/atom-prettify
 apm install atom-prettify
 
 # atom-simple-dark-ui
