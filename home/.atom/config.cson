@@ -44,6 +44,7 @@
     "^Baskfile$": "source.shell"
     "^.amethyst": "source.js"
     "^.gitignore": "source.git-config"
+    "^.gntrc": "source.ini"
     "^.gvimrc.after": "source.viml"
     "^.profile$": "source.shell"
     "^.psqlrc": "source.sql"
