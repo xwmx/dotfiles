@@ -58,6 +58,7 @@
     "^.shared_env.*": "source.shell"
     "^.spacemacs$": "source.lisp"
     ".*.sshconfig": "source.ssh-config"
+    "^.tigrc$": "text.generic-config"
     "^.vimrc.before$": "source.viml"
     "^.vimrc.after$": "source.viml"
     "^.wgetrc": "text.generic-config"
