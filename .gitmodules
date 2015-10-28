@@ -247,3 +247,6 @@
 [submodule "vendor/com/github/zsh-users/zaw"]
 	path = vendor/com/github/zsh-users/zaw
 	url = https://github.com/zsh-users/zaw.git
+[submodule "vendor/com/github/jamesob/desk"]
+	path = vendor/com/github/jamesob/desk
+	url = https://github.com/jamesob/desk.git
