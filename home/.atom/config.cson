@@ -50,6 +50,7 @@
     "^.gntrc": "source.ini"
     "^.gvimrc.after": "source.viml"
     "^.hgrc*": "source.ini"
+    "^.htoprc": "text.generic-config"
     "^.inputrc": "text.generic-config"
     "^.profile$": "source.shell"
     "^.psqlrc": "source.sql"
