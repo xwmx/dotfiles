@@ -54,6 +54,7 @@
     "^.inputrc": "text.generic-config"
     "^.profile$": "source.shell"
     "^.psqlrc": "source.sql"
+    "^.rspec$": "text.generic-config"
     "^.shared_env.*": "source.shell"
     "^.spacemacs$": "source.lisp"
     ".*.sshconfig": "source.ssh-config"
