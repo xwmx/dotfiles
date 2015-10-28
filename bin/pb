@@ -58,6 +58,7 @@ A simple wrapper combining pbcopy & pbpaste in a single command.
 Usage:
   $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   $_ME <input> [-pboard {general | ruler | find | font}]
+  <command> | $_ME [-pboard {general | ruler | find | font}]
   $_ME -h | --help
 
 Options:
@@ -80,11 +81,11 @@ _print_help() {
 # _interactive_input()
 #
 # Usage:
-#   if _interactive_input; then ..
+#   _interactive_input
 #
-# Description:
-#   Check whether the current input is interactive (ie, a shell). If not, the
-#   assumption is to use stdin / piped input.
+# Returns:
+#   0  If the current input is interactive (eg, a shell).
+#   1  If the current input is stdin / piped input.
 _interactive_input() {
   [[ -t 0 ]]
 }
@@ -92,9 +93,9 @@ _interactive_input() {
 # _pb()
 #
 # Usage:
-#   pb
-#   pb <arguments>
-#   <command> | pb
+#   _pb
+#   _pb <arguments>
+#   <command> | _pb
 #
 # Description:
 #   Copy to or paste from the OS X clipboard/pasteboard. With no input, `pb`
