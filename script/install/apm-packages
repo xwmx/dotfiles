@@ -154,6 +154,15 @@ apm install go-plus
 # https://github.com/willwhitney/hydrogen
 apm install Hydrogen
 
+# language-generic-config
+#
+# Provides basic syntax highlighting for configuration files that are just
+# composed of comments or non-comments.
+#
+# https://atom.io/packages/language-generic-config
+# https://github.com/lee-dohm/language-generic-config
+apm install language-generic-config
+
 # language-haml
 #
 # HAML package for atom
