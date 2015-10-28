@@ -250,3 +250,6 @@
 [submodule "vendor/com/github/jamesob/desk"]
 	path = vendor/com/github/jamesob/desk
 	url = https://github.com/jamesob/desk.git
+[submodule "home/.janus/vim-pandoc"]
+	path = home/.janus/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
