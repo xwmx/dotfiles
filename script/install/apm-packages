@@ -49,6 +49,15 @@ apm upgrade -c false
 # Packages
 ###############################################################################
 
+# atom-beautify
+#
+# Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#,
+# Objective-C, CoffeeScript, TypeScript, and SQL in Atom.
+#
+# https://atom.io/packages/atom-beautify
+# https://github.com/Glavin001/atom-beautify
+apm install atom-beautify
+
 # atom-dark-ui-slim
 #
 # Default dark theme for interface components
