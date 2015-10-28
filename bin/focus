@@ -58,7 +58,13 @@ _find_app() {
 # Description:
 #   If the specified .app is not found on the system, exit 1 with a message.
 _validate_app_presence() {
-  if [[ ! -e "$(_find_app 'Amethyst.app')" ]]
+  local _amethyst_path
+  _amethyst_path="$(_find_app 'Amethyst.app')"
+  _debug printf \
+    "_validate_app_presence() \$_amethyst_path: %s\n" \
+    "$_amethyst_path"
+
+  if [[ -z "$_amethyst_path" ]]
   then
     _die printf "Amethyst.app not found on this system.\n"
   fi
