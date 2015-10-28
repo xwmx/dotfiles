@@ -45,6 +45,7 @@
     "^.amethyst": "source.js"
     "^.gitconfig.local": "source.git-config"
     "^.gitignore": "source.git-config"
+    "^.git.scmbrc": "source.shell"
     "^.gntrc": "source.ini"
     "^.gvimrc.after": "source.viml"
     "^.profile$": "source.shell"
