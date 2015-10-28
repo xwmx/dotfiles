@@ -5,6 +5,18 @@
 #
 # http://jonas.nitro.dk/tig/
 # https://github.com/jonas/tig
+# http://jonas.nitro.dk/tig/tigrc.5.html
+#
+# NOTE: via the tig documentation:
+# > Alternatively to using ~/.tigrc, Tig options can be set by putting them in
+# > one of the Git configuration files, which are read by Tig on startup. See
+# > git-config(1) for which files to use. The following example show the basic
+# > syntax to use for settings, bindings and colors.
+# > ```
+# > [tig] show-changes = true
+# > [tig "color"] cursor = yellow red bold
+# > [tig "bind"] generic = P parent
+# > ```
 ###############################################################################
 
 # enable mouse support
