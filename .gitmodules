@@ -253,3 +253,6 @@
 [submodule "home/.janus/vim-pandoc"]
 	path = home/.janus/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "home/.janus/vim-pandoc-syntax"]
+	path = home/.janus/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
