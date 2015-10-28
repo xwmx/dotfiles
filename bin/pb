@@ -39,7 +39,7 @@ then
   exit 1
 elif ! command_exists "pbpaste"
 then
-  printf "pbpaste not found on this system\n"
+  printf "pbpaste not found on this system.\n"
   exit 1
 fi
 
