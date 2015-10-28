@@ -21,15 +21,23 @@ IFS=$'\n\t'
 # Dependency / Platform Check
 ###############################################################################
 
-program_exists() {
+# command_exists()
+#
+# Usage:
+#   command_exists "command_name"
+#
+# Returns:
+#   0  If the command exists in the current environment.
+#   1  If not.
+command_exists() {
   hash "$1" 2>/dev/null
 }
 
-if ! program_exists "pbcopy"
+if ! command_exists "pbcopy"
 then
   printf "pbcopy not found on this system.\n"
   exit 1
-elif ! program_exists "pbpaste"
+elif ! command_exists "pbpaste"
 then
   printf "pbpaste not found on this system\n"
   exit 1
