@@ -43,6 +43,7 @@
   "file-types":
     "^Baskfile$": "source.shell"
     "^.amethyst": "source.js"
+    "^.gitconfig.local": "source.git-config"
     "^.gitignore": "source.git-config"
     "^.gntrc": "source.ini"
     "^.gvimrc.after": "source.viml"
