@@ -55,6 +55,7 @@
     ".*.sshconfig": "source.ssh-config"
     "^.vimrc.before$": "source.viml"
     "^.vimrc.after$": "source.viml"
+    "^.wgetrc": "text.generic-config"
     "^.zprofile$": "source.shell"
     ".zsh-theme$": "source.shell"
     "^.zshenv.local.*$": "source.shell"
