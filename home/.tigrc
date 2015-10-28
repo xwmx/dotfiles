@@ -23,7 +23,7 @@
 set mouse = true
 
 # Main view column settings.
-set main-view	= line-number:yes,interval=5 \
+set main-view = line-number:yes,interval=5 \
                 id:yes \
                 date:default \
                 author:full \
