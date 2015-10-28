@@ -168,6 +168,14 @@ apm install language-haml
 # https://github.com/jroesch/language-haskell
 apm install language-haskell
 
+# language-ini
+#
+# Syntax support for ini files.
+#
+# https://atom.io/packages/language-ini
+# https://github.com/jacobbednarz/atom-language-ini
+apm install language-ini
+
 # language-jade
 #
 # Jade TextMate bundle converted for Atom
