@@ -131,6 +131,13 @@ _pb() {
 # Main
 ###############################################################################
 
+# _main()
+#
+# Usage:
+#   _main [<options>] [<arguments>]
+#
+# Description:
+#   Entry point for the program, handling basic option parsing and dispatching.
 _main() {
   case "${1:-}" in
     -h|--help)  _print_help ;;
@@ -138,4 +145,5 @@ _main() {
   esac
 }
 
+# Call `_main` after everything has been defined.
 _main "$@"
