@@ -256,3 +256,6 @@
 [submodule "home/.janus/vim-pandoc-syntax"]
 	path = home/.janus/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+[submodule "vendor/com/github/alphabetum/pb"]
+	path = vendor/com/github/alphabetum/pb
+	url = https://github.com/alphabetum/pb.git
