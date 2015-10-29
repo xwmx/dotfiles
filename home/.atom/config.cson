@@ -39,7 +39,8 @@
   "go-plus":
     goPath: "~/.go"
   "tree-view": {}
-  "autocomplete-plus": {}
+  "autocomplete-plus":
+    useAlternateScoring: true
   "file-types":
     "^Baskfile$": "source.shell"
     "^.amethyst": "source.js"
@@ -75,6 +76,7 @@
       "etc"
     ]
     preserveLastSearch: true
+    useAlternateScoring: true
   "symbols-tree-view": {}
   "linter-eslint":
     useGlobalEslint: true
