@@ -271,6 +271,9 @@ set wildignore+=*system/development/glyphs*
 " Toggle tagbar shortcut
 nmap <leader>ttb :TagbarToggle<CR>
 
+" Map <leader>m to tagbar to mirror current Atom minimap toggle mapping.
+nmap <leader>m :TagbarToggle<CR>
+
 " Set default tagbar width
 "
 " With a 1680 px width screen, tagbar fits better with NERDTree and two splits
