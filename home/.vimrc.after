@@ -78,6 +78,8 @@ let g:is_posix = 1
 " GUI options
 " ============================================================================
 
+" disable right scrollbar
+set guioptions-=r
 " disable left scrollbar
 set guioptions-=L
 
