@@ -80,3 +80,4 @@
   "symbols-tree-view": {}
   "linter-eslint":
     useGlobalEslint: true
+  minimap: {}
