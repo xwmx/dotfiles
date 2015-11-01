@@ -13,6 +13,19 @@
 
 source "$(which bask)"
 
+# font: chunky
+desc "HELP_HEADER" <<EOM
+                                     __
+.-----.-----.-----.-----.----.---.-.|  |_.-----.
+|  _  |  -__|     |  -__|   _|  _  ||   _|  -__|
+|___  |_____|__|__|_____|__| |___._||____|_____|
+|_____|
+
+generate
+
+A small tool for generating things.
+EOM
+
 desc "dataurl" <<EOM
 Usage:
   dataurl <path/to/file>
