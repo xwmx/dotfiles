@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+###############################################################################
+# generate - a bask script
+#
+# Get bask:
+#   https://github.com/alphabetum/bask
+#
+# Add this script and the bask program to your $PATH.
+#
+# For usage information, run:
+#   generate help
+###############################################################################
+
+source "$(which bask)"
+
+desc "string" <<EOM
+Usage:
+  $_ME string [<length>] [( -u | --uppercase | -l | --lowercase)]
+
+Options:
+  -u --uppercase  Convert all alpha characters to uppercase.
+  -l --lowercase  Convert all alpha characters to lowercase.
+
+Description:
+  Generate a random alphanumeric string.
+EOM
+# More info:  https://gist.github.com/earthgecko/3089509
+string() {
+  # NOTE: set `LC_ALL=C` to avoid invalid byte sequence errors from `tr`.
+  # More info: http://unix.stackexchange.com/a/141423
+  export LC_ALL=C
+  local length=32
+  local letter_case
+  local raw_string
+  local cased_string
+
+  for arg in "${_COMMAND_PARAMETERS[@]:-}"
+  do
+    case $arg in
+      -u|--upper|--uppercase) letter_case="UPPER";;
+      -l|--lower|--lowercase) letter_case="LOWER";;
+      -*)
+        _die printf "Unrecognized option: %s\n" "$arg"
+        ;;
+      *)
+        if [[ "$length" == "32" ]] && [[ -n "$arg" ]]
+        then
+          if [[ "$arg" =~ ^[[:digit:]]+ ]]
+          then
+            length="$arg"
+          else
+            _die printf "Invalid argument: %s\n" "$arg"
+          fi
+        else
+          : # do nothing.
+        fi
+        ;;
+    esac
+  done
+
+  _debug printf "string() \$length: %s\n" "$length"
+
+  # NOTE: This command exits with a 141 status due to `head` exiting while
+  # `fold` is still writing to the pipe. In order to circumvent this with
+  # pipefail enabled, ignore errors by falling back to `return 0`.
+  #
+  # More info: http://stackoverflow.com/a/19120674
+  raw_string="$(
+    cat /dev/urandom      | \
+      tr -dc 'a-zA-Z0-9'  | \
+      fold -w "${length}" | \
+      head -n 1 || \
+      return 0
+  )"
+  _debug printf "string() \$raw_string: %s\n" "$raw_string"
+
+  case "${letter_case:-}" in
+    UPPER)
+      _debug printf "string() UPPER\n"
+      cased_string="$(
+        printf "%s\n" "$raw_string" | tr '[:lower:]' '[:upper:]'
+      )"
+      ;;
+    LOWER)
+      _debug printf "string() LOWER\n"
+      cased_string="$(
+        printf "%s\n" "$raw_string" | tr '[:upper:]' '[:lower:]'
+      )"
+      ;;
+    *)
+      _debug printf "string() NO LETTER CASE\n"
+      cased_string="$raw_string"
+      ;;
+  esac
+
+  printf "%s\n" "$cased_string"
+}
+
+_init
