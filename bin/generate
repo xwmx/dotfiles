@@ -14,16 +14,23 @@
 source "$(which bask)"
 
 desc "dataurl" <<EOM
-dataurl()
-
 Usage:
-  dataurl [<file path>]
+  dataurl <path/to/file>
 
 Description:
-  Create a data URL from a file
+  Create a data URL from a given file.
 EOM
 dataurl() {
   local mimeType
+  local _file_path="${1:-}"
+
+  if [[ -z "${_file_path}" ]]
+  then
+    _die printf "Missing file path.\n"
+  elif [[ ! -e "${_file_path}" ]]
+  then
+    _die printf "Invalid file path: %s\n" "${_file_path}"
+  fi
 
   # When running `file`, set LC_ALL to `C` to avoid the following error:
   #   ERROR: line 22: regexec error 17, (illegal byte sequence)
