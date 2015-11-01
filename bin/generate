@@ -26,6 +26,8 @@ generate
 A small tool for generating things.
 EOM
 
+# --------------------------------------------------------------------- dataurl
+
 desc "dataurl" <<EOM
 Usage:
   dataurl <path/to/file>
@@ -72,6 +74,8 @@ dataurl() {
     "data:${mimeType};base64,%s\n" \
     "$(openssl base64 -in "$1" | tr -d '\n')"
 }
+
+# ---------------------------------------------------------------------- string
 
 desc "string" <<EOM
 Usage:
