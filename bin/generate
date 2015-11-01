@@ -98,7 +98,9 @@ string() {
   local raw_string
   local cased_string
 
-  for arg in "${_COMMAND_PARAMETERS[@]:-}"
+  _debug printf "string() \$*: %s\n" "$*"
+
+  for arg in "${@:-}"
   do
     case $arg in
       -u|--upper|--uppercase) letter_case="UPPER";;
