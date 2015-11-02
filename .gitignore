@@ -60,6 +60,9 @@
 # htop
 !/home/.config/htop
 !/home/.config/htop/htoprc
+# nvim
+# More info: https://neovim.io/doc/user/nvim_from_vim.html
+!/home/.config/nvim
 # Sublime Text 3
 !/home/.config/sublime-text-3
 /home/.config/sublime-text-3/*
