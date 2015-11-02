@@ -164,6 +164,15 @@ apm install go-plus
 # https://github.com/willwhitney/hydrogen
 apm install Hydrogen
 
+# jumpy
+#
+# An Atom package that creates dynamic hotkeys to jump around files and across
+# visible panes.
+#
+# https://atom.io/packages/jumpy
+# https://github.com/DavidLGoldberg/jumpy
+apm install jumpy
+
 # language-generic-config
 #
 # Provides basic syntax highlighting for configuration files that are just
