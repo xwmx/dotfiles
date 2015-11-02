@@ -133,3 +133,13 @@
 # Only trash .textadept/init.lua
 /home/.textadept/*
 !/home/.textadept/init.lua
+
+# .vim
+#
+# Ignore temp vim files.
+# Copied from home/.vim.janus/.gitignore.
+/home/.vim/_backup
+/home/.vim/_temp
+/home/.vim/.netrwhist
+# Vimius file
+/home/.vim/.vimius

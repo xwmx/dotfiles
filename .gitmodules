@@ -64,10 +64,6 @@
 [submodule "home/.rbenv/plugins/ruby-build"]
 	path = home/.rbenv/plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
-[submodule "home/.vim"]
-	path = home/.vim
-  url = https://github.com/carlhuda/janus.git
-  ignore = dirty
 [submodule "home/.janus/swift.vim"]
 	path = home/.janus/swift.vim
 	url = https://github.com/Keithbsmiley/swift.vim.git
@@ -259,3 +255,6 @@
 [submodule "vendor/com/github/alphabetum/pb"]
 	path = vendor/com/github/alphabetum/pb
 	url = https://github.com/alphabetum/pb.git
+[submodule "home/.vim.janus"]
+	path = home/.vim.janus
+	url = https://github.com/carlhuda/janus.git
