@@ -30,7 +30,7 @@ the Neovim equivalent of [`.vimrc`](../.vimrc), which is linked in `~/.vim`
 to make it available to Neovim.
 
 More information:
-*[Transitioning from Vim [to Neovim]
+*[Transitioning from Vim \[to Neovim\]
 (neovim.io)](https://neovim.io/doc/user/nvim_from_vim.html)*
 
 ## `vim` Wrapper
