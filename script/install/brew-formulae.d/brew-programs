@@ -903,17 +903,14 @@ brew install lynx
 #
 # http://code.google.com/p/macvim/
 #
-# NOTE: install HEAD version in order to get unreleased updates for El Capitan,
-# particularly split screen issues, like those discussed here:
-# https://github.com/macvim-dev/macvim/issues/79
-# https://github.com/macvim-dev/macvim/issues/93
-# Also, since formulas installed with the HEAD option are not updates normally,
-# rebuild on each run.
-if _homebrew_formula_is_installed "macvim"
+# NOTE: HEAD was previously installed in order to get El Capitan fixes, and
+# these fixes are now available as a snapshot version.
+if _homebrew_formula_is_installed "macvim" &&
+  [[ "$(brew info macvim)" =~ Cellar/macvim/HEAD ]]
 then
   brew uninstall macvim
 fi
-brew install macvim --HEAD
+brew install macvim
 
 # man2html
 #
