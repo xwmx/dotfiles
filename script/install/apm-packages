@@ -94,6 +94,14 @@ apm install atom-simple-dark-ui
 # https://github.com/dmackerman/atom-soda-dark-ui
 apm install atom-soda-dark-ui
 
+# atom-typescript
+#
+# A TypeScript package for Atom.
+#
+# https://atom.io/packages/atom-typescript
+# https://github.com/TypeStrong/atom-typescript
+apm install atom-typescript
+
 # autocomplete-plus
 #
 # Display possible completions in the editor while typing
