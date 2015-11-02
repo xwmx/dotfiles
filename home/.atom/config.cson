@@ -17,6 +17,7 @@
   core:
     disabledPackages: [
       "metrics"
+      "exception-reporting"
       "nuclide-installer"
       "nuclide-hack"
       "nuclide-flow"
