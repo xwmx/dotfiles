@@ -1,12 +1,12 @@
 "*":
   "exception-reporting":
-    userId: "1e725750-c66d-33e4-9fce-f627ac32bde5"
+    userId: "3e6166fe-00f6-49c7-842f-659cef01c050"
   "release-notes":
     viewedVersion: "0.94.0"
   welcome:
     showOnStartup: false
   metrics:
-    userId: "c2f08243ecb4a9bc44bd9e46d4f067086d9357e3"
+    userId: "2e9001b50edf75df09b8160944167f2ca1822759"
   editor:
     fontSize: 11
     showInvisibles: true
