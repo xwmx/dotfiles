@@ -1125,8 +1125,12 @@ brew install ncdu
 # https://github.com/neovim/neovim
 # https://github.com/neovim/neovim/wiki/Installing
 #
-# Note that this is a tapped formula from the neovim/homebrew-neovim tap.
-brew install --HEAD neovim/neovim/neovim
+# NOTE: If the current install is an HEAD install, reinstall.
+if [[ "$(brew info neovim)" =~ Cellar/neovim/HEAD ]]
+then
+  brew uninstall neovim
+fi
+brew install neovim/neovim/neovim
 
 # netcat
 #
