@@ -258,3 +258,4 @@
 [submodule "home/.vim.janus"]
 	path = home/.vim.janus
 	url = https://github.com/carlhuda/janus.git
+	ignore = dirty
