@@ -35,10 +35,7 @@ __unwrap() {
   _executables=($(which -a "${_basename:-}"))
   for _element in "${_executables[@]}"
   do
-    if ( \
-      [[ ! "$_element" == "$BASH_SOURCE" ]] &&
-      [[ "$_element" =~ ^/.* ]]
-    )
+    if [[ ! "$_element" == "$BASH_SOURCE" ]] && [[ "$_element" =~ ^/.* ]]
     then
       if [[ -z "${_next_executable:-}" ]]
       then
@@ -67,12 +64,15 @@ __unwrap() {
 # NOTE:
 # - `exec` tells the shell to just give control to the executable without
 #   forking. See: http://stackoverflow.com/a/1696062
-# - the `||` style used for setting `$_nvim_path` and
-#   `__unwrapped_executable` handles the non-zero exit from `which nvim`
-#   when `nvim` is not found, which otherwise would exit the program due to
-#   the `set -o errexit` strictness setting.
-_nvim_path="$(which nvim)" || __unwrapped_executable=$(__unwrap)
-if [[ -e "$_nvim_path" ]]
+# - the `|| true` style used for setting `$_nvim_path` handles the non-zero
+#   exit from `which nvim` when `nvim` is not found, which otherwise would
+#   exit the program due to the `set -o errexit` strictness setting.
+#
+# More info about nvim configuration:
+# https://neovim.io/doc/user/nvim_from_vim.html
+_nvim_path="$(which nvim)" || true
+__unwrapped_executable="$(__unwrap)"
+if [[ -e "$_nvim_path" ]] && [[ -e "$HOME/.config/nvim" ]]
 then
   exec "$_nvim_path" "$@"
 else
