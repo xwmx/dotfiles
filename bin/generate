@@ -162,4 +162,27 @@ string() {
   printf "%s\n" "$cased_string"
 }
 
+# ------------------------------------------------------------------------ uuid
+
+desc "uuid" <<EOM
+Usage:
+  $_ME uuid [(-l | --lowercase)]
+
+Options:
+  -l --lowercase  Convert all alpha characters to lowercase.
+
+Description:
+  Generate a UUID.
+EOM
+uuid() {
+  local _uuid
+  _uuid="$(uuidgen)"
+
+  if [[ "${1:-}" == "-l" ]] || [[ "${1:-}" == "--lowercase" ]]
+  then
+    _uuid="$(printf "%s\n" "$_uuid" | tr '[:upper:]' '[:lower:]')"
+  fi
+  printf "%s\n" "$_uuid"
+}
+
 _init
