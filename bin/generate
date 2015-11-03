@@ -143,12 +143,16 @@ string() {
   case "${letter_case:-}" in
     UPPER)
       _debug printf "string() UPPER\n"
+      # alternative implementation:
+      # cased_string="${raw_string^^}"
       cased_string="$(
         printf "%s\n" "$raw_string" | tr '[:lower:]' '[:upper:]'
       )"
       ;;
     LOWER)
       _debug printf "string() LOWER\n"
+      # alternative implementation:
+      # cased_string="${raw_string,,}"
       cased_string="$(
         printf "%s\n" "$raw_string" | tr '[:upper:]' '[:lower:]'
       )"
@@ -180,6 +184,8 @@ uuid() {
 
   if [[ "${1:-}" == "-l" ]] || [[ "${1:-}" == "--lowercase" ]]
   then
+    # alternative implementation:
+    # _uuid="${_uuid,,}"
     _uuid="$(printf "%s\n" "$_uuid" | tr '[:upper:]' '[:lower:]')"
   fi
   printf "%s\n" "$_uuid"
