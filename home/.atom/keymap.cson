@@ -62,7 +62,7 @@
 #
 # https://github.com/atom-minimap/minimap
 ###############################################################################
-'.workspace':
+'.atom-workspace':
   # vim-like mapping to `<leader>m`, with comma as <leader>.
   ', m': 'minimap:toggle'
   # This mapping is the suggested mapping in the minimap package's
