@@ -27,6 +27,7 @@
 # Only track specific atom config files
 /home/.atom/*
 !/home/.atom/config.cson
+!/home/.atom/dev
 !/home/.atom/init.coffee
 !/home/.atom/keymap.cson
 !/home/.atom/snippets.cson
