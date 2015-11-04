@@ -14,4 +14,8 @@ then
   ddg() {
     "${__search_cmd}" "ddg" "${@}"
   }
+
+  ss() {
+    "${__search_cmd}" "spotlight" "${@}"
+  }
 fi
