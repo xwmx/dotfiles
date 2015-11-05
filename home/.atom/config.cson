@@ -82,3 +82,8 @@
   "linter-eslint":
     useGlobalEslint: true
   minimap: {}
+  "atom-material-ui":
+    accentColor: "Pink"
+    compactTreeView: true
+    rippleAccentColor: true
+    slimScrollbar: true
