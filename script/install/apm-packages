@@ -172,6 +172,14 @@ apm install go-plus
 # https://github.com/willwhitney/hydrogen
 apm install Hydrogen
 
+# imdone-atom
+#
+# A task-board for TODOs, FIXMEs, HACKs, etc in your code.
+#
+# https://atom.io/packages/imdone-atom
+# https://github.com/imdone/imdone-core
+apm install imdone-atom
+
 # jumpy
 #
 # An Atom package that creates dynamic hotkeys to jump around files and across
