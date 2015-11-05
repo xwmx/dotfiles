@@ -389,7 +389,7 @@ getcertnames() {
 # Shell -----------------------------------------------------------------------
 
 # Reload the shell (i.e. invoke as a login shell)
-reload_shell() {
+reload() {
   exec "$SHELL" -l
 }
 
