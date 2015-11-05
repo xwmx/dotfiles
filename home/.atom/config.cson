@@ -87,3 +87,5 @@
     compactTreeView: true
     rippleAccentColor: true
     slimScrollbar: true
+  jumpy:
+    highContrast: true
