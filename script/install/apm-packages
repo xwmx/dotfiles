@@ -524,6 +524,14 @@ apm install next-dark-ui
 # https://code.facebook.com/posts/397706937084869/
 apm install nuclide-installer
 
+# pigments
+#
+# A package to display colors in project and files.
+#
+# https://atom.io/packages/pigments
+# https://github.com/abe33/atom-pigments
+apm install pigments
+
 # Seti Syntax
 #
 # A subtle dark colored theme for Atom.
