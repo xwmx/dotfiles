@@ -81,6 +81,15 @@ apm install atom-jshint
 # https://github.com/silvestreh/atom-material-syntax
 apm install atom-material-syntax
 
+# atom-material-syntax-light
+#
+# A light syntax theme for Atom that uses Google's Material Design color
+# palette.
+#
+# https://atom.io/themes/atom-material-syntax-light
+# https://github.com/silvestreh/atom-material-syntax-light
+apm install atom-material-syntax-light
+
 # atom-material-ui
 #
 # A dark UI theme for Atom that follows Google's Material Design Guidelines.
