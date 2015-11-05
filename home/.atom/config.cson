@@ -31,6 +31,9 @@
       "atom-material-ui"
       "seti-syntax"
     ]
+    packagesWithKeymapsDisabled: [
+      "jumpy"
+    ]
   linter:
     showErrorInline: true
     gutterPosition: "Left"
