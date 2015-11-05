@@ -28,7 +28,7 @@
       "nuclide-click-to-symbol"
     ]
     themes: [
-      "atom-dark-ui-slim"
+      "atom-material-ui"
       "seti-syntax"
     ]
   linter:
