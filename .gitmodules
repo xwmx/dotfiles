@@ -259,6 +259,6 @@
 	path = home/.vim.janus
 	url = https://github.com/carlhuda/janus.git
 	ignore = dirty
-[submodule "vendor/com/github/alphabetum/language-shellscript"]
-	path = vendor/com/github/alphabetum/language-shellscript
-	url = https://github.com/alphabetum/language-shellscript.git
+[submodule "vendor/com/github/atom/language-shellscript"]
+	path = vendor/com/github/atom/language-shellscript
+	url = https://github.com/atom/language-shellscript.git
