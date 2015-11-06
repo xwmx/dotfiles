@@ -790,6 +790,15 @@ brew install jq
 # https://kore.io/
 brew install kore
 
+# ledger
+#
+# Ledger is a powerful, double-entry accounting system that is accessed from
+# the UNIX command-line.
+#
+# http://www.ledger-cli.org/
+# https://github.com/ledger/ledger
+brew install ledger
+
 # Leiningen
 #
 # Automate Clojure projects without setting your hair on fire.

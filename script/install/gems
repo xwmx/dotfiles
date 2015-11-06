@@ -196,6 +196,22 @@ gem install powify
 # https://github.com/rodjek/puppet-lint
 gem install puppet-lint
 
+# reckon
+#
+# Flexibly import bank account CSV files into Ledger for command-line
+# accounting.
+#
+# Reckon automagically converts CSV files for use with the command-line
+# accounting tool Ledger. It also helps you to select the correct accounts
+# associated with the CSV data using Bayesian machine learning.
+#
+# https://github.com/cantino/reckon
+# http://blog.andrewcantino.com/blog/2013/02/16/command-line-accounting-with-ledger-and-reckon/
+#
+# For use with:
+# https://github.com/ledger/ledger/
+gem install reckon
+
 # rubocop
 #
 # A Ruby static code analyzer, based on the community Ruby style guide.

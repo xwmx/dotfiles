@@ -262,3 +262,6 @@
 [submodule "vendor/com/github/atom/language-shellscript"]
 	path = vendor/com/github/atom/language-shellscript
 	url = https://github.com/atom/language-shellscript.git
+[submodule "vendor/com/github/nuex/t"]
+	path = vendor/com/github/nuex/t
+	url = https://github.com/nuex/t.git
