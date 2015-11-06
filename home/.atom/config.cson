@@ -89,5 +89,6 @@
     compactTreeView: true
     rippleAccentColor: true
     slimScrollbar: true
+    tabSize: "Small"
   jumpy:
     highContrast: true
