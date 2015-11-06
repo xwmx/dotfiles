@@ -54,7 +54,7 @@
 #
 # NOTE: the default  mapping is to ctrl-alt-o
 ###############################################################################
-'atom-text-editor.vim-mode.normal-mode':
+'atom-workspace':
   ', t t b': 'symbols-tree-view:toggle'
 
 ###############################################################################
@@ -62,7 +62,7 @@
 #
 # https://github.com/atom-minimap/minimap
 ###############################################################################
-'.atom-workspace':
+'atom-text-editor.vim-mode:not(.insert-mode)':
   # vim-like mapping to `<leader>m`, with comma as <leader>.
   ', m': 'minimap:toggle'
   # This mapping is the suggested mapping in the minimap package's
