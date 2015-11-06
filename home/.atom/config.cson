@@ -39,6 +39,7 @@
     lintOnFly: false
     showErrorTabLine: true
     statusIconScope: "Line"
+    showErrorInline: false
   "go-plus":
     goPath: "~/.go"
   "tree-view": {}
@@ -92,3 +93,4 @@
     tabSize: "Small"
   jumpy:
     highContrast: true
+  "vim-mode": {}
