@@ -54,7 +54,7 @@
 #
 # NOTE: the default  mapping is to ctrl-alt-o
 ###############################################################################
-'atom-workspace':
+'atom-workspace .vim-mode:not(.insert-mode)':
   ', t t b': 'symbols-tree-view:toggle'
 
 ###############################################################################
@@ -110,7 +110,7 @@
 
 # Map to ', n', which reflects the mapping for nerdtree toggling in the current
 # vim configuration.
-'.platform-darwin, .platform-linux':
+'.platform-darwin .vim-mode:not(.insert-mode), .platform-linux .vim-mode:not(.insert-mode)':
   ', n': 'tree-view:toggle'
 
 ###############################################################################
