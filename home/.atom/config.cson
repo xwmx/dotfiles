@@ -26,6 +26,8 @@
       "nuclide-diff-view"
       "nuclide-code-format"
       "nuclide-click-to-symbol"
+      "vim-mode-visual-block"
+      "vim-mode"
     ]
     themes: [
       "atom-material-ui"

@@ -38,6 +38,18 @@ apm() {
   fi
 }
 
+# _apm_package_is_installed()
+#
+# Usage:
+#   _apm_package_is_installed <package-name>
+#
+# Returns:
+#   0  If a package with the given name is installed.
+#   1  If not.
+_apm_package_is_installed() {
+  [[ "$(apm show "${1:-}" &>/dev/null)" ]]
+}
+
 ###############################################################################
 # Upgrade
 ###############################################################################
@@ -632,6 +644,14 @@ apm install unity-dark-ui
 #
 # https://github.com/atom/vim-mode
 apm install vim-mode
+
+# vim-mode-plus
+#
+# vim-mode improved.
+#
+# https://atom.io/packages/vim-mode-plus
+# https://github.com/t9md/atom-vim-mode-plus
+apm install vim-mode-plus
 
 # vim-mode-visual-block
 #
