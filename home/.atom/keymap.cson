@@ -54,7 +54,7 @@
 #
 # NOTE: the default  mapping is to ctrl-alt-o
 ###############################################################################
-'atom-workspace .vim-mode-plus:not(.insert-mode)':
+'atom-workspace .vim-mode:not(.insert-mode), atom-workspace .vim-mode-plus:not(.insert-mode)':
   ', t t b': 'symbols-tree-view:toggle'
 
 ###############################################################################
@@ -62,7 +62,7 @@
 #
 # https://github.com/atom-minimap/minimap
 ###############################################################################
-'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+'atom-text-editor.vim-mode:not(.insert-mode), atom-text-editor.vim-mode-plus:not(.insert-mode)':
   # vim-like mapping to `<leader>m`, with comma as <leader>.
   ', m': 'minimap:toggle'
   # This mapping is the suggested mapping in the minimap package's
@@ -89,6 +89,39 @@
   'up':   'vim-mode-plus:blockwise-move-up'
 
 ###############################################################################
+# vim-mode-visual-block keymappings
+#
+# As of vim-mode-visual-block@0.2.4 there are no default keymappings and
+# therefore must be created manually.
+#
+# https://atom.io/packages/vim-mode-visual-block
+# https://github.com/t9md/atom-vim-mode-visual-block
+###############################################################################
+'atom-text-editor.vim-mode.visual-mode':
+  'j':      'vim-mode-visual-block:j'
+  'down':   'vim-mode-visual-block:j'
+  'k':      'vim-mode-visual-block:k'
+  'up':     'vim-mode-visual-block:k'
+  # Disable h and l. Setting these causes these keys to do nothing.
+  # 'h':      'vim-mode-visual-block:h'
+  # 'left':   'vim-mode-visual-block:h'
+  # 'l':      'vim-mode-visual-block:l'
+  # 'right':  'vim-mode-visual-block:l'
+  'I':      'vim-mode-visual-block:I'
+  'A':      'vim-mode-visual-block:A'
+  'D':      'vim-mode-visual-block:D'
+  'C':      'vim-mode-visual-block:C'
+  'o':      'vim-mode-visual-block:o'
+  'escape': 'vim-mode-visual-block:escape'
+  'ctrl-[': 'vim-mode-visual-block:escape'
+  'ctrl-c': 'vim-mode-visual-block:escape'
+  'ctrl-v': 'vim-mode:activate-blockwise-visual-mode'
+  # For unknown reasons, the 'delete' key doesn't delete the selection in
+  # visual-mode. Assigning 'backspace' seems to provide the expected
+  # behavior.
+  'backspace': 'vim-mode:delete-left'
+
+###############################################################################
 # tree-view mappings.
 #
 # https://github.com/atom/tree-view/blob/master/keymaps/tree-view.cson
@@ -96,7 +129,7 @@
 
 # Map to ', n', which reflects the mapping for nerdtree toggling in the current
 # vim configuration.
-'.vim-mode-plus:not(.insert-mode)':
+'.vim-mode:not(.insert-mode), .vim-mode-plus:not(.insert-mode)':
   ', n': 'tree-view:toggle'
 
 ###############################################################################
