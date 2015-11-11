@@ -341,6 +341,17 @@ npm install -g shipit-cli
 # https://github.com/slap-editor/slap
 npm install -g slap
 
+# surge
+#
+# Static web publishing for Front-End Developers
+#
+# Zero-bullshit, single–command, bring your own source control web publishing
+# CDN. Yes, it's free.
+#
+# http://surge.sh/
+# http://surge.sh/help/getting-started-with-surge
+npm install -g surge
+
 # TypeScript
 #
 # TypeScript is a superset of JavaScript that adds optional types, classes,
