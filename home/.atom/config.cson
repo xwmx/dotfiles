@@ -27,6 +27,7 @@
       "nuclide-code-format"
       "nuclide-click-to-symbol"
       "vim-mode-plus"
+      "box-edit"
     ]
     themes: [
       "atom-material-ui"

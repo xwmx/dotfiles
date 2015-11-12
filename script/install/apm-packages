@@ -147,6 +147,15 @@ apm install atom-typescript
 # https://github.com/atom-community/autocomplete-plus
 apm install autocomplete-plus
 
+# box-edit
+#
+# An Atom package to edit rectangular areas; supports short lines.
+#
+# https://atom.io/packages/box-edit
+# https://github.com/mark-hahn/box-edit
+# https://discuss.atom.io/t/announce-the-box-edit-package/22621
+apm install box-edit
+
 # color-picker
 #
 # Right click or press CMD-SHIFT-C/CTRL-ALT-C to open it.
