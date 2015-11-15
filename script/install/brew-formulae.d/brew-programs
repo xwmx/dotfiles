@@ -1274,6 +1274,13 @@ brew install osquery
 # https://github.com/vasi/osxutils
 brew install osxutils
 
+# otto
+#
+# Development and deployment system designed as the successor to Vagrant.
+#
+# https://ottoproject.io
+brew install otto
+
 # p7zip
 #
 # A file archiver with a high compression ratio. p7zip is a port of 7za.exe for
