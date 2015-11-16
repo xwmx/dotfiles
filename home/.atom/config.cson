@@ -93,6 +93,14 @@
     rippleAccentColor: true
     slimScrollbar: true
     tabSize: "Small"
+    ui:
+      accentColor: "Pink"
+      slimScrollbar: true
+    tabs:
+      rippleAccentColor: true
+      tabSize: "Small"
+    treeView:
+      compactTreeView: true
   jumpy:
     highContrast: true
   "vim-mode": {}
