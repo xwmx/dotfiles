@@ -1135,6 +1135,13 @@ fi
 # http://dev.yorhel.nl/ncdu
 brew install ncdu
 
+# ne
+#
+# The nice editor.
+#
+# http://ne.di.unimi.it
+brew install ne
+
 # neovim
 #
 # http://neovim.org/
