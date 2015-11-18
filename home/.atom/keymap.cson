@@ -75,6 +75,8 @@
 # As of vim-mode-visual-block@0.2.4 there are no default keymappings and
 # therefore must be created manually.
 #
+# https://atom.io/packages/vim-mode-plus
+# https://github.com/t9md/atom-vim-mode-plus
 # https://github.com/t9md/atom-vim-mode-plus/blob/master/keymaps/vim-mode-plus.cson
 ###############################################################################
 'atom-text-editor.vim-mode-plus.visual-mode':
