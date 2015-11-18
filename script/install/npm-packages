@@ -254,6 +254,20 @@ npm install -g karma-cli
 # https://github.com/rvagg/learnyounode
 npm install -g learnyounode
 
+# LiveScript
+#
+# LiveScript is a language which compiles to JavaScript. It has a
+# straightforward mapping to JavaScript and allows you to write expressive
+# code devoid of repetitive boilerplate. While LiveScript adds many features
+# to assist in functional style programming, it also has many improvements for
+# object oriented and imperative programming.
+#
+# LiveScript is a fork of Coco and an indirect descendant of CoffeeScript,
+# with which it has much compatibility.
+#
+# http://livescript.net/
+npm install -g livescript
+
 # lodash-cli
 #
 # The lodash command-line interface for creating custom builds & precompiling
