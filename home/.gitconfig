@@ -88,7 +88,7 @@
 # http://git-scm.com/docs/git-difftool
 # https://www.sourcetreeapp.com/
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = "opendiff \"$LOCAL\" \"$REMOTE\""
 	path =
 
 # diff "spaceman-diff"
@@ -184,7 +184,7 @@
 # http://git-scm.com/docs/git-mergetool
 # https://www.sourcetreeapp.com/
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = "/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\""
 	trustExitCode = true
 
 # push
