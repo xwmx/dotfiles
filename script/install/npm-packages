@@ -14,7 +14,7 @@
 #
 # https://babeljs.io/
 # https://github.com/babel/babel
-npm install -g babel
+npm install --global babel
 
 # Broccoli
 #
@@ -22,7 +22,7 @@ npm install -g babel
 # browser.
 #
 # https://github.com/broccolijs/broccoli
-npm install -g broccoli-cli
+npm install --global broccoli-cli
 
 # Brunch
 #
@@ -34,14 +34,14 @@ npm install -g broccoli-cli
 # http://brunch.io/
 # https://github.com/brunch/brunch
 # https://www.npmjs.com/package/brunch
-npm install -g brunch
+npm install --global brunch
 
 # Bower
 #
 # A package manager for the web.
 #
 # http://bower.io/
-npm install -g bower
+npm install --global bower
 
 # CoffeeLint
 #
@@ -50,14 +50,14 @@ npm install -g bower
 #
 # http://www.coffeelint.org/
 # https://github.com/clutchski/coffeelint
-npm install -g coffeelint
+npm install --global coffeelint
 
 # CoffeeScript
 #
 # A little language that compiles into JavaScript.
 #
 # http://coffeescript.org/
-npm install -g coffee-script
+npm install --global coffee-script
 
 # Component
 #
@@ -69,7 +69,7 @@ npm install -g coffee-script
 #
 # http://component.github.io/
 # https://github.com/componentjs/component
-npm install -g component
+npm install --global component
 
 # CSSLint
 #
@@ -78,7 +78,7 @@ npm install -g component
 # http://csslint.net
 # https://github.com/CSSLint/csslint
 # https://github.com/CSSLint/csslint/wiki/Command-line-interface
-npm install -g csslint
+npm install --global csslint
 
 # Cylon
 #
@@ -87,7 +87,7 @@ npm install -g csslint
 #
 # https://github.com/hybridgroup/cylon/
 # http://cylonjs.com/
-npm install -g cylon
+npm install --global cylon
 
 # dat
 #
@@ -98,14 +98,14 @@ npm install -g cylon
 #
 # http://dat-data.com/
 # https://github.com/maxogden/dat
-npm install -g dat
+npm install --global dat
 
 # datop
 #
 # top for dat
 #
 # https://github.com/maxogden/datop
-npm install -g datop
+npm install --global datop
 
 # Docco
 #
@@ -113,7 +113,7 @@ npm install -g datop
 # CoffeeScript.
 #
 # http://jashkenas.github.io/docco/
-npm install -g docco
+npm install --global docco
 
 # Electron (formerly Atom Shell)
 #
@@ -123,14 +123,14 @@ npm install -g docco
 #
 # https://github.com/atom/electron
 # https://github.com/atom/electron/tree/master/docs
-npm install -g electron-prebuilt
+npm install --global electron-prebuilt
 
 # Ember CLI
 #
 # The command line interface for ambitious web applications.
 #
 # http://www.ember-cli.com/
-npm install -g ember-cli
+npm install --global ember-cli
 
 # ESLint
 #
@@ -139,7 +139,7 @@ npm install -g ember-cli
 #
 # http://eslint.org/
 # https://github.com/eslint/eslint
-npm install -g eslint
+npm install --global eslint
 
 # Fly
 #
@@ -147,7 +147,7 @@ npm install -g eslint
 # aims to be simple and elegant to write and extend.
 #
 # https://github.com/flyjs/fly
-npm install -g fly
+npm install --global fly
 
 # GitBook
 #
@@ -159,14 +159,14 @@ npm install -g fly
 #
 # https://www.gitbook.com/
 # https://github.com/GitbookIO/gitbook
-npm install -g gitbook-cli
+npm install --global gitbook-cli
 
 # gg
 #
 # Shortcuts for git commands
 #
 # https://github.com/qw3rtman/gg
-npm install -g gitgoodies
+npm install --global gitgoodies
 
 # GitTorrent
 #
@@ -178,21 +178,21 @@ npm install -g gitgoodies
 # https://github.com/cjb/gittorrent
 # http://blog.printf.net/articles/2015/05/29/announcing-gittorrent-a-decentralized-github/
 # https://news.ycombinator.com/item?id=9625840
-npm install -g gittorrent
+npm install --global gittorrent
 
 # Grunt
 #
 # The JavaScript task runner.
 #
 # http://gruntjs.com/
-npm install -g grunt-cli
+npm install --global grunt-cli
 
 # gulp
 #
 # The streaming build system.
 #
 # http://gulpjs.com/
-npm install -g gulp
+npm install --global gulp
 
 # harp
 #
@@ -202,7 +202,7 @@ npm install -g gulp
 # HTML, CSS & JavaScript—no configuration necessary.
 #
 # http://harpjs.com/
-npm install -g harp
+npm install --global harp
 
 # jasmine
 #
@@ -212,7 +212,7 @@ npm install -g harp
 #
 # http://jasmine.github.io
 # https://github.com/jasmine/jasmine
-npm install -g jasmine
+npm install --global jasmine
 
 # JSHint, A Static Code Analysis Tool for JavaScript
 #
@@ -221,7 +221,7 @@ npm install -g jasmine
 #
 # http://jshint.com/
 # https://github.com/jshint/jshint
-npm install -g jshint
+npm install --global jshint
 
 # jspm CLI
 #
@@ -230,7 +230,7 @@ npm install -g jshint
 #
 # http://jspm.io/
 # https://github.com/jspm/jspm-cli
-npm install -g jspm
+npm install --global jspm
 
 # Karma CLI
 #
@@ -242,7 +242,7 @@ npm install -g jspm
 # http://karma-runner.github.io/
 # https://github.com/karma-runner/karma/
 # https://github.com/karma-runner/karma-cli
-npm install -g karma-cli
+npm install --global karma-cli
 
 # Learn You The Node.js
 #
@@ -252,7 +252,7 @@ npm install -g karma-cli
 # https://github.com/rvagg/workshopper
 #
 # https://github.com/rvagg/learnyounode
-npm install -g learnyounode
+npm install --global learnyounode
 
 # LiveScript
 #
@@ -266,7 +266,7 @@ npm install -g learnyounode
 # with which it has much compatibility.
 #
 # http://livescript.net/
-npm install -g livescript
+npm install --global livescript
 
 # lodash-cli
 #
@@ -284,7 +284,7 @@ npm install -g livescript
 # https://github.com/lodash/lodash-cli
 # https://lodash.com/
 # https://github.com/lodash/lodash/
-npm install -g lodash-cli
+npm install --global lodash-cli
 
 # Mocha
 #
@@ -295,7 +295,7 @@ npm install -g lodash-cli
 #
 # http://mochajs.org/
 # https://github.com/mochajs/mocha
-npm install -g mocha
+npm install --global mocha
 
 # nshell
 #
@@ -304,7 +304,7 @@ npm install -g mocha
 #
 # https://www.npmjs.com/package/nshell
 # https://github.com/tj/nshell
-npm install -g nshell
+npm install --global nshell
 
 # node-osa
 #
@@ -318,7 +318,7 @@ npm install -g nshell
 #
 # Apple "JavaScript for Automation" Documentation:
 # http://goo.gl/cigQfz
-npm install -g osa
+npm install --global osa
 
 # Overcast
 #
@@ -327,7 +327,7 @@ npm install -g osa
 #
 # https://github.com/andrewchilds/overcast
 # http://andrewchilds.github.io/overcast/
-npm install -g overcast
+npm install --global overcast
 
 # react-tools
 #
@@ -336,7 +336,7 @@ npm install -g overcast
 # https://www.npmjs.com/package/react-tools
 # https://github.com/facebook/react
 # http://facebook.github.io/react/
-npm install -g react-tools
+npm install --global react-tools
 
 # ShellJS - Unix shell commands for Node.js
 #
@@ -348,14 +348,14 @@ npm install -g react-tools
 #
 # http://documentup.com/arturadib/shelljs
 # https://github.com/arturadib/shelljs
-npm install -g shelljs
+npm install --global shelljs
 
 # Shipit
 #
 # Universal automation and deployment tool written in JavaScript.
 #
 # https://github.com/shipitjs/shipit
-npm install -g shipit-cli
+npm install --global shipit-cli
 
 # slap
 #
@@ -363,7 +363,7 @@ npm install -g shipit-cli
 # editing from the terminal easier
 #
 # https://github.com/slap-editor/slap
-npm install -g slap
+npm install --global slap
 
 # surge
 #
@@ -374,7 +374,7 @@ npm install -g slap
 #
 # http://surge.sh/
 # http://surge.sh/help/getting-started-with-surge
-npm install -g surge
+npm install --global surge
 
 # TypeScript
 #
@@ -382,7 +382,7 @@ npm install -g surge
 # and modules and compiles to JavaScript.
 #
 # http://www.typescriptlang.org/
-npm install -g typescript
+npm install --global typescript
 
 # volo
 #
@@ -393,7 +393,7 @@ npm install -g typescript
 #
 # http://volojs.org/
 # https://github.com/volojs/volo
-npm install -g volo
+npm install --global volo
 
 # vtop
 #
@@ -401,7 +401,7 @@ npm install -g volo
 #
 # https://parall.ax/vtop
 # https://github.com/MrRio/vtop
-npm install -g vtop
+npm install --global vtop
 
 # Yeoman
 #
@@ -409,4 +409,4 @@ npm install -g vtop
 # help developers quickly build beautiful, compelling web apps.
 #
 # http://yeoman.io/
-npm install -g yo
+npm install --global yo
