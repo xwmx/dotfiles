@@ -297,6 +297,19 @@ apm install language-rust
 # https://github.com/jroesch/language-scala
 apm install language-scala
 
+# language-shellscript
+#
+# ShellScript package for Atom.
+#
+# https://atom.io/packages/language-shellscript
+# https://github.com/atom/language-shellscript
+#
+# NOTE: This is a core package and should not be installed separately. However,
+# as of this time the bundled package is out of date and the newline-style
+# `if..then` support is in version 0.20.0.
+# TODO: Remove when the bundled version is at or above 0.20.0.
+apm install landuage-shellscript
+
 # language-swift
 #
 # Swift language support for the Atom editor
