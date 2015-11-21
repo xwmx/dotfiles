@@ -171,11 +171,6 @@ tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
-# Create a new directory and enter it
-mkd() {
-  mkdir -p "$@" && cd "$_"
-}
-
 # Determine size of a file or total size of a directory
 fs() {
   if du -b /dev/null > /dev/null 2>&1
@@ -190,20 +185,6 @@ fs() {
   else
     du $arg .[^.]* ./*;
   fi
-}
-
-# cdf()
-#
-# Usage:
-#   cdf
-#
-# Description:
-#   Change working directory to the top-most Finder window location. `cdf` is
-#   short for 'cdfinder'
-cdf() {
-  local _script
-  _script='tell app "Finder" to POSIX path of (insertion location as alias)'
-  cd "$(osascript -e "$_script")"
 }
 
 # Git / GitHub ----------------------------------------------------------------
