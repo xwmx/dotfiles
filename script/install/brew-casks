@@ -791,7 +791,13 @@ brew cask install osxfuse
 # from a single source configuration.
 #
 # http://www.packer.io/
-brew cask install packer
+#
+# NOTE: uninstall cask in favor of homebrew formula.
+# TODO: remove this when this cask has been removed from all systems.
+if _homebrew_cask_is_installed "packer"
+then
+  brew cask uninstall packer
+fi
 
 # pd-extended - PureData
 #

@@ -1306,6 +1306,14 @@ brew install otto
 # http://p7zip.sourceforge.net/
 brew install p7zip
 
+# Packer
+#
+# Packer is a tool for creating identical machine images for multiple platforms
+# from a single source configuration.
+#
+# http://www.packer.io/
+brew install packer
+
 # PacVim
 #
 # PacVim is a game that teaches you vim commands. You must move pacman (the
