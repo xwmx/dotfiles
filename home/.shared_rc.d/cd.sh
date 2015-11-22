@@ -10,10 +10,16 @@
 #   cde <path>
 #
 # Description:
-#   Change to the given directory and run `exa`.
+#   Change to the given directory and run `exa`. If `exa` is not installed,
+#   then fall back to `ls`.
 cde() {
   cd "${1:-}" || return
-  exa -la --git
+  if hash "exa" 2>/dev/null
+  then # `exa` is installed
+    exa -la --git
+  else
+    ls -lah
+  fi
 }
 
 # cdf()
