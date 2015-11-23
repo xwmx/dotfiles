@@ -30,3 +30,27 @@ atom-text-editor {
 atom-text-editor::shadow .cursor {
   // border-color: red;
 }
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Blinking vim-mode cursor.
+// Source: https://github.com/atom/vim-mode/issues/201
+atom-text-editor.vim-mode.command-mode.is-focused,
+atom-text-editor.vim-mode.normal-mode.is-focused,
+atom-text-editor.vim-mode.operator-pending-mode.is-focused,
+atom-text-editor.vim-mode.visual-mode.is-focused
+{
+  &::shadow, // shadow-DOM enabled
+  &          // shadow-DOM disabled
+  {
+    /* cursor color */
+    .cursor {
+      background-color: rgb(255, 255, 255);
+      visibility: visible !important;
+      opacity: 0.4 !important;
+    }
+    .blink-off .cursor {
+      visibility: hidden !important;
+    }
+  }
+}
