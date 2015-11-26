@@ -565,6 +565,23 @@ apm install minimap
 # https://github.com/kevinsawicki/monokai
 apm install monokai
 
+# neutron-syntax
+#
+# Syntax theme for the Neutron UI theme.
+#
+# https://atom.io/packages/neutron-syntax
+# https://github.com/brentd/neutron-syntax
+apm install neutron-syntax
+
+# neutron-ui
+#
+# An (almost) flat theme for Atom in shades of gunmetal and medium-contrast
+# colors.
+#
+# https://atom.io/packages/neutron-ui
+# https://github.com/brentd/neutron-ui
+apm install neutron-ui
+
 # next-dark-ui
 #
 # Next Dark UI theme
