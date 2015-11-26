@@ -265,3 +265,6 @@
 [submodule "vendor/com/github/nuex/t"]
 	path = vendor/com/github/nuex/t
 	url = https://github.com/nuex/t.git
+[submodule "home/.janus/vim-monochrome"]
+	path = home/.janus/vim-monochrome
+	url = https://github.com/fxn/vim-monochrome.git
