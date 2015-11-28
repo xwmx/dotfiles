@@ -1597,6 +1597,8 @@ brew install scala
 # software for mathematics, science, and engineering.
 #
 # http://www.scipy.org
+#
+# NOTE: not including python3 support because it takes 10 minutes to build.
 brew install homebrew/python/scipy
 
 # scons
