@@ -9,3 +9,20 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
+
+# /////////////////////////////////////////////////////////////////////////// #
+
+###############################################################################
+# Example "composed" command.
+#
+# For use with this mapping in keymap.cson:
+# 'atom-text-editor':
+#   'alt-ctrl-z': 'custom:cut-line'
+#
+# Via:
+# https://atom.io/docs/latest/behind-atom-keymaps-in-depth#composed-commands
+###############################################################################
+# atom.commands.add 'atom-text-editor', 'custom:cut-line', ->
+#   editor = atom.workspace.getActiveTextEditor()
+#   editor.selectLinesContainingCursors()
+#   editor.cutSelectedText()
