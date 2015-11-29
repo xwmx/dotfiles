@@ -132,6 +132,15 @@ apm install atom-simple-dark-ui
 # https://github.com/dmackerman/atom-soda-dark-ui
 apm install atom-soda-dark-ui
 
+# atom-ternjs
+#
+# JavaScript code intelligence for atom with tern.js. Uses suggestion provider
+# by autocomplete-plus.
+#
+# https://atom.io/packages/atom-ternjs
+# https://github.com/tststs/atom-ternjs
+apm install atom-ternjs
+
 # atom-typescript
 #
 # A TypeScript package for Atom.
