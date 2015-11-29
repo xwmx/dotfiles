@@ -48,6 +48,7 @@
     useAlternateScoring: true
   "file-types":
     "^Baskfile$": "source.shell"
+    "^.ackrc": "text.generic-config"
     "^.amethyst": "source.js"
     "^.bindlerc$": "source.shell"
     "^.curlrc": "text.generic-config"
