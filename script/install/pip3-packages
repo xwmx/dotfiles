@@ -189,6 +189,15 @@ pip3_install -I pythonpy
 # https://github.com/DTVD/rainbowstream
 pip3_install rainbowstream
 
+# RTV
+#
+# RTV is an application that allows you to view and interact with reddit from
+# your terminal. It is compatible with most terminal emulators on Linux and
+# OSX.
+#
+# https://github.com/michael-lazar/rtv
+pip3_install rtv
+
 # Stellar
 #
 # Fast database snapshot and restore tool for development. Stellar allows you
