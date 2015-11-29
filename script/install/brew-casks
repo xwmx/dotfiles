@@ -311,6 +311,22 @@ brew cask install cyberduck
 # https://cycling74.com/
 brew cask install cycling74-max
 
+# darktable
+#
+# darktable is a free and open-source photography workflow application and raw
+# developer. Rather than being a raster graphics editor such as Adobe
+# Photoshop or GIMP, it comprises a subset of image editing operations
+# specifically aimed at non-destructive raw photo post-production and is
+# primarily focused on improving a photographer's workflow by facilitating the
+# handling of large numbers of images. It is freely available in versions
+# tailored for most major Linux distributions, OS X and Solaris and is
+# released under the GNU General Public License 3 or later.
+#
+# http://www.darktable.org/
+# https://en.wikipedia.org/wiki/Darktable
+# https://github.com/darktable-org/darktable
+brew cask install darktable
+
 # Deluge
 #
 # Deluge is a lightweight, Free Software, cross-platform BitTorrent client.
