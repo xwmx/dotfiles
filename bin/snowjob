@@ -19,15 +19,15 @@ declare -A lastflakes
 
 clear
 
-function move_flake() {
+move_flake() {
   i="$1"
 
-  if (  [ "${snowflakes[$i]}" = "" ] || \
-        [ "${snowflakes[$i]}" = "$LINES" ]
-  ); then
+  if [ "${snowflakes[$i]}" = "" ] || [ "${snowflakes[$i]}" = "$LINES" ]
+  then
     snowflakes[$i]=0
   else
-    if [ "${lastflakes[$i]}" != "" ]; then
+    if [ "${lastflakes[$i]}" != "" ]
+    then
       printf "\033[%s;%sH \033[1;1H " "${lastflakes[$i]}" "$i"
     fi
   fi
