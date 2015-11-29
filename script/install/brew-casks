@@ -1272,4 +1272,14 @@ brew cask cleanup
 # Uses the alias-app command line tool: https://github.com/alphabetum/alias-app
 ###############################################################################
 
-brew cask aliasapps
+# NOTE: disable aliasapps, which fails in some cases.
+# TODO: investigate the issues with this.
+# brew cask aliasapps
+_trash_alias_directory() {
+  local _directory="${HOME}/Applications/HomebrewCaskAliases"
+  if [[ -d "${_directory}" ]]
+  then
+    trash "${_directory}"
+  fi
+}
+_trash_alias_directory
