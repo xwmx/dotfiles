@@ -592,8 +592,11 @@ brew cask install istat-menus
 # NOTE: use local tap pinned to known good version.
 if [[ -z "$(pgrep iTerm2)" ]] # if iTerm2 is not running.
 then
-  brew cask uninstall iterm2-nightly --force
-  brew cask install alphabetum/taps/iterm2-nightly-pinned
+  if _homebrew_cask_is_installed "iterm2-nightly"
+  then
+    brew cask uninstall iterm2-nightly --force
+    brew cask install alphabetum/taps/iterm2-nightly-pinned
+  fi
 fi
 
 # Itsycal
