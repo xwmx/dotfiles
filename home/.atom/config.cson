@@ -51,6 +51,7 @@
     "^.amethyst": "source.js"
     "^.bindlerc$": "source.shell"
     "^.curlrc": "text.generic-config"
+    "^.gemrc": "text.generic-config"
     "^.gitconfig.local": "source.git-config"
     "^.gitignore": "source.git-config"
     "^.git.scmbrc": "source.shell"
