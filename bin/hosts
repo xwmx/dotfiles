@@ -10,10 +10,13 @@
 #   $_ME block <hostname>
 
 # Description:
-#   Block a given hostname by adding a new entry assigning it to 127.0.0.1.
+#   Block a given hostname by adding new entries assigning it to 127.0.0.1 for
+#   IPv4 and fe80::1%lo0 for IPv6.
 # EOM
 block() {
   $_ME add 127.0.0.1 "${1}"
+  # block IPv6
+  $_ME add "fe80::1%lo0" "${1}"
 }
 
 # desc "unblock" <<EOM
@@ -25,6 +28,8 @@ block() {
 # EOM
 unblock() {
   $_ME remove 127.0.0.1 "${1}" --force
+  # unblock IPv6
+  $_ME remove "fe80::1%lo0" "${1}" --force
 }
 
 # Source the original hosts program.
