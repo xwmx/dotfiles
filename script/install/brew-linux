@@ -36,6 +36,13 @@ brew upgrade --all
 # http://beyondgrep.com/
 brew install ack
 
+# fasd
+#
+# CLI tool for quick access to files and directories
+#
+# https://github.com/clvv/fasd
+brew install fasd
+
 # The Silver Searcher
 #
 # A code-searching tool similar to ack, but faster.
