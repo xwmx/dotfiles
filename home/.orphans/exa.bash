@@ -16,34 +16,39 @@ Description:
   it yet and, therefore, it needs to be built with cargo.
 EOM
 exa:up() {
+  local version="0.4.0"
+  local url
+  local binary_name
+  local tmp_location=/tmp/orphans/exa
+
+  if [[ "$OSTYPE" =~ ^darwin ]]
+  then
+    binary_name="exa-osx-x86_64"
+  elif [[ "$OSTYPE" =~ ^linux ]]
+  then
+    binary_name="exa-linux-x86_64"
+  else
+    printf "Unsupported platform.\n"
+    exit 1
+  fi
+
+  url="https://github.com/ogham/exa/releases/download/v${version}/${binary_name}.zip"
+
   # Don't install if exa is already installed.
-  if [[ -f "$HOME/bin/exa" ]]
+  if [[ -e "$HOME/bin/exa" ]] || hash "exa" 2>/dev/null
   then
     printf "exa already installed.\n" && exit 0
-  fi
-  # Make sure cmake is installed
-  if [[ ! -f "$(which cmake)" ]]
-  then
-    printf "Install cmake dependency.\n" && exit 0
-  fi
-  # Make sure libgit2 is installed.
-  if ! _is_installed_with_homebrew "libgit2"
-  then
-    printf "Install libgit2 dependency.\n" && exit 0
   fi
 
   printf ">> Installing exa\n"
 
-  local tmp_repo=/tmp/orphans/exa
-  local remote_url=https://github.com/ogham/exa.git
+  mkdir -p "${tmp_location}"
 
-  export PREFIX="$HOME"
-  git clone "$remote_url" "$tmp_repo" &&
-    cd "$tmp_repo" &&
-    make install &&
-    cd "/tmp/orphans" &&
-    _remove "$tmp_repo"
-  unset PREFIX
+  curl -Ls "${url}" -o "${tmp_location}/${binary_name}.zip"
+
+  unzip "${tmp_location}/${binary_name}.zip"
+  mv "${tmp_location}/${binary_name}.zip" "${HOME}/bin/exa"
+  _remove "${tmp_location}"
 }
 
 desc "exa:down" <<EOM
