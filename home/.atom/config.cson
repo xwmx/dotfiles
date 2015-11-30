@@ -13,6 +13,7 @@
     showIndentGuide: true
     invisibles: {}
     scrollPastEnd: true
+    backUpBeforeSaving: true
   core:
     disabledPackages: [
       "metrics"
