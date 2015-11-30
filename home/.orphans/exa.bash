@@ -43,11 +43,13 @@ exa:up() {
   printf ">> Installing exa\n"
 
   mkdir -p "${tmp_location}"
+  cd "${tmp_location}" || exit
 
+  debug "curl -Ls \"${url}\" -o \"${tmp_location}/${binary_name}.zip\""
   curl -Ls "${url}" -o "${tmp_location}/${binary_name}.zip"
 
   unzip "${tmp_location}/${binary_name}.zip"
-  mv "${tmp_location}/${binary_name}.zip" "${HOME}/bin/exa"
+  mv "${tmp_location}/${binary_name}" "${HOME}/bin/exa"
   _remove "${tmp_location}"
 }
 
