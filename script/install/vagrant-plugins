@@ -26,16 +26,7 @@ vagrant plugin install vagrant-aws
 # droplets (instances).
 #
 # https://github.com/smdahlen/vagrant-digitalocean
-#
-# NOTE: the normal command fails with the following error:
-#   /opt/vagrant/embedded/include/ruby-2.0.0/ruby/ruby.h:24:10: fatal error:
-#   'ruby/config.h' file not found
-# A temporary fix for this error is to install with `sudo` and then fix the
-# permissions for ~/.vagrant.d. More information:
-# https://github.com/celluloid/nio4r/issues/35#issuecomment-27486578
-# TODO: Remove this workaround.
-sudo vagrant plugin install vagrant-digitalocean && \
-  sudo chown -R "$USER":staff ~/.vagrant.d/*
+vagrant plugin install vagrant-digitalocean
 
 # vagrant-hostmanager
 #
