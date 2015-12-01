@@ -54,3 +54,31 @@ atom-text-editor.vim-mode.visual-mode.is-focused
     }
   }
 }
+
+// Compact Tree View
+.compact-tree-view {
+  .header.list-item::before {
+    margin-right: 1px !important; // default: 5px
+  }
+  .list-tree.has-collapsable-children li.list-item {
+    margin-left: 13px !important; // default: 17px
+  }
+  .list-nested-item:not(.project-root),
+  .list-nested-item:not(.project-root) li {
+    padding-left: 5px !important; // default: 17px
+    .list-item {
+      @list_item_height: 21px;
+      line-height: @list_item_height !important; // default: 24px
+      height: @list_item_height !important; // default: 24px
+    }
+    .icon::before {
+      font-size: 15px !important;
+    }
+    .icon::before {
+      margin-right: 5px !important; // default: 1rem or 1.25rem
+    }
+    .name {
+      font-size: 10px; // default: 11px
+    }
+  }
+}
