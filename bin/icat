@@ -143,8 +143,8 @@ _icat() {
 #   Entry point for the program, handling basic option parsing and dispatching.
 _main() {
   case "${1:-}" in
-    -h|--help)  _print_help     ;;
-    *)          _icat "$@"        ;;
+    -h|--help)  _print_help ;;
+    *)          _icat "$@"  ;;
   esac
 }
 
