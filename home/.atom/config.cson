@@ -28,6 +28,10 @@
       "nuclide-click-to-symbol"
       "vim-mode-plus"
       "box-edit"
+      "nuclide-blame-provider-hg"
+      "hyperclick"
+      "nuclide-arcanist"
+      "nuclide-blame"
     ]
     themes: [
       "atom-material-ui"
