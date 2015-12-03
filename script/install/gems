@@ -251,6 +251,14 @@ gem install rush2
 # https://github.com/causes/scss-lint
 gem install scss-lint
 
+# super-pry
+#
+# Meta gem to bundle Pry with several useful plugins.
+#
+# https://github.com/stevenh512/super-pry
+# https://rubygems.org/gems/super-pry
+gem install super-pry
+
 # Timetrap
 #
 # Timetrap is a simple command line time tracker written in ruby. It provides
