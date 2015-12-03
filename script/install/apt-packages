@@ -36,3 +36,4 @@ fi
 # Source primary install scripts for Homebrew and Homewbrew Cask.
 . "$DIR/apt-packages.d/apt-ctf-tools"
 . "$DIR/apt-packages.d/apt-base-packages"
+. "$DIR/apt-packages.d/apt-ruby-build-packages"

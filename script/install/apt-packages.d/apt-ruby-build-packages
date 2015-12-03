@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+###############################################################################
+# apt-ruby-build-packages
+#
+# via: https://github.com/rbenv/ruby-build/wiki
+###############################################################################
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+if ! hash "apt-get" 2>/dev/null
+then
+  printf "apt-packages requires APT.\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Packages
+###############################################################################
+
+sudo apt-get install \
+  autoconf \
+  bison \
+  build-essential \
+  libssl-dev \
+  libyaml-dev \
+  libreadline6-dev \
+  zlib1g-dev \
+  libncurses5-dev \
+  libffi-dev \
+  libgdbm3 \
+  libgdbm-dev
