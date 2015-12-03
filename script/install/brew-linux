@@ -19,6 +19,21 @@ then
 fi
 
 ###############################################################################
+# Helpers
+###############################################################################
+
+# _homebrew_formula_is_installed()
+#
+# Test whether a given homebrew formula is installed on the system.
+#
+# Usage:
+#   _homebrew_formula_is_installed "formula_name"
+_homebrew_formula_is_installed() {
+  local _formula_name="$1"
+  [[ -n "$(brew list "$_formula_name" 2>/dev/null)" ]]
+}
+
+###############################################################################
 # Homebrew - Update
 ###############################################################################
 
@@ -60,7 +75,12 @@ brew install the_silver_searcher
 # chunk level and act as a pager for output from various Git commands.
 #
 # http://jonas.nitro.dk/tig/
-brew install tig
+#
+# NOTE: prefer APT installation of tig, since tig 2.1.1 exits with an error.
+if _homebrew_formula_is_installed "tig"
+then
+  brew uninstall tig
+fi
 
 # tree
 #
