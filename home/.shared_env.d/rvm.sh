@@ -9,8 +9,22 @@
 # https://rvm.io/
 ###############################################################################
 
-# Uncommend to enable rvm
-# if [[ -s "$HOME/.rvm/scripts/rvm" ]]
-# then
-#   source "$HOME/.rvm/scripts/rvm"
-# fi
+# _enable_rvm()
+#
+# Usage:
+#   _enable_rvm
+#
+# Description:
+#   Initialize RVM.
+_enable_rvm() {
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]]
+  then
+    source "$HOME/.rvm/scripts/rvm"
+  fi
+}
+
+# Only enable RVM on Ubuntu.
+if [[ "$(uname -a)" =~ Ubuntu ]]
+then
+  _enable_rvm
+fi
