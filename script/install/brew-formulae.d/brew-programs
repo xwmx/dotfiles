@@ -1711,6 +1711,13 @@ fi
 # https://github.com/jdberry/tag
 brew install tag
 
+# Task - Taskwarrior
+#
+# Feature-rich console based todo list manager.
+#
+# https://taskwarrior.org/
+brew install task
+
 # Tig - text-mode interface for Git
 #
 # Tig is an ncurses-based text-mode interface for git. It functions mainly as a
