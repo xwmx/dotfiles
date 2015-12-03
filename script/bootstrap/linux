@@ -95,6 +95,12 @@ source "${HOME}/.bashrc"
 ./bin/bindle install brew-linux ||
   _die printf "\`./bin/bindle install brew-linux\` failed.\n"
 
+if hash "apt-get" 2>/dev/null
+then
+  ./bin/bindle install apt-packages  ||
+    _die printf "\`./bin/bindle install apt-packages\` failed.\n"
+fi
+
 # Set shell to zsh if it's available.
 _ZSH_PATH="$(which zsh)"
 if [[ -n "$_ZSH_PATH" ]]
