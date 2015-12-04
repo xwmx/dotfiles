@@ -560,6 +560,14 @@ apm install linter-swiftc
 # https://github.com/AtomLinter/linter-tslint
 apm install linter-tslint
 
+# lorem-ipsum
+#
+# Generate lorem ipsum text in Atom.
+#
+# https://atom.io/packages/lorem-ipsum
+# https://github.com/nickclaw/atom-lorem-ipsum
+apm install lorem-ipsum
+
 # minimap
 #
 # A preview of the full source code
