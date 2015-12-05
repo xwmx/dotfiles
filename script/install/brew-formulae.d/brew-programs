@@ -1675,6 +1675,13 @@ brew install sphinx
 # http://www.gnu.org/software/stow/
 brew install stow
 
+# swiftlint
+#
+# Experimental tool to enforce Swift style and conventions.
+#
+# https://github.com/realm/SwiftLint
+brew install swiftlint
+
 # syncthing
 #
 # Open Source Continuous File Synchronization
