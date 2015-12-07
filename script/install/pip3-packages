@@ -207,6 +207,16 @@ pip3_install rtv
 # https://github.com/fastmonkeys/stellar
 pip3_install stellar
 
+# todoman
+#
+# Todoman is a simple, standards-based, cli todo (aka: task) manager. Todos
+# are stored into icalendar files, which means you can sync them via CalDAV
+# using, for example, vdirsyncer.
+#
+# https://pypi.python.org/pypi/todoman/
+# https://gitlab.com/hobarrera/todoman
+pip3_install todoman
+
 # x_x
 #
 # x_x is a command line reader that displays either Excel files or CSVs in
