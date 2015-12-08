@@ -1481,6 +1481,14 @@ fi
 # http://www.ivarch.com/programs/pv.shtml
 brew install pv
 
+# pwsafe
+#
+# Generate passwords and manage encrypted password databases.
+#
+# http://nsd.dyndns.org/pwsafe/
+# https://github.com/nsd20463/pwsafe
+brew install pwsafe
+
 # python
 #
 # Python 2
