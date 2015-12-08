@@ -4,5 +4,9 @@
 #
 # https://github.com/alphabetum/bindle
 
-# Set bindle directory to ~/.dotfiles
-export BINDLEPATH="$HOME/.dotfiles"
+# Set bindle directory to ~/.dotfiles only on OS X. On all other platforms,
+# use the default: ~/.bindle.
+if [[ "$OSTYPE" =~ ^darwin ]]
+then
+  export BINDLEPATH="$HOME/.dotfiles"
+fi
