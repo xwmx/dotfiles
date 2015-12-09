@@ -200,8 +200,8 @@ source_dir() {
 
 # Add $HOME/bin to $PATH
 #
-# $HOME/bin contains overrides for executables elsewhere in the $PATH, so
-# place it in the top position.
+# Prepend `$HOME/bin` to `$PATH` at beginning of initialization so its
+# executables are available.
 export PATH=$HOME/bin:$PATH
 
 # $DOTFILES
@@ -232,6 +232,15 @@ then
   # shellcheck source=~/.shard_env.local
   source "$HOME/.shared_env.local"
 fi
+
+# Re-add $HOME/bin to $PATH
+#
+# Other paths are prepended to `$PATH` during shared_env initialization,
+# placing `$HOME/bin` further down the chain. `$HOME/bin` is intended to be at
+# the beginning of `$PATH` so the executables it contains have the highest
+# precedence. Therefore, it must be re-prepended after the shared environment
+# initialization process has been completed.
+export PATH=$HOME/bin:$PATH
 
 # SHARED_ENV_LOADED
 #
