@@ -16,7 +16,7 @@ Usage:
   timezone help | -h | --help
 
 Description:
-  Display and set the timezone for the system. Requires \`timedatectl\`.
+  Display and set the timezone for the system. Supports Linux and OS X.
 HEREDOC
 }
 
@@ -27,50 +27,81 @@ HEREDOC
 #   timezone set (pt | et | utc | <timezone>)
 #   timezone help | -h | --help
 timezone() {
-  if ! hash "timedatectl" 2>/dev/null
-  then
-    printf "❌ \`timedatectl\` not found on this system.\n"
+  local _system_command
+  if hash "timedatectl" 2>/dev/null
+  then # Linux
+    _system_command="timedatectl"
+  elif hash "systemsetup" 2>/dev/null
+  then # OS X
+    _system_command="systemsetup"
+  else
+    printf "❌ Either \`timedatectl\` or \`systemsetup\` is required.\n"
     __print_timezone_usage
     return 1
-  else
-    local _subcommand="${1:-}"
-    case $_subcommand in
-      help|-h|--help)
-        __print_timezone_usage
-        ;;
-      set)
-        local _zone="${2:-}"
-        if [[ -z "$_zone" ]]
-        then
-          __print_timezone_usage
-          return 1
-        else
-          case "$_zone" in
-            pt|PT)
-              sudo timedatectl set-timezone America/Los_Angeles &&
-                timezone
-              ;;
-            et|ET)
-              sudo timedatectl set-timezone America/New_York &&
-                timezone
-              ;;
-            utc|UTC)
-              sudo timedatectl set-timezone UTC &&
-                timezone
-              ;;
-            *)
-              sudo timedatectl set-timezone "$_zone" &&
-                timezone
-              ;;
-            esac
-          fi
-        ;;
-      list)
-        timedatectl list-timezones | less
-        ;;
-      *)
-        timedatectl | grep Timezone | awk '{$1 = ""; print $0 }'
-        ;;
-    esac
   fi
+
+  local _subcommand="${1:-}"
+  case $_subcommand in
+    help|-h|--help)
+      __print_timezone_usage
+      ;;
+    set)
+      local _zone="${2:-}"
+      if [[ -z "$_zone" ]]
+      then
+        __print_timezone_usage
+        return 1
+      else
+        local _timezone_set_command
+
+        case "$_system_command" in
+          timedatectl)
+            _timezone_set_command="sudo timedatectl set-timezone"
+            ;;
+          systemsetup)
+            _timezone_set_command="sudo systemsetup -settimezone"
+            ;;
+        esac
+
+        case "$_zone" in
+          pt|PT)
+            eval "$_timezone_set_command" America/Los_Angeles &&
+              timezone
+            ;;
+          et|ET)
+            eval "$_timezone_set_command" America/New_York &&
+              timezone
+            ;;
+          utc|UTC)
+            eval "$_timezone_set_command" UTC &&
+              timezone
+            ;;
+          *)
+            eval "$_timezone_set_command" "$_zone" &&
+              timezone
+            ;;
+          esac
+        fi
+      ;;
+    list)
+       case "$_system_command" in
+         timedatectl)
+          timedatectl list-timezones | less
+          ;;
+        systemsetup)
+          sudo systemsetup -listtimezones | less
+          ;;
+        esac
+      ;;
+    *)
+      case "$_system_command" in
+        timedatectl)
+          timedatectl | grep Timezone | awk '{$1 = ""; print $0 }'
+          ;;
+        systemsetup)
+          sudo systemsetup -gettimezone | awk '{$1 = ""; $2 = ""; print $0 }'
+          ;;
+      esac
+      ;;
+  esac
 }
