@@ -94,6 +94,9 @@ else
 fi
 
 # Re-source .bashrc now that the configuration has been installed.
+#
+# https://github.com/koalaman/shellcheck/wiki/SC1090
+# shellcheck source=~/.bashrc
 source "${HOME}/.bashrc"
 
 ./bin/bindle install brew-linux ||
