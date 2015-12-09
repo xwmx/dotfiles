@@ -64,7 +64,7 @@ fi
 
 if [[ -d "${HOME}/.ssh" ]]
 then
-  cp "${HOME}/.ssh/"* "${HOME}/.dotfiles/home/.ssh/" ||
+  cp "${HOME}/.ssh/"* "${BINDLEPATH}/home/.ssh/" ||
     _die printf "Unable to copy .ssh contents.\n"
 fi
 
