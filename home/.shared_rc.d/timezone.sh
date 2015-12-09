@@ -80,18 +80,18 @@ timezone() {
             eval "$_timezone_set_command" "$_zone" &&
               timezone
             ;;
-          esac
-        fi
+        esac
+      fi
       ;;
     list)
-       case "$_system_command" in
-         timedatectl)
+      case "$_system_command" in
+        timedatectl)
           timedatectl list-timezones | less
           ;;
         systemsetup)
           sudo systemsetup -listtimezones | less
           ;;
-        esac
+      esac
       ;;
     *)
       case "$_system_command" in
