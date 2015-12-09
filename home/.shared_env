@@ -198,7 +198,15 @@ source_dir() {
 # Init
 ###############################################################################
 
-# Set DOTFILES directory
+# Add $HOME/bin to $PATH
+#
+# $HOME/bin contains overrides for executables elsewhere in the $PATH, so
+# place it in the top position.
+export PATH=$HOME/bin:$PATH
+
+# $DOTFILES
+#
+# Set $DOTFILES directory using the `bindle` tool if present.
 export DOTFILES
 if program_exists "bindle"
 then
@@ -207,23 +215,23 @@ else
   DOTFILES="$HOME/.dotfiles"
 fi
 
+# .shared_env.d
+#
 # Source all files in ".shared_env.d" if present.
 if [ -d "$HOME/.shared_env.d" ]
 then
   source_dir "$HOME/.shared_env.d"
 fi
 
+# .shared_env.local
+#
 # load shared_env.local if it exists
 if [ -f "$HOME/.shared_env.local" ]
 then
+  # https://github.com/koalaman/shellcheck/wiki/SC1090
+  # shellcheck source=~/.shard_env.local
   source "$HOME/.shared_env.local"
 fi
-
-# Add $HOME/bin to $PATH
-#
-# $HOME/bin contains overrides for executables elsewhere in the $PATH, so
-# place it in the top position after everything else has loaded..
-export PATH=$HOME/bin:$PATH
 
 # SHARED_ENV_LOADED
 #
