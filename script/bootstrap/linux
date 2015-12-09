@@ -82,9 +82,13 @@ git submodule update --init --recursive ||
 # Finalize Janus setup.
 if hash "rake" 2>/dev/null
 then
-  cd "${BINDLEPATH}/home/.vim/"
+  cd "${BINDLEPATH}/home/.vim/" ||
+    _die printf "\`cd \"\${BINDLEPATH}/home/.vim/\"\` failed.\n"
+
   rake || _die printf "Janus bootstrap failed."
-  cd "${BINDLEPATH}"
+
+  cd "${BINDLEPATH}" ||
+    _die printf "\`cd \"\${BINDLEPATH}\"\` failed.\n"
 else
   printf "rake not installed. Janus not completely initialized."
 fi
