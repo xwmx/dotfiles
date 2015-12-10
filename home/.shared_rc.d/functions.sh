@@ -163,12 +163,62 @@ ducks() {
   du -cks ./* | sort -rn | head -11
 }
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
+# tre()
+#
+# Usage:
+#   tre [-n] [<path>]
+#
+# Option:
+#   -n  Display line numbers.
+#
+# Description:
+#   `tre` is a shorthand for `tree` with hidden files and color enabled,
+#   ignoring administrative directories like `.git`, and listing directories
+#   first. The output gets piped into `less` for paging when the output is
+#   more than one page.
 tre() {
-  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
+  if [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
+  then
+    cat <<HEREDOC
+Usage:
+  tre [-n] [<path>]
+
+Option:
+  -n  Display line numbers.
+
+Description:
+  \`tre\` is a shorthand for \`tree\` with hidden files and color enabled,
+  ignoring administrative directories like \`.git\`, and listing directories
+  first. The output gets piped into \`less\` for paging when the output is
+  more than one page.
+HEREDOC
+    return 0
+  fi
+
+  local _less_options="-FRX"
+  local _tree_path="."
+
+  for arg in "${@}"
+  do
+    case $arg in
+      -n)
+        _less_options="${_less_options}N"
+        ;;
+      *)
+        if [[ "$_tree_path" == "." ]]
+        then
+          _tree_path="$arg"
+        fi
+        ;;
+    esac
+  done
+
+  tree \
+    -aC \
+    -I '.git|node_modules|bower_components' \
+    --dirsfirst \
+    "${_tree_path}" \
+    | less "${_less_options}"
 }
 
 # Determine size of a file or total size of a directory
