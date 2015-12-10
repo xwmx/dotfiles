@@ -163,52 +163,56 @@ ducks() {
   du -cks ./* | sort -rn | head -11
 }
 
-# tre()
-#
-# Usage:
-#   tre [-n] [<path>]
-#
-# Option:
-#   -n  Display line numbers.
-#
-# Description:
-#   `tre` is a shorthand for `tree` with hidden files and color enabled,
-#   ignoring administrative directories like `.git`, and listing directories
-#   first. The output gets piped into `less` for paging when the output is
-#   more than one page.
 tre() {
-  if [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
-  then
+  _print_tre_help() {
     cat <<HEREDOC
 Usage:
-  tre [-n] [<path>]
+  tre [-f | -h | -n | -t | -Q | --dirsfirst] [--sort <type>] [-r] [-L <level>]
+      [-I pattern] [-P pattern] [--ignore-case] [<tree arguments>] [<path>]
+  tre --help
 
 Option:
-  -n  Display line numbers.
+  -f             Print the full path prefix for each file.
+  -h             Print the size in a more human readable way.
+  -n             Display line numbers.
+  -t             Sort files by last modification time.
+  -Q             Quote filenames with double quotes.
+  --dirsfirst    List directories before files.
+  --sort <type>  Select sort: name,version,size,mtime,ctime.
+  -r             Reverse the order of the sort.
+  -L <level>     Max display depth of the directory tree.
+  -I <pattern>   Do not list files that match the given pattern.
+  -P <pattern>   List only those files that match the pattern given.
+  --ignore-case  Ignore case when pattern matching
+  --help         Show this help.
 
 Description:
   \`tre\` is a shorthand for \`tree\` with hidden files and color enabled,
   ignoring administrative directories like \`.git\`, and listing directories
   first. The output gets piped into \`less\` for paging when the output is
   more than one page.
+
+  Additional \`tree\` options can be used. For more information, see
+  \`tree --help\` and \`man tree\`.
 HEREDOC
-    return 0
-  fi
+  }
 
   local _less_options="-FRX"
-  local _tree_path="."
+  local -a _tree_arguments
+  _tree_arguments=()
 
   for arg in "${@}"
   do
     case $arg in
+      --help)
+        _print_tre_help
+        return 0
+        ;;
       -n)
         _less_options="${_less_options}N"
         ;;
       *)
-        if [[ "$_tree_path" == "." ]]
-        then
-          _tree_path="$arg"
-        fi
+        _tree_arguments+=("$arg")
         ;;
     esac
   done
@@ -216,8 +220,7 @@ HEREDOC
   tree \
     -aC \
     -I '.git|node_modules|bower_components' \
-    --dirsfirst \
-    "${_tree_path}" \
+    "${_tree_arguments[@]}" \
     | less "${_less_options}"
 }
 
