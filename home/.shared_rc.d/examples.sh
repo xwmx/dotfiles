@@ -18,13 +18,13 @@ examples(){
     return 1
   elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
   then
-    printf "\
+    cat <<HEREDOC
 Usage:
   examples <utility>
 
 Description:
-  Print the \"examples\" section of the utility's man page.
-"
+  Print the "examples" section of the utility's man page.
+HEREDOC
     return 0
   fi
 
@@ -78,15 +78,15 @@ eg() {
     return 1
   elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
   then
-    printf "\
+    cat <<HEREDOC
 Usage:
   eg <command>
 
 Description:
-  Display usage examples for a given command. If the \"bro pages\"
+  Display usage examples for a given command. If the "bro pages"
   (http://bropages.org/) Ruby gem is installed on the system, then this
   function will use that, otherwise the \`examples\` shell function is used.
-"
+HEREDOC
     return 0
   fi
 
@@ -113,13 +113,13 @@ cmdfu(){
     return 1
   elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
   then
-    printf "\
+    cat <<HEREDOC
 Usage:
   cmdfu [<command search term>]
 
 Description:
   Search commandlinefu.com for snippits matching the input.
-"
+HEREDOC
     return 0
   fi
 
