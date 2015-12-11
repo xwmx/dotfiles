@@ -21,7 +21,7 @@ chromekill() {
 # gz()
 #
 # Usage:
-#   gz [<file path>]
+#   gz <path/to/file>
 #
 # Description:
 #   Compare original and gzipped file size.
@@ -36,7 +36,13 @@ gz() {
   printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
 
-# Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
+# targz()
+#
+# Usage:
+#   targz <path/to/file>
+#
+# Description:
+#   Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression.
 targz() {
   local tmpFile="${@%/}.tar"
   tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
@@ -66,32 +72,55 @@ targz() {
   echo "${tmpFile}.gz created successfully."
 }
 
-
-
 # Date / Time -----------------------------------------------------------------
 
-# Print a UTC timestamp
+# utc_timestamp()
 #
 # Usage:
 #   utc_timestamp
+#
+# Description:
+#   Print a UTC timestamp.
 utc_timestamp() {
   date -u "+%Y%m%d%H%M%S"
 }
+
+# utcts()
+#
+# Usage:
+#   utcts
+#
+# Description:
+#   Shortcut for `utc_timestamp`: Print a UTC timestamp.
 utcts() {
   utc_timestamp
 }
 
-# Get week number
+# week()
+#
+# Usage:
+#   week
+#
+# Description:
+#   Get week number.
 week() {
   date +%V
 }
 
-# Stopwatch
+# timer()
+#
+# timer
+#
+# Description:
+#   Stopwatch.
 timer() {
   printf "Timer started. Stop with Ctrl-D.\n" && date && time cat && date
 }
 
-# Epoch time conversion
+# epoch()
+#
+# Description:
+#   Epoch time conversion.
 epoch() {
   TESTREG="[\d{10}]"
   if [[ "$1" =~ $TESTREG ]]
@@ -111,8 +140,14 @@ epoch() {
 
 # Edit / Open Shortcuts -------------------------------------------------------
 
-# # `s` with no arguments opens the current directory in Sublime Text, otherwise
-# # opens the given location
+# # s()
+# #
+# # Usage:
+# #   s [<path>]
+# #
+# # Description:
+# #   `s` with no arguments opens the current directory in Sublime Text,
+# #   otherwise opens the given location.
 # s() {
 #   if [ $# -eq 0 ]; then
 #     subl .
@@ -121,8 +156,14 @@ epoch() {
 #   fi
 # }
 #
-# # `a` with no arguments opens the current directory in Atom Editor, otherwise
-# # opens the given location
+# # a()
+# #
+# # Usage:
+# #   a [<path>]
+# #
+# # Description:
+# #   `a` with no arguments opens the current directory in Atom Editor,
+# #   otherwise opens the given location.
 # a() {
 #   if [ $# -eq 0 ]; then
 #     atom .
@@ -131,8 +172,14 @@ epoch() {
 #   fi
 # }
 #
-# # `v` with no arguments opens the current directory in Vim, otherwise opens the
-# # given location
+# # v()
+# #
+# # Usage:
+# #   v [<path>]
+# #
+# # Description:
+# #   `v` with no arguments opens the current directory in Vim, otherwise opens
+# #   the given location.
 # v() {
 #   if [ $# -eq 0 ]; then
 #     vim .
@@ -141,8 +188,14 @@ epoch() {
 #   fi
 # }
 #
-# # `o` with no arguments opens the current directory, otherwise opens the given
-# # location
+# # o()
+# #
+# # Usage:
+# #   o [<path>]
+# #
+# # Description:
+# #   `o` with no arguments opens the current directory, otherwise opens the
+# #   given location.
 # o() {
 #   if [ $# -eq 0 ]; then
 #     open .
@@ -153,16 +206,25 @@ epoch() {
 
 # Filesystem ------------------------------------------------------------------
 
-# Prints the top 10 subdirectories by disk uage.
-#
-# http://oreilly.com/pub/h/15
+# ducks()
 #
 # Usage:
 #   ducks
+#
+# Description:
+#   Print the top 10 subdirectories by disk uage. More information:
+#   http://oreilly.com/pub/h/15
 ducks() {
   du -cks ./* | sort -rn | head -11
 }
 
+# tre()
+#
+# Usage:
+#   tre [<options>] [<arguments>]
+#
+# Description:
+#   Enhanced `tree`.
 tre() {
   _print_tre_help() {
     cat <<HEREDOC
@@ -260,7 +322,10 @@ fs() {
 
 # Git / GitHub ----------------------------------------------------------------
 
-# Use Git’s colored diff when available
+# diff()
+#
+# Description:
+#   Use Git’s colored diff when available.
 if hash git &>/dev/null
 then
   diff() {
@@ -286,8 +351,14 @@ gitio() {
 
 # JSON ------------------------------------------------------------------------
 
-# Syntax-highlight JSON strings or files
-# Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
+# json()
+#
+# Usage:
+#   json '{"foo":42}'
+#   echo '{"foo":42}' | json
+#
+# Description:
+#   Syntax-highlight JSON strings or files
 json() {
   if [ -t 0 ]
   then # argument
@@ -403,8 +474,14 @@ phpserver() {
   php -S "${ip}:${port}"
 }
 
-# Show all the names (CNs and SANs) listed in the SSL certificate
-# for a given domain
+# getcertnames()
+#
+# Usage:
+#   getcertnames <domain>
+#
+# Description:
+#   Show all the names (CNs and SANs) listed in the SSL certificate for a
+#   given domain
 getcertnames() {
   if [ -z "${1}" ]; then
     echo "ERROR: No domain specified."
@@ -440,20 +517,39 @@ getcertnames() {
 
 # Shell -----------------------------------------------------------------------
 
-# Reload the shell (i.e. invoke as a login shell)
+# reload()
+#
+# Usage:
+#   reload
+#
+# Description:
+#   Reload the shell (i.e. invoke as a login shell).
 reload() {
   exec "$SHELL" -l
 }
 
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-# (useful when executing time-consuming commands)
+# badge()
+#
+# Usage:
+#   badge
+#
+# Description:
+#   Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+#   (useful when executing time-consuming commands).
 badge() {
   tput bel
 }
 
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
+# map()
+#
+# Usage:
+#   <command> | map <command>
+#
+# Description:
+#   Intuitive map function
+#
+#   For example, to list all directories that contain a certain file:
+#   find . -name .gitattributes | map dirname
 map() {
   xargs -n1 "$@"
 }
@@ -506,14 +602,27 @@ HEREDOC
 
 # Unicode ---------------------------------------------------------------------
 
-# A shortcut for the unicode program.
+# u()
+#
+# Usage:
+#   u <command>
+#   u -h | -help
+#
+# Description:
+#   A shortcut for the unicode program.
 u() {
   unicode "$@"
 }
 
 # Utilities -------------------------------------------------------------------
 
-# Simple calculator
+# shell_calc()
+#
+# Usage:
+#   shell_calc <arguments>
+#
+# Description:
+#   Simple calculator.
 shell_calc() {
   local result=""
   result="$(printf "scale=10;%s\n" "$*" | bc --mathlib | tr -d '\\\n')"
