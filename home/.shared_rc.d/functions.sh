@@ -224,19 +224,37 @@ HEREDOC
     | less "${_less_options}"
 }
 
-# Determine size of a file or total size of a directory
+# fs()
+#
+# Usage:
+#   fs [<path>]
+#
+# Description:
+#   Determine size of a file or total size of a directory.
 fs() {
-  if du -b /dev/null > /dev/null 2>&1
+  local _du_command="du"
+  local -a _du_options
+
+  # Use `gdu` if it's available.
+  if hash "gdu" 2>/dev/null
   then
-    local arg=-sbh
-  else
-    local arg=-sh
+    _du_command="gdu"
   fi
+
+  if "$_du_command" -b /dev/null > /dev/null 2>&1
+  then # GNU
+    _du_options=(-sbh)
+  else # BSD
+    # OS X `du` has no `-b` equivalent, so the sizes it displays are not the
+    # same as the "apparent" size as viewed by applications.
+    _du_options=(-sh)
+  fi
+
   if [[ -n "$@" ]]
   then
-    du $arg -- "$@"
+    "$_du_command" "${_du_options[@]}" -- "$@"
   else
-    du $arg .[^.]* ./*;
+    "$_du_command" "${_du_options[@]}"
   fi
 }
 
