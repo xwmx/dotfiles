@@ -29,9 +29,11 @@ gz() {
   local origsize
   local gzipsize
   local ratio
+
   origsize=$(wc -c < "$1")
   gzipsize=$(gzip -c "$1" | wc -c)
   ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l)
+
   printf "orig: %d bytes\n" "$origsize"
   printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
@@ -114,7 +116,10 @@ week() {
 # Description:
 #   Stopwatch.
 timer() {
-  printf "Timer started. Stop with Ctrl-D.\n" && date && time cat && date
+  printf "Timer started. Stop with Ctrl-D.\n" &&
+    date &&
+    time cat &&
+    date
 }
 
 # epoch()
@@ -149,7 +154,8 @@ epoch() {
 # #   `s` with no arguments opens the current directory in Sublime Text,
 # #   otherwise opens the given location.
 # s() {
-#   if [ $# -eq 0 ]; then
+#   if [ $# -eq 0 ]
+#   then
 #     subl .
 #   else
 #     subl "$@"
@@ -165,7 +171,8 @@ epoch() {
 # #   `a` with no arguments opens the current directory in Atom Editor,
 # #   otherwise opens the given location.
 # a() {
-#   if [ $# -eq 0 ]; then
+#   if [ $# -eq 0 ]
+#   then
 #     atom .
 #   else
 #     atom "$@"
@@ -181,7 +188,8 @@ epoch() {
 # #   `v` with no arguments opens the current directory in Vim, otherwise opens
 # #   the given location.
 # v() {
-#   if [ $# -eq 0 ]; then
+#   if [ $# -eq 0 ]
+#   then
 #     vim .
 #   else
 #     vim "$@"
@@ -197,7 +205,8 @@ epoch() {
 # #   `o` with no arguments opens the current directory, otherwise opens the
 # #   given location.
 # o() {
-#   if [ $# -eq 0 ]; then
+#   if [ $# -eq 0 ]
+#   then
 #     open .
 #   else
 #     open "$@"
@@ -329,7 +338,7 @@ fs() {
 if hash git &>/dev/null
 then
   diff() {
-    git diff --no-index --color-words "$@";
+    git diff --no-index --color-words "$@"
   }
 fi
 
@@ -442,19 +451,19 @@ urlencode() {
 #   Start an HTTP server from a directory, optionally specifying the port.
 #   When no port is specified, the default port is '8080'.
 server() {
-  local port="${1:-8000}";
+  local port="${1:-8080}"
   # Set the default Content-Type to `text/plain` instead of
   # `application/octet-stream` and serve everything as UTF-8 (although not
   # technically correct, this doesn’t break anything for binary files)
   local server_script
-  server_script=$(printf "\
+  read -r -d '' server_script <<HEREDOC
 import SimpleHTTPServer
 map = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map
-map[\"\"] = \"text/plain\"
+map[""] = "text/plain"
 for key, value in map.items():
-    map[key] = value + \";charset=UTF-8\"
+    map[key] = value + ";charset=UTF-8"
     SimpleHTTPServer.test()
-")
+HEREDOC
   python -c "$server_script" "$port"
 }
 
@@ -483,7 +492,8 @@ phpserver() {
 #   Show all the names (CNs and SANs) listed in the SSL certificate for a
 #   given domain
 getcertnames() {
-  if [ -z "${1}" ]; then
+  if [ -z "${1}" ]
+  then
     echo "ERROR: No domain specified."
     return 1
   fi
@@ -491,23 +501,30 @@ getcertnames() {
   local domain="${1}"
   echo "Testing ${domain}…"
   echo "" # newline
-
-  local tmp=$(echo -e "GET / HTTP/1.0\nEOT" \
+  local tmp
+  tmp=$(echo -e "GET / HTTP/1.0\nEOT" \
     | openssl s_client -connect "${domain}:443" -servername "${domain}" 2>&1)
 
   if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]
   then
-    local certText=$(echo "${tmp}" \
+    local certText
+    certText=$(echo "${tmp}" \
       | openssl x509 -text -certopt "no_aux, no_header, no_issuer, no_pubkey, \
       no_serial, no_sigdump, no_signame, no_validity, no_version")
     echo "Common Name:"
     echo "" # newline
-    echo "${certText}" | grep "Subject:" | sed -e "s/^.*CN=//" | sed -e "s/\/emailAddress=.*//"
+    echo "${certText}" \
+      | grep "Subject:" \
+      | sed -e "s/^.*CN=//" \
+      | sed -e "s/\/emailAddress=.*//"
     echo "" # newline
     echo "Subject Alternative Name(s):"
     echo "" # newline
-    echo "${certText}" | grep -A 1 "Subject Alternative Name:" \
-      | sed -e "2s/DNS://g" -e "s/ //g" | tr "," "\n" | tail -n +2
+    echo "${certText}" \
+      | grep -A 1 "Subject Alternative Name:" \
+      | sed -e "2s/DNS://g" -e "s/ //g" \
+      | tr "," "\n" \
+      | tail -n +2
     return 0
   else
     echo "ERROR: Certificate not found."
