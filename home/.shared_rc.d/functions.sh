@@ -306,8 +306,7 @@ fs() {
   _print_fs_help() {
     cat <<HEREDOC
 Usage:
-  fs [<path>]
-  fs [-a | --all | -l | --list] [<path>]
+  fs [-a | --all | -l | --list [-n]] [<path>]
   fs -h | --help
 
 Options:
@@ -316,6 +315,7 @@ Options:
   -l --list  When provided with a path to a directory, list the top level of
              contents with the total size of each item sorted by sizes
              descending and display in \`less\`.
+  -n         Display line numbers.
   -h --help  Show this help.
 
 Description:
@@ -329,6 +329,7 @@ HEREDOC
   local _cat_cmd="cat"
   local _list_all=0
   local _list_contents=0
+  local _less_options="-FRX"
   local -a _du_options
   local -a _sort_options
   local -a _fs_arguments
@@ -346,6 +347,9 @@ HEREDOC
         ;;
       -l|--list)
         _list_contents=1
+        ;;
+      -n)
+        _less_options="${_less_options}N"
         ;;
       *)
         _fs_arguments+=("$arg")
@@ -416,7 +420,7 @@ HEREDOC
       "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}" \
         | "$_sort_command" "${_sort_options[@]}" \
         | eval "$_cat_cmd" \
-        | less -FRXN
+        | less "${_less_options}"
     else
       "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}"
     fi
@@ -426,7 +430,7 @@ HEREDOC
       "$_du_command" "${_du_options[@]}" \
         | "$_sort_command" "${_sort_options[@]}" \
         | eval "$_cat_cmd" \
-        | less -FRXN
+        | less "${_less_options}"
     else
       "$_du_command" "${_du_options[@]}"
     fi
