@@ -298,30 +298,37 @@ HEREDOC
 # fs()
 #
 # Usage:
-#   fs [<path>]
+#   fs [<arguments>]
 #
 # Description:
-#   Determine size of a file or total size of a directory.
+#   A cross-platform file size utility wrapping `du`.
 fs() {
   _print_fs_help() {
     cat <<HEREDOC
 Usage:
-  fs [-l] [<path>]
+  fs [-a | --all | -l | --list] [<path>]
   fs -h | --help
 
 Options:
+  -a --all   List all files and directories in the subtree sorted by size
+             descending and display in \`less\`.
   -l --list  When provided with a path to a directory, list the top level of
-             contents with the total size of each.
+             contents with the total size of each item.
   -h --help  Show this help.
 
 Description:
-  Determine size of a file or total size of a directory.
+  A cross-platform file size utility wrapping `du`. Determine sizes of files
+  and total sizes of directories.
 HEREDOC
   }
 
   local _du_command="du"
+  local _sort_command="sort"
+  local _cat_cmd="cat"
+  local _list_all=0
   local _list_contents=0
   local -a _du_options
+  local -a _sort_options
   local -a _fs_arguments
   _fs_arguments=()
 
@@ -331,6 +338,9 @@ HEREDOC
       -h|--help)
         _print_fs_help
         return 0
+        ;;
+      -a|--all)
+        _list_all=1
         ;;
       -l|--list)
         _list_contents=1
@@ -347,11 +357,29 @@ HEREDOC
     _du_command="gdu"
   fi
 
+  # Use `gsort` if it's available.
+  if hash "gsort" 2>/dev/null
+  then
+    _sort_command="gsort"
+  fi
+
+  # Use `ccat` to generate color if it's available.
+  # https://github.com/jingweno/ccat
+  # At this time, `pygmentize`, another syntax highlighter, doesn't work
+  # well for this content.
+  if hash "ccat" 2>/dev/null
+  then
+    _cat_cmd="ccat -C 'always'"
+  fi
+
   if "$_du_command" -b /dev/null > /dev/null 2>&1
   then # GNU
     if ((_list_contents))
     then
       _du_options=(-ha --max-depth 1)
+    elif ((_list_all))
+    then
+      _du_options=(-ha)
     else
       _du_options=(-sbh)
     fi
@@ -362,16 +390,44 @@ HEREDOC
     if ((_list_contents))
     then
       _du_options=(-h -d 1)
+    elif ((_list_all))
+    then
+      _du_options=(-h -a)
     else
       _du_options=(-sh)
     fi
   fi
 
+  if "$_sort_command" -h /dev/null > /dev/null 2>&1
+  then # GNU
+    _sort_options=(-hr)
+  else # BSD
+    # BSD `sort` doesn't have `-h` so the sort results in ordering like:
+    # 10K, 5M, 1K. Therefore, only use this as a fallback.
+    _sort_options=(-nr)
+  fi
+
   if [[ -n "$@" ]]
   then
-    "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}"
+    if ((_list_all))
+    then
+      "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}" \
+        | "$_sort_command" "${_sort_options[@]}" \
+        | eval "$_cat_cmd" \
+        | less -FRXN
+    else
+      "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}"
+    fi
   else
-    "$_du_command" "${_du_options[@]}"
+    if ((_list_all))
+    then
+      "$_du_command" "${_du_options[@]}" \
+        | "$_sort_command" "${_sort_options[@]}" \
+        | eval "$_cat_cmd" \
+        | less -FRXN
+    else
+      "$_du_command" "${_du_options[@]}"
+    fi
   fi
 }
 
