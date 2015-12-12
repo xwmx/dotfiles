@@ -329,6 +329,61 @@ fs() {
   fi
 }
 
+# hd()
+#
+# Usage:
+#   hd [-n] <path/to/file>
+#
+# Options:
+#   -n  Show line numbers.
+#
+# Description:
+#   Canonical hex dump with \`less\`. Some systems have this symlinked.
+if ! hash "hd" 2>/dev/null
+then
+  hd() {
+    _print_hd_help() {
+      cat <<HEREDOC
+Usage:
+  hd [-n] <path/to/file>
+  hd -h | --help
+
+Options:
+  -n         Show line numbers.
+  -h --help  Show this help.
+
+Description:
+  Canonical hex dump with \`less\`.
+HEREDOC
+    }
+
+    local _less_options="-FRX"
+    local -a _hexdump_arguments
+    _hexdump_arguments=()
+
+    for arg in "${@}"
+    do
+      case $arg in
+        -h|--help)
+          _print_hd_help
+          return 0
+          ;;
+        -n)
+          _less_options="${_less_options}N"
+          ;;
+        *)
+          _hexdump_arguments+=("$arg")
+          ;;
+      esac
+    done
+
+    hexdump \
+      -C \
+      "${_hexdump_arguments[@]}" \
+      | less "${_less_options}"
+  }
+fi
+
 # Git / GitHub ----------------------------------------------------------------
 
 # diff()
