@@ -306,10 +306,12 @@ fs() {
   _print_fs_help() {
     cat <<HEREDOC
 Usage:
-  fs [<path>]
+  fs [-l] [<path>]
   fs -h | --help
 
 Options:
+  -l --list  When provided with a path to a directory, list the top level of
+             contents with the total size of each.
   -h --help  Show this help.
 
 Description:
@@ -317,14 +319,27 @@ Description:
 HEREDOC
   }
 
-  if [[ "${1:-}" = "-h" ]] || [[ "${1:-}" = "--help" ]]
-  then
-    _print_fs_help
-    return 0
-  fi
-
   local _du_command="du"
+  local _list_contents=0
   local -a _du_options
+  local -a _fs_arguments
+  _fs_arguments=()
+
+  for arg in "${@:-}"
+  do
+    case $arg in
+      -h|--help)
+        _print_fs_help
+        return 0
+        ;;
+      -l|--list)
+        _list_contents=1
+        ;;
+      *)
+        _fs_arguments+=("$arg")
+        ;;
+    esac
+  done
 
   # Use `gdu` if it's available.
   if hash "gdu" 2>/dev/null
@@ -334,16 +349,27 @@ HEREDOC
 
   if "$_du_command" -b /dev/null > /dev/null 2>&1
   then # GNU
-    _du_options=(-sbh)
+    if ((_list_contents))
+    then
+      _du_options=(-ha --max-depth 1)
+    else
+      _du_options=(-sbh)
+    fi
   else # BSD
     # OS X `du` has no `-b` equivalent, so the sizes it displays are not the
-    # same as the "apparent" size as viewed by applications.
-    _du_options=(-sh)
+    # same as the "apparent" size as viewed by applications, and it has no
+    # equivalent to GNU `du -a`.
+    if ((_list_contents))
+    then
+      _du_options=(-h -d 1)
+    else
+      _du_options=(-sh)
+    fi
   fi
 
   if [[ -n "$@" ]]
   then
-    "$_du_command" "${_du_options[@]}" -- "$@"
+    "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}"
   else
     "$_du_command" "${_du_options[@]}"
   fi
