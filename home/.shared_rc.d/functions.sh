@@ -447,6 +447,9 @@ HEREDOC
 #
 # Description:
 #   Canonical hex dump with color and `less`.
+#
+#   NOTE: some popular operating systems use `hd` as a symlink to `hexdump`,
+#   so don't define the function if `hd` already exists.
 if ! hash "hd" 2>/dev/null
 then
   hd() {
