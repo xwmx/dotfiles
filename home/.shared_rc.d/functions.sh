@@ -303,6 +303,26 @@ HEREDOC
 # Description:
 #   Determine size of a file or total size of a directory.
 fs() {
+  _print_fs_help() {
+    cat <<HEREDOC
+Usage:
+  fs [<path>]
+  fs -h | --help
+
+Options:
+  -h --help  Show this help.
+
+Description:
+  Determine size of a file or total size of a directory.
+HEREDOC
+  }
+
+  if [[ "${1:-}" = "-h" ]] || [[ "${1:-}" = "--help" ]]
+  then
+    _print_fs_help
+    return 0
+  fi
+
   local _du_command="du"
   local -a _du_options
 
