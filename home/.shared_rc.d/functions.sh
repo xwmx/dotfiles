@@ -306,6 +306,7 @@ fs() {
   _print_fs_help() {
     cat <<HEREDOC
 Usage:
+  fs [<path>]
   fs [-a | --all | -l | --list] [<path>]
   fs -h | --help
 
@@ -313,7 +314,8 @@ Options:
   -a --all   List all files and directories in the subtree sorted by size
              descending and display in \`less\`.
   -l --list  When provided with a path to a directory, list the top level of
-             contents with the total size of each item.
+             contents with the total size of each item sorted by sizes
+             descending and display in \`less\`.
   -h --help  Show this help.
 
 Description:
@@ -409,7 +411,7 @@ HEREDOC
 
   if [[ -n "$@" ]]
   then
-    if ((_list_all))
+    if ((_list_all)) || ((_list_contents))
     then
       "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}" \
         | "$_sort_command" "${_sort_options[@]}" \
@@ -419,7 +421,7 @@ HEREDOC
       "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}"
     fi
   else
-    if ((_list_all))
+    if ((_list_all)) || ((_list_contents))
     then
       "$_du_command" "${_du_options[@]}" \
         | "$_sort_command" "${_sort_options[@]}" \
