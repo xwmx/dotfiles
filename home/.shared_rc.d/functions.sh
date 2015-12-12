@@ -361,7 +361,7 @@ HEREDOC
     local -a _hexdump_arguments
     _hexdump_arguments=()
 
-    for arg in "${@}"
+    for arg in "${@:-}"
     do
       case $arg in
         -h|--help)
@@ -376,6 +376,12 @@ HEREDOC
           ;;
       esac
     done
+
+    if [[ -z "${_hexdump_arguments[@]:-}" ]]
+    then
+      _print_hd_help
+      return 0
+    fi
 
     hexdump \
       -C \
