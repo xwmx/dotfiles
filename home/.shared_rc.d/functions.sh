@@ -338,7 +338,7 @@ fs() {
 #   -n  Show line numbers.
 #
 # Description:
-#   Canonical hex dump with \`less\`. Some systems have this symlinked.
+#   Canonical hex dump with color and `less`.
 if ! hash "hd" 2>/dev/null
 then
   hd() {
@@ -353,7 +353,7 @@ Options:
   -h --help  Show this help.
 
 Description:
-  Canonical hex dump with \`less\`.
+  Canonical hex dump with color and \`less\`.
 HEREDOC
     }
 
@@ -362,6 +362,10 @@ HEREDOC
     local -a _hexdump_arguments
     _hexdump_arguments=()
 
+    # Use `ccat` to generate color if it's available.
+    # https://github.com/jingweno/ccat
+    # At this time, `pygmentize`, another syntax highlighter, doesn't work
+    # well for this content.
     if hash "ccat" 2>/dev/null
     then
       _cat_cmd="ccat -C 'always'"
@@ -384,7 +388,7 @@ HEREDOC
     done
 
     if [[ -z "${_hexdump_arguments[@]:-}" ]]
-    then
+    then # there are not arguments.
       _print_hd_help
       return 0
     fi
