@@ -64,6 +64,16 @@ pip_install 1pass
 # https://pypi.python.org/pypi/Cython/
 pip_install cython
 
+# gcalcli
+#
+# Google Calendar Command Line Interface
+#
+# gcalcli is a Python application that allows you to access your Google
+# Calendar(s) from a command line.
+#
+# https://github.com/insanum/gcalcli
+pip_install gcalcli
+
 # IPython
 #
 # A rich architecture for interactive computing.
