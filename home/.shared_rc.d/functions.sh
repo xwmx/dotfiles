@@ -357,9 +357,15 @@ Description:
 HEREDOC
     }
 
+    local _cat_cmd="cat"
     local _less_options="-FRX"
     local -a _hexdump_arguments
     _hexdump_arguments=()
+
+    if hash "ccat" 2>/dev/null
+    then
+      _cat_cmd="ccat -C 'always'"
+    fi
 
     for arg in "${@:-}"
     do
@@ -386,6 +392,7 @@ HEREDOC
     hexdump \
       -C \
       "${_hexdump_arguments[@]}" \
+      | eval "$_cat_cmd" \
       | less "${_less_options}"
   }
 fi
