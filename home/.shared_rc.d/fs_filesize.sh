@@ -26,7 +26,7 @@ Options:
   -h --help  Show this help.
 
 Description:
-  A cross-platform file size utility wrapping `du`. Determine sizes of files
+  A cross-platform file size utility wrapping \`du\`. Determine sizes of files
   and total sizes of directories.
 HEREDOC
   }
