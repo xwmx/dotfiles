@@ -36,7 +36,6 @@ HEREDOC
     local _cat_cmd="cat"
     local _less_options="-FRX"
     local -a _hexdump_arguments
-    _hexdump_arguments=()
 
     # Use `ccat` to generate color if it's available.
     # https://github.com/jingweno/ccat

@@ -40,7 +40,6 @@ HEREDOC
   local -a _du_options
   local -a _sort_options
   local -a _fs_arguments
-  _fs_arguments=()
 
   for arg in "${@:-}"
   do

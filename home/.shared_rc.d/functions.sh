@@ -270,7 +270,6 @@ HEREDOC
 
   local _less_options="-FRX"
   local -a _tree_arguments
-  _tree_arguments=()
 
   for arg in "${@}"
   do
