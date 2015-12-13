@@ -7,11 +7,6 @@
 # https://golang.org/
 ###############################################################################
 
-# homebrew-install GOROOT
-export GOROOT=/usr/local/opt/go/libexec
-# Add GOROOT bin to path
-PATH=$PATH:$GOROOT/bin
-
 # $GOPATH
 #
 # In order to separate go projects from whatever particular install method is
