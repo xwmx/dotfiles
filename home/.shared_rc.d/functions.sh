@@ -500,17 +500,6 @@ getcertnames() {
 
 # Shell -----------------------------------------------------------------------
 
-# reload()
-#
-# Usage:
-#   reload
-#
-# Description:
-#   Reload the shell (i.e. invoke as a login shell).
-reload() {
-  exec "$SHELL" -l
-}
-
 # badge()
 #
 # Usage:
