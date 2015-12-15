@@ -107,6 +107,10 @@
       tabSize: "Small"
     treeView:
       compactTreeView: true
+    fonts: {}
+    panels:
+      panelContrast: true
+      depth: true
   jumpy:
     highContrast: true
   "vim-mode": {}
