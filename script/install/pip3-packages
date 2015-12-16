@@ -112,6 +112,17 @@ pip3_install doge
 # https://news.ycombinator.com/item?id=9611710
 pip3_install ftfy
 
+# glances
+#
+# An Eye on your system
+#
+# Glances is a cross-platform curses-based system monitoring tool written in
+# Python.
+#
+# http://nicolargo.github.io/glances/
+# https://github.com/nicolargo/glances
+pip3_install glances
+
 # Hy
 #
 # Hy is a wonderful dialect of Lisp that’s embedded in Python.
