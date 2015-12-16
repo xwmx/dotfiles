@@ -9,7 +9,7 @@
 ###############################################################################
 
 # For htop to display correctly all running processes, it needs to run as root.
-if program_exists "htop"
+if command_exists "htop"
 then
   _original_htop="$(which htop)"
   htop() {

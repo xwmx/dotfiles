@@ -16,7 +16,7 @@
 
 __BREW_PREFIX="$(brew --prefix)"
 
-if program_exists "brew"
+if command_exists "brew"
 then
   if [ -f "${__BREW_PREFIX}/etc/profile.d/z.sh" ]
   then
