@@ -93,6 +93,9 @@ timezone() {
           ;;
       esac
       ;;
+    utc)
+      timezone 'set' UTC
+      ;;
     pt)
       timezone 'set' PT
       ;;
