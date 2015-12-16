@@ -55,6 +55,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #------------------------------------------------------------------------------
 
+# /////////////////////////////////////////////////////////////////////////////
+# Configure
+# /////////////////////////////////////////////////////////////////////////////
+
 export BINDLEPATH="${HOME}/.bindle"
 
 if [[ ! -e "${HOME}/bin" ]]
@@ -62,11 +66,15 @@ then
   mkdir "${HOME}/bin"
 fi
 
+# ssh #########################################################################
+
 if [[ -d "${HOME}/.ssh" ]]
 then
   cp "${HOME}/.ssh/"* "${BINDLEPATH}/home/.ssh/" ||
     _die printf "Unable to copy .ssh contents.\n"
 fi
+
+# bindle ######################################################################
 
 cd "${BINDLEPATH}" ||
   _die printf "Unable to cd into \$BINDLEPATH.\n"
@@ -78,6 +86,8 @@ git submodule update --init --recursive ||
   _die printf "\`./bin/bindle link --overwrite --with-backup\` failed.\n"
 ./bin/bindle bin link ||
   _die printf "\`./bin/bindle bin link\` failed.\n"
+
+# Janus #######################################################################
 
 # Finalize Janus setup.
 _initialize_janus() {
@@ -108,14 +118,24 @@ fi
 # shellcheck source=~/.bashrc
 source "${HOME}/.bashrc"
 
+# /////////////////////////////////////////////////////////////////////////////
+# Install
+# /////////////////////////////////////////////////////////////////////////////
+
+# brew-linux ##################################################################
+
 ./bin/bindle install brew-linux ||
   _die printf "\`./bin/bindle install brew-linux\` failed.\n"
+
+# apt-packages ################################################################
 
 if hash "apt-get" 2>/dev/null
 then
   ./bin/bindle install apt-packages  ||
     _die printf "\`./bin/bindle install apt-packages\` failed.\n"
 fi
+
+# exa #########################################################################
 
 # Install exa.
 if [[ -e "${BINDLEPATH}/bin/orphans" ]]
@@ -124,6 +144,12 @@ then
 else
   printf "WARNING: %s not found.\n" "${BINDLEPATH}/bin/orphans"
 fi
+
+# /////////////////////////////////////////////////////////////////////////////
+# Finalize
+# /////////////////////////////////////////////////////////////////////////////
+
+# zsh ########################################################################
 
 # Set shell to zsh if it's available.
 _ZSH_PATH="$(which zsh)"
