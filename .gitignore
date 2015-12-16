@@ -18,6 +18,9 @@
 .zshenv.local
 .zshrc.local
 
+# Ignore all .vagrant directories.
+.vagrant
+
 # .ammonite
 #
 # Only track predef.scala
