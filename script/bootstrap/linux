@@ -170,5 +170,8 @@ _ZSH_PATH="$(which zsh)"
 if [[ -n "$_ZSH_PATH" ]]
 then
   sudo chsh -s "$_ZSH_PATH" "$(whoami)"
-  "$_ZSH_PATH" --login
+  if [[ $- == *i* ]]
+  then # interactive shell
+    "$_ZSH_PATH" --login
+  fi
 fi
