@@ -20,9 +20,9 @@ block() {
     exit 1
   fi
 
-  $_ME add 127.0.0.1 "${1}"
+  sudo $_ME add 127.0.0.1 "${1}"
   # block IPv6
-  $_ME add "fe80::1%lo0" "${1}"
+  sudo $_ME add "fe80::1%lo0" "${1}"
 }
 
 # desc "unblock" <<EOM
@@ -39,9 +39,9 @@ unblock() {
     exit 1
   fi
 
-  $_ME remove 127.0.0.1 "${1}" --force
+  sudo $_ME remove 127.0.0.1 "${1}" --force
   # unblock IPv6
-  $_ME remove "fe80::1%lo0" "${1}" --force
+  sudo $_ME remove "fe80::1%lo0" "${1}" --force
 }
 
 # Source the original hosts program.
