@@ -155,6 +155,18 @@ defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 ###############################################################################
+# Time Machine
+###############################################################################
+
+# Exclude "~/VirtualBox VMs" if present.
+#
+# NOTE: exclusions added with `tmutil addexclusion` don't appear in the GUI
+# list found in System Preferences > Time Machine > Options...
+tmutil addexclusion "${HOME}/VirtualBox VMs"
+# Verify exlusion.
+tmutil isexcluded "${HOME}/VirtualBox VMs"
+
+###############################################################################
 # Kill affected applications
 ###############################################################################
 
