@@ -120,7 +120,7 @@ then
 else
   if command_exists "ruby"
   then
-    gem install rake
+    sudo gem install rake
     _initialize_janus
   else
     printf "Ruby and Rake not found. Janus not completely initialized."
