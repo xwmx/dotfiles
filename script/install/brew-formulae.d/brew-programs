@@ -75,12 +75,7 @@ brew install ansible
 #
 # See also:
 # https://github.com/djmelik/archey
-#
-# TODO: Remove this section when it has been uninstalled from all systems.
-if _homebrew_formula_is_installed "archey"
-then
-  brew uninstall archey
-fi
+brew uninstall archey
 
 # GNU Aspell
 #
