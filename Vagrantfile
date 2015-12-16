@@ -361,8 +361,12 @@ Vagrant.configure("2") do |config|
   #
   # Run as non-root user (vagrant).
   $dotfiles_script = <<-HEREDOC
-git clone https://github.com/alphabetum/dotfiles.git "$HOME/.bindle" && \
-  "$HOME/.bindle/script/bootstrap/linux"
+if [[ ! -e "${HOME}/.bindle" ]]
+then
+  git clone https://github.com/alphabetum/dotfiles.git "$HOME/.bindle"
+fi
+
+"$HOME/.bindle/script/bootstrap/linux"
 HEREDOC
   config.vm.provision "shell", inline: $dotfiles_script, privileged: false
 
