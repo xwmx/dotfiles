@@ -93,6 +93,12 @@ timezone() {
           ;;
       esac
       ;;
+    pt)
+      timezone 'set' PT
+      ;;
+    et)
+      timezone 'set' ET
+      ;;
     *)
       case "$_system_command" in
         timedatectl)
