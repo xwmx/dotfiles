@@ -111,7 +111,13 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 # https://github.com/michaeldfallen/git-radar
 _astral_git_prompt() {
   # For now, just fall back to the `git_prompt_info`oh-my-zsh shell function.
-  printf "%s\n" "%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}"
+  local _git_prompt_info="$(git_prompt_info)"
+  if [[ -n "$_git_prompt_info" ]]
+  then
+    printf "%s\n" "%{$fg_bold[blue]%}${_git_prompt_info}%{$fg_bold[blue]%}"
+  else
+    printf ""
+  fi
 }
 
 # Command Prompt
