@@ -80,8 +80,7 @@ git submodule update --init --recursive ||
   _die printf "\`./bin/bindle bin link\` failed.\n"
 
 # Finalize Janus setup.
-if hash "rake" 2>/dev/null
-then
+_initialize_janus() {
   cd "${BINDLEPATH}/home/.vim/" ||
     _die printf "\`cd \"\${BINDLEPATH}/home/.vim/\"\` failed.\n"
 
@@ -89,8 +88,18 @@ then
 
   cd "${BINDLEPATH}" ||
     _die printf "\`cd \"\${BINDLEPATH}\"\` failed.\n"
+}
+if hash "rake" 2>/dev/null
+then
+  _initialize_janus
 else
-  printf "rake not installed. Janus not completely initialized."
+  if hash "ruby" 2>/dev/null
+  then
+    gem install rake
+    _initialize_janus
+  else
+    printf "Ruby and Rake not found. Janus not completely initialized."
+  fi
 fi
 
 # Re-source .bashrc now that the configuration has been installed.
