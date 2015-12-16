@@ -82,7 +82,8 @@ fi
 
 # ssh #########################################################################
 
-if [[ -d "${HOME}/.ssh" ]]
+if [[ -d "${HOME}/.ssh" ]] &&
+   [[ ! -e "${BINDLEPATH}/home/.ssh/authorized_keys" ]]
 then
   cp "${HOME}/.ssh/"* "${BINDLEPATH}/home/.ssh/" ||
     _die printf "Unable to copy .ssh contents.\n"
