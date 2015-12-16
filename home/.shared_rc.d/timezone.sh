@@ -96,7 +96,7 @@ timezone() {
     *)
       case "$_system_command" in
         timedatectl)
-          timedatectl | grep Timezone | awk '{$1 = ""; print $0 }'
+          timedatectl | grep Time\ zone | awk '{$1 = ""; $2 = ""; print $0 }'
           ;;
         systemsetup)
           sudo systemsetup -gettimezone | awk '{$1 = ""; $2 = ""; print $0 }'
