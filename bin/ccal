@@ -19,11 +19,16 @@
 # adding mini-help.
 
 _ccal() {
-  _TODAY=$(date +%e)
-  _B=$(tput smso)
-  _N=$(tput rmso)
-  printf "\n"
-  cal | sed s/"$_TODAY"/"$_B""$_TODAY""$_N"/
+  if cal -h > /dev/null 2>&1
+  then # already highlights by default
+    cal
+  else # need to add highlighting
+    _TODAY=$(date +%e)
+    _B=$(tput smso)
+    _N=$(tput rmso)
+    printf "\n"
+    cal | sed s/"$_TODAY"/"$_B""$_TODAY""$_N"/
+  fi
 }
 
 usage="\
@@ -43,4 +48,3 @@ then
 fi
 
 _ccal
-
