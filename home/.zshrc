@@ -129,7 +129,7 @@ ZSH_CUSTOM="$HOME/.oh-my-zsh.custom"
 plugins=(
   battery
   change-extension
-  colored-man
+  colored-man-pages
   colorize
   docker
   emoji-clock
