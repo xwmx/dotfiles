@@ -26,7 +26,6 @@ _ccal() {
     _TODAY=$(date +%e)
     _B=$(tput smso)
     _N=$(tput rmso)
-    printf "\n"
     cal | sed s/"$_TODAY"/"$_B""$_TODAY""$_N"/
   fi
 }
