@@ -14,7 +14,7 @@
 
 # Only clone if ~/.bindle doesn't exist.
 #
-# This makes it possible to run this script multiple times without existing
+# This makes it possible to run this script multiple times without exiting
 # due to a failed clone.
 if [[ ! -e "${HOME}/.bindle" ]]
 then
