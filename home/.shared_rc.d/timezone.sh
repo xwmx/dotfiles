@@ -108,20 +108,8 @@ timezone() {
           ;;
       esac
       ;;
-    utc|UTC)
-      timezone 'set' UTC
-      ;;
-    pt|PT)
-      timezone 'set' PT
-      ;;
-    mt|MT)
-      timezone 'set' MT
-      ;;
-    ct|CT)
-      timezone 'set' CT
-      ;;
-    et|ET)
-      timezone 'set' ET
+    pt|PT|mt|MT|ct|CT|et|ET|utc|UTC)
+      timezone 'set' "$_subcommand"
       ;;
     *)
       case "$_system_command" in
