@@ -101,10 +101,10 @@ timezone() {
     list)
       case "$_system_command" in
         timedatectl)
-          timedatectl list-timezones | less
+          timedatectl list-timezones | ${PAGER:-less}
           ;;
         systemsetup)
-          sudo systemsetup -listtimezones | less
+          sudo systemsetup -listtimezones | ${PAGER:-less}
           ;;
       esac
       ;;
