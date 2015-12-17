@@ -13,7 +13,13 @@ __print_timezone_usage() {
 Usage:
   timezone
   timezone set (pt | et | utc | <timezone>)
+  timezone list
   timezone help | -h | --help
+
+Subcommands:
+  set   Set the system timezone to the given timezone.
+  list  List available timezones.
+  help  Display this help information.
 
 Description:
   Display and set the timezone for the system. Supports Linux and OS X.
@@ -25,6 +31,7 @@ HEREDOC
 # Usage:
 #   timezone
 #   timezone set (pt | et | utc | <timezone>)
+#   timezone list
 #   timezone help | -h | --help
 timezone() {
   local _system_command
