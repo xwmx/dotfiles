@@ -114,3 +114,5 @@ timezone() {
       ;;
   esac
 }
+
+alias tz="timezone"
