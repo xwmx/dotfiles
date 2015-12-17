@@ -6,9 +6,10 @@
 #
 # To use with Vagrant, add the following to a Vagrantfile:
 #
+# dotfiles_url = "https://raw.githubusercontent.com/alphabetum/dotfiles/master"
 # config.vm.provision "shell",
-#   path: "https://raw.githubusercontent.com/alphabetum/dotfiles/master/provision.bash",
-#   privileged: false
+#                     path: "#{dotfiles_url}/boxes/scripts/provision.bash",
+#                     privileged: false
 ###############################################################################
 
 # Only clone if ~/.bindle doesn't exist.
