@@ -172,7 +172,7 @@ tmutil isexcluded "${HOME}/VirtualBox VMs"
 
 for app in "Address Book" "Disk Utility" "Finder"
 do
-	killall "${app}" > /dev/null 2>&1
+  killall "${app}" > /dev/null 2>&1
 done
 
 cat <<HEREDOC
