@@ -12,7 +12,7 @@ __print_timezone_usage() {
   cat <<HEREDOC
 Usage:
   timezone
-  timezone set (pt | et | utc | <timezone>)
+  timezone set (pt | mt | ct | et | utc | <timezone>)
   timezone list
   timezone help | -h | --help
 
@@ -30,7 +30,7 @@ HEREDOC
 #
 # Usage:
 #   timezone
-#   timezone set (pt | et | utc | <timezone>)
+#   timezone set (pt | mt | ct | et | utc | <timezone>)
 #   timezone list
 #   timezone help | -h | --help
 timezone() {
@@ -75,6 +75,14 @@ timezone() {
             eval "$_timezone_set_command" America/Los_Angeles &&
               timezone
             ;;
+          mt|MT)
+            eval "$_timezone_set_command" America/Denver &&
+              timezone
+            ;;
+          ct|CT)
+            eval "$_timezone_set_command" America/Chicago &&
+              timezone
+            ;;
           et|ET)
             eval "$_timezone_set_command" America/New_York &&
               timezone
@@ -105,6 +113,12 @@ timezone() {
       ;;
     pt|PT)
       timezone 'set' PT
+      ;;
+    mt|MT)
+      timezone 'set' MT
+      ;;
+    ct|CT)
+      timezone 'set' CT
       ;;
     et|ET)
       timezone 'set' ET
