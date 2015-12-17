@@ -8,6 +8,7 @@
 
 __now() {
   date
+  printf "\n"
   # The calendar logic should already be encapsulated in the `ccal` script, so
   # use that if it's present.
   if hash ccal 2> /dev/null
@@ -40,4 +41,3 @@ then
 fi
 
 __now
-
