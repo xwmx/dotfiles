@@ -14,6 +14,22 @@ then
 fi
 
 ###############################################################################
+# Helpers
+###############################################################################
+
+# _deb_package_is_installed()
+#
+# Test whether a given .deb package is installed on the system.
+#
+# Usage:
+#   _deb_package_is_installed "package-name"
+_deb_package_is_installed() {
+  local _package_name="$1"
+  # via: http://stackoverflow.com/a/1298103
+  dpkg-query -l "$_package_name" > /dev/null 2&>1
+}
+
+###############################################################################
 # Packages
 ###############################################################################
 
@@ -252,7 +268,13 @@ sudo apt-get install -y ngrep
 #  System, Events, Standard I/O, Modules, Timers, Child Processes, POSIX,
 #  HTTP, Multipart Parsing, TCP, DNS, Assert, Path, URL, Query Strings.
 # Homepage: http://nodejs.org/
-sudo apt-get install -y nodejs
+#
+# NOTE: Uninstall nodejs package in favor of nvm.
+# TODO: Remove this entry when the package has been removed from all systems.
+if _deb_package_is_installed "nodejs"
+then
+  sudo apt-get remove -y nodejs
+fi
 
 # npm
 #
@@ -267,7 +289,13 @@ sudo apt-get install -y nodejs
 #  Most commonly, it is used to publish, discover, install, and develop
 #  node programs.
 # Homepage: http://github.com/isaacs/npm
-sudo apt-get install -y npm
+#
+# NOTE: Uninstall nodejs package in favor of nvm.
+# TODO: Remove this entry when the package has been removed from all systems.
+if _deb_package_is_installed "npm"
+then
+  sudo apt-get remove -y npm
+fi
 
 # poppler-utils
 #
