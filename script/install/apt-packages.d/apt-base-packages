@@ -26,7 +26,7 @@ fi
 _deb_package_is_installed() {
   local _package_name="$1"
   # via: http://stackoverflow.com/a/1298103
-  dpkg-query -l "$_package_name" > /dev/null 2&>1
+  dpkg -s "$_package_name" > /dev/null 2&>1
 }
 
 ###############################################################################
