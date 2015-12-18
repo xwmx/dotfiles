@@ -37,3 +37,9 @@ fi
 . "$DIR/apt-packages.d/apt-ctf-tools"
 . "$DIR/apt-packages.d/apt-base-packages"
 . "$DIR/apt-packages.d/apt-ruby-build-packages"
+
+###############################################################################
+# Cleanup
+###############################################################################
+
+sudo apt-get autoremove -y
