@@ -1196,8 +1196,31 @@ brew install nimrod
 #
 # https://nodejs.org/
 #
-# NOTE: also install npm
-brew install node
+# NOTE: Uninstall node and npm in favor of nvm.
+# https://github.com/creationix/nvm
+# TODO: Remove this after node has been removed from all systems.
+_uninstall_node_and_npm() {
+  if _homebrew_formula_is_installed "node"
+  then
+    if [[ -h "${HOME}/.npmrc" ]]
+    then
+      rm "${HOME}/.npmrc"
+    fi
+
+    if [[ -h "${HOME}/.npm-packages" ]]
+    then
+      rm -r "${HOME}/.npm-packages"
+    fi
+
+    if [[ "$(which npm)" == "/usr/local/bin/npm" ]]
+    then
+      npm uninstall npm -g
+    fi
+
+    brew uninstall node
+  fi
+}
+_uninstall_node_and_npm
 
 # NSQ
 #
