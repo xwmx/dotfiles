@@ -25,8 +25,9 @@ fi
 #   _deb_package_is_installed "package-name"
 _deb_package_is_installed() {
   local _package_name="$1"
-  # via: http://stackoverflow.com/a/1298103
-  dpkg -s "$_package_name" > /dev/null 2&>1
+  # Other approaches: http://stackoverflow.com/a/1298103
+  _state="$(aptitude show "$_package_name" | awk '/State/ { print $2 }')"
+  [[ "$_state" == "installed" ]]
 }
 
 ###############################################################################
