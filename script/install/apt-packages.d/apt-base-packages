@@ -287,13 +287,7 @@ sudo apt-get install -y ngrep
 #  System, Events, Standard I/O, Modules, Timers, Child Processes, POSIX,
 #  HTTP, Multipart Parsing, TCP, DNS, Assert, Path, URL, Query Strings.
 # Homepage: http://nodejs.org/
-#
-# NOTE: Uninstall nodejs package in favor of nvm.
-# TODO: Remove this entry when the package has been removed from all systems.
-if _deb_package_is_installed "nodejs"
-then
-  sudo apt-get remove -y nodejs
-fi
+sudo apt-get install -y nodejs
 
 # npm
 #
@@ -308,13 +302,7 @@ fi
 #  Most commonly, it is used to publish, discover, install, and develop
 #  node programs.
 # Homepage: http://github.com/isaacs/npm
-#
-# NOTE: Uninstall nodejs package in favor of nvm.
-# TODO: Remove this entry when the package has been removed from all systems.
-if _deb_package_is_installed "npm"
-then
-  sudo apt-get remove -y npm
-fi
+sudo apt-get install -y npm
 
 # poppler-utils
 #
