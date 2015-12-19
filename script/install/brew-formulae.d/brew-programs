@@ -584,7 +584,14 @@ brew install git-extras
 #
 # https://golang.org/
 # https://github.com/golang/go
-brew install go
+#
+# NOTE: Remove go formula in favor of GVM.
+# TODO: Remove this section when the go formula has been uninstalled from all
+# systems.
+if _homebrew_formula_is_installed "go"
+then
+  brew uninstall go
+fi
 
 # GnuPG
 #

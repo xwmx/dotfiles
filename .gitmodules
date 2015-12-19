@@ -268,3 +268,6 @@
 [submodule "home/.janus/vim-monochrome"]
 	path = home/.janus/vim-monochrome
 	url = https://github.com/fxn/vim-monochrome.git
+[submodule "home/.gvm"]
+	path = home/.gvm
+	url = https://github.com/moovweb/gvm
