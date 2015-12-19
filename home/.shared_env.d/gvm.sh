@@ -1,5 +1,6 @@
+#!/usr/bin/env bash
 ###############################################################################
-# GVM
+# gvm.sh
 #
 # Go Version Manager
 #
@@ -11,6 +12,16 @@
 # reliable, and efficient software.
 #
 # https://golang.org/
+#
+# GVM resources:
+#   http://www.ascent.io/blog/2014/03/11/gvm-with-golang/
+#   https://news.ycombinator.com/item?id=6841551
+#
+# Creatng Workspaces (via the comment linked above):
+#   - active workspace
+#     `gvm pkgset use some-workspace`
+#   - link current directory to some-workspace/src/github.com/you/foo
+#     `gvm linkthis github.com/you/foo`
 ###############################################################################
 
 if [[ -s "${HOME}/.gvm/scripts/gvm" ]]
