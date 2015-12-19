@@ -69,10 +69,17 @@ _remove() {
 # Description:
 #   Initialize GVM.
 _initialize_gvm() {
+  # Exit if $HOME/.gvm is present and not a symbolic link.
+  if [[ -e "${HOME}/.gvm" ]] && [[ ! -L "${HOME}/.gvm" ]]
+  then
+    printf "\$HOME/.gvm already exists and is not a symbolic link.\n"
+    return 1
+  fi
+
+  # Unlink if .gvm is a symbolic link.
   if [[ -L "${HOME}/.gvm" ]]
   then
-    printf "\$HOME/.gvm already linked.\n"
-    return 1
+    bindle unlink .gvm
   fi
 
   # Run the install script.
