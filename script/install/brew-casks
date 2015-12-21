@@ -429,6 +429,16 @@ brew cask install firefox
 # https://www.mozilla.org/en-US/firefox/developer/
 brew cask install firefoxdeveloperedition
 
+# gephi
+#
+# he Open Graph Viz Platform
+#
+# Gephi is an interactive visualization and exploration platform for all kinds
+# of networks and complex systems, dynamic and hierarchical graphs.
+#
+# https://gephi.github.io/
+brew cask install gephi
+
 # gfxCardStatus
 #
 # gfxCardStatus is an unobtrusive menu bar app for OS X that allows MacBook
