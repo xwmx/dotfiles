@@ -17,7 +17,7 @@ defined() {
 Where is <name> \`defined\`?
 
 Usage:
-  defined [ -wfpamsS ] <name>
+  defined [ -wfpamsS ] <name> --describe
   defined --debug-init
   defined -h | --help
 
@@ -33,19 +33,33 @@ Description:
 HEREDOC
   }
 
-  local _query="${1}"
   local _type_results
   local _login_command="zsh -x -lsi -c 'exit' 2>&1"
+  local -a _defined_arguments
+  local _describe=0
+  local _description_heading="# Description"
 
-  if [[ "$_query" == "-h" ]] || [[ "$_query" == "--help" ]]
-  then
-    _print_defined_function_help
-    return 0
-  elif [[ "$_query" == "--debug-init" ]]
-  then
-    eval "$_login_command"
-    return 0
-  fi
+  for arg in "${@:-}"
+  do
+    case $arg in
+      -h|--help)
+        _print_defined_function_help
+        return 0
+        ;;
+      --debug-init)
+        eval "$_login_command"
+        return 0
+        ;;
+      --describe)
+        _describe=1
+        ;;
+      *)
+        _defined_arguments+=("$arg")
+        ;;
+    esac
+  done
+
+  local _query="${_defined_arguments[1]:-}"
 
   if [[ "$_query" =~ ^\\\$ ]]
   then # variable
@@ -58,10 +72,23 @@ HEREDOC
       | grep                        \
         -e "> ${_normalized_name}=" \
         -e "> export ${_normalized_name}="
+    if ((_describe))
+    then
+      local _value
+      eval "_value=${_query}"
+      cat <<HEREDOC
+${_description_heading}
+${_query}
+${_value}
+HEREDOC
+    fi
   else
     _type_results="$(type "${_query}")"
 
-    if [[ "${_type_results}" =~ is\ an\ alias\ for ]]
+    if [[ "${_type_results}" =~ not\ found ]]
+    then
+      return 1
+    elif [[ "${_type_results}" =~ is\ an\ alias\ for ]]
     then # alias
       eval "$_login_command"      \
         | grep                    \
@@ -69,6 +96,12 @@ HEREDOC
           -e "alias ${_query}="
     else
       printf "%s\n" "${_type_results}"
+    fi
+
+    if ((_describe))
+    then
+      printf "%s\n" "$_description_heading"
+      which "$_query"
     fi
   fi
 }
