@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
+# NOTE: zsh required. The bash shebang is only for shellcheck.
 ###############################################################################
 # defined
 #
-# Reveal where functions and aliases are defined.
+# Reveal where functions, aliases, variables, and other shell environment
+# items are defined.
 ###############################################################################
 
 # defined()
@@ -83,11 +85,11 @@ ${_query}
 ${_value}
 HEREDOC
     fi
-  else
+  else # not a variable
     _type_results="$(type "${_query}")"
 
     if [[ "${_type_results}" =~ not\ found ]]
-    then
+    then # not found
       return 1
     elif [[ "${_type_results}" =~ is\ an\ alias\ for ]]
     then # alias
@@ -95,7 +97,7 @@ HEREDOC
         | grep                    \
           -e "alias '${_query}="  \
           -e "alias ${_query}="
-    else
+    else # function, executable
       printf "%s\n" "${_type_results}"
     fi
 
