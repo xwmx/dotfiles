@@ -20,6 +20,30 @@ my
 Shortcuts for local system information commands.
 EOM
 
+# -------------------------------------------------------------------- hostname
+
+desc "hostname" <<EOM
+Usage:
+  $_ME hostname [--local | --remote]
+
+Options:
+  --local   Display the local hostname (default).
+  --remote  Display the remote hostname.
+
+Description:
+  Print the current hostname. By default, the local hostname displayed, or
+  the '--remote' option can be used to return the remote hostname.
+EOM
+_hostname_command="$(which hostname)"
+hostname() {
+  if [[ "$1" == "--remote" ]]
+  then
+    host "$($_ME ip --remote)"
+  else
+    "$_hostname_command"
+  fi
+}
+
 # ------------------------------------------------------------------------- ip
 
 desc "ip" <<EOM
