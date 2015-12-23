@@ -192,11 +192,11 @@ alias program_exists="command_exists"
 source_dir() {
   if (($#)) && [ -d "$1" ]
   then
-    for file in "$1"/*
+    for _file in "$1"/*
     do
-      if [ -f "$file" ]
+      if [ -f "$_file" ]
       then
-        source "$file"
+        source "$_file"
       fi
     done
   else
