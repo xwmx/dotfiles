@@ -199,12 +199,12 @@ brew install gnu-sed
 ###############################################################################
 
 # Load all files in brew-formulae.d if it exists.
-brewformulaed="$DOTFILES/script/install/brew-formulae.d"
-if [[ -e "$brewformulaed" ]]
+_brewformulae_d="$DOTFILES/script/install/brew-formulae.d"
+if [[ -e "$_brewformulae_d" ]]
 then
-  for f in "$brewformulaed"/*
+  for _file in "$_brewformulae_d"/*
   do
-    source "$f"
+    source "$_file"
   done
 fi
 
