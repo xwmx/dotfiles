@@ -249,9 +249,13 @@ HEREDOC
           printf "off\n"
         fi
         ;;
-      *)
+      -h|--help)
         _print_debug_help
         return 0
+        ;;
+      *)
+        _print_debug_help
+        return 1
         ;;
     esac
   done
