@@ -216,11 +216,11 @@ then
 fi
 
 debug() {
-  _print_hd_help() {
+  _print_debug_help() {
     cat <<HEREDOC
 Usage:
   debug ( on | off | status )
-  hd -h | --help
+  debug -h | --help
 
 Options:
   -h --help  Show this help.
@@ -250,7 +250,7 @@ HEREDOC
         fi
         ;;
       *)
-        _print_hd_help
+        _print_debug_help
         return 0
         ;;
     esac
