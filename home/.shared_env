@@ -16,6 +16,8 @@
 # Verbose Init
 ###############################################################################
 
+# https://github.com/koalaman/shellcheck/wiki/SC1090
+# shellcheck source=/dev/null
 . "$HOME/.shared_verbose_init"
 __verbose_init printf "Loading .shared_env\n"
 
@@ -196,6 +198,8 @@ source_dir() {
     do
       if [ -f "$_file" ]
       then
+        # https://github.com/koalaman/shellcheck/wiki/SC1090
+        # shellcheck source=/dev/null
         source "$_file"
       fi
     done
