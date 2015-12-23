@@ -206,6 +206,76 @@ source_dir() {
 }
 
 ###############################################################################
+# Debug
+###############################################################################
+
+# Set `$_DEBUG_ENABLED` is it's blank.
+if [[ -z "${_DEBUG_ENABLED:-}" ]]
+then
+  export _DEBUG_ENABLED=0
+fi
+
+debug() {
+  _print_hd_help() {
+    cat <<HEREDOC
+Usage:
+  debug ( on | off | status )
+  hd -h | --help
+
+Options:
+  -h --help  Show this help.
+
+Description:
+  Turn debug mode on or off.
+HEREDOC
+  }
+
+  for arg in "${@:-}"
+  do
+    case $arg in
+      on)
+        _DEBUG_ENABLED=1
+        debug status
+        ;;
+      off)
+        _DEBUG_ENABLED=0
+        debug status
+        ;;
+      status)
+        if ((_DEBUG_ENABLED))
+        then
+          printf "on\n"
+        else
+          printf "off\n"
+        fi
+        ;;
+      *)
+        _print_hd_help
+        return 0
+        ;;
+    esac
+  done
+}
+
+# _debug()
+#
+# Usage:
+#   _debug printf "Debug info. Variable: %s\n" "$0"
+#
+# A simple function for executing a specified command if the `$_DEBUG_ENABLED`
+# variable has been set. The command is expected to print a message and
+# should typically be either `echo`, `printf`, or `cat`.
+_debug() {
+  if [[ "${_DEBUG_ENABLED:-"0"}" -eq 1 ]]
+  then
+    # Prefix debug message with "bug (U+1F41B)"
+    printf "🐛  "
+    "$@"
+    printf "――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――\n"
+  fi
+}
+
+###############################################################################
 # Init
 ###############################################################################
 
