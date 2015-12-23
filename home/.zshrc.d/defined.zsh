@@ -8,7 +8,7 @@
 # defined()
 #
 # Usage:
-#   defined [ -wfpamsS ] <name>
+#   defined [ -wfpamsS ] [--describe] <name>
 #   defined --debug-init
 #   defined -h | --help
 defined() {
@@ -17,11 +17,12 @@ defined() {
 Where is <name> \`defined\`?
 
 Usage:
-  defined [ -wfpamsS ] <name> --describe
+  defined [ -wfpamsS ] [--describe] <name>
   defined --debug-init
   defined -h | --help
 
 Options:
+  --describe    Display additional descriptive information about the name.
   --debug-init  Print shell init info from \`zsh -x\`.
   -h --help     Show this help.
 
