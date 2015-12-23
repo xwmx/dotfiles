@@ -33,10 +33,21 @@ then
   DIR="$PWD"
 fi
 
-# Source primary install scripts for Homebrew and Homewbrew Cask.
-. "$DIR/apt-packages.d/apt-ctf-tools"
-. "$DIR/apt-packages.d/apt-base-packages"
-. "$DIR/apt-packages.d/apt-ruby-build-packages"
+###############################################################################
+# apt-packages.d
+#
+# Install lists for APT packages.
+###############################################################################
+
+# Load all files in apt-packages.d if it exists.
+_apt_packages_d="${DIR}/apt-packages.d"
+if [[ -e "$_apt_packages_d" ]]
+then
+  for _file in "$_apt_packages_d"/*
+  do
+    source "$_file"
+  done
+fi
 
 ###############################################################################
 # Cleanup
