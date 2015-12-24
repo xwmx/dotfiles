@@ -87,14 +87,14 @@ utc_timestamp() {
   date -u "+%Y%m%d%H%M%S"
 }
 
-# utcts()
+# timestamp()
 #
 # Usage:
-#   utcts
+#   timestamp
 #
 # Description:
 #   Shortcut for `utc_timestamp`: Print a UTC timestamp.
-utcts() {
+timestamp() {
   utc_timestamp
 }
 
