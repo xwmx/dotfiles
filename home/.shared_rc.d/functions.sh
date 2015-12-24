@@ -434,6 +434,12 @@ HEREDOC
     return 0
   fi
 
+  if ! hash "python" 2>/dev/null
+  then
+    printf "Python is required, but a \`python\` executable was not found.\n"
+    return 1
+  fi
+
   local port="${1:-8080}"
   # Set the default Content-Type to `text/plain` instead of
   # `application/octet-stream` and serve everything as UTF-8 (although not
