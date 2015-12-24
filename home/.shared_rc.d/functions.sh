@@ -416,6 +416,24 @@ urlencode() {
 #   Start an HTTP server from a directory, optionally specifying the port.
 #   When no port is specified, the default port is '8080'.
 serve() {
+  _print_serve_help() {
+    cat <<HEREDOC
+Usage:
+  serve [<port>]
+  serve -h | --help
+
+Description:
+  Start an HTTP server from a directory, optionally specifying the port.
+  When no port is specified, the default port is '8080'.
+HEREDOC
+  }
+
+  if [[ "${1:-}" == "-h" ]] || [[ "${1:-}" == "--help" ]]
+  then
+    _print_serve_help
+    return 0
+  fi
+
   local port="${1:-8080}"
   # Set the default Content-Type to `text/plain` instead of
   # `application/octet-stream` and serve everything as UTF-8 (although not
