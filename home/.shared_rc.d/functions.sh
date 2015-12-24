@@ -407,15 +407,15 @@ urlencode() {
   python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);" "$*"
 }
 
-# server()
+# serve()
 #
 # Usage:
-#   server [<port>]
+#   serve [<port>]
 #
 # Description:
 #   Start an HTTP server from a directory, optionally specifying the port.
 #   When no port is specified, the default port is '8080'.
-server() {
+serve() {
   local port="${1:-8080}"
   # Set the default Content-Type to `text/plain` instead of
   # `application/octet-stream` and serve everything as UTF-8 (although not
@@ -431,6 +431,7 @@ for key, value in map.items():
 HEREDOC
   python -c "$server_script" "$port"
 }
+alias server='serve'
 
 # phpserver()
 #
