@@ -115,6 +115,11 @@
 !/home/.overcast/example.clusters.json
 !/home/.overcast/example.variables.json
 
+# Don't commit pyenv temp files.
+/home/.pyenv/shims/
+/home/.pyenv/versions/
+/home/.pyenv/version
+
 # Don't commit rbenv temp files.
 /home/.rbenv/shims/
 /home/.rbenv/versions/

@@ -271,3 +271,21 @@
 [submodule "home/.gvm"]
 	path = home/.gvm
 	url = https://github.com/moovweb/gvm
+[submodule "vendor/com/github/yyuu/pyenv"]
+	path = vendor/com/github/yyuu/pyenv
+	url = https://github.com/yyuu/pyenv.git
+[submodule "vendor/com/github/yyuu/pyenv-doctor"]
+	path = vendor/com/github/yyuu/pyenv-doctor
+	url = https://github.com/yyuu/pyenv-doctor.git
+[submodule "vendor/com/github/yyuu/pyenv-installer"]
+	path = vendor/com/github/yyuu/pyenv-installer
+	url = https://github.com/yyuu/pyenv-installer.git
+[submodule "vendor/com/github/yyuu/pyenv-update"]
+	path = vendor/com/github/yyuu/pyenv-update
+	url = https://github.com/yyuu/pyenv-update.git
+[submodule "vendor/com/github/yyuu/pyenv-virtualenv"]
+	path = vendor/com/github/yyuu/pyenv-virtualenv
+	url = https://github.com/yyuu/pyenv-virtualenv.git
+[submodule "vendor/com/github/yyuu/pyenv-which-ext"]
+	path = vendor/com/github/yyuu/pyenv-which-ext
+	url = https://github.com/yyuu/pyenv-which-ext.git
