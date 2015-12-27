@@ -29,7 +29,7 @@
 generate_ssh_config() {
   if [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
   then
-    printf "\
+    cat <<HEREDOC
 Usage:
   generate_ssh_config [-h|--help]
 
@@ -43,11 +43,11 @@ Description:
   This function can be called directly in order to manually generate a new
   \`.ssh/config\` file, since commands other than \`ssh\` will use the
   generated configuration.
-"
+HEREDOC
     return 0
   fi
 
-  printf "\
+  cat <<HEREDOC > ~/.ssh/config
 ###############################################################################
 # .ssh/config
 #
@@ -58,7 +58,8 @@ Description:
 #
 # More information: ~/.shared_rc.d/ssh.sh
 ###############################################################################
-" > ~/.ssh/config
+
+HEREDOC
   cat ~/.ssh/config.d/* >> ~/.ssh/config
   cat ~/.ssh/default.sshconfig >> ~/.ssh/config
 }
@@ -85,7 +86,7 @@ generate_ssh_key() {
     return 1
   elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
   then
-    printf "\
+    cat <<HEREDOC
 Usage:
   generate_ssh_key <user@host.tld>
   generate_ssh_key -h | --help
@@ -99,7 +100,7 @@ Description:
     <local.host>_<remote_user>@<remote.host>_id_rsa
 
   More information: http://askubuntu.com/a/423297
-"
+HEREDOC
     return 0
   fi
 
