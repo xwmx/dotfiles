@@ -286,6 +286,14 @@ npm install --global livescript
 # https://github.com/lodash/lodash/
 npm install --global lodash-cli
 
+# mad
+#
+# mad(1) is a markdown driven manual page viewer, this makes manuals easier to
+# write, reuse, and read.
+#
+# https://github.com/tj/mad
+npm install --global mad
+
 # Mocha
 #
 # Mocha is a feature-rich JavaScript test framework running on node.js and the
