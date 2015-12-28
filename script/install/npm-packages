@@ -305,6 +305,19 @@ npm install --global mad
 # https://github.com/mochajs/mocha
 npm install --global mocha
 
+# nd
+#
+# a documentation viewer for node
+#
+# nd is a documentation viewer for npm packages. Similar to mad(1), it displays
+# markdown documents in your terminal. Dissimilarly to mad, nd is written in
+# javascript, and reads documentation out of npm module directories, not out
+# of its own repository of pages.
+#
+# https://github.com/rf/nd
+# https://www.npmjs.com/package/nd
+npm install --global nd
+
 # nshell
 #
 # scriptable shell written with node. A work-in-progress scriptable shell
