@@ -289,6 +289,3 @@
 [submodule "vendor/com/github/yyuu/pyenv-which-ext"]
 	path = vendor/com/github/yyuu/pyenv-which-ext
 	url = https://github.com/yyuu/pyenv-which-ext.git
-[submodule "vendor/com/github/axiros/terminal_markdown_viewer"]
-	path = vendor/com/github/axiros/terminal_markdown_viewer
-	url = https://github.com/axiros/terminal_markdown_viewer.git
