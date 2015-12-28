@@ -136,3 +136,58 @@ HEREDOC
     "$hashed_term")"
   curl "$commandlinefu_url"
 }
+
+# tldr
+#
+# Simplified and community-driven man pages.
+#
+# http://tldr-pages.github.io/
+# https://github.com/tldr-pages/tldr
+# https://news.ycombinator.com/item?id=10797303
+#
+# NOTE: this is a fallback shell function that is only defined when tldr has
+# not yet been installed through some other means.
+if ! hash "tldr" 2>/dev/null
+then
+  tldr() {
+    if [[ -z "${1:-}" ]]
+    then
+      printf "Usage: tldr [<command name>]\n"
+      return 1
+    elif [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]
+    then
+      cat <<HEREDOC
+Usage:
+  tldr [<command name>]
+
+Description:
+  Display TLDR page for a given command name.
+
+  http://tldr-pages.github.io/
+  https://github.com/tldr-pages/tldr
+HEREDOC
+      return 0
+    fi
+
+    local _query="${1:-}"
+    local _base_url="https://raw.githubusercontent.com/tldr-pages/tldr/master/pages/"
+
+    local _command_query_url="${_base_url}/common/${_query}.md"
+    local _command_page
+
+    _command_page="$(curl -s "${_command_query_url}")"
+    if [[ "${_command_page}" == "Not Found" ]]
+    then
+      if [[ "$(uname -a)" =~ ^Linux ]]
+      then
+        local _command_query_url="${_base_url}/linux/${_query}.md"
+      elif [[ "$(uname -a)" =~ ^Darwin ]]
+      then
+        local _command_query_url="${_base_url}/osx/${_query}.md"
+      fi
+    fi
+
+    _command_page="$(curl -s "${_command_query_url}")"
+    printf "%s\n" "${_command_page}"
+  }
+fi
