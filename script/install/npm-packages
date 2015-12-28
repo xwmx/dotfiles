@@ -376,6 +376,15 @@ npm install --global slap
 # http://surge.sh/help/getting-started-with-surge
 npm install --global surge
 
+# tldr
+#
+# Simplified and community-driven man pages.
+#
+# http://tldr-pages.github.io/
+# https://github.com/tldr-pages/tldr
+# https://news.ycombinator.com/item?id=10797303
+npm install --global tldr
+
 # TypeScript
 #
 # TypeScript is a superset of JavaScript that adds optional types, classes,
