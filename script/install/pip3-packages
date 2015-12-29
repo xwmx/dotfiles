@@ -209,6 +209,13 @@ pip3_install rainbowstream
 # https://github.com/michael-lazar/rtv
 pip3_install rtv
 
+# saws
+#
+# A Supercharged AWS Command Line Interface (CLI).
+#
+# https://github.com/donnemartin/saws
+pip3_install saws
+
 # Stellar
 #
 # Fast database snapshot and restore tool for development. Stellar allows you

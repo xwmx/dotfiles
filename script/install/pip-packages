@@ -44,6 +44,21 @@ pip_install() {
 }
 
 ###############################################################################
+# Helpers
+###############################################################################
+
+# _pip_package_is_installed()
+#
+# Usage:
+#   _pip_package_is_installed <name>
+#
+# Test whether a given pip package is installed on the system.
+_pip_package_is_installed() {
+  local _name="$1"
+  [[ -n "$(pip list | grep "^${_name} (")" ]]
+}
+
+###############################################################################
 # Packages
 ###############################################################################
 
@@ -174,7 +189,13 @@ pip_install python-Levenshtein
 # A Supercharged AWS Command Line Interface (CLI).
 #
 # https://github.com/donnemartin/saws
-pip_install saws
+#
+# NOTE: uninstall in favor of pip3 installation.
+# TODO: remove when this has been uninstalled from all systems.
+if _pip_package_is_installed "saws"
+then
+  pip uninstall saws -y
+fi
 
 # virtualenv - Virtual Environments
 #
