@@ -71,6 +71,14 @@ pip3_install() {
 # NOTE: additional configuration in .bashrc.d and .zshrc.d.
 pip3_install awscli
 
+# aws-shell
+#
+# An integrated shell for working with the AWS CLI.
+#
+# https://github.com/awslabs/aws-shell
+# http://www.infoq.com/news/2015/12/saws-combined-into-aws-cli
+pip3_install aws-shell
+
 # csvkit
 #
 # csvkit is a suite of utilities for converting to and working with CSV, the
