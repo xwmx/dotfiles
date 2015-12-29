@@ -13,9 +13,9 @@
 # Basic Components
 ###############################################################################
 
-# Prefix prompt with arrow with color indicating last return status: green
+# Prefix prompt with a symbol with color indicating last return status: green
 # for 0 and red for non-0.
-_astral_return_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}%s)"
+_astral_return_status="%(?:%{$fg_bold[green]%} ⧊ :%{$fg_bold[red]%} ⧂ %s)"
 
 # The current time in 24-hour format.
 #
@@ -48,7 +48,7 @@ _astral_path="%{$fg[cyan]%}%2~"
 # _prefix
 #
 # Combine return status, followed by time.
-_astral_prefix="${_astral_return_status} ⧊ ${_astral_time}"
+_astral_prefix="${_astral_return_status}${_astral_time}"
 
 # _context
 #
