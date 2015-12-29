@@ -94,6 +94,7 @@
     useGlobalEslint: true
   minimap:
     absoluteMode: true
+    scrollAnimation: true
   "atom-material-ui":
     accentColor: "Pink"
     compactTreeView: true
