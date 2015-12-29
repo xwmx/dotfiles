@@ -48,7 +48,7 @@ _astral_path="%{$fg[cyan]%}%2~"
 # _prefix
 #
 # Combine return status, followed by time.
-_astral_prefix="${_astral_return_status}${_astral_time}"
+_astral_prefix="${_astral_return_status} ⧊ ${_astral_time}"
 
 # _context
 #
