@@ -92,7 +92,8 @@
   "symbols-tree-view": {}
   "linter-eslint":
     useGlobalEslint: true
-  minimap: {}
+  minimap:
+    absoluteMode: true
   "atom-material-ui":
     accentColor: "Pink"
     compactTreeView: true
