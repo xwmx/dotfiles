@@ -95,6 +95,7 @@
   minimap:
     absoluteMode: true
     scrollAnimation: true
+    autoToggle: false
   "atom-material-ui":
     accentColor: "Pink"
     compactTreeView: true
