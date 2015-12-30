@@ -79,6 +79,10 @@
 !/home/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 !/home/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
 
+# Ignore the .gnupg directory, but track .keep so it's included in the index.
+/home/.gnupg/*
+!/home/.gnupg/.keep
+
 # .hyperlocal
 #
 # Only track home/.hyperlocal Readme
