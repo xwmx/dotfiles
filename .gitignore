@@ -102,6 +102,10 @@
 /home/.lein/*
 !/home/.lein/profiles.cjl
 
+# Ignore the .mutt directory, but track .keep so it's included in the index.
+/home/.mutt/*
+!/home/.mutt/.keep
+
 # Only track home/.newsbeuter/urls
 /home/.newsbeuter/*
 !/home/.newsbeuter/urls
