@@ -132,12 +132,6 @@
 /home/.newsbeuter/*
 !/home/.newsbeuter/urls
 
-# home/.npm-packages
-#
-# Only track home/.npm-packages Readme
-/home/.npm-packages/*
-!/home/.npm-packages/Readme.md
-
 # home/.overcast
 #
 # Only track example Overcast configuration files.
