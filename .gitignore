@@ -21,12 +21,14 @@
 # Ignore all .vagrant directories.
 .vagrant
 
-# .ammonite
+# home/.ammonite
 #
 # Only track predef.scala
 /home/.ammonite/*
 !/home/.ammonite/predef.scala
 
+# home/.atom
+#
 # Only track specific atom config files
 /home/.atom/*
 !/home/.atom/config.cson
@@ -36,14 +38,20 @@
 !/home/.atom/snippets.cson
 !/home/.atom/styles.less
 
+# home/.aws
+#
 # Only track home/.aws Readme
 /home/.aws/*
 !/home/.aws/Readme.md
 
+# home/.bpkg
+#
 # Only track home/.bpkg Readme
 /home/.bpkg/*
 !/home/.bpkg/Readme.md
 
+# home/.cabal
+#
 # Only track specific .cabal files
 #
 # Include example config and help files only.
@@ -53,7 +61,7 @@
 !/home/.cabal/README.md
 !/home/.cabal/where-is-my-stuff.txt
 
-# .config
+# home/.config
 #
 # Only track specific .config files
 /home/.config/*
@@ -79,16 +87,20 @@
 !/home/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 !/home/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
 
+# home/.gnupg
+#
 # Ignore the .gnupg directory, but track .keep so it's included in the index.
 /home/.gnupg/*
 !/home/.gnupg/.keep
 
-# .hyperlocal
+# home/.hyperlocal
 #
 # Only track home/.hyperlocal Readme
 /home/.hyperlocal/*
 !/home/.hyperlocal/Readme.md
 
+# home/.ipython
+#
 # Only track specific ipython config files
 #
 # Note: the exclude/include flip-flopping is required because using a wildcard
@@ -102,37 +114,53 @@
 !/home/.ipython/profile_default/ipython_notebook_config.py
 !/home/.ipython/profile_default/ipython_qtconsole_config.py
 
+# home/.lein
+#
 # Only track the leiningen / clojure default profiles
 /home/.lein/*
 !/home/.lein/profiles.cjl
 
+# home/.mutt
+#
 # Ignore the .mutt directory, but track .keep so it's included in the index.
 /home/.mutt/*
 !/home/.mutt/.keep
 
+# home/.newsbeuter
+#
 # Only track home/.newsbeuter/urls
 /home/.newsbeuter/*
 !/home/.newsbeuter/urls
 
+# home/.npm-packages
+#
 # Only track home/.npm-packages Readme
 /home/.npm-packages/*
 !/home/.npm-packages/Readme.md
 
+# home/.overcast
+#
 # Only track example Overcast configuration files.
 /home/.overcast/*
 !/home/.overcast/example.clusters.json
 !/home/.overcast/example.variables.json
 
+# home/.pyenv
+#
 # Don't commit pyenv temp files.
 /home/.pyenv/shims/
 /home/.pyenv/versions/
 /home/.pyenv/version
 
+# home/.rbenv
+#
 # Don't commit rbenv temp files.
 /home/.rbenv/shims/
 /home/.rbenv/versions/
 /home/.rbenv/version
 
+# home/.rvm
+#
 # Only track specific rvm config files
 /home/.rvm/*
 !/home/.rvm/gemsets
@@ -143,6 +171,8 @@
 /home/.rvm/user/*
 !/home/.rvm/user/db
 
+# home/.ssh
+#
 # Only track ssh config default and example configuration files.
 /home/.ssh/*
 !/home/.ssh/default.sshconfig
@@ -150,11 +180,13 @@
 /home/.ssh/config.d/*
 !/home/.ssh/config.d/example.com.sshconfig
 
+# home/.textadept
+#
 # Only trash .textadept/init.lua
 /home/.textadept/*
 !/home/.textadept/init.lua
 
-# .vim
+# home/.vim
 #
 # Ignore temp vim files.
 # Copied from home/.vim.janus/.gitignore.
