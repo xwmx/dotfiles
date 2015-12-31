@@ -290,3 +290,6 @@
 [submodule "vendor/com/github/yyuu/pyenv-which-ext"]
 	path = vendor/com/github/yyuu/pyenv-which-ext
 	url = https://github.com/yyuu/pyenv-which-ext.git
+[submodule "vendor/com/github/altercation/mutt-colors-solarized"]
+	path = vendor/com/github/altercation/mutt-colors-solarized
+	url = https://github.com/altercation/mutt-colors-solarized.git
