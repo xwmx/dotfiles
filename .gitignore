@@ -124,7 +124,6 @@
 #
 # Only track specific .mutt files.
 /home/.mutt/*
-!/home/.mutt/.keep
 !/home/.mutt/muttrc
 !/home/.mutt/colors
 
