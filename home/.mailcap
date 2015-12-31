@@ -1,0 +1,14 @@
+###############################################################################
+# home/.mailcap
+#
+# Resources:
+# https://en.wikipedia.org/wiki/Mailcap
+# http://linux.die.net/man/4/mailcap
+# http://tools.ietf.org/html/rfc1524
+# http://www.washington.edu/pine/faq/mailcap.sample
+# http://www.mutt.org/doc/manual/manual-5.html
+# http://www.mutt.org/doc/devel/manual.html#mailcap
+# http://jasonwryan.com/blog/2012/05/12/mutt/
+###############################################################################
+
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
