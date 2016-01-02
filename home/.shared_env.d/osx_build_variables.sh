@@ -2,7 +2,8 @@
 # Build / Configure Environment Variables
 ###############################################################################
 
-if is_osx; then
+if is_osx
+then
   export ARCHFLAGS='-arch x86_64'
   export CFLAGS='-arch x86_64'
   # NOTE: LDFLAGS set to '-arch x86_64' causes build failures when installing
