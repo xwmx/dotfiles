@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ################################################################################
-# Programs
+# brew-tools
 ###############################################################################
 
 ###############################################################################
@@ -10,7 +10,7 @@
 # Skip unless OS X
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "brew-programs is only supported on OS X\nSkipping...\n"
+  printf "brew-tools is only supported on OS X\nSkipping...\n"
   exit 0
 fi
 

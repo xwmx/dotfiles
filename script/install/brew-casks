@@ -277,7 +277,7 @@ brew cask install context-free
 #
 # a graphical user interface based on gtk (CoqIde) for coq.
 #
-# NOTE: see `brew install coq` in `brew-programs`.
+# NOTE: see `brew install coq` in `brew-tools`.
 #
 # https://coq.inria.fr/
 brew cask install coqide
