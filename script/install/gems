@@ -100,6 +100,14 @@ gem install foreman
 # https://github.com/jordansissel/fpm
 gem install fpm
 
+# friends
+#
+# Friends is both a Ruby library and a command-line interface that allows you
+# to keep track of your relationships with the people you care about.
+#
+# https://github.com/JacobEvelyn/friends
+gem install friends
+
 # gem_updater
 #
 # Update gems in your Gemfile and fetch their changelogs
