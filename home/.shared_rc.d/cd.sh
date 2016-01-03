@@ -31,8 +31,8 @@ cde() {
 #   Change working directory to the top-most Finder window location. `cdf` is
 #   short for 'cdfinder'.
 #
-#   NOTE: macOS only.
-if [[ "$OSTYPE" =~ ^darwin ]]
+#   NOTE: macOS only, so only define the function if `osascript` is available.
+if hash osascript 2>/dev/null
 then
   cdf() {
     local _script
