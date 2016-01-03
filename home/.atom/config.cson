@@ -67,6 +67,8 @@
     "^.htoprc": "text.generic-config"
     "^.inputrc": "text.generic-config"
     "^.mailcap": "source.shell"
+    "mutt_account": "source.shell"
+    "mutt_provider": "source.shell"
     "^muttrc": "source.shell"
     "^.profile$": "source.shell"
     "^.psqlrc": "source.sql"
