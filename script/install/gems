@@ -259,6 +259,16 @@ gem install scss-lint
 # https://rubygems.org/gems/super-pry
 gem install super-pry
 
+# terminal-notifier
+#
+# Send User Notifications on Mac OS X 10.8 from the command-line.
+#
+# terminal-notifier is a command-line tool to send Mac OS X User Notifications,
+# which are available in Mac OS X 10.8 and higher.
+#
+# https://github.com/julienXX/terminal-notifier
+gem install terminal-notifier
+
 # Timetrap
 #
 # Timetrap is a simple command line time tracker written in ruby. It provides
