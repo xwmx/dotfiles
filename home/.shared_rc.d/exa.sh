@@ -6,7 +6,7 @@
 # http://bsago.me/exa/
 #
 # Installation script:
-#   $DOTSPATH/install/scripts/orphans
+#   $DOTFILES/install/scripts/orphans
 #
 # `exa --help` usage info, for reference:
 #
