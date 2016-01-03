@@ -69,7 +69,7 @@
     "^.mailcap": "source.shell"
     "mutt_account": "source.shell"
     "mutt_provider": "source.shell"
-    "^muttrc": "source.shell"
+    ".*muttrc": "source.shell"
     "^.profile$": "source.shell"
     "^.psqlrc": "source.sql"
     "^.rspec$": "text.generic-config"
