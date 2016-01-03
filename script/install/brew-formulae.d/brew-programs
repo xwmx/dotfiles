@@ -249,6 +249,13 @@ brew install cmus
 # http://getcomposer.org
 brew install composer
 
+# contacts
+#
+# Command-line tool to access OS X's Contacts (formerly 'Address Book')
+#
+# http://www.gnufoo.org/contacts/contacts.html
+brew install contacts
+
 # coq
 #
 # Coq is a formal proof management system. It provides a formal language to
