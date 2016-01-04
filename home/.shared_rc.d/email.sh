@@ -62,6 +62,7 @@ HEREDOC
     local _email_address="${_email_arguments[1]}"
     if [[ -e "${HOME}/.mutt/accounts/${_email_address}.sh" ]]
     then
+      # Run in a subshell to avoid polluting the current shell environment.
       (source "${HOME}/.mutt/accounts/${_email_address}.sh"; mutt)
     else
       printf "Account not found: %s\n" "${_email_address}"
