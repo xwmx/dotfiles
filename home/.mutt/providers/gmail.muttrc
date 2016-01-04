@@ -1,0 +1,152 @@
+###############################################################################
+# .mutt/providers/gmail.muttrc
+#
+# Required Environement Variables:
+# - MUTT_PROVIDER
+# - MUTT_ACCOUNT_EMAIL
+# - MUTT_ACCOUNT_REALNAME
+# - MUTT_ACCOUNT_PASSWORD
+###############################################################################
+
+###############################################################################
+# Account info.
+
+# from
+# http://www.mutt.org/doc/devel/manual.html#from
+set from = "${MUTT_ACCOUNT_EMAIL}"
+# realname
+# http://www.mutt.org/doc/devel/manual.html#realname
+set realname = "${MUTT_ACCOUNT_REALNAME}"
+
+###############################################################################
+# IMAP Settings.
+
+# imap_user
+# http://www.mutt.org/doc/devel/manual.html#imap-user
+set imap_user = "${MUTT_ACCOUNT_EMAIL}"
+# imap_pass
+# http://www.mutt.org/doc/devel/manual.html#imap-pass
+set imap_pass = "${MUTT_ACCOUNT_PASSWORD}"
+
+# copy
+#
+# Type: quadoption
+# Default: yes
+#
+# This variable controls whether or not copies of your outgoing messages will
+# be saved for later references.
+#
+# http://www.mutt.org/doc/devel/manual.html#copy
+#
+# NOTE: gmail already does this.
+set copy = no
+
+# move
+#
+# Type: quadoption
+# Default: no
+#
+# Controls whether or not Mutt will move read messages from your spool mailbox
+# to your $mbox mailbox, or as a result of a “mbox-hook” command.
+#
+# http://www.mutt.org/doc/devel/manual.html#move
+set move = no # Stop asking to move read messages to mbox!
+
+# imap_keepalive
+#
+# Type: number
+# Default: 300
+#
+# This variable specifies the maximum amount of time in seconds that mutt will
+# wait before polling open IMAP connections, to prevent the server from
+# closing them before mutt has finished with them. The default is well within
+# the RFC-specified minimum amount of time (30 minutes) before a server is
+# allowed to do this, but in practice the RFC does get violated every now and
+# then. Reduce this number if you find yourself getting disconnected from your
+# IMAP server due to inactivity.
+#
+# http://www.mutt.org/doc/devel/manual.html#imap-keepalive
+set imap_keepalive = 900
+
+###############################################################################
+# SMTP settings.
+
+# smtp_url
+#
+# Type: string
+# Default: (empty)
+#
+# Defines the SMTP smarthost where sent messages should relayed for delivery.
+# This should take the form of an SMTP URL, e.g.:
+#   smtp[s]://[user[:pass]@]host[:port]
+# where “[...]” denotes an optional part.
+#
+# http://www.mutt.org/doc/devel/manual.html#smtp-url
+set smtp_url = "smtp://$(printf "$MUTT_ACCOUNT_EMAIL" | awk -F'@' '{print $1}')@smtp.gmail.com:587/"
+# smtp_pass
+# http://www.mutt.org/doc/devel/manual.html#smtp-pass
+set smtp_pass = "${MUTT_ACCOUNT_PASSWORD}"
+# smtp_authenticators
+#
+# Type: string
+# Default: (empty)
+#
+# This is a colon-delimited list of authentication methods mutt may attempt
+# to use to log in to an SMTP server, in the order mutt should try them.
+# Authentication methods are any SASL mechanism, e.g. “digest-md5”, “gssapi”
+# or “cram-md5”. This option is case-insensitive. If it is “unset” (the
+# default) mutt will try all available methods, in order from most-secure to
+# least-secure.
+#
+# http://www.mutt.org/doc/devel/manual.html#smtp-authenticators
+set smtp_authenticators = 'gssapi:login'
+
+###############################################################################
+# Remote Gmail folders.
+
+# folder
+#
+# Type: path
+# Default: “~/Mail”
+#
+# Specifies the default location of your mailboxes. A “+” or “=” at the
+# beginning of a pathname will be expanded to the value of this variable.
+# Note that if you change this variable (from the default) value you need to
+# make sure that the assignment occurs before you use “+” or “=” for any other
+# variables since expansion takes place when handling the “mailboxes” command.
+#
+# http://www.mutt.org/doc/devel/manual.html#folder
+set folder = "imaps://imap.gmail.com:993"
+# spoolfile
+#
+# Type: path
+# Default: (empty)
+#
+# If your spool mailbox is in a non-default place where Mutt cannot find it,
+# you can specify its location with this variable. Mutt will initially set
+# this variable to the value of the environment variable $MAIL or $MAILDIR if
+# either is defined.
+#
+# http://www.mutt.org/doc/devel/manual.html#spoolfile
+set spoolfile = "+INBOX"
+# postponed
+#
+# Type: path
+# Default: "~/postponed"
+#
+# Mutt allows you to indefinitely “postpone sending a message” which you are
+# editing. When you choose to postpone a message, Mutt saves it in the mailbox
+# specified by this variable.
+#
+# http://www.mutt.org/doc/devel/manual.html#postponed
+set postponed = "+[Gmail]/Drafts"
+
+###############################################################################
+# Keyboard Macros
+
+# macro
+# http://www.mutt.org/doc/devel/manual.html#macro
+macro index gi '=INBOX' 'Go to inbox'
+macro index ga '=[Google Mail]/All Mail' 'Go to all mail'
+macro index gs '=[Google Mail]/Sent Mail' 'Go to Sent Mail'
+macro index gd '=[Google Mail]/Drafts' 'Go to drafts'

@@ -1,1 +1,374 @@
-../../local/mutt/.mutt/muttrc
+###############################################################################
+# .mutt/muttrc
+#
+# Required Environement Variables:
+# - MUTT_PROVIDER
+# - MUTT_ACCOUNT_EMAIL
+###############################################################################
+# mutt
+#
+# Mutt is a small but very powerful text-based mail client for Unix operating
+# systems.
+#
+# http://www.mutt.org/
+#
+# Resources:
+# http://www.mutt.org/doc/man_page.html
+# -------------------------------------
+# http://blog.kitchen.io/archive/2012/08/22/my-mutt-setup/
+# http://jasonwryan.com/blog/2012/05/12/mutt/
+# http://jonmorehouse.tumblr.com/post/100650456885/yosemite-mutt
+# http://stevelosh.com/blog/2012/10/the-homely-mutt/
+# http://www.jstorimer.com/blogs/workingwithcode/7766135-using-mutt-with-gmail-on-osx
+# http://www.spocom.com/users/gjohnson/mutt/
+# https://gist.github.com/allolex/4574164
+# https://gist.github.com/chrismytton/3976435
+# https://gist.github.com/dapplebeforedawn/8778724
+# https://gist.github.com/miguelmota/9456162
+# https://github.com/altercation/mutt-colors-solarized
+# https://github.com/vidbina/mutt-setup
+# https://help.ubuntu.com/community/MuttAndGmail
+# https://medium.com/@stessyco/gmail-from-the-command-line-with-mutt-mac-os-x-92d047bcd74f
+# https://pbrisbin.com/posts/mutt_gmail_offlineimap/
+# https://pbrisbin.com/posts/two_accounts_in_mutt/
+# https://www.reddit.com/r/commandline/comments/33hwu8/muttmultiple_gmail_accounts/
+# https://zuttobenkyou.wordpress.com/2010/11/05/mutt-multiple-gmail-imap-setup/
+###############################################################################
+
+###############################################################################
+# Manual
+# http://www.mutt.org/doc/devel/manual.txt
+# http://www.mutt.org/doc/devel/manual.html
+# http://www.mutt.org/doc/manual/manual.html
+#
+# See also:
+#   Using Hooks:
+#     http://www.mutt.org/doc/devel/manual.html#hooks
+#   Folder Hook / folder-hook:
+#     http://www.mutt.org/doc/devel/manual.html#folder-hook
+###############################################################################
+
+###############################################################################
+
+###############################################################################
+
+###############################################################################
+# Account
+
+source "${HOME}/.mutt/providers/${MUTT_PROVIDER}.muttrc"
+
+###############################################################################
+# Base Settings.
+
+# colors
+#
+# Source the colors file to enable color.
+source "${HOME}/.mutt/colors"
+
+# mbox_type
+#
+# Type: folder magic
+# Default: mbox
+#
+# The default mailbox type used when creating new folders. May be any of
+# “mbox”, “MMDF”, “MH” and “Maildir”. This is overridden by the -m
+# command-line option.
+#
+# http://www.mutt.org/doc/devel/manual.html#mbox-type
+set mbox_type = 'mbox'
+
+###############################################################################
+# IMAP Settings.
+
+# copy
+#
+# Type: quadoption
+# Default: yes
+#
+# This variable controls whether or not copies of your outgoing messages will
+# be saved for later references.
+#
+# http://www.mutt.org/doc/devel/manual.html#copy
+#
+# NOTE: gmail already does this.
+set copy = no
+
+# move
+#
+# Type: quadoption
+# Default: no
+#
+# Controls whether or not Mutt will move read messages from your spool mailbox
+# to your $mbox mailbox, or as a result of a “mbox-hook” command.
+#
+# http://www.mutt.org/doc/devel/manual.html#move
+set move = no # Stop asking to move read messages to mbox!
+
+# imap_keepalive
+#
+# Type: number
+# Default: 300
+#
+# This variable specifies the maximum amount of time in seconds that mutt will
+# wait before polling open IMAP connections, to prevent the server from
+# closing them before mutt has finished with them. The default is well within
+# the RFC-specified minimum amount of time (30 minutes) before a server is
+# allowed to do this, but in practice the RFC does get violated every now and
+# then. Reduce this number if you find yourself getting disconnected from your
+# IMAP server due to inactivity.
+#
+# http://www.mutt.org/doc/devel/manual.html#imap-keepalive
+set imap_keepalive = 900
+
+###############################################################################
+# Local folders for cached headers and certificates.
+
+# header_cache
+#
+# Type: path
+# Default: (empty)
+#
+# This variable points to the header cache database. If pointing to a
+# directory Mutt will contain a header cache database file per folder, if
+# pointing to a file that file will be a single global header cache. By
+# default it is unset so no header caching will be used.
+#
+# Header caching can greatly improve speed when opening POP, IMAP MH or Maildir
+# folders.
+#
+# http://www.mutt.org/doc/devel/manual.html#header-cache
+set header_cache = "${HOME}/.mutt/var/${MUTT_ACCOUNT_EMAIL}/cache/headers"
+# message_cachedir
+#
+# Type: path
+# Default: (empty)
+#
+# Set this to a directory and mutt will cache copies of messages from your
+# IMAP and POP servers here. You are free to remove entries at any time.
+#
+# When setting this variable to a directory, mutt needs to fetch every remote
+# message only once and can perform regular expression searches as fast as for
+# local folders.
+#
+# http://www.mutt.org/doc/devel/manual.html#message-cachedir
+set message_cachedir = "${HOME}/.mutt/var/${MUTT_ACCOUNT_EMAIL}/cache/bodies"
+# certificate_file
+#
+# Type: path
+# Default: "~/.mutt_certificates"
+#
+# This variable specifies the file where the certificates you trust are
+# saved. When an unknown certificate is encountered, you are asked if you
+# accept it or not. If you accept it, the certificate can also be saved in
+# this file and further connections are automatically accepted.
+#
+# You can also manually add CA certificates in this file. Any server
+# certificate that is signed with one of these CA certificates is also
+# automatically accepted.
+#
+# http://www.mutt.org/doc/devel/manual.html#certificate-file
+set certificate_file = "${HOME}/.mutt/var/certificates"
+
+###############################################################################
+# Key mappings
+
+# Set 'G' to 'imap-fetch-mail': force retrieval of mail from IMAP server
+#
+# This replaces the default:
+#   'fetch-mail': retrieve mail from POP server
+bind index G imap-fetch-mail
+
+###############################################################################
+# MIME Autoview
+
+# auto_view
+# http://www.mutt.org/doc/devel/manual.html#auto-view
+#
+# TODO: expand this.
+auto_view text/html
+
+# alternative_order
+# http://www.mutt.org/doc/devel/manual.html#alternative-order
+alternative_order text/plain text/enriched text/html
+
+###############################################################################
+# Display Preferences
+
+# sorting
+#
+# http://inodes.org/2008/04/14/sorting-in-mutt/
+#
+# sort
+# http://www.mutt.org/doc/devel/manual.html#sort
+set sort = 'threads'
+# sort_aux
+# http://www.mutt.org/doc/devel/manual.html#sort-aux
+set sort_aux = 'reverse-last-date-received'
+# Set all folders to sort by threads.
+folder-hook . set sort=threads
+# Set spam to sort by subject.
+folder-hook spam set sort=subject
+
+# index_format
+#
+# Type: string
+# Default: “%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s”
+#
+# This variable allows you to customize the message index display to your
+# personal taste.
+#
+# http://www.mutt.org/doc/devel/manual.html#index-format
+# See also: http://unix.stackexchange.com/a/43273
+set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
+
+# pager_index_lines
+#
+# Type: number
+# Default: 0
+#
+# Determines the number of lines of a mini-index which is shown when in the
+# pager. The current message, unless near the top or bottom of the folder,
+# will be roughly one third of the way down this mini-index, giving the reader
+# the context of a few messages before and after the message. This is useful,
+# for example, to determine how many messages remain to be read in the current
+# thread. One of the lines is reserved for the status bar from the index, so a
+# setting of 6 will only show 5 lines of the actual index. A value of 0
+# results in no index being shown. If the number of messages in the current
+# folder is less than $pager_index_lines, then the index will only use as many
+# lines as it needs.
+#
+# http://www.mutt.org/doc/devel/manual.html#pager-index-lines
+set pager_index_lines = 15
+
+# pager_stop
+#
+# Type: boolean
+# Default: no
+#
+# When set, the internal-pager will not move to the next message when you are
+# at the end of a message and invoke the <next-page> function.
+#
+# http://www.mutt.org/doc/devel/manual.html#pager-stop
+set pager_stop
+
+# menu_scroll
+#
+# Type: boolean
+# Default: no
+#
+# When set, menus will be scrolled up or down one line when you attempt to
+# move across a screen boundary. If unset, the screen is cleared and the next
+# or previous page of the menu is displayed (useful for slow links to avoid
+# many redraws).
+#
+# http://www.mutt.org/doc/devel/manual.html#menu-scroll
+set menu_scroll
+
+# tilde
+#
+# Type: boolean
+# Default: no
+#
+# When set, the internal-pager will pad blank lines to the bottom of the
+# screen with a tilde (“~”).
+#
+# http://www.mutt.org/doc/devel/manual.html#tilde
+set tilde
+
+# Message Header Display
+# http://www.mutt.org/doc/devel/manual.html#msg-hdr-display
+# via: https://pbrisbin.com/posts/mutt_gmail_offlineimap/
+ignore *                               # first, ignore all headers
+unignore from: to: cc: date: subject:  # then, show only these
+hdr_order from: to: cc: date: subject: # and in this order
+
+###############################################################################
+# Composing
+
+# editor
+#
+# Type: path
+# Default: (empty)
+#
+# This variable specifies which editor is used by mutt. It defaults to the
+# value of the $VISUAL, or $EDITOR, environment variable, or to the string
+# “vi” if neither of those are set.
+#
+# The $editor string may contain a %s escape, which will be replaced by the
+# name of the file to be edited. If the %s escape does not appear in $editor,
+# a space and the name to be edited are appended.
+#
+# The resulting string is then executed by running
+#   sh -c 'string'
+# where string is the expansion of $editor described above.
+#
+# http://www.mutt.org/doc/devel/manual.html#editor
+#
+# Turn on spell checking in vim when composing.
+set editor = 'vim -c "set spell spelllang=en_us"'
+
+# forward_format
+#
+# Type: string
+# Default: “[%a: %s]”
+#
+# This variable controls the default subject when forwarding a message. It
+# uses the same format sequences as the $index_format variable.
+#
+# http://www.mutt.org/doc/devel/manual.html#forward-format
+set forward_format = "Fwd: %s"
+
+# forward_quote
+#
+# Type: boolean
+# Default: no
+#
+# When set, forwarded messages included in the main body of the message (when
+# $mime_forward is unset) will be quoted using $indent_string.
+#
+# http://www.mutt.org/doc/devel/manual.html#forward-quote
+set forward_quote
+
+# include
+#
+# Type: quadoption
+# Default: ask-yes
+#
+# Controls whether or not a copy of the message(s) you are replying to is
+# included in your reply.
+#
+# http://www.mutt.org/doc/devel/manual.html#include
+set include = 'yes'
+
+###############################################################################
+# SSL hardening
+# via: https://gist.github.com/bnagy/8914f712f689cc01c267#ssl-hardening
+
+# ssl_force_tls
+# http://www.mutt.org/doc/devel/manual.html#ssl-force-tls
+set ssl_force_tls=yes
+# ssl_starttls
+# http://www.mutt.org/doc/devel/manual.html#ssl-starttls
+# NOTE: this option is superceded by ssl_force_tls
+set ssl_starttls=yes
+# ssl_use_sslv2
+# http://www.mutt.org/doc/devel/manual.html#ssl-use-sslv2
+set ssl_use_sslv2=no
+# ssl_use_sslv3
+# http://www.mutt.org/doc/devel/manual.html#ssl-use-sslv3
+set ssl_use_sslv3=no
+# ssl_use_tlsv1
+# http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1
+set ssl_use_tlsv1=no
+# ssl_use_tlsv1_1
+# http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1-1
+set ssl_use_tlsv1_1=no
+# ssl_use_tlsv1_2
+# http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1-2
+set ssl_use_tlsv1_2=yes
+# ssl_verify_dates
+# http://www.mutt.org/doc/devel/manual.html#ssl-verify-dates
+set ssl_verify_dates=yes
+# ssl_verify_host
+# http://www.mutt.org/doc/devel/manual.html#ssl-verify-host
+set ssl_verify_host=yes
