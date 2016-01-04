@@ -14,6 +14,7 @@
 # from
 # http://www.mutt.org/doc/devel/manual.html#from
 set from = "${MUTT_ACCOUNT_EMAIL}"
+
 # realname
 # http://www.mutt.org/doc/devel/manual.html#realname
 set realname = "${MUTT_ACCOUNT_REALNAME}"
@@ -24,6 +25,7 @@ set realname = "${MUTT_ACCOUNT_REALNAME}"
 # imap_user
 # http://www.mutt.org/doc/devel/manual.html#imap-user
 set imap_user = "${MUTT_ACCOUNT_EMAIL}"
+
 # imap_pass
 # http://www.mutt.org/doc/devel/manual.html#imap-pass
 set imap_pass = "${MUTT_ACCOUNT_PASSWORD}"
@@ -83,9 +85,11 @@ set imap_keepalive = 900
 #
 # http://www.mutt.org/doc/devel/manual.html#smtp-url
 set smtp_url = "smtp://$(printf "$MUTT_ACCOUNT_EMAIL" | awk -F'@' '{print $1}')@smtp.gmail.com:587/"
+
 # smtp_pass
 # http://www.mutt.org/doc/devel/manual.html#smtp-pass
 set smtp_pass = "${MUTT_ACCOUNT_PASSWORD}"
+
 # smtp_authenticators
 #
 # Type: string
@@ -117,6 +121,7 @@ set smtp_authenticators = 'gssapi:login'
 #
 # http://www.mutt.org/doc/devel/manual.html#folder
 set folder = "imaps://imap.gmail.com:993"
+
 # spoolfile
 #
 # Type: path
@@ -129,6 +134,7 @@ set folder = "imaps://imap.gmail.com:993"
 #
 # http://www.mutt.org/doc/devel/manual.html#spoolfile
 set spoolfile = "+INBOX"
+
 # postponed
 #
 # Type: path

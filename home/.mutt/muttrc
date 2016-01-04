@@ -133,6 +133,7 @@ set imap_keepalive = 900
 #
 # http://www.mutt.org/doc/devel/manual.html#header-cache
 set header_cache = "${HOME}/.mutt/var/${MUTT_ACCOUNT_EMAIL}/cache/headers"
+
 # message_cachedir
 #
 # Type: path
@@ -147,6 +148,7 @@ set header_cache = "${HOME}/.mutt/var/${MUTT_ACCOUNT_EMAIL}/cache/headers"
 #
 # http://www.mutt.org/doc/devel/manual.html#message-cachedir
 set message_cachedir = "${HOME}/.mutt/var/${MUTT_ACCOUNT_EMAIL}/cache/bodies"
+
 # certificate_file
 #
 # Type: path
@@ -342,28 +344,36 @@ set include = 'yes'
 # ssl_force_tls
 # http://www.mutt.org/doc/devel/manual.html#ssl-force-tls
 set ssl_force_tls=yes
+
 # ssl_starttls
 # http://www.mutt.org/doc/devel/manual.html#ssl-starttls
 # NOTE: this option is superceded by ssl_force_tls
 set ssl_starttls=yes
+
 # ssl_use_sslv2
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-sslv2
 set ssl_use_sslv2=no
+
 # ssl_use_sslv3
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-sslv3
 set ssl_use_sslv3=no
+
 # ssl_use_tlsv1
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1
 set ssl_use_tlsv1=no
+
 # ssl_use_tlsv1_1
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1-1
 set ssl_use_tlsv1_1=no
+
 # ssl_use_tlsv1_2
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1-2
 set ssl_use_tlsv1_2=yes
+
 # ssl_verify_dates
 # http://www.mutt.org/doc/devel/manual.html#ssl-verify-dates
 set ssl_verify_dates=yes
+
 # ssl_verify_host
 # http://www.mutt.org/doc/devel/manual.html#ssl-verify-host
 set ssl_verify_host=yes
