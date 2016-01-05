@@ -152,7 +152,13 @@ set postponed = "+[Gmail]/Drafts"
 
 # macro
 # http://www.mutt.org/doc/devel/manual.html#macro
-macro index gi '=INBOX' 'Go to inbox'
-macro index ga '=[Google Mail]/All Mail' 'Go to all mail'
-macro index gs '=[Google Mail]/Sent Mail' 'Go to Sent Mail'
-macro index gd '=[Google Mail]/Drafts' 'Go to drafts'
+#
+# gmail settings via: http://dev.mutt.org/trac/wiki/UseCases/Gmail
+# NOTE: You need the "noop" bind so that the line editor accepts IMAP folders
+# with spaces in their names.
+bind editor <space> noop
+macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
