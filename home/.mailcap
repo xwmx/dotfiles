@@ -12,3 +12,13 @@
 ###############################################################################
 
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Images
+#
+# Display images with `icat`, an inline image display tool for iterm2.
+# https://github.com/alphabetum/dotfiles/blob/master/bin/icat
+image/jpg;    icat --wait
+image/jpeg;   icat --wait
+image/pjpeg;  icat --wait
+image/png;    icat --wait
+image/gif;    icat --wait
