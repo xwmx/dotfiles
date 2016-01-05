@@ -17,7 +17,7 @@ mutt() {
 email() {
   local _mutt_accounts_path="${HOME}/.mutt/accounts"
 
-  _print_email_help() {
+  _email_print_help() {
     cat <<HEREDOC
 Usage:
   email list
@@ -32,7 +32,7 @@ Description:
 HEREDOC
   }
 
-  _print_email_list() {
+  _email_print_list() {
     for _file in "${_mutt_accounts_path}"/*
     do
       local _email_account=''
@@ -50,11 +50,11 @@ HEREDOC
   do
     case $arg in
       -h|--help)
-        _print_email_help
+        _email_print_help
         return 0
         ;;
       list)
-        _print_email_list
+        _email_print_list
         return 0
         ;;
       *)
@@ -65,7 +65,7 @@ HEREDOC
 
   if [[ -z "${_email_arguments[@]:-}" ]]
   then # there are no arguments.
-    _print_email_help
+    _email_print_help
     return 1
   fi
 
