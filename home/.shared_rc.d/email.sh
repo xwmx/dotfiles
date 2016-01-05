@@ -14,9 +14,15 @@ mutt() {
   email --help
 }
 
+# email()
+#
+# A wrapper interface for a multi-account mutt configuration.
 email() {
   local _mutt_accounts_path="${HOME}/.mutt/accounts"
 
+  # _email_print_help()
+  #
+  # Printf help and usage information.
   _email_print_help() {
     cat <<HEREDOC
 Usage:
@@ -32,6 +38,9 @@ Description:
 HEREDOC
   }
 
+  # _email_print_list()
+  #
+  # Print the available accounts.
   _email_print_list() {
     for _file in "${_mutt_accounts_path}"/*
     do
