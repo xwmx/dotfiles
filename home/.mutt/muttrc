@@ -28,6 +28,7 @@
 #
 # Resources:
 # http://blog.kitchen.io/archive/2012/08/22/my-mutt-setup/
+# http://jason.the-graham.com/2011/01/10/email_with_mutt_offlineimap_imapfilter_msmtp_archivemail/
 # http://jasonwryan.com/blog/2012/05/12/mutt/
 # http://jonmorehouse.tumblr.com/post/100650456885/yosemite-mutt
 # http://stevelosh.com/blog/2012/10/the-homely-mutt/
@@ -38,6 +39,7 @@
 # https://gist.github.com/dapplebeforedawn/8778724
 # https://gist.github.com/miguelmota/9456162
 # https://github.com/altercation/mutt-colors-solarized
+# https://github.com/jasongraham/mail_conf_example
 # https://github.com/vidbina/mutt-setup
 # https://help.ubuntu.com/community/MuttAndGmail
 # https://medium.com/@stessyco/gmail-from-the-command-line-with-mutt-mac-os-x-92d047bcd74f
