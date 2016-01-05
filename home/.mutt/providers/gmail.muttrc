@@ -84,7 +84,7 @@ set imap_keepalive = 900
 # where “[...]” denotes an optional part.
 #
 # http://www.mutt.org/doc/devel/manual.html#smtp-url
-set smtp_url = "smtp://$(printf "$MUTT_ACCOUNT_EMAIL" | awk -F'@' '{print $1}')@smtp.gmail.com:587/"
+set smtp_url = "smtp://${MUTT_ACCOUNT_EMAIL}@smtp.gmail.com:587/"
 
 # smtp_pass
 # http://www.mutt.org/doc/devel/manual.html#smtp-pass
