@@ -81,47 +81,49 @@ HEREDOC
     esac
   done
 
+  # Verify that an account address was passed.
   if [[ -z "${_account_address:-}" ]]
-  then # there are no arguments.
+  then
     _email_print_help
     return 1
   fi
 
+  # Verify that the specified account exists.
   if [[ ! -e "${HOME}/.mutt/accounts/${_account_address}.sh" ]]
   then
     printf "Account not found.\n"
     return 1
-  else
-    # Run in a subshell to avoid polluting the current shell environment.
-    (
-      # Source the appropriate account file.
-      source "${HOME}/.mutt/accounts/${_account_address}.sh"
-
-      # Confirm that all expected environment variables have been set.
-      local -a _expected_variables
-      _expected_variables=(
-        MUTT_COMMAND
-        MUTT_PROVIDER
-        MUTT_ACCOUNT_EMAIL
-        MUTT_ACCOUNT_REALNAME
-        MUTT_ACCOUNT_PASSWORD
-      )
-      for _variable in ${_expected_variables[@]}
-      do
-        if [[ -z "$(eval "echo \$${_variable}")" ]]
-        then
-          printf "❌  %s has no assigned value.\n" "${_variable}"
-          return 1
-        fi
-      done
-
-      # Run mutt.
-      if [[ -z "${_email_arguments[@]:-}" ]]
-      then
-        "$MUTT_COMMAND"
-      else
-        "$MUTT_COMMAND" "${_email_arguments[@]}"
-      fi
-    )
   fi
+
+  # Run in a subshell to avoid polluting the current shell environment.
+  (
+    # Source the appropriate account file.
+    source "${HOME}/.mutt/accounts/${_account_address}.sh"
+
+    # Confirm that all expected environment variables have been set.
+    local -a _expected_variables
+    _expected_variables=(
+      MUTT_COMMAND
+      MUTT_PROVIDER
+      MUTT_ACCOUNT_EMAIL
+      MUTT_ACCOUNT_REALNAME
+      MUTT_ACCOUNT_PASSWORD
+    )
+    for _variable in ${_expected_variables[@]}
+    do
+      if [[ -z "$(eval "echo \$${_variable}")" ]]
+      then
+        printf "❌  %s has no assigned value.\n" "${_variable}"
+        return 1
+      fi
+    done
+
+    # Run mutt.
+    if [[ -z "${_email_arguments[@]:-}" ]]
+    then
+      "$MUTT_COMMAND"
+    else
+      "$MUTT_COMMAND" "${_email_arguments[@]}"
+    fi
+  )
 }
