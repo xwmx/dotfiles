@@ -56,9 +56,9 @@ HEREDOC
   local -a _email_arguments
   local _account_address=
 
-  for arg in "${@:-}"
+  for _arg in "${@:-}"
   do
-    case $arg in
+    case $_arg in
       -h|--help)
         _email_print_help
         return 0
@@ -70,13 +70,13 @@ HEREDOC
       *@*)
         if [[ -z "${_account_address:-}" ]]
         then
-          _account_address="${arg}"
+          _account_address="${_arg}"
         else
-          _email_arguments+=("$arg")
+          _email_arguments+=("$_arg")
         fi
         ;;
       *)
-        _email_arguments+=("$arg")
+        _email_arguments+=("$_arg")
         ;;
     esac
   done
