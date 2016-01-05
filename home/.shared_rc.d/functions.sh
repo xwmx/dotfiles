@@ -484,6 +484,25 @@ map() {
   xargs -n1 "$@"
 }
 
+# pause()
+#
+# Usage:
+#   pause
+#
+# Description:
+#   Pause whatever is happening until a key is pressed.
+pause() {
+  # The options used with `read` are not compatible with zsh, so fake it when
+  # then shell isn't bash.
+  local _command="read -rsp $'Press any key to continue...\n' -n1 key"
+  if [[ "$SHELL" =~ bash ]]
+  then
+    eval "$_command"
+  else
+    bash -c "$_command"
+  fi
+}
+
 # show()
 #
 # Usage:
