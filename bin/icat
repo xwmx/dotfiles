@@ -65,12 +65,12 @@ read -r -d '' "_program_help" <<EOM || true
 Display an image by providing a filename, URL, or standard input stream.
 
 Usage:
-  $_ME <filename>
-  $_ME <url>
+  $_ME ( <filename> | <url> ) [--wait]
   cat <filename> | $_ME
   $_ME -h | --help
 
 Options:
+  --wait     Wait for the user to press a key before exiting.
   -h --help  Show this screen.
 EOM
 
@@ -142,10 +142,31 @@ _icat() {
 # Description:
 #   Entry point for the program, handling basic option parsing and dispatching.
 _main() {
-  case "${1:-}" in
-    -h|--help)  _print_help ;;
-    *)          _icat "$@"  ;;
-  esac
+  local -a _arguments
+  local _wait=0
+
+  for _arg in "${@:-}"
+  do
+    case "${_arg}" in
+      -h|--help)
+        _print_help
+        return 0
+        ;;
+      --wait)
+        _wait=1
+        ;;
+      *)
+        _arguments+=("${_arg}")
+        ;;
+    esac
+  done
+
+  _icat "${_arguments[@]:-}"
+
+  if ((_wait))
+  then
+    read -rsp $'Press any key to continue...\n' -n1 key
+  fi
 }
 
 # Call `_main` after everything has been defined.
