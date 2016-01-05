@@ -63,7 +63,7 @@ HEREDOC
     done
 
     if [[ -z "${_hexdump_arguments[@]:-}" ]]
-    then # there are not arguments.
+    then # there are no arguments.
       _print_hd_help
       return 0
     fi
