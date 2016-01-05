@@ -27,7 +27,7 @@ email() {
     cat <<HEREDOC
 Usage:
   email list
-  email <address>
+  email <account address> [<mutt arguments>]
   email -h | --help
 
 Options:
@@ -54,6 +54,7 @@ HEREDOC
   }
 
   local -a _email_arguments
+  local _account_address=
 
   for arg in "${@:-}"
   do
@@ -66,52 +67,61 @@ HEREDOC
         _email_print_list
         return 0
         ;;
+      *@*)
+        if [[ -z "${_account_address:-}" ]]
+        then
+          _account_address="${arg}"
+        else
+          _email_arguments+=("$arg")
+        fi
+        ;;
       *)
         _email_arguments+=("$arg")
         ;;
     esac
   done
 
-  if [[ -z "${_email_arguments[@]:-}" ]]
+  if [[ -z "${_account_address:-}" ]]
   then # there are no arguments.
     _email_print_help
     return 1
   fi
 
-  if [[ ! "${_email_arguments[1]}" =~ ^.+@.+$ ]]
+  if [[ ! -e "${HOME}/.mutt/accounts/${_account_address}.sh" ]]
   then
-    printf "Account not found: %s\n" "${_email_address}"
+    printf "Account not found.\n"
     return 1
   else
-    local _email_address="${_email_arguments[1]}"
-    if [[ -e "${HOME}/.mutt/accounts/${_email_address}.sh" ]]
-    then
-      # Run in a subshell to avoid polluting the current shell environment.
-      (
-        # Source the appropriate account file.
-        source "${HOME}/.mutt/accounts/${_email_address}.sh"
+    # Run in a subshell to avoid polluting the current shell environment.
+    (
+      # Source the appropriate account file.
+      source "${HOME}/.mutt/accounts/${_account_address}.sh"
 
-        # Confirm that all expected environment variables have been set.
-        local -a _expected_variables
-        _expected_variables=(
-          MUTT_COMMAND
-          MUTT_PROVIDER
-          MUTT_ACCOUNT_EMAIL
-          MUTT_ACCOUNT_REALNAME
-          MUTT_ACCOUNT_PASSWORD
-        )
-        for _variable in ${_expected_variables[@]}
-        do
-          if [[ -z "$(eval "echo \$${_variable}")" ]]
-          then
-            printf "❌  %s has no assigned value.\n" "${_variable}"
-            return 1
-          fi
-        done
-
-        # Run mutt.
-        "$MUTT_COMMAND"
+      # Confirm that all expected environment variables have been set.
+      local -a _expected_variables
+      _expected_variables=(
+        MUTT_COMMAND
+        MUTT_PROVIDER
+        MUTT_ACCOUNT_EMAIL
+        MUTT_ACCOUNT_REALNAME
+        MUTT_ACCOUNT_PASSWORD
       )
-    fi
+      for _variable in ${_expected_variables[@]}
+      do
+        if [[ -z "$(eval "echo \$${_variable}")" ]]
+        then
+          printf "❌  %s has no assigned value.\n" "${_variable}"
+          return 1
+        fi
+      done
+
+      # Run mutt.
+      if [[ -z "${_email_arguments[@]:-}" ]]
+      then
+        "$MUTT_COMMAND"
+      else
+        "$MUTT_COMMAND" "${_email_arguments[@]}"
+      fi
+    )
   fi
 }
