@@ -69,8 +69,11 @@ HEREDOC
     return 1
   fi
 
-  if [[ "${_email_arguments[1]}" =~ ^.+@.+$ ]]
+  if [[ ! "${_email_arguments[1]}" =~ ^.+@.+$ ]]
   then
+    printf "Account not found: %s\n" "${_email_address}"
+    return 1
+  else
     local _email_address="${_email_arguments[1]}"
     if [[ -e "${HOME}/.mutt/accounts/${_email_address}.sh" ]]
     then
@@ -100,9 +103,6 @@ HEREDOC
         # Run mutt.
         "$MUTT_COMMAND"
       )
-    else
-      printf "Account not found: %s\n" "${_email_address}"
-      return 1
     fi
   fi
 }
