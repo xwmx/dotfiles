@@ -2,6 +2,18 @@
 # email.sh
 ###############################################################################
 
+# mutt()
+#
+# Replace the `mutt` command in the shell to avoid accidentally launching mutt
+# without the necessary environment variables that are set using the `email`
+# command. Assign the mutt executable path to `$_MUTT_COMMAND` so it's
+# available to use in `email`.
+MUTT_COMMAND="$(which mutt)"
+mutt() {
+  printf "Use the \`email\` command to launch mutt.\n\n"
+  email --help
+}
+
 email() {
   local _mutt_accounts_path="${HOME}/.mutt/accounts"
 
@@ -63,7 +75,10 @@ HEREDOC
     if [[ -e "${HOME}/.mutt/accounts/${_email_address}.sh" ]]
     then
       # Run in a subshell to avoid polluting the current shell environment.
-      (source "${HOME}/.mutt/accounts/${_email_address}.sh"; mutt)
+      (
+        source "${HOME}/.mutt/accounts/${_email_address}.sh"
+        "$MUTT_COMMAND"
+      )
     else
       printf "Account not found: %s\n" "${_email_address}"
       return 1
