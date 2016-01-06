@@ -63,7 +63,7 @@ HEREDOC
         _email_print_help
         return 0
         ;;
-      list)
+      list|accounts)
         _email_print_list
         return 0
         ;;
