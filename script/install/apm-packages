@@ -479,6 +479,19 @@ apm install linter-jsonlint
 # https://github.com/AtomLinter/linter-markdown
 apm install linter-markdown
 
+# language-pfm
+#
+# Syntax highlighting and snippets for Pandoc Flavored Markdown (PFM).
+#
+# Adds syntax highlighting and snippets to Pandoc flavored Markdown files in
+# Atom. This was forked from atoms language-gfm. The goal is to maintain
+# compatibility with the Github Flavored Markdown package while adding as much
+# pandoc functionality as possible.
+#
+# https://atom.io/packages/language-pfm
+# https://github.com/leipert/language-pfm
+apm install language-pfm
+
 # linter-protocol-buffer
 #
 # Basic protocol buffer linter
