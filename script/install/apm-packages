@@ -626,6 +626,18 @@ apm install nuclide-installer
 # https://github.com/abe33/atom-pigments
 apm install pigments
 
+# preview-inline
+#
+# Inline preview of LaTeX maths and images in markdown files
+#
+# Preview Latex formula and images embedded directly in your documents - no
+# need to generate a full PDF or HTML preview to check your figures and
+# formula! Works in Markdown (pandoc variety) and Tex files.
+#
+# https://atom.io/packages/preview-inline
+# https://github.com/mangecoeur/preview-inline
+apm install preview-inline
+
 # Seti Syntax
 #
 # A subtle dark colored theme for Atom.
