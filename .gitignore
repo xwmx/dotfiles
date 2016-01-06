@@ -136,7 +136,7 @@
 /home/.mutt/providers/*
 !/home/.mutt/var
 /home/.mutt/var/*
-!/home/.mutt/accounts/example@example.com.sh
+!/home/.mutt/accounts/gmail@example.com.sh
 !/home/.mutt/providers/gmail.muttrc
 !/home/.mutt/var/.keep
 !/home/.mutt/colors
