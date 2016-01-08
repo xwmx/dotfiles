@@ -68,6 +68,7 @@
     "^.inputrc": "text.generic-config"
     "^.mailcap": "source.shell"
     ".*muttrc": "source.shell"
+    "^.offlineimaprc$": "source.ini"
     "^.profile$": "source.shell"
     "^.psqlrc": "source.sql"
     "^.rspec$": "text.generic-config"
