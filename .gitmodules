@@ -293,6 +293,3 @@
 [submodule "vendor/com/github/altercation/mutt-colors-solarized"]
 	path = vendor/com/github/altercation/mutt-colors-solarized
 	url = https://github.com/altercation/mutt-colors-solarized.git
-[submodule "vendor/com/github/OfflineIMAP/offlineimap"]
-	path = vendor/com/github/OfflineIMAP/offlineimap
-	url = https://github.com/OfflineIMAP/offlineimap.git

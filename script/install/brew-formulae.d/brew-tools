@@ -1264,6 +1264,39 @@ brew install homebrew/python/numpy
 # http://ocaml.org
 brew install ocaml
 
+# offlineimap
+#
+# Synchronizes emails between two repositories
+#
+# http://offlineimap.org/
+#
+# Caveats:
+#   To get started, copy one of these configurations to ~/.offlineimaprc:
+#   * minimal configuration:
+#       cp -n /usr/local/etc/offlineimap.conf.minimal ~/.offlineimaprc
+#
+#   * advanced configuration:
+#       cp -n /usr/local/etc/offlineimap.conf ~/.offlineimaprc
+#
+#   To have launchd start offlineimap at login:
+#     ln -sfv /usr/local/opt/offlineimap/*.plist ~/Library/LaunchAgents
+#   Then to load offlineimap now:
+#     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.offlineimap.plist
+brew install offlineimap
+# offlineimap post-install
+#
+# Setup LaunchAgent for offlineimap.
+#
+# - Post-install for offlineimap:
+#
+# NOTE: enable once this offlineimap been configured.
+#
+# if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.offlineimap.plist" ]]
+# then
+#   ln -sfv /usr/local/opt/mysql/*.plist "$HOME/Library/LaunchAgents"
+#   launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.offlineimap.plist"
+# fi
+
 # OPAM - OCaml Package Manager
 #
 # OPAM is a source-based package manager for OCaml. It supports multiple
