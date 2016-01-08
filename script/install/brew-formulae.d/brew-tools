@@ -601,7 +601,13 @@ brew install git-extras
 #
 # https://golang.org/
 # https://github.com/golang/go
-brew uninstall go
+#
+# NOTE: uninstall since go is installed using other approaches.
+# TODO: remove this section.
+if _homebrew_formula_is_installed "go"
+then
+  brew uninstall go
+fi
 
 # GnuPG
 #
