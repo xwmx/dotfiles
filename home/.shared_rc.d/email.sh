@@ -46,7 +46,8 @@ HEREDOC
     do
       local _email_account=''
       _email_account="$(basename ${_file} .sh)"
-      if [[ "${_email_account}" != "gmail@example.com" ]]
+      if [[ "${_email_account}" != "gmail@example.com" ]] &&
+         [[ "${_email_account}" != "exchange@example.com" ]]
       then
         printf "%s\n" "${_email_account}"
       fi
