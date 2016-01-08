@@ -44,7 +44,7 @@ set imap_pass = "${MUTT_ACCOUNT_PASSWORD}"
 # variables since expansion takes place when handling the “mailboxes” command.
 #
 # http://www.mutt.org/doc/devel/manual.html#folder
-set folder = "imaps://${MUTT_ACCOUNT_IMAP_SERVER}:143"
+set folder = "imaps://${MUTT_ACCOUNT_IMAP_SERVER}"
 
 # spoolfile
 #
@@ -128,3 +128,13 @@ set smtp_url = "smtp://${MUTT_ACCOUNT_EMAIL}@${MUTT_ACCOUNT_SMTP_SERVER}:587/"
 # smtp_pass
 # http://www.mutt.org/doc/devel/manual.html#smtp-pass
 set smtp_pass = "${MUTT_ACCOUNT_PASSWORD}"
+
+# ssl_use_tlsv1
+#
+# Type: boolean
+# Default: yes
+#
+# This variable specifies whether to attempt to use TLSv1.0 in the SSL authentication process.
+#
+# http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1
+set ssl_use_tlsv1=yes
