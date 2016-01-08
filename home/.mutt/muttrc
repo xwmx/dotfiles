@@ -51,11 +51,6 @@
 ###############################################################################
 
 ###############################################################################
-# Account
-
-source "${HOME}/.mutt/providers/${MUTT_PROVIDER}.muttrc"
-
-###############################################################################
 # Base Settings.
 
 # colors
@@ -380,3 +375,9 @@ set ssl_verify_dates=yes
 # ssl_verify_host
 # http://www.mutt.org/doc/devel/manual.html#ssl-verify-host
 set ssl_verify_host=yes
+
+
+###############################################################################
+# Account
+
+source "${HOME}/.mutt/providers/${MUTT_PROVIDER}.muttrc"
