@@ -340,39 +340,111 @@ set include = 'yes'
 # via: https://gist.github.com/bnagy/8914f712f689cc01c267#ssl-hardening
 
 # ssl_force_tls
+#
+# Type: boolean
+# Default: no
+#
+# If this variable is set, Mutt will require that all connections to remote
+# servers be encrypted. Furthermore it will attempt to negotiate TLS even if
+# the server does not advertise the capability, since it would otherwise have
+# to abort the connection anyway. This option supersedes $ssl_starttls.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-force-tls
 set ssl_force_tls=yes
 
 # ssl_starttls
+#
+# Type: quadoption
+# Default: yes
+#
+# If set (the default), mutt will attempt to use STARTTLS on servers
+# advertising the capability. When unset, mutt will not attempt to use
+# STARTTLS regardless of the server's capabilities.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-starttls
 # NOTE: this option is superceded by ssl_force_tls
 set ssl_starttls=yes
 
 # ssl_use_sslv2
+#
+# Type: boolean
+# Default: no
+#
+# This variable specifies whether to attempt to use SSLv2 in the SSL
+# authentication process. Note that SSLv2 and SSLv3 are now considered
+# fundamentally insecure and are no longer recommended.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-sslv2
 set ssl_use_sslv2=no
 
 # ssl_use_sslv3
+#
+# Type: boolean
+# Default: no
+#
+# This variable specifies whether to attempt to use SSLv3 in the SSL
+# authentication process. Note that SSLv2 and SSLv3 are now considered
+# fundamentally insecure and are no longer recommended.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-sslv3
 set ssl_use_sslv3=no
 
 # ssl_use_tlsv1
+#
+# Type: boolean
+# Default: yes
+#
+# This variable specifies whether to attempt to use TLSv1.0 in the SSL
+# authentication process.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1
 set ssl_use_tlsv1=no
 
 # ssl_use_tlsv1_1
+#
+# Type: boolean
+# Default: yes
+#
+# This variable specifies whether to attempt to use TLSv1.1 in the SSL
+# authentication process.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1-1
 set ssl_use_tlsv1_1=no
 
 # ssl_use_tlsv1_2
+#
+# Type: boolean
+# Default: yes
+#
+# This variable specifies whether to attempt to use TLSv1.2 in the SSL
+# authentication process.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-use-tlsv1-2
 set ssl_use_tlsv1_2=yes
 
 # ssl_verify_dates
+#
+# Type: boolean
+# Default: yes
+#
+# If set (the default), mutt will not automatically accept a server
+# certificate that is either not yet valid or already expired. You should
+# only unset this for particular known hosts, using the <account-hook>
+# function.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-verify-dates
 set ssl_verify_dates=yes
 
 # ssl_verify_host
+#
+# Type: boolean
+# Default: yes
+#
+# If set (the default), mutt will not automatically accept a server certificate
+# whose host name does not match the host used in your folder URL. You should
+# only unset this for particular known hosts, using the <account-hook>
+# function.
+#
 # http://www.mutt.org/doc/devel/manual.html#ssl-verify-host
 set ssl_verify_host=yes
 
