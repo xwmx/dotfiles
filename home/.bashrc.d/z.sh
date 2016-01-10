@@ -14,10 +14,10 @@
 # Expects installation via homebrew
 ################################################################################
 
-__BREW_PREFIX="$(brew --prefix)"
 
 if command_exists "brew"
 then
+  __BREW_PREFIX="$(brew --prefix)"
   if [ -f "${__BREW_PREFIX}/etc/profile.d/z.sh" ]
   then
     . "${__BREW_PREFIX}/etc/profile.d/z.sh"
