@@ -143,6 +143,38 @@ epoch() {
   fi
 }
 
+# datetime
+#
+# Usage:
+#   Natural language date/time parsing with Chronic:
+#   https://github.com/mojombo/chronic/
+datetime() {
+  if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "${1:-}" ]
+  then
+    cat <<HEREDOC
+Usage:
+  datetime <time query>
+  datetime -h | --help
+
+Options:
+  -h --help  Display this usage information.
+
+Description:
+  Natural language date/time parsing with Chronic:
+  https://github.com/mojombo/chronic/
+HEREDOC
+    if [ -z "${1:-}" ]
+    then
+      return 1
+    else
+      return 0
+    fi
+  fi
+
+  ruby -e "require 'chronic'; puts Chronic.parse('${*}')"
+}
+alias dt="datetime"
+
 # Edit / Open Shortcuts -------------------------------------------------------
 
 # # s()

@@ -56,6 +56,14 @@ gem install bropages
 # https://github.com/rubysec/bundler-audit
 gem install bundler-audit
 
+# Chronic
+#
+# Chronic is a natural language date/time parser written in pure Ruby. See
+# below for the wide variety of formats Chronic will parse.
+#
+# https://github.com/mojombo/chronic/
+gem install chronic
+
 # CocoaPods
 #
 # CocoaPods is the dependency manager for Swift and Objective-C Cocoa projects.
