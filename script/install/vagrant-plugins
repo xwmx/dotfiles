@@ -28,6 +28,19 @@ vagrant plugin install vagrant-aws
 # https://github.com/smdahlen/vagrant-digitalocean
 vagrant plugin install vagrant-digitalocean
 
+# vagrant-ghost
+#
+# This plugin adds an entry to your /etc/hosts file on the host system.
+#
+# On up, resume and reload commands, it tries to add the information, if its
+# not already in your hosts file. If it needs to be added, you will be asked
+# for an administrator password, since it uses sudo to edit the file.
+#
+# On halt, destroy, and suspend those entries will be removed again.
+#
+# https://github.com/10up/vagrant-ghost
+vagrant plugin install vagrant-ghost
+
 # vagrant-hostmanager
 #
 # A Vagrant plugin that manages the /etc/hosts file on guests within a
