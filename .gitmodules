@@ -293,3 +293,6 @@
 [submodule "vendor/com/github/altercation/mutt-colors-solarized"]
 	path = vendor/com/github/altercation/mutt-colors-solarized
 	url = https://github.com/altercation/mutt-colors-solarized.git
+[submodule "vendor/com/github/alphabetum/notes"]
+	path = vendor/com/github/alphabetum/notes
+	url = https://github.com/alphabetum/notes.git
