@@ -335,6 +335,18 @@ set forward_quote
 # http://www.mutt.org/doc/devel/manual.html#include
 set include = 'yes'
 
+# abort_nosubject
+#
+# Type: quadoption
+# Default: ask-yes
+#
+# If set to yes, when composing messages and no subject is given at the
+# subject prompt, composition will be aborted. If set to no, composing
+# messages with no subject given at the subject prompt will never be aborted.
+#
+# http://www.mutt.org/doc/devel/manual.html#abort-nosubject
+set abort_nosubject = 'ask-no'
+
 ###############################################################################
 # SSL hardening
 # via: https://gist.github.com/bnagy/8914f712f689cc01c267#ssl-hardening
