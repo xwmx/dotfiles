@@ -347,6 +347,19 @@ set include = 'yes'
 # http://www.mutt.org/doc/devel/manual.html#abort-nosubject
 set abort_nosubject = 'ask-no'
 
+# recall
+#
+# Type: quadoption
+# Default: ask-yes
+#
+# Controls whether or not Mutt recalls postponed messages when composing a new
+# message.
+#
+# Setting this variable to is not generally useful, and thus not recommended.
+#
+# Also see $postponed variable.
+set recall = 'ask-no'
+
 ###############################################################################
 # SSL hardening
 # via: https://gist.github.com/bnagy/8914f712f689cc01c267#ssl-hardening
