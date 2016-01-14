@@ -194,6 +194,13 @@ pip3_install pgcli
 # https://bitbucket.org/birkenfeld/pygments-main
 pip3_install Pygments
 
+# pygments-markdown-lexer
+#
+# A Markdown lexer for Pygments to highlight Markdown code snippets.
+#
+# https://github.com/jhermann/pygments-markdown-lexer
+pip3_install pygments-markdown-lexer
+
 # Pylama
 #
 # Code audit tool for python.
