@@ -6,4 +6,25 @@
 # https://github.com/alphabetum/notes
 ###############################################################################
 
+# $NOTES_AUTO_SYNC
+#
+# Default: 0
+#
+# When set to '1', operations that trigger a git commit like `add`, `edit`,
+# and `delete` will also sync to the remote git repository.
 export NOTES_AUTO_SYNC=1
+
+# $NOTES_DIR
+#
+# Default: "$HOME/.notes"
+#
+# The location of the base notes directory.
+# export NOTES_DIR="$HOME/.notes"
+
+# $NOTES_DATA_DIR
+#
+# Default: "$NOTES_DIR/data"
+#
+# The location of the data directory, a git repository in which note files
+# are saved.
+# export NOTES_DATA_DIR="$NOTES_DIR/data"
