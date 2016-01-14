@@ -184,6 +184,16 @@ pip3_install pandas
 # https://github.com/dbcli/pgcli
 pip3_install pgcli
 
+# Pygments
+#
+# Pygments is a generic syntax highlighter that supports over 300 languages
+# and text formats, for use in code hosting, forums, wikis or other
+# applications that need to prettify source code.
+#
+# http://pygments.org/
+# https://bitbucket.org/birkenfeld/pygments-main
+pip3_install Pygments
+
 # Pylama
 #
 # Code audit tool for python.
