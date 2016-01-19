@@ -508,7 +508,7 @@ _install_google_chrome_cask() {
   then
     if _homebrew_cask_is_installed "google-chrome"
     then
-      brew cask uninstall google-chrome
+      brew cask uninstall google-chrome --force
     fi
     brew cask install google-chrome
   fi
@@ -825,7 +825,7 @@ brew cask install osxfuse
 # TODO: remove this when this cask has been removed from all systems.
 if _homebrew_cask_is_installed "packer"
 then
-  brew cask uninstall packer
+  brew cask uninstall packer --force
 fi
 
 # pd-extended - PureData
@@ -891,7 +891,7 @@ then
 NOTE: Remember to migrate any data in the current Postgres.app install.
 #######################################################################
 "
-  brew cask uninstall postgres
+  brew cask uninstall postgres --force
 fi
 
 # processing
@@ -973,7 +973,7 @@ brew cask install rowanj-gitx
 # systems.
 if _homebrew_cask_is_installed "rust"
 then
-  brew cask uninstall rust
+  brew cask uninstall rust --force
 fi
 
 # Scribus
@@ -1142,7 +1142,7 @@ brew cask install thunderbird
 # removed from all systems.
 if _homebrew_cask_is_installed "timemachinescheduler"
 then
-  brew cask uninstall timemachinescheduler
+  brew cask uninstall timemachinescheduler --force
 fi
 
 # Turbo Boost Switcher
