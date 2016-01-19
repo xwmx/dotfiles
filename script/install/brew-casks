@@ -894,7 +894,7 @@ NOTE: Remember to migrate any data in the current Postgres.app install.
   brew cask uninstall postgres
 fi
 
-# processing3
+# processing
 #
 # Processing is an open source programming language and integrated development
 # environment (IDE) built for the electronic arts, new media art, and visual
@@ -902,10 +902,15 @@ fi
 # programming in a visual context, and to serve as the foundation for
 # electronic sketchbooks.
 #
-# NOTE: processing3 is the alpha for the upcoming version 3.
-#
 # https://processing.org
-brew cask install processing3
+#
+# NOTE: processing3 is now just the processing cask.
+# TODO: this `if` clause.
+if _homebrew_cask_is_installed "processing3"
+then
+  brew cask uninstall processing3 --force
+fi
+brew cask install processing
 
 # PSequel
 #
