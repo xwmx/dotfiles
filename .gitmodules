@@ -296,3 +296,6 @@
 [submodule "vendor/com/github/alphabetum/notes"]
 	path = vendor/com/github/alphabetum/notes
 	url = https://github.com/alphabetum/notes.git
+[submodule "vendor/com/github/alphabetum/vbox"]
+	path = vendor/com/github/alphabetum/vbox
+	url = https://github.com/alphabetum/vbox.git
