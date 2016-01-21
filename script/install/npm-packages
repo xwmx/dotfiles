@@ -305,6 +305,14 @@ npm install --global mad
 # https://github.com/mochajs/mocha
 npm install --global mocha
 
+# nativefier
+#
+# Wrap any web page natively without even thinking, across Windows, OSX and
+# Linux.
+#
+# https://github.com/jiahaog/nativefier
+npm install --global nativefier
+
 # nd
 #
 # a documentation viewer for node
