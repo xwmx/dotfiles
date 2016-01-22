@@ -709,6 +709,13 @@ brew cask install macfusion
 # http://www.tug.org/mactex/
 brew cask install mactex
 
+# magicavoxel
+#
+# A free lightweight 8-bit voxel editor and interactive path tracing renderer.
+#
+# https://ephtracy.github.io/
+brew cask install magicavoxel
+
 # MAME
 #
 # MAME stands for Multiple Arcade Machine Emulator. When used in conjunction
