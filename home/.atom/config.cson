@@ -1,19 +1,24 @@
 "*":
-  "exception-reporting":
-    userId: "3e6166fe-00f6-49c7-842f-659cef01c050"
-  "release-notes":
-    viewedVersion: "0.94.0"
-  welcome:
-    showOnStartup: false
-  metrics:
-    userId: "2e9001b50edf75df09b8160944167f2ca1822759"
-  editor:
-    fontSize: 11
-    showInvisibles: true
-    showIndentGuide: true
-    invisibles: {}
-    scrollPastEnd: true
-    backUpBeforeSaving: true
+  "atom-material-ui":
+    accentColor: "Pink"
+    compactTreeView: true
+    fonts: {}
+    panels:
+      depth: true
+      panelContrast: true
+    rippleAccentColor: true
+    slimScrollbar: true
+    tabSize: "Small"
+    tabs:
+      rippleAccentColor: true
+      tabSize: "Small"
+    treeView:
+      compactTreeView: true
+    ui:
+      accentColor: "Pink"
+      slimScrollbar: true
+  "autocomplete-plus":
+    useAlternateScoring: true
   core:
     disabledPackages: [
       "metrics"
@@ -33,41 +38,41 @@
       "nuclide-arcanist"
       "nuclide-blame"
     ]
+    packagesWithKeymapsDisabled: [
+      "jumpy"
+    ]
     themes: [
       "atom-material-ui"
       "seti-syntax"
     ]
-    packagesWithKeymapsDisabled: [
-      "jumpy"
-    ]
-  linter:
-    gutterPosition: "Left"
-    lintOnFly: false
-    showErrorTabLine: true
-    statusIconScope: "Line"
-    showErrorInline: false
-  "go-plus":
-    goPath: "~/.go"
-  "tree-view": {}
-  "autocomplete-plus":
-    useAlternateScoring: true
+  editor:
+    autoIndentOnPaste: false
+    backUpBeforeSaving: true
+    fontSize: 11
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "3e6166fe-00f6-49c7-842f-659cef01c050"
   "file-types":
-    "^Baskfile$": "source.shell"
+    ".*.sshconfig": "source.ssh-config"
+    ".*muttrc": "source.shell"
+    ".zsh-theme$": "source.shell"
     "^.ackrc": "text.generic-config"
     "^.amethyst": "source.js"
     "^.bindlerc$": "source.shell"
     "^.curlrc": "text.generic-config"
     "^.gemrc": "text.generic-config"
+    "^.git.scmbrc": "source.shell"
     "^.gitconfig.local": "source.git-config"
     "^.gitignore": "source.git-config"
-    "^.git.scmbrc": "source.shell"
     "^.gntrc": "source.ini"
     "^.gvimrc.after": "source.viml"
     "^.hgrc*": "source.ini"
     "^.htoprc": "text.generic-config"
     "^.inputrc": "text.generic-config"
     "^.mailcap": "source.shell"
-    ".*muttrc": "source.shell"
     "^.notesrc": "source.shell"
     "^.offlineimaprc$": "source.ini"
     "^.profile$": "source.shell"
@@ -77,15 +82,14 @@
     "^.scmbrc$": "text.generic-config"
     "^.shared_env.*": "source.shell"
     "^.spacemacs$": "source.lisp"
-    ".*.sshconfig": "source.ssh-config"
     "^.tigrc$": "text.generic-config"
-    "^.vimrc.before$": "source.viml"
     "^.vimrc.after$": "source.viml"
+    "^.vimrc.before$": "source.viml"
     "^.wgetrc": "text.generic-config"
     "^.zprofile$": "source.shell"
-    ".zsh-theme$": "source.shell"
     "^.zshenv.local.*$": "source.shell"
     "^.zshrc.local.*$": "source.shell"
+    "^Baskfile$": "source.shell"
   "fuzzy-finder":
     ignoredNames: [
       "usr"
@@ -93,31 +97,28 @@
     ]
     preserveLastSearch: true
     useAlternateScoring: true
-  "symbols-tree-view": {}
-  "linter-eslint":
-    useGlobalEslint: true
-  minimap:
-    absoluteMode: true
-    scrollAnimation: true
-    autoToggle: false
-  "atom-material-ui":
-    accentColor: "Pink"
-    compactTreeView: true
-    rippleAccentColor: true
-    slimScrollbar: true
-    tabSize: "Small"
-    ui:
-      accentColor: "Pink"
-      slimScrollbar: true
-    tabs:
-      rippleAccentColor: true
-      tabSize: "Small"
-    treeView:
-      compactTreeView: true
-    fonts: {}
-    panels:
-      panelContrast: true
-      depth: true
+  "go-plus":
+    goPath: "~/.go"
   jumpy:
     highContrast: true
+  linter:
+    gutterPosition: "Left"
+    lintOnFly: false
+    showErrorInline: false
+    showErrorTabLine: true
+    statusIconScope: "Line"
+  "linter-eslint":
+    useGlobalEslint: true
+  metrics:
+    userId: "2e9001b50edf75df09b8160944167f2ca1822759"
+  minimap:
+    absoluteMode: true
+    autoToggle: false
+    scrollAnimation: true
+  "release-notes":
+    viewedVersion: "0.94.0"
+  "symbols-tree-view": {}
+  "tree-view": {}
   "vim-mode": {}
+  welcome:
+    showOnStartup: false
