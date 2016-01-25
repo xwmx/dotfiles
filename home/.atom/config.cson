@@ -59,6 +59,7 @@
   "file-types":
     ".*.sshconfig": "source.ssh-config"
     ".*muttrc": "source.shell"
+    ".bats$": "source.shell"
     ".zsh-theme$": "source.shell"
     "^.ackrc": "text.generic-config"
     "^.amethyst": "source.js"
