@@ -621,3 +621,35 @@ shell_calc() {
   fi
   printf "\n"
 }
+
+# spellcheck()
+#
+# Usage:
+#   spellcheck <word>
+spellcheck() {
+  if ! hash "aspell" &>/dev/null
+  then
+    printf "aspell is required.\n"
+    return 1
+  elif [[ "${1:-}" = "-h" ]] || [[ "${1:-}" = "--help" ]]
+  then
+    cat <<HEREDOC
+Usage:
+  spellcheck <word>
+  spellcheck -h | --help
+
+Options:
+  -h --help  Display this usage information.
+
+Description:
+  Use \`aspell\` to spellcheck <word>.
+HEREDOC
+    return 0
+  elif [[ -z "${1:-}" ]]
+  then
+    spellcheck -h
+    return 1
+  else
+    printf "%s\n" "${1}" | aspell -a
+  fi
+}
