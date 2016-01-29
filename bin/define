@@ -7,18 +7,11 @@
 # /_____/_____/_/   /___/_/ |_/_____/
 #
 # Define a word using collinsdictionary.com
-#
-# Usage:
-#  define <word>
 
 _define() {
-  curl -s "http://www.collinsdictionary.com/dictionary/english/$*" | \
-    sed -n '/class="def"/p' | \
-    awk '{gsub(/.*<span class="def">|<\/span>.*/,"");print}' | \
-    sed "s/<[^>]\+>//g"
-}
-
-_usage="\
+  if [[ -z "${1:-}" ]] || [[ "${1}" =~ ^-h|--help$ ]]
+  then
+    cat <<HEREDOC
     ____  _________________   ________
    / __ \\/ ____/ ____/  _/ | / / ____/
   / / / / __/ / /_   / //  |/ / __/
@@ -28,12 +21,24 @@ _usage="\
 Define a word using collinsdictionary.com
 
 Usage:
- define <word>
-"
-if [[ -z "$1" || "$1" = "-h" ]]
-then
-  printf "%s\n" "$_usage"
-  exit 0
-fi
+  define <word>
+HEREDOC
+    return 0
+  fi
+
+  curl -s "http://www.collinsdictionary.com/dictionary/english/$*" \
+    | sed -n '/class="def"/p' \
+    | awk '{gsub(/.*<span class="def">|<\/span>.*/,"");print}' \
+    | sed "s/<[^>]\+>//g" \
+    | while read -r _line
+      do
+        if hash "w3m" &>/dev/null
+        then
+          printf "%s\n" "• ${_line}" | w3m -dump -T text/html
+        else
+          printf "%s\n" "• ${_line}"
+        fi
+      done
+}
 
 _define "$@"
