@@ -650,6 +650,12 @@ HEREDOC
     spellcheck -h
     return 1
   else
-    printf "%s\n" "${1}" | aspell -a
+    _result="$(printf "%s\n" "${1}" | aspell -a | sed -n '2p')"
+    if [[ "${_result}" =~ ^'\*' ]]
+    then
+      printf "✓\n"
+    else
+      printf "%s\n" "${_result}"
+    fi
   fi
 }
