@@ -340,6 +340,18 @@ let g:vim_json_syntax_conceal = 0
 let g:pandoc#modules#disabled = ["folding"]
 
 " ============================================================================
+" vim-pandoc-syntax
+" ============================================================================
+
+" Disable conceal for code blocks and inline code, which can be disorienting
+" in documents that include a lot of code.
+let g:pandoc#syntax#conceal#blacklist = [
+      \"codeblock_delim",
+      \"codeblock_start",
+      \"inlinecode"
+      \]
+
+" ============================================================================
 " search
 " ============================================================================
 
