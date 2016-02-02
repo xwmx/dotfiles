@@ -49,7 +49,7 @@
   editor:
     autoIndentOnPaste: false
     backUpBeforeSaving: true
-    fontSize: 11
+    fontSize: 13
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
