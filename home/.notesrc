@@ -28,3 +28,10 @@ export NOTES_AUTO_SYNC=1
 # The location of the data directory, a git repository in which note files
 # are saved.
 # export NOTES_DATA_DIR="$NOTES_DIR/data"
+
+# $EDITOR
+#
+# Set editor to `emacsclient`, using `--alternative-editor=''` to start up
+# `emacs --daemon` if it's not already running. Redirect stderr with
+# `2>/dev/null` to avoid excessive output when the daemon starts.
+export EDITOR='emacsclient --alternate-editor='' 2>/dev/null'
