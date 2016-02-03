@@ -510,14 +510,41 @@ layers configuration. You are free to put any user code."
     (setq linum-format 'linum-format-func)
     ;; fci-mode - Fill Column Indicator
     ;;
-    ;; http://www.emacswiki.org/emacs/FillColumnIndicator
-    ;; https://github.com/alpaker/Fill-Column-Indicator
+    ;; References:
+    ;;   http://www.emacswiki.org/emacs/FillColumnIndicator
+    ;;   https://github.com/alpaker/Fill-Column-Indicator
     ;;
-    ;; NOTE: Enable as a global minor mode. This is the only configuration
+    ;; Turn off truncate lines. This might lead to issues. See here:
+    ;;   http://www.emacswiki.org/emacs/FillColumnIndicator#toc17
+    ;; More information about truncate-lines:
+    ;;   http://www.emacswiki.org/emacs/TruncateLines
+    (setq fci-handle-truncate-lines nil)
+    ;; Enable as a global minor mode. This is the only configuration
     ;; that appears to work when run as a daemon.
-    (define-globalized-minor-mode global-fci-mode fci-mode (lambda ()
-                                                              (fci-mode 1)))
+    (setq fci-handle-truncate-lines nil)
+    (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
     (global-fci-mode 1)
+    ;; visual-line-mode
+    ;;
+    ;; > Visual Line mode provides support for editing by visual lines.
+    ;; > It turns on word-wrapping in the current buffer, and rebinds C-a, C-e,
+    ;; > and C-k to commands that operate by visual lines instead of logical
+    ;; > lines.
+    ;;
+    ;; References:
+    ;;   http://www.emacswiki.org/emacs/VisualLineMode
+    ;;   http://www.emacswiki.org/emacs/LineWrap
+    ;;   http://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html
+    ;;   http://aaronbedra.com/emacs.d/#sec-1-7-9
+    ;;
+    ;; See also:
+    ;;   Visual Fill Column
+    ;;   > Emacs mode for wrapping visual-line-mode buffers at fill-column.
+    ;;   https://github.com/joostkremers/visual-fill-column
+    ;;
+    ;; NOTE: only enabled for markdown-mode.
+    (add-hook 'markdown-mode-hook (lambda ()
+        (visual-line-mode t)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
