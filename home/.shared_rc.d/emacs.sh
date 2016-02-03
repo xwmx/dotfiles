@@ -63,6 +63,37 @@ HEREDOC
   fi
 }
 
-alias emacsc='emacsclient -t'
-alias emc='emacsclient -t'
+# emacsc
+#
+# Wrapper for `emacsclient` with tweaked functionality.
+emacsc() {
+  if [[ "${1}" =~ '^-h|--help$' ]]
+  then
+    cat <<HEREDOC
+Usage:
+  emacsc
+  emacsc -h | --help
+
+Options:
+  -h --help  Display this usage information.
+
+Description:
+  Launch \`emacsclient\`, silently launching and connecting to
+  \`emacs --daemon\` if it's not already running.
+
+\`emacsclient --help\`
+--------------------
+HEREDOC
+    emacsclient --help
+  else
+    if emacsd status &>/dev/null
+    then
+      emacsclient -t "$@"
+    else
+      emacsd start && emacsclient -t "$@"
+    fi
+  fi
+}
+
+alias emc='emacsc'
 alias emd='emacsd'
