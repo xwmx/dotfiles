@@ -442,7 +442,7 @@ then
   brew uninstall emacs
 fi
 
-# emacs-mac-port
+# emacs-mac-port / emacs-mac
 #
 # This is "Mac port" addition to GNU Emacs 24.  This provides a native
 # GUI support for Mac OS X 10.4 - 10.10.  Note that Emacs 23 and later
