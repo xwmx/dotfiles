@@ -512,7 +512,12 @@ layers configuration. You are free to put any user code."
     ;;
     ;; http://www.emacswiki.org/emacs/FillColumnIndicator
     ;; https://github.com/alpaker/Fill-Column-Indicator
-    (fci-mode)
+    ;;
+    ;; NOTE: Enable as a global minor mode. This is the only configuration
+    ;; that appears to work when run as a daemon.
+    (define-globalized-minor-mode global-fci-mode fci-mode (lambda ()
+                                                              (fci-mode 1)))
+    (global-fci-mode 1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
