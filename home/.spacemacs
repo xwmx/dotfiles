@@ -448,6 +448,29 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+   ;; Enable mouse support
+   ;;
+   ;; Source:
+   ;;   http://stackoverflow.com/a/8859057
+   ;;
+   ;; Alternative:
+   ;;   (global-set-key [mouse-4] 'scroll-down-line)
+   ;;   (global-set-key [mouse-5] 'scroll-up-line)
+   ;;
+   ;; More information:
+   ;;   https://github.com/syl20bnr/spacemacs/issues/4591
+   (unless window-system
+     (require 'mouse)
+     (xterm-mouse-mode t)
+     (global-set-key [mouse-4] (lambda ()
+                                 (interactive)
+                                 (scroll-down 1)))
+     (global-set-key [mouse-5] (lambda ()
+                                 (interactive)
+                                 (scroll-up 1)))
+     (defun track-mouse (e))
+     (setq mouse-sel-mode t)
+   )
   )
 
 (defun dotspacemacs/user-config ()
