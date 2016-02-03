@@ -16,7 +16,7 @@ emacsd() {
   then
     cat <<HEREDOC
 Usage:
-  emacsd (start | status | stop)
+  emacsd (start | status | stop | restart)
   emacsd -h | --help
 
 Options:
@@ -57,6 +57,10 @@ HEREDOC
       printf "\`emacs --daemon\` is not running.\n"
       return 1
     fi
+  elif [[ "${1}" =~ ^r ]]
+  then
+    emacsd status &>/dev/null && emacsd stop
+    emacsd start
   else
     emacsd -h
     return 1
