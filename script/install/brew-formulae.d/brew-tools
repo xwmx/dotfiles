@@ -458,7 +458,8 @@ fi
 # Options:
 #   --with-spacemacs-icon
 #     Using the spacemacs Emacs icon by Nasser Alshammari
-brew install railwaycat/emacsmacport/emacs-mac --with-spacemacs-icon
+brew install railwaycat/emacsmacport/emacs-mac \
+  --with-spacemacs-icon
 
 # EncFS - an Encrypted Filesystem
 #
