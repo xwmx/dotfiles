@@ -478,6 +478,36 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+    ;; Line numbers.
+    ;;
+    ;; Turn on line numbers. This is similar to `dotspacemacs-line-numbers`.
+    (global-linum-mode 1)
+    ;; linum-format
+    ;;
+    ;; Separate line numbers from content.
+    ;;
+    ;; Simple approach via
+    ;; http://www.emacswiki.org/emacs/LineNumbers#toc8
+    ;;
+    ;;   (setq linum-format "%4d \u2502 ")
+    ;;
+    ;; More flexible approach, via
+    ;; https://github.com/syl20bnr/spacemacs/pull/4439/files
+    ;;
+    ;; > add a space before/after the line number
+    ;; > and make number width more flexible to suit with the max lines
+    (defun linum-format-func (line)
+      (concat
+        (propertize " " 'face 'linum)
+        (propertize (format linum-format-fmt line) 'face 'linum)
+        (propertize " " 'face 'linum)))
+    (add-hook 'linum-before-numbering-hook
+      (lambda ()
+        (setq-local linum-format-fmt
+        (let ((w (length (number-to-string
+              (line-number-at-pos (point-max))))))
+          (concat "%" (number-to-string w) "d")))))
+    (setq linum-format 'linum-format-func)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
