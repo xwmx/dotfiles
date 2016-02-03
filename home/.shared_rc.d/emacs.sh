@@ -35,16 +35,6 @@ HEREDOC
       printf "\`emacs --daemon\` is already running.\n"
       return 1
     fi
-  elif [[ "${1}" =~ ^stat ]]
-  then
-    if [[ "$(pgrep -lf emacs)" =~ 'emacs --daemon' ]]
-    then
-      printf "\`emacs --daemon\` is running.\n"
-      return 0
-    else
-      printf "\`emacs --daemon\` is not running.\n"
-      return 1
-    fi
   elif [[ "${1}" =~ '^stop|down$' ]]
   then
     if emacsd status &>/dev/null
@@ -62,8 +52,14 @@ HEREDOC
     emacsd status &>/dev/null && emacsd stop
     emacsd start
   else
-    emacsd -h
-    return 1
+    if [[ "$(pgrep -lf emacs)" =~ 'emacs --daemon' ]]
+    then
+      printf "\`emacs --daemon\` is running.\n"
+      return 0
+    else
+      printf "\`emacs --daemon\` is not running.\n"
+      return 1
+    fi
   fi
 }
 
