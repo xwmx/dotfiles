@@ -26,4 +26,4 @@ export NOTES_AUTO_SYNC=1
 # Set editor to `emacsclient`, using `--alternative-editor=''` to start up
 # `emacs --daemon` if it's not already running. Redirect stderr with
 # `2>/dev/null` to avoid excessive output when the daemon starts.
-export EDITOR='emacsclient --alternate-editor='' 2>/dev/null'
+export EDITOR='emacsclient -q --alternate-editor='' 2>/dev/null'
