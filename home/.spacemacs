@@ -3,8 +3,9 @@
 ;; It must be stored in your home directory.
 ;;
 ;; References:
-;; - https://github.com/syl20bnr/spacemacs
-;; - http://www.clauswitt.com/a-walkthrough-of-my-space>
+;;   https://github.com/syl20bnr/spacemacs
+;;   http://www.clauswitt.com/a-walkthrough-of-my-space
+;;   http://www.emacswiki.org/emacs/EmacsAsDaemon
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
