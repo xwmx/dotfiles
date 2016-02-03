@@ -508,6 +508,11 @@ layers configuration. You are free to put any user code."
               (line-number-at-pos (point-max))))))
           (concat "%" (number-to-string w) "d")))))
     (setq linum-format 'linum-format-func)
+    ;; fci-mode - Fill Column Indicator
+    ;;
+    ;; http://www.emacswiki.org/emacs/FillColumnIndicator
+    ;; https://github.com/alpaker/Fill-Column-Indicator
+    (fci-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
