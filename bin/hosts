@@ -44,5 +44,21 @@ unblock() {
   sudo $_ME remove "fe80::1%lo0" "${1}" --force
 }
 
+# desc "search" <<EOM
+# Usage:
+#   $_ME search <search string>
+#
+# Description:
+#   Search entries for <search string>. This is just an alias for \`$_ME list\`.
+# EOM
+search() {
+  if _blank "${_COMMAND_ARGV[1]:-}"
+  then
+    $_ME help "search"
+    return 1
+  fi
+  list "$@"
+}
+
 # Source the original hosts program.
 . "${HOME}/.dotfiles/vendor/com/github/alphabetum/hosts/hosts"
