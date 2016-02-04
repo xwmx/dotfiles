@@ -449,6 +449,7 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+   ;; -----------------------------------------------------------------------
    ;; Enable mouse support
    ;;
    ;; Source:
@@ -478,6 +479,7 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+    ;; -----------------------------------------------------------------------
     ;; Line numbers.
     ;;
     ;; Turn on line numbers. This is similar to `dotspacemacs-line-numbers`.
@@ -508,6 +510,7 @@ layers configuration. You are free to put any user code."
               (line-number-at-pos (point-max))))))
           (concat "%" (number-to-string w) "d")))))
     (setq linum-format 'linum-format-func)
+    ;; -----------------------------------------------------------------------
     ;; fci-mode - Fill Column Indicator
     ;;
     ;; References:
@@ -524,6 +527,7 @@ layers configuration. You are free to put any user code."
     (setq fci-handle-truncate-lines nil)
     (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
     (global-fci-mode 1)
+    ;; -----------------------------------------------------------------------
     ;; visual-line-mode
     ;;
     ;; > Visual Line mode provides support for editing by visual lines.
