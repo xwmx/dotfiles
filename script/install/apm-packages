@@ -317,7 +317,10 @@ apm install language-scala
 # as of this time the bundled package is out of date and the newline-style
 # `if..then` support is in version 0.20.0.
 # TODO: Remove when the bundled version is at or above 0.20.0.
-apm install landuage-shellscript
+if _apm_package_is_installed "language-shellscript"
+then
+  apm uninstall language-shellscript
+fi
 
 # language-swift
 #
