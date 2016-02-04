@@ -522,10 +522,24 @@ layers configuration. You are free to put any user code."
     ;; More information about truncate-lines:
     ;;   http://www.emacswiki.org/emacs/TruncateLines
     (setq fci-handle-truncate-lines nil)
+    ;; fci-rule-character-color
+    ;;
+    ;; The color of the rule on character terminals is controlled by the
+    ;; variable fci-rule-character-color, whose value should be either nil or
+    ;; a color name. If nil (the default), the value of fci-rule-color (or the
+    ;; closest approximation thereto that the terminal is capable of) is used.
+    (setq fci-rule-character-color "#ff04b9")
+    ;; fci-rule-color
+    ;;
+    ;; The color of the rule. Can be any valid color name.
+    ;;
+    ;; Color names:
+    ;;   http://www.gnu.org/software/emacs/manual/html_node/elisp/Color-Names.html
+    (setq fci-rule-color "gray10")
     ;; Enable as a global minor mode. This is the only configuration
     ;; that appears to work when run as a daemon.
-    (setq fci-handle-truncate-lines nil)
-    (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+    (define-globalized-minor-mode global-fci-mode fci-mode (
+      lambda () (fci-mode 1)))
     (global-fci-mode 1)
     ;; -----------------------------------------------------------------------
     ;; visual-line-mode
