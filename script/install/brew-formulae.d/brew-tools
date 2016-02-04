@@ -810,6 +810,15 @@ brew install jp2a
 # https://github.com/stedolan/jq
 brew install jq
 
+# keybase
+#
+# Command-line interface to Keybase.io
+#
+# Public key crypto for everyone, publicly auditable proofs of identity.
+#
+# https://keybase.io/
+brew install keybase
+
 # kore
 #
 # Kore is an easy to use web application framework for writing scalable web
