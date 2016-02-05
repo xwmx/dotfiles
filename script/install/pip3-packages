@@ -260,6 +260,14 @@ pip3_install stellar
 # https://gitlab.com/hobarrera/todoman
 pip3_install todoman
 
+# twtxt
+#
+# Decentralised, minimalist microblogging service for hackers.
+#
+# https://github.com/buckket/twtxt
+# https://news.ycombinator.com/item?id=11043502
+pip3_install twtxt
+
 # x_x
 #
 # x_x is a command line reader that displays either Excel files or CSVs in
