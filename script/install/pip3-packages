@@ -160,6 +160,13 @@ pip3_install jungle
 # https://github.com/p-e-w/krill
 pip3_install krill
 
+# maybe
+#
+# See what a program does before deciding whether you really want it to happen.
+#
+# https://github.com/p-e-w/maybe
+pip3_install maybe
+
 # Mochi
 #
 # Dynamically typed functional programming language.
