@@ -138,6 +138,20 @@ HEREDOC
 #   argument is provided, the public key with a filename matching the argument
 #   is printed.
 ssh_keys() {
+  if [[ "${1:-}" =~ '^-h|--help$' ]]
+  then
+    cat <<HEREDOC
+Usage:
+  ssh_keys [<key.pub>]
+
+Description:
+  Print the filename of each public key file in the ~/.ssh directory. If an
+  argument is provided, the public key with a filename matching the argument
+  is printed.
+HEREDOC
+    return 0
+  fi
+
   local _public_key="${1:-}"
 
   if [[ -n "${_public_key}" ]]
