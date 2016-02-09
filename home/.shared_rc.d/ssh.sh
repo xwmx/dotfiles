@@ -128,6 +128,23 @@ HEREDOC
   fi
 }
 
+# ssh_keys
+#
+# Usage:
+#   ssh_keys
+#
+# Description:
+#   Print the filename of each public key file in the ~/.ssh directory.
+ssh_keys() {
+  for _file_path in "${HOME}/.ssh"/*
+  do
+    if [[ "${_file_path}" =~ pub$ ]]
+    then
+      printf "%s\n" "$(basename ${_file_path})"
+    fi
+  done
+}
+
 # Wrap `ssh` in a function that first runs `ssh_generate_config` before
 # calling `ssh`.
 #
