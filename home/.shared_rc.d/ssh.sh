@@ -131,18 +131,35 @@ HEREDOC
 # ssh_keys
 #
 # Usage:
-#   ssh_keys
+#   ssh_keys [<key.pub>]
 #
 # Description:
-#   Print the filename of each public key file in the ~/.ssh directory.
+#   Print the filename of each public key file in the ~/.ssh directory. If an
+#   argument is provided, the public key with a filename matching the argument
+#   is printed.
 ssh_keys() {
-  for _file_path in "${HOME}/.ssh"/*
-  do
-    if [[ "${_file_path}" =~ pub$ ]]
+  local _public_key="${1:-}"
+
+  if [[ -n "${_public_key}" ]]
+  then
+    local _public_key_path="${HOME}/.ssh/${_public_key}"
+
+    if [[ -e "${_public_key_path}" ]]
     then
-      printf "%s\n" "$(basename ${_file_path})"
+      cat "${_public_key_path}"
+    else
+      printf "Key not found: %s\n" "${_public_key}"
+      return 1
     fi
-  done
+  else
+    for _file_path in "${HOME}/.ssh"/*
+    do
+      if [[ "${_file_path}" =~ pub$ ]]
+      then
+        printf "%s\n" "$(basename ${_file_path})"
+      fi
+    done
+  fi
 }
 
 # Wrap `ssh` in a function that first runs `ssh_generate_config` before
