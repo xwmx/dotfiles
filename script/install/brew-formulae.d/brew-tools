@@ -308,14 +308,6 @@ brew install cputhrottle
 #
 # http://crystal-lang.org/
 # https://github.com/manastech/crystal
-#
-# NOTE: reinstall crustal without tap.
-# TODO: remove this section when this has been uninstalled from all systems.
-if _homebrew_formula_is_installed "manastech/crystal/crystal-lang"
-then
-  brew uninstall manastech/crystal/crystal-lang
-  brew untap manastech/crystal
-fi
 brew install crystal-lang
 
 # ctags
