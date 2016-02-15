@@ -51,6 +51,16 @@ brew upgrade --all
 # http://beyondgrep.com/
 brew install ack
 
+# Bats
+#
+# Bash Automated Testing System
+#
+# Bats is a TAP-compliant testing framework for Bash. It provides a simple way
+# to verify that the UNIX programs you write behave as expected.
+#
+# https://github.com/sstephenson/bats
+brew install bats
+
 # fasd
 #
 # CLI tool for quick access to files and directories
