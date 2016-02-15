@@ -27,7 +27,6 @@
 # Description:
 #   Initialize pyenv and $PATH for bin directory.
 _enable_pyenv() {
-  
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
 
@@ -45,10 +44,12 @@ _enable_pyenv() {
   # 'configure: error: OpenSSL development header is not installed.'
   #
   # https://github.com/yyuu/pyenv/wiki/Common-build-problems
+  #
+  # NOTE: Do not include a space between the `-I` or `-L` option and value.
   export CFLAGS
   export LDFLAGS
-  CFLAGS="${CFLAGS} -I $(brew --prefix openssl)/include"
-  LDFLAGS="${LDFLAGS} -L $(brew --prefix openssl)/lib"
+  CFLAGS="${CFLAGS} -I$(brew --prefix openssl)/include"
+  LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib"
 
   # https://github.com/yyuu/pyenv-virtualenv
   eval "$(pyenv virtualenv-init -)"
