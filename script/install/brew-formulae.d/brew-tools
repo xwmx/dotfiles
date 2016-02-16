@@ -690,6 +690,12 @@ brew install highlight
 # htop, an interactive process viewer.
 #
 # https://github.com/max-horvath/htop-osx
+#
+# NOTE: As of version 2.0.0, htop supports osx.
+if _homebrew_formula_is_installed "htop-osx"
+then
+  brew uninstall htop-osx
+fi
 brew install htop
 
 # httpie
