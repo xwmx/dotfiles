@@ -131,6 +131,18 @@ pip3_install ftfy
 # https://github.com/nicolargo/glances
 pip3_install glances
 
+# howdoi
+#
+# instant coding answers via the command line
+#
+# https://github.com/gleitz/howdoi
+# http://blog.gleitzman.com/post/43330157197/howdoi-instant-coding-answers-via-the-command
+#
+# See also:
+# https://github.com/santinic/how2
+# https://news.ycombinator.com/item?id=11150209
+pip3_install howdoi
+
 # Hy
 #
 # Hy is a wonderful dialect of Lisp that’s embedded in Python.
