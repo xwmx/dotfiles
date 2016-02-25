@@ -31,47 +31,55 @@ _LOCAL_APP_DIR="${HOME}/Applications"
 #   Append '.bak' to the filename of the item at the destination path, then
 #   copy the item at the source path to the destination's non-.bak location.
 _swap_icons() {
-  local source_path="${1:-}"
-  local destination_path="${2:-}"
+  local _source_path="${1:-}"
+  local _destination_path="${2:-}"
 
-  if [[ -z "${source_path}" ]]
+  if [[ -z "${_source_path}" ]]
   then
     printf "No source path provided.\n"
     exit 1
+  elif [[ ! -e "${_source_path}" ]]
+  then
+    printf "No such file or directory: %s\n" "${_source_path}"
+    exit 1
   fi
-  if [[ -z "${destination_path}" ]]
+  if [[ -z "${_destination_path}" ]]
   then
     printf "No destination path provided.\n"
     exit 1
+  elif [[ ! -e "${_destination_path}" ]]
+  then
+    printf "No such file or directory: %s\n" "${_destination_path}"
+    exit 1
   fi
 
-  local source_hash
-  local destination_hash
+  local _source_hash
+  local _destination_hash
 
-  source_hash="$(md5 -q "$source_path")"
-  destination_hash="$(md5 -q "$destination_path")"
-  if [[ "$source_hash" == "$destination_hash" ]]
+  _source_hash="$(md5 -q "${_source_path}")"
+  _destination_hash="$(md5 -q "${_destination_path}")"
+  if [[ "${_source_hash}" == "${_destination_hash}" ]]
   then
     return 0
   fi
 
-  if [[ -e "${destination_path}.bak" ]]
+  if [[ -e "${_destination_path}.bak" ]]
   then
-    printf "Exists: %s\nSkipping...\n" "${destination_path}.bak"
+    printf "Exists: %s\nSkipping...\n" "${_destination_path}.bak"
     return 0
   fi
 
-  mv "${destination_path}" "${destination_path}.bak"
-  cp "${source_path}" "${destination_path}"
+  mv "${_destination_path}" "${_destination_path}.bak"
+  cp "${_source_path}" "${_destination_path}"
 
   # touch .app directory to refresh icons
-  local destination_directory_path
-  destination_directory_path="$(dirname "${destination_path}")"
-  touch "${destination_directory_path}/../.."
+  local _destination_directory_path
+  _destination_directory_path="$(dirname "${_destination_path}")"
+  touch "${_destination_directory_path}/../.."
 
   cat <<HEREDOC
 Updated icon:
-  ${source_path} -> ${destination_path}
+  ${_source_path} -> ${_destination_path}
 HEREDOC
 }
 ###############################################################################
@@ -89,7 +97,19 @@ HEREDOC
 #   NOTE: in the current (2015/10) nightly, the icon is in a different location
 #   from the current release version
 _swap_iterm2_icons() {
-  local _nightly_icon_path="${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/AppIcon.icns"
+  local _app_matches=()
+  local _app_path
+  _app_matches=($(
+    mdfind 'kMDItemContentType == "com.apple.application-bundle" && kMDItemFSName = "iTerm.app"'
+  ))
+  _app_path="${_app_matches[0]:-}"
+  if [[ -z "${_app_path}" ]] || [[ ! -e "${_app_path}" ]]
+  then
+    printf "iTerm.app not found.\n"
+    exit 1
+  fi
+
+  local _nightly_icon_path="${_app_path}/Contents/Resources/AppIcon.icns"
   if [[ -e "${_nightly_icon_path}" ]]
   then
     _swap_icons \

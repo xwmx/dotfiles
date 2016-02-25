@@ -605,8 +605,12 @@ then
   if _homebrew_cask_is_installed "iterm2-nightly-pinned"
   then
     brew cask uninstall iterm2-nightly-pinned --force
-    brew cask install iterm2-nightly
   fi
+  if _homebrew_cask_is_installed "iterm2-nightly"
+  then
+    brew cask uninstall iterm2-nightly --force
+  fi
+  brew cask install iterm2-beta
 fi
 
 # Itsycal
