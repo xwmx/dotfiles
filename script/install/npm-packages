@@ -5,6 +5,26 @@
 # Install various global npm packages.
 ###############################################################################
 
+# ava
+#
+# Futuristic test runner.
+#
+# Even though JavaScript is single-threaded, IO in Node.js can happen in
+# parallel due to its async nature. AVA takes advantage of this and runs your
+# tests concurrently, which is especially beneficial for IO heavy tests. In
+# addition, test files are run in parallel as separate processes, giving you
+# even better performance and an isolated environment for each test file.
+# Switching from Mocha to AVA in Pageres brought the test time down from 31
+# sec to 11 sec. Having tests run concurrently forces you to write atomic
+# tests, meaning tests don't depend on global state or the state of other
+# tests, which is a great thing!
+#
+# https://github.com/sindresorhus/ava/
+# https://news.ycombinator.com/item?id=11177690
+# https://news.ycombinator.com/item?id=10135078
+# https://news.ycombinator.com/item?id=10626291
+npm install --global ava
+
 # Babel
 #
 # Babel is a JavaScript transpiler. Use next generation JavaScript, today.
