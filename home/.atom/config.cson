@@ -1,22 +1,25 @@
 "*":
   "atom-material-ui":
-    accentColor: "Pink"
-    compactTreeView: true
-    fonts: {}
-    panels:
-      depth: true
-      panelContrast: true
-    rippleAccentColor: true
-    slimScrollbar: true
-    tabSize: "Small"
+    colors:
+      abaseColor:
+        red: 255
+        green: 47
+        blue: 146
+        alpha: 1
+      accentColor:
+        red: 72
+        green: 255
+        blue: 168
+        alpha: 1
+      genAccent: true
+    fonts:
+      fontSize: 14
     tabs:
-      rippleAccentColor: true
-      tabSize: "Small"
+      compactTabs: true
     treeView:
-      compactTreeView: true
+      compactList: true
     ui:
-      accentColor: "Pink"
-      slimScrollbar: true
+      panelShadows: true
   "autocomplete-plus":
     useAlternateScoring: true
   core:
