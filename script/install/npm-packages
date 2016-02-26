@@ -306,6 +306,15 @@ npm install --global livescript
 # https://github.com/lodash/lodash/
 npm install --global lodash-cli
 
+# lorem-ipsum
+#
+# Generates passages of lorem ipsum text suitable for use as placeholder copy
+# in web pages, graphics, and more.
+#
+# https://www.npmjs.com/package/lorem-ipsum
+# https://github.com/knicklabs/lorem-ipsum.js
+npm install --global lorem-ipsum
+
 # mad
 #
 # mad(1) is a markdown driven manual page viewer, this makes manuals easier to
