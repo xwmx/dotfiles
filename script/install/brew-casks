@@ -790,6 +790,22 @@ brew cask install natron
 # http://brettterpstra.com/projects/nvalt/
 brew cask install nvalt
 
+# Nylas N1
+#
+# The extensible, open source mail client.
+#
+# https://www.nylas.com/n1
+#
+# NOTE: Is built on top of Nylas, which requires permission to manage the
+# email account.
+#
+# Nylas provides a modern developer platform for email, contacts, and
+# calendar. Stop fighting old protocols, and start building great products.
+#
+# https://nylas.com/
+# https://news.ycombinator.com/item?id=11181867
+brew cask install nylas-n1
+
 # OpenSCAD
 #
 # OpenSCAD is a software for creating solid 3D CAD models. It is free software
