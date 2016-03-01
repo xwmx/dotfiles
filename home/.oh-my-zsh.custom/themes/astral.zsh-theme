@@ -155,7 +155,7 @@ _astral_top_prefix="${_astral_prefix} ${_astral_context}"
 # _astral_bottom_line
 #
 # The bottom line.
-_astral_bottom_line="$(_astral_command_prompt) %{$reset_color%} "
+_astral_bottom_line="$(_astral_command_prompt) %{$reset_color%}"
 
 # PROMPT
 #
