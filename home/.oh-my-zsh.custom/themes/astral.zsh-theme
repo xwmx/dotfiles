@@ -148,41 +148,57 @@ _astral_command_prompt() {
 # Prompt
 ###############################################################################
 
-_ASTRAL_NEWLINE=$'\n'
-
-# _ASTRAL_TOP_PREFIX
-#
-# The top line, before any contextual data functions.
-_ASTRAL_TOP_PREFIX="${_ASTRAL_PREFIX} ${_ASTRAL_CONTEXT}"
-
-# _ASTRAL_BOTTOM_LINE
-#
-# The bottom line.
-_ASTRAL_BOTTOM_LINE="$(_astral_command_prompt) %{$reset_color%}"
-
-_ASTRAL_DISPLAY_CONTEXT=1
+ASTRAL_DISPLAY_CONTEXT=1
 astral() {
-  if [[ "${1:-}" =~ '^off|hide|disable|simple$' ]]
-  then
-    _ASTRAL_DISPLAY_CONTEXT=0
-  else
-    _ASTRAL_DISPLAY_CONTEXT=1
-  fi
-}
+  export _NEWLINE=$'\n'
 
-_astral_prompt() {
-  if ((_ASTRAL_DISPLAY_CONTEXT))
+  if [[ "${1:-}" =~ '^-h|--help|help$' ]]
   then
-    local _top
-    _top="${_ASTRAL_TOP_PREFIX} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
-    printf "%s\n" "${_top}${_ASTRAL_NEWLINE}${_ASTRAL_BOTTOM_LINE}"
+    cat <<HEREDOC
+Usage:
+  astral (hide | prompt)
+  yes -h | --help
+
+Options:
+  -h --help  Display this usage information.
+
+Subcommands:
+  hide    Hide top line.
+  prompt  Print the formatted prompt string to assign to \$PROMPT.
+
+Description:
+  A ZSH theme.
+HEREDOC
+    return 0
+  elif [[ "${1:-}" =~ '^off|hide|disable|simple$' ]]
+  then
+    ASTRAL_DISPLAY_CONTEXT=0
+  elif [[ "${1:-}" =~ '^on|show|enable|normal$' ]]
+  then
+    ASTRAL_DISPLAY_CONTEXT=1
+  elif  [[ "${1:-}" =~ '^prompt$' ]]
+  then
+    local _top_prefix
+    _top_prefix="${_ASTRAL_PREFIX} ${_ASTRAL_CONTEXT}"
+
+    local _top_line
+    _top_line="${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+
+    local _bottom_line
+    _bottom_line="$(_astral_command_prompt) %{$reset_color%}"
+
+    if ((ASTRAL_DISPLAY_CONTEXT))
+    then
+      printf "%s\n" "${_top_line}${_NEWLINE}${_bottom_line}"
+    else
+      printf "%s\n" "${_bottom_line}"
+    fi
   else
-    printf "%s\n" "${_ASTRAL_BOTTOM_LINE}"
+    "${0}" -h
   fi
 }
 
 # PROMPT
 #
 # Primary prompt variable. Use $RPROMPT to put a prompt on the right side.
-# PROMPT=$'${_ASTRAL_TOP_PREFIX} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n${_ASTRAL_BOTTOM_LINE}'
-PROMPT=$'$(_astral_prompt)'
+PROMPT=$'$(astral prompt)'
