@@ -10,18 +10,6 @@
 # https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
 ###############################################################################
 
-# Basic Components
-###############################################################################
-
-# Prefix prompt with a symbol with color indicating last return status: green
-# for 0 and red for non-0.
-_ASTRAL_RETURN_STATUS="%(?:%{$fg_bold[green]%} ⧊ :%{$fg_bold[red]%} ⧂ %s)"
-
-# The current time in 24-hour format.
-#
-# Will have same color as whatever preceeds it.
-_ASTRAL_TIME="%T"
-
 # _astral_machine()
 #
 # Display alternate machine prompt for remote sessions.
@@ -38,23 +26,6 @@ _astral_machine() {
   fi
   printf "%s\n" "${_astral_machine_string}"
 }
-
-# Show the first two current path segments, with a ~ for the home directory.
-_ASTRAL_PATH="%{$fg[cyan]%}%2~"
-
-# Parts
-###############################################################################
-
-# $_ASTRAL_PREFIX
-#
-# Combine return status, followed by time.
-_ASTRAL_PREFIX="${_ASTRAL_RETURN_STATUS}${_ASTRAL_TIME}"
-
-# $_ASTRAL_CONTEXT
-#
-# machine:~/path
-# ssh:machine:~/path
-_ASTRAL_CONTEXT="$(_astral_machine):${_ASTRAL_PATH}"
 
 # rbenv
 ###############################################################################
@@ -219,12 +190,55 @@ HEREDOC
     ASTRAL_DISPLAY_CONTEXT=1
   elif  [[ "${1:-}" =~ '^prompt$' ]]
   then
-    local _top_prefix
-    _top_prefix="${_ASTRAL_PREFIX} ${_ASTRAL_CONTEXT}"
+    # $_return_status
+    #
+    # Prefix prompt with a symbol with color indicating last return status:
+    # green for 0 and red for non-0.
+    local _return_status
+    _return_status="%(?:%{$fg_bold[green]%} ⧊ :%{$fg_bold[red]%} ⧂ %s)"
 
+    # $_time
+    #
+    # The current time in 24-hour format. Will have same color as whatever
+    # preceeds it.
+    local _time
+    _time="%T"
+
+    # $_path
+    #
+    # Show the first two current path segments, with a ~ for the home
+    # directory.
+    local _path
+    _path="%{$fg[cyan]%}%2~"
+
+    # $_prefix
+    #
+    # Prompt prefix.
+    local _prefix
+    _prefix="${_return_status}${_time}"
+
+    # $_context
+    #
+    # machine:~/path
+    # ssh:machine:~/path
+    local _context
+    _context="$(_astral_machine):${_path}"
+
+    # $_top_prefix
+    #
+    # Top line prefix before contextual prompt components.
+    local _top_prefix
+    _top_prefix="${_prefix} ${_context}"
+
+    # $_top_line
+    #
+    # Full top prompt line.
     local _top_line
     _top_line="${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
 
+    # $_bottom_line
+    #
+    # Full bottom prompt line.
     local _bottom_line
     _bottom_line="$(_astral_command_prompt) %{$reset_color%}"
 
