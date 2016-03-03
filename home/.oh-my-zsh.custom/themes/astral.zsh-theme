@@ -160,7 +160,7 @@ _astral_command_prompt() {
 # Prompt
 ###############################################################################
 
-ASTRAL_DISPLAY_CONTEXT=1
+export ASTRAL_DISPLAY_CONTEXT=1
 astral() {
   export _NEWLINE=$'\n'
 
