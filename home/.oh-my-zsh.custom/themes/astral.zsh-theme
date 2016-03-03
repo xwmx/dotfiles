@@ -97,15 +97,12 @@ _astral_rbenv_prompt() {
 # git
 ###############################################################################
 
-# `git_prompt_info` variables
-ZSH_THEME_GIT_PROMPT_PREFIX="git:%{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{${reset_color}%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗%{${reset_color}%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
-
 # _astral_git_prompt()
 #
 # Generate the git prompt.
+#
+# Reimplements some functions here:
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
 #
 # See also:
 # https://news.ycombinator.com/item?id=10121997
@@ -113,12 +110,53 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 # https://github.com/arialdomartini/oh-my-git
 # https://github.com/michaeldfallen/git-radar
 _astral_git_prompt() {
+  # `git_prompt_info` variables
+  local _prompt_prefix="git:%{$fg[cyan]%}"
+  local _prompt_suffix="%{${reset_color}%}"
+  local _prompt_dirty="%{$fg[blue]%} %{$fg[yellow]%}✗%{${reset_color}%}"
+  local _prompt_clean="%{$fg[blue]%}"
+
+  _parse_git_dirty() {
+  	local STATUS=''
+  	local FLAGS
+  	FLAGS=('--porcelain')
+  	if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]
+  	then
+  		if [[ ${POST_1_7_2_GIT} -gt 0 ]]
+  		then
+  			FLAGS+='--ignore-submodules=dirty'
+  		fi
+  		if [[ "${DISABLE_UNTRACKED_FILES_DIRTY}" = "true" ]]
+  		then
+  			FLAGS+='--untracked-files=no'
+  		fi
+  		STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+  	fi
+  	if [[ -n ${STATUS} ]]
+  	then
+  		printf "%s\n" "${_prompt_dirty}"
+  	else
+  		printf "%s\n" "${_prompt_clean}"
+  	fi
+  }
+
+  _git_prompt_info() {
+  	local _ref
+  	if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]
+  	then
+  		_ref=$(command git symbolic-ref HEAD 2> /dev/null) \
+        || _ref=$(command git rev-parse --short HEAD 2> /dev/null) \
+        || return 0
+  		printf "%s\n" "${_prompt_prefix}${_ref#refs/heads/}$(_parse_git_dirty)${_prompt_suffix}"
+  	fi
+  }
+
   # For now, just fall back to the `git_prompt_info`oh-my-zsh shell function.
-  local _git_prompt_info
-  _git_prompt_info="$(git_prompt_info)"
-  if [[ -n "${_git_prompt_info}" ]]
+  local _raw_git_prompt
+  _raw_git_prompt="$(_git_prompt_info)"
+  if [[ -n "${_raw_git_prompt}" ]]
   then
-    printf "%s\n" "%{$fg_bold[blue]%}${_git_prompt_info}%{$fg_bold[blue]%}"
+    printf "%s\n" "%{$fg_bold[blue]%}${_raw_git_prompt}%{$fg_bold[blue]%}"
   else
     printf ""
   fi
