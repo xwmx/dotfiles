@@ -15,12 +15,12 @@
 
 # Prefix prompt with a symbol with color indicating last return status: green
 # for 0 and red for non-0.
-_astral_return_status="%(?:%{$fg_bold[green]%} ⧊ :%{$fg_bold[red]%} ⧂ %s)"
+_ASTRAL_RETURN_STATUS="%(?:%{$fg_bold[green]%} ⧊ :%{$fg_bold[red]%} ⧂ %s)"
 
 # The current time in 24-hour format.
 #
 # Will have same color as whatever preceeds it.
-_astral_time="%T"
+_ASTRAL_TIME="%T"
 
 # _astral_machine()
 #
@@ -40,21 +40,21 @@ _astral_machine() {
 }
 
 # Show the first two current path segments, with a ~ for the home directory.
-_astral_path="%{$fg[cyan]%}%2~"
+_ASTRAL_PATH="%{$fg[cyan]%}%2~"
 
 # Parts
 ###############################################################################
 
-# _prefix
+# $_ASTRAL_PREFIX
 #
 # Combine return status, followed by time.
-_astral_prefix="${_astral_return_status}${_astral_time}"
+_ASTRAL_PREFIX="${_ASTRAL_RETURN_STATUS}${_ASTRAL_TIME}"
 
-# _context
+# $_ASTRAL_CONTEXT
 #
 # machine:~/path
 # ssh:machine:~/path
-_astral_context="$(_astral_machine):${_astral_path}"
+_ASTRAL_CONTEXT="$(_astral_machine):${_ASTRAL_PATH}"
 
 # rbenv
 ###############################################################################
@@ -147,39 +147,39 @@ _astral_command_prompt() {
 # Prompt
 ###############################################################################
 
-ASTRAL_NEWLINE=$'\n'
+_ASTRAL_NEWLINE=$'\n'
 
-# _astral_top_prefix
+# _ASTRAL_TOP_PREFIX
 #
 # The top line, before any contextual data functions.
-_astral_top_prefix="${_astral_prefix} ${_astral_context}"
+_ASTRAL_TOP_PREFIX="${_ASTRAL_PREFIX} ${_ASTRAL_CONTEXT}"
 
-# _astral_bottom_line
+# _ASTRAL_BOTTOM_LINE
 #
 # The bottom line.
-_astral_bottom_line="$(_astral_command_prompt) %{$reset_color%}"
+_ASTRAL_BOTTOM_LINE="$(_astral_command_prompt) %{$reset_color%}"
 
-ASTRAL_DISPLAY_CONTEXT=1
+_ASTRAL_DISPLAY_CONTEXT=1
 astral() {
   if [[ "${1:-}" =~ '^off|hide|disable|simple$' ]]
   then
-    ASTRAL_DISPLAY_CONTEXT=0
+    _ASTRAL_DISPLAY_CONTEXT=0
   else
-    ASTRAL_DISPLAY_CONTEXT=1
+    _ASTRAL_DISPLAY_CONTEXT=1
   fi
 }
 
 _astral_prompt() {
-  if ((ASTRAL_DISPLAY_CONTEXT))
+  if ((_ASTRAL_DISPLAY_CONTEXT))
   then
-    printf "%s\n" "${_astral_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)${ASTRAL_NEWLINE}${_astral_bottom_line}"
+    printf "%s\n" "${_ASTRAL_TOP_PREFIX} $(_astral_rbenv_prompt)$(_astral_git_prompt)${_ASTRAL_NEWLINE}${_ASTRAL_BOTTOM_LINE}"
   else
-    printf "%s\n" "${_astral_bottom_line}"
+    printf "%s\n" "${_ASTRAL_BOTTOM_LINE}"
   fi
 }
 
 # PROMPT
 #
 # Primary prompt variable. Use $RPROMPT to put a prompt on the right side.
-# PROMPT=$'${_astral_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n${_astral_bottom_line}'
+# PROMPT=$'${_ASTRAL_TOP_PREFIX} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n${_ASTRAL_BOTTOM_LINE}'
 PROMPT=$'$(_astral_prompt)'
