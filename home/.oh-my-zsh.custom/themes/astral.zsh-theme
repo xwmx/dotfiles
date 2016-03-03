@@ -147,6 +147,8 @@ _astral_command_prompt() {
 # Prompt
 ###############################################################################
 
+ASTRAL_NEWLINE=$'\n'
+
 # _astral_top_prefix
 #
 # The top line, before any contextual data functions.
@@ -157,7 +159,27 @@ _astral_top_prefix="${_astral_prefix} ${_astral_context}"
 # The bottom line.
 _astral_bottom_line="$(_astral_command_prompt) %{$reset_color%}"
 
+ASTRAL_DISPLAY_CONTEXT=1
+astral() {
+  if [[ "${1:-}" =~ '^off|hide|disable|simple$' ]]
+  then
+    ASTRAL_DISPLAY_CONTEXT=0
+  else
+    ASTRAL_DISPLAY_CONTEXT=1
+  fi
+}
+
+_astral_prompt() {
+  if ((ASTRAL_DISPLAY_CONTEXT))
+  then
+    printf "%s\n" "${_astral_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)${ASTRAL_NEWLINE}${_astral_bottom_line}"
+  else
+    printf "%s\n" "${_astral_bottom_line}"
+  fi
+}
+
 # PROMPT
 #
 # Primary prompt variable. Use $RPROMPT to put a prompt on the right side.
-PROMPT=$'${_astral_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n${_astral_bottom_line}'
+# PROMPT=$'${_astral_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)\n${_astral_bottom_line}'
+PROMPT=$'$(_astral_prompt)'
