@@ -65,8 +65,11 @@ _ASTRAL_CONTEXT="$(_astral_machine):${_ASTRAL_PATH}"
 #
 # via: https://gist.github.com/mislav/1712320
 _astral_rbenv_version_status() {
-  local ver=$(rbenv version-name)
-  [ "$(rbenv global)" != "$ver" ] && echo "$ver"
+  local _version="$(rbenv version-name)"
+  if [[ "$(rbenv global)" != "${_version}" ]]
+  then
+    printf "%s\n" "${_version}"
+  fi
 }
 # _astral_rbenv_prompt()
 #
@@ -78,16 +81,16 @@ _astral_rbenv_prompt() {
   if hash "rbenv" &> /dev/null
   then
     local _maybe_rbenv_version="$(_astral_rbenv_version_status)"
-    if [[ -n "$_maybe_rbenv_version" ]]
+    if [[ -n "${_maybe_rbenv_version}" ]]
     then
       local _rbenv_prefix="%{$fg_bold[blue]%}ruby:"
       local _rbenv_value="%{$fg_bold[cyan]%}${_maybe_rbenv_version}"
-      local _rbenv_suffix="%{$fg_bold[blue]%}%{$reset_color%} "
+      local _rbenv_suffix="%{$fg_bold[blue]%}%{${reset_color}%} "
       _rbenv_version_string="${_rbenv_prefix}${_rbenv_value}${_rbenv_suffix}"
     else
       _rbenv_version_string=""
     fi
-    printf "%s\n" "$_rbenv_version_string"
+    printf "%s\n" "${_rbenv_version_string}"
   fi
 }
 
@@ -96,8 +99,8 @@ _astral_rbenv_prompt() {
 
 # `git_prompt_info` variables
 ZSH_THEME_GIT_PROMPT_PREFIX="git:%{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{${reset_color}%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗%{${reset_color}%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 # _astral_git_prompt()
@@ -131,15 +134,15 @@ _astral_git_prompt() {
 # blue if it returned with a non-zero status.
 _astral_command_prompt() {
   local _prompt_0=""
-  for color in green yellow cyan blue
+  for __color in green yellow cyan blue
   do
-    _prompt_0="$_prompt_0%{$fg_bold[$color]%}❯"
+    _prompt_0="${_prompt_0}%{$fg_bold[${__color}]%}❯"
   done
 
   local _prompt_non_0=""
-  for color in red magenta blue cyan
+  for __color in red magenta blue cyan
   do
-    _prompt_non_0="$_prompt_non_0%{$fg_bold[$color]%}❯"
+    _prompt_non_0="${_prompt_non_0}%{$fg_bold[${__color}]%}❯"
   done
 
   printf "%s\n" "%(?:${_prompt_0}:${_prompt_non_0}%s)"
