@@ -1,8 +1,6 @@
 ###############################################################################
 # Astral
 #
-# Based on the robbyrussell theme.
-#
 # Prompt reference:
 # http://www.nparikh.org/unix/prompt.php
 #
@@ -10,62 +8,31 @@
 # https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
 ###############################################################################
 
-# _astral_machine()
-#
-# Display alternate machine prompt for remote sessions.
-#
-# Makes it easier to distinguish between local and remote sessions.
-_astral_machine() {
-  local _astral_machine_string
-  if [[ "$SESSION_TYPE" == "remote/ssh" ]]
-  then
-    local _astral_ssh_prefix="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:"
-    _astral_machine_string="${_astral_ssh_prefix}%{$fg_bold[green]%}%n@%m"
-  else
-    _astral_machine_string="%{$fg_bold[blue]%}%m"
-  fi
-  printf "%s\n" "${_astral_machine_string}"
-}
-
-# rbenv
+# _command
 ###############################################################################
 
-# _rbenv_version_status()
+# _astral_command_prompt
 #
-# show current rbenv version if different from rbenv global
-#
-# via: https://gist.github.com/mislav/1712320
-_astral_rbenv_version_status() {
-  local _version="$(rbenv version-name)"
-  if [[ "$(rbenv global)" != "${_version}" ]]
-  then
-    printf "%s\n" "${_version}"
-  fi
-}
-# _astral_rbenv_prompt()
-#
-# If rbenv is installed and _rbenv_version_status() returns a version,
-# generate the prompt section displaying the Ruby version.
-_astral_rbenv_prompt() {
-  local _maybe_rbenv_version
-  local _rbenv_version_string
-  if hash "rbenv" &> /dev/null
-  then
-    local _maybe_rbenv_version="$(_astral_rbenv_version_status)"
-    if [[ -n "${_maybe_rbenv_version}" ]]
-    then
-      local _rbenv_prefix="%{$fg_bold[blue]%}ruby:"
-      local _rbenv_value="%{$fg_bold[cyan]%}${_maybe_rbenv_version}"
-      local _rbenv_suffix="%{$fg_bold[blue]%}%{${reset_color}%} "
-      _rbenv_version_string="${_rbenv_prefix}${_rbenv_value}${_rbenv_suffix}"
-    else
-      _rbenv_version_string=""
-    fi
-    printf "%s\n" "${_rbenv_version_string}"
-  fi
+# Display a row of color '❯' characters. Use last return status to display
+# green to blue gradient if the last command returned with a 0 and red to
+# blue if it returned with a non-zero status.
+_astral_command_prompt() {
+  local _prompt_0=""
+  for __color in green yellow cyan blue
+  do
+    _prompt_0="${_prompt_0}%{$fg_bold[${__color}]%}❯"
+  done
+
+  local _prompt_non_0=""
+  for __color in red magenta blue cyan
+  do
+    _prompt_non_0="${_prompt_non_0}%{$fg_bold[${__color}]%}❯"
+  done
+
+  printf "%s\n" "%(?:${_prompt_0}:${_prompt_non_0}%s)"
 }
 
-# git
+# _git
 ###############################################################################
 
 # _astral_git_prompt()
@@ -133,30 +100,64 @@ _astral_git_prompt() {
   fi
 }
 
-# Command Prompt
+# _machine
 ###############################################################################
-
-# _astral_command_prompt
+# _astral_machine()
 #
-# Display a row of color '❯' characters. Use last return status to display
-# green to blue gradient if the last command returned with a 0 and red to
-# blue if it returned with a non-zero status.
-_astral_command_prompt() {
-  local _prompt_0=""
-  for __color in green yellow cyan blue
-  do
-    _prompt_0="${_prompt_0}%{$fg_bold[${__color}]%}❯"
-  done
-
-  local _prompt_non_0=""
-  for __color in red magenta blue cyan
-  do
-    _prompt_non_0="${_prompt_non_0}%{$fg_bold[${__color}]%}❯"
-  done
-
-  printf "%s\n" "%(?:${_prompt_0}:${_prompt_non_0}%s)"
+# Display alternate machine prompt for remote sessions.
+#
+# Makes it easier to distinguish between local and remote sessions.
+_astral_machine() {
+  local _astral_machine_string
+  if [[ "$SESSION_TYPE" == "remote/ssh" ]]
+  then
+    local _astral_ssh_prefix="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:"
+    _astral_machine_string="${_astral_ssh_prefix}%{$fg_bold[green]%}%n@%m"
+  else
+    _astral_machine_string="%{$fg_bold[blue]%}%m"
+  fi
+  printf "%s\n" "${_astral_machine_string}"
 }
 
+# _rbenv
+###############################################################################
+
+# _rbenv_version_status()
+#
+# show current rbenv version if different from rbenv global
+#
+# via: https://gist.github.com/mislav/1712320
+_astral_rbenv_version_status() {
+  local _version="$(rbenv version-name)"
+  if [[ "$(rbenv global)" != "${_version}" ]]
+  then
+    printf "%s\n" "${_version}"
+  fi
+}
+# _astral_rbenv_prompt()
+#
+# If rbenv is installed and _rbenv_version_status() returns a version,
+# generate the prompt section displaying the Ruby version.
+_astral_rbenv_prompt() {
+  local _maybe_rbenv_version
+  local _rbenv_version_string
+  if hash "rbenv" &> /dev/null
+  then
+    local _maybe_rbenv_version="$(_astral_rbenv_version_status)"
+    if [[ -n "${_maybe_rbenv_version}" ]]
+    then
+      local _rbenv_prefix="%{$fg_bold[blue]%}ruby:"
+      local _rbenv_value="%{$fg_bold[cyan]%}${_maybe_rbenv_version}"
+      local _rbenv_suffix="%{$fg_bold[blue]%}%{${reset_color}%} "
+      _rbenv_version_string="${_rbenv_prefix}${_rbenv_value}${_rbenv_suffix}"
+    else
+      _rbenv_version_string=""
+    fi
+    printf "%s\n" "${_rbenv_version_string}"
+  fi
+}
+
+###############################################################################
 # Prompt
 ###############################################################################
 
@@ -254,7 +255,7 @@ HEREDOC
   fi
 }
 
-# PROMPT
+# $PROMPT
 #
 # Primary prompt variable. Use $RPROMPT to put a prompt on the right side.
 PROMPT=$'$(astral prompt)'
