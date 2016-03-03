@@ -111,8 +111,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 # https://github.com/michaeldfallen/git-radar
 _astral_git_prompt() {
   # For now, just fall back to the `git_prompt_info`oh-my-zsh shell function.
-  local _git_prompt_info="$(git_prompt_info)"
-  if [[ -n "$_git_prompt_info" ]]
+  local _git_prompt_info
+  _git_prompt_info="$(git_prompt_info)"
+  if [[ -n "${_git_prompt_info}" ]]
   then
     printf "%s\n" "%{$fg_bold[blue]%}${_git_prompt_info}%{$fg_bold[blue]%}"
   else
@@ -172,7 +173,9 @@ astral() {
 _astral_prompt() {
   if ((_ASTRAL_DISPLAY_CONTEXT))
   then
-    printf "%s\n" "${_ASTRAL_TOP_PREFIX} $(_astral_rbenv_prompt)$(_astral_git_prompt)${_ASTRAL_NEWLINE}${_ASTRAL_BOTTOM_LINE}"
+    local _top
+    _top="${_ASTRAL_TOP_PREFIX} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+    printf "%s\n" "${_top}${_ASTRAL_NEWLINE}${_ASTRAL_BOTTOM_LINE}"
   else
     printf "%s\n" "${_ASTRAL_BOTTOM_LINE}"
   fi
