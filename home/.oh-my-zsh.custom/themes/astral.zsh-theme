@@ -168,14 +168,15 @@ astral() {
   then
     cat <<HEREDOC
 Usage:
-  astral (hide | prompt)
+  astral (hide | show | prompt)
   yes -h | --help
 
 Options:
   -h --help  Display this usage information.
 
 Subcommands:
-  hide    Hide top line.
+  hide    Hide the top line.
+  show    Show the top line.
   prompt  Print the formatted prompt string to assign to \$PROMPT.
 
 Description:
