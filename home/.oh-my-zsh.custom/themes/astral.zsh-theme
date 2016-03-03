@@ -55,38 +55,38 @@ _astral_git_prompt() {
   local _prompt_clean="%{$fg[blue]%}"
 
   _parse_git_dirty() {
-  	local STATUS=''
-  	local FLAGS
-  	FLAGS=('--porcelain')
-  	if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]
-  	then
-  		if [[ ${POST_1_7_2_GIT} -gt 0 ]]
-  		then
-  			FLAGS+='--ignore-submodules=dirty'
-  		fi
-  		if [[ "${DISABLE_UNTRACKED_FILES_DIRTY}" = "true" ]]
-  		then
-  			FLAGS+='--untracked-files=no'
-  		fi
-  		STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-  	fi
-  	if [[ -n ${STATUS} ]]
-  	then
-  		printf "%s\n" "${_prompt_dirty}"
-  	else
-  		printf "%s\n" "${_prompt_clean}"
-  	fi
+    local STATUS=''
+    local FLAGS
+    FLAGS=('--porcelain')
+    if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]
+    then
+      if [[ ${POST_1_7_2_GIT} -gt 0 ]]
+      then
+        FLAGS+='--ignore-submodules=dirty'
+      fi
+      if [[ "${DISABLE_UNTRACKED_FILES_DIRTY}" = "true" ]]
+      then
+        FLAGS+='--untracked-files=no'
+      fi
+      STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+    fi
+    if [[ -n ${STATUS} ]]
+    then
+      printf "%s\n" "${_prompt_dirty}"
+    else
+      printf "%s\n" "${_prompt_clean}"
+    fi
   }
 
   _git_prompt_info() {
-  	local _ref
-  	if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]
-  	then
-  		_ref=$(command git symbolic-ref HEAD 2> /dev/null) \
+    local _ref
+    if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]
+    then
+      _ref=$(command git symbolic-ref HEAD 2> /dev/null) \
         || _ref=$(command git rev-parse --short HEAD 2> /dev/null) \
         || return 0
-  		printf "%s\n" "${_prompt_prefix}${_ref#refs/heads/}$(_parse_git_dirty)${_prompt_suffix}"
-  	fi
+      printf "%s\n" "${_prompt_prefix}${_ref#refs/heads/}$(_parse_git_dirty)${_prompt_suffix}"
+    fi
   }
 
   # For now, just fall back to the `git_prompt_info`oh-my-zsh shell function.
