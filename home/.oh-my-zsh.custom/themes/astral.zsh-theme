@@ -128,7 +128,8 @@ _astral_machine() {
 #
 # via: https://gist.github.com/mislav/1712320
 _astral_rbenv_version_status() {
-  local _version="$(rbenv version-name)"
+  local _version
+  _version="$(rbenv version-name)"
   if [[ "$(rbenv global)" != "${_version}" ]]
   then
     printf "%s\n" "${_version}"
@@ -143,7 +144,8 @@ _astral_rbenv_prompt() {
   local _rbenv_version_string
   if hash "rbenv" &> /dev/null
   then
-    local _maybe_rbenv_version="$(_astral_rbenv_version_status)"
+    local _maybe_rbenv_version
+    _maybe_rbenv_version="$(_astral_rbenv_version_status)"
     if [[ -n "${_maybe_rbenv_version}" ]]
     then
       local _rbenv_prefix="%{$fg_bold[blue]%}ruby:"
