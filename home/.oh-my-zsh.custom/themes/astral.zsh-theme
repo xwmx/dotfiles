@@ -140,8 +140,6 @@ _astral_rbenv_version_status() {
 # If rbenv is installed and _rbenv_version_status() returns a version,
 # generate the prompt section displaying the Ruby version.
 _astral_rbenv_prompt() {
-  local _maybe_rbenv_version
-  local _rbenv_version_string
   if hash "rbenv" &> /dev/null
   then
     local _maybe_rbenv_version
@@ -151,11 +149,11 @@ _astral_rbenv_prompt() {
       local _rbenv_prefix="%{$fg_bold[blue]%}ruby:"
       local _rbenv_value="%{$fg_bold[cyan]%}${_maybe_rbenv_version}"
       local _rbenv_suffix="%{$fg_bold[blue]%}%{${reset_color}%} "
-      _rbenv_version_string="${_rbenv_prefix}${_rbenv_value}${_rbenv_suffix}"
+      local _rbenv_string="${_rbenv_prefix}${_rbenv_value}${_rbenv_suffix}"
     else
-      _rbenv_version_string=""
+      _rbenv_string=""
     fi
-    printf "%s\n" "${_rbenv_version_string}"
+    printf "%s\n" "${_rbenv_string}"
   fi
 }
 
