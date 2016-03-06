@@ -296,3 +296,6 @@
 [submodule "vendor/com/github/alphabetum/vbox"]
 	path = vendor/com/github/alphabetum/vbox
 	url = https://github.com/alphabetum/vbox.git
+[submodule "vendor/com/github/chase-miller/time-machine-sparce-bundle-fix"]
+	path = vendor/com/github/chase-miller/time-machine-sparce-bundle-fix
+	url = https://github.com/chase-miller/time-machine-sparce-bundle-fix.git
