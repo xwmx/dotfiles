@@ -51,7 +51,7 @@ _astral_git_prompt() {
   # `git_prompt_info` variables
   local _prompt_prefix="git:%{$fg[cyan]%}"
   local _prompt_suffix="%{${reset_color}%}"
-  local _prompt_dirty="%{$fg[blue]%} %{$fg[yellow]%}✗%{${reset_color}%}"
+  local _prompt_dirty="%{$fg[blue]%} %{$fg[yellow]%}✕%{${reset_color}%}"
   local _prompt_clean="%{$fg[blue]%}"
 
   _parse_git_dirty() {
