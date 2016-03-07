@@ -109,7 +109,7 @@ _astral_git_prompt() {
 # Makes it easier to distinguish between local and remote sessions.
 _astral_machine() {
   local _astral_machine_string
-  if [[ "$SESSION_TYPE" == "remote/ssh" ]]
+  if [[ "${SESSION_TYPE}" == "remote/ssh" ]]
   then
     local _astral_ssh_prefix="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:"
     _astral_machine_string="${_astral_ssh_prefix}%{$fg_bold[green]%}%n@%m"
@@ -242,7 +242,7 @@ HEREDOC
     #
     # Full bottom prompt line.
     local _bottom_line
-    _bottom_line="$(_astral_command_prompt) %{$reset_color%}"
+    _bottom_line="$(_astral_command_prompt) %{${reset_color}%}"
 
     if ((ASTRAL_DISPLAY_CONTEXT))
     then
