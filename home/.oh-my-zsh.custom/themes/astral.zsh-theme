@@ -209,7 +209,7 @@ HEREDOC
     # Prefix prompt with a symbol with color indicating last return status:
     # green for 0 and red for non-0.
     local _return_status
-    _return_status="%(?:${_return_status_0}:${_return_status_1})%{$bg_bold[black]%}  "
+    _return_status="%(?:${_return_status_0}:${_return_status_1})%{$bg_bold[black]%}"
 
     # $_time
     #
@@ -229,7 +229,7 @@ HEREDOC
     #
     # Prompt prefix.
     local _prefix
-    _prefix="${_return_status}${_time}"
+    _prefix="${_return_status}  ${_time}"
 
     # $_context
     #
