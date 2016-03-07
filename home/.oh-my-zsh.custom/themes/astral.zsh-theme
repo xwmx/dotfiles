@@ -196,20 +196,20 @@ HEREDOC
     #
     # The prefix when the previous command returns with status 0.
     local _return_status_0
-    _return_status_0="%{$fg_bold[green]%} ⧊ "
+    _return_status_0="%{$fg_bold[green]%}%{$bg_bold[green]%} ⧊ "
 
     # $_return_status_1
     #
     # The prefix when the previous command returns with status 1.
     local _return_status_1
-    _return_status_1="%{$fg_bold[red]%} ⧂ "
+    _return_status_1="%{$fg_bold[red]%}%{$bg_bold[red]%} ⧂ "
 
     # $_return_status
     #
     # Prefix prompt with a symbol with color indicating last return status:
     # green for 0 and red for non-0.
     local _return_status
-    _return_status="%(?:${_return_status_0}:${_return_status_1} %s)"
+    _return_status="%(?:${_return_status_0}:${_return_status_1})%{$bg_bold[black]%} "
 
     # $_time
     #
