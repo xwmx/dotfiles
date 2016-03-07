@@ -1,0 +1,1 @@
+../../vendor/com/github/alphabetum/notes/notes.autocomplete.bash
