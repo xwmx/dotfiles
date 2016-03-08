@@ -25,6 +25,11 @@ preexec() {
   ASTRAL_COMMAND_START_TIME="$(date +%s)"
 }
 precmd() {
+  # NOTE: This ordering is important. `$_COMMAND_START_TIME` will be used after
+  # `precmd` executes and is likely set by `preexec`, and we need
+  # `$ASTRAL_COMMAND_START_TIME` to be unset between `precmd` and the next
+  # `preexec` for when the prompt is redrawn without calling `preexec`, such
+  # as when enter is pressed without a command.
   _COMMAND_START_TIME="${ASTRAL_COMMAND_START_TIME:-}"
   ASTRAL_COMMAND_START_TIME=""
 }
