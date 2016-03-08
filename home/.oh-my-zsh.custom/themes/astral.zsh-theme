@@ -355,7 +355,7 @@ _return_line() {
 
   # $_spacer_length
   local _spacer_length
-  _spacer_length="$((COLUMNS - _prefix_visible_length - 21))"
+  _spacer_length="$((COLUMNS - _prefix_visible_length - 22))"
 
   # $_spacer
   #
