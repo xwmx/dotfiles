@@ -213,7 +213,7 @@ HEREDOC
     # A full-width line prepended to prompt in order to provide a visual
     # container for each command's output.
     local _divider
-    _divider="%(?:$fg_no_bold[black]:$fg_no_bold[magenta])$(_astral_spaces | tr ' ' '⋅')%{${reset_color}%}${_NEWLINE}"
+    _divider="%(?:$fg_no_bold[black]:$fg_no_bold[magenta])$(_astral_spaces | tr ' ' '⋅')%{${reset_color}%}"
 
     # $_return_status_0
     #
@@ -270,7 +270,13 @@ HEREDOC
     #
     # Full top prompt line.
     local _top_line
-    _top_line="${_divider}${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+    _top_line="${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+
+    # $_top_section
+    #
+    # Full top section.
+    local _top_section
+    _top_section="${_divider}${_NEWLINE}${_top_line}"
 
     # $_bottom_line
     #
@@ -280,7 +286,7 @@ HEREDOC
 
     if ((ASTRAL_DISPLAY_CONTEXT))
     then
-      printf "%s\n" "${_top_line}${_NEWLINE}${_bottom_line}"
+      printf "%s\n" "${_top_section}${_NEWLINE}${_bottom_line}"
     else
       printf "%s\n" "${_bottom_line}"
     fi
