@@ -297,15 +297,34 @@ _prompt_line() {
 #   Print the return line.
 _return_line() {
   # $_current_timestamp
-  local _current_timestamp="$(date +%s)"
+  local _current_timestamp
+  _current_timestamp="$(date +%s)"
 
   # $_duration
-  local _duration
+  local _duration=""
   if [[ -n "${_COMMAND_START_TIME}" ]]
   then
-    _duration="$((_current_timestamp - _COMMAND_START_TIME))s"
-  else
-    _duration=""
+    _duration="$((_current_timestamp - _COMMAND_START_TIME))"
+  fi
+
+  # $_duration_string
+  #
+  # Display modes:
+  # - 0-59 seconds: "<duration>s"
+  # - 60+ seconds: "<minutes>m<seconds>s (<duration>s)"
+  local _duration_string=""
+  if [[ -n "${_duration}" ]]
+  then
+    local _minutes
+    _minutes="$((_duration / 60))"
+    if [[ "${_minutes}" -eq 0 ]]
+    then
+      _duration_string="${_duration}s"
+    else
+      local _minute_string
+      _minute_string="$((_duration / 60))m$((_duration % 60))s"
+      _duration_string="${_minute_string} (${_duration}s)"
+    fi
   fi
 
   # $_time
@@ -347,7 +366,7 @@ _return_line() {
 
   # $_prefix
   local _prefix
-  _prefix="${_return_status} ${_duration}"
+  _prefix="${_return_status} ${_duration_string}"
 
   # $_prefix_visible_length
   local _prefix_visible_length
