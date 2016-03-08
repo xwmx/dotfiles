@@ -157,6 +157,22 @@ _astral_rbenv_prompt() {
   fi
 }
 
+# _astral_spaces()
+#
+# Usage:
+#   _astral_line [<length>]
+#
+# Print a line of spaces <length> columns long, defauling to `$COLUMNS`.
+_astral_spaces() {
+  local _length="${1:-${COLUMNS}}"
+  local _spacing=""
+  for ((__i=0; __i<_length; __i++))
+  do
+    _spacing="${_spacing} "
+  done
+  printf "%s\n" "${_spacing}"
+}
+
 ###############################################################################
 # Prompt
 ###############################################################################
@@ -192,6 +208,13 @@ HEREDOC
     ASTRAL_DISPLAY_CONTEXT=1
   elif  [[ "${1:-}" =~ '^prompt$' ]]
   then
+    # $_divider
+    #
+    # A full-width line prepended to prompt in order to provide a visual
+    # container for each command's output.
+    local _divider
+    _divider="%(?:$fg_no_bold[black]:$fg_no_bold[magenta])$(_astral_spaces | tr ' ' '⋅')%{${reset_color}%}${_NEWLINE}"
+
     # $_return_status_0
     #
     # The prefix when the previous command returns with status 0.
@@ -248,7 +271,7 @@ HEREDOC
     #
     # Full top prompt line.
     local _top_line
-    _top_line="${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+    _top_line="${_divider}${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
 
     # $_bottom_line
     #
