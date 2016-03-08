@@ -18,13 +18,13 @@
 # blue if it returned with a non-zero status.
 _astral_command_prompt() {
   local _prompt_0=""
-  for __color in green yellow cyan blue
+  for __color in green yellow cyan #blue
   do
     _prompt_0="${_prompt_0}%{$fg_bold[${__color}]%}❯"
   done
 
   local _prompt_non_0=""
-  for __color in red magenta blue cyan
+  for __color in red magenta blue #cyan
   do
     _prompt_non_0="${_prompt_non_0}%{$fg_bold[${__color}]%}❯"
   done
@@ -229,7 +229,7 @@ HEREDOC
     #
     # Prompt prefix.
     local _prefix
-    _prefix="${_return_status}  ${_time}"
+    _prefix="${_return_status} ${_time}"
 
     # $_context
     #
