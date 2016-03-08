@@ -438,7 +438,7 @@ HEREDOC
     #
     # Full bottom prompt line.
     local _bottom_line
-    _bottom_line="$(_astral_command_prompt) %{${reset_color}%}"
+    _bottom_line="$(_astral_prompt_line)"
 
     if ((ASTRAL_DISPLAY_CONTEXT))
     then
