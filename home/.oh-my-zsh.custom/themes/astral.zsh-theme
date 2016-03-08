@@ -9,23 +9,83 @@
 # https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
 ###############################################################################
 
+###############################################################################
+# Helpers
+###############################################################################
+
+# _astral_spaces()
+#
+# Usage:
+#   _astral_line [<length>]
+#
+# Description:
+#   Print a line of spaces <length> columns long, defauling to `$COLUMNS`.
+_astral_spaces() {
+  local _length="${1:-${COLUMNS}}"
+  printf '%*s' "${_length}"
+}
+
+# _print_line()
+#
+# Usage:
+#   _print_line <text>
+#
+# Description:
+#   Print a line of dashes the length of <text>.
+#
+# More information:
+#   http://wiki.bash-hackers.org/commands/builtin/printf
+_print_line() {
+  local _text="${1:-}"
+  local _text_length=0
+  local _line=
+  _text_length=${#_text}
+  printf -v _line '%*s' "${_text_length}"
+  printf "%s\n" "${_line// /-}"
+}
+
+# _astral_visible_length()
+#
+# Usage:
+#   _astral_visible_length <string>
+#
+# Description:
+#   Print the visible length of a string.
+#
+# References:
+#   http://stackoverflow.com/a/10564427
+_astral_visible_length() {
+  local _string="${1:-}"
+  local _zero='%([BSUbfksu]|([FBK]|){*})'
+  local _length=${#${(S%%)_string//$~_zero/}}
+  printf "%s\n" "${_length}"
+}
+
+###############################################################################
+# Components
+###############################################################################
+
 # _command
 ###############################################################################
 
-# _astral_command_prompt
+# _astral_command_prompt()
 #
-# Display a row of color '❯' characters. Use last return status to display
-# green to blue gradient if the last command returned with a 0 and red to
-# blue if it returned with a non-zero status.
+# Usage:
+#   _astral_command_prompt
+#
+# Description:
+#   Display a row of color '❯' characters. Use last return status to display
+#   green to blue gradient if the last command returned with a 0 and red to
+#   blue if it returned with a non-zero status.
 _astral_command_prompt() {
   local _prompt_0=""
-  for __color in green yellow cyan #blue
+  for __color in green yellow cyan blue
   do
     _prompt_0="${_prompt_0}%{$fg_bold[${__color}]%}❯"
   done
 
   local _prompt_non_0=""
-  for __color in red magenta blue #cyan
+  for __color in red magenta blue cyan
   do
     _prompt_non_0="${_prompt_non_0}%{$fg_bold[${__color}]%}❯"
   done
@@ -38,10 +98,14 @@ _astral_command_prompt() {
 
 # _astral_git_prompt()
 #
-# Generate the git prompt.
+# Usage:
+#   _astral_git_prompt
 #
-# Reimplements some functions here:
-# https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
+# Description:
+#   Generate the git prompt.
+#
+#   Reimplements some functions here:
+#     https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
 #
 # See also:
 # https://news.ycombinator.com/item?id=10121997
@@ -103,11 +167,16 @@ _astral_git_prompt() {
 
 # _machine
 ###############################################################################
+
 # _astral_machine()
 #
-# Display alternate machine prompt for remote sessions.
+# Usage:
+#   _astral_machine
 #
-# Makes it easier to distinguish between local and remote sessions.
+# Description:
+#   Display alternate machine prompt for remote sessions.
+#
+#   This makes it easier to distinguish between local and remote sessions.
 _astral_machine() {
   local _astral_machine_string
   if [[ "${SESSION_TYPE}" == "remote/ssh" ]]
@@ -123,23 +192,14 @@ _astral_machine() {
 # _rbenv
 ###############################################################################
 
-# _rbenv_version_status()
-#
-# show current rbenv version if different from rbenv global
-#
-# via: https://gist.github.com/mislav/1712320
-_astral_rbenv_version_status() {
-  local _version
-  _version="$(rbenv version-name)"
-  if [[ "$(rbenv global)" != "${_version}" ]]
-  then
-    printf "%s\n" "${_version}"
-  fi
-}
 # _astral_rbenv_prompt()
 #
-# If rbenv is installed and _rbenv_version_status() returns a version,
-# generate the prompt section displaying the Ruby version.
+# Usage:
+#   _astral_rbenv_prompt
+#
+# Description:
+#   If rbenv is installed and _rbenv_version_status() returns a version,
+#   generate the prompt section displaying the Ruby version.
 _astral_rbenv_prompt() {
   if hash "rbenv" &> /dev/null
   then
@@ -158,51 +218,122 @@ _astral_rbenv_prompt() {
   fi
 }
 
-# _astral_spaces()
+# _rbenv_version_status()
 #
 # Usage:
-#   _astral_line [<length>]
-#
-# Print a line of spaces <length> columns long, defauling to `$COLUMNS`.
-_astral_spaces() {
-  local _length="${1:-${COLUMNS}}"
-  printf '%*s' "${_length}"
-}
-
-# _print_line()
-#
-# Usage:
-#   _print_line <text>
+#   _rbenv_version_status
 #
 # Description:
-#   Print a line of dashes the length of <text>.
+#   show current rbenv version if different from rbenv global
 #
-# More information:
-#   http://wiki.bash-hackers.org/commands/builtin/printf
-_print_line() {
-  local _text="${1:-}"
-  local _text_length=0
-  local _line=
-  _text_length=${#_text}
-  printf -v _line '%*s' "${_text_length}"
-  printf "%s\n" "${_line// /-}"
+# via: https://gist.github.com/mislav/1712320
+_astral_rbenv_version_status() {
+  local _version
+  _version="$(rbenv version-name)"
+  if [[ "$(rbenv global)" != "${_version}" ]]
+  then
+    printf "%s\n" "${_version}"
+  fi
 }
 
-# _astral_visible_length()
+###############################################################################
+# Lines
+###############################################################################
+
+# _context_line
+###############################################################################
+
+# _context_line()
 #
 # Usage:
-#   _astral_visible_length <string>
+#   _context_line
 #
 # Description:
-#   Print the visible length of a string.
+#   Print the context line.
+_context_line() {
+  # $_path
+  #
+  # Show the first two current path segments, with a ~ for the home
+  # directory.
+  local _path
+  _path="%{$fg[cyan]%}%2~"
+
+  # $_context
+  #
+  # machine:~/path
+  # ssh:machine:~/path
+  local _context
+  _context="$(_astral_machine):${_path}"
+
+  # $_full_line
+  #
+  # Full prompt line.
+  local _full_line
+  _full_line="${_context} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+
+  printf "%s\n" "${_full_line}%{${reset_color}%}"
+}
+
+# _prompt_line
+###############################################################################
+
+# _prompt_line()
 #
-# References:
-#   http://stackoverflow.com/a/10564427
-_astral_visible_length() {
-  local _string="${1:-}"
-  local _zero='%([BSUbfksu]|([FBK]|){*})'
-  local _length=${#${(S%%)_string//$~_zero/}}
-  printf "%s\n" "${_length}"
+# Usage:
+#   _prompt_line
+#
+# Description:
+#   Print the prompt line.
+_prompt_line() {
+  printf "%s\n" "$(_astral_command_prompt) %{${reset_color}%}"
+}
+
+# _return_line
+###############################################################################
+
+# _return_line()
+#
+# Usage:
+#   _return_line
+#
+# Description:
+#   Print the return line.
+_return_line() {
+  # $_spacer
+  #
+  # A string of characters for spacing elements.
+  local _spacer
+  _spacer="$(_astral_spaces $(( COLUMNS - 23 )) | tr ' ' '⋅')"
+
+  # $_time
+  #
+  # The current time in 24-hour format.
+  local _time
+  _time="%* %D{%F}"
+
+  # $_return_status_0
+  #
+  # The prefix when the previous command returns with status 0.
+  local _return_status_0
+  _return_status_0="%{$fg_no_bold[black]%}❤︎"
+
+  # $_return_status_1
+  #
+  # The prefix when the previous command returns with status 1.
+  local _return_status_1
+  _return_status_1="%{$fg_no_bold[red]%}✖︎"
+
+  # $_return_status
+  #
+  # Prefix prompt with a symbol with color indicating last return status:
+  # green for 0 and red for non-0.
+  local _return_status
+  _return_status="%(?:${_return_status_0}:${_return_status_1})"
+
+  local _full_line
+  _full_line="${_return_status} ${_spacer} ${_time}"
+
+  printf "%s\n" "${_full_line}%{${reset_color}%}"
 }
 
 ###############################################################################
@@ -224,8 +355,8 @@ Options:
   -h --help  Display this usage information.
 
 Subcommands:
-  hide    Hide the top line.
-  show    Show the top line.
+  hide    Hide the top section.
+  show    Show the top section.
   prompt  Print the formatted prompt string to assign to \$PROMPT.
 
 Description:
@@ -240,63 +371,11 @@ HEREDOC
     ASTRAL_DISPLAY_CONTEXT=1
   elif  [[ "${1:-}" =~ '^prompt$' ]]
   then
-    # $_return_status_0
-    #
-    # The prefix when the previous command returns with status 0.
-    local _return_status_0
-    _return_status_0="%{$fg_bold[white]%}%{$fg_bold[green]%}❤︎"
-
-    # $_return_status_1
-    #
-    # The prefix when the previous command returns with status 1.
-    local _return_status_1
-    _return_status_1="%{$fg_bold[white]%}%{$fg_bold[red]%}✖︎"
-
-    # $_return_status
-    #
-    # Prefix prompt with a symbol with color indicating last return status:
-    # green for 0 and red for non-0.
-    local _return_status
-    _return_status="%(?:${_return_status_0}:${_return_status_1})"
-
-    # $_time
-    #
-    # The current time in 24-hour format.
-    local _time
-    _time="%* %D{%F}"
-
-    # $_path
-    #
-    # Show the first two current path segments, with a ~ for the home
-    # directory.
-    local _path
-    _path="%{$fg[cyan]%}%2~"
-
-    # $_context
-    #
-    # machine:~/path
-    # ssh:machine:~/path
-    local _context
-    _context="$(_astral_machine):${_path}"
-
-    # $_top_line
-    #
-    # Full top prompt line.
-    local _top_line
-    _top_line="${_context} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
-
-    # $_return_prompt
-    #
-    # A line printed before the prompt and containing information about the
-    # previous command's exit.
-    local _return_prompt
-    _return_prompt=""${_return_status}" %(?:$fg_no_bold[black]:$fg_no_bold[red])$(_astral_spaces $(( COLUMNS - 23 )) | tr ' ' '⋅') ${_time}%{${reset_color}%}"
-
     # $_top_section
     #
     # Full top section.
     local _top_section
-    _top_section="${_return_prompt}${_NEWLINE}${_top_line}"
+    _top_section="$(_return_line)${_NEWLINE}$(_context_line)"
 
     # $_bottom_line
     #
