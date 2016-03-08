@@ -3,6 +3,7 @@
 #
 # Prompt reference:
 # http://www.nparikh.org/unix/prompt.php
+# http://bolyai.cs.elte.hu/zsh-manual/zsh_15.html
 #
 # See also:
 # https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
@@ -173,6 +174,23 @@ _astral_spaces() {
   printf "%s\n" "${_spacing}"
 }
 
+# _astral_visible_length()
+#
+# Usage:
+#   _astral_visible_length <string>
+#
+# Description:
+#   Print the visible length of a string.
+#
+# References:
+#   http://stackoverflow.com/a/10564427
+_astral_visible_length() {
+  local _string="${1:-}"
+  local _zero='%([BSUbfksu]|([FBK]|){*})'
+  local _length=${#${(S%%)_string//$~_zero/}}
+  printf "%s\n" "${_length}"
+}
+
 ###############################################################################
 # Prompt
 ###############################################################################
@@ -238,7 +256,7 @@ HEREDOC
     #
     # The current time in 24-hour format.
     local _time
-    _time="%{$fg_bold[black]%}%*"
+    _time="%{$fg_bold[black]%}%* %D{%F}"
 
     # $_path
     #
@@ -251,7 +269,7 @@ HEREDOC
     #
     # Prompt prefix.
     local _prefix
-    _prefix="${_return_status} ${_time}"
+    _prefix="${_return_status}"
 
     # $_context
     #
@@ -272,11 +290,23 @@ HEREDOC
     local _top_line
     _top_line="${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
 
+    # $_top_line_visible_length
+    local _top_line_visible_length
+    _top_line_visible_length="$(_astral_visible_length "${_top_line}")"
+
+    # $_top_padding_length
+    local _top_padding_length
+    (( _top_padding_length = COLUMNS - _top_line_visible_length - 19 ))
+
+    # $_top_padding
+    local _top_padding
+    _top_padding="$(_astral_spaces "${_top_padding_length}")"
+
     # $_top_section
     #
     # Full top section.
     local _top_section
-    _top_section="${_divider}${_NEWLINE}${_top_line}"
+    _top_section="${_divider}${_NEWLINE}${_top_line}${_top_padding}${_time}"
 
     # $_bottom_line
     #
