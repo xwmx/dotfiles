@@ -178,8 +178,8 @@ _astral_machine() {
   local _astral_machine_string
   if [[ "${SESSION_TYPE}" == "remote/ssh" ]]
   then
-    local _astral_ssh_prefix="%{$fg_bold[blue]%}⦙⧓ %{$fg_bold[yellow]%}ssh:"
-    _astral_machine_string="${_astral_ssh_prefix}%{$fg_bold[green]%}%n@%m"
+    local _astral_ssh_prefix="%{$fg_bold[blue]%}%{$fg_bold[yellow]%}ssh❭"
+    _astral_machine_string="${_astral_ssh_prefix} %{$fg_bold[green]%}%n@%m"
   else
     _astral_machine_string="%{$fg_bold[blue]%}%m"
   fi
