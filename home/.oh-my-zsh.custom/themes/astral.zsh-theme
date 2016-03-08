@@ -20,6 +20,10 @@ export ASTRAL_COMMAND_START_TIME
 preexec() {
   ASTRAL_COMMAND_START_TIME="$(date +%s)"
 }
+precmd() {
+  _COMMAND_START_TIME="${ASTRAL_COMMAND_START_TIME:-}"
+  ASTRAL_COMMAND_START_TIME=""
+}
 
 ###############################################################################
 # Helpers
@@ -297,7 +301,12 @@ _return_line() {
 
   # $_duration
   local _duration
-  _duration="$((_current_timestamp-ASTRAL_COMMAND_START_TIME))"
+  if [[ -n "${_COMMAND_START_TIME}" ]]
+  then
+    _duration="$((_current_timestamp - _COMMAND_START_TIME))s"
+  else
+    _duration=""
+  fi
 
   # $_time
   #
@@ -338,7 +347,7 @@ _return_line() {
 
   # $_prefix
   local _prefix
-  _prefix="${_return_status} ${_duration}s"
+  _prefix="${_return_status} ${_duration}"
 
   # $_prefix_visible_length
   local _prefix_visible_length
