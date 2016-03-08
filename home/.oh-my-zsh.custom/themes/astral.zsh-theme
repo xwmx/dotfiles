@@ -241,17 +241,17 @@ _astral_rbenv_version_status() {
 # Lines
 ###############################################################################
 
-# _context_line
+# _astral_context_line
 ###############################################################################
 
-# _context_line()
+# _astral_context_line()
 #
 # Usage:
-#   _context_line
+#   _astral_context_line
 #
 # Description:
 #   Print the context line.
-_context_line() {
+_astral_context_line() {
   # $_path
   #
   # Show the first two current path segments, with a ~ for the home
@@ -275,31 +275,31 @@ _context_line() {
   printf "%s\n" "${_full_line}%{${reset_color}%}"
 }
 
-# _prompt_line
+# _astral_prompt_line
 ###############################################################################
 
-# _prompt_line()
+# _astral_prompt_line()
 #
 # Usage:
-#   _prompt_line
+#   _astral_prompt_line
 #
 # Description:
 #   Print the prompt line.
-_prompt_line() {
+_astral_prompt_line() {
   printf "%s\n" "$(_astral_command_prompt) %{${reset_color}%}"
 }
 
-# _return_line
+# _astral_return_line
 ###############################################################################
 
-# _return_line()
+# _astral_return_line()
 #
 # Usage:
-#   _return_line
+#   _astral_return_line
 #
 # Description:
 #   Print the return line.
-_return_line() {
+_astral_return_line() {
   # $_current_timestamp
   local _current_timestamp
   _current_timestamp="$(date +%s)"
@@ -432,7 +432,7 @@ HEREDOC
     #
     # Full top section.
     local _top_section
-    _top_section="$(_return_line)${_NEWLINE}$(_context_line)"
+    _top_section="$(_astral_return_line)${_NEWLINE}$(_astral_context_line)"
 
     # $_bottom_line
     #
