@@ -166,12 +166,26 @@ _astral_rbenv_prompt() {
 # Print a line of spaces <length> columns long, defauling to `$COLUMNS`.
 _astral_spaces() {
   local _length="${1:-${COLUMNS}}"
-  local _spacing=""
-  for ((__i=0; __i<_length; __i++))
-  do
-    _spacing="${_spacing} "
-  done
-  printf "%s\n" "${_spacing}"
+  printf '%*s' "${_length}"
+}
+
+# _print_line()
+#
+# Usage:
+#   _print_line <text>
+#
+# Description:
+#   Print a line of dashes the length of <text>.
+#
+# More information:
+#   http://wiki.bash-hackers.org/commands/builtin/printf
+_print_line() {
+  local _text="${1:-}"
+  local _text_length=0
+  local _line=
+  _text_length=${#_text}
+  printf -v _line '%*s' "${_text_length}"
+  printf "%s\n" "${_line// /-}"
 }
 
 # _astral_visible_length()
@@ -226,37 +240,30 @@ HEREDOC
     ASTRAL_DISPLAY_CONTEXT=1
   elif  [[ "${1:-}" =~ '^prompt$' ]]
   then
-    # $_divider
-    #
-    # A full-width line prepended to prompt in order to provide a visual
-    # container for each command's output.
-    local _divider
-    _divider="%(?:$fg_no_bold[black]:$fg_no_bold[magenta])$(_astral_spaces | tr ' ' '⋅')%{${reset_color}%}"
-
     # $_return_status_0
     #
     # The prefix when the previous command returns with status 0.
     local _return_status_0
-    _return_status_0="%{$fg_bold[white]%}%{$bg_bold[blue]%} ❤︎ "
+    _return_status_0="%{$fg_bold[white]%}%{$fg_bold[green]%}❤︎"
 
     # $_return_status_1
     #
     # The prefix when the previous command returns with status 1.
     local _return_status_1
-    _return_status_1="%{$fg_bold[white]%}%{$bg_bold[red]%} ✖︎ "
+    _return_status_1="%{$fg_bold[white]%}%{$fg_bold[red]%}✖︎"
 
     # $_return_status
     #
     # Prefix prompt with a symbol with color indicating last return status:
     # green for 0 and red for non-0.
     local _return_status
-    _return_status="%(?:${_return_status_0}:${_return_status_1})%{$bg_bold[black]%}"
+    _return_status="%(?:${_return_status_0}:${_return_status_1})"
 
     # $_time
     #
     # The current time in 24-hour format.
     local _time
-    _time="%{$fg_bold[black]%}%* %D{%F}"
+    _time="%* %D{%F}"
 
     # $_path
     #
@@ -265,12 +272,6 @@ HEREDOC
     local _path
     _path="%{$fg[cyan]%}%2~"
 
-    # $_prefix
-    #
-    # Prompt prefix.
-    local _prefix
-    _prefix="${_return_status}"
-
     # $_context
     #
     # machine:~/path
@@ -278,35 +279,24 @@ HEREDOC
     local _context
     _context="$(_astral_machine):${_path}"
 
-    # $_top_prefix
-    #
-    # Top line prefix before contextual prompt components.
-    local _top_prefix
-    _top_prefix="${_prefix} ${_context}"
-
     # $_top_line
     #
     # Full top prompt line.
     local _top_line
-    _top_line="${_top_prefix} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
+    _top_line="${_context} $(_astral_rbenv_prompt)$(_astral_git_prompt)"
 
-    # $_top_line_visible_length
-    local _top_line_visible_length
-    _top_line_visible_length="$(_astral_visible_length "${_top_line}")"
-
-    # $_top_padding_length
-    local _top_padding_length
-    (( _top_padding_length = COLUMNS - _top_line_visible_length - 19 ))
-
-    # $_top_padding
-    local _top_padding
-    _top_padding="$(_astral_spaces "${_top_padding_length}")"
+    # $_return_prompt
+    #
+    # A line printed before the prompt and containing information about the
+    # previous command's exit.
+    local _return_prompt
+    _return_prompt=""${_return_status}" %(?:$fg_no_bold[black]:$fg_no_bold[red])$(_astral_spaces $(( COLUMNS - 23 )) | tr ' ' '⋅') ${_time}%{${reset_color}%}"
 
     # $_top_section
     #
     # Full top section.
     local _top_section
-    _top_section="${_divider}${_NEWLINE}${_top_line}${_top_padding}${_time}"
+    _top_section="${_return_prompt}${_NEWLINE}${_top_line}"
 
     # $_bottom_line
     #
