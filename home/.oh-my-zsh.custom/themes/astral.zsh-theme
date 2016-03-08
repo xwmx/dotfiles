@@ -236,10 +236,9 @@ HEREDOC
 
     # $_time
     #
-    # The current time in 24-hour format. Will have same color as whatever
-    # preceeds it.
+    # The current time in 24-hour format.
     local _time
-    _time="%{$fg_bold[black]%}%T"
+    _time="%{$fg_bold[black]%}%*"
 
     # $_path
     #
