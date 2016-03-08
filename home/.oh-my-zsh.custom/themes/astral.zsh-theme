@@ -16,6 +16,10 @@
 # $ASTRAL_COMMAND_START_TIME
 #
 # The start time value before each command is executed.
+#
+# NOTE: Use `preexec` as start time, and reset to '0' in `precmd` so it's
+# reset every time the promp is drawn, including when nothing is entered in
+# the prompt before return is pressed.
 export ASTRAL_COMMAND_START_TIME
 preexec() {
   ASTRAL_COMMAND_START_TIME="$(date +%s)"
