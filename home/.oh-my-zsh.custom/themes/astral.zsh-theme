@@ -10,6 +10,18 @@
 ###############################################################################
 
 ###############################################################################
+# Hooks
+###############################################################################
+
+# $ASTRAL_COMMAND_START_TIME
+#
+# The start time value before each command is executed.
+export ASTRAL_COMMAND_START_TIME
+preexec() {
+  ASTRAL_COMMAND_START_TIME="$(date +%s)"
+}
+
+###############################################################################
 # Helpers
 ###############################################################################
 
@@ -280,11 +292,12 @@ _prompt_line() {
 # Description:
 #   Print the return line.
 _return_line() {
-  # $_spacer
-  #
-  # A string of characters for spacing elements.
-  local _spacer
-  _spacer="$(_astral_spaces $(( COLUMNS - 23 )) | tr ' ' '⋅')"
+  # $_current_timestamp
+  local _current_timestamp="$(date +%s)"
+
+  # $_duration
+  local _duration
+  _duration="$((_current_timestamp-ASTRAL_COMMAND_START_TIME))"
 
   # $_time
   #
@@ -323,8 +336,27 @@ _return_line() {
   local _return_status
   _return_status="%(?:${_return_status_0}:${_return_status_1})"
 
+  # $_prefix
+  local _prefix
+  _prefix="${_return_status} ${_duration}s"
+
+  # $_prefix_visible_length
+  local _prefix_visible_length
+  _prefix_visible_length="$(_astral_visible_length "${_prefix}")"
+
+  # $_spacer_length
+  local _spacer_length
+  _spacer_length="$((COLUMNS - _prefix_visible_length - 21))"
+
+  # $_spacer
+  #
+  # A string of characters for spacing elements.
+  local _spacer
+  _spacer="$(_astral_spaces "${_spacer_length}" | tr ' ' '⋅')"
+
+  # $_full_line
   local _full_line
-  _full_line="${_return_status} ${_spacer} ${_time}"
+  _full_line="${_prefix} ${_spacer} ${_time}"
 
   printf "%s\n" "${_full_line}%{${reset_color}%}"
 }
