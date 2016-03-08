@@ -314,14 +314,26 @@ _return_line() {
   # $_return_status_0
   #
   # The prefix when the previous command returns with status 0.
+  #
+  # NOTE: Character options:
+  # - ❤︎
+  # - •
+  # NOTE: Unicode characters cause tab completion to delete previous command's
+  # output lines.
   local _return_status_0
-  _return_status_0="%{$fg_no_bold[black]%}❤︎"
+  _return_status_0="%{$fg_no_bold[black]%}•"
 
   # $_return_status_1
   #
   # The prefix when the previous command returns with status 1.
+  #
+  # NOTE: Character options:
+  # - ✖︎
+  # - x
+  # NOTE: Unicode characters cause tab completion to delete previous command's
+  # output lines.
   local _return_status_1
-  _return_status_1="%{$fg_no_bold[red]%}✖︎"
+  _return_status_1="%{$fg_no_bold[red]%}x"
 
   # $_return_status
   #
