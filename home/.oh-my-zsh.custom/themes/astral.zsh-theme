@@ -25,25 +25,6 @@ _astral_spaces() {
   printf '%*s' "${_length}"
 }
 
-# _print_line()
-#
-# Usage:
-#   _print_line <text>
-#
-# Description:
-#   Print a line of dashes the length of <text>.
-#
-# More information:
-#   http://wiki.bash-hackers.org/commands/builtin/printf
-_print_line() {
-  local _text="${1:-}"
-  local _text_length=0
-  local _line=
-  _text_length=${#_text}
-  printf -v _line '%*s' "${_text_length}"
-  printf "%s\n" "${_line// /-}"
-}
-
 # _astral_visible_length()
 #
 # Usage:
