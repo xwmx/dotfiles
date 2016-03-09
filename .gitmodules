@@ -299,3 +299,6 @@
 [submodule "vendor/com/github/chase-miller/time-machine-sparce-bundle-fix"]
 	path = vendor/com/github/chase-miller/time-machine-sparce-bundle-fix
 	url = https://github.com/chase-miller/time-machine-sparce-bundle-fix.git
+[submodule "vendor/com/github/alphabetum/astral"]
+	path = vendor/com/github/alphabetum/astral
+	url = https://github.com/alphabetum/astral.git
