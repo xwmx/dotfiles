@@ -808,6 +808,16 @@ brew install jp2a
 # https://github.com/stedolan/jq
 brew install jq
 
+# jo
+#
+# JSON output from a shell
+#
+# This is jo, a small utility to create JSON objects
+#
+# https://github.com/jpmens/jo
+# http://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/
+brew install caius/jo/jo
+
 # keybase
 #
 # Command-line interface to Keybase.io
