@@ -9,6 +9,10 @@
 #
 # For usage information, run:
 #   screencast help
+#
+# See also:
+# - http://edouard.peller.in/2016/03/12/screencasting-with-free-software.html
+#   - https://news.ycombinator.com/item?id=11273833
 ###############################################################################
 
 source "$(which bask)"
