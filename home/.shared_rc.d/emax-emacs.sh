@@ -1,33 +1,46 @@
 ###############################################################################
 # .shared_rc.d/emacs.sh
 #
-# Emacs
+# Emax - A Wrapper for Emacs
 #
 # GNU Emacs text editor
 #
 # https://www.gnu.org/software/emacs/
 ###############################################################################
 
-# emacsd
+# emax
 #
-# Control the emacs daemon.
-emacsd() {
+# Control the emacs daemon and client.
+emax() {
   if [[ "${1}" =~ '^-h|--help$' ]]
   then
     cat <<HEREDOC
 Usage:
-  emacsd (start | status | stop | restart)
-  emacsd -h | --help
+  ${0}
+  ${0} (start | status | stop | restart)
+  ${0} -h | --help
+
+Subcommands:
+  (none)   Launch \`emacsclient\`, silently launching and connecting to
+           \`emacs --daemon\` if it's not already running.
+  start    Start the Emacs daemon.
+  status   Print the Emacs daemon status.
+  stop     Stop the Emacs daemon.
+  restart  Restart the Emacs daemon.
 
 Options:
   -h --help  Display this usage information.
 
 Description:
-  Control the emacs daemon.
+  A wrapper for Emacs with shortcuts for the daemon and client.
+
+\`emacsclient --help\`
+--------------------
 HEREDOC
+    emacsclient --help
   elif [[ "${1}" =~ '^start|up$' ]]
   then
-    if ! emacsd status &>/dev/null
+    if ! "${0}" status &>/dev/null
     then
       emacs --daemon &>/dev/null \
         && printf "\`emacs --daemon\` started.\n"
@@ -37,7 +50,7 @@ HEREDOC
     fi
   elif [[ "${1}" =~ '^stop|down$' ]]
   then
-    if emacsd status &>/dev/null
+    if "${0}" status &>/dev/null
     then
       # Source, with other approaches:
       # http://stackoverflow.com/q/1167484
@@ -49,9 +62,10 @@ HEREDOC
     fi
   elif [[ "${1}" =~ ^r ]]
   then
-    emacsd status &>/dev/null && emacsd stop
-    emacsd start
-  else
+    "${0}" status &>/dev/null && "${0}" stop
+    "${0}" start
+  elif [[ "${1}" =~ ^s ]]
+  then
     if [[ "$(pgrep -lf emacs)" =~ 'emacs --daemon' ]]
     then
       printf "\`emacs --daemon\` is running.\n"
@@ -60,40 +74,15 @@ HEREDOC
       printf "\`emacs --daemon\` is not running.\n"
       return 1
     fi
-  fi
-}
-
-# emacsc
-#
-# Wrapper for `emacsclient` with tweaked functionality.
-emacsc() {
-  if [[ "${1}" =~ '^-h|--help$' ]]
-  then
-    cat <<HEREDOC
-Usage:
-  emacsc
-  emacsc -h | --help
-
-Options:
-  -h --help  Display this usage information.
-
-Description:
-  Launch \`emacsclient\`, silently launching and connecting to
-  \`emacs --daemon\` if it's not already running.
-
-\`emacsclient --help\`
---------------------
-HEREDOC
-    emacsclient --help
   else
-    if emacsd status &>/dev/null
+    if "${0}" status &>/dev/null
     then
       emacsclient -t "$@"
     else
-      emacsd start && emacsclient -t "$@"
+      "${0}" start && emacsclient -t "$@"
     fi
   fi
 }
 
-alias emc='emacsc'
-alias emd='emacsd'
+alias emc='emax'
+alias emd='emax status'
