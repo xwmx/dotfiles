@@ -97,15 +97,28 @@ let g:airline_symbols.linenr = ''
 " vim-signify
 " ============================================================================
 
+" g:signify_vcs_list
+"
 " Only use signify for git
 "
 " This reduces the number of calls and improves performance.
+"
+" https://github.com/mhinz/vim-signify/blob/master/doc/signify.txt#L112
 let g:signify_vcs_list = [ 'git' ]
 
 " Display all changes since last commit, even those that are staged to index.
+"
+" NOTE: No documentation on this. TODO: Determine status of this setting.
 let g:signify_diffoptions = { 'git': 'HEAD' }
 
+" g:signify_disable_by_default
+"
 " Disable vim-signfiy by default.
+"
+" > This loads Sy, but it won't look for changes. You can toggle it anytime
+" > via :SignifyToggle.
+"
+" https://github.com/mhinz/vim-signify/blob/master/doc/signify.txt#L195
 let g:signify_disable_by_default = 1
 
 " Map command-R to :SignifyRefresh in MacVim
