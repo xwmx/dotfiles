@@ -60,11 +60,11 @@ HEREDOC
       printf "\`emacs --daemon\` is not running.\n"
       return 1
     fi
-  elif [[ "${1}" =~ ^r ]]
+  elif [[ "${1}" == "restart" ]]
   then
     "${0}" status &>/dev/null && "${0}" stop
     "${0}" start
-  elif [[ "${1}" =~ ^s ]]
+  elif [[ "${1}" =~ ^stat ]]
   then
     if [[ "$(pgrep -lf emacs)" =~ 'emacs --daemon' ]]
     then
