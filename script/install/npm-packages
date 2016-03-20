@@ -234,6 +234,18 @@ npm install --global harp
 # https://github.com/jasmine/jasmine
 npm install --global jasmine
 
+# js-beautify
+#
+# Beautifier for javascript
+#
+# This little beautifier will reformat and reindent bookmarklets, ugly
+# JavaScript, unpack scripts packed by Dean Edward’s popular packer, as well
+# as deobfuscate scripts processed by javascriptobfuscator.com.
+#
+# https://github.com/beautify-web/js-beautify
+# http://jsbeautifier.org/
+npm install --global js-beautify
+
 # JSHint, A Static Code Analysis Tool for JavaScript
 #
 # JSHint is a community-driven tool to detect errors and potential problems in
