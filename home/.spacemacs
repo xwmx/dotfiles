@@ -542,6 +542,17 @@ layers configuration. You are free to put any user code."
       lambda () (fci-mode 1)))
     (global-fci-mode 1)
     ;; -----------------------------------------------------------------------
+    ;; JavaScript / JSON indentation settings.
+    ;;
+    ;; These apply to the JavaScript configuration layer / js-mode.
+    ;;
+    ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/javascript
+    ;;
+    ;; Set JavaScript indentation to 2 spaces.
+    (setq-default js2-basic-offset 2)
+    ;; Set JSON indentation to 2 spaces.
+    (setq-default js-indent-level 2)
+    ;; -----------------------------------------------------------------------
     ;; visual-line-mode
     ;;
     ;; > Visual Line mode provides support for editing by visual lines.
