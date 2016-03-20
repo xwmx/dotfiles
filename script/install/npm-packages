@@ -424,6 +424,16 @@ npm install --global slap
 # http://surge.sh/help/getting-started-with-surge
 npm install --global surge
 
+# tern
+#
+# Tern is a stand-alone code-analysis engine for JavaScript. It is intended to
+# be used with a code editor plugin to enhance the editor's support for
+# intelligent JavaScript editing.
+#
+# http://ternjs.net/
+# https://github.com/ternjs/tern
+npm install --global tern
+
 # tldr
 #
 # Simplified and community-driven man pages.
