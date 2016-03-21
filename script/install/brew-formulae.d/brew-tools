@@ -293,6 +293,16 @@ brew install cowsay
 # http://www.willnolan.com/cputhrottle/cputhrottle.html
 brew install cputhrottle
 
+# creds
+#
+# Creds, manage API keys with GPG on the command line.
+#
+# Simple encrypted credential file management with GPG.
+#
+# https://github.com/joemiller/creds
+# https://news.ycombinator.com/item?id=11304585
+brew install joemiller/taps/creds
+
 # crystal-lang
 #
 # The Crystal Programming Language
