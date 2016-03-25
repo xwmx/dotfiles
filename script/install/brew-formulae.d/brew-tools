@@ -826,7 +826,7 @@ brew install jq
 #
 # https://github.com/jpmens/jo
 # http://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/
-brew install caius/jo/jo
+brew install jo
 
 # keybase
 #
