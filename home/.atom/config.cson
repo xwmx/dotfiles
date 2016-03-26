@@ -7,9 +7,9 @@
         blue: 146
         alpha: 1
       accentColor:
-        red: 72
-        green: 255
-        blue: 168
+        red: 115
+        green: 252
+        blue: 214
         alpha: 1
       genAccent: true
     fonts:
