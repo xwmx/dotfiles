@@ -61,14 +61,14 @@ _remove() {
   fi
 }
 
-# _initialize_gvm()
+# gvm_init()
 #
 # Usage:
-#   _initialize_gvm
+#   gvm_init
 #
 # Description:
 #   Initialize GVM.
-_initialize_gvm() {
+gvm_init() {
   # Exit if $HOME/.gvm is present and not a symbolic link.
   if [[ -e "${HOME}/.gvm" ]] && [[ ! -L "${HOME}/.gvm" ]]
   then
@@ -112,14 +112,14 @@ _initialize_gvm() {
   gvm use go1.5 --default
 }
 
-# _deinitialize_gvm()
+# gvm_deinit()
 #
 # Usage:
-#   _deinitialize_gvm
+#   gvm_deinit
 #
 # Description:
 #   Remove all of the generated, untracked directories.
-_deinitialize_gvm() {
+gvm_deinit() {
   if [[ -L "${HOME}/.gvm" ]]
   then
     bindle unlink .gvm
