@@ -1795,6 +1795,13 @@ brew install spark
 # http://www.sphinxsearch.com
 brew install sphinx
 
+# sshfs
+#
+# A network filesystem client to connect to SSH servers
+#
+# https://github.com/libfuse/sshfs
+brew install sshfs
+
 # GNU Stow
 #
 # GNU Stow is a symlink farm manager which takes distinct packages of software
