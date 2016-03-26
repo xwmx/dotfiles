@@ -118,7 +118,7 @@ _swap_iterm2_icons() {
   else
     _swap_icons \
       "${_SOURCE_ICON_DIR}/iTerm2.icns" \
-      "${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/iTerm.icns"
+      "${_LOCAL_APP_DIR}/iTerm.app/Contents/Resources/AppIcon.icns"
   fi
 }
 _swap_iterm2_icons
