@@ -248,6 +248,15 @@ brew install cmatrix
 # https://news.ycombinator.com/item?id=10430512
 brew install cmus
 
+# commonmark
+#
+# Strongly specified, highly compatible implementation of Markdown
+#
+# http://commonmark.org
+#
+# NOTE: executable name is `cmark`.
+brew install commommark
+
 # composer
 #
 # Dependency Manager for PHP
