@@ -1930,6 +1930,32 @@ brew install toilet
 # http://mama.indstate.edu/users/ice/tree/
 brew install tree
 
+# ttygif
+#
+# Convert terminal recordings to animated gifs
+#
+# ttygif converts a ttyrec file into gif files. It's a stripped down version
+# of ttyplay that captures every frame.
+#
+# https://github.com/icholy/ttygif
+#
+# NOTE: Installs ttyrec
+#
+# ttyrec is a tty recorder. Recorded data can be played back with the included
+# ttyplay command. ttyrec is just a derivative of script command for recording
+# timing information with microsecond accuracy as well. It can record emacs
+# -nw, vi, lynx, or any programs running on tty.
+#
+# https://github.com/mjording/ttyrec
+#
+# NOTE: Not installed but related: terminal-gif
+#
+# A simple wrapper around https://github.com/icholy/ttygif that allows you to
+# record terminal commands to a gif in one command
+#
+# https://github.com/michaeldfallen/terminal-gif
+brew install https://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
+
 # Tup
 #
 # Tup is a file-based build system for Linux, OSX, and Windows. It inputs a
