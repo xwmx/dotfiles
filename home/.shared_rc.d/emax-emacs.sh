@@ -17,12 +17,14 @@ emax() {
     cat <<HEREDOC
 Usage:
   ${0}
+  ${0} gui
   ${0} (start | status | stop | restart)
   ${0} -h | --help
 
 Subcommands:
   (none)   Launch \`emacsclient\`, silently launching and connecting to
            \`emacs --daemon\` if it's not already running.
+  gui      Open GUI Emacs.
   start    Start the Emacs daemon.
   status   Print the Emacs daemon status.
   stop     Stop the Emacs daemon.
@@ -74,6 +76,19 @@ HEREDOC
       printf "\`emacs --daemon\` is not running.\n"
       return 1
     fi
+  elif [[ "${1}" == "gui" ]]
+  then
+    # More information: http://stackoverflow.com/q/10171280
+    #
+    # NOTE: Not working on systems with homebrew-install Emacs.app and
+    # aliasapp.rb.
+    # NOTE: First element in `$_app_bundle_paths` is blank for unknown reasons.
+    local _app_bundle_paths
+    _app_bundle_paths=($(
+      mdfind kMDItemContentTypeTree=com.apple.application-bundle -onlyin / \
+        | grep 'Emacs.app'
+    ))
+    (open -a "${_app_bundle_paths[1]:-}" "${@:2}") &
   else
     if "${0}" status &>/dev/null
     then
