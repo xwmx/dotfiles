@@ -27,8 +27,8 @@
 # Description:
 #   Initialize pyenv and $PATH for bin directory.
 _enable_pyenv() {
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
+  export PYENV_ROOT="${HOME}/.pyenv"
+  export PATH="${PYENV_ROOT}/bin:${PATH}"
 
   # Exit if `pyenv` not found.
   if ! which pyenv > /dev/null

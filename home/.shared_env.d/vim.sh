@@ -14,8 +14,8 @@
 #
 # https://github.com/neovim/neovim/issues/193
 # http://vim.wikia.com/wiki/Set_VIMRUNTIME_within_vimrc
-_macvim_app_path="$HOME/Applications/MacVim.app"
-if command_exists "mvim" && [[ -e "$_macvim_app_path" ]]
+_macvim_app_path="${HOME}/Applications/MacVim.app"
+if command_exists "mvim" && [[ -e "${_macvim_app_path}" ]]
 then
-  export VIMRUNTIME="$_macvim_app_path/Contents/Resources/vim/runtime"
+  export VIMRUNTIME="${_macvim_app_path}/Contents/Resources/vim/runtime"
 fi

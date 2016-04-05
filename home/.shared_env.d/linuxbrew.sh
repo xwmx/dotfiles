@@ -16,7 +16,7 @@
 # Linuxbrew environment variables.
 if is_linux
 then
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
-  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  export PATH="${HOME}/.linuxbrew/bin:${PATH}"
+  export MANPATH="${HOME}/.linuxbrew/share/man:${MANPATH}"
+  export INFOPATH="${HOME}/.linuxbrew/share/info:${INFOPATH}"
 fi

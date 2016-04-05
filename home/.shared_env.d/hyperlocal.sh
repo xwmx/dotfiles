@@ -4,7 +4,7 @@
 # Configuration for the `$HOME/.hyperlocal` hierarchy.
 ###############################################################################
 
-PATH="$HOME/.hyperlocal/bin:$PATH"
+PATH="${HOME}/.hyperlocal/bin:${PATH}"
 export PATH
-MANPATH="$HOME/.hyperlocal/share/man:$MANPATH"
+MANPATH="${HOME}/.hyperlocal/share/man:${MANPATH}"
 export MANPATH

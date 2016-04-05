@@ -14,7 +14,7 @@
 # Description:
 #   Initialize rbenv and $PATH for bin directory.
 _enable_rbenv() {
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="${HOME}/.rbenv/bin:${PATH}"
 
   if which rbenv > /dev/null
   then

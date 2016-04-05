@@ -10,4 +10,4 @@
 #   To use with IntelliJ, set the Scala home to:
 #   /usr/local/opt/scala/idea
 export SCALA_HOME="/usr/local/opt/scala"
-export PATH=$PATH:$SCALA_HOME/bin
+export PATH="${PATH}:${SCALA_HOME}/bin"

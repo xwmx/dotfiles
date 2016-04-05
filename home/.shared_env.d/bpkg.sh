@@ -9,7 +9,7 @@
 
 # Since $PREFIX is set to .bpkg in `bpkg-packages`, add `~/.bpkg/bin` and
 # `~/.bpkg/share/man` to `$PATH` and $MANPATH`.
-PATH="$PATH:$HOME/.bpkg/bin"
+PATH="${PATH}:${HOME}/.bpkg/bin"
 export PATH
-MANPATH="$HOME/.bpkg/share/man:$MANPATH"
+MANPATH="${HOME}/.bpkg/share/man:${MANPATH}"
 export MANPATH
