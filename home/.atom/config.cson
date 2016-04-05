@@ -19,6 +19,7 @@
     treeView:
       compactList: true
     ui:
+      panelContrast: true
       panelShadows: true
   "autocomplete-plus":
     useAlternateScoring: true
