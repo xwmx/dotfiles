@@ -482,6 +482,17 @@ npm install --global volo
 # https://github.com/MrRio/vtop
 npm install --global vtop
 
+# webpack
+#
+# A bundler for javascript and friends. Packs many modules into a few bundled
+# assets. Code Splitting allows to load parts for the application on demand.
+# Through "loaders" modules can be CommonJs, AMD, ES6 modules, CSS, Images,
+# JSON, Coffeescript, LESS, ... and your custom stuff.
+#
+# https://webpack.github.io/
+# https://github.com/webpack/webpack
+npm install --global webpack
+
 # Yeoman
 #
 # A robust and opinionated set of tools, libraries, and a workflow that can
