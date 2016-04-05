@@ -11,14 +11,14 @@
 ###############################################################################
 
 set_shell_theme() {
-  BASE16_SHELL="$HOME/.config/base16-shell/base16-$1".sh
-  [[ -s "$BASE16_SHELL" ]] && source "$BASE16_SHELL"
+  BASE16_SHELL="${HOME}/.config/base16-shell/base16-${1}".sh
+  [[ -s "${BASE16_SHELL}" ]] && source "${BASE16_SHELL}"
 }
 set_dark_shell_theme() {
-  set_shell_theme "$1".dark
+  set_shell_theme "${1}".dark
 }
 set_light_shell_theme() {
-  set_shell_theme "$1".light
+  set_shell_theme "${1}".light
 }
 
 # Including favorites here for easier switching.
@@ -47,9 +47,9 @@ set_light_shell_theme() {
 #   these themes do not work with it.
 # - There are cases where `$TERM` is set to "dumb", which should be handled
 #   here similarly to a blank `$TERM`.
-if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] &&
+if [[ "${TERM_PROGRAM}" != "Apple_Terminal" ]] &&
    [[ -n "${TERM:-}" ]] &&
-   [[ "$TERM" != "dumb" ]]
+   [[ "${TERM}" != "dumb" ]]
 then
   set_dark_shell_theme "twilight"
 fi
