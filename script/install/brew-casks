@@ -515,6 +515,23 @@ _install_google_chrome_cask() {
 }
 _install_google_chrome_cask
 
+# Google Nik Collection
+#
+# The Nik Collection is comprised of seven desktop plug-ins that provide a
+# powerful range of photo editing capabilities -- from filter applications
+# that improve color correction, to retouching and creative effects, to image
+# sharpening that brings out all the hidden details, to the ability to make
+# adjustments to the color and tonality of images.
+#
+# The Nik Collection: Analog Efex Pro, Color Efex Pro, Silver Efex Pro,
+# Viveza, HDR Efex Pro, Sharpener Pro and Dfine.
+#
+# https://www.google.com/nikcollection/
+#
+# NOTE: Final setup requires launching and following the steps displayed in
+# 'Nik Collection.app'.
+brew cask install google-nik-collection
+
 # GrandPerspective
 #
 # GrandPerspective is a small utility application for Mac OS X that
