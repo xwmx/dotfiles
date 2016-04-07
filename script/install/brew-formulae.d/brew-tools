@@ -83,6 +83,20 @@ then
   brew uninstall archey
 fi
 
+# aria2
+#
+# aria2 is a lightweight multi-protocol & multi-source, cross platform download
+# utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP,
+# BitTorrent and Metalink.
+#
+# Options:
+#   --with-libssh2
+#     Build with libssh2 support
+#
+# https://github.com/tatsuhiro-t/aria2
+# https://aria2.github.io/
+brew install aria2 --with-libssh2
+
 # GNU Aspell
 #
 # A Free and Open Source spell checker
