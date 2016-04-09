@@ -4,28 +4,6 @@
 # Set the system time zone.
 ###############################################################################
 
-# __print_timezone_usage()
-#
-# Usage:
-#   __print_timezone_usage
-__print_timezone_usage() {
-  cat <<HEREDOC
-Usage:
-  timezone
-  timezone set (pt | mt | ct | et | utc | <timezone>)
-  timezone list
-  timezone help | -h | --help
-
-Subcommands:
-  set   Set the system timezone to the given timezone.
-  list  List available timezones.
-  help  Display this help information.
-
-Description:
-  Display and set the timezone for the system. Supports Linux and OS X.
-HEREDOC
-}
-
 # timezone()
 #
 # Usage:
@@ -48,20 +26,35 @@ timezone() {
   fi
 
   local _subcommand="${1:-}"
-  case $_subcommand in
+  case "${_subcommand}" in
     help|-h|--help)
-      __print_timezone_usage
+      cat <<HEREDOC
+Usage:
+  timezone
+  timezone set (pt | mt | ct | et | utc | <timezone>)
+  timezone list
+  timezone help | -h | --help
+
+Subcommands:
+  set   Set the system timezone to the given timezone.
+  list  List available timezones.
+  help  Display this help information.
+
+Description:
+  Display and set the timezone for the system. Supports Linux and OS X.
+HEREDOC
+      return 0
       ;;
     set)
       local _zone="${2:-}"
-      if [[ -z "$_zone" ]]
+      if [[ -z "${_zone}" ]]
       then
         __print_timezone_usage
         return 1
       else
         local _timezone_set_command
 
-        case "$_system_command" in
+        case "${_system_command}" in
           timedatectl)
             _timezone_set_command="sudo timedatectl set-timezone"
             ;;
@@ -70,36 +63,36 @@ timezone() {
             ;;
         esac
 
-        case "$_zone" in
+        case "${_zone}" in
           pt|PT)
-            eval "$_timezone_set_command" America/Los_Angeles &&
+            eval "${_timezone_set_command}" America/Los_Angeles &&
               timezone
             ;;
           mt|MT)
-            eval "$_timezone_set_command" America/Denver &&
+            eval "${_timezone_set_command}" America/Denver &&
               timezone
             ;;
           ct|CT)
-            eval "$_timezone_set_command" America/Chicago &&
+            eval "${_timezone_set_command}" America/Chicago &&
               timezone
             ;;
           et|ET)
-            eval "$_timezone_set_command" America/New_York &&
+            eval "${_timezone_set_command}" America/New_York &&
               timezone
             ;;
           utc|UTC)
-            eval "$_timezone_set_command" UTC &&
+            eval "${_timezone_set_command}" UTC &&
               timezone
             ;;
           *)
-            eval "$_timezone_set_command" "$_zone" &&
+            eval "${_timezone_set_command}" "${_zone}" &&
               timezone
             ;;
         esac
       fi
       ;;
     list)
-      case "$_system_command" in
+      case "${_system_command}" in
         timedatectl)
           timedatectl list-timezones | ${PAGER:-less}
           ;;
@@ -109,10 +102,10 @@ timezone() {
       esac
       ;;
     pt|PT|mt|MT|ct|CT|et|ET|utc|UTC)
-      timezone 'set' "$_subcommand"
+      timezone 'set' "${_subcommand}"
       ;;
     *)
-      case "$_system_command" in
+      case "${_system_command}" in
         timedatectl)
           timedatectl | grep Time\ zone | awk '{$1 = ""; $2 = ""; print $0 }'
           ;;
