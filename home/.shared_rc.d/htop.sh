@@ -13,6 +13,6 @@ if command_exists "htop"
 then
   _original_htop="$(which htop)"
   htop() {
-    sudo "$_original_htop" "$@"
+    sudo "${_original_htop}" "$@"
   }
 fi

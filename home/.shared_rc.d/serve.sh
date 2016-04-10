@@ -48,7 +48,7 @@ for key, value in map.items():
     map[key] = value + ";charset=UTF-8"
     SimpleHTTPServer.test()
 HEREDOC
-  python -c "$server_script" "$port"
+  python -c "${server_script}" "${port}"
 }
 alias server='serve'
 

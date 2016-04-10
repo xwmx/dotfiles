@@ -37,7 +37,7 @@ then
   cdf() {
     local _script
     _script='tell app "Finder" to POSIX path of (insertion location as alias)'
-    cd "$(osascript -e "$_script")" || return
+    cd "$(osascript -e "${_script}")" || return
   }
 fi
 

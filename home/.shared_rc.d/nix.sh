@@ -14,10 +14,10 @@
 
 # Initialize nix if it's installed.
 nix_init() {
-  _nix_sh_path="$HOME/.nix-profile/etc/profile.d/nix.sh"
-  if [[ -e "$_nix_sh_path" ]]
+  _nix_sh_path="${HOME}/.nix-profile/etc/profile.d/nix.sh"
+  if [[ -e "${_nix_sh_path}" ]]
   then
-    . "$_nix_sh_path"
+    . "${_nix_sh_path}"
   fi
 }
 nix_init
