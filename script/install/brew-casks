@@ -1049,6 +1049,9 @@ brew cask install scribus
 # A database of hidden settings for Mac OS X
 #
 # http://secrets.blacktree.com
+#
+# TODO: Remove this section because Secrets has been removed.
+# https://github.com/caskroom/homebrew-cask/pull/17170
 brew cask install secrets
 
 # Sequel Pro
