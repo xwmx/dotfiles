@@ -162,9 +162,13 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 #
 # NOTE: exclusions added with `tmutil addexclusion` don't appear in the GUI
 # list found in System Preferences > Time Machine > Options...
-tmutil addexclusion "${HOME}/VirtualBox VMs"
-# Verify exlusion.
-tmutil isexcluded "${HOME}/VirtualBox VMs"
+__vbox_vms_path="${HOME}/VirtualBox VMs"
+if [[ -d "${__vbox_vms_path}" ]]
+then
+  tmutil addexclusion "${__vbox_vms_path}"
+  # Verify exlusion.
+  tmutil isexcluded "${__vbox_vms_path}"
+fi
 
 ###############################################################################
 # Kill affected applications
