@@ -46,9 +46,9 @@ HEREDOC
       _cat_cmd="ccat -C 'always'"
     fi
 
-    for arg in "${@:-}"
+    for __arg in "${@:-}"
     do
-      case $arg in
+      case "${__arg}" in
         -h|--help)
           _print_hd_help
           return 0
@@ -57,7 +57,7 @@ HEREDOC
           _less_options="${_less_options}N"
           ;;
         *)
-          _hexdump_arguments+=("$arg")
+          _hexdump_arguments+=("${__arg}")
           ;;
       esac
     done
@@ -71,7 +71,7 @@ HEREDOC
     hexdump \
       -C \
       "${_hexdump_arguments[@]}" \
-      | eval "$_cat_cmd" \
+      | eval "${_cat_cmd}" \
       | less "${_less_options}"
   }
 fi
