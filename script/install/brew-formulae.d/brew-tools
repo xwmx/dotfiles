@@ -269,7 +269,7 @@ brew install cmus
 # http://commonmark.org
 #
 # NOTE: executable name is `cmark`.
-brew install commommark
+brew install commonmark
 
 # composer
 #
