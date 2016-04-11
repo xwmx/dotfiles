@@ -1394,7 +1394,7 @@ brew install opencascade
 #
 # http://ori.scs.stanford.edu/
 # https://bitbucket.org/orifs/ori/wiki/Home
-brew install ori
+brew install homebrew/fuse/ori
 
 # osquery
 #
@@ -1814,7 +1814,7 @@ brew install sphinx
 # A network filesystem client to connect to SSH servers
 #
 # https://github.com/libfuse/sshfs
-brew install sshfs
+brew install homebrew/fuse/sshfs
 
 # GNU Stow
 #
@@ -1988,7 +1988,7 @@ brew install https://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
 #
 # http://gittup.org/tup/
 # https://github.com/gittup/tup
-brew install tup
+brew install homebrew/fuse/tup
 
 # Unison
 #
