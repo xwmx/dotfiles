@@ -493,7 +493,7 @@ brew install railwaycat/emacsmacport/emacs-mac \
 #
 # https://github.com/vgough/encfs
 # https://vgough.github.io/encfs/
-brew install encfs
+brew install homebrew/fuse/encfs
 
 # Erlang
 #
