@@ -247,16 +247,6 @@ brew cask install calibre
 # https://www.codebox.io
 brew cask install codebox
 
-# Colors
-#
-# Colors is a color picker that takes Apple's basic color chooser (complete
-# with "magnifying glass" to pull colors from other applications), and combines
-# it with an easy way to copy common formats of color values (eg., #rrggbb,
-# rgba(r, g, b, a), etc.) to the clipboard.
-#
-# http://mattpatenaude.com/
-brew cask install colors
-
 # Consul
 #
 # Consul is a tool for service discovery, monitoring and configuration.
@@ -289,6 +279,26 @@ brew cask install coqide
 # http://coteditor.com/
 # https://github.com/coteditor/CotEditor
 brew cask install coteditor
+
+# couleurs
+#
+# Couleurs is a simple app for grabbing and tweaking the colors you see on
+# your screen.
+#
+# Couleurs takes Apple's color panel (complete with "magnifying glass"), and
+# combines it with an easy way to copy common formats of color values to the
+# clipboard (including CSS formats like #rrggbb and even UIColor values in
+# Swift).
+#
+# https://couleursapp.com/
+#
+# NOTE: Couleurs is the predecesor of colors.app.
+# TODO: Remove uninstall command when removed from all systems.
+if _homebrew_cask_is_installed "colors"
+then
+  brew cask uninstall colors
+fi
+brew cask install couleurs
 
 # cscreen
 #
