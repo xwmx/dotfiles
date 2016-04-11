@@ -1049,7 +1049,7 @@ brew install midnight-commander
 # Emacs-like editor, and a large runtime library.
 #
 # http://www.gnu.org/software/mit-scheme/
-brew install mit-scheme
+brew install homebrew/x11/mit-scheme
 
 # MongoDB
 #
