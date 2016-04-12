@@ -84,3 +84,12 @@ atom-text-editor::shadow {
     background-color: rgb(70, 65, 133);
   }
 }
+
+// Use different font size for non-retina resolutions.
+//
+// https://discuss.atom.io/t/editor-different-font-sizes-for-different-screen-resolutions/11579
+.editor {
+  @media (-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi) {
+    font-size: 10px;
+  }
+}
