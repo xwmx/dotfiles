@@ -77,6 +77,13 @@ brew tap caskroom/fonts
 # Homebrew Cask - Fonts
 ###############################################################################
 
+# Menlo for Powerline
+#
+# Menlo font patched to work with Powerline.
+#
+# https://github.com/abertsch/Menlo-for-Powerline
+brew cask install font-menlo-for-powerline
+
 # Sauce Code Powerline
 #
 # Source Code Pro is a set of monospaced OpenType fonts that have been designed
