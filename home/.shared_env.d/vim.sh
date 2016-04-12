@@ -17,5 +17,7 @@
 _macvim_app_path="${HOME}/Applications/MacVim.app"
 if command_exists "mvim" && [[ -e "${_macvim_app_path}" ]]
 then
-  export VIMRUNTIME="${_macvim_app_path}/Contents/Resources/vim/runtime"
+  # NOTE: Disabled. This triggers an error for unknown reasons.
+  # TODO: Investigate error and fix or remove this file.
+  # export VIMRUNTIME="${_macvim_app_path}/Contents/Resources/vim/runtime"
 fi
