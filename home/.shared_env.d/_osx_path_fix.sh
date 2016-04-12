@@ -17,6 +17,8 @@
 # References:
 #   http://www.zsh.org/mla/users/2015/msg00725.html
 #   https://gist.github.com/zmwangx/290d617224f084bb0133
+#   http://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper
+#   http://superuser.com/questions/482098/path-is-driving-me-nuts
 #
 # Other files:
 #   $HOME/.zprofile.d/osx_path_fix.zsh
@@ -31,6 +33,14 @@ then
   then
     eval `/usr/libexec/path_helper -s`
   fi
+
+  # Explicitly prepend another '/usr/local/bin' segment, which is used by
+  # homebrew.
+  #
+  # The order is determined by '/etc/paths', which is ordered differently on
+  # some of my systems. On a fresh OS X install, '/usr/local/bin' is the last
+  # iterm in this file.
+  PATH="/usr/local/bin:${PATH}"
 
   # NOTE: make sure `setopt global_rcs` is set in .zprofile or .zprofile.d.
   setopt no_global_rcs
