@@ -37,8 +37,9 @@ Generate a properly-zipped epub file from a directory of source files.
 Usage:
   create-epub /path/to/source/directory /path/to/output-file.epub
 "
-if [ -z "$1" -o "$1" = "-h" ]; then
-  printf "%s\n" "$usage"
+if [ -z "$1" ] || [ "$1" = "-h" ]
+then
+  printf "%s\n" "${usage}"
   exit 0
 fi
 
@@ -47,7 +48,7 @@ fi
 ###############################################################################
 
 source_path=${1%/} # source path, minus any trailing slash
-destination_path="$2"
+destination_path="${2}"
 mimetype_path="${source_path}/mimetype"
 
 ###############################################################################
@@ -55,18 +56,22 @@ mimetype_path="${source_path}/mimetype"
 ###############################################################################
 
 # check for presence of first argument
-if [ -z "$destination_path" ]; then
+if [ -z "${destination_path}" ]
+then
   printf "Error: destination file not specified."
   exit 1
-elif [ -f "$destination_path" ]; then
+elif [ -f "${destination_path}" ]
+then
   printf "Error: file already exists at destination path."
   exit 1
 fi
 # check for presence of second argument
-if [ -z "$source_path" ]; then
+if [ -z "${source_path}" ]
+then
   printf "Error: source directory not specified."
   exit 1
-elif [ ! -d "$source_path" ]; then
+elif [ ! -d "${source_path}" ]
+then
   printf "Error: no source directory found at specified path."
   exit 1
 fi
@@ -76,8 +81,9 @@ fi
 ###############################################################################
 
 # Create mimetype if it doesn't exist
-if [ ! -f "$mimetype_path" ]; then
-  printf "application/epub+zip\n" >> "$mimetype_path"
+if [ ! -f "${mimetype_path}" ]
+then
+  printf "application/epub+zip\n" >> "${mimetype_path}"
 fi
 
 ###############################################################################
@@ -85,6 +91,5 @@ fi
 ###############################################################################
 
 # Zip everything up.
-zip -q0X "$destination_path" "$mimetype_path"
-zip -qXr9D "$destination_path" "$source_path/*"
-
+zip -q0X "${destination_path}" "${mimetype_path}"
+zip -qXr9D "${destination_path}" "${source_path}/*"
