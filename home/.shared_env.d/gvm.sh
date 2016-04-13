@@ -106,10 +106,11 @@ gvm_init() {
 
   # Install go1.4 so it's possible to build go1.5, then build go1.5 and set as
   # default.
-  gvm install go1.4
-  gvm use go1.4
+  gvm install go1.4.3
+  gvm use go1.4.3
   gvm install go1.5
-  gvm use go1.5 --default
+  gvm install go1.6
+  gvm use go1.6 --default
 }
 
 # gvm_deinit()
