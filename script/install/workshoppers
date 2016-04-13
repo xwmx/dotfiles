@@ -11,6 +11,14 @@
 # https://github.com/rvagg/workshopper
 ###############################################################################
 
+# Functional JavaScript
+#
+# Learn fundamental functional programming features of JavaScript in vanilla
+# ES5.
+#
+# https://github.com/timoxley/functional-javascript-workshop
+npm install -g functional-javascript-workshop
+
 # javascripting
 #
 # Learn the basics of JavaScript. No previous programming experience required.
