@@ -792,6 +792,13 @@ brew cask install mapbox-studio
 # http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
 brew cask install yujitach-menumeters
 
+# Minecraft
+#
+# Minecraft is a sandbox video game.
+#
+# https://minecraft.net/
+brew cask install minecraft
+
 # Monodraw
 #
 # Powerful ASCII art editor designed for the Mac.
