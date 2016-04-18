@@ -96,21 +96,13 @@ die() {
 # Help
 ###############################################################################
 
-# Set $_program_help
+# _print_help()
 #
-# The `read` form of assignment is used for a balance of ease of
-# implementation and simplicity. There is an alternative assignment form
-# that could be used here:
+# Usage: _print_help
 #
-# var="$(cat <<'EOM'
-# some message
-# EOM
-# )
-#
-# However, this form appears to require trailing space after backslashes to
-# preserve newlines, which is unexpected. Using `read` simply requires
-# escaping backslashes, which is more common.
-read -d '' "_program_help" <<EOM || true
+# Print the program help information.
+_print_help() {
+  cat <<HEREDOC
             _/                      _/
    _/_/_/  _/    _/_/      _/_/_/  _/  _/
 _/        _/  _/    _/  _/        _/_/
@@ -136,15 +128,7 @@ Subcommands:
 Options:
   -h --help  Display this help information.
   --version  Display version information.
-EOM
-
-# _print_help()
-#
-# Usage: _print_help
-#
-# Print the program help information.
-_print_help() {
-  printf "%s\n" "$_program_help"
+HEREDOC
 }
 
 ###############################################################################
@@ -260,12 +244,12 @@ _ARGUMENTS=("$0")
 # Checks if an value has been set to the expected variable and, if not, prints
 # and error message and exits with status 1.
 _require_argument() {
-  local option="$1"
-  local value="$2"
+  local _option="${1:-}"
+  local _value="${2:-}"
 
-  if [[ -z "$value" ]]
+  if [[ -z "${_value}" ]]
   then
-    _die printf "Option requires an argument: %s\n" "$option"
+    _die printf "Option requires an argument: %s\n" "${_option}"
   fi
 }
 # getopts and getopts have inconsistent behavior, so using a simple home-brewed
@@ -278,9 +262,9 @@ _require_argument() {
 #   http://stackoverflow.com/a/7948533
 while [ $# -gt 0 ]
 do
-  opt="$1"
+  __opt="$1"
   shift
-  case "$opt" in
+  case "${__opt}" in
     -h|--help)
       _PRINT_HELP=1
       ;;
@@ -291,24 +275,24 @@ do
       _PRINT_VERSION=1
       ;;
     in|out|timesheet)
-      _SUBCOMMAND="$opt"
+      _SUBCOMMAND="${__opt}"
       ;;
     --endopts)
       # Terminate option parsing.
       break
       ;;
     *)
-      if [[ -z "$_SUBCOMMAND" ]]
+      if [[ -z "${_SUBCOMMAND}" ]]
       then
-        _SUBCOMMAND="$opt"
+        _SUBCOMMAND="${__opt}"
       else
-        _ARGUMENTS+=("$opt")
+        _ARGUMENTS+=("${__opt}")
       fi
       ;;
   esac
 done
 
-_debug printf "\$_SUBCOMMAND: %s\n" "$_SUBCOMMAND"
+_debug printf "\$_SUBCOMMAND: %s\n" "${_SUBCOMMAND}"
 _debug printf "\$_ARGUMENTS: %s\n" "${_ARGUMENTS[*]:-}"
 
 ###############################################################################
@@ -318,7 +302,7 @@ _debug printf "\$_ARGUMENTS: %s\n" "${_ARGUMENTS[*]:-}"
 _clock() {
   _debug printf "_clock() >> start\n"
 
-  case "$_SUBCOMMAND" in
+  case "${_SUBCOMMAND}" in
     "in")
       timetrap "in"
       ;;
@@ -345,10 +329,10 @@ _clock() {
 ###############################################################################
 
 _main() {
-  if (("$_PRINT_HELP"))
+  if ((_PRINT_HELP))
   then
     _print_help
-  elif (("$_PRINT_VERSION"))
+  elif ((_PRINT_VERSION))
   then
     _print_version
   else
