@@ -131,6 +131,17 @@ pip3_install ftfy
 # https://github.com/nicolargo/glances
 pip3_install glances
 
+# haxor-news
+#
+# Browse Hacker News like a Haxor.
+#
+# haxor-news brings Hacker News to the terminal, allowing you to view and
+# filter linked web pages and comments without leaving your command line.
+#
+# https://github.com/donnemartin/haxor-news
+# https://news.ycombinator.com/item?id=11518596
+pip3_install haxor-news
+
 # howdoi
 #
 # instant coding answers via the command line
