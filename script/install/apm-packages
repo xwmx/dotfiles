@@ -685,6 +685,14 @@ apm install "sort-lines"
 # https://github.com/lalyos/ssh-config
 apm install ssh-config
 
+# stylus
+#
+# Stylus language support in Atom (with extra snippets)
+#
+# https://atom.io/packages/stylus
+# https://github.com/matthojo/language-stylus
+apm install stylus
+
 # symbols-tree-view
 #
 # Symbols Tree View for Atom.io, just like taglist or tagbar for VIM.
