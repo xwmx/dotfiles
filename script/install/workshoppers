@@ -11,6 +11,16 @@
 # https://github.com/rvagg/workshopper
 ###############################################################################
 
+# expressworks
+#
+# Learn the basics of the Express.js framework.
+#
+# Learn Express.js from the author of one of the best books on Express.js—Pro
+# Express.js—workshop to teach you basics of Express.js.
+#
+# https://github.com/azat-co/expressworks
+npm install -g expressworks
+
 # Functional JavaScript
 #
 # Learn fundamental functional programming features of JavaScript in vanilla
