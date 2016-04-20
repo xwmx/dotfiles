@@ -69,6 +69,13 @@ npm install -g learnyounode
 # https://github.com/mdunisch/lololodash
 npm install -g lololodash
 
+# Planet Proto
+#
+# Understanding JavaScript Prototypes
+#
+# https://github.com/sporto/planetproto
+npm install -g planetproto
+
 # Promise It Won't Hurt
 #
 # Learn to use promises in JavaScript to handle async operations.
