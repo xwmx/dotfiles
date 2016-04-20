@@ -40,3 +40,10 @@ npm install -g javascripting
 #
 # https://github.com/rvagg/learnyounode
 npm install -g learnyounode
+
+# Promise It Won't Hurt
+#
+# Learn to use promises in JavaScript to handle async operations.
+#
+# https://github.com/stevekane/promise-it-wont-hurt
+npm install -g promise-it-wont-hurt
