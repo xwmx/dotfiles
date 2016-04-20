@@ -11,6 +11,13 @@
 # https://github.com/rvagg/workshopper
 ###############################################################################
 
+# Async You
+#
+# Learn to use the async package.
+#
+# https://github.com/bulkan/async-you
+npm install -g async-you
+
 # expressworks
 #
 # Learn the basics of the Express.js framework.
