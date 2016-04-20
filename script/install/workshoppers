@@ -48,6 +48,13 @@ npm install -g functional-javascript-workshop
 # Learn the basics of JavaScript. No previous programming experience required.
 npm install -g javascripting
 
+# Kick Off Koa
+#
+# Getting started with Koa, the next generation web framework for Node.js
+#
+# https://github.com/koajs/kick-off-koa
+npm install -g kick-off-koa
+
 # Learn You The Node.js
 #
 # An intro to Node.js via a set of self-guided workshops.
