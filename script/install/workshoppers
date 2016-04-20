@@ -18,6 +18,13 @@
 # https://github.com/bulkan/async-you
 npm install -g async-you
 
+# Count to 6
+#
+# Learn how to use some features from ES6, the next version of JavaScript.
+#
+# https://github.com/domenic/count-to-6
+npm install -g count-to-6
+
 # expressworks
 #
 # Learn the basics of the Express.js framework.
