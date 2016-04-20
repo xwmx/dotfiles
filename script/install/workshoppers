@@ -75,3 +75,10 @@ npm install -g lololodash
 #
 # https://github.com/stevekane/promise-it-wont-hurt
 npm install -g promise-it-wont-hurt
+
+# Scope Chains & Closures
+#
+# Learn the details of Scope, Scope Chains, Closures, and Garbage Collection.
+#
+# https://github.com/jesstelford/scope-chains-closures
+npm install -g scope-chains-closures
