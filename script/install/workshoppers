@@ -62,6 +62,13 @@ npm install -g kick-off-koa
 # https://github.com/rvagg/learnyounode
 npm install -g learnyounode
 
+# LololoDash
+#
+# Learn Lo-Dash (fork of underscore) to handle your arrays and objects simple!
+#
+# https://github.com/mdunisch/lololodash
+npm install -g lololodash
+
 # Promise It Won't Hurt
 #
 # Learn to use promises in JavaScript to handle async operations.
