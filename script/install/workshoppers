@@ -25,6 +25,13 @@ npm install -g async-you
 # https://github.com/domenic/count-to-6
 npm install -g count-to-6
 
+# ESNext Generation
+#
+# Intro to ES6 Iterators, their use, and how they relate to Generators.
+#
+# https://github.com/jesstelford/esnext-generation
+npm install -g esnext-generation
+
 # expressworks
 #
 # Learn the basics of the Express.js framework.
