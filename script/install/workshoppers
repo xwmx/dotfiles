@@ -104,3 +104,10 @@ npm install -g scope-chains-closures
 #
 # https://github.com/substack/stream-adventure
 npm install -g stream-adventure
+
+# Test Anything
+#
+# Learn to test your code
+#
+# https://github.com/finnp/test-anything
+npm install -g test-anything
