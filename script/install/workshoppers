@@ -111,3 +111,10 @@ npm install -g stream-adventure
 #
 # https://github.com/finnp/test-anything
 npm install -g test-anything
+
+# Tower of babel
+#
+# Show you through a series of exercises that introduce you to ES6 features.
+#
+# https://github.com/yosuke-furukawa/tower-of-babel
+npm install -g tower-of-babel
