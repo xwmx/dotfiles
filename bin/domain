@@ -45,27 +45,27 @@ info() {
 ###############################################################################
 # whois %s
 ###############################################################################
-" "$_name"
-  whois "$_name" | "$__cat_cmd" || true
+" "${_name}"
+  whois "${_name}" | "${__cat_cmd}" || true
 
   printf "\
 ###############################################################################
 # dig +nocmd %s any +multiline +noall +answer
 ###############################################################################
-" "$_name"
-  dig +nocmd "$_name" any +multiline +noall +answer | "$__cat_cmd" || true
+" "${_name}"
+  dig +nocmd "${_name}" any +multiline +noall +answer | "${__cat_cmd}" || true
 
   printf "\
 
 ###############################################################################
 # curl --head --location --progress-bar %s
 ###############################################################################
-" "$_name"
+" "${_name}"
   curl \
     --head \
     --location \
     --progress-bar \
-    "$_name" | "$__cat_cmd" || true
+    "${_name}" | "${__cat_cmd}" || true
 }
 
 _init
