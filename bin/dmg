@@ -8,11 +8,11 @@
 
 source "$(which bask)"
 
-if [[ ! "$OSTYPE" =~ ^darwin ]]
+if [[ ! "${OSTYPE}" =~ ^darwin ]]
 then
   _die printf \
     "%s uses \`hdiutil\` and is therefore only supported on OS X\n" \
-    "$_ME"
+    "${_ME}"
 fi
 
 desc "HELP_HEADER" <<EOM
