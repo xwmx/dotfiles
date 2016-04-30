@@ -398,6 +398,13 @@ npm install --global overcast
 # http://facebook.github.io/react/
 npm install --global react-tools
 
+# readability-cli
+#
+# Read any web page from the command line using readability.js
+#
+# https://github.com/xdamman/readability-cli
+npm install --global readability-cli
+
 # ShellJS - Unix shell commands for Node.js
 #
 # ShellJS is a portable (Windows/Linux/OS X) implementation of Unix shell
