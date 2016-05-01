@@ -25,9 +25,9 @@ source "$(which bask)"
 # Description:
 #   If the current system is not OS X, exit 1 with a message.
 _validate_os() {
-if [[ ! "$OSTYPE" =~ ^darwin ]]
+if [[ ! "${OSTYPE}" =~ ^darwin ]]
 then
-  _die printf "%s is only supported on OS X\n" "$_ME"
+  _die printf "%s is only supported on OS X\n" "${_ME}"
 fi
 }
 _validate_os
@@ -62,9 +62,9 @@ _validate_app_presence() {
   _amethyst_path="$(_find_app 'Amethyst.app')"
   _debug printf \
     "_validate_app_presence() \$_amethyst_path: %s\n" \
-    "$_amethyst_path"
+    "${_amethyst_path}"
 
-  if [[ -z "$_amethyst_path" ]]
+  if [[ -z "${_amethyst_path}" ]]
   then
     _die printf "Amethyst.app not found on this system.\n"
   fi
@@ -87,31 +87,31 @@ EOM
 
 desc "off" <<EOM
 Usage:
-  $_ME off
+  ${_ME} off
 
 Description:
   Turn off focus-follows-mouse in Amethyst.app.
 EOM
 off() {
   defaults write com.amethyst.Amethyst focus-follows-mouse -bool false
-  $_ME status
+  "${_ME}" status
 }
 
 desc "on" <<EOM
 Usage:
-  $_ME on
+  ${_ME} on
 
 Description:
   Turn on focus-follows-mouse in Amethyst.app.
 EOM
 on() {
   defaults write com.amethyst.Amethyst focus-follows-mouse -bool true
-  $_ME status
+  "${_ME}" status
 }
 
 desc "status" <<EOM
 Usage:
-  $_ME status
+  ${_ME} status
 
 Description:
   Return the status of focus-follows-mouse in Amethyst.app.
@@ -119,7 +119,7 @@ EOM
 status() {
   local _status
   _status="$(defaults read com.amethyst.Amethyst focus-follows-mouse)"
-  if (("$_status"))
+  if ((_status))
   then
     printf "focus-follows-mouse on\n"
   else
@@ -129,29 +129,29 @@ status() {
 
 desc "toggle" <<EOM
 Usage:
-  $_ME toggle
+  ${_ME} toggle
 
 Description:
   Toggle focus-follows-mouse on or off.
 EOM
 toggle() {
-  if [[ "$($_ME status)" =~ .*on$ ]]
+  if [[ "$(${_ME} status)" =~ .*on$ ]]
   then
-    $_ME off
+    "${_ME}" off
   else
-    $_ME on
+    "${_ME}" on
   fi
 }
 
 desc "t" <<EOM
 Usage:
-  $_ME t
+  ${_ME} t
 
 Description:
-  Shortcut for \`$_ME toggle\`.
+  Shortcut for \`${_ME} toggle\`.
 EOM
 t() {
-  $_ME toggle
+  "${_ME}" toggle
 }
 
 _init
