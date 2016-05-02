@@ -30,13 +30,13 @@ EOM
 
 desc "dataurl" <<EOM
 Usage:
-  dataurl <path/to/file>
+  ${_ME} dataurl <path/to/file>
 
 Description:
   Create a data URL from a given file.
 EOM
 dataurl() {
-  local mimeType
+  local _mime_type=
   local _file_path="${1:-}"
 
   if [[ -z "${_file_path}" ]]
@@ -58,28 +58,28 @@ dataurl() {
   # Step descriptions included for clarity:
   #
   # 1. Save original LC_ALL and set to 'C'
-  local original_LC_ALL="$LC_ALL"
+  local _original_LC_ALL="${LC_ALL}"
   export LC_ALL=C
   # 2. Run `file` with new LC_ALL value
-  mimeType=$(file -b --mime-type "$1")
+  _mime_type=$(file -b --mime-type "${_file_path}")
   # 3. Set LC_ALL back to the original value.
-  export LC_ALL="$original_LC_ALL"
+  export LC_ALL="${_original_LC_ALL}"
 
-  if [[ $mimeType == text/* ]]
+  if [[ "${_mime_type}" == text/* ]]
   then
-    mimeType="${mimeType};charset=utf-8"
+    _mime_type="${_mime_type};charset=utf-8"
   fi
   # Include trailing newline in output for easier manual selection.
   printf \
-    "data:${mimeType};base64,%s\n" \
-    "$(openssl base64 -in "$1" | tr -d '\n')"
+    "data:${_mime_type};base64,%s\n" \
+    "$(openssl base64 -in "${_file_path}" | tr -d '\n')"
 }
 
 # ---------------------------------------------------------------------- string
 
 desc "string" <<EOM
 Usage:
-  $_ME string [<length>] [( -u | --uppercase | -l | --lowercase)]
+  ${_ME} string [<length>] [( -u | --uppercase | -l | --lowercase)]
 
 Options:
   -u --uppercase  Convert all alpha characters to uppercase.
@@ -93,29 +93,29 @@ string() {
   # NOTE: set `LC_ALL=C` to avoid invalid byte sequence errors from `tr`.
   # More info: http://unix.stackexchange.com/a/141423
   export LC_ALL=C
-  local length=32
-  local letter_case
-  local raw_string
-  local cased_string
+  local _length=32
+  local _letter_case
+  local _raw_string
+  local _cased_string
 
   _debug printf "string() \$*: %s\n" "$*"
 
-  for arg in "${@:-}"
+  for __arg in "${@:-}"
   do
-    case $arg in
-      -u|--upper|--uppercase) letter_case="UPPER";;
-      -l|--lower|--lowercase) letter_case="LOWER";;
+    case "${__arg}" in
+      -u|--upper|--uppercase) _letter_case="UPPER";;
+      -l|--lower|--lowercase) _letter_case="LOWER";;
       -*)
-        _die printf "Unrecognized option: %s\n" "$arg"
+        _die printf "Unrecognized option: %s\n" "${__arg}"
         ;;
       *)
-        if [[ "$length" == "32" ]] && [[ -n "$arg" ]]
+        if [[ "${_length}" == "32" ]] && [[ -n "${__arg}" ]]
         then
-          if [[ "$arg" =~ ^[[:digit:]]+ ]]
+          if [[ "${__arg}" =~ ^[[:digit:]]+ ]]
           then
-            length="$arg"
+            _length="${__arg}"
           else
-            _die printf "Invalid argument: %s\n" "$arg"
+            _die printf "Invalid argument: %s\n" "${__arg}"
           fi
         else
           : # do nothing.
@@ -124,53 +124,53 @@ string() {
     esac
   done
 
-  _debug printf "string() \$length: %s\n" "$length"
+  _debug printf "string() \$length: %s\n" "${_length}"
 
   # NOTE: This command exits with a 141 status due to `head` exiting while
   # `fold` is still writing to the pipe. In order to circumvent this with
   # pipefail enabled, ignore errors by falling back to `return 0`.
   #
   # More info: http://stackoverflow.com/a/19120674
-  raw_string="$(
+  _raw_string="$(
     cat /dev/urandom      | \
       tr -dc 'a-zA-Z0-9'  | \
-      fold -w "${length}" | \
+      fold -w "${_length}" | \
       head -n 1 || \
       return 0
   )"
-  _debug printf "string() \$raw_string: %s\n" "$raw_string"
+  _debug printf "string() \$raw_string: %s\n" "${_raw_string}"
 
-  case "${letter_case:-}" in
+  case "${_letter_case:-}" in
     UPPER)
       _debug printf "string() UPPER\n"
       # alternative implementation:
       # cased_string="${raw_string^^}"
-      cased_string="$(
-        printf "%s\n" "$raw_string" | tr '[:lower:]' '[:upper:]'
+      _cased_string="$(
+        printf "%s\n" "${_raw_string}" | tr '[:lower:]' '[:upper:]'
       )"
       ;;
     LOWER)
       _debug printf "string() LOWER\n"
       # alternative implementation:
       # cased_string="${raw_string,,}"
-      cased_string="$(
-        printf "%s\n" "$raw_string" | tr '[:upper:]' '[:lower:]'
+      _cased_string="$(
+        printf "%s\n" "${_raw_string}" | tr '[:upper:]' '[:lower:]'
       )"
       ;;
     *)
       _debug printf "string() NO LETTER CASE\n"
-      cased_string="$raw_string"
+      _cased_string="${_raw_string}"
       ;;
   esac
 
-  printf "%s\n" "$cased_string"
+  printf "%s\n" "${_cased_string}"
 }
 
 # ------------------------------------------------------------------------ uuid
 
 desc "uuid" <<EOM
 Usage:
-  $_ME uuid [(-l | --lowercase)]
+  ${_ME} uuid [(-l | --lowercase)]
 
 Options:
   -l --lowercase  Convert all alpha characters to lowercase.
@@ -186,9 +186,9 @@ uuid() {
   then
     # alternative implementation:
     # _uuid="${_uuid,,}"
-    _uuid="$(printf "%s\n" "$_uuid" | tr '[:upper:]' '[:lower:]')"
+    _uuid="$(printf "%s\n" "${_uuid}" | tr '[:upper:]' '[:lower:]')"
   fi
-  printf "%s\n" "$_uuid"
+  printf "%s\n" "${_uuid}"
 }
 
 _init
