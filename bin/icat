@@ -80,7 +80,7 @@ EOM
 #
 # Print the program help information.
 _print_help() {
-  printf "%s\n" "$_program_help"
+  printf "%s\n" "${_program_help}"
 }
 
 ###############################################################################
@@ -113,15 +113,15 @@ _icat() {
   then
     local _source=${1:-}
     local _url_regex='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
-    if [[ -z "$_source" ]]
+    if [[ -z "${_source}" ]]
     then
       $_ME -h
     else
-      if [[ "$_source" =~ $_url_regex  ]]
+      if [[ "${_source}" =~ $_url_regex  ]]
       then # if the source is a URL.
-        curl -Ls "$_source" | imagecat
+        curl -Ls "${_source}" | imagecat
       else
-        cat "$_source" | imagecat
+        cat "${_source}" | imagecat
       fi
     fi
   else
