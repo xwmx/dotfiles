@@ -88,6 +88,18 @@ pip3_install aws-shell
 # https://robots.thoughtbot.com/csvkit-brings-the-unix-philosophy-to-csv
 pip3_install csvkit
 
+# docutils
+#
+# Docutils is a modular system for processing documentation into useful
+# formats, such as HTML, XML, and LaTeX. For input Docutils supports
+# reStructuredText, an easy-to-read, what-you-see-is-what-you-get plaintext
+# markup syntax.
+#
+# https://pypi.python.org/pypi/docutils
+# http://docutils.sourceforge.net/
+# http://docutils.sourceforge.net/README.html
+pip3_install docutils
+
 # doge
 #
 # wow very terminal doge
