@@ -20,4 +20,5 @@ then
   # NOTE: Disabled. This triggers an error for unknown reasons.
   # TODO: Investigate error and fix or remove this file.
   # export VIMRUNTIME="${_macvim_app_path}/Contents/Resources/vim/runtime"
+  : # bash no-op/true
 fi
