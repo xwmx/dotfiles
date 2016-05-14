@@ -31,15 +31,15 @@ __unwrap() {
   local _executables
   local _next_executable
 
-  _basename=$(basename "$BASH_SOURCE")
+  _basename=$(basename "${BASH_SOURCE}")
   _executables=($(which -a "${_basename:-}"))
   for _element in "${_executables[@]}"
   do
-    if [[ ! "$_element" == "$BASH_SOURCE" ]] && [[ "$_element" =~ ^/.* ]]
+    if [[ ! "${_element}" == "${BASH_SOURCE}" ]] && [[ "${_element}" =~ ^/.* ]]
     then
       if [[ -z "${_next_executable:-}" ]]
       then
-        _next_executable="$_element"
+        _next_executable="${_element}"
       fi
     fi
   done
@@ -50,7 +50,7 @@ __unwrap() {
     printf "%s not found.\n" "${_basename:-}"
     exit 1
   else
-    printf "%s\n" "$_next_executable"
+    printf "%s\n" "${_next_executable}"
   fi
 }
 
@@ -72,9 +72,9 @@ __unwrap() {
 # https://neovim.io/doc/user/nvim_from_vim.html
 _nvim_path="$(which nvim)" || true
 __unwrapped_executable="$(__unwrap)"
-if [[ -e "$_nvim_path" ]] && [[ -e "$HOME/.config/nvim" ]]
+if [[ -e "${_nvim_path}" ]] && [[ -e "${HOME}/.config/nvim" ]]
 then
-  exec "$_nvim_path" "$@"
+  exec "${_nvim_path}" "$@"
 else
-  exec "$__unwrapped_executable" "$@"
+  exec "${__unwrapped_executable}" "$@"
 fi
