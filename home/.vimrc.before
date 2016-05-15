@@ -93,14 +93,16 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-" Disable vim-airline for commit messages.
+" Use minimal set of vim-airline extensions for commit messages.
 "
-" vim-airline startup in most projects is very slow, which is particularly
-" problematic when dealing with multiple commit messages.
+" vim-airline extensions can cause startup to be very slow.
 "
-" TODO: determine what the source of the slowness is and whether it can
-" be disabled without disabling vim-airline completely.
-let g:airline_exclude_filenames = ['COMMIT_EDITMSG']
+" TODO: Determine which extensions have the most impace on performance
+" and disable them in more, if not all, cases.
+if expand('%:t:r') == 'COMMIT_EDITMSG'
+  let g:airline_extensions = ['branch', 'hunks', 'whitespace']
+endif
+
 
 " ============================================================================
 " vim-signify
