@@ -224,6 +224,20 @@ npm install --global gulp
 # http://harpjs.com/
 npm install --global harp
 
+# horizon
+#
+# Horizon is a realtime, open-source backend for JavaScript apps.
+#
+# Rapidly build and deploy web or mobile apps using a simple JavaScript API.
+# Scale your apps to millions of users without any backend code.
+#
+# Built by the RethinkDB team and an open-source community, Horizon lets you
+# build sophisticated apps with lightning speed.
+#
+# http://horizon.io/
+# https://news.ycombinator.com/item?id=11715288
+npm install --global horizon
+
 # jasmine
 #
 # Jasmine is a Behavior Driven Development testing framework for JavaScript.
