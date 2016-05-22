@@ -582,7 +582,13 @@ apm install linter-tslint
 #
 # https://atom.io/packages/lorem-ipsum
 # https://github.com/nickclaw/atom-lorem-ipsum
-apm install lorem-ipsum
+#
+# NOTE: The lorem-ipsum package is incompatible with Atom 1.0+.
+# TODO: Remove this after the package has been removed from all systems.
+if _apm_package_is_installed "lorem-ipsum"
+then
+  apm uninstall lorem-ipsum
+fi
 
 # minimap
 #
