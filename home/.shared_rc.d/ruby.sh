@@ -26,4 +26,4 @@ alias be="bundle exec"
 # Rails
 ###############################################################################
 
-bgi="bundle exec guard -i; return 0"
+alias bgi="bundle exec guard -i; return 0"
