@@ -85,11 +85,6 @@
   # behavior.
   'backspace': 'vim-mode-plus:delete-left'
 
-'atom-text-editor.vim-mode-plus.visual-mode.blockwise':
-  # Add up and down key mappings to suppliment j and k in block mode.
-  'down': 'vim-mode-plus:blockwise-move-down'
-  'up':   'vim-mode-plus:blockwise-move-up'
-
 ###############################################################################
 # vim-mode-visual-block keymappings
 #
