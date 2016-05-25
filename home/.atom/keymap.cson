@@ -79,7 +79,7 @@
 # https://github.com/t9md/atom-vim-mode-plus
 # https://github.com/t9md/atom-vim-mode-plus/blob/master/keymaps/vim-mode-plus.cson
 ###############################################################################
-'atom-text-editor.vim-mode-plus.visual-mode':
+'atom-text-editor.vim-mode-plus.visual-mode, atom-text-editor.vim-mode-plus.normal-mode':
   # For unknown reasons, the 'delete' key doesn't delete the selection in
   # visual-mode. Assigning 'backspace' seems to provide the expected
   # behavior.
