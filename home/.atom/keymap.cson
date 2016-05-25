@@ -40,8 +40,8 @@
 # The existing keymappings for these operations are ctrl-cmd-up / ctrl-cmd-down
 ###############################################################################
 'body':
-  'ctrl-up': 'editor:move-line-up'
-  'ctrl-down': 'editor:move-line-down'
+  'ctrl-alt-up': 'editor:move-line-up'
+  'ctrl-alt-down': 'editor:move-line-down'
 
 ###############################################################################
 # map ', t t b' to symbols-tree-view toggle.
