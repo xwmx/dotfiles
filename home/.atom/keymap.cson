@@ -33,15 +33,14 @@
 ###############################################################################
 
 ###############################################################################
-# map ctrl-up / ctrl-down to line movement.
-#
-# This mirrors the current vim configuration.
-#
-# The existing keymappings for these operations are ctrl-cmd-up / ctrl-cmd-down
+# map ctrl-alt-[up|down] to move line and ctrl-alt-[left|right] to
+# move selection.
 ###############################################################################
 'body':
-  'ctrl-alt-up': 'editor:move-line-up'
-  'ctrl-alt-down': 'editor:move-line-down'
+  'ctrl-alt-up': 'editor:move-line-up' # Existing: ctrl-cmd-up
+  'ctrl-alt-down': 'editor:move-line-down' # Existing: ctrl-cmd-down
+  'ctrl-alt-left': 'editor:move-selection-left' # Existing: cmd-ctrl-left
+  'ctrl-alt-right': 'editor:move-selection-right' # Existing: cmd-ctrl-right
 
 ###############################################################################
 # map ', t t b' to symbols-tree-view toggle.
