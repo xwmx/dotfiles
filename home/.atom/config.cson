@@ -116,6 +116,8 @@
     statusIconScope: "Line"
   "linter-eslint":
     useGlobalEslint: true
+  "linter-shellcheck":
+    userParameters: "-x -e SC1090"
   metrics:
     userId: "2e9001b50edf75df09b8160944167f2ca1822759"
   minimap:
