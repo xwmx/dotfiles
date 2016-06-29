@@ -302,3 +302,6 @@
 [submodule "vendor/com/github/alphabetum/astral"]
 	path = vendor/com/github/alphabetum/astral
 	url = https://github.com/alphabetum/astral.git
+[submodule "vendor/com/github/guarinogabriel/mac-cli"]
+	path = vendor/com/github/guarinogabriel/mac-cli
+	url = https://github.com/guarinogabriel/mac-cli.git
