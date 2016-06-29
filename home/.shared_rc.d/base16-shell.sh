@@ -11,30 +11,24 @@
 ###############################################################################
 
 set_shell_theme() {
-  BASE16_SHELL="${HOME}/.config/base16-shell/base16-${1}".sh
+  BASE16_SHELL="${HOME}/.config/base16-shell/scripts/base16-${1}".sh
   [[ -s "${BASE16_SHELL}" ]] && source "${BASE16_SHELL}"
-}
-set_dark_shell_theme() {
-  set_shell_theme "${1}".dark
-}
-set_light_shell_theme() {
-  set_shell_theme "${1}".light
 }
 
 # Including favorites here for easier switching.
 
-#set_dark_shell_theme "3024"
-#set_dark_shell_theme "bespin"
-#set_dark_shell_theme "brewer"
-#set_dark_shell_theme "eighties"
-#set_dark_shell_theme "google"
-#set_dark_shell_theme "grayscale"
-#set_dark_shell_theme "greenscreen"
-#set_dark_shell_theme "isotope"        # close to original
-#set_dark_shell_theme "shapeshifter"   # close to original
-#set_dark_shell_theme "summerfruit"
-#set_dark_shell_theme "tomorrow"
-#set_dark_shell_theme "twilight"
+#set_shell_theme "3024"
+#set_shell_theme "bespin"
+#set_shell_theme "brewer"
+#set_shell_theme "eighties"
+#set_shell_theme "google"
+#set_shell_theme "grayscale"
+#set_shell_theme "greenscreen"
+#set_shell_theme "isotope"        # close to original
+#set_shell_theme "shapeshifter"   # close to original
+#set_shell_theme "summerfruit"
+#set_shell_theme "tomorrow"
+#set_shell_theme "twilight"
 
 # Set the theme.
 #
@@ -51,5 +45,5 @@ if [[ "${TERM_PROGRAM}" != "Apple_Terminal" ]] &&
    [[ -n "${TERM:-}" ]] &&
    [[ "${TERM}" != "dumb" ]]
 then
-  set_dark_shell_theme "twilight"
+  set_shell_theme "twilight"
 fi
