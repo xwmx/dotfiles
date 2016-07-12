@@ -775,12 +775,8 @@ brew install iftop
 #
 # http://www.imagemagick.org
 #
-# Build notes:
-#
-# --with-webp - build with support for the webp image format:
-#
 # https://developers.google.com/speed/webp/?csw=1
-brew install imagemagick --with-webp
+brew install imagemagick
 
 # io
 #
