@@ -17,6 +17,17 @@ then
 fi
 
 ###############################################################################
+# Google Chrome, etc
+###############################################################################
+
+# Check for updates once a week.
+# More information:
+# http://apple.stackexchange.com/a/208015
+# Revert command:
+# defaults write com.google.Keystone.Agent checkInterval 18000
+defaults write com.google.Keystone.Agent checkInterval 604800
+
+###############################################################################
 # iTerm2
 ###############################################################################
 
