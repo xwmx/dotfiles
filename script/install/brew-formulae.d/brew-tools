@@ -1499,7 +1499,16 @@ brew install homebrew/php/php56 --with-gmp
 #
 # https://github.com/thoughtbot/pick
 # https://robots.thoughtbot.com/announcing-pick
-brew install thoughtbot/formulae/pick
+#
+# NOTE: This formula was previously only available through the thoughtbot
+# tap, but it has since been moved to homebrew core.
+# TODO: Remove this uninstall block when the tapped formula has been removed
+# from all systems.
+if _homebrew_formula_is_installed "thoughtbot/formulae/pick"
+then
+  brew uninstall thoughtbot/formulae/pick
+fi
+brew install pick
 
 # pidgin
 #
