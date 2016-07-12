@@ -2138,7 +2138,14 @@ brew install xz
 # ISO-Prolog standard and with Quintus and SICStus Prolog.
 #
 # http://www.dcc.fc.up.pt/~vsc/Yap/index.html
-brew install yap
+#
+# NOTE: There have been a number of issues with this formula, which currently
+# isn't being used.
+# TODO: Remove this section when yap has been uninstalled from all systems.
+if _homebrew_formula_is_installed "yap"
+then
+  brew uninstall yap
+fi
 
 # zeromq
 #
