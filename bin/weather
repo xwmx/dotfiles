@@ -59,6 +59,37 @@ _hr() {
   printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 }
 
+# _print_heading()
+#
+# Usage:
+#   _print_heading <text>
+#
+# Description:
+#   Print <text> as a section heading.
+_print_heading() {
+  printf "%s\n" "$*"
+  _print_line "$*"
+}
+
+# _print_line()
+#
+# Usage:
+#   _print_line <text>
+#
+# Description:
+#   Print a line of dashes the length of <text>.
+#
+# More information:
+#   http://wiki.bash-hackers.org/commands/builtin/printf
+_print_line() {
+  local _text="${1:-}"
+  local _text_length=0
+  local _line=
+  _text_length=${#_text}
+  printf -v _line '%*s' "${_text_length}"
+  printf "%s\n" "${_line// /-}"
+}
+
 _weather() {
   local _arguments=()
   local _query="93105"
@@ -96,12 +127,8 @@ _weather() {
     _wttrin "${_query:-}"
   elif [[ "${_service}" == "all" ]]
   then
-    printf "%s\n" "wttr.in:"
-    printf "%s\n" "--------"
     _wttrin "${_query:-}"
     _hr
-    printf "%s\n" "wunderground:"
-    printf "%s\n" "-------------"
     _wunderground "${_query:-}"
   else
     _wunderground "${_query:-}"
@@ -110,12 +137,13 @@ _weather() {
 
 _wttrin() {
   local _query="${1}"
+  _print_heading "wttr.in: '${_query}'"
   curl "http://wttr.in/${_query}"
 }
 
 _wunderground() {
   local _query="${1}"
-
+  _print_heading "wunderground: '${_query}'"
   curl -s \
     "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${_query}" \
     | perl -ne 's/&amp;deg;/°/g;/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"'
