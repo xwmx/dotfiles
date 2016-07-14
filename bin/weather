@@ -145,6 +145,8 @@ _weather() {
     _hr
     _wunderground "${_query:-}"
   else
+    _wttrin --short "${_query:-}"
+    printf "\n"
     _wunderground "${_query:-}"
   fi
 }
@@ -152,14 +154,42 @@ _weather() {
 # _wttrin()
 #
 # Usage:
-#   _wttrin <query>
+#   _wttrin [-s|--short] <query>
+#
+# Options:
+#   -s --short  Print only current weather.
 #
 # Description:
 #   Print weather information from wttr.in for <query>.
 _wttrin() {
-  local _query="${1}"
+  local _arguments=()
+  local _query=
+  local _output=
+  local _print_short=0
+
+  for __arg in "$@"
+  do
+    case "${__arg}" in
+      -s|--short)
+        _print_short=1
+        ;;
+      *)
+        _arguments+=($__arg)
+        ;;
+    esac
+  done
+
+  _query="${_arguments[*]}"
+
   _print_heading "wttr.in: '${_query}'"
-  curl "http://wttr.in/${_query}"
+  _output=$(curl -s "http://wttr.in/${_query}")
+
+  if ((_print_short))
+  then
+    printf "%s\n" "${_output}" | head -7
+  else
+    printf "%s\n" "${_output}"
+  fi
 }
 
 # _wunderground()
