@@ -26,6 +26,13 @@
 #   - http://forecast.weather.gov/MapClick.php?lat=34.4403&lon=-119.7352&unit=0&lg=english&FcstType=dwml
 # - https://github.com/schachmat/wego/
 
+# _help()
+#
+# Usage:
+#   _help
+#
+# Description:
+#   Print help information.
 _help() {
   cat <<HEREDOC
                       __  __
@@ -90,6 +97,13 @@ _print_line() {
   printf "%s\n" "${_line// /-}"
 }
 
+# _weather()
+#
+# Usage:
+#   _weather <arguments>
+#
+# Description:
+#   Program 'main' function.
 _weather() {
   local _arguments=()
   local _query="93105"
@@ -135,12 +149,26 @@ _weather() {
   fi
 }
 
+# _wttrin()
+#
+# Usage:
+#   _wttrin <query>
+#
+# Description:
+#   Print weather information from wttr.in for <query>.
 _wttrin() {
   local _query="${1}"
   _print_heading "wttr.in: '${_query}'"
   curl "http://wttr.in/${_query}"
 }
 
+# _wunderground()
+#
+# Usage:
+#   _wunderground <query>
+#
+# Description:
+#   Print weather information from Wunderground for <query>.
 _wunderground() {
   local _query="${1}"
   _print_heading "wunderground: '${_query}'"
