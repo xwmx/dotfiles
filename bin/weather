@@ -9,8 +9,16 @@
 # Print weather information from Wunderground or wttr.in.
 #
 # Usage:
-#   weather         # weather for 93015 (Santa Barbara)
-#   weather [query] # weather data for a given query, zip codes preferred.
+#   weather [-a] [<query>]
+#
+# Options:
+#   -a --all  Print information from all services.
+#
+# Arguments:
+#   <query>  A postal code or city name.
+#
+# Description:
+#   Print weather information from Wunderground or wttr.in.
 #
 # Other weather data sources and command links:
 # - http://graphical.weather.gov/xml/
@@ -26,12 +34,29 @@ _help() {
 | |/ |/ /  __/ /_/ / /_/ / / /  __/ /
 |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/
 
-Print weather information from Wunderground or wttr.in.
-
 Usage:
-  weather         # weather for 93015 (Santa Barbara)
-  weather [query] # weather data for a given query, zip codes preferred.
+  weather [-a] [<query>]
+
+Options:
+  -a --all  Print information from all services.
+
+Arguments:
+  <query>  A postal code or city name [default: 93105].
+
+Description:
+  Print weather information from Wunderground or wttr.in.
 HEREDOC
+}
+
+# _hr()
+#
+# Usage:
+#   _hr
+#
+# Description:
+#   Print a horizontal line with a length matching the width of the terminal.
+_hr() {
+  printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 }
 
 _weather() {
@@ -48,6 +73,9 @@ _weather() {
         ;;
       -g|--graph|-c|--chart|-l|--long|wttrin|wttr.in)
         _service="wttr.in"
+        ;;
+      -a|--all)
+        _service="all"
         ;;
       *)
         _arguments+=($__arg)
@@ -66,6 +94,15 @@ _weather() {
   elif [[ "${_service}" == "wttr.in" ]]
   then
     _wttrin "${_query:-}"
+  elif [[ "${_service}" == "all" ]]
+  then
+    printf "%s\n" "wttr.in:"
+    printf "%s\n" "--------"
+    _wttrin "${_query:-}"
+    _hr
+    printf "%s\n" "wunderground:"
+    printf "%s\n" "-------------"
+    _wunderground "${_query:-}"
   else
     _wunderground "${_query:-}"
   fi
