@@ -6,7 +6,7 @@
 # | |/ |/ /  __/ /_/ / /_/ / / /  __/ /
 # |__/|__/\___/\__,_/\__/_/ /_/\___/_/
 #
-# Get and print weather forecast data via the Wunderground API
+# Print weather information from Wunderground or wttr.in.
 #
 # Usage:
 #   weather         # weather for 93015 (Santa Barbara)
@@ -18,31 +18,70 @@
 #   - http://forecast.weather.gov/MapClick.php?lat=34.4403&lon=-119.7352&unit=0&lg=english&FcstType=dwml
 # - https://github.com/schachmat/wego/
 
-_weather() {
-_query="${*:-93105}"
-
-curl -s \
-"http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${_query}" | \
-perl -ne 's/&amp;deg;/°/g;/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"'
-}
-
-usage="\
+_help() {
+  cat <<HEREDOC
                       __  __
  _      _____  ____ _/ /_/ /_  ___  _____
 | | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/
 | |/ |/ /  __/ /_/ / /_/ / / /  __/ /
 |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/
 
-Get and print weather forecast data via the Wunderground API
+Print weather information from Wunderground or wttr.in.
 
 Usage:
   weather         # weather for 93015 (Santa Barbara)
   weather [query] # weather data for a given query, zip codes preferred.
-"
-if [[ "$1" = "-h" ]]
-then
-  printf "%s\n" "$usage"
-  exit 0
-fi
+HEREDOC
+}
+
+_weather() {
+  local _arguments=()
+  local _query="93105"
+  local _print_help=0
+  local _service="wunderground"
+
+  for __arg in "$@"
+  do
+    case "${__arg}" in
+      -h|--help)
+        _print_help=1
+        ;;
+      -g|--graph|-c|--chart|-l|--long|wttrin|wttr.in)
+        _service="wttr.in"
+        ;;
+      *)
+        _arguments+=($__arg)
+        ;;
+    esac
+  done
+
+  if [[ -n "${_arguments[*]:-}" ]]
+  then
+    _query="${_arguments[*]}"
+  fi
+
+  if ((_print_help))
+  then
+    _help && exit 0
+  elif [[ "${_service}" == "wttr.in" ]]
+  then
+    _wttrin "${_query:-}"
+  else
+    _wunderground "${_query:-}"
+  fi
+}
+
+_wttrin() {
+  local _query="${1}"
+  curl "http://wttr.in/${_query}"
+}
+
+_wunderground() {
+  local _query="${1}"
+
+  curl -s \
+    "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${_query}" \
+    | perl -ne 's/&amp;deg;/°/g;/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"'
+}
 
 _weather "$@"
