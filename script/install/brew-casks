@@ -594,6 +594,15 @@ brew cask install hammerspoon
 # https://jadengeller.github.io/Helium/
 brew cask install jadengeller-helium
 
+# HyperTerm
+#
+# JS/HTML/CSS Terminal
+#
+# https://hyperterm.org/
+# https://github.com/zeit/hyperterm
+# https://news.ycombinator.com/item?id=12102100
+brew cask install hyperterm
+
 # Inform
 #
 # Inform is a design system for interactive fiction based on natural language.
