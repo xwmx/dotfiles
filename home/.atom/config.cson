@@ -46,6 +46,7 @@
       "nuclide-blame"
       "linter-markdown"
     ]
+    excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
       "jumpy"
     ]
