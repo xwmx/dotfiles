@@ -24,6 +24,7 @@
   "autocomplete-plus":
     useAlternateScoring: true
   core:
+    automaticallyUpdate: false
     disabledPackages: [
       "metrics"
       "exception-reporting"
