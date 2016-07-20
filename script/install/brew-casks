@@ -685,7 +685,7 @@ then
   fi
   if _homebrew_cask_is_installed "iterm2-beta"
   then
-    brew cask uninstall iterm2-beta
+    brew cask uninstall iterm2-beta --force
   fi
   brew cask install "iterm2"
 fi
