@@ -25,6 +25,7 @@
     useAlternateScoring: true
   core:
     automaticallyUpdate: false
+    destroyEmptyPanes: false
     disabledPackages: [
       "metrics"
       "exception-reporting"
