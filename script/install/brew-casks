@@ -642,7 +642,8 @@ brew cask install istat-menus
 #
 # http://www.iterm2.com/
 #
-# NOTE: Uninstall pinned version and use iterm2-nightly again.
+# NOTE: Uninstall pinned, nightly, and beta casks and use the standard
+# iterm2 cask.
 if [[ -z "$(pgrep iTerm2)" ]] # if iTerm2 is not running.
 then
   if _homebrew_cask_is_installed "iterm2-nightly-pinned"
@@ -653,7 +654,11 @@ then
   then
     brew cask uninstall iterm2-nightly --force
   fi
-  brew cask install iterm2-beta
+  if _homebrew_cask_is_installed "iterm2-beta"
+  then
+    brew cask uninstall iterm2-beta
+  fi
+  brew cask install "iterm2"
 fi
 
 # Itsycal
