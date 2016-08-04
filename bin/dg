@@ -6,20 +6,36 @@
 #
 # NOTE: This relies on ANY queries, which are blocked by some DNS providers such as CloudFlare.
 #
-# via: http://stackoverflow.com/a/24563532
-#
-# See alternative implementation: http://stackoverflow.com/a/29646509
+# via:
+# - http://stackoverflow.com/a/29646509
+# - http://stackoverflow.com/a/24563532
 ###############################################################################
 
-COMMON_SUBDOMAINS=(www mail smtp pop imap blog en ftp ssh login)
-if [[ "$2" == "x" ]]; then
-    dig +nocmd "$1" +noall +answer "${3:-any}"
-    wild_ips="$(dig +short "*.$1" "${3:-any}" | tr '\n' '|')"
-    wild_ips="${wild_ips%|}"
-    for sub in "${COMMON_SUBDOMAINS[@]}"; do
-        dig +nocmd "$sub.$1" +noall +answer "${3:-any}"
-    done | grep -vE "${wild_ips}"
-    dig +nocmd "*.$1" +noall +answer "${3:-any}"
+#!/bin/bash
+set -e; set -u
+COMMON_SUBDOMAINS="www mail mx a.mx smtp pop imap blog en ftp ssh login"
+EXTENDED=""
+
+while :; do case "$1" in
+  --) shift; break ;;
+  -x) EXTENDED=y; shift ;;
+  -s) NS="$2"; shift 2 ;;
+  *) break ;;
+esac; done
+DOM="$1"; shift
+TYPE="${1:-any}"
+
+test "${NS:-}" || NS=$(dig +short  SOA "$DOM" | awk '{print $1}')
+test "$NS" && NS="@$NS"
+
+if test "$EXTENDED"; then
+  dig +nocmd $NS "$DOM" +noall +answer "$TYPE"
+  wild_ips=$(dig +short "$NS" "*.$DOM" "$TYPE" | tr '\n' '|')
+  wild_ips="${wild_ips%|}"
+  for sub in $COMMON_SUBDOMAINS; do
+    dig +nocmd $NS "$sub.$DOM" +noall +answer "$TYPE"
+  done | cat  #grep -vE "${wild_ips}"
+  dig +nocmd $NS "*.$DOM" +noall +answer "$TYPE"
 else
-    dig +nocmd "$1" +noall +answer "${2:-any}"
+  dig +nocmd $NS "$DOM" +noall +answer "$TYPE"
 fi
