@@ -1,0 +1,25 @@
+#!/bin/bash
+###############################################################################
+# dg
+#
+# List all records for a given domain.
+#
+# NOTE: This relies on ANY queries, which are blocked by some DNS providers such as CloudFlare.
+#
+# via: http://stackoverflow.com/a/24563532
+#
+# See alternative implementation: http://stackoverflow.com/a/29646509
+###############################################################################
+
+COMMON_SUBDOMAINS=(www mail smtp pop imap blog en ftp ssh login)
+if [[ "$2" == "x" ]]; then
+    dig +nocmd "$1" +noall +answer "${3:-any}"
+    wild_ips="$(dig +short "*.$1" "${3:-any}" | tr '\n' '|')"
+    wild_ips="${wild_ips%|}"
+    for sub in "${COMMON_SUBDOMAINS[@]}"; do
+        dig +nocmd "$sub.$1" +noall +answer "${3:-any}"
+    done | grep -vE "${wild_ips}"
+    dig +nocmd "*.$1" +noall +answer "${3:-any}"
+else
+    dig +nocmd "$1" +noall +answer "${2:-any}"
+fi
