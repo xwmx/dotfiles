@@ -19,6 +19,25 @@ then
 fi
 
 ###############################################################################
+# User Validation
+###############################################################################
+
+__validate_user() {
+  local _current_user
+  _current_user="$(whoami)"
+  local _homebrew_user
+  _homebrew_user="$(ls -ld /usr/local/Cellar | awk '{print $3}' )"
+  if [[ "${_current_user}" != "${_homebrew_user}" ]]
+  then
+    printf \
+      "\`brew\` must be run as the homebrew user ('%s')\nSkipping...\n" \
+      "${_homebrew_user}"
+    exit 0
+  fi
+}
+__validate_user
+
+###############################################################################
 # Helpers
 ###############################################################################
 
