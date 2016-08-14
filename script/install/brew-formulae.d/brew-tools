@@ -2045,6 +2045,18 @@ brew install vim --override-system-vi
 # https://github.com/ofavre/vimcat
 brew install vimpager
 
+# vv
+#
+# 🌐 Variable VVV - a VVV Site Creation Wizard
+#
+# vv makes it extremely easy to create a new WordPress site using Varying
+# Vagrant Vagrants. vv supports site creation with many different options;
+# site blueprints to set up all your plugins, themes, and more; deployments;
+# and lots more features.
+#
+# https://github.com/bradp/vv
+brew install bradp/vv/vv
+
 # w3m
 #
 # w3m is a text-based web browser as well as a pager like `more' or `less'.
