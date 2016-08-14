@@ -76,3 +76,11 @@ vagrant plugin install vagrant-hostsupdater
 #
 # https://github.com/emyl/vagrant-triggers
 vagrant plugin install vagrant-triggers
+
+# vagrant-vbguest
+#
+# vagrant-vbguest is a Vagrant plugin which automatically installs the host's
+# VirtualBox Guest Additions on the guest system.
+#
+# https://github.com/dotless-de/vagrant-vbguest
+vagrant plugin install vagrant-vbguest
