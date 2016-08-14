@@ -26,7 +26,19 @@ vagrant plugin install vagrant-aws
 # droplets (instances).
 #
 # https://github.com/smdahlen/vagrant-digitalocean
-vagrant plugin install vagrant-digitalocean
+#
+# NOTE: This fails to install in some cases. Setting `$ARCHFLAGS` to a
+# temporary value as a workaround. More information:
+# https://github.com/devopsgroup-io/vagrant-digitalocean/issues/232
+_install_vagrant_digitalocean() {
+  local _archflags_original="${ARCHFLAGS}"
+  printf "⚠️  Temporarily setting \$ARCHFLAGS...\n"
+  export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
+  vagrant plugin install vagrant-digitalocean
+  export ARCHFLAGS="${_archflags_original}"
+  printf "⚠️  \$ARCHFLAGS set to original value: '%s'\n" "${ARCHFLAGS}"
+}
+_install_vagrant_digitalocean
 
 # vagrant-ghost
 #
