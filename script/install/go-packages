@@ -222,6 +222,20 @@ go get -u -v github.com/visionmedia/stack/cmd/stack
 # https://github.com/gizak/termui
 go get -u -v github.com/gizak/termui
 
+# Thyme
+#
+# Automatically track which applications you use and for how long.
+#
+# - Simple CLI to track and analyze your application usage
+# - Detailed charts that let you profile how you spend your time
+# - Stores data locally, giving you full control and privacy
+# - Open-source, well-documented, and easily extensible
+#
+# https://github.com/sourcegraph/thyme
+# https://text.sourcegraph.com/thyme-a-simple-cli-to-measure-human-time-and-focus-577b87337b9c
+# https://news.ycombinator.com/item?id=12298747
+go get -u github.com/sourcegraph/thyme/cmd/thyme
+
 # vet
 #
 # Vet examines Go source code and reports suspicious constructs, such as Printf
