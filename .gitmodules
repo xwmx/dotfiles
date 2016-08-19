@@ -308,3 +308,6 @@
 [submodule "vendor/com/github/mchav/with"]
 	path = vendor/com/github/mchav/with
 	url = https://github.com/mchav/with.git
+[submodule "vendor/com/github/joh6nn/shrepl"]
+	path = vendor/com/github/joh6nn/shrepl
+	url = https://github.com/joh6nn/shrepl.git
