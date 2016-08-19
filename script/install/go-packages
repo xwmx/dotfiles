@@ -24,6 +24,13 @@ go get -u -v github.com/boltdb/bolt/...
 # https://github.com/jingweno/ccat
 go get -u -v github.com/jingweno/ccat
 
+# Delve
+#
+# Delve is a debugger for the Go programming language.
+#
+# https://github.com/derekparker/delve
+go get github.com/derekparker/delve/cmd/dlv
+
 # elvish
 #
 # An experimental Unix shell
