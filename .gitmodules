@@ -305,3 +305,6 @@
 [submodule "vendor/com/github/guarinogabriel/mac-cli"]
 	path = vendor/com/github/guarinogabriel/mac-cli
 	url = https://github.com/guarinogabriel/mac-cli.git
+[submodule "vendor/com/github/mchav/with"]
+	path = vendor/com/github/mchav/with
+	url = https://github.com/mchav/with.git
