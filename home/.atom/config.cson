@@ -107,6 +107,8 @@
     ]
     preserveLastSearch: true
     useAlternateScoring: true
+  "go-debug":
+    panelInitialVisible: false
   "go-plus":
     goPath: "~/.go"
   jumpy:
