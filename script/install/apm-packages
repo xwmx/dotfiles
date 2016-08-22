@@ -179,6 +179,14 @@ apm install color-picker
 # https://github.com/kevinsawicki/command-logger
 apm install "command-logger"
 
+# crystal
+#
+# Crystal IDE for Atom and Nuclide.
+#
+# https://atom.io/packages/crystal
+# https://github.com/atom-crystal/atom-crystal
+apm install crystal
+
 # editor-stats
 #
 # Display a graph of keyboard and mouse usage for the last 6 hours.
@@ -383,7 +391,13 @@ apm install linter-coffeelint
 #
 # https://atom.io/packages/linter-crystal
 # https://github.com/atom-crystal/linter-crystal
-apm install linter-crystal
+#
+# NOTE: This package has been deprecated in favor of crystal
+# TODO: Remove this after the package has been removed from all systems.
+if _apm_package_is_installed "linter-crystal"
+then
+  apm uninstall linter-crystal
+fi
 
 # linter-csslint
 #
