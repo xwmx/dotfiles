@@ -620,6 +620,17 @@ brew install git-annex
 # https://github.com/tj/git-extras
 brew install git-extras
 
+# git-lfs
+#
+# Git Large File Storage
+#
+# Git LFS is a command line extension and specification for managing large
+# files with Git.
+#
+# https://git-lfs.github.com/
+# https://github.com/github/git-lfs
+brew install git-lfs
+
 # go / golang
 #
 # Go is an open source programming language that makes it easy to build simple,
