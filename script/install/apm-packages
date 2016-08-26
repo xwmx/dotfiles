@@ -10,6 +10,7 @@
 ###############################################################################
 
 # Get the path to the apm executable.
+export __APM
 __APM=$(which apm)
 
 # If the apm command is not found, exit.
@@ -29,6 +30,7 @@ fi
 _apm_package_is_installed() {
   if [[ -z "${__APM_LIST_CACHE:-}" ]]
   then
+    export __APM_LIST_CACHE
     __APM_LIST_CACHE="$(apm list --installed --bare)"
   fi
   printf "%s\n" "${__APM_LIST_CACHE}" | grep --ignore-case --quiet "^${1:-}@"
@@ -50,7 +52,8 @@ apm() {
       local_entry=$(apm ls | grep --ignore-case "${2:-}")
       "${__APM}" install "${2}" \
         && printf "%s\n" "$local_entry" \
-        && __APM_LS_CACHE="$(apm list --installed --bare)"
+        && export __APM_LIST_CACHE \
+        && __APM_LIST_CACHE="$(apm list --installed --bare)"
     fi
   else
     "${__APM}" "${@}"
