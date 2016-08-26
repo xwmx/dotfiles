@@ -48,10 +48,10 @@ apm() {
   then
     if ! _apm_package_is_installed "${2:-}"
     then
-      local local_entry
-      local_entry=$(apm ls | grep --ignore-case "${2:-}")
+      local _local_entry
+      _local_entry=$(apm ls | grep --ignore-case "${2:-}")
       "${__APM}" install "${2}" \
-        && printf "%s\n" "$local_entry" \
+        && printf "%s\n" "${_local_entry}" \
         && export __APM_LIST_CACHE \
         && __APM_LIST_CACHE="$(apm list --installed --bare)"
     fi
