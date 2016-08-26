@@ -162,7 +162,15 @@ apm install atom-typescript
 # Display possible completions in the editor while typing
 #
 # https://github.com/atom-community/autocomplete-plus
-apm install autocomplete-plus
+#
+# NOTE: This package is bundled with Atom and should not be explicitly
+# installed.
+# TODO: Remove this section when the package has been uninstalled from all
+# user accounts.
+if _apm_package_is_installed "autocomplete-plus"
+then
+  apm uninstall "autocomplete-plus"
+fi
 
 # box-edit
 #
