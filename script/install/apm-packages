@@ -47,7 +47,7 @@ apm() {
 #   0  If a package with the given name is installed.
 #   1  If not.
 _apm_package_is_installed() {
-  [[ "$(apm show "${1:-}" &>/dev/null)" ]]
+  apm list --installed --bare | grep --quiet "^${1:-}@"
 }
 
 ###############################################################################
