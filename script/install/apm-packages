@@ -10,10 +10,10 @@
 ###############################################################################
 
 # Get the path to the apm executable.
-_apm=$(which apm)
+__APM=$(which apm)
 
 # If the apm command is not found, exit.
-if [[ ! -e "${_apm}" ]]
+if [[ ! -e "${__APM}" ]]
 then
   printf "apm not found. Skipping...\n" && exit 0
 fi
@@ -48,12 +48,12 @@ apm() {
     then
       local local_entry
       local_entry=$(apm ls | grep --ignore-case "${2:-}")
-      "$_apm" install "${2}" \
+      "${__APM}" install "${2}" \
         && printf "%s\n" "$local_entry" \
         && __APM_LS_CACHE="$(apm list --installed --bare)"
     fi
   else
-    "$_apm" "${@}"
+    "${__APM}" "${@}"
   fi
 }
 
