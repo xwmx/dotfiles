@@ -276,7 +276,12 @@ brew cask install calibre
 # Open source cloud & desktop IDE.
 #
 # https://www.codebox.io
-brew cask install codebox
+#
+# TODO: Remove this secton after it has been removed from all systems.
+if _homebrew_cask_is_installed "codebox"
+then
+  brew cask uninstall codebox --force
+fi
 
 # Consul
 #
