@@ -10,6 +10,9 @@
 # Description:
 #   Start an HTTP server from a directory, optionally specifying the port.
 #   When no port is specified, the default port is '8080'.
+#
+# Big list of http static server one-liners:
+#   https://gist.github.com/willurd/5720255
 serve() {
   _print_serve_help() {
     cat <<HEREDOC
@@ -20,6 +23,9 @@ Usage:
 Description:
   Start an HTTP server from a directory, optionally specifying the port.
   When no port is specified, the default port is '8080'.
+  
+Big list of http static server one-liners:
+  https://gist.github.com/willurd/5720255
 HEREDOC
   }
 
@@ -29,18 +35,18 @@ HEREDOC
     return 0
   fi
 
-  if ! hash "python" 2>/dev/null
-  then
-    printf "Python is required, but a \`python\` executable was not found.\n"
-    return 1
-  fi
+  local _port="${1:-8080}"
 
-  local port="${1:-8080}"
-  # Set the default Content-Type to `text/plain` instead of
-  # `application/octet-stream` and serve everything as UTF-8 (although not
-  # technically correct, this doesn’t break anything for binary files)
-  local server_script
-  read -r -d '' server_script <<HEREDOC
+  if hash "ruby" 2>/dev/null
+  then
+    ruby -run -e httpd . -p "${_port}"
+  elif hash "python" 2>/dev/null
+  then
+    # Set the default Content-Type to `text/plain` instead of
+    # `application/octet-stream` and serve everything as UTF-8 (although not
+    # technically correct, this doesn’t break anything for binary files)
+    local server_script
+    read -r -d '' server_script <<HEREDOC
 import SimpleHTTPServer
 map = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map
 map[""] = "text/plain"
@@ -48,7 +54,13 @@ for key, value in map.items():
     map[key] = value + ";charset=UTF-8"
     SimpleHTTPServer.test()
 HEREDOC
-  python -c "${server_script}" "${port}"
+    python -c "${server_script}" "${_port}"
+  else
+cat <<HEREDOC
+Ruby or Python is required, but neither was found."
+HEREDOC
+    return 1
+  fi
 }
 alias server='serve'
 
