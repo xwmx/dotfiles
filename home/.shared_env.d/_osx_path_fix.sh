@@ -24,24 +24,27 @@
 #   $HOME/.zprofile.d/osx_path_fix.zsh
 ##############################################################################
 
-if is_zsh && is_osx && is_el_capitan
+if is_zsh && is_osx
 then
-  # Call `path_helper`. Adapted from /etc/zprofile on OS X El Capitan.
-  #
-  # Note that if this isn't run, then /usr/local/bin isn't added to the $PATH.
-  if [ -x /usr/libexec/path_helper ]
+  if is_el_capitan || is_sierra
   then
-    eval `/usr/libexec/path_helper -s`
+    # Call `path_helper`. Adapted from /etc/zprofile on OS X El Capitan.
+    #
+    # Note that if this isn't run, then /usr/local/bin isn't added to the $PATH.
+    if [ -x /usr/libexec/path_helper ]
+    then
+      eval `/usr/libexec/path_helper -s`
+    fi
+
+    # Explicitly prepend another '/usr/local/bin' segment, which is used by
+    # homebrew.
+    #
+    # The order is determined by '/etc/paths', which is ordered differently on
+    # some of my systems. On a fresh OS X install, '/usr/local/bin' is the last
+    # iterm in this file.
+    PATH="/usr/local/bin:${PATH}"
+
+    # NOTE: make sure `setopt global_rcs` is set in .zprofile or .zprofile.d.
+    setopt no_global_rcs
   fi
-
-  # Explicitly prepend another '/usr/local/bin' segment, which is used by
-  # homebrew.
-  #
-  # The order is determined by '/etc/paths', which is ordered differently on
-  # some of my systems. On a fresh OS X install, '/usr/local/bin' is the last
-  # iterm in this file.
-  PATH="/usr/local/bin:${PATH}"
-
-  # NOTE: make sure `setopt global_rcs` is set in .zprofile or .zprofile.d.
-  setopt no_global_rcs
 fi
