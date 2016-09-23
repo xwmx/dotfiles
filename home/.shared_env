@@ -42,6 +42,18 @@ reload() {
 # OS Tests
 ###############################################################################
 
+# is_macos()
+#
+# Usage:
+#   is_macos
+#
+# Returns:
+#   0  If current OS is darwin.
+#   1  If not.
+is_macos() {
+  [[ "$OSTYPE" =~ ^darwin ]]
+}
+
 # is_osx()
 #
 # Usage:
