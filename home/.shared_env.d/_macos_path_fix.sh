@@ -1,5 +1,5 @@
 ###############################################################################
-# _osx_path_fix.zsh
+# _macos_path_fix.zsh
 #
 # OS X El Capitan moves the call to `path_helper`, "helper for constructing
 # PATH environment variable," from /etc/zshenv to /usr/zprofile, which makes
@@ -21,7 +21,7 @@
 #   http://superuser.com/questions/482098/path-is-driving-me-nuts
 #
 # Other files:
-#   $HOME/.zprofile.d/osx_path_fix.zsh
+#   $HOME/.zprofile.d/macos_path_fix.zsh
 ##############################################################################
 
 if is_zsh && is_osx
