@@ -13,7 +13,7 @@
 # On El Capitan, a "...deprecated Carbon Component Manager..." error message
 # is displayed when a track is selected to play. More information:
 # https://github.com/cmus/cmus/issues/331
-if is_osx && is_el_capitan
+if is_macos && is_el_capitan
 then
   alias cmus="cmus 2> /dev/null"
 fi

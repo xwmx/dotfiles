@@ -24,7 +24,7 @@
 #   $HOME/.zprofile.d/macos_path_fix.zsh
 ##############################################################################
 
-if is_zsh && is_osx
+if is_zsh && is_macos
 then
   if is_el_capitan || is_sierra
   then

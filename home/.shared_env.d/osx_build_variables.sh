@@ -2,7 +2,7 @@
 # Build / Configure Environment Variables
 ###############################################################################
 
-if is_osx
+if is_macos
 then
   export ARCHFLAGS='-arch x86_64'
   export CFLAGS='-arch x86_64'
