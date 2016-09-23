@@ -2,7 +2,7 @@
 ###############################################################################
 # sublime-text-3
 #
-# Customize the Sublime Text 3 setup on OS X
+# Customize the Sublime Text 3 setup on macOS
 ###############################################################################
 
 ###############################################################################
@@ -11,7 +11,7 @@
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "sublime-text-3 is only supported on OS X.\nSkipping...\n"
+  printf "sublime-text-3 is only supported on macOS.\nSkipping...\n"
   exit 0
 fi
 
@@ -25,11 +25,11 @@ fi
 #   link_config
 #
 # Description:
-#   Add links from the OS X preferences location to the ~/.config location.
+#   Add links from the macOS preferences location to the ~/.config location.
 #   ~/.config is used on linux systems and versioned within in this
 #   configuration project.
 link_config() {
-  local osx_prefs_path="${HOME}/Library/Application Support/Sublime Text 3"
+  local macos_prefs_path="${HOME}/Library/Application Support/Sublime Text 3"
   local config_path="${HOME}/.config/sublime-text-3"
 
   if [[ ! -e "${config_path}" ]]
@@ -38,21 +38,21 @@ link_config() {
     exit 0
   fi
 
-  if [[ -L "$osx_prefs_path" ]]
+  if [[ -L "$macos_prefs_path" ]]
   then
-    printf "%s is already a link. Skipping...\n" "${osx_prefs_path}"
+    printf "%s is already a link. Skipping...\n" "${macos_prefs_path}"
     exit 0
-  elif [[ ! -d "${osx_prefs_path}" ]]
+  elif [[ ! -d "${macos_prefs_path}" ]]
   then
-    printf "%s is not a directory. Skipping...\n" "${osx_prefs_path}"
+    printf "%s is not a directory. Skipping...\n" "${macos_prefs_path}"
     exit 0
-  elif [[ -e "${osx_prefs_path}.bak" ]]
+  elif [[ -e "${macos_prefs_path}.bak" ]]
   then
     printf "%s.bak exists. Manually remove it to proceed. Skipping...\n" \
-      "${osx_prefs_path}"
+      "${macos_prefs_path}"
   else
-    mv "${osx_prefs_path}" "${osx_prefs_path}.bak"
-    ln -s "${config_path}" "${osx_prefs_path}"
+    mv "${macos_prefs_path}" "${macos_prefs_path}.bak"
+    ln -s "${config_path}" "${macos_prefs_path}"
   fi
 }
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ###############################################################################
-# osx.sh
+# macOS
 #
-# Configure and set various preferences for OS X and default Apple applications
+# Configure and set various preferences for macOS and default Apple apps.
 ###############################################################################
 
 ###############################################################################
@@ -11,7 +11,7 @@
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "osx.sh is only supported on OS X.\nSkipping...\n"
+  printf "script/configure/macos is only supported on macOS.\nSkipping...\n"
   exit 0
 fi
 
@@ -57,6 +57,18 @@ _is_yosemite() {
 #   Returns true if the current system is running OS X 10.11 El Capitan.
 _is_el_capitan() {
   [[ "$(_macos_version)" == "11" ]]
+}
+
+# is_sierra()
+#
+# Usage:
+#   is_sierra
+#
+# Returns:
+#   0  If current OS is macOS 10.12 Sierra.
+#   1  If not.
+is_sierra() {
+  [[ "$(_macos_version)" == "12" ]]
 }
 
 ###############################################################################

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ###############################################################################
-# osx_atom
+# macos_atom
 #
-# Custom Atom configuration on OS X.
+# Custom Atom configuration on macOS.
 #
 # https://atom.io
 ###############################################################################
@@ -13,14 +13,14 @@
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "osx_atom is only supported on OS X.\nSkipping...\n"
+  printf "macos_atom is only supported on macOS.\nSkipping...\n"
   exit 0
 fi
 
 ###############################################################################
 # Make Atom.app launch with shell environment.
 #
-# When an app is launched on OS X, it doesn't inherit the shell environment
+# When an app is launched on macOS, it doesn't inherit the shell environment
 # unless it is launched from a shell. In order to get around this, replace
 # the application binary with a script that launches it.
 #

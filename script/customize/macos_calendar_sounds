@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ###############################################################################
-# osx_calendar_sounds
+# macos_calendar_sounds
 #
-# Customize the event notification sounds in OS X Calendar.
+# Customize the event notification sounds in macOS Calendar.
 #
 # Calendar doesn't provide a way to customize notification sounds for events.
 # As a result, all Calendar notifications use the 'Basso' sound. In order to
@@ -19,7 +19,7 @@
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "osx_calendar_sounds is only supported on OS X.\nSkipping...\n"
+  printf "macos_calendar_sounds is only supported on macOS.\nSkipping...\n"
   exit 0
 fi
 
@@ -28,7 +28,7 @@ fi
 ###############################################################################
 
 # TODO: Everything
-printf "osx_calendar_sounds not implemented.\n" && exit 0
+printf "macos_calendar_sounds not implemented.\n" && exit 0
 
 # _customize_event_notification_sound
 #

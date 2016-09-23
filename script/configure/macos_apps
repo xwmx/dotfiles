@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ###############################################################################
-# osx_apps.sh
+# macosapps
 #
-# Configure and set various preferences for non-default OS X applications,
+# Configure and set various preferences for non-default macOS applications,
 # including developer and third-party applications.
 ###############################################################################
 
@@ -12,7 +12,7 @@
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "osx_apps.sh is only supported on OS X.\nSkipping...\n"
+  printf "script/configure/macos_apps is only supported on macOS.\nSkipping...\n"
   exit 0
 fi
 

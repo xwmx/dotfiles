@@ -11,7 +11,7 @@
 
 if [[ ! "$OSTYPE" =~ ^darwin ]]
 then
-  printf "icons is only supported on OS X.\nSkipping...\n"
+  printf "icons is only supported on macOS.\nSkipping...\n"
   exit 0
 fi
 
