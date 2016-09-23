@@ -1,0 +1,22 @@
+###############################################################################
+# Cargo: packages for Rust
+#
+# The Rust community’s crate host
+#
+# Cargo is a tool that allows Rust projects to declare their various
+# dependencies and ensure that you’ll always get a repeatable build.
+#
+# https://crates.io/
+###############################################################################
+
+# ripgrep
+#
+# ripgrep is a command line search tool that combines the usability of The
+# Silver Searcher (an ack clone) with the raw speed of GNU grep. ripgrep has
+# first class support on Windows, Mac and Linux, with binary downloads
+# available for every release.
+#
+# https://github.com/BurntSushi/ripgrep
+# http://blog.burntsushi.net/ripgrep/
+# https://news.ycombinator.com/item?id=12564442
+cargo install ripgrep
