@@ -93,6 +93,19 @@ is_el_capitan() {
   [ "$___osx_version" -eq "11" ]
 }
 
+# is_sierra()
+#
+# Usage:
+#   is_sierra
+#
+# Returns:
+#   0  If current OS is macOS 10.12 Sierra.
+#   1  If not.
+is_sierra() {
+  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+  [ "$___osx_version" -eq "12" ]
+}
+
 # is_linux()
 #
 # Usage:
