@@ -7,7 +7,7 @@
 # https://github.com/zsh-users/antigen
 ###############################################################################
 
-source "$HOME/.antigen/antigen.zsh"
+source "${HOME}/.antigen/antigen.zsh"
 
 # zsh-completions
 #

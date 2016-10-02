@@ -19,7 +19,7 @@
 # Verbose Init
 ###############################################################################
 
-. "$HOME/.shared_verbose_init"
+. "${HOME}/.shared_verbose_init"
 __verbose_init printf "Loading .zshrc\n"
 
 ###############################################################################
@@ -51,20 +51,20 @@ __verbose_init printf "Loading .zshrc\n"
 #   since homebrew's non-root philosophy conflicts with `compaudit`'s
 #   expectations.
 _modify_fpath() {
-  local site_functions_path
-  local site_functions_owner
-  local current_user
+  local _site_functions_path
+  local _site_functions_owner
+  local _current_user
 
   site_functions_path="/usr/local/share/zsh/site-functions"
 
-  if [[ -e "$site_functions_path" ]]
+  if [[ -e "${_site_functions_path}" ]]
   then
-    site_functions_owner="$(ls -ld "$site_functions_path" | awk '{print $3}')"
-    current_user="$(whoami)"
+    _site_functions_owner="$(ls -ld "${_site_functions_path}" | awk '{print $3}')"
+    _current_user="$(whoami)"
 
-    if [[ "$site_functions_owner" != "$current_user" ]]
+    if [[ "${_site_functions_owner}" != "${_current_user}" ]]
     then
-      fpath=( "${fpath[@]/$site_functions_path}" )
+      fpath=( "${fpath[@]/$_site_functions_path}" )
     fi
   fi
 }
@@ -74,7 +74,7 @@ _modify_fpath
 ###############################################################################
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -119,7 +119,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-ZSH_CUSTOM="$HOME/.oh-my-zsh.custom"
+ZSH_CUSTOM="${HOME}/.oh-my-zsh.custom"
 
 # Which plugins would you like to load? (plugins can be found in
 # ~/.oh-my-zsh/plugins/*)
@@ -142,7 +142,7 @@ plugins=(
   wd
  )
 
-source "$ZSH/oh-my-zsh.sh"
+source "${ZSH}/oh-my-zsh.sh"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -179,9 +179,9 @@ source "$ZSH/oh-my-zsh.sh"
 #
 # This is loaded after oh-my-zsh since some things are intended to override
 # the oh-my-zsh settings.
-if [[ -f "$HOME/.shared_rc" ]]
+if [[ -f "${HOME}/.shared_rc" ]]
 then
-  source "$HOME/.shared_rc"
+  source "${HOME}/.shared_rc"
 fi
 
 ###############################################################################
@@ -189,9 +189,9 @@ fi
 ###############################################################################
 
 # Source everything in .zshrc.d if it's present.
-if [[ -d "$HOME/.zshrc.d" ]]
+if [[ -d "${HOME}/.zshrc.d" ]]
 then
-  source_dir "$HOME/.zshrc.d"
+  source_dir "${HOME}/.zshrc.d"
 fi
 
 ###############################################################################
@@ -199,7 +199,7 @@ fi
 ###############################################################################
 
 # Load local config if present
-if [[ -f "$HOME/.zshrc.local" ]]
+if [[ -f "${HOME}/.zshrc.local" ]]
 then
-  source "$HOME/.zshrc.local"
+  source "${HOME}/.zshrc.local"
 fi

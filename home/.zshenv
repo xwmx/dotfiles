@@ -20,7 +20,7 @@
 # Verbose Init
 ###############################################################################
 
-. "$HOME/.shared_verbose_init"
+. "${HOME}/.shared_verbose_init"
 __verbose_init printf "Loading .zshenv\n"
 
 ###############################################################################
@@ -28,9 +28,9 @@ __verbose_init printf "Loading .zshenv\n"
 ###############################################################################
 
 # Load environment if it hasn't already been.
-if [[ ! $SHARED_ENV_LOADED == true ]]
+if [[ ! "${SHARED_ENV_LOADED}" == true ]]
 then
-  source "$HOME/.shared_env"
+  source "${HOME}/.shared_env"
 fi
 
 ###############################################################################
@@ -38,9 +38,9 @@ fi
 ###############################################################################
 
 # Source everything in .zshenv.d if it's present.
-if [[ -d "$HOME/.zshenv.d" ]]
+if [[ -d "${HOME}/.zshenv.d" ]]
 then
-  source_dir "$HOME/.zshenv.d"
+  source_dir "${HOME}/.zshenv.d"
 fi
 
 ###############################################################################
@@ -48,9 +48,9 @@ fi
 ###############################################################################
 
 # load .zshenv.local if it exists
-if [[ -f "$HOME/.zshenv.local" ]]
+if [[ -f "${HOME}/.zshenv.local" ]]
 then
-  source "$HOME/.zshenv.local"
+  source "${HOME}/.zshenv.local"
 fi
 
 

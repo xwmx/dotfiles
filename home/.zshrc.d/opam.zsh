@@ -11,4 +11,4 @@
 ###############################################################################
 
 # Run zsh initialization.
-. "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null || true
+. "${HOME}/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null || true

@@ -15,8 +15,8 @@
 # Load zsh autocompletion.
 #
 # http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
-_aws_zsh_completer="/usr/local/bin/aws_zsh_completer.sh"
-if [[ -e "$_aws_zsh_completer" ]]
+__aws_zsh_completer="/usr/local/bin/aws_zsh_completer.sh"
+if [[ -e "${__aws_zsh_completer}" ]]
 then
-  source "$_aws_zsh_completer"
+  source "${__aws_zsh_completer}"
 fi

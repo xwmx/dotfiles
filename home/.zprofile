@@ -20,7 +20,7 @@
 # Verbose Init
 ###############################################################################
 
-. "$HOME/.shared_verbose_init"
+. "${HOME}/.shared_verbose_init"
 __verbose_init printf "Loading .zprofile\n"
 
 ###############################################################################
@@ -28,9 +28,9 @@ __verbose_init printf "Loading .zprofile\n"
 ###############################################################################
 
 # Load .profile if present.
-if [[ -f "$HOME/.profile" ]]
+if [[ -f "${HOME}/.profile" ]]
 then
-  source "$HOME/.profile"
+  source "${HOME}/.profile"
 fi
 
 ###############################################################################
@@ -38,9 +38,9 @@ fi
 ###############################################################################
 
 # Source everything in .zprofile.d if it's present.
-if [[ -d "$HOME/.zprofile.d" ]]
+if [[ -d "${HOME}/.zprofile.d" ]]
 then
-  source_dir "$HOME/.zprofile.d"
+  source_dir "${HOME}/.zprofile.d"
 fi
 
 ###############################################################################
@@ -48,7 +48,7 @@ fi
 ###############################################################################
 
 # Load local config if present
-if [[ -f "$HOME/.zprofile.local" ]]
+if [[ -f "${HOME}/.zprofile.local" ]]
 then
-  source "$HOME/.zprofile.local"
+  source "${HOME}/.zprofile.local"
 fi

@@ -42,36 +42,36 @@ HEREDOC
   local _describe=0
   local _description_heading="# Description"
 
-  for arg in "${@:-}"
+  for __arg in "${@:-}"
   do
-    case $arg in
+    case "${__arg}" in
       -h|--help)
         _print_defined_function_help
         return 0
         ;;
       --debug-init)
-        eval "$_login_command"
+        eval "${_login_command}"
         return 0
         ;;
       --describe)
         _describe=1
         ;;
       *)
-        _defined_arguments+=("$arg")
+        _defined_arguments+=("${__arg}")
         ;;
     esac
   done
 
   local _query="${_defined_arguments[1]:-}"
 
-  if [[ "$_query" =~ ^\\\$ ]]
+  if [[ "${_query}" =~ ^\\\$ ]]
   then # variable
     local _normalized_name
     printf "%s\n" "${_query}" \
       | sed 's/^\$//'         \
       | read -r -d '' _normalized_name
 
-    eval "$_login_command"          \
+    eval "${_login_command}"        \
       | grep                        \
         -e "> ${_normalized_name}=" \
         -e "> export ${_normalized_name}="
@@ -93,7 +93,7 @@ HEREDOC
       return 1
     elif [[ "${_type_results}" =~ is\ an\ alias\ for ]]
     then # alias
-      eval "$_login_command"      \
+      eval "${_login_command}"    \
         | grep                    \
           -e "alias '${_query}="  \
           -e "alias ${_query}="
@@ -103,8 +103,8 @@ HEREDOC
 
     if ((_describe))
     then
-      printf "%s\n" "$_description_heading"
-      which "$_query"
+      printf "%s\n" "${_description_heading}"
+      which "${_query}"
     fi
   fi
 }

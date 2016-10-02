@@ -17,4 +17,4 @@
 # Received via command:
 #   curl -L https://iterm2.com/misc/zsh_startup.in >> \
 #     ~/.iterm2_shell_integration.zsh
-source "$HOME/.iterm2_shell_integration.zsh"
+source "${HOME}/.iterm2_shell_integration.zsh"
