@@ -311,3 +311,6 @@
 [submodule "vendor/com/github/joh6nn/shrepl"]
 	path = vendor/com/github/joh6nn/shrepl
 	url = https://github.com/joh6nn/shrepl.git
+[submodule "vendor/com/github/zsh-users/zsh-syntax-highlighting"]
+	path = vendor/com/github/zsh-users/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

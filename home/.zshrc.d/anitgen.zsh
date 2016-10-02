@@ -16,11 +16,4 @@ source "$HOME/.antigen/antigen.zsh"
 # https://github.com/zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-completions src
 
-# zsh-syntax-highlighting
-#
-# Fish shell like syntax highlighting for Zsh.
-#
-# https://github.com/zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen-apply
