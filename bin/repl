@@ -1,0 +1,27 @@
+#!/bin/bash
+###############################################################################
+# repl
+#
+# Create a repl for any command.
+#
+# More information and related tools:
+# https://news.ycombinator.com/item?id=12320461
+# https://gist.github.com/danielrw7/bb88e3dad565c0d8ee54031f6b758a09
+# https://github.com/mchav/With
+# https://github.com/defunkt/repl
+# https://github.com/joh6nn/shrepl
+###############################################################################
+
+printf "REPL for %s\n" "$@"
+
+notblank() {
+  [[ $# -gt 0 ]]
+}
+
+while true
+do
+  printf "%s> " "$@"
+  read -r || break
+  notblank "${REPLY}" || continue
+  eval command \"\$@\" "${REPLY}"
+done
