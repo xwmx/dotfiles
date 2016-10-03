@@ -1783,6 +1783,14 @@ brew install scons
 # version supercedes it.
 brew install homebrew/dupes/screen
 
+# screenresolution
+#
+# Command line utility for getting, setting and listing display resolution on
+# Mac OS X 10.6+
+#
+# https://github.com/jhford/screenresolution
+brew install screenresolution
+
 # scsh
 #
 # Scsh is a POSIX API layered on top of the Scheme programming language in a
