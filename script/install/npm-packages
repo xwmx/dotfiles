@@ -514,6 +514,16 @@ npm install --global vtop
 # https://github.com/webpack/webpack
 npm install --global webpack
 
+# Yarn
+#
+# 📦🐈 Fast, reliable, and secure dependency management for JavaScript.
+#
+# https://yarnpkg.com/
+# https://github.com/yarnpkg/yarn
+# https://code.facebook.com/posts/1840075619545360
+# https://news.ycombinator.com/item?id=12684980
+npm install --global yarnpkg
+
 # Yeoman
 #
 # A robust and opinionated set of tools, libraries, and a workflow that can
