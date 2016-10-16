@@ -1,16 +1,8 @@
 "*":
   "atom-material-ui":
     colors:
-      abaseColor:
-        red: 255
-        green: 47
-        blue: 146
-        alpha: 1
-      accentColor:
-        red: 115
-        green: 252
-        blue: 214
-        alpha: 1
+      abaseColor: "#ff2f92"
+      accentColor: "#73fcd6"
       genAccent: true
     fonts:
       fontSize: 14
@@ -50,6 +42,7 @@
     packagesWithKeymapsDisabled: [
       "jumpy"
     ]
+    telemetryConsent: "no"
     themes: [
       "atom-material-ui"
       "seti-syntax"
