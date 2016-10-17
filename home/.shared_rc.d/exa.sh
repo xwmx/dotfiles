@@ -43,7 +43,20 @@
 #   alias ea='exa -a1'
 #   alias ee='exa -hla'
 
-alias e='exa -la --git'
+# e()
+#
+# exa 0.4.0 is incompatible with macOS Sierra 10.12. Fall back to `ls` when
+# this combination is detected.
+e() {
+  if is_sierra &&
+     [[ "$(md5 -q "$(which exa)")" == "1a29b3a8e16e3b00095f00eac2201d60" ]]
+  then # exa version is 0.4.0
+    printf "incompatible"
+    ls -lha "$@"
+  else
+    exa -la --git "$@"
+  fi
+}
 alias eh='exa -hla'
 alias ee='exa -l'
 alias eeh='exa -hl'
