@@ -70,7 +70,7 @@ git_commit_amend_alias="gcm"
 git_commit_amend_no_msg_alias="gcmh"
 git_commit_no_msg_alias="gch"
 git_remote_alias="gr"
-# 'gb' disabled to avoid conflict with 'gb' golang build tool.
+# NOTE: 'gb' disabled to avoid conflict with 'gb' golang build tool.
 # git_branch_alias="gb"
 git_branch_all_alias="gba"
 git_branch_move_alias="gbm"
@@ -87,7 +87,7 @@ git_merge_only_fast_forward_alias="gmff"
 git_cherry_pick_alias="gcp"
 git_log_alias="gl"
 git_log_all_alias="gla"
-# 'gls' disabled to avoid conflicts with GNU `ls` when prefixed as `gls`.
+# NOTE: 'gls' disabled to avoid conflicts with GNU `ls` when prefixed as `gls`.
 # git_log_stat_alias="gls"
 git_log_graph_alias="glg"
 git_show_alias="gsh"
