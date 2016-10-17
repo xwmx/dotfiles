@@ -51,7 +51,7 @@ e() {
   if is_sierra &&
      [[ "$(md5 -q "$(which exa)")" == "1a29b3a8e16e3b00095f00eac2201d60" ]]
   then # exa version is 0.4.0
-    printf "incompatible"
+    printf "(⊱!⊰) exa v0.4.0 detected on Sierra. Falling back to \`ls\`...\n"
     ls -lha "$@"
   else
     exa -la --git "$@"
