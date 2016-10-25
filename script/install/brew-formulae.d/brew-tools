@@ -586,6 +586,16 @@ brew install forego
 # https://github.com/facebook/pathpicker/
 brew install fpp
 
+# gdrive
+#
+# Google Drive CLI Client
+#
+# gdrive is a command line utility for interacting with Google Drive.
+#
+# https://github.com/prasmussen/gdrive
+# https://news.ycombinator.com/item?id=12784952
+brew install gdrive
+
 # geoip
 #
 # Libraries and tools for MaxMind’s GeoIP.
