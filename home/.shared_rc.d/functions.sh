@@ -342,17 +342,21 @@ fi
 # gitio()
 #
 # Usage:
-#   gitio <slug> <url>
+#   gitio [<slug>] <url>
 #
 # Description:
-#   Create a git.io short URL
+#   Create a git.io short URL.
 gitio() {
-  if [ -z "${1}" ] || [ -z "${2}" ]
+  if [[ -z "${1}" ]] || [[ "${1:-}" =~ '^-h|--help$'  ]]
   then
-    echo "Usage: gitio <slug> <url>"
+    printf "Usage: gitio [<slug>] <url>\n"
     return 1
+  elif [[ -z "${2}" ]]
+  then
+    curl -i https://git.io/ -F "url=${1}"
+  else
+    curl -i https://git.io/ -F "url=${2}" -F "code=${1}"
   fi
-  curl -i http://git.io/ -F "url=${2}" -F "code=${1}"
 }
 
 # JSON ------------------------------------------------------------------------
