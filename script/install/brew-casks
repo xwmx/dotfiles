@@ -911,7 +911,23 @@ brew cask install openscad
 # export code snippets.
 #
 # http://facebook.github.io/origami/
-brew cask install origami
+#
+# NOTE: Remove origami cask in favor of origami-studio cask.
+# TODO: Remove this section when this cask has been removed from all systems.
+if _homebrew_cask_is_installed "origami"
+then
+  brew cask uninstall origami --force
+fi
+
+# Origami Studio
+#
+# Design Prototyping with Origami Studio
+#
+# Explore, iterate, and test your ideas. A new tool for designing
+# modern interfaces, built and used by designers at Facebook.
+#
+# http://origami.design/
+brew cask install origami-studio
 
 # osxfuse - FUSE for OS X
 #
