@@ -109,9 +109,9 @@
 # https://github.com/github/git-lfs
 # https://github.com/blog/1986-announcing-git-large-file-storage-lfs
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
 	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 
 # git-media
 #
