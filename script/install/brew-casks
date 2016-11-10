@@ -970,6 +970,8 @@ brew cask install pd-extended
 # Multiplatform GUI Prototyping/Wireframing
 #
 # https://github.com/prikhi/pencil
+# http://pencil.evolus.vn/
+# https://news.ycombinator.com/item?id=12889053
 brew cask install pencil
 
 # pgAdmin
