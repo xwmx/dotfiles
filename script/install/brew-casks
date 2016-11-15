@@ -1205,13 +1205,21 @@ brew cask install spotify
 # http://www.stellarium.org/
 brew cask install stellarium
 
-# sublime-text3
+# sublime-text
 #
 # Sublime Text is a text editor for code, markup and prose.
 #
 # http://www.sublimetext.com/
 # http://www.sublimetext.com/3
-brew cask install sublime-text3
+#
+# NOTE: Use the "sublime-text" cask in place of "sublime-text3".
+# TODO: Remove this step when sublime-text3 has been removed from all
+# systems.
+if _homebrew_cask_is_installed "sublime-text3"
+then
+  brew cask uninstall sublime-text3 --force
+fi
+brew cask install sublime-text
 
 # Sunvox
 #
