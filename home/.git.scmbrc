@@ -24,7 +24,8 @@ export GIT_REPO_DIR="$HOME/code"
 export GIT_REPOS=""
 export git_status_command="git_status_shortcuts"
 # Alias
-git_index_alias="code"    # Switch to a repo in the (code) directory
+# NOTE: Disabled `code` alias. Conflicts with Visual Studio Code.
+# git_index_alias="code"    # Switch to a repo in the (code) directory
 
 
 # Git Aliases
