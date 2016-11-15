@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+###############################################################################
+# vscode
+#
+# Customize the Visual Studio Code setup on macOS
+###############################################################################
+
+###############################################################################
+# Platform Check
+###############################################################################
+
+if [[ ! "$OSTYPE" =~ ^darwin ]]
+then
+  printf "vscode is only supported on macOS.\nSkipping...\n"
+  exit 0
+fi
+
+###############################################################################
+# Link Config
+###############################################################################
+
+# link_config()
+#
+# Usage:
+#   link_config
+#
+# Description:
+#   Add links from the macOS preferences location to the ~/.config location.
+#   ~/.config is used on linux systems and versioned within in this
+#   configuration project.
+link_config() {
+  local macos_prefs_path="${HOME}/Library/Application Support/Code"
+  local config_path="${HOME}/.config/Code"
+
+  if [[ ! -e "${config_path}" ]]
+  then
+    printf "%s not found. Skipping...\n" "${config_path}"
+    exit 0
+  fi
+
+  if [[ -L "$macos_prefs_path" ]]
+  then
+    printf "%s is already a link. Skipping...\n" "${macos_prefs_path}"
+    exit 0
+  elif [[ ! -d "${macos_prefs_path}" ]]
+  then
+    printf "%s is not a directory. Skipping...\n" "${macos_prefs_path}"
+    exit 0
+  elif [[ -e "${macos_prefs_path}.bak" ]]
+  then
+    printf "%s.bak exists. Manually remove it to proceed. Skipping...\n" \
+      "${macos_prefs_path}"
+  else
+    mv "${macos_prefs_path}" "${macos_prefs_path}.bak"
+    ln -s "${config_path}" "${macos_prefs_path}"
+  fi
+}
+
+link_config

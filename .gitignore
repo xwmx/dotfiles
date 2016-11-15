@@ -67,6 +67,13 @@
 /home/.config/*
 # base16-shell
 !/home/.config/base16-shell
+# Visual Studio Code
+!/home/.config/Code
+/home/.config/Code/*
+!/home/.config/Code/README.md
+!/home/.config/Code/User
+/home/.config/Code/User/*
+!/home/.config/Code/User/settings.json
 # git
 !/home/.config/git
 # htop
