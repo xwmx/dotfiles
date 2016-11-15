@@ -37,6 +37,7 @@
       "nuclide-arcanist"
       "nuclide-blame"
       "linter-markdown"
+      "go-plus"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
