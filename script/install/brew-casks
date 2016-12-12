@@ -816,7 +816,14 @@ brew cask install mame
 # Design radically custom maps and datasets powered by vector tiles.
 #
 # https://www.mapbox.com/mapbox-studio/
-brew cask install mapbox-studio
+#
+# NOTE: Cask removed, so uninstall.
+# TODO: Remove this section when cask has been uninstalled from all
+# systems.
+if _homebrew_cask_is_installed "mapbox-studio"
+then
+  brew cask uninstall mapbox-studio --force
+fi
 
 # MenuMeters
 #
