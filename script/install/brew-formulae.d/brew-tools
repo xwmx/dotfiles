@@ -2148,6 +2148,13 @@ brew install wine
 # http://code.google.com/p/winetricks/
 brew install winetricks
 
+# wp-cli
+#
+# Command-line tools for managing WordPress installations.
+#
+# http://wp-cli.org/
+brew install wp-cli
+
 # Xpdf
 #
 # Xpdf is an open source viewer for Portable Document Format (PDF) files.
