@@ -623,14 +623,23 @@ brew cask install hammerspoon
 # https://jadengeller.github.io/Helium/
 brew cask install jadengeller-helium
 
-# HyperTerm
+# Hyper
 #
 # JS/HTML/CSS Terminal
 #
-# https://hyperterm.org/
-# https://github.com/zeit/hyperterm
+# https://hyper.is
+# https://github.com/zeit/hyper
 # https://news.ycombinator.com/item?id=12102100
-brew cask install hyperterm
+# https://news.ycombinator.com/item?id=13159451
+#
+# NOTE: This cask was renamed from 'hyperterm' to 'hyper'.
+# TODO: Remove uninstall section after hyperterm has been replaced on
+# all systems.
+if _homebrew_cask_is_installed 'hyperterm'
+then
+  brew cask uninstall hyperterm --force
+fi
+brew cask install hyper
 
 # Inform
 #
