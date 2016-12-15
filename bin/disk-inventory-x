@@ -3,8 +3,7 @@
 # Open Disk Inventory X, with option to open as root. Opening as root makes it
 # possible to search the entire drive.
 
-_app_path="/opt/homebrew-cask/Caskroom/disk-inventory-x/1.0/Disk Inventory X.app"
-_bin_path="$_app_path/Contents/MacOS/Disk Inventory X"
+_bin_path="/Applications/Disk Inventory X.app/Contents/MacOS/Disk Inventory X"
 
 # NOTES:
 # - Parens run the program in subshell, making it possible to kill the
@@ -18,4 +17,3 @@ then
 else
   ("$_bin_path" &)
 fi
-
