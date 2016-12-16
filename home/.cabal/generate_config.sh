@@ -16,22 +16,22 @@ IFS="$(printf '\n\t')"
 # user-specific information.
 #
 # This function takes the template file and replaces any instances of the
-# string {{$HOME}} with the value of the $HOME environment variable.
+# string {{HOME}} with the value of the $HOME environment variable.
 _update_cabal_config_from_template() {
-  local cabal_dir="$HOME/.cabal"
+  local _cabal_dir="${HOME}/.cabal"
 
   # if the template file exists
-  if [[ -f "$cabal_dir"/config.template ]]
+  if [[ -f "${_cabal_dir}/config.template" ]]
   then
     # Remove current if present
-    if [[ -f "$cabal_dir"/config ]]
+    if [[ -f "${_cabal_dir}/config" ]]
     then
-      rm "$cabal_dir"/config
+      rm "${_cabal_dir}/config"
     fi
     # copy the template to the original file's location
-    cp "$cabal_dir"/config.template "$cabal_dir"/config
-    # Replace {{$HOME}} with value of $HOME
-    sed -i "s|{{\$HOME}}|$HOME|g" "$cabal_dir"/config
+    cp "${_cabal_dir}/config.template" "${_cabal_dir}/config"
+    # Replace {{HOME}} with value of $HOME
+    sed -i '' "s|{{HOME}}|$HOME|g" "${_cabal_dir}/config"
   fi
 }
 

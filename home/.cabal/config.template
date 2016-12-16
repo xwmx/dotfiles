@@ -27,10 +27,10 @@
 
 
 remote-repo: hackage.haskell.org:http://hackage.haskell.org/packages/archive
-remote-repo-cache: {{$HOME}}/Library/Haskell/repo-cache
+remote-repo-cache: {{HOME}}/Library/Haskell/repo-cache
 -- local-repo:
 -- logs-dir:
-world-file: {{$HOME}}/Library/Haskell/logs/world
+world-file: {{HOME}}/Library/Haskell/logs/world
 -- verbose: 1
 -- compiler: ghc
 -- with-compiler:
@@ -52,7 +52,7 @@ library-profiling: True
 -- flags:
 -- extra-include-dirs:
 -- extra-lib-dirs:
-extra-prog-path: {{$HOME}}/Library/Haskell/bin
+extra-prog-path: {{HOME}}/Library/Haskell/bin
 -- tests: False
 -- library-coverage: False
 -- benchmarks: False
@@ -72,7 +72,7 @@ documentation: True
 -- upgrade-dependencies: False
 root-cmd: sudo
 -- symlink-bindir:
-build-summary: {{$HOME}}/Library/Haskell/logs/build.log
+build-summary: {{HOME}}/Library/Haskell/logs/build.log
 -- build-log:
 remote-build-reporting: anonymous
 -- one-shot: False
@@ -81,7 +81,7 @@ jobs: $ncpus
 -- password:
 
 install-dirs user
-  prefix: {{$HOME}}/Library/Haskell
+  prefix: {{HOME}}/Library/Haskell
   -- bindir: $prefix/bin
   libdir: $prefix/$compiler-$arch/lib
   libsubdir: $pkgid
@@ -161,4 +161,3 @@ program-default-options
   -- strip-options:
   -- tar-options:
   -- uhc-options:
-
