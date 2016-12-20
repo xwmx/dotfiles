@@ -44,7 +44,7 @@ __validate_user
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 ###############################################################################
 # Homebrew - Taps

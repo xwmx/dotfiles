@@ -60,7 +60,7 @@ _homebrew_cask_is_installed() {
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 ###############################################################################
 # Homebrew Cask
