@@ -84,6 +84,12 @@ call add(g:pathogen_disabled, 'syntastic.override')
 " traditionally-named syntastic in the janus distribution.
 call janus#disable_plugin('syntastic')
 
+" Disable tagbar.
+"
+" Tagbar causes an extreme slowdown on my system on each write due to running
+" ctags calls.
+call janus#disable_plugin('tagbar')
+
 " Disable Janus-installed gitgutter
 "
 " vim-signify is preferred over vim-gitgutter.
