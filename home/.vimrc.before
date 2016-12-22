@@ -2,6 +2,13 @@
 " Janus-related vimrc.
 "
 " Runs before Janus is loaded.
+"
+" NOTE: Slow plugins:
+" - TagBar
+"   - Calling ctags is slow, particularly the initial calls for a buffer.
+" - Syntastic
+"   - Does not have an async option at this time. Consider Neomake instead.
+" - NERDTree
 " ============================================================================
 
 " ============================================================================
