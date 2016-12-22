@@ -126,6 +126,9 @@
   "release-notes":
     viewedVersion: "0.94.0"
   "symbols-tree-view": {}
+  "trailing-spaces":
+    enableForCursorLines: true
+    enableForIndentation: true
   "tree-view": {}
   "vim-mode": {}
   welcome:
