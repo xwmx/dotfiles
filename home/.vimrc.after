@@ -282,11 +282,6 @@ nmap <leader>m :TagbarToggle<CR>
 " Default = 40
 let g:tagbar_width = 30
 
-" When running MacVim, open tagbar automatically.
-if has("gui_macvim")
-  TagbarOpen
-endif
-
 " ============================================================================
 " NERD Commenter
 " ============================================================================
