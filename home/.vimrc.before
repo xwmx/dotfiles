@@ -25,6 +25,9 @@ let g:pathogen_disabled = []
 "
 " call add(g:pathogen_disabled, '<plugin_name>')
 
+" NOTE: Temporarily experiment with vim-gitgutter in place of vim-signify.
+call add(g:pathogen_disabled, 'vim-signify')
+
 " ============================================================================
 " Disable Janus plugins
 " ============================================================================
@@ -69,7 +72,9 @@ call janus#disable_plugin('syntastic')
 " Disable Janus-installed gitgutter
 "
 " vim-signify is preferred over vim-gitgutter.
-call janus#disable_plugin('vim-gitgutter')
+"
+" NOTE: Temporarily experiment with vim-gitgutter in place of vim-signify.
+" call janus#disable_plugin('vim-gitgutter')
 
 " ============================================================================
 " vim-airline
@@ -109,31 +114,32 @@ endif
 " vim-signify
 " ============================================================================
 
-" g:signify_vcs_list
+" NOTE: Temporarily experiment with vim-gitgutter in place of vim-signify.
+" " g:signify_vcs_list
+" "
+" " Only use signify for git
+" "
+" " This reduces the number of calls and improves performance.
+" "
+" " https://github.com/mhinz/vim-signify/blob/master/doc/signify.txt#L112
+" let g:signify_vcs_list = [ 'git' ]
 "
-" Only use signify for git
+" " Display all changes since last commit, even those that are staged to index.
+" "
+" " NOTE: No documentation on this. TODO: Determine status of this setting.
+" let g:signify_diffoptions = { 'git': 'HEAD' }
 "
-" This reduces the number of calls and improves performance.
+" " g:signify_disable_by_default
+" "
+" " Disable vim-signfiy by default.
+" "
+" " > This loads Sy, but it won't look for changes. You can toggle it anytime
+" " > via :SignifyToggle.
+" "
+" " https://github.com/mhinz/vim-signify/blob/master/doc/signify.txt#L195
+" let g:signify_disable_by_default = 1
 "
-" https://github.com/mhinz/vim-signify/blob/master/doc/signify.txt#L112
-let g:signify_vcs_list = [ 'git' ]
-
-" Display all changes since last commit, even those that are staged to index.
-"
-" NOTE: No documentation on this. TODO: Determine status of this setting.
-let g:signify_diffoptions = { 'git': 'HEAD' }
-
-" g:signify_disable_by_default
-"
-" Disable vim-signfiy by default.
-"
-" > This loads Sy, but it won't look for changes. You can toggle it anytime
-" > via :SignifyToggle.
-"
-" https://github.com/mhinz/vim-signify/blob/master/doc/signify.txt#L195
-let g:signify_disable_by_default = 1
-
-" Map command-R to :SignifyRefresh in MacVim
-if has("gui_macvim")
-  map <D-r> :SignifyRefresh<CR>
-endif
+" " Map command-R to :SignifyRefresh in MacVim
+" if has("gui_macvim")
+"   map <D-r> :SignifyRefresh<CR>
+" endif
