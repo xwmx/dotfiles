@@ -314,3 +314,6 @@
 [submodule "vendor/com/github/zsh-users/zsh-syntax-highlighting"]
 	path = vendor/com/github/zsh-users/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "home/.janus/neomake"]
+	path = home/.janus/neomake
+	url = https://github.com/neomake/neomake.git

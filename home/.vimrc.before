@@ -28,6 +28,14 @@ let g:pathogen_disabled = []
 " NOTE: Temporarily experiment with vim-gitgutter in place of vim-signify.
 call add(g:pathogen_disabled, 'vim-signify')
 
+" Disable syntastic.override to completely disable syntastic.
+"
+" Syntastic can be very slow and is not async, so experiement with Neomake
+" instead. More information:
+" https://github.com/vim-syntastic/syntastic/issues/699
+call add(g:pathogen_disabled, 'syntastic.override')
+
+
 " ============================================================================
 " Disable Janus plugins
 " ============================================================================

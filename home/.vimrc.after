@@ -315,13 +315,16 @@ endif
 let g:NERDTreeMouseMode = 3
 
 " ============================================================================
-" syntastic
+" Neomake
 " ============================================================================
 
 " Set Ruby file type to only use rubocop and mri
 "
 " rubylint returns undesirable warnings, so exclude from list.
-let g:syntastic_ruby_checkers=["rubocop", "mri"]
+let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
+
+" Run Neomake on every file write.
+autocmd! BufWritePost * Neomake
 
 " ============================================================================
 " vim-json
