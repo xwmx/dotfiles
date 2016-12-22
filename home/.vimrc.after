@@ -321,6 +321,15 @@ let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
 " Run Neomake on every file write.
 autocmd! BufWritePost * Neomake
 
+" Better gutter symbol and highlighting.
+"
+" More information:
+"   https://github.com/neomake/neomake/blob/master/doc/neomake.txt#L305
+let g:neomake_warning_sign = {
+  \   'text': '›',
+  \   'texthl': 'NeomakeWarningSign',
+  \ }
+
 " ============================================================================
 " vim-json
 " ============================================================================
