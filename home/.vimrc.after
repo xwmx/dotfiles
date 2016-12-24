@@ -420,3 +420,13 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 " This option is also notably useful for displaying the timeout for the leader
 " key.
 set showcmd
+
+" ============================================================================
+" tab
+" ============================================================================
+
+" Use shift-tab to enter a tab character.
+"
+" More information:
+" http://stackoverflow.com/a/4781099
+inoremap <S-Tab> <C-V><Tab>
