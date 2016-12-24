@@ -147,7 +147,13 @@ if exists("custom_macvim_hig_movement")
   "
   nn   <S-D-Left>     v0
   vn   <S-D-Left>     0
-  ino  <S-D-Left>     <C-O>v0
+  " NOTE: Use `<ESC>` for more natural selection behavior.
+  " - `<ESC>`:
+  "   Always select the character before the cursor.
+  " - `<C-O>` (ctrl-O):
+  "   Cursor is at end of line: select character before cursor.
+  "   Cursor is not at end of line: select character after cursor.
+  ino  <S-D-Left>     <ESC>v0
   "
   " #########################
   " Option-Shift-Left Arrow
@@ -155,7 +161,7 @@ if exists("custom_macvim_hig_movement")
   "
   nn   <S-M-Left>     vb
   vn   <S-M-Left>     b
-  " NOTE: Use `<ESC>` here because the behavior is more desirable.
+  " NOTE: Use `<ESC>` for more natural selection behavior.
   " - `<ESC>`:
   "   Always select the character before the cursor.
   " - `<C-O>` (ctrl-O):
