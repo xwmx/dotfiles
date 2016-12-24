@@ -155,7 +155,7 @@ if exists("custom_macvim_hig_movement")
   "
   nn   <S-M-Left>     vb
   vn   <S-M-Left>     b
-  ino  <S-M-Left>     <C-O>vb
+  ino  <S-M-Left>     <C-O>h<C-O>vb
   "
   " #########################
   " Command-Shift-Up Arrow
