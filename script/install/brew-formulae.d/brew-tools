@@ -1895,10 +1895,22 @@ brew install syncthing
 # syncthing post-install
 #
 # Setup and load the launchd agent.
-if [[ ! -e "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+#
+# NOTE: Temporarily disable syncthing. It's not currently being used and the
+# syncing process runs unnecessarily. Commenting out post-install commands and
+# adding new disabling commands.
+#
+# - Post-install for enabled syncthing:
+# if [[ ! -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+# then
+#   ln -sfv /usr/local/opt/syncthing/*.plist "${HOME}/Library/LaunchAgents"
+#   launchctl load "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+# fi
+# - Post-install for disabled syncthing:
+if [[ -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
 then
-  ln -sfv /usr/local/opt/syncthing/*.plist "$HOME/Library/LaunchAgents"
-  launchctl load "$HOME/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+  launchctl unload "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+  rm "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
 fi
 
 # tag
@@ -2183,7 +2195,7 @@ brew install xz
 # (Warren Abstract Machine), with several optimizations for better performance.
 # YAP follows the Edinburgh tradition, and is largely compatible with the
 # ISO-Prolog standard and with Quintus and SICStus Prolog.
-#
+
 # http://www.dcc.fc.up.pt/~vsc/Yap/index.html
 #
 # NOTE: There have been a number of issues with this formula, which currently
