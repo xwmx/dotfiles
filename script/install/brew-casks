@@ -1377,7 +1377,13 @@ brew cask install vassal
 #
 # https://www.vaultproject.io
 # https://github.com/hashicorp/vault
-brew cask install vault
+#
+# NOTE: Uninstall cask and use homebrew formula instead.
+# TODO: Remove this section when it has been removed from all systems.
+if _homebrew_cask_is_installed
+then
+  brew cask uninstall vault --force
+fi
 
 # Vico
 #
