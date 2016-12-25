@@ -44,9 +44,25 @@ endif
 " Font
 " ============================================================================
 
-" Note - fonts must be installed from here:
+" SetGuiFont()
+"
+" Set the GUI font with a font size determined by the screen width.
+"
+" Fonts must be installed from here:
 " https://github.com/abertsch/Menlo-for-Powerline
-set guifont=Menlo\ for\ Powerline:h11
+"
+" Depends on (but does not require) cscreen:
+" http://www.pyehouse.com/cscreen/
+function! SetGuiFont()
+  let screenwidth = system("cscreen | awk '{print $4}' | head -2 | tail -1")
+  if screenwidth > "1919\n"
+    set guifont=Menlo\ for\ Powerline:h12
+  else
+    set guifont=Menlo\ for\ Powerline:h11
+  endif
+endfunction
+
+call SetGuiFont()
 
 " ============================================================================
 " Mouse
