@@ -53,7 +53,7 @@ endif
 "
 " Depends on (but does not require) cscreen:
 " http://www.pyehouse.com/cscreen/
-function! SetGuiFont()
+function SetGuiFont()
   let screenwidth = system("cscreen | awk '{print $4}' | head -2 | tail -1")
   if screenwidth > "1919\n"
     set guifont=Menlo\ for\ Powerline:h12
