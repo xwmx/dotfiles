@@ -475,6 +475,16 @@ brew cask install firefox
 # https://www.mozilla.org/en-US/firefox/developer/
 brew cask install firefoxdeveloperedition
 
+# f.lux
+#
+# f.lux is a computer program that adjusts a display's color temperature
+# according to location and time of day. The program was designed to reduce
+# eye strain during night-time use and reduce disruption of sleep patterns.
+#
+# https://justgetflux.com
+# https://en.wikipedia.org/wiki/F.lux
+brew cask install flux
+
 # gephi
 #
 # he Open Graph Viz Platform
