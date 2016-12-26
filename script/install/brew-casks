@@ -561,6 +561,18 @@ _install_google_chrome_cask() {
 }
 _install_google_chrome_cask
 
+# Google Drive
+#
+# Google Drive is a file storage and synchronization service created by Google.
+# It allows users to store files in the cloud, synchronize files across
+# devices, and share files. Google Drive encompasses Google Docs, Sheets and
+# Slides, an office suite that permits collaborative editing of documents,
+# spreadsheets, presentations, drawings, forms, and more.
+#
+# https://www.google.com/drive/
+# https://drive.google.com/
+brew cask install google-drive
+
 # Google Nik Collection
 #
 # The Nik Collection is comprised of seven desktop plug-ins that provide a
