@@ -613,6 +613,18 @@ brew cask install google-nik-collection
 # http://grandperspectiv.sourceforge.net
 brew cask install grandperspective
 
+# hab / Habitat
+#
+# Habitat is an open-source project that enables you to ship your application,
+# to any platform, along with all the automation you'll need to manage it in
+# production.
+#
+# https://www.habitat.sh/
+# https://github.com/habitat-sh
+# https://github.com/habitat-sh/habitat
+# https://news.ycombinator.com/item?id=11901938
+brew cask install hab
+
 # The Haskell Platform
 #
 # http://www.haskell.org/platform/
