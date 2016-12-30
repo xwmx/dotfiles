@@ -88,7 +88,7 @@ call janus#disable_plugin('syntastic')
 "
 " Tagbar causes an extreme slowdown on my system on each write due to running
 " ctags calls.
-" call janus#disable_plugin('tagbar')
+call janus#disable_plugin('tagbar')
 
 " Disable Janus-installed gitgutter
 "
