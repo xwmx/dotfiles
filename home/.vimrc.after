@@ -129,6 +129,8 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 "
 " Files with these names are expected to be bash files without a shebang since
 " they are sourced and run from their respective programs: 'bask' and manuel.
+autocmd BufRead,BufNewFile Baskfile,Manuelfile let b:is_bash=1
+autocmd BufRead,BufNewFile Baskfile,Manuelfile set filetype=sh
 autocmd BufRead,BufNewFile Baskfile,Manuelfile call SetFileTypeSH("bash")
 
 " Associate the .spacemacs dotfile with lisp
