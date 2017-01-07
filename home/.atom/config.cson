@@ -1,4 +1,8 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: ""
+      analytics: false
   "atom-material-ui":
     colors:
       abaseColor: "#ff2f92"
