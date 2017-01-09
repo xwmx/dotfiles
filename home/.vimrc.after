@@ -448,3 +448,11 @@ set showcmd
 " More information:
 " http://stackoverflow.com/a/4781099
 inoremap <S-Tab> <C-V><Tab>
+
+" ============================================================================
+" cursor
+" ============================================================================
+
+" Set blink rate.
+set guicursor=n:blinkwait1400-blinkon800-blinkoff500
+set guicursor=v:blinkwait1400-blinkon800-blinkoff500
