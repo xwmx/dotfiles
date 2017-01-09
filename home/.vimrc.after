@@ -243,6 +243,12 @@ vnoremap ∑ :BD<cr>
 " alt-shift-W
 nnoremap „ :BD<cr>
 vnoremap „ :BD<cr>
+" alt-n and alt-shift-n
+"
+" NOTE: Mapping to the character created with alt-shift-N appears to also work
+" for alt-N.
+nnoremap ˜ :enew<cr>
+vnoremap ˜ :enew<cr>
 
 " ============================================================================
 " Fullscreen
