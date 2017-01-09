@@ -209,7 +209,6 @@ set splitright
 " Use ctrl-tab to close the current buffer without closing the split / window
 "map <C-Tab> :Kwbd<cr>
 map <C-Tab> :BD<cr>
-map <C-w> :BD<cr>
 
 " Use ctrl-[[ and ctrl-]] to cycle buffers
 "
