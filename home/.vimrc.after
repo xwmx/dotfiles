@@ -209,6 +209,7 @@ set splitright
 " Use ctrl-tab to close the current buffer without closing the split / window
 "map <C-Tab> :Kwbd<cr>
 map <C-Tab> :BD<cr>
+map <C-w> :BD<cr>
 
 " Use ctrl-[[ and ctrl-]] to cycle buffers
 "
@@ -218,6 +219,30 @@ map <C-Tab> :BD<cr>
 " is less desirable.
 map <C-[><C-[> :bprevious<cr>
 map <C-]><C-]> :bnext<cr>
+
+" alt / option key buffer management mappings.
+"
+" Specify alt / option key combinations by setting to the character generated
+" by the key combination.
+"
+" alt-[
+nnoremap “ :bprevious<cr>
+vnoremap “ :bprevious<cr>
+" alt-shift-[
+nnoremap ” :bprevious<cr>
+vnoremap ” :bprevious<cr>
+" alt-]
+nnoremap ‘ :bnext<cr>
+vnoremap ‘ :bnext<cr>
+" alt-shift-]
+nnoremap ’ :bnext<cr>
+vnoremap ’ :bnext<cr>
+" alt-W
+nnoremap ∑ :BD<cr>
+vnoremap ∑ :BD<cr>
+" alt-shift-W
+nnoremap „ :BD<cr>
+vnoremap „ :BD<cr>
 
 " ============================================================================
 " Fullscreen
