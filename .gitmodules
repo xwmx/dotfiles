@@ -317,3 +317,6 @@
 [submodule "home/.janus/neomake"]
 	path = home/.janus/neomake
 	url = https://github.com/neomake/neomake.git
+[submodule "home/.janus/vim-ctrlspace"]
+	path = home/.janus/vim-ctrlspace
+	url = https://github.com/vim-ctrlspace/vim-ctrlspace.git
