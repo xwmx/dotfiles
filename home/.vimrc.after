@@ -223,19 +223,39 @@ map <C-]><C-]> :bnext<cr>
 "
 " Specify alt / option key combinations by setting to the character generated
 " by the key combination.
-"
-" alt-[
-nnoremap “ :bprevious<cr>
-vnoremap “ :bprevious<cr>
-" alt-shift-[
-nnoremap ” :bprevious<cr>
-vnoremap ” :bprevious<cr>
-" alt-]
-nnoremap ‘ :bnext<cr>
-vnoremap ‘ :bnext<cr>
-" alt-shift-]
-nnoremap ’ :bnext<cr>
-vnoremap ’ :bnext<cr>
+if exists(':CtrlSpaceGoUp')
+  " vim-ctrlspace mappings.
+  "
+  " If vim-ctrlspace is installed, the buffer list is in alpha ordering, so
+  " :bprevious and :bnext jump all over rather than cycle in the displayed
+  " order. Use use vim-ctrlspace commands for better cycling.
+  "
+  " alt-[
+  nnoremap “ :CtrlSpaceGoUp<cr>
+  vnoremap “ :CtrlSpaceGoUp<cr>
+  " alt-shift-[
+  nnoremap ” :CtrlSpaceGoUp<cr>
+  vnoremap ” :CtrlSpaceGoUp<cr>
+  " alt-]
+  nnoremap ‘ :CtrlSpaceGoDown<cr>
+  vnoremap ‘ :CtrlSpaceGoDown<cr>
+  " alt-shift-]
+  nnoremap ’ :CtrlSpaceGoDown<cr>
+  vnoremap ’ :CtrlSpaceGoDown<cr>
+else
+  " alt-[
+  nnoremap “ :bprevious<cr>
+  vnoremap “ :bprevious<cr>
+  " alt-shift-[
+  nnoremap ” :bprevious<cr>
+  vnoremap ” :bprevious<cr>
+  " alt-]
+  nnoremap ‘ :bnext<cr>
+  vnoremap ‘ :bnext<cr>
+  " alt-shift-]
+  nnoremap ’ :bnext<cr>
+  vnoremap ’ :bnext<cr>
+endif
 " alt-W
 nnoremap ∑ :BD<cr>
 vnoremap ∑ :BD<cr>
