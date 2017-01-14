@@ -320,3 +320,6 @@
 [submodule "home/.janus/vim-ctrlspace"]
 	path = home/.janus/vim-ctrlspace
 	url = https://github.com/vim-ctrlspace/vim-ctrlspace.git
+[submodule "home/.janus/vim-sleuth"]
+	path = home/.janus/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
