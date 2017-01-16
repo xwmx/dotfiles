@@ -356,6 +356,11 @@ fi
 # initialization process has been completed.
 export PATH=$HOME/bin:$PATH
 
+# Add $DOTFILES/bin to $PATH
+#
+# Include executables from the dotfiles directory.
+export PATH="$DOTFILES/bin:$PATH"
+
 # SHARED_ENV_LOADED
 #
 # Available to other files in the initialization process to use in order to
