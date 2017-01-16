@@ -18,7 +18,7 @@
 
 # https://github.com/koalaman/shellcheck/wiki/SC1090
 # shellcheck source=/dev/null
-. "$HOME/.shared_verbose_init"
+. "${HOME}/.shared_verbose_init"
 __verbose_init printf "Loading .shared_env\n"
 
 ###############################################################################
@@ -36,7 +36,7 @@ __verbose_init printf "Loading .shared_env\n"
 # Description:
 #   Reload the shell (i.e. invoke as a login shell).
 reload() {
-  exec "$SHELL" -l
+  exec "${SHELL}" -l
 }
 
 # OS Tests
@@ -51,7 +51,7 @@ reload() {
 #   0  If current OS is darwin.
 #   1  If not.
 is_macos() {
-  [[ "$OSTYPE" =~ ^darwin ]]
+  [[ "${OSTYPE}" =~ ^darwin ]]
 }
 
 # is_osx()
@@ -63,7 +63,7 @@ is_macos() {
 #   0  If current OS is darwin.
 #   1  If not.
 is_osx() {
-  [[ "$OSTYPE" =~ ^darwin ]]
+  [[ "${OSTYPE}" =~ ^darwin ]]
 }
 
 # is_mavericks()
@@ -76,7 +76,7 @@ is_osx() {
 #   1  If not.
 is_mavericks() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$___osx_version" -eq "9" ]
+  [ "${___osx_version}" -eq "9" ]
 }
 
 # is_yosemite()
@@ -89,7 +89,7 @@ is_mavericks() {
 #   1  If not.
 is_yosemite() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$___osx_version" -eq "10" ]
+  [ "${___osx_version}" -eq "10" ]
 }
 
 # is_el_capitan()
@@ -102,7 +102,7 @@ is_yosemite() {
 #   1  If not.
 is_el_capitan() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$___osx_version" -eq "11" ]
+  [ "${___osx_version}" -eq "11" ]
 }
 
 # is_sierra()
@@ -115,7 +115,7 @@ is_el_capitan() {
 #   1  If not.
 is_sierra() {
   ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "$___osx_version" -eq "12" ]
+  [ "${___osx_version}" -eq "12" ]
 }
 
 # is_linux()
@@ -150,11 +150,11 @@ is_ubuntu() {
 # Description:
 #   Print one of 'osx', 'ubuntu', or 'linux' identifying the current system.
 get_os() {
-  for os in osx ubuntu linux
+  for ___os in osx ubuntu linux
   do
-    if "is_${os}"
+    if "is_${___os}"
     then
-      printf "%s\n" "${os}"
+      printf "%s\n" "${___os}"
       return 0
     fi
   done
@@ -172,7 +172,7 @@ get_os() {
 #   0  If current shell is Zsh.
 #   1  If not.
 is_zsh() {
-  [ -n "$ZSH_NAME" ]
+  [ -n "${ZSH_NAME}" ]
 }
 
 # is_bash()
@@ -184,7 +184,7 @@ is_zsh() {
 #   0  If current shell is Bash.
 #   1  If not.
 is_bash() {
-  [ -n "$BASH" ]
+  [ -n "${BASH}" ]
 }
 
 # Command Test
@@ -201,7 +201,7 @@ is_bash() {
 #   For information on why `which` is not being used, see:
 #   http://stackoverflow.com/a/677212
 command_exists() {
-  hash "$1" 2>/dev/null
+  hash "${1}" 2>/dev/null
 }
 # For compatibiity, alias this function's previous name, `program_exists`.
 alias program_exists="command_exists"
@@ -217,15 +217,15 @@ alias program_exists="command_exists"
 # Description:
 #   Source each of the files in a given directory.
 source_dir() {
-  if (($#)) && [ -d "$1" ]
+  if (($#)) && [ -d "${1}" ]
   then
-    for _file in "$1"/*
+    for ___file in "${1}"/*
     do
-      if [ -f "$_file" ]
+      if [ -f "${___file}" ]
       then
         # https://github.com/koalaman/shellcheck/wiki/SC1090
         # shellcheck source=/dev/null
-        source "$_file"
+        source "${___file}"
       fi
     done
   else
@@ -259,9 +259,9 @@ Description:
 HEREDOC
   }
 
-  for arg in "${@:-}"
+  for ___arg in "${@:-}"
   do
-    case $arg in
+    case "${___arg}" in
       on)
         _DEBUG_ENABLED=1
         debug status
@@ -316,7 +316,7 @@ _debug() {
 #
 # Prepend `$HOME/bin` to `$PATH` at beginning of initialization so its
 # executables are available.
-export PATH=$HOME/bin:$PATH
+export PATH="${HOME}/bin:${PATH}"
 
 # $DOTFILES
 #
@@ -326,25 +326,25 @@ if command_exists "bindle"
 then
   DOTFILES="$(bindle dir)"
 else
-  DOTFILES="$HOME/.dotfiles"
+  DOTFILES="${HOME}/.dotfiles"
 fi
 
 # .shared_env.d
 #
 # Source all files in ".shared_env.d" if present.
-if [ -d "$HOME/.shared_env.d" ]
+if [ -d "${HOME}/.shared_env.d" ]
 then
-  source_dir "$HOME/.shared_env.d"
+  source_dir "${HOME}/.shared_env.d"
 fi
 
 # .shared_env.local
 #
 # load shared_env.local if it exists
-if [ -f "$HOME/.shared_env.local" ]
+if [ -f "${HOME}/.shared_env.local" ]
 then
   # https://github.com/koalaman/shellcheck/wiki/SC1090
   # shellcheck source=~/.shard_env.local
-  source "$HOME/.shared_env.local"
+  source "${HOME}/.shared_env.local"
 fi
 
 # Re-add $HOME/bin to $PATH
@@ -354,12 +354,12 @@ fi
 # the beginning of `$PATH` so the executables it contains have the highest
 # precedence. Therefore, it must be re-prepended after the shared environment
 # initialization process has been completed.
-export PATH=$HOME/bin:$PATH
+export PATH="${HOME}/bin:${PATH}"
 
 # Add $DOTFILES/bin to $PATH
 #
 # Include executables from the dotfiles directory.
-export PATH="$DOTFILES/bin:$PATH"
+export PATH="${DOTFILES}/bin:${PATH}"
 
 # SHARED_ENV_LOADED
 #
