@@ -114,8 +114,8 @@ is_el_capitan() {
 #   0  If current OS is macOS 10.12 Sierra.
 #   1  If not.
 is_sierra() {
-  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "${___osx_version}" -eq "12" ]
+  ___macos_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+  [ "${___macos_version}" -eq "12" ]
 }
 
 # is_linux()
@@ -148,9 +148,9 @@ is_ubuntu() {
 #   get_os
 #
 # Description:
-#   Print one of 'osx', 'ubuntu', or 'linux' identifying the current system.
+#   Print one of 'macos', 'ubuntu', or 'linux' identifying the current system.
 get_os() {
-  for ___os in osx ubuntu linux
+  for ___os in macos ubuntu linux
   do
     if "is_${___os}"
     then
