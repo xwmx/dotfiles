@@ -147,6 +147,20 @@ if expand('%:t:r') == 'COMMIT_EDITMSG' || expand('%:e') == 'md'
 endif
 
 " ============================================================================
+" NERD Commenter
+" ============================================================================
+
+" Add an extra space after the comment delimeter in all languages.
+let g:NERDSpaceDelims = 1
+
+" Add HTML comment delimeters as alternative for the 'php' file type.
+"
+" Use <leader>ca to swtich between alternates.
+let g:NERDCustomDelimiters = {
+  \ 'php': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' }
+  \ }
+
+" ============================================================================
 " vim-signify
 " ============================================================================
 
