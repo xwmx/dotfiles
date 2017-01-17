@@ -383,6 +383,11 @@ endif
 " Set to use single mouse click to open node or file.
 let g:NERDTreeMouseMode = 3
 
+" Configure NERDTreeIgnore
+"
+" Ignore .DS_Store
+call add(g:NERDTreeIgnore, '\.DS_Store$')
+
 " ============================================================================
 " Neomake
 " ============================================================================
