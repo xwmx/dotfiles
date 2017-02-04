@@ -99,8 +99,6 @@ git submodule update --init --recursive ||
   _die printf "\`git submodule update --init --recursive\` failed.\n"
 ./bin/bindle link --overwrite --with-backup ||
   _die printf "\`./bin/bindle link --overwrite --with-backup\` failed.\n"
-./bin/bindle bin link ||
-  _die printf "\`./bin/bindle bin link\` failed.\n"
 
 # Janus #######################################################################
 
