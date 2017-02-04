@@ -135,10 +135,6 @@ source "${HOME}/.bashrc"
 # Install
 # /////////////////////////////////////////////////////////////////////////////
 
-# brew-linux ##################################################################
-
-./bin/bindle install brew-linux ||
-  _die printf "\`./bin/bindle install brew-linux\` failed.\n"
 
 # apt-packages ################################################################
 
@@ -147,6 +143,11 @@ then
   ./bin/bindle install apt-packages  ||
     _die printf "\`./bin/bindle install apt-packages\` failed.\n"
 fi
+
+# brew-linux ##################################################################
+
+./bin/bindle install brew-linux ||
+  _die printf "\`./bin/bindle install brew-linux\` failed.\n"
 
 # exa #########################################################################
 
