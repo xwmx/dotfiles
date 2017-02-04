@@ -321,12 +321,17 @@ export PATH="${HOME}/bin:${PATH}"
 # $DOTFILES
 #
 # Set $DOTFILES directory using the `bindle` tool if present.
+#
+# NOTE: See related `$BINDLEPATH` variable in ~/.bindlerc (./home/.bindlerc).
 export DOTFILES
 if command_exists "bindle"
 then
   DOTFILES="$(bindle dir)"
-else
+elif [[ "${OSTYPE}" =~ ^darwin ]]
+then
   DOTFILES="${HOME}/.dotfiles"
+else
+  DOTFILES="${HOME}/.bindle"
 fi
 
 # .shared_env.d
