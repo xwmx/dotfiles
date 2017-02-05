@@ -75,8 +75,10 @@ is_osx() {
 #   0  If current OS is OS X 10.9 Mavericks.
 #   1  If not.
 is_mavericks() {
-  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "${___osx_version}" -eq "9" ]
+  is_osx && {
+    ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+    [ "${___osx_version}" -eq "9" ]
+  }
 }
 
 # is_yosemite()
@@ -88,8 +90,10 @@ is_mavericks() {
 #   0  If current OS is OS X 10.10 Yosemite.
 #   1  If not.
 is_yosemite() {
-  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "${___osx_version}" -eq "10" ]
+  is_osx && {
+    ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+   [ "${___osx_version}" -eq "10" ]
+ }
 }
 
 # is_el_capitan()
@@ -101,8 +105,10 @@ is_yosemite() {
 #   0  If current OS is OS X 10.11 El Capitan.
 #   1  If not.
 is_el_capitan() {
-  ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "${___osx_version}" -eq "11" ]
+  is_osx && {
+    ___osx_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+    [ "${___osx_version}" -eq "11" ]
+  }
 }
 
 # is_sierra()
@@ -114,8 +120,10 @@ is_el_capitan() {
 #   0  If current OS is macOS 10.12 Sierra.
 #   1  If not.
 is_sierra() {
-  ___macos_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
-  [ "${___macos_version}" -eq "12" ]
+  is_macos && {
+    ___macos_version="$(sw_vers -productVersion | awk -F. '{print $2}')"
+    [ "${___macos_version}" -eq "12" ]
+  }
 }
 
 # is_linux()
@@ -139,7 +147,7 @@ is_linux() {
 #   0  If current OS is Ubuntu.
 #   1  If not.
 is_ubuntu() {
-  [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]
+  is_linux && [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]
 }
 
 # get_os()
