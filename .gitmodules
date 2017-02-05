@@ -320,3 +320,6 @@
 [submodule "home/.janus/vim-sleuth"]
 	path = home/.janus/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vendor/com/github/Linuxbrew/brew"]
+	path = vendor/com/github/Linuxbrew/brew
+	url = https://github.com/Linuxbrew/brew.git
