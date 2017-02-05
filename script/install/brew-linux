@@ -68,6 +68,17 @@ brew install bats
 # https://github.com/clvv/fasd
 brew install fasd
 
+# Python
+#
+# https://www.python.org
+brew install python
+
+# Python 3
+#
+# https://www.python.org
+brew install python3
+
+
 # The Silver Searcher
 #
 # A code-searching tool similar to ack, but faster.
