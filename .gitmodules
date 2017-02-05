@@ -207,9 +207,6 @@
 [submodule "vendor/com/github/holman/spaceman-diff"]
 	path = vendor/com/github/holman/spaceman-diff
 	url = https://github.com/holman/spaceman-diff.git
-[submodule "home/.linuxbrew"]
-	path = home/.linuxbrew
-	url = https://github.com/Homebrew/linuxbrew.git
 [submodule "vendor/com/github/sstephenson/rbenv"]
 	path = vendor/com/github/sstephenson/rbenv
 	url = https://github.com/sstephenson/rbenv.git
