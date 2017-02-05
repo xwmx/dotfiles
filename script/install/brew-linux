@@ -85,12 +85,7 @@ brew install the_silver_searcher
 # chunk level and act as a pager for output from various Git commands.
 #
 # http://jonas.nitro.dk/tig/
-#
-# NOTE: prefer APT installation of tig, since tig 2.1.1 exits with an error.
-if _homebrew_formula_is_installed "tig"
-then
-  brew uninstall tig
-fi
+brew install tig
 
 # tree
 #
