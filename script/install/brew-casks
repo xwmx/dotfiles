@@ -154,6 +154,13 @@ brew cask install 1password
 # https://adium.im/
 brew cask install adium
 
+# Aerial
+#
+# Aerial Screensaver
+#
+# https://github.com/JohnCoates/Aerial
+brew cask install aerial
+
 # Amethyst
 #
 # Tiling window manager for OS X similar to xmonad, written in pure
