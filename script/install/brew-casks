@@ -590,6 +590,17 @@ _install_google_chrome_cask
 # https://drive.google.com/
 brew cask install google-drive
 
+# Google Earth Pro
+#
+# Google Earth is a virtual globe, map and geographical information program
+# that was originally called EarthViewer 3D created by Keyhole, Inc a company
+# acquired by Google in 2004 (see In-Q-Tel). It maps the Earth by the
+# superimposition of images obtained from satellite imagery, aerial
+# photography and geographic information system (GIS) onto a 3D globe.
+#
+# https://www.google.com/earth/
+brew cask install google-earth-pro
+
 # Google Nik Collection
 #
 # The Nik Collection is comprised of seven desktop plug-ins that provide a
