@@ -152,6 +152,9 @@ autocmd BufRead,BufNewFile *.sshconfig set filetype=sshconfig
 " Associate .cson files with CoffeeScript.
 autocmd BufRead,BufNewFile *.cson set filetype=coffee
 
+" Always use 2-space tabstop with php.
+autocmd Filetype php setlocal ts=2
+
 " ============================================================================
 " Line length highlighting
 " ============================================================================
