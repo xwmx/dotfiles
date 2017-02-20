@@ -8,6 +8,31 @@
 
 source "$(which bask)"
 
+desc address <<HEREDOC
+Usage:
+  $_ME address
+
+Description:
+  Print the URL.
+HEREDOC
+address() {
+  local _address
+  local _config_file="${HOME}/Library/Application Support/Syncthing/config.xml"
+
+  if [[ ! -e "${_config_file}" ]]
+  then
+    printf "Configuration file not found.\n"
+    exit 1
+  fi
+
+  xmllint \
+    --xpath "//configuration/gui/address/text()" \
+    "${HOME}/Library/Application Support/Syncthing/config.xml"
+
+  printf "\n"
+}
+
+
 desc start <<HEREDOC
 Usage:
   $_ME start
