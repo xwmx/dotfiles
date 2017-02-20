@@ -32,6 +32,27 @@ address() {
   printf "\n"
 }
 
+desc gui <<HEREDOC
+Usage:
+  $_ME gui
+
+Description:
+  Open the syncthing GUI in the browser.
+HEREDOC
+gui() {
+  local _address
+  _address="$($_ME address)"
+
+  if [[ -z "${_address}" ]]
+  then
+    printf "Address not found.\n"
+    exit 1
+  fi
+
+  open "https://${_address}"
+}
+
+
 
 desc start <<HEREDOC
 Usage:
