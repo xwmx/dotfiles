@@ -28,8 +28,16 @@ Description:
 HEREDOC
 status() {
   local _api_key
+  local _config_file="${HOME}/Library/Application Support/Syncthing/config.xml"
+
+  if [[ ! -e "${_config_file}" ]]
+  then
+    printf "Configuration file not found.\n"
+    exit 1
+  fi
+
   _api_key="$(
-    grep 'apikey' "${HOME}/Library/Application Support/Syncthing/config.xml" \
+    grep 'apikey' "${_config_file}" \
       | sed -e 's,.*<apikey>\([^<]*\)</apikey>.*,\1,g'
   )"
 
