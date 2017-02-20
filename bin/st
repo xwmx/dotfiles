@@ -32,6 +32,17 @@ address() {
   printf "\n"
 }
 
+desc browser <<HEREDOC
+Usage:
+  $_ME browser
+
+Description:
+  Open the syncthing GUI in the browser. This is an alias for \`$_ME gui\`.
+HEREDOC
+browser() {
+  $_ME gui
+}
+
 desc gui <<HEREDOC
 Usage:
   $_ME gui
@@ -51,8 +62,6 @@ gui() {
 
   open "https://${_address}"
 }
-
-
 
 desc start <<HEREDOC
 Usage:
