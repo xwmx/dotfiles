@@ -368,13 +368,25 @@ gitio() {
 #   echo '{"foo":42}' | json
 #
 # Description:
-#   Syntax-highlight JSON strings or files
+#   Syntax-highlight JSON strings or files.
 json() {
+  local __command=
+
+  if hash "jq" 2> /dev/null
+  then
+    __command="jq"
+  elif hash "pygmentize" 2> /dev/null
+  then
+    __command="python -m json.tool | pygmentize -l javascript"
+  else
+    cat
+  fi
+
   if [ -t 0 ]
   then # argument
-    printf "%s" "$*" | python -mjson.tool | pygmentize -l javascript
+    printf "%s" "$*" | eval "${__command}"
   else # pipe
-    python -mjson.tool | pygmentize -l javascript
+    eval "${__command}"
   fi
 }
 
