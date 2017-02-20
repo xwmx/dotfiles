@@ -62,8 +62,9 @@ status() {
   fi
 
   _api_key="$(
-    grep 'apikey' "${_config_file}" \
-      | sed -e 's,.*<apikey>\([^<]*\)</apikey>.*,\1,g'
+    xmllint \
+      --xpath "//configuration/gui/apikey/text()" \
+      "${_config_file}"
   )"
 
   if [[ -z "${_api_key}" ]]
