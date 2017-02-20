@@ -43,6 +43,29 @@ browser() {
   $_ME gui
 }
 
+desc folder <<HEREDOC
+Usage:
+  $_ME folder
+
+Description:
+  Print the path to the syncthing folder.
+HEREDOC
+folder() {
+  local _config_file="${HOME}/Library/Application Support/Syncthing/config.xml"
+
+  if [[ ! -e "${_config_file}" ]]
+  then
+    printf "Configuration file not found.\n"
+    exit 1
+  fi
+
+  xmllint \
+    --xpath "string(//configuration/folder/@path)" \
+    "${_config_file}"
+
+  printf "\n"
+}
+
 desc gui <<HEREDOC
 Usage:
   $_ME gui
