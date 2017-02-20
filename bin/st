@@ -8,6 +8,20 @@
 
 source "$(which bask)"
 
+desc setup <<EOM
+Usage:
+  $_ME setup
+
+Description:
+  Set up syncthing.
+EOM
+setup() {
+  if [[ ! -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+  then
+    ln -sfv /usr/local/opt/syncthing/*.plist "${HOME}/Library/LaunchAgents"
+  fi
+}
+
 desc start <<EOM
 Usage:
   $_ME start
@@ -19,6 +33,9 @@ Description:
 EOM
 start() {
   printf "Starting syncthing...\n"
+
+  $_ME setup
+
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
 }
 
