@@ -39,6 +39,39 @@ start() {
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
 }
 
+desc status <<EOM
+Usage:
+  $_ME status
+
+Description:
+  Get the status.
+EOM
+status() {
+  local _api_key
+  _api_key="$(
+    grep 'apikey' "${HOME}/Library/Application Support/Syncthing/config.xml" \
+      | sed -e 's,.*<apikey>\([^<]*\)</apikey>.*,\1,g'
+  )"
+
+  if [[ -z "${_api_key}" ]]
+  then
+    printf "API Key not found.\n"
+    exit 1
+  fi
+
+  curl -s -H "X-API-KEY: ${_api_key}" http://localhost:8384/rest/stats/folder | jq
+
+  curl \
+    -s \
+    -H "X-API-KEY: ${_api_key}" \
+    http://localhost:8384/rest/db/completion | jq
+
+  curl \
+    -s \
+    -H "X-API-KEY: ${_api_key}" \
+    http://localhost:8384/rest/db/status | jq
+}
+
 desc stop <<EOM
 Usage:
   $_ME stop
