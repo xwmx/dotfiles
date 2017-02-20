@@ -1896,22 +1896,18 @@ brew install syncthing
 #
 # Setup and load the launchd agent.
 #
-# NOTE: Temporarily disable syncthing. It's not currently being used and the
-# syncing process runs unnecessarily. Commenting out post-install commands and
-# adding new disabling commands.
-#
 # - Post-install for enabled syncthing:
-# if [[ ! -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
-# then
-#   ln -sfv /usr/local/opt/syncthing/*.plist "${HOME}/Library/LaunchAgents"
-#   launchctl load "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
-# fi
-# - Post-install for disabled syncthing:
-if [[ -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+if [[ ! -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
 then
-  launchctl unload "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
-  rm "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+  ln -sfv /usr/local/opt/syncthing/*.plist "${HOME}/Library/LaunchAgents"
+  launchctl load "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
 fi
+# - Post-install for disabled syncthing:
+# if [[ -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
+# then
+  # launchctl unload "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+  # rm "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+# fi
 
 # tag
 #
