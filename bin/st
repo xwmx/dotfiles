@@ -8,35 +8,15 @@
 
 source "$(which bask)"
 
-desc setup <<HEREDOC
-Usage:
-  $_ME setup
-
-Description:
-  Set up syncthing.
-HEREDOC
-setup() {
-  if [[ ! -e "${HOME}/Library/LaunchAgents/homebrew.mxcl.syncthing.plist" ]]
-  then
-    ln -sfv /usr/local/opt/syncthing/*.plist "${HOME}/Library/LaunchAgents"
-  fi
-}
-
 desc start <<HEREDOC
 Usage:
   $_ME start
 
 Description:
-  Start syncthing. A shortcut for the following:
-
-  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+  Start syncthing.
 HEREDOC
 start() {
-  printf "Starting syncthing...\n"
-
-  $_ME setup
-
-  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+  brew services start syncthing
 }
 
 desc status <<HEREDOC
@@ -77,13 +57,10 @@ Usage:
   $_ME stop
 
 Description:
-  Stop syncthing. A shortcut for the following:
-
-  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+  Stop syncthing.
 HEREDOC
 stop() {
-  printf "Stopping syncthing...\n"
-  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
+  brew services stop syncthing
 }
 
 _main
