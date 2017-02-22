@@ -86,25 +86,14 @@ gui() {
   open "https://${_address}"
 }
 
-desc start <<HEREDOC
+desc info <<HEREDOC
 Usage:
-  $_ME start
+  $_ME info
 
 Description:
-  Start syncthing.
+  Print current information and stats.
 HEREDOC
-start() {
-  brew services start syncthing
-}
-
-desc status <<HEREDOC
-Usage:
-  $_ME status
-
-Description:
-  Get the status.
-HEREDOC
-status() {
+info() {
   local _api_key
   local _config_file="${HOME}/Library/Application Support/Syncthing/config.xml"
 
@@ -137,6 +126,17 @@ status() {
     -s \
     -H "X-API-KEY: ${_api_key}" \
     http://localhost:8384/rest/db/status | jq
+}
+
+desc start <<HEREDOC
+Usage:
+  $_ME start
+
+Description:
+  Start syncthing.
+HEREDOC
+start() {
+  brew services start syncthing
 }
 
 desc stop <<HEREDOC
