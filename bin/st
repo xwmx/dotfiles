@@ -115,7 +115,10 @@ info() {
     exit 1
   fi
 
-  curl -s -H "X-API-KEY: ${_api_key}" http://localhost:8384/rest/stats/folder | jq
+  curl \
+    -s \
+    -H "X-API-KEY: ${_api_key}" \
+    http://localhost:8384/rest/stats/folder | jq
 
   curl \
     -s \
