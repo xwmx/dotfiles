@@ -8,6 +8,8 @@
 
 source "$(which bask)"
 
+DEFAULT_COMMAND="status"
+
 desc address <<HEREDOC
 Usage:
   $_ME address
