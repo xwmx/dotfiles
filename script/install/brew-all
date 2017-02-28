@@ -50,4 +50,3 @@ fi
 
 # Source primary install scripts for Homebrew and Homewbrew Cask.
 . "$DIR/brew-formulae"
-. "$DIR/brew-casks"

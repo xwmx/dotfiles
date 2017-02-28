@@ -101,7 +101,7 @@ brew tap caskroom/fonts
 # Menlo font patched to work with Powerline.
 #
 # https://github.com/abertsch/Menlo-for-Powerline
-brew cask install font-menlo-for-powerline
+brew cask uninstall --force font-menlo-for-powerline
 
 # Sauce Code Powerline
 #
@@ -111,7 +111,7 @@ brew cask install font-menlo-for-powerline
 # Code Pro for Powerline users.
 #
 # https://github.com/powerline/fonts/tree/master/SourceCodePro
-brew cask install font-sauce-code-powerline
+brew cask uninstall --force font-sauce-code-powerline
 
 # Office Code Pro
 #
@@ -121,7 +121,7 @@ brew cask install font-sauce-code-powerline
 # environments, but are still very usable in other applications.
 #
 # https://github.com/nathco/Office-Code-Pro
-brew cask install font-office-code-pro
+brew cask uninstall --force font-office-code-pro
 
 ###############################################################################
 # Homebrew Cask - Applications
@@ -137,14 +137,14 @@ brew cask install font-office-code-pro
 #   - Installing first since it's important and other casks use it.
 #   - Installation fails if a VM is running. If this happens, check for
 #     running VMs, such as a boot2docker VM.
-brew cask install virtualbox
+brew cask uninstall --force virtualbox
 
 # 1Password
 #
 # Password manager and secure wallet
 #
 # https://agilebits.com/onepassword
-brew cask install 1password
+brew cask uninstall --force 1password
 
 # Adium
 #
@@ -152,14 +152,14 @@ brew cask install 1password
 # to AIM, MSN, XMPP (Jabber), Yahoo, and more.
 #
 # https://adium.im/
-brew cask install adium
+brew cask uninstall --force adium
 
 # Aerial
 #
 # Aerial Screensaver
 #
 # https://github.com/JohnCoates/Aerial
-brew cask install aerial
+brew cask uninstall --force aerial
 
 # Amethyst
 #
@@ -167,19 +167,19 @@ brew cask install aerial
 # Objective-C.
 #
 # http://ianyh.com/amethyst/
-brew cask install amethyst
+brew cask uninstall --force amethyst
 
 # Android Studio
 #
 # https://developer.android.com/sdk/index.html
-brew cask install android-studio
+brew cask uninstall --force android-studio
 
 # Atom
 #
 # A hackable text editor for the 21st Century.
 #
 # http://atom.io
-brew cask install atom
+brew cask uninstall --force atom
 
 # Audacity
 #
@@ -187,7 +187,7 @@ brew cask install atom
 # editing sounds.
 #
 # http://audacity.sourceforge.net/
-brew cask install audacity
+brew cask uninstall --force audacity
 
 # AU Lab
 #
@@ -196,7 +196,7 @@ brew cask install audacity
 # of the new Mastered for iTunes tools.
 #
 # http://www.apple.com/itunes/mastered-for-itunes/
-brew cask install au-lab
+brew cask uninstall --force au-lab
 
 # BetterTouchTool
 #
@@ -209,7 +209,7 @@ brew cask install au-lab
 #
 # http://www.bettertouchtool.net
 # http://boastr.net
-brew cask install bettertouchtool
+brew cask uninstall --force bettertouchtool
 
 # BibDesk - Mac Bibliography Manager
 #
@@ -219,7 +219,7 @@ brew cask install bettertouchtool
 # applications and are particularly well suited for LATEX users.
 #
 # http://bibdesk.sourceforge.net/
-brew cask install bibdesk
+brew cask uninstall --force bibdesk
 
 # bittorrent-sync
 #
@@ -227,28 +227,28 @@ brew cask install bibdesk
 #
 # http://www.bittorrent.com/sync
 # https://www.getsync.com/
-brew cask install bittorrent-sync
+brew cask uninstall --force bittorrent-sync
 
 # Blender
 #
 # Blender is a free and open source 3D animation suite.
 #
 # http://www.blender.org/
-brew cask install blender
+brew cask uninstall --force blender
 
 # Brackets
 #
 # Adobe's open source text editor built with and focused on web technologies.
 #
 # http://brackets.io
-brew cask install brackets
+brew cask uninstall --force brackets
 
 # Breach
 #
 # A new modular browser. Entirely written in Javascript. Free. Hackable.
 #
 # http://breach.cc
-brew cask install breach
+brew cask uninstall --force breach
 
 # Boot2Docker Status
 #
@@ -256,7 +256,7 @@ brew cask install breach
 #
 # http://boot2docker-status.nickgartmann.com/
 # https://github.com/nickgartmann/boot2docker-status
-brew cask install "boot2docker-status"
+brew cask uninstall --force "boot2docker-status"
 
 # Cakebrew
 #
@@ -276,7 +276,7 @@ fi
 # developed by users of e-books for users of e-books.
 #
 # http://calibre-ebook.com/
-brew cask install calibre
+brew cask uninstall --force calibre
 
 # Codebox
 #
@@ -295,7 +295,7 @@ fi
 # Consul is a tool for service discovery, monitoring and configuration.
 #
 # http://www.consul.io/
-brew cask install consul
+brew cask uninstall --force consul
 
 # Context Free
 #
@@ -304,7 +304,7 @@ brew cask install consul
 # create images that can contain millions of shapes.
 #
 # http://www.contextfreeart.org/
-brew cask install context-free
+brew cask uninstall --force context-free
 
 # coqide
 #
@@ -313,7 +313,7 @@ brew cask install context-free
 # NOTE: see `brew install coq` in `brew-tools`.
 #
 # https://coq.inria.fr/
-brew cask install coqide
+brew cask uninstall --force coqide
 
 # CotEditor
 #
@@ -321,7 +321,7 @@ brew cask install coqide
 #
 # http://coteditor.com/
 # https://github.com/coteditor/CotEditor
-brew cask install coteditor
+brew cask uninstall --force coteditor
 
 # couleurs
 #
@@ -341,28 +341,28 @@ if _homebrew_cask_is_installed "colors"
 then
   brew cask uninstall colors
 fi
-brew cask install couleurs
+brew cask uninstall --force couleurs
 
 # cscreen
 #
 # Command line display management utility.
 #
 # http://www.pyehouse.com/cscreen/
-brew cask install cscreen
+brew cask uninstall --force cscreen
 
 # Cyberduck
 #
 # Libre FTP, SFTP, WebDAV, S3 & OpenStack Swift browser for Mac and Windows.
 #
 # https://cyberduck.io/?l=en
-brew cask install cyberduck
+brew cask uninstall --force cyberduck
 
 # Max
 #
 # Visual programming language for media.
 #
 # https://cycling74.com/
-brew cask install cycling74-max
+brew cask uninstall --force cycling74-max
 
 # darktable
 #
@@ -378,14 +378,14 @@ brew cask install cycling74-max
 # http://www.darktable.org/
 # https://en.wikipedia.org/wiki/Darktable
 # https://github.com/darktable-org/darktable
-brew cask install darktable
+brew cask uninstall --force darktable
 
 # Deluge
 #
 # Deluge is a lightweight, Free Software, cross-platform BitTorrent client.
 #
 # http://deluge-torrent.org/
-brew cask install deluge
+brew cask uninstall --force deluge
 
 # Disk Inventory X
 #
@@ -394,7 +394,7 @@ brew cask install deluge
 # "treemaps".
 #
 # http://www.derlien.com/
-brew cask install disk-inventory-x
+brew cask uninstall --force disk-inventory-x
 
 # Docear
 #
@@ -413,21 +413,21 @@ brew cask install disk-inventory-x
 #
 # http://www.docear.org/
 # http://sourceforge.net/projects/docear/
-brew cask install docear
+brew cask uninstall --force docear
 
 # DTerm
 #
 #  command line anywhere and everywhere.
 #
 # https://decimus.net/DTerm
-brew cask install dterm
+brew cask uninstall --force dterm
 
 # Elm
 #
 # A functional reactive language for interactive applications
 #
 # http://www.elm-lang.org
-brew cask install elm-platform
+brew cask uninstall --force elm-platform
 
 # Exa
 #
@@ -444,7 +444,7 @@ if [[ -e "$HOME/bin/exa" ]]
 then
   orphans exa:down
 fi
-brew cask install exa
+brew cask uninstall --force exa
 
 # Facter
 #
@@ -454,7 +454,7 @@ brew cask install exa
 # variables.
 #
 # https://puppetlabs.com/facter
-brew cask install facter
+brew cask uninstall --force facter
 
 # Factor
 #
@@ -466,21 +466,21 @@ brew cask install facter
 # which allows many abstractions and paradigms to be built on top.
 #
 # http://factorcode.org/
-brew cask install factor
+brew cask uninstall --force factor
 
 # Firefox
 #
 # A free and open-source web browser.
 #
 # https://www.mozilla.org/en-US/firefox/
-brew cask install firefox
+brew cask uninstall --force firefox
 
 # Firefox Developer Edition
 #
 # A distribution of the Firefox web browser designed for developers.
 #
 # https://www.mozilla.org/en-US/firefox/developer/
-brew cask install firefoxdeveloperedition
+brew cask uninstall --force firefoxdeveloperedition
 
 # f.lux
 #
@@ -490,7 +490,7 @@ brew cask install firefoxdeveloperedition
 #
 # https://justgetflux.com
 # https://en.wikipedia.org/wiki/F.lux
-brew cask install flux
+brew cask uninstall --force flux
 
 # gephi
 #
@@ -500,7 +500,7 @@ brew cask install flux
 # of networks and complex systems, dynamic and hierarchical graphs.
 #
 # https://gephi.github.io/
-brew cask install gephi
+brew cask uninstall --force gephi
 
 # gfxCardStatus
 #
@@ -509,7 +509,7 @@ brew cask install gephi
 # more power-hungry graphics.
 #
 # https://gfx.io/
-brew cask install gfxcardstatus
+brew cask uninstall --force gfxcardstatus
 
 # Gimp
 #
@@ -518,7 +518,7 @@ brew cask install gfxcardstatus
 # authoring.
 #
 # http://www.gimp.org
-brew cask install gimp
+brew cask uninstall --force gimp
 
 # GitHub Desktop
 #
@@ -526,7 +526,7 @@ brew cask install gimp
 # GitHub Enterprise.
 #
 # https://desktop.github.com/
-brew cask install github-desktop
+brew cask uninstall --force github-desktop
 
 # GitUp
 #
@@ -534,7 +534,7 @@ brew cask install github-desktop
 #
 # http://gitup.co/
 # http://forums.gitup.co/t/getting-started-with-gitup-pre-release/30
-brew cask install gitup
+brew cask uninstall --force gitup
 
 # GnuCash
 #
@@ -542,7 +542,7 @@ brew cask install gitup
 # software.
 #
 # http://www.gnucash.org
-brew cask install gnucash
+brew cask uninstall --force gnucash
 
 # gridwars
 #
@@ -550,7 +550,7 @@ brew cask install gnucash
 # Geometry Wars developed by Marco Incitti.
 #
 # http://gridwars.marune.de/
-brew cask install gridwars
+brew cask uninstall --force gridwars
 
 # Google Chrome
 #
@@ -573,7 +573,7 @@ _install_google_chrome_cask() {
     then
       brew cask uninstall google-chrome --force
     fi
-    brew cask install google-chrome
+    brew cask uninstall --force google-chrome
   fi
 }
 _install_google_chrome_cask
@@ -588,7 +588,7 @@ _install_google_chrome_cask
 #
 # https://www.google.com/drive/
 # https://drive.google.com/
-brew cask install google-drive
+brew cask uninstall --force google-drive
 
 # Google Earth Pro
 #
@@ -599,7 +599,7 @@ brew cask install google-drive
 # photography and geographic information system (GIS) onto a 3D globe.
 #
 # https://www.google.com/earth/
-brew cask install google-earth-pro
+brew cask uninstall --force google-earth-pro
 
 # Google Nik Collection
 #
@@ -616,7 +616,7 @@ brew cask install google-earth-pro
 #
 # NOTE: Final setup requires launching and following the steps displayed in
 # 'Nik Collection.app'.
-brew cask install google-nik-collection
+brew cask uninstall --force google-nik-collection
 
 # GrandPerspective
 #
@@ -629,7 +629,7 @@ brew cask install google-nik-collection
 # arbitrary.
 #
 # http://grandperspectiv.sourceforge.net
-brew cask install grandperspective
+brew cask uninstall --force grandperspective
 
 # hab / Habitat
 #
@@ -641,12 +641,12 @@ brew cask install grandperspective
 # https://github.com/habitat-sh
 # https://github.com/habitat-sh/habitat
 # https://news.ycombinator.com/item?id=11901938
-brew cask install hab
+brew cask uninstall --force hab
 
 # The Haskell Platform
 #
 # http://www.haskell.org/platform/
-brew cask install haskell-platform
+brew cask uninstall --force haskell-platform
 
 # Hammerspoon
 #
@@ -662,7 +662,7 @@ brew cask install haskell-platform
 #
 # http://www.hammerspoon.org/
 # https://github.com/Hammerspoon/hammerspoon
-brew cask install hammerspoon
+brew cask uninstall --force hammerspoon
 
 # helium / jadengeller-helium
 #
@@ -673,7 +673,7 @@ brew cask install hammerspoon
 # switch tasks.
 #
 # https://jadengeller.github.io/Helium/
-brew cask install jadengeller-helium
+brew cask uninstall --force jadengeller-helium
 
 # Hyper
 #
@@ -691,7 +691,7 @@ if _homebrew_cask_is_installed 'hyperterm'
 then
   brew cask uninstall hyperterm --force
 fi
-brew cask install hyper
+brew cask uninstall --force hyper
 
 # Inform
 #
@@ -705,7 +705,7 @@ brew cask install hyper
 # Additional links and resources:
 #
 # https://news.ycombinator.com/item?id=9279639
-brew cask install inform
+brew cask uninstall --force inform
 
 # Inkscape
 #
@@ -714,7 +714,7 @@ brew cask install inform
 # Graphics (SVG), an open XML-based W3C standard, as the native format.
 #
 # https://inkscape.org/en/
-brew cask install inkscape
+brew cask uninstall --force inkscape
 
 # iStat Menus
 #
@@ -724,7 +724,7 @@ brew cask install inkscape
 #
 # NOTE: this is similar to Menu Meters, but it works in El Capitan, while
 # Menu Meters currently does not.
-brew cask install istat-menus
+brew cask uninstall --force istat-menus
 
 # iTerm2
 #
@@ -748,7 +748,7 @@ then
   then
     brew cask uninstall iterm2-beta --force
   fi
-  brew cask install "iterm2"
+  brew cask uninstall --force "iterm2"
 fi
 
 # Itsycal
@@ -756,7 +756,7 @@ fi
 # Itsycal is a tiny calendar for your Mac's menu bar.
 #
 # http://www.mowglii.com/itsycal/
-brew cask install itsycal
+brew cask uninstall --force itsycal
 
 # Java
 #
@@ -773,7 +773,7 @@ brew cask install itsycal
 #
 # If your Java application still asks for JRE installation, you might need
 # to reboot or logout/login.
-brew cask install java
+brew cask uninstall --force java
 
 # KindleGen
 #
@@ -784,7 +784,7 @@ brew cask install java
 # great-looking books that work on all Kindle devices and apps.
 #
 # http://www.amazon.com/gp/feature.html?docId=1000765211
-brew cask install kindlegen
+brew cask uninstall --force kindlegen
 
 # Kitematic
 #
@@ -792,14 +792,14 @@ brew cask install kindlegen
 #
 # https://kitematic.com/
 # https://github.com/kitematic/kitematic
-brew cask install kitematic
+brew cask uninstall --force kitematic
 
 # Krita
 #
 # Krita is a digital painting and illustration application.
 #
 # https://krita.org/
-brew cask install krita
+brew cask uninstall --force krita
 
 # LibreOffice
 #
@@ -810,7 +810,7 @@ brew cask install krita
 # and drawings, maintain databases, and compose mathematical formulae.
 #
 # http://www.libreoffice.org/
-brew cask install libreoffice
+brew cask uninstall --force libreoffice
 
 # Light Table
 #
@@ -818,7 +818,7 @@ brew cask install libreoffice
 #
 # http://www.lighttable.com/
 # https://github.com/LightTable/LightTable
-brew cask install lighttable
+brew cask uninstall --force lighttable
 
 # LyX – The Document Processor
 #
@@ -832,7 +832,7 @@ brew cask install lighttable
 # NOTE: as of LyX version 2.1.3, retina / hidpi display is still suboptimal,
 # with text blurred in the main work area. There are patches in the wild, but
 # none have apparently been applied at this time.
-brew cask install lyx
+brew cask uninstall --force lyx
 
 # Macfusion
 #
@@ -841,7 +841,7 @@ brew cask install lyx
 # Support for SSH (Secure Shell) and FTP (File Transfer Protocol) servers.
 #
 # http://macfusionapp.org/
-brew cask install macfusion
+brew cask uninstall --force macfusion
 
 # MacTex
 #
@@ -849,14 +849,14 @@ brew cask install macfusion
 # environment.
 #
 # http://www.tug.org/mactex/
-brew cask install mactex
+brew cask uninstall --force mactex
 
 # magicavoxel
 #
 # A free lightweight 8-bit voxel editor and interactive path tracing renderer.
 #
 # https://ephtracy.github.io/
-brew cask install magicavoxel
+brew cask uninstall --force magicavoxel
 
 # MAME
 #
@@ -870,7 +870,7 @@ brew cask install magicavoxel
 # http://mamedev.org/
 # https://github.com/mamedev/mame
 # http://mameosx.sourceforge.net/
-brew cask install mame
+brew cask uninstall --force mame
 
 # Mapbox Studio
 #
@@ -892,7 +892,7 @@ fi
 # Mac OS X.
 #
 # http://www.ragingmenace.com/software/menumeters/
-# brew cask install menumeters
+# brew cask uninstall --force menumeters
 #
 # NOTE: the offial menumeters has not yet been update for El Capitan, so
 # the yujitach fork is used:
@@ -901,21 +901,21 @@ fi
 # MenuMeters, MenuMeters El Capitan Port
 #
 # http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
-brew cask install yujitach-menumeters
+brew cask uninstall --force yujitach-menumeters
 
 # Minecraft
 #
 # Minecraft is a sandbox video game.
 #
 # https://minecraft.net/
-brew cask install minecraft
+brew cask uninstall --force minecraft
 
 # Monodraw
 #
 # Powerful ASCII art editor designed for the Mac.
 #
 # http://monodraw.helftone.com/
-brew cask install monodraw
+brew cask uninstall --force monodraw
 
 # Monu
 #
@@ -925,14 +925,14 @@ brew cask install monodraw
 # they crash.
 #
 # https://github.com/maxogden/monu
-brew cask install monu
+brew cask uninstall --force monu
 
 # Natron
 #
 # Natron is an open-source • crossplatform nodal • compositing software
 #
 # https://natron.inria.fr/
-brew cask install natron
+brew cask uninstall --force natron
 
 # nvALT
 #
@@ -940,7 +940,7 @@ brew cask install natron
 # features and interface modifications, including MultiMarkdown functionality.
 #
 # http://brettterpstra.com/projects/nvalt/
-brew cask install nvalt
+brew cask uninstall --force nvalt
 
 # Nylas N1
 #
@@ -956,7 +956,7 @@ brew cask install nvalt
 #
 # https://nylas.com/
 # https://news.ycombinator.com/item?id=11181867
-brew cask install nylas-n1
+brew cask uninstall --force nylas-n1
 
 # OpenSCAD
 #
@@ -970,7 +970,7 @@ brew cask install nylas-n1
 # movies.
 #
 # http://www.openscad.org/
-brew cask install openscad
+brew cask uninstall --force openscad
 
 # Origami - Design Prototyping
 #
@@ -995,7 +995,7 @@ fi
 # modern interfaces, built and used by designers at Facebook.
 #
 # http://origami.design/
-brew cask install origami-studio
+brew cask uninstall --force origami-studio
 
 # osxfuse - FUSE for OS X
 #
@@ -1007,7 +1007,7 @@ brew cask install origami-studio
 #
 # NOTE: There is a vanilla Homebrew osxfuse formula, but it can't be
 # installed on Yosemite because of the unsigned kext ban.
-brew cask install osxfuse
+brew cask uninstall --force osxfuse
 
 # Packer
 #
@@ -1031,7 +1031,7 @@ fi
 #
 # http://puredata.info/
 # http://puredata.info/downloads/pd-extended
-brew cask install pd-extended
+brew cask uninstall --force pd-extended
 
 # Pencil
 #
@@ -1040,7 +1040,7 @@ brew cask install pd-extended
 # https://github.com/prikhi/pencil
 # http://pencil.evolus.vn/
 # https://news.ycombinator.com/item?id=12889053
-brew cask install pencil
+brew cask uninstall --force pencil
 
 # pgAdmin
 #
@@ -1048,7 +1048,7 @@ brew cask install pencil
 # development platform for PostgreSQL
 #
 # http://pgadmin.org
-brew cask install pgadmin3
+brew cask uninstall --force pgadmin3
 
 # Pharo
 #
@@ -1057,7 +1057,7 @@ brew cask install pgadmin3
 # OS rolled into one).
 #
 # http://pharo.org/
-brew cask install pharo
+brew cask uninstall --force pharo
 
 # Pixate Studio
 #
@@ -1068,7 +1068,7 @@ brew cask install pharo
 # interactive ideas to stakeholders and team members.
 #
 # http://www.pixate.com/
-brew cask install pixate-studio
+brew cask uninstall --force pixate-studio
 
 # Postgres.app
 #
@@ -1107,14 +1107,14 @@ if _homebrew_cask_is_installed "processing3"
 then
   brew cask uninstall processing3 --force
 fi
-brew cask install processing
+brew cask uninstall --force processing
 
 # PSequel
 #
 # PostgreSQL GUI tool for Mac OS X
 #
 # http://www.psequel.com/
-brew cask install psequel
+brew cask uninstall --force psequel
 
 # qBittorrent
 #
@@ -1127,7 +1127,7 @@ brew cask install psequel
 #
 # http://www.qbittorrent.org
 # https://github.com/qbittorrent/qBittorrent
-brew cask install qbittorrent
+brew cask uninstall --force qbittorrent
 
 # RetroArch / libretro
 #
@@ -1138,7 +1138,7 @@ brew cask install qbittorrent
 #
 # https://github.com/libretro/RetroArch
 # http://www.libretro.com/
-brew cask install retroarch
+brew cask uninstall --force retroarch
 
 # rowanj-gitx
 #
@@ -1149,7 +1149,7 @@ brew cask install retroarch
 #
 # http://rowanj.github.io/gitx/
 # https://github.com/rowanj/gitx
-brew cask install rowanj-gitx
+brew cask uninstall --force rowanj-gitx
 
 # Rust (Rust Nightly)
 #
@@ -1185,7 +1185,7 @@ fi
 # colors, ICC color management, and versatile PDF creation.
 #
 # http://www.scribus.net/canvas/Scribus
-brew cask install scribus
+brew cask uninstall --force scribus
 
 # Secrets
 #
@@ -1195,7 +1195,7 @@ brew cask install scribus
 #
 # TODO: Remove this section because Secrets has been removed.
 # https://github.com/caskroom/homebrew-cask/pull/17170
-brew cask install secrets
+brew cask uninstall --force secrets
 
 # Sequel Pro
 #
@@ -1203,7 +1203,7 @@ brew cask install secrets
 # MySQL databases.
 
 # http://www.sequelpro.com/
-brew cask install sequel-pro
+brew cask uninstall --force sequel-pro
 
 # SmartGit
 #
@@ -1211,7 +1211,7 @@ brew cask install sequel-pro
 # SVN, and Mercurial.
 #
 # http://www.syntevo.com/smartgit/
-brew cask install smartgit
+brew cask uninstall --force smartgit
 
 # Sonic Pi
 #
@@ -1219,7 +1219,7 @@ brew cask install smartgit
 # support computing and music lessons within schools. Make Music Using Ruby.
 #
 # http://sonic-pi.net/
-brew cask install sonic-pi
+brew cask uninstall --force sonic-pi
 
 # Sonic Visualiser
 #
@@ -1227,7 +1227,7 @@ brew cask install sonic-pi
 # music audio files.
 #
 # http://www.sonicvisualiser.org/
-brew cask install sonic-visualiser
+brew cask uninstall --force sonic-visualiser
 
 # Soundflower
 #
@@ -1237,7 +1237,7 @@ brew cask install sonic-visualiser
 # audio with no other support needed.
 #
 # https://code.google.com/p/soundflower/
-brew cask install soundflower
+brew cask uninstall --force soundflower
 
 # Soundnode
 #
@@ -1246,7 +1246,7 @@ brew cask install soundflower
 #
 # http://www.soundnodeapp.com/
 # https://github.com/Soundnode/soundnode-app
-brew cask install soundnode
+brew cask uninstall --force soundnode
 
 # Spectacle
 #
@@ -1254,14 +1254,14 @@ brew cask install soundnode
 # keyboard shortcuts.
 #
 # http://spectacleapp.com
-brew cask install spectacle
+brew cask uninstall --force spectacle
 
 # Spotify
 #
 # A commercial music streaming service.
 #
 # https://www.spotify.com
-brew cask install spotify
+brew cask uninstall --force spotify
 
 # Stellarium
 #
@@ -1271,7 +1271,7 @@ brew cask install spotify
 # coordinates and go.
 #
 # http://www.stellarium.org/
-brew cask install stellarium
+brew cask uninstall --force stellarium
 
 # sublime-text
 #
@@ -1287,7 +1287,7 @@ if _homebrew_cask_is_installed "sublime-text3"
 then
   brew cask uninstall sublime-text3 --force
 fi
-brew cask install sublime-text
+brew cask uninstall --force sublime-text
 
 # Sunvox
 #
@@ -1296,7 +1296,7 @@ brew cask install sublime-text
 # wherever they are, whenever they wish.
 #
 # http://www.warmplace.ru/soft/sunvox/
-brew cask install sunvox
+brew cask uninstall --force sunvox
 
 # swi-prolog
 #
@@ -1305,7 +1305,7 @@ brew cask install sunvox
 # applications.
 #
 # http://www.swi-prolog.org/
-brew cask install swi-prolog
+brew cask uninstall --force swi-prolog
 
 # TeXShop
 #
@@ -1316,14 +1316,14 @@ brew cask install swi-prolog
 # instead of dvi output.
 #
 # http://pages.uoregon.edu/koch/texshop
-brew cask install texshop
+brew cask uninstall --force texshop
 
 # Textadept
 #
 # A fast, minimalist, and remarkably extensible cross-platform text editor
 #
 # http://foicica.com/textadept/
-brew cask install textadept
+brew cask uninstall --force textadept
 
 # Thunderbird
 #
@@ -1331,7 +1331,7 @@ brew cask install textadept
 # chat client developed by the Mozilla Foundation.
 #
 # http://www.mozilla.org/en-US/thunderbird/
-brew cask install thunderbird
+brew cask uninstall --force thunderbird
 
 # TimeMachineScheduler
 #
@@ -1360,7 +1360,7 @@ fi
 #
 # http://www.rugarciap.com/turbo-boost-switcher-for-os-x/
 # https://github.com/rugarciap/Turbo-Boost-Switcher
-brew cask install turbo-boost-switcher
+brew cask uninstall --force turbo-boost-switcher
 
 # Twine
 #
@@ -1372,7 +1372,7 @@ brew cask install turbo-boost-switcher
 # free to use any way you like, including for commercial purposes.
 #
 # http://twinery.org/
-brew cask install twine
+brew cask uninstall --force twine
 
 # UnicodeChecker
 #
@@ -1393,7 +1393,7 @@ brew cask install twine
 #
 # NOTE: there is an official cask for this application, but it's outdated.
 # Experimenting with own cask localy.
-brew cask install alphabetum/taps/unicodechecker
+brew cask uninstall --force alphabetum/taps/unicodechecker
 
 # Unity
 #
@@ -1401,7 +1401,7 @@ brew cask install alphabetum/taps/unicodechecker
 # multiplatform 3D and 2D games and interactive experiences.
 #
 # http://unity3d.com/unity/
-brew cask install unity
+brew cask uninstall --force unity
 
 # Vagrant
 #
@@ -1409,7 +1409,7 @@ brew cask install unity
 # environments.
 #
 # http://www.vagrantup.com
-brew cask install vagrant
+brew cask uninstall --force vagrant
 
 # Vassal
 #
@@ -1418,7 +1418,7 @@ brew cask install vagrant
 # runs on all platforms, and is free, open-source software.
 #
 # http://www.vassalengine.org
-brew cask install vassal
+brew cask uninstall --force vassal
 
 # Vault
 #
@@ -1443,28 +1443,28 @@ fi
 # uses vi key bindings.
 #
 # http://www.vicoapp.com
-brew cask install vico
+brew cask uninstall --force vico
 
 # VimR
 #
 # A Vim GUI for OS X
 #
 # http://vimr.org/
-brew cask install vimr
+brew cask uninstall --force vimr
 
 # Visual Studio Code
 #
 # An editor built with Electron.
 #
 # https://code.visualstudio.com/
-brew cask install visual-studio-code
+brew cask uninstall --force visual-studio-code
 
 # Vivaldi
 #
 # A web browser.
 #
 # https://vivaldi.com
-brew cask install vivaldi
+brew cask uninstall --force vivaldi
 
 # VLC - vlc-nightly
 #
@@ -1473,7 +1473,7 @@ brew cask install vivaldi
 # various streaming protocols.
 #
 # http://www.videolan.org/vlc/
-brew cask install vlc-nightly
+brew cask uninstall --force vlc-nightly
 
 # XQuartz
 #
@@ -1483,7 +1483,7 @@ brew cask install vlc-nightly
 # version 10.5.
 #
 # http://xquartz.macosforge.org/landing/
-brew cask install xquartz
+brew cask uninstall --force xquartz
 
 # xrg
 #
@@ -1495,7 +1495,7 @@ brew cask install xquartz
 # experience.
 #
 # http://www.gauchosoft.com/Products/XRG/
-brew cask install xrg
+brew cask uninstall --force xrg
 
 # Zed
 #
@@ -1503,7 +1503,7 @@ brew cask install xrg
 # editor for power users.
 #
 # http://zedapp.org
-brew cask install zed
+brew cask uninstall --force zed
 
 ###############################################################################
 # Cleanup
