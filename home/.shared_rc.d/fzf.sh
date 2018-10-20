@@ -12,6 +12,8 @@
 # - ~/.profile.d/fzf.sh
 ###############################################################################
 
+# *********************************************
+# To enable fzf, uncomment the following lines:
 if [ -n "$ZSH_VERSION" ]; then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 elif [ -n "$BASH_VERSION" ]; then

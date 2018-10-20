@@ -20,3 +20,6 @@ if command_exists "fasd"
 then
   eval "$(fasd --init auto)"
 fi
+
+# Remove `s` alias so it can be used for other things.
+unalias s

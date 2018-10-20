@@ -41,9 +41,9 @@ HEREDOC
   local -a _sort_options
   local -a _fs_arguments
 
-  for arg in "${@:-}"
+  for __fs_arg in "${@:-}"
   do
-    case $arg in
+    case "${__fs_arg}" in
       -h|--help)
         _print_fs_help
         return 0
@@ -58,7 +58,7 @@ HEREDOC
         _less_options="${_less_options}N"
         ;;
       *)
-        _fs_arguments+=("$arg")
+        _fs_arguments+=("${__fs_arg}")
         ;;
     esac
   done
@@ -84,7 +84,7 @@ HEREDOC
     _cat_cmd="ccat -C 'always'"
   fi
 
-  if "$_du_command" -b /dev/null > /dev/null 2>&1
+  if "${_du_command}" -b /dev/null > /dev/null 2>&1
   then # GNU
     if ((_list_contents))
     then
@@ -110,7 +110,7 @@ HEREDOC
     fi
   fi
 
-  if "$_sort_command" -h /dev/null > /dev/null 2>&1
+  if "${_sort_command}" -h /dev/null > /dev/null 2>&1
   then # GNU
     _sort_options=(-hr)
   else # BSD
@@ -119,26 +119,26 @@ HEREDOC
     _sort_options=(-nr)
   fi
 
-  if [[ -n "$@" ]]
+  if [[ -n "$*" ]]
   then
     if ((_list_all)) || ((_list_contents))
     then
-      "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}" \
-        | "$_sort_command" "${_sort_options[@]}" \
-        | eval "$_cat_cmd" \
+      "${_du_command}" "${_du_options[@]}" -- "${_fs_arguments[@]}" \
+        | "${_sort_command}" "${_sort_options[@]}" \
+        | eval "${_cat_cmd}" \
         | less "${_less_options}"
     else
-      "$_du_command" "${_du_options[@]}" -- "${_fs_arguments[@]}"
+      "${_du_command}" "${_du_options[@]}" -- "${_fs_arguments[@]}"
     fi
   else
     if ((_list_all)) || ((_list_contents))
     then
-      "$_du_command" "${_du_options[@]}" \
-        | "$_sort_command" "${_sort_options[@]}" \
-        | eval "$_cat_cmd" \
+      "${_du_command}" "${_du_options[@]}" \
+        | "${_sort_command}" "${_sort_options[@]}" \
+        | eval "${_cat_cmd}" \
         | less "${_less_options}"
     else
-      "$_du_command" "${_du_options[@]}"
+      "${_du_command}" "${_du_options[@]}"
     fi
   fi
 }

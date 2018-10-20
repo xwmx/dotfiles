@@ -6,4 +6,4 @@
 # https://github.com/alphabetum/hosts
 ###############################################################################
 
-alias hosts="sudo hosts"
+alias hosts="hosts --auto-sudo"

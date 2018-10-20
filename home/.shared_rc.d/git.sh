@@ -22,28 +22,68 @@
 # at $HOME/.scm_breeze
 #
 # https://github.com/ndbroadbent/scm_breeze
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && \
-  source "$HOME/.scm_breeze/scm_breeze.sh" 1>/dev/null
+#
+
+# _enable_scm_breeze()
+#
+# Usage:
+#   _enable_scm_breeze
+#
+# Description:
+#   Initialize SCM Breeze.
+_enable_scm_breeze() {
+  # NOTE: SCM Breeeze currently throws an error for me in bash.
+  if ! is_bash
+  then
+    [ -s "${HOME}/.scm_breeze/scm_breeze.sh" ] && \
+      source "${HOME}/.scm_breeze/scm_breeze.sh" 1>/dev/null
+  fi
+}
 
 # git()
 #
 # A wrapper function to warn before initiating a `git push` to a production
 # remote.
-export ___SCMB_GIT_FUNCTION
-___SCMB_GIT_FUNCTION=$(which git)
+export ___ORIGINAL_GIT
+___ORIGINAL_GIT=$(which git)
 git() {
+  # _this_is_probably_a_function_defintion()
+  #
+  # Usage:
+  #   _this_is_probably_a_function_defintion <string>
+  #
+  # Returns:
+  #   0  If the string is probably a function defintion.
+  #   1  If not.
+  _this_is_probably_a_function_defintion() {
+    # Assume that it's a function if it contains newlines, since a path
+    # wouldn't.
+    #
+    # NOTE: This is the only semi-portable way to define a newline that I've
+    # been able to find so far.
+    local _newline="
+"
+    [[ "${1:-}" =~ ${_newline} ]]
+  }
+
   if [[ "${1:-}" == "push" ]] && [[ "${2:-}" == "production" ]]
   then
     while true
     do
-      printf "🚀 'git push' to 'production'? [y/N] "; read -r yn
+      printf "🚀 'git push' to 'production'? [y/N] "
+      read -r yn
       case ${yn} in
         [Yy]*)
-          # Run in subshell to avoid global `git()` function override.
-          (
-            eval "${___SCMB_GIT_FUNCTION}"
-            git "${@}"
-          )
+          if _this_is_probably_a_function_defintion "${___ORIGINAL_GIT}"
+          then
+            # Run in subshell to avoid global `git()` function override.
+            (
+              eval "${___ORIGINAL_GIT}"
+              git "$@"
+            )
+          else
+            "${___ORIGINAL_GIT}" "$@"
+          fi
           break
           ;;
         *)
@@ -53,11 +93,16 @@ git() {
       esac
     done
   else
-    # Run in subshell to avoid global `git()` function override.
-    (
-      eval "${___SCMB_GIT_FUNCTION}"
-      git "${@}"
-    )
+    if _this_is_probably_a_function_defintion "${___ORIGINAL_GIT}"
+    then
+      # Run in subshell to avoid global `git()` function override.
+      (
+        eval "${___ORIGINAL_GIT}"
+        git "$@"
+      )
+    else
+      "${___ORIGINAL_GIT}" "$@"
+    fi
   fi
 }
 

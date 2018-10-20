@@ -138,7 +138,7 @@ HEREDOC
 #   argument is provided, the public key with a filename matching the argument
 #   is printed.
 ssh_keys() {
-  if [[ "${1:-}" =~ '^-h|--help$' ]]
+  if [[ "${1:-}" =~ ^-h$ ]] || [[ "${1:-}" =~ ^--help$ ]]
   then
     cat <<HEREDOC
 Usage:
@@ -170,7 +170,7 @@ HEREDOC
     do
       if [[ "${_file_path}" =~ pub$ ]]
       then
-        printf "%s\n" "$(basename ${_file_path})"
+        printf "%s\n" "$(basename "${_file_path}")"
       fi
     done
   fi

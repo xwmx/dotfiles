@@ -15,7 +15,7 @@ then
     "${__search_cmd}" "ddg" "${@}"
   }
 
-  ss() {
+  spt() {
     "${__search_cmd}" "spotlight" "${@}"
   }
 fi
