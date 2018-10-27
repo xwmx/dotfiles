@@ -1,6 +1,3 @@
-[submodule "home/.oh-my-zsh"]
-	path = home/.oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "home/.rbenv/plugins/rbenv-default-gems"]
 	path = home/.rbenv/plugins/rbenv-default-gems
 	url = https://github.com/sstephenson/rbenv-default-gems.git
@@ -218,3 +215,6 @@
 [submodule "vendor/com/github/alphabetum/dotvim"]
 	path = vendor/com/github/alphabetum/dotvim
 	url = https://github.com/alphabetum/dotvim.git
+[submodule "vendor/com/github/robbyrussell/oh-my-zsh"]
+	path = vendor/com/github/robbyrussell/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
