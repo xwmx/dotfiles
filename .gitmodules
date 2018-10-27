@@ -101,9 +101,6 @@
 [submodule "vendor/com/github/alphabetum/search.sh"]
 	path = vendor/com/github/alphabetum/search.sh
 	url = https://github.com/alphabetum/search.sh.git
-[submodule "home/.prezto"]
-	path = home/.prezto
-	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "vendor/com/github/alphabetum/bindle"]
 	path = vendor/com/github/alphabetum/bindle
 	url = https://github.com/alphabetum/bindle.git
@@ -218,3 +215,6 @@
 [submodule "vendor/com/github/robbyrussell/oh-my-zsh"]
 	path = vendor/com/github/robbyrussell/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vendor/com/github/sorin-ionescu/prezto"]
+	path = vendor/com/github/sorin-ionescu/prezto
+	url = https://github.com/sorin-ionescu/prezto.git
