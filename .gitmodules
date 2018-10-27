@@ -1,45 +1,3 @@
-[submodule "home/.janus/Dockerfile.vim"]
-	path = home/.janus/Dockerfile.vim
-	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule "home/.janus/delimitMate"]
-	path = home/.janus/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
-[submodule "home/.janus/nerdcommenter"]
-	path = home/.janus/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "home/.janus/vim-airline"]
-	path = home/.janus/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "home/.janus/vim-go"]
-	path = home/.janus/vim-go
-	url = https://github.com/fatih/vim-go.git
-[submodule "home/.janus/vim-hybrid"]
-	path = home/.janus/vim-hybrid
-	url = https://github.com/w0ng/vim-hybrid.git
-[submodule "home/.janus/vim-jade"]
-	path = home/.janus/vim-jade
-	url = git://github.com/digitaltoad/vim-jade.git
-[submodule "home/.janus/vim-javascript"]
-	path = home/.janus/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "home/.janus/vim-mustache-handlebars"]
-	path = home/.janus/vim-mustache-handlebars
-	url = https://github.com/mustache/vim-mustache-handlebars.git
-[submodule "home/.janus/vim-stylus"]
-	path = home/.janus/vim-stylus
-	url = https://github.com/wavded/vim-stylus
-[submodule "home/.janus/vim-tomorrow-theme"]
-	path = home/.janus/vim-tomorrow-theme
-	url = https://github.com/chriskempson/vim-tomorrow-theme.git
-[submodule "home/.janus/vim-jst"]
-	path = home/.janus/vim-jst
-	url = https://github.com/briancollins/vim-jst.git
-[submodule "home/.janus/vim-vwilight"]
-	path = home/.janus/vim-vwilight
-	url = https://github.com/alphabetum/vim-vwilight.git
-[submodule "home/.janus/eclm_wombat.vim"]
-	path = home/.janus/eclm_wombat.vim
-	url = https://github.com/vim-scripts/eclm_wombat.vim.git
 [submodule "home/.oh-my-zsh"]
 	path = home/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
@@ -64,9 +22,6 @@
 [submodule "home/.rbenv/plugins/ruby-build"]
 	path = home/.rbenv/plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
-[submodule "home/.janus/swift.vim"]
-	path = home/.janus/swift.vim
-	url = https://github.com/Keithbsmiley/swift.vim.git
 [submodule "vendor/com/github/alphabetum/prelude"]
 	path = vendor/com/github/alphabetum/prelude
 	url = https://github.com/alphabetum/prelude.git
@@ -97,18 +52,6 @@
 [submodule "vendor/com/github/jwiegley/git-scripts"]
 	path = vendor/com/github/jwiegley/git-scripts
 	url = https://github.com/jwiegley/git-scripts.git
-[submodule "home/.janus/vim-textobj-user"]
-	path = home/.janus/vim-textobj-user
-  url = https://github.com/kana/vim-textobj-user.git
-  ignore = dirty
-[submodule "home/.janus/vim-textobj-line"]
-	path = home/.janus/vim-textobj-line
-	url = https://github.com/kana/vim-textobj-line.git
-  ignore = dirty
-[submodule "home/.janus/vim-signify"]
-	path = home/.janus/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
-	ignore = dirty
 [submodule "home/.nvm"]
 	path = home/.nvm
 	url = https://github.com/creationix/nvm.git
@@ -121,16 +64,6 @@
 [submodule "home/.config/base16-shell"]
 	path = home/.config/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule "home/.janus/ag"]
-	path = home/.janus/ag
-	url = https://github.com/rking/ag.vim
-[submodule "home/.janus/vim-hackernews"]
-	path = home/.janus/vim-hackernews
-	url = https://github.com/ryanss/vim-hackernews.git
-[submodule "home/.janus/elm.vim"]
-	path = home/.janus/elm.vim
-  url = https://github.com/lambdatoast/elm.vim.git
-  ignore = dirty
 [submodule "vendor/com/github/alphabetum/manuel"]
 	path = vendor/com/github/alphabetum/manuel
 	url = https://github.com/alphabetum/manuel.git
@@ -174,12 +107,6 @@
 [submodule "vendor/com/github/alphabetum/search.sh"]
 	path = vendor/com/github/alphabetum/search.sh
 	url = https://github.com/alphabetum/search.sh.git
-[submodule "home/.janus/rust.vim"]
-	path = home/.janus/rust.vim
-	url = https://github.com/rust-lang/rust.vim.git
-[submodule "home/.janus/toml"]
-	path = home/.janus/toml
-	url = https://github.com/cespare/vim-toml.git
 [submodule "home/.prezto"]
 	path = home/.prezto
 	url = https://github.com/sorin-ionescu/prezto.git
@@ -198,9 +125,6 @@
 [submodule "vendor/com/github/drduh/pwd.sh"]
 	path = vendor/com/github/drduh/pwd.sh
 	url = https://github.com/drduh/pwd.sh.git
-[submodule "home/.janus/syntastic.override"]
-	path = home/.janus/syntastic.override
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "vendor/com/github/mrowa44/emojify"]
 	path = vendor/com/github/mrowa44/emojify
 	url = https://github.com/mrowa44/emojify.git
@@ -219,16 +143,9 @@
 [submodule "vendor/com/github/jimhester/per-directory-history"]
 	path = vendor/com/github/jimhester/per-directory-history
 	url = https://github.com/jimhester/per-directory-history.git
-[submodule "home/.janus/anderson.vim"]
-	path = home/.janus/anderson.vim
-	url = https://github.com/gilgigilgil/anderson.vim.git
 [submodule "vendor/com/github/alphabetum/dsgn"]
 	path = vendor/com/github/alphabetum/dsgn
 	url = https://github.com/alphabetum/dsgn.git
-[submodule "home/.janus/vim-bufkill"]
-	path = home/.janus/vim-bufkill
-	url = https://github.com/qpkorr/vim-bufkill.git
-	ignore = dirty
 [submodule "vendor/com/github/alphabetum/accounts"]
 	path = vendor/com/github/alphabetum/accounts
 	url = https://github.com/alphabetum/accounts.git
@@ -244,25 +161,12 @@
 [submodule "vendor/com/github/jamesob/desk"]
 	path = vendor/com/github/jamesob/desk
 	url = https://github.com/jamesob/desk.git
-[submodule "home/.janus/vim-pandoc"]
-	path = home/.janus/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc.git
-[submodule "home/.janus/vim-pandoc-syntax"]
-	path = home/.janus/vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
 [submodule "vendor/com/github/alphabetum/pb"]
 	path = vendor/com/github/alphabetum/pb
 	url = https://github.com/alphabetum/pb.git
-[submodule "home/.vim.janus"]
-	path = home/.vim.janus
-	url = https://github.com/carlhuda/janus.git
-	ignore = dirty
 [submodule "vendor/com/github/nuex/t"]
 	path = vendor/com/github/nuex/t
 	url = https://github.com/nuex/t.git
-[submodule "home/.janus/vim-monochrome"]
-	path = home/.janus/vim-monochrome
-	url = https://github.com/fxn/vim-monochrome.git
 [submodule "home/.gvm"]
 	path = home/.gvm
 	url = https://github.com/moovweb/gvm
@@ -311,15 +215,6 @@
 [submodule "vendor/com/github/zsh-users/zsh-syntax-highlighting"]
 	path = vendor/com/github/zsh-users/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "home/.janus/neomake"]
-	path = home/.janus/neomake
-	url = https://github.com/neomake/neomake.git
-[submodule "home/.janus/vim-ctrlspace"]
-	path = home/.janus/vim-ctrlspace
-	url = https://github.com/vim-ctrlspace/vim-ctrlspace.git
-[submodule "home/.janus/vim-sleuth"]
-	path = home/.janus/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth.git
 [submodule "vendor/com/github/Linuxbrew/brew"]
 	path = vendor/com/github/Linuxbrew/brew
 	url = https://github.com/Linuxbrew/brew.git

@@ -1,1 +1,0 @@
-../../vendor/com/github/alphabetum/seti.vim
