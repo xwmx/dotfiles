@@ -34,9 +34,6 @@
 [submodule "vendor/com/github/alphabetum/dict"]
 	path = vendor/com/github/alphabetum/dict
 	url = https://github.com/alphabetum/dict.git
-[submodule "vendor/com/github/alphabetum/swiftly"]
-	path = vendor/com/github/alphabetum/swiftly
-	url = https://github.com/alphabetum/swiftly.git
 [submodule "vendor/com/github/ShaneKilkelly/manuel"]
 	path = vendor/com/github/ShaneKilkelly/manuel
 	url = https://github.com/ShaneKilkelly/manuel.git
