@@ -11,8 +11,7 @@
 
 # Dotfiles
 
-
-🅓🅞🅣🅢
+🅓🅞🅣🅕🅘🅛🅔🅢
 
 An OS X and Linux environment with configuration scripts. Uses the [`bindle`
 configuration management tool](https://github.com/alphabetum/bindle).
