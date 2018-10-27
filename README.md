@@ -48,7 +48,7 @@ files, installs various packages in `$HOME`, and changes the shell to zsh._
 Run the following, preferably at the root level of you home directory.
 
 ```bash
-git clone https://github.com/alphabetum/dotfiles.git "$HOME/.bindle" && \
+git clone --recurse-submodules -j8 https://github.com/alphabetum/dotfiles.git "$HOME/.bindle" && \
 "$HOME/.bindle/script/bootstrap/linux"
 ```
 
