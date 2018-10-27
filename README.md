@@ -9,7 +9,7 @@
 
     
 
-# Dotfiles
+# dotfiles
 
 🅓🅞🅣🅕🅘🅛🅔🅢
 
