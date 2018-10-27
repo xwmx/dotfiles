@@ -52,9 +52,6 @@
 [submodule "vendor/com/github/e36freak/tools"]
 	path = vendor/com/github/e36freak/tools
 	url = https://github.com/e36freak/tools.git
-[submodule "home/.config/base16-shell"]
-	path = home/.config/base16-shell
-	url = https://github.com/chriskempson/base16-shell.git
 [submodule "vendor/com/github/alphabetum/manuel"]
 	path = vendor/com/github/alphabetum/manuel
 	url = https://github.com/alphabetum/manuel.git
@@ -215,3 +212,6 @@
 [submodule "vendor/com/github/moovweb/gvm"]
 	path = vendor/com/github/moovweb/gvm
 	url = https://github.com/moovweb/gvm.git
+[submodule "vendor/com/github/chriskempson/base16-shell"]
+	path = vendor/com/github/chriskempson/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
