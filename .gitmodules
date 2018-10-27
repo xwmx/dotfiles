@@ -149,9 +149,6 @@
 [submodule "vendor/com/github/nuex/t"]
 	path = vendor/com/github/nuex/t
 	url = https://github.com/nuex/t.git
-[submodule "home/.gvm"]
-	path = home/.gvm
-	url = https://github.com/moovweb/gvm
 [submodule "vendor/com/github/yyuu/pyenv"]
 	path = vendor/com/github/yyuu/pyenv
 	url = https://github.com/yyuu/pyenv.git
@@ -215,3 +212,6 @@
 [submodule "vendor/com/github/ndbroadbent/scm_breeze"]
 	path = vendor/com/github/ndbroadbent/scm_breeze
 	url = https://github.com/ndbroadbent/scm_breeze.git
+[submodule "vendor/com/github/moovweb/gvm"]
+	path = vendor/com/github/moovweb/gvm
+	url = https://github.com/moovweb/gvm.git
