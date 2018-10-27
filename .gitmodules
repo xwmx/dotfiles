@@ -64,9 +64,6 @@
 [submodule "vendor/com/github/alphabetum/manuel-contrib-concurrent"]
 	path = vendor/com/github/alphabetum/manuel-contrib-concurrent
 	url = https://github.com/alphabetum/manuel-contrib-concurrent.git
-[submodule "home/.scm_breeze"]
-	path = home/.scm_breeze
-	url = https://github.com/ndbroadbent/scm_breeze.git
 [submodule "vendor/com/github/livibetter/pipes.sh"]
 	path = vendor/com/github/livibetter/pipes.sh
 	url = https://github.com/livibetter/pipes.sh.git
@@ -215,3 +212,6 @@
 [submodule "vendor/com/github/creationix/nvm"]
 	path = vendor/com/github/creationix/nvm
 	url = https://github.com/creationix/nvm.git
+[submodule "vendor/com/github/ndbroadbent/scm_breeze"]
+	path = vendor/com/github/ndbroadbent/scm_breeze
+	url = https://github.com/ndbroadbent/scm_breeze.git
