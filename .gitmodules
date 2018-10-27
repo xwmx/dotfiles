@@ -113,9 +113,6 @@
 [submodule "vendor/com/github/sstephenson/rbenv"]
 	path = vendor/com/github/sstephenson/rbenv
 	url = https://github.com/sstephenson/rbenv.git
-[submodule "home/.antigen"]
-	path = home/.antigen
-	url = https://github.com/zsh-users/antigen.git
 [submodule "vendor/com/github/mattly/bork"]
 	path = vendor/com/github/mattly/bork
 	url = https://github.com/mattly/bork.git
@@ -215,3 +212,6 @@
 [submodule "vendor/com/github/chriskempson/base16-shell"]
 	path = vendor/com/github/chriskempson/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
+[submodule "vendor/com/github/zsh-users/antigen"]
+	path = vendor/com/github/zsh-users/antigen
+	url = https://github.com/zsh-users/antigen.git
