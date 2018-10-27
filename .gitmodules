@@ -323,3 +323,6 @@
 [submodule "vendor/com/github/Linuxbrew/brew"]
 	path = vendor/com/github/Linuxbrew/brew
 	url = https://github.com/Linuxbrew/brew.git
+[submodule "vendor/com/github/alphabetum/dotvim"]
+	path = vendor/com/github/alphabetum/dotvim
+	url = https://github.com/alphabetum/dotvim.git
