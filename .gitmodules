@@ -46,9 +46,6 @@
 [submodule "vendor/com/github/jwiegley/git-scripts"]
 	path = vendor/com/github/jwiegley/git-scripts
 	url = https://github.com/jwiegley/git-scripts.git
-[submodule "home/.nvm"]
-	path = home/.nvm
-	url = https://github.com/creationix/nvm.git
 [submodule "vendor/com/github/alphabetum/osx-cli"]
 	path = vendor/com/github/alphabetum/osx-cli
 	url = https://github.com/alphabetum/osx-cli.git
@@ -218,3 +215,6 @@
 [submodule "vendor/com/github/sorin-ionescu/prezto"]
 	path = vendor/com/github/sorin-ionescu/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "vendor/com/github/creationix/nvm"]
+	path = vendor/com/github/creationix/nvm
+	url = https://github.com/creationix/nvm.git
