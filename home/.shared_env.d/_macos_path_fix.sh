@@ -26,7 +26,7 @@
 
 if is_zsh && is_macos
 then
-  if is_el_capitan || is_sierra
+  if is_el_capitan || is_sierra || is_high_sierra || is_mojave
   then
     # Call `path_helper`. Adapted from /etc/zprofile on OS X El Capitan.
     #

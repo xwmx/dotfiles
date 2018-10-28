@@ -24,10 +24,11 @@
 #     `gvm linkthis github.com/you/foo`
 ###############################################################################
 
-if [[ -s "${HOME}/.gvm/scripts/gvm" ]]
-then
-  source "${HOME}/.gvm/scripts/gvm"
-fi
+# NOTE: Disable GVM initialization.
+# if [[ -s "${HOME}/.gvm/scripts/gvm" ]]
+# then
+#   source "${HOME}/.gvm/scripts/gvm"
+# fi
 
 ###############################################################################
 # Initialize and deinitialize gvm

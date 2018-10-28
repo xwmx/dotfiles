@@ -6,15 +6,19 @@
 # http://unix.stackexchange.com/a/9607
 ###############################################################################
 
-if [ -n "${SSH_CLIENT}" ] || [ -n "${SSH_TTY}" ]
+if [ -z "${SESSION_TYPE}" ]
 then
-  SESSION_TYPE="remote/ssh"
-else
-  case $(ps -o comm= -p ${PPID}) in
-    sshd|*/sshd)
-      SESSION_TYPE="remote/ssh"
-      ;;
-  esac
-fi
+  if [ -n "${SSH_CLIENT}" ] || [ -n "${SSH_TTY}" ]
+  then
+    SESSION_TYPE="remote/ssh"
+  elif ps > /dev/null 2>&1
+  then # Not in macOS sandbox (https://stackoverflow.com/a/38598203)
+    case $(ps -o comm= -p ${PPID}) in
+      sshd|*/sshd)
+        SESSION_TYPE="remote/ssh"
+        ;;
+    esac
+  fi
 
-export SESSION_TYPE
+  export SESSION_TYPE
+fi

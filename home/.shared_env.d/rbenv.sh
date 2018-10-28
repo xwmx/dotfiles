@@ -6,24 +6,58 @@
 # https://github.com/sstephenson/rbenv
 ###############################################################################
 
-# _enable_rbenv()
+###############################################################################
+# Lazy load rbenv.
+#
+# rbenv loading can be slow, so defer loading until one of the ruby functions
+# is called.
+
+# __enable_rbenv()
 #
 # Usage:
-#   _enable_rbenv
+#   __enable_rbenv
 #
 # Description:
 #   Initialize rbenv and $PATH for bin directory.
-_enable_rbenv() {
+__enable_rbenv() {
   export PATH="${HOME}/.rbenv/bin:${PATH}"
 
   if which rbenv > /dev/null
   then
-    eval "$(rbenv init -)"
+    # Don't enable rbenv on Ubuntu, since RVM is currently preferred there.
+    if [[ ! "$(uname -a)" =~ Ubuntu ]]
+    then
+      eval "$(rbenv init -)"
+    fi
   fi
 }
 
-# Don't enable rbenv on Ubuntu, since RVM is currently preferred there.
-if [[ ! "$(uname -a)" =~ Ubuntu ]]
-then
-  _enable_rbenv
-fi
+export __RBENV_ENABLED=0
+
+gem() {
+  unset -f gem
+  __enable_rbenv
+  __RBENV_ENABLED=1
+  gem "$@"
+}
+
+irb() {
+  unset -f irb
+  __enable_rbenv
+  __RBENV_ENABLED=1
+  irb "$@"
+}
+
+rbenv() {
+  unset -f rbenv
+  __enable_rbenv
+  __RBENV_ENABLED=1
+  rbenv "$@"
+}
+
+ruby() {
+  unset -f ruby
+  __enable_rbenv
+  __RBENV_ENABLED=1
+  ruby "$@"
+}

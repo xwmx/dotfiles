@@ -36,6 +36,12 @@ _enable_pyenv() {
     return 0
   fi
 
+  # Exit if `brew` not found.
+  if ! which brew > /dev/null
+  then
+    return 0
+  fi
+
   eval "$(pyenv init -)"
 
   # Set `$CFLAGS` and `$LDFLAGS`
@@ -55,4 +61,14 @@ _enable_pyenv() {
   eval "$(pyenv virtualenv-init -)"
 }
 
-_enable_pyenv
+export __PYENV_ENABLED=0
+
+python() {
+  unset -f python
+  if hash "__enable_pyenv" 2>/dev/null
+  then
+    __enable_pyenv
+    __PYENV_ENABLED=1
+  fi
+  python "$@"
+}

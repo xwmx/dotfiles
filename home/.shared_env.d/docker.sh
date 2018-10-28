@@ -34,9 +34,13 @@
 #
 # These environment variables are the equivalent to what it output by
 # `boot2docker up`, but generalized to be portable between environments.
-if is_macos
-then
-  export DOCKER_HOST="tcp://$(boot2docker ip 2>/dev/null):2376"
-  export DOCKER_CERT_PATH="${HOME}/.boot2docker/certs/boot2docker-vm"
-  export DOCKER_TLS_VERIFY=1
-fi
+
+# NOTE: Docker for Mac does not use these variables and they must be unset.
+# More information: https://docs.docker.com/docker-for-mac/docker-toolbox/
+# TODO: Remove this file.
+# if is_macos
+# then
+#   export DOCKER_HOST="tcp://$(boot2docker ip 2>/dev/null):2376"
+#   export DOCKER_CERT_PATH="${HOME}/.boot2docker/certs/boot2docker-vm"
+#   export DOCKER_TLS_VERIFY=1
+# fi

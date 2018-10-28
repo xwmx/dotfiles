@@ -29,4 +29,16 @@ export HOMEBREW_NO_ANALYTICS=1
 # https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md#options
 # https://github.com/caskroom/homebrew-cask/issues/21913
 # https://github.com/caskroom/homebrew-cask/issues/21858
-export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
+#
+# TODO: Remove this section when the Caskroom location has been moved on all
+# systems.
+if [[ -d "/opt/homebrew-cask/Caskroom" ]]
+then
+  export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
+  cat <<HEREDOC
+❗ Update the Caskroom directory location:
+  mv /opt/homebrew-cask/Caskroom /usr/local/
+HEREDOC
+else
+  HOMEBREW_CASK_OPTS=""
+fi
