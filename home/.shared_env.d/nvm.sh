@@ -43,12 +43,6 @@ __enable_nvm() {
 
 export __NVM_ENABLED=0
 
-nvm() {
-  unset -f nvm
-  __enable_nvm
-  nvm "$@"
-}
-
 # __enable_nvm_lazy_loading()
 #
 # Usage:
@@ -78,7 +72,10 @@ __enable_nvm_lazy_loading() {
       source /dev/stdin <<HEREDOC
 ${__command_name}() {
   unset -f ${__command_name}
-  __enable_nvm
+  if [[ "${__NVM_ENABLED}" == 0 ]]
+  then
+    __enable_nvm
+  fi
   ${__command_name} "\$@"
 }
 HEREDOC
@@ -93,3 +90,4 @@ then
 else
   __enable_nvm_lazy_loading
 fi
+
