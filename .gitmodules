@@ -1,9 +1,6 @@
 [submodule "vendor/com/github/alphabetum/prelude"]
 	path = vendor/com/github/alphabetum/prelude
 	url = https://github.com/alphabetum/prelude.git
-[submodule "vendor/com/github/alphabetum/alias-app"]
-	path = vendor/com/github/alphabetum/alias-app
-	url = https://github.com/alphabetum/alias-app.git
 [submodule "vendor/com/github/alphabetum/shell-app"]
 	path = vendor/com/github/alphabetum/shell-app
 	url = https://github.com/alphabetum/shell-app.git

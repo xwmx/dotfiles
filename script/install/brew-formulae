@@ -238,13 +238,3 @@ brew linkapps --local
 
 # Remove outdated versions.
 brew cleanup
-
-###############################################################################
-# Application Aliasing
-#
-# Custom brew commands for creating spotlight-recognizable application aliases.
-#
-# Uses the alias-app command line tool: https://github.com/alphabetum/alias-app
-###############################################################################
-
-brew aliasapps
