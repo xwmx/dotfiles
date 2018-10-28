@@ -15,6 +15,12 @@
 # nvm loading is slow, so defer loading until one of the node functions is
 # called.
 
+# $__NVM_ENABLED
+#
+# 1  If nvm has been initialized.
+# 0  If not.
+export __NVM_ENABLED=0
+
 # __enable_nvm()
 #
 # Usage:
@@ -40,8 +46,6 @@ __enable_nvm() {
     __NVM_ENABLED=1
   fi
 }
-
-export __NVM_ENABLED=0
 
 # __enable_nvm_lazy_loading()
 #
@@ -90,4 +94,3 @@ then
 else
   __enable_nvm_lazy_loading
 fi
-
